@@ -1,0 +1,44 @@
+object frmUart: TfrmUart
+  Left = 499
+  Top = 114
+  BorderIcons = []
+  BorderStyle = bsNone
+  ClientHeight = 145
+  ClientWidth = 337
+  Color = clBtnFace
+  Font.Charset = GB2312_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = #23435#20307
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 16
+  object XComm1: TXComm
+    BaudRate = br57600
+    BaudValue = 57600
+    Buffers.InputSize = 8192
+    Buffers.OutputSize = 8192
+    Buffers.InputTimeout = 250
+    Buffers.OutputTimeout = 125
+    CTSSettings = fsDisable
+    DataControl.DataBits = db8
+    DataControl.Parity = paNone
+    DataControl.StopBits = sb1
+    DeviceName = 'COM10'
+    DTRSettings = fsDisable
+    EventChars.XonChar = #17
+    EventChars.XoffChar = #19
+    EventChars.EofChar = #0
+    EventChars.ErrorChar = #0
+    EventChars.EventChar = #10
+    MonitorEvents = [deChar, deFlag, deOutEmpty]
+    FlowControl = fcNone
+    Options = []
+    Synchronize = True
+    Left = 216
+    Top = 8
+  end
+end

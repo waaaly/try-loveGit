@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="AFS1200Debug.exe"/>
+    <OBJFILES value="AFS1200Debug.obj uAFSData.obj uParams.obj uIDCardDef.obj uExcel.obj 
+      uTypeConvert.obj uDebugMain.obj uMaintain.obj uUart.obj uCaptions.obj 
+      uSetTC.obj loadLib.obj"/>
+    <RESFILES value="AFS1200Debug.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) uDebugMain.dfm uMaintain.dfm uUart.dfm uCaptions.dfm uSetTC.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="vclx.lib bcbsmp.lib bdertl.lib CommonControls.lib AAFont_BCB6.lib 
+      vcldb.lib indy.lib Scenery.lib adortl.lib dbrtl.lib rtl.lib vcl.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib dbrtl.lib adortl.lib Scenery.lib indy.lib vcldb.lib 
+      AAFont_BCB6.lib CommonControls.lib bdertl.lib bcbsmp.lib vclx.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi AAFont_BCB6.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="AFS1200Debug.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;D:\borland\CommonControls\AAFont;D:\borland\CommonControls;E:\rocky\AFS1200\AFS1200\Project\AFS1200Debug"/>
+    <LIBPATH value="$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;D:\borland\CommonControls\AAFont;D:\borland\CommonControls;E:\rocky\AFS1200\AFS1200\Project\AFS1200Debug"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -ID:\borland\CommonControls\AAFont 
+      -ID:\borland\CommonControls 
+      -IE:\rocky\AFS1200\AFS1200\Project\AFS1200Debug -src_suffix cpp -D_DEBUG -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tW -tWM"/>
+    <PFLAGS value="-$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="AFS1200Debug.res" FORMNAME="" UNITNAME="AFS1200Debug.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="AFS1200Debug.cpp" FORMNAME="" UNITNAME="AFS1200Debug" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uAFSData.cpp" FORMNAME="" UNITNAME="uAFSData" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uParams.cpp" FORMNAME="" UNITNAME="uParams" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uIDCardDef.cpp" FORMNAME="" UNITNAME="uIDCardDef" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uExcel.cpp" FORMNAME="" UNITNAME="uExcel" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uTypeConvert.cpp" FORMNAME="" UNITNAME="uTypeConvert" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uDebugMain.cpp" FORMNAME="frmMain" UNITNAME="uDebugMain" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uMaintain.cpp" FORMNAME="frmMaintain" UNITNAME="uMaintain" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uUart.cpp" FORMNAME="frmUart" UNITNAME="uUart" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uCaptions.cpp" FORMNAME="frmCaptions" UNITNAME="uCaptions" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uSetTC.cpp" FORMNAME="frmSetTC" UNITNAME="uSetTC" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="loadLib.cpp" FORMNAME="" UNITNAME="loadLib" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=2052
+CodePage=936
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[Excluded Packages]
+d:\borland\progarmflie\Bin\dclite60.bpl=Borland Integrated Translation Environment
+
+[HistoryLists\hlIncludePath]
+Count=11
+Item0=$(BCB)\include;$(BCB)\include\vcl;D:\borland\CommonControls\AAFont;D:\borland\CommonControls;E:\rocky\AFS1200\AFS1200\Project\AFS1200Debug
+Item1=$(BCB)\include;$(BCB)\include\vcl;D:\borland\CommonControls\AAFont;D:\borland\CommonControls
+Item2=..\AFS2000ADO;$(BCB)\include;$(BCB)\include\vcl;C:\Users\huangjj\Desktop\debug\LBControl\CommonControls;C:\Users\huangjj\Desktop\debug\LBControl\CommonControls\AAFont;D:\LBControl\CommonControls;D:\LBControl\CommonControls\AAFont
+Item3=..\AFS2000ADO;$(BCB)\include;$(BCB)\include\vcl;C:\Users\huangjj\Desktop\debug\LBControl\CommonControls;C:\Users\huangjj\Desktop\debug\LBControl\CommonControls\AAFont
+Item4=$(BCB)\include;$(BCB)\include\vcl;C:\Users\huangjj\Desktop\debug\LBControl\CommonControls;C:\Users\huangjj\Desktop\debug\LBControl\CommonControls\AAFont
+Item5=C:\Program Files\Borland\CBuilder6\Projects;D:\MyApplication\Lanbo\AFS0000;$(BCB)\include;$(BCB)\include\vcl;..\..\commoncontrols;..\..\CommonControls\AAFont
+Item6=..\AFS2000ADO;..\TB401\TB401;..\F301;C:\Program Files\Borland\CBuilder6\Projects;D:\MyApplication\Lanbo\AFS0000;$(BCB)\include;$(BCB)\include\vcl;..\..\commoncontrols;..\..\CommonControls\AAFont
+Item7=..\TB401\TB401;..\F301;C:\Program Files\Borland\CBuilder6\Projects;D:\MyApplication\Lanbo\AFS0000;$(BCB)\include;$(BCB)\include\vcl;..\..\commoncontrols;..\..\CommonControls\AAFont
+Item8=..\F301;C:\Program Files\Borland\CBuilder6\Projects;D:\MyApplication\Lanbo\AFS0000;$(BCB)\include;$(BCB)\include\vcl;..\..\commoncontrols;..\..\CommonControls\AAFont
+Item9=C:\Program Files\Borland\CBuilder6\Projects;D:\MyApplication\Lanbo\AFS0000;$(BCB)\include;$(BCB)\include\vcl;..\..\commoncontrols
+Item10=C:\Program Files\Borland\CBuilder6\Projects;D:\MyApplication\Lanbo\AFS0000;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=12
+Item0=$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;D:\borland\CommonControls\AAFont;D:\borland\CommonControls;E:\rocky\AFS1200\AFS1200\Project\AFS1200Debug
+Item1=$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;D:\borland\CommonControls\AAFont;D:\borland\CommonControls
+Item2=..\AFS2000ADO;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;C:\Users\huangjj\Desktop\debug\LBControl\CommonControls;C:\Users\huangjj\Desktop\debug\LBControl\CommonControls\AAFont;D:\LBControl\CommonControls;D:\LBControl\CommonControls\AAFont
+Item3=..\AFS2000ADO;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;C:\Users\huangjj\Desktop\debug\LBControl\CommonControls;C:\Users\huangjj\Desktop\debug\LBControl\CommonControls\AAFont
+Item4=$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;C:\Users\huangjj\Desktop\debug\LBControl\CommonControls;C:\Users\huangjj\Desktop\debug\LBControl\CommonControls\AAFont
+Item5=C:\Program Files\Borland\CBuilder6\Projects;D:\MyApplication\Lanbo\AFS0000;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\..\commoncontrols;..\..\CommonControls\AAFont
+Item6=..\AFS2000ADO;..\TB401\TB401;..\F301;C:\Program Files\Borland\CBuilder6\Projects;D:\MyApplication\Lanbo\AFS0000;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\..\commoncontrols;..\..\CommonControls\AAFont
+Item7=..\TB401\TB401;..\F301;C:\Program Files\Borland\CBuilder6\Projects;D:\MyApplication\Lanbo\AFS0000;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\..\commoncontrols;..\..\CommonControls\AAFont
+Item8=..\F301;C:\Program Files\Borland\CBuilder6\Projects;D:\MyApplication\Lanbo\AFS0000;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\..\commoncontrols;..\..\CommonControls\AAFont
+Item9=C:\Program Files\Borland\CBuilder6\Projects;D:\MyApplication\Lanbo\AFS0000;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\..\commoncontrols;..\..\commoncontrols\\aafont
+Item10=C:\Program Files\Borland\CBuilder6\Projects;D:\MyApplication\Lanbo\AFS0000;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\..\commoncontrols
+Item11=C:\Program Files\Borland\CBuilder6\Projects;D:\MyApplication\Lanbo\AFS0000;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=3
+Item0=$(BCB)\source\vcl;D:\MyApplication\CommonControls\;D:\LBControl\CommonControls\
+Item1=$(BCB)\source\vcl;D:\MyApplication\CommonControls\
+Item2=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl;D:\MyApplication\CommonControls\;D:\LBControl\CommonControls\
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+  </IDEOPTIONS>
+</PROJECT>

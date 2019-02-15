@@ -1,0 +1,2 @@
+60 path=a20老化软件_20161102/QMain/WIFI/return_info.txt
+27 atime=1478064306.403334

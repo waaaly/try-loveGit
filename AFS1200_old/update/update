@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cp ./update/QMain ./
+reboot
+
