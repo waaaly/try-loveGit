@@ -1,0 +1,23 @@
+<canvas canvasId="myCanvas" hidden="{{hiddenPoster}}" style="width:{{width}}rpx; height:{{height}}rpx; "></canvas>
+<view class="ecWap-mask" wx:if="{{showSetModel}}"></view>
+<view class="ecWap-box-middle" wx:if="{{showSetModel}}">
+    <view class="ecWap-box ecWap-box-center ecWap-box-normal ecWap-box-change">
+        <view class="ecWap-box-content">
+            <view class="ecWap-dialog-header">提示</view>
+            <view class="ecWap-dialog-content" style="text-align: center">
+                <text>请打开保存相册权限</text>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <button bindtap="closeSetModel" class="ecWap-box-cancle" plain="true">
+                <text>取消</text>
+            </button>
+            <button bindtap="setModelHidden" class="ecWap-box-ok" openType="openSetting" plain="true" wx:if="{{!canIUseOpenSetting}}">
+                <text>去设置</text>
+            </button>
+            <button bindtap="getAuthority" class="ecWap-box-ok" plain="true" wx:if="{{canIUseOpenSetting}}">
+                <text>去设置</text>
+            </button>
+        </view>
+    </view>
+</view>

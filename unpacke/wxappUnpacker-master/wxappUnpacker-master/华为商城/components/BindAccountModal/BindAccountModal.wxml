@@ -1,0 +1,49 @@
+<view class="toast {{toastState?'show':''}}" id="toast">
+    <view class="toast_cont">{{toastCont}}</view>
+</view>
+<view class="ecWap-mask" wx:if="{{showFlag}}"></view>
+<view class="ecWap-box-middle ecWap-box-up" wx:if="{{showFlag}}">
+    <view class="ecWap-box ecWap-box-center">
+        <view class="ecWap-box-header">
+            <text class="ecWap-box-title">帐号保护</text>
+        </view>
+        <view class="ecWap-box-content ecWap-box-common">
+            <view class="verify-box">
+                <view class="verifyCode-tip">
+          您已开启帐号保护，请输入验证码以完成登录。
+        </view>
+                <view class="verify-select">
+                    <view class="upBox">
+                        <picker bindchange="bindAuthTypePickerChange" range="{{accountName}}" value="{{secondAuthTypeIndex}}">
+                            <view class="picker">
+                {{accountName[secondAuthTypeIndex]}}
+              </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="upItem">
+                    <view class="upBox">
+                        <view class="upInput">
+                            <input bindinput="setSecondAuthCode" placeholder="验证码" type="text" value="{{secondAuthCode}}"></input>
+                        </view>
+                        <view bindtap="getSecondAuthCode" class="{{getSMSClass}}">
+                            <text>{{getSMSText}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="verifyCode-link hide">
+                    <view>无法使用邮件地址获取验证码？</view>
+                    <view class="upBlue">申诉更改</view>
+                </view>
+            </view>
+            <view class="ecWap-box-common-footer">
+                <view bindtap="closeSecondAuthDialog" class="upButton-style-1">
+                    <text>取消</text>
+                </view>
+                <view bindtap="secondUserThirdAuthV2" class="upButton-style-1 {{secondAuthCode!=''?'':'upButton-style-1-disabled'}}">
+                    <text>下一步</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,32 @@
+{
+    "navigationBarTitleText": "商品详情",
+    "usingComponents": {
+        "GuessYouLike": "/pages/item/components/guess-you-like/guess-you-like",
+        "Review": "/pages/components/review/review",
+        "Shop": "/pages/components/shop/shop",
+        "Specific": "/pages/components/specific/specific",
+        "Address": "/pages/item/components/address/address",
+        "xModal": "/pages/components/modal/modal",
+        "quick-nav": "/components/quick-nav/quick-nav",
+        "app-launch": "/components/app-launch/app-launch",
+        "Accessories": "/pages/item/components/accessories/index",
+        "Answers": "/pages/item/components/answers/index",
+        "GlobalInfo": "/pages/item/components/global-info/index",
+        "AddressLayer": "/components/address-layer/index",
+        "return-app": "/components/return_app/return_app",
+        "CouponLayer": "/components/coupon-layer/index",
+        "dialog": "/common/dialog/dialog",
+        "ShareLayer": "/pages/item/components/share-layer/index",
+        "Navbar": "/pages/item/components/navbar/navbar",
+        "GlobalService": "../components/global-service/index",
+        "CareFree": "../components/care-free/index",
+        "PurchaseTip": "../components/purchase-tip/index",
+        "BottomBtn": "../components/bottom-btn/index",
+        "JxServiceLayer": "../components/jxservice-layer/index",
+        "card-share": "/pages/item/components/card-share/index",
+        "QuickClear": "/components/quick-clear/index",
+        "sku-layer": "/components/sku-layer/index",
+        "added-service": "/pages/item/components/added-service/index",
+        "business-entry": "/pages/item/components/business-entry/index"
+    }
+}

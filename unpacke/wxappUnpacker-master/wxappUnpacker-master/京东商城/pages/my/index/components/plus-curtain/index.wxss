@@ -1,0 +1,35 @@
+.xmodal_mask {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.6);
+}
+
+.bac .skin_img {
+    content: "";
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.bac .content {
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+}
+
+.bac .content .close_icon {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    top: -25rpx;
+    right: -25rpx;
+}

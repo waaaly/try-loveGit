@@ -1,0 +1,68 @@
+<import src="/template/footer/footer.wxml"></import>
+<import src="/template/login/login.wxml"></import>
+<template is="login" data wx:if="{{isLogin}}"></template>
+<view class="giftBuy">
+    <view class="giftBuy_header">
+        <view class="giftBuy_boxs">
+            <view class="giftBuy_box col ali-center">
+                <view class="giftBuy_box1 row ali-center">
+                    <image class="giftBuy_icon6" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_buy_icons6.png"></image>
+                    <text class="giftBuy_txt1">智融优购</text>
+                </view>
+                <text class="giftBuy_txt2" decode="{{true}}">消费即共建&nbsp;&nbsp;分享即共有</text>
+                <image class="giftBuy_icon5" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_buy_icon5s.png"></image>
+                <text class="giftBuy_txt3">VIP可享有以下会员权益</text>
+                <view class="giftBuy_txt4 giftBuy_box5 row ali-center spa">
+                    <view class="giftBuy_header_item col ju-center ali-center">
+                        <image class="giftBuy_item_img" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_buy_icon1.png"></image>
+                        <text class="giftBuy_item_txt">购物省钱</text>
+                    </view>
+                    <view class="giftBuy_header_item col ju-center ali-center">
+                        <image class="giftBuy_item_img" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_buy_icon2.png"></image>
+                        <text class="giftBuy_item_txt">分享赚钱</text>
+                    </view>
+                    <view class="giftBuy_header_item col ju-center ali-center">
+                        <image class="giftBuy_item_img" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_buy_icon3.png"></image>
+                        <text class="giftBuy_item_txt">邀请有奖</text>
+                    </view>
+                    <view class="giftBuy_header_item col ju-center ali-center">
+                        <image class="giftBuy_item_img" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_buy_icon4.png"></image>
+                        <text class="giftBuy_item_txt">更多权益</text>
+                    </view>
+                </view>
+                <view class="giftBuy_box3 giftBuy_list_tit">
+                    <view class="giftBuy_box3_box">
+                        <image class="giftBuy_box3_img" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_buy_icon8.png" style="width:257rpx;"></image>
+                        <text style="font-size:36rpx;font-weight:bold;">礼包详情</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="giftBuy_list">
+        <view bindtap="goBuy" class="giftBuy_listItem row spa" data-id="{{item.goodsId}}" wx:for="{{promotionGoods}}">
+            <view style="width: 274rpx; height: 261rpx;">
+                <image class="giftBuy_listItem_img" mode="aspectFill" src=" {{item.defalutPhotoURL}}"></image>
+            </view>
+            <view class="giftBuy_listItem_box  col spa">
+                <view class="col spa " style="height:130rpx;">
+                    <view class="giftBuy_listItem_tit ovr2">{{item.goodsName}}</view>
+                    <text class="giftBuy_listItem_intro">赚{{item.proScore}}数贝</text>
+                </view>
+                <view class="giftBuy_listItem_btnBox row spa">
+                    <view class="giftBuy_listItem_price">￥
+            <text class="giftBuy_listItem_priceNum">{{item.price1}}</text>.{{item.price2}}</view>
+                    <view class="giftBuy_btn" data-id="{{item.goodsId}}">立即购买</view>
+                </view>
+            </view>
+        </view>
+        <view class="noData col ali-center" wx:if="{{promotionGoods.length==0}}">
+            <image class="noData_Img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/gift_noData.png"></image>
+            <view class="noData_txt">暂无大礼包，敬请期待~</view>
+        </view>
+        <template is="footer" data wx:if="{{promotionGoods.length>0}}"></template>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

@@ -1,0 +1,28 @@
+<view class="xlist_group my_cell">
+    <view class="rel_container {{showLogisBox?'rel_container_has_logis':''}}">
+        <view class="top_line_box">
+            <view bindtap="navToOrderListPage" class="my_order_entrance type_unpay" data-page="1" data-ptag="7155.1.12">
+                <view class="entrance_text">待付款</view>
+                <text class="dot dot_num" wx:if="{{waitPayCount>0}}">{{waitPayCount}}</text>
+            </view>
+            <view bindtap="navToOrderListPage" class="my_order_entrance type_unrecieve" data-page="2" data-ptag="7155.1.13">
+                <view class="entrance_text">待收货</view>
+                <text class="dot dot_num" wx:if="{{receiveCount>0}}">{{receiveCount}}</text>
+            </view>
+            <view bindtap="navToOrderListPage" class="my_order_entrance type_uncomment" data-page="3" data-ptag="7155.1.14" wx:if="{{!isMenv}}">
+                <view class="entrance_text">待评价</view>
+                <text class="dot dot_num" wx:if="{{commentNum>0}}">{{commentNum}}</text>
+            </view>
+            <view bindtap="navToH5" class="my_order_entrance type_consult">
+                <view class="entrance_text">退换／售后</view>
+            </view>
+            <view bindtap="navToOrderListPage" class="my_order_entrance type_orders" data-page="0" data-ptag="7155.1.11">
+                <view class="entrance_text">
+                    <view class="{{!isMenv?'type_all':''}}">全部订单</view>
+                    <view class="type_bill" wx:if="{{!isMenv}}">查看发票</view>
+                </view>
+            </view>
+        </view>
+        <my-logistics class="my-logistics" id="myLogistics" list="{{dealLogList}}" show="{{showLogisBox}}"></my-logistics>
+    </view>
+</view>

@@ -1,0 +1,60 @@
+.container {
+    width: 100%;
+    position: relative;
+}
+
+.header {
+    width: 750rpx;
+    height: 662rpx;
+    background-image: url('https://grtimg.oss-cn-beijing.aliyuncs.com/temp/integral_info.png');
+    background-size: 100% 100%;
+}
+
+.main {
+    position: absolute;
+    top: 200rpx;
+    left: 25rpx;
+    width: 700rpx;
+    line-height: 60rpx;
+    padding: 50rpx 25rpx;
+    box-sizing: border-box;
+    border-radius: 6rpx;
+    background: #fff;
+}
+
+.main .text2em {
+    text-align: left;
+    padding: 0;
+    text-indent: 2em;
+}
+
+.golden {
+    color: #E9B66C;
+}
+
+.index {
+    width: 24rpx;
+    height: 24rpx;
+    line-height: 24rpx;
+    text-align: center;
+    margin-left: .5em;
+    margin-right: .5em;
+    color: #fff;
+    border-radius: 30rpx;
+    background: #8D8D8D;
+}
+
+.qr-code {
+    margin-top: 30rpx;
+    margin-left: 2em;
+}
+
+.qr-code text {
+    line-height: 1;
+}
+
+.qr-code image {
+    margin-left: 35rpx;
+    width: 175rpx;
+    height: 175rpx;
+}

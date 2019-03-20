@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "ywyy活动类公共组件演示",
+    "usingComponents": {
+        "cy-yuyue": "../components/yuyue/index",
+        "cy-joinnum": "../components/joinnum/index",
+        "share_btn": "../components/share_btn/index"
+    }
+}

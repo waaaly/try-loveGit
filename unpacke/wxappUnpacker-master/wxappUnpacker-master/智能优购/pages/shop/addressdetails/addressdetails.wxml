@@ -1,0 +1,93 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<form bindsubmit="formSubmit">
+    <view class="tet-box">
+        <view class="tesl">
+            <view class="bordersty">
+                <view class="r_label">
+                    <input bindinput="bindUserName" class="text1" name="userName" placeholder="收货人姓名" placeholderClass="placeholderst" type="text" value="{{userName}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="tesl">
+            <view class="bordersty">
+                <view class="r_label">
+                    <input bindinput="bindMobile" class="text1" placeholder="联系人电话" placeholderClass="placeholderst" type="number" value="{{mobile}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="tesl">
+            <view class="bordersty">
+                <view class="l_label black">所在地区</view>
+                <view class="r_label">
+                    <picker bindchange="bindPickerChange" range="{{adres}}" rangeKey="name" value="{{index}}">
+                        <view class="picker">
+            {{adres[index].name||'--请选择--'}}
+          </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="tesl" wx:if="{{show2}}">
+            <view class="bordersty">
+                <view class="l_label black">市</view>
+                <view class="r_label">
+                    <picker bindchange="bindPickerChange2" range="{{city}}" rangeKey="name" value="{{index2}}">
+                        <view class="picker">
+            {{city[index2].name||'--请选择--'}}
+          </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="tesl" wx:if="{{show3}}">
+            <view class="bordersty">
+                <view class="l_label black">区/县</view>
+                <view class="r_label">
+                    <picker bindchange="bindPickerChange3" range="{{area}}" rangeKey="name" value="{{index3}}">
+                        <view class="picker">
+            {{area[index3].name||'--请选择--'}}
+          </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="tesl" wx:if="{{show4}}">
+            <view class="bordersty">
+                <view class="l_label black">乡镇/街道</view>
+                <view class="r_label">
+                    <picker bindchange="bindPickerChange4" range="{{town}}" rangeKey="name" value="{{index4}}">
+                        <view class="picker">
+            {{town[index4].name||'--请选择--'}}
+          </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="tesl r_textarea">
+            <view class="bordersty r_textarea">
+                <view class="l_label black">详细地址</view>
+                <view class="r_label ">
+                    <textarea bindinput="bindAddress" bindtap="focusTextarea" class="text1" focus="{{isFocus}}" name="address" placeholder="详细地址需填写楼栋楼层或房间号信息" placeholderClass="placeholderst" type="text" value="{{detailed}}"></textarea>
+                </view>
+            </view>
+        </view>
+        <view class="tesl">
+            <view class="bordersty">
+                <view class="l_label black">邮政编码</view>
+                <view class="r_label">
+                    <input bindinput="bindpostalcode" class="text1" placeholder="邮政编码" placeholderClass="placeholderst" type="text" value="{{postalcode}}"></input>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tesl default-ads">
+        <view class="bordersty row spa">
+            <view class="l_label black">设为默认地址</view>
+            <switch bindchange="changeDefaultVal" checked="{{id_default}}"></switch>
+        </view>
+    </view>
+    <view class="tet-btn">
+        <button class="confirm" formType="submit">确认</button>
+    </view>
+</form>

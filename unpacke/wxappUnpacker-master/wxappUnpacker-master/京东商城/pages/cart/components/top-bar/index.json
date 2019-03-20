@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "address-layer": "/components/address-layer/index",
+        "quick-clear": "/components/quick-clear/index",
+        "pinbind": "/pages/components/pinbindnew/pinbind"
+    }
+}

@@ -1,0 +1,42 @@
+<view wx:if="{{needShowEntrance}}">
+    <view bindtap="jumpTouTiao" class="my_toutiao" style="{{bgImg?'background: url('+bgImg+') no-repeat 0 0 / 100% 100%;':''}}" wx:if="{{showToutiaoEnter}}">
+        <view class="my_toutiao_notice" wx:if="{{scrollMsg.length}}">
+            <view class="my_toutiao_notice_inner">
+                <view class="my_toutiao_notice_list" style="{{inlineStyle}}">
+                    <view class="my_toutiao_notice_list_item" wx:for="{{scrollMsg}}">
+                        <view class="my_toutiao_notice_list_item_img">
+                            <image class="scroll_image" mode="aspectFill" src="{{item.mainPicUrl}}"></image>
+                        </view>
+                        <view class="my_toutiao_notice_list_item_text">
+                            <view class="my_toutiao_notice_list_item_text_title"></view>
+                            <view class="my_toutiao_notice_list_item_text_info">
+                                <view class="info_name">{{item.type}}</view>
+                                <view class="info_detail">{{item.title}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="my_toutiao_notice_dot" wx:if="{{redNum}}">{{redNum}}</view>
+        </view>
+        <view class="my_toutiao_notice" wx:if="{{!scrollMsg.length}}">
+            <view class="my_toutiao_notice_inner">
+                <view class="my_toutiao_notice_list">
+                    <view class="my_toutiao_notice_list_item">
+                        <view class="my_toutiao_notice_list_item_img">
+                            <image class="scroll_image" mode="aspectFill" src="https://wq.360buyimg.com/fd/h5/wxsq_dev/my/images/jdDogDefault_c4eaedfa.jpg"></image>
+                        </view>
+                        <view class="my_toutiao_notice_list_item_text">
+                            <view class="my_toutiao_notice_list_item_text_title"></view>
+                            <view class="my_toutiao_notice_list_item_text_info">
+                                <view class="info_detail">为你喜欢，精挑细选</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="my_toutiao_notice_dot" wx:if="{{redNum}}">{{redNum}}</view>
+        </view>
+    </view>
+    <shop-toutiao bgImg="{{bgImg}}" wx:if="{{showShopToutiao}}"></shop-toutiao>
+</view>

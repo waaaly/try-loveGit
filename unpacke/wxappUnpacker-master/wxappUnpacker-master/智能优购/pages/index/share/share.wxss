@@ -1,0 +1,84 @@
+page {
+    background-color: #393939;
+}
+
+.caption {
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: white;
+    font-size: 15px;
+}
+
+.haibao {
+    position: relative;
+    height: 1030rpx;
+    text-align: center;
+    padding-top: 30rpx;
+}
+
+.haibao .img1 {
+    position: absolute;
+    top: 0;
+    left: 75rpx;
+    z-index: 50;
+    width: 600rpx;
+    margin: 0 auto;
+    height: 1030rpx;
+}
+
+.haibao .img2 {
+    position: absolute;
+    top: 0;
+    left: 75rpx;
+    z-index: 100;
+    width: 600rpx;
+    margin: 0 auto;
+    height: 1030rpx;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0rpx;
+    left: 0rpx;
+    z-index: 999;
+    background-color: white;
+}
+
+.bottom scroll-view {
+    height: 150rpx;
+    width: 750rpx;
+}
+
+.bottom .pic {
+    float: left;
+    width: 140rpx;
+    height: 150rpx;
+    padding: 10rpx;
+}
+
+.bottom .pic image {
+    width: 130rpx;
+    height: 130rpx;
+}
+
+.loadpic {
+    text-align: center;
+    position: fixed;
+    top: 200rpx;
+    z-index: 100;
+    width: 100%;
+}
+
+.loadpic image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.download {
+    color: white;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 14px;
+}

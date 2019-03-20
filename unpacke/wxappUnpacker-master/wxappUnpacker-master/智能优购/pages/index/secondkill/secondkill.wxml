@@ -1,0 +1,51 @@
+<view class="container">
+    <view class="head row w100">
+        <view catchtap="switchIndex" class="item col ali-center ju-center {{index==tabIndex?'active-item':''}}" data-index="{{index}}" style="width:{{100/tabList.length}}%" wx:for="{{tabList}}" wx:key="index">
+            <text class="head-time px36 bold white">{{item.startTime}}</text>
+            <text class="white px22" wx:if="{{index<=1}}">{{item.dataStatus==0?'即将开抢':item.dataStatus==200?'进行中':'已结束'}}</text>
+            <text class="white px22" wx:if="{{index>1}}">明日开始</text>
+        </view>
+    </view>
+    <view class="title-row row spa">
+        <text class="px26 black">数量有限 先抢先得哦</text>
+        <view class="px24 color999" wx:if="{{tabList[tabIndex].dataStatus==300||tabList[tabIndex].dataStatus==400}}">本场活动已结束</view>
+        <view class="row times ali-center" wx:if="{{tabList[tabIndex].dataStatus==0||tabList[tabIndex].dataStatus==200}}">
+            <text class="px24 color999" wx:if="{{tabList[tabIndex].dataStatus==0}}">距下一场开始</text>
+            <text class="px24 color999" wx:if="{{tabList[tabIndex].dataStatus==200}}">距本场结束</text>
+            <view class="time px22 white">{{tabList[tabIndex].txt.h}}</view>
+            <view class="black px22">:</view>
+            <view class="time px22 white">{{tabList[tabIndex].txt.m}}</view>
+            <view class="black px22">:</view>
+            <view class="time px22 white">{{tabList[tabIndex].txt.s}}</view>
+        </view>
+    </view>
+    <view class="optimization col">
+        <view class="optimization-content col">
+            <view catchtap="{{item.status!=400?'gotoShop':''}}" class="optimization-item row spa ju-center" data-goodsId="{{item.goodsId}}" wx:for="{{tabList[tabIndex].promotionGoods}}" wx:key="index">
+                <image class="optimization-shop-img" src="{{item.defalutPhotoURL}}"></image>
+                <view class="optimization-shop-info col spa">
+                    <text class="px24 black">{{item.goodsName}}</text>
+                    <view class="row spa ali-center">
+                        <view class="prices col">
+                            <text class="price px30 bold">￥{{item.price}}</text>
+                            <text class="price-not px20">￥{{item.marketPrice}}</text>
+                        </view>
+                        <view class="col ju-center flex-right">
+                            <view catchtap="gotoShop" class="now-buy text-center px22" data-goodsId="{{item.goodsId}}" wx:if="{{item.status==200}}">马上抢></view>
+                            <view class="now-buy text-center px22" wx:if="{{item.status==201}}">已抢光></view>
+                            <view class="start-now-buy text-center px22" wx:if="{{item.status==0}}">即将开抢></view>
+                            <view class="now-buy-over text-center px22" wx:if="{{item.status==400}}">已结束></view>
+                            <view class="row ali-center ju-center">
+                                <text class="shop-num px20">已售{{item.progress}}%</text>
+                                <view class="shop-progress">
+                                    <image class="progress-main" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/progress_main.png" style="width:{{item.progress}}%"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<include src="../public/bottom.wxml" wx:if="{{tabList[tabIndex].promotionGoods.length>5}}"></include>

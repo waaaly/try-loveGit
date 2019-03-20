@@ -1,0 +1,35 @@
+<view class="act_msg" id="myLogistics" wx:if="{{list.length}}">
+    <view class="act_msg_title">
+        我的活动
+        <view bindtap="toMsgPage" class="act_msg_item_right">
+            全部消息<view class="act_msg_item_right_more"></view>
+        </view>
+    </view>
+    <view bindtap="swiperTap" class="scroll-layer"></view>
+    <swiper autoplay="{{true}}" bindchange="swiperChange" childLength="{{list.length}}" circular="{{true}}" class="act_msg_swiper" current="{{isXCX?currentSwiper:0}}" indicatorDots="{{false}}" interval="3000" vertical="{{true}}">
+        <swiper-item wx:for="{{list}}" wx:key="msgId">
+            <view class="act_msg_item">
+                <view class="act_msg_item_left">
+                    <image class="act_msg_item_left_img" mode="aspectFill" src="{{item.iconImg||'https://img11.360buyimg.com/jdphoto/s40x40_jfs/t27889/154/2077272489/675/23b49d6f/5bf76abcN41056130.png'}}"></image>
+                    <view class="act_msg_item_left_num">{{item.msgName}}</view>
+                </view>
+                <view bindtap="toActivityPage" class="act_msg_item_state" data-url="{{item.url}}">
+                    <view class="act_msg_item_state_title">
+                        <text class="act_msg_item_state_pintitle" wx:if="{{item.modelType==4}}">待成团</text> {{item.title}}</view>
+                    <view class="act_msg_item_state_subcon">
+                        <view class="act_msg_item_state_subcon_imgs" wx:if="{{item.modelType!=2&&item.img.length}}">
+                            <image class="act_msg_item_state_subcon_imgs_img" mode="aspectFill" src="{{img}}" wx:for="{{item.img}}" wx:for-item="img"></image>
+                        </view>
+                        <view class="act_msg_item_state_subcon_text line2 {{item.modelType==1?'small-width':''}}" wx:if="{{item.modelType==1||item.modelType==2}}">{{item.subTitle}}</view>
+                        <view class="act_msg_item_state_subcon_text" wx:if="{{item.modelType==4}}">{{item.isCountDownStop?'拼购已结束':item.lefttime}}
+                            <view class="act_msg_item_state_subcon_text_header">
+                                <view class="act_msg_item_state_subcon_text_header_img" mode="aspectFill" style="background:{{'url('+header+') no-repeat 0 0 / 100% 100%'}};z-index:{{item.profilePic.length-headeridx}};left:{{-headeridx*7.5}}px" wx:for="{{item.profilePic}}" wx:for-index="headeridx" wx:for-item="header"></view>
+                            </view>
+                        </view>
+                        <view class="act_msg_item_state_subcon_btn">{{item.btnTitle||'去看看'}}</view>
+                    </view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>

@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "确认订单",
+    "usingComponents": {
+        "pinbind": "../../components/pinbindnew/pinbind",
+        "dialog": "../../../common/dialog/dialog",
+        "wechat-nopwd-pay": "../../../components/wechat-nopwd-pay/wechat-nopwd-pay"
+    }
+}

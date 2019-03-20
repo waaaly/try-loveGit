@@ -1,0 +1,24 @@
+.box {
+    background-color: white;
+    padding: 20rpx;
+    line-height: 50rpx;
+    font-size: 14px;
+    height: 100%;
+}
+
+.box_tt {
+    padding-top: 100rpx;
+}
+
+.text_titel {
+    font-size: 20px;
+    text-align: center;
+    color: #000;
+    margin-bottom: 30rpx;
+}
+
+.text_center {
+    font-size: 12px;
+    text-align: center;
+    color: #c5c5c5;
+}

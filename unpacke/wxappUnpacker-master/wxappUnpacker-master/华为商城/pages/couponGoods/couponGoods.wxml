@@ -1,0 +1,35 @@
+<view bindtap="goProduct" data-prdId="{{product.skuPriceInfo.disPrdId}}" data-skuCode="{{product.skuPriceInfo.sbomCode}}" id="goProduct" wx:if="{{!showError}}" wx:for="{{detailDispInfos}}" wx:for-item="product" wx:key="key">
+    <view class="coupon-goods-box display-flex">
+        <view class="coupon-goods-img flex-shrink-0">
+            <image src="{{cdnPath}}{{product.skuPriceInfo.photoPath}}428_428_{{product.skuPriceInfo.photoName}}"></image>
+        </view>
+        <view class="coupon-goods-theme">
+            <view class="coupon-goods-title {{product.skuPriceInfo.sbomPromoWord?'ellipsis-one':'ellipsis-tow'}}">
+                <text>{{product.skuPriceInfo.sbomName}}</text>
+            </view>
+            <view class="coupon-goods-tips">{{product.skuPriceInfo.sbomPromoWord}}</view>
+            <view class="coupon-goods-price" wx:if="{{product.skuPriceInfo.priceMode==1&&(product.skuPriceInfo.unitPrice||product.skuPriceInfo.orderPrice)}}">
+                <text class="new-price" wx:if="{{product.skuPriceInfo.unitPrice}}">¥{{product.skuPriceInfo.unitPrice}}</text>
+                <text class="old-price" wx:if="{{product.skuPriceInfo.unitPrice&&product.skuPriceInfo.orderPrice&&product.skuPriceInfo.unitPrice!=product.skuPriceInfo.orderPrice}}">¥{{product.skuPriceInfo.orderPrice}}</text>
+            </view>
+            <view class="coupon-goods-price" wx:if="{{product.skuPriceInfo.priceMode==2}}">
+                <view class="new-price">暂无报价</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="system-empty" wx:if="{{showError}}">
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="../../imgs/system-error.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>对不起，找不到商品</text>
+        </view>
+        <view class="system-empty-btn">
+            <navigator class="button-style-3" openType="switchTab" url="../index/index">
+                <text>返回首页</text>
+            </navigator>
+        </view>
+    </view>
+</view>

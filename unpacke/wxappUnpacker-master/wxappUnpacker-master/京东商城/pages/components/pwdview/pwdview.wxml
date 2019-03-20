@@ -1,0 +1,11 @@
+<view bindtap="onTap" class="swrap">
+    <block wx:if="{{isShortPwd}}">
+        <view class="item {{index==0?'first':index==5?'last':''}}" wx:for="{{6}}" wx:key="{{ index }}">
+            <view class="content">
+                <view class="{{focus&&password.length==index?'cursor':password.length>index?'dot':''}}"></view>
+            </view>
+        </view>
+        <input bindblur="onBlur" bindinput="onInput" class="input" cursorSpacing="40" focus="{{focus}}" maxlength="6" password="true" type="number"></input>
+    </block>
+    <input bindinput="onInput" class="long_input" cursorSpacing="40" password="true" placeholder="请输入京东支付密码" placeholderStyle="color: #BBB" type="text" wx:else></input>
+</view>

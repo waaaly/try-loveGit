@@ -1,0 +1,9 @@
+<view class="guide_add_xcx" wx:if="{{ziyuanweiShow}}">
+    <view bindtap="clickZiyuanwei" class="ziyuanwei"></view>
+    <view bindtap="clickLayer" catchtouchmove="disMove" class="guide_layer" hidden="{{!layerShow}}">
+        <view class="guide_layer_bg {{guideLayer}}"></view>
+        <view class="guide_button_wrap">
+            <view bindtap="iKnow" class="guide_button left">知道啦</view>
+        </view>
+    </view>
+</view>

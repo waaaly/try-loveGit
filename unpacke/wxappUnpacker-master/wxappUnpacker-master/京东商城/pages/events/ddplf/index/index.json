@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "多店铺拉粉",
+    "usingComponents": {
+        "ddplf_main": "./components/main/main"
+    }
+}

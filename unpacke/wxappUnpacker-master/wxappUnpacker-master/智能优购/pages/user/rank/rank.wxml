@@ -1,0 +1,48 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<import src="/template/login/login.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<template is="login" data wx:if="{{isLogin}}"></template>
+<view class="swiper-tab row spa ali-center " wx:if="{{!loadlayer&&dataset.userid!=0}}">
+    <view class="swiper-tab-list  {{currentTab==index?'on':''}}" wx:if="{{index>1?userType==1?true:false:true}}" wx:for="{{tabdata}}">
+        <text catchtap="swichNav" data-current="{{index}}">{{item.title}}</text>
+        <view class="spa_line" wx:if="{{currentTab==index}}"></view>
+    </view>
+</view>
+<swiper bindchange="bindChange" circular="{{false}}" class="swiper-box" current="{{currentTab}}" duration="{{duration}}" style="height:{{winHeight-31}}px" wx:if="{{!loadlayer&&dataset.userid!=0}}">
+    <swiper-item wx:if="{{inx1>1?userType==1?true:false:true}}" wx:for="{{tabdata}}" wx:for-index="inx1" wx:for-item="item1">
+        <scroll-view bindscrolltolower="bindScrollTolowerTap" class="scroll-view_H" enableBackToTop="{{true}}" scrollY="true" style="height:{{scheight}}rpx;">
+            <view class="prompat px26 color80" wx:if="{{item1.prompat}}">暂无排名~~</view>
+            <view class="sloadding" wx:if="{{item1.switchtaping==1}}">
+                <image src="/images/loadding.gif"></image>
+            </view>
+            <view class="list">
+                <view class="list_title row" wx:if="{{item1.switchtaping!=1&&currentTab==inx1&&item1.dataset.length>0}}">
+                    <view class="list_title_txt1 spaColor">排名</view>
+                    <view class="list_title_txt2 spaColor">头像</view>
+                    <view class="list_title_txt3 spaColor">昵称</view>
+                    <view class="list_title_txt4 spaFont spaColor">业绩指数</view>
+                </view>
+                <view class="brand row" wx:if="{{item1.switchtaping!=1&&currentTab==inx1}}" wx:for="{{item1.dataset}}" wx:key="{{index}}">
+                    <view class="list_title_txt1  col ju-center ali-center">
+                        <text class="no_txt" wx:if="{{index>2}}">NO.{{index+1}}</text>
+                        <image class="no_img" src="/images/rank_img1.png" wx:if="{{index==0}}"></image>
+                        <image class="no_img" src="/images/rank_img2.png" wx:if="{{index==1}}"></image>
+                        <image class="no_img" src="/images/rank_img3.png" wx:if="{{index==2}}"></image>
+                    </view>
+                    <view class="list_title_txt2 col ju-center ali-center">
+                        <image class="user_logo" mode="aspectFill" src="{{item.imgUrl}}"></image>
+                    </view>
+                    <view class="list_title_txt3 ovr">
+            {{item.userName}}
+          </view>
+                    <view class="list_title_txt4 {{index==0||index==1||index==2?'spaCols':'spaClos2'}}">
+            {{item.giftCount}}
+          </view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+</swiper>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

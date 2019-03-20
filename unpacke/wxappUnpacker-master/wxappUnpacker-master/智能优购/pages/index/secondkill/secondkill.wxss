@@ -1,0 +1,155 @@
+@import "../public/bottom.wxss";
+
+page {
+    background: #F9F9F9;
+}
+
+.head {
+    height: 112rpx;
+    overflow: hidden;
+}
+
+.item {
+    width: 25%;
+    height: 100rpx;
+    background: #000;
+}
+
+.head .active-item {
+    height: 112rpx;
+    padding-bottom: 12rpx;
+    box-sizing: border-box;
+    background: url('https://grtimg.oss-cn-beijing.aliyuncs.com/temp/time_bg.png') no-repeat 100% 100%;
+    background-size: 100% 100%;
+}
+
+.title-row .time {
+    width: 34rpx;
+    height: 34rpx;
+    margin: 0 3rpx;
+    line-height: 34rpx;
+    text-align: center;
+    background: #000;
+    border-radius: 2rpx;
+}
+
+.title-row {
+    padding: 20rpx 20rpx;
+    box-sizing: border-box;
+}
+
+.title-row .px24 {
+    margin-right: 10rpx;
+}
+
+.title-row .times .black {
+    margin: 0 6rpx;
+}
+
+.price {
+    color: #E71E21;
+}
+
+.optimization-shop-info .price-not {
+    color: #666;
+    text-decoration: line-through;
+}
+
+.optimization {
+    width: 710rpx;
+    margin: 20rpx auto;
+    border-radius: 10rpx;
+    position: relative;
+}
+
+.optimization-content {
+    padding: 0 15rpx;
+}
+
+.optimization-item {
+    background: #fff;
+    border-radius: 10rpx;
+    margin: 8rpx 0;
+    overflow: hidden;
+}
+
+.optimization-shop-img {
+    width: 194rpx;
+    height: 240rpx;
+    margin-right: 24rpx;
+}
+
+.optimization-shop-info {
+    width: 477rpx;
+    padding: 19rpx;
+    box-sizing: border-box;
+}
+
+.tag-list .tag {
+    padding: 3rpx 15rpx;
+    border: 2rpx solid #F11717;
+    border-radius: 20rpx;
+    margin: 3rpx;
+    color: #F11717;
+}
+
+.optimization-shop-info .now-buy {
+    width: 130rpx;
+    height: 54rpx;
+    text-align: center;
+    line-height: 54rpx;
+    color: #fff;
+    border-radius: 30rpx;
+    margin-bottom: 10rpx;
+    background: url('https://grtimg.oss-cn-beijing.aliyuncs.com/temp/kill_bg_2.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.now-buy-over {
+    width: 130rpx;
+    height: 54rpx;
+    text-align: center;
+    line-height: 54rpx;
+    background: #B5B5B5;
+    color: #fff;
+    border-radius: 30rpx;
+    margin-bottom: 10rpx;
+}
+
+.start-now-buy {
+    width: 130rpx;
+    height: 54rpx;
+    text-align: center;
+    line-height: 54rpx;
+    color: #fff;
+    border-radius: 30rpx;
+    margin-bottom: 10rpx;
+    background: url('https://grtimg.oss-cn-beijing.aliyuncs.com/temp/kill_bg_1.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.shop-progress {
+    width: 136rpx;
+    height: 14rpx;
+    margin-left: 5rpx;
+    position: relative;
+    background: #F9F9F9;
+    border-radius: 7rpx;
+}
+
+.progress-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10rpx;
+}
+
+.bg1 {
+    background: url('https://grtimg.oss-cn-beijing.aliyuncs.com/temp/kill_bg_2.png') no-repeat 100% 100%;
+}
+
+.flex-right {
+    align-items: flex-end;
+}

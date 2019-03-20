@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "选择地址",
+    "usingComponents": {
+        "AddressList": "/components/AddressList/AddressList"
+    }
+}

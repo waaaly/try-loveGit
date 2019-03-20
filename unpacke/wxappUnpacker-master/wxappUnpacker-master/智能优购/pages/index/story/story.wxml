@@ -1,0 +1,9 @@
+<view class="box">
+    <view class="box_tt">
+        <view class="text_titel">筹备中...</view>
+        <view class="text_center">预计2018年7月20号正式上线</view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

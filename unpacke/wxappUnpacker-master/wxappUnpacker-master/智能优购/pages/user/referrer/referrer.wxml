@@ -1,0 +1,27 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="row header">
+    <text class="px100">{{totalcount}}</text>
+    <text class="px30">我推荐的人</text>
+</view>
+<view class="record">
+    <view class="norcord black" wx:if="{{dataset.length==0}}">没有任何记录~~~</view>
+    <view class="item row ali-center" data-userid="{{item.id}}" wx:for="{{dataset}}" wx:key="index">
+        <text class="black px32 bold">{{index+1}}.</text>
+        <image src="{{item.pic}}"></image>
+        <text class="black px28 bold name">{{item.nickname}}</text>
+    </view>
+    <view class="clear"></view>
+</view>
+<view class="recommend_bottom" wx:if="{{dataset.length>10}}">
+    <view class="bottomcenter" wx:if="{{!loadIsEnd}}">
+        <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载...
+  </view>
+    <view class="endparent" wx:if="{{loadIsEnd}}">
+        <view class="bottomp">已经到底部了</view>
+        <view class="bottomline"></view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

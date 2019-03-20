@@ -1,0 +1,19 @@
+<view catchtouchmove="preventD" class="ecWap-mask" hidden="{{showType=='showNone'}}"></view>
+<view class="ecWap-box-middle" hidden="{{showType!='showAll'}}">
+    <view class="ecWap-box ecWap-box-center ecWap-box-normal ecWap-box-change">
+        <view class="ecWap-box-content">
+            <view class="ecWap-dialog-header">{{titleTips}}</view>
+            <view class="ecWap-dialog-content" style="text-align: center">
+                <text>{{contentTips}}</text>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <button bindtap="closeModal" class="ecWap-box-cancle" plain="true">
+                <text>取消</text>
+            </button>
+            <button bindgetuserinfo="bindGetUserInfo" bindtap="closeTips" class="ecWap-box-ok" openType="getUserInfo" plain="true">
+                <text>授权登录</text>
+            </button>
+        </view>
+    </view>
+</view>

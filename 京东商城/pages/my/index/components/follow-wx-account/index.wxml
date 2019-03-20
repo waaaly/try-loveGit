@@ -1,0 +1,52 @@
+<view>
+    <view wx:if="{{isNotFollowAcc}}">
+        <view class="mod_follow">
+            <view class="name">
+                <view>京东JD.COM</view>
+                <text class="small-text">认证服务号</text>
+            </view>
+            <view class="follow">
+                <view bindtap="toggleAccount" class="btn_qr_my" data-sqtag="7155.2.38" data-tag="care" data-wxtag="7155.1.38" ptag="7155.1.38">
+                    点击关注京东服务号
+                </view>
+                <text class="small-text">关注后，即可获得更多优惠</text>
+            </view>
+        </view>
+        <view class="mod_qr_layer_my" wx:if="{{isShowQR}}">
+            <view class="inner">
+                <text bindtap="toggleAccount" class="close"></text>
+                <text class="qr-title">关注“京东JD.COM”服务号</text>
+                <text class="qr-sub_title">获取优惠资讯</text>
+                <view class="qr">
+                    <image class="qr-image" src="//wq.360buyimg.com/fd/base/img/base/jd_qr_v1.jpg"></image>
+                    <text class="tips">长按二维码关注</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{isNotFollowGwqAcc}}">
+        <view class="mod_follow">
+            <view class="name">
+                <view>京东购物圈</view>
+                <text class="small-text">认证服务号</text>
+            </view>
+            <view class="follow">
+                <view bindtap="toggleGwqAccount" class="btn_qr_my" data-sqtag="7155.2.38" data-tag="care" data-wxtag="7155.1.38" ptag="7155.1.38">
+                    点击京东购物圈服务号
+                </view>
+                <text class="small-text">获取最走心的好货推荐</text>
+            </view>
+        </view>
+        <view class="mod_qr_layer_my" wx:if="{{isShowGwqQR}}">
+            <view class="inner">
+                <text bindtap="toggleGwqAccount" class="close"></text>
+                <text class="qr-title">关注“京东购物圈”服务号，才能</text>
+                <text class="qr-sub_title">及时获取最走心的好货推荐哦</text>
+                <view class="qr">
+                    <image class="qr-image" src="//wq.360buyimg.com/data/ppms/picture/gouwuquanscare.jpg"></image>
+                    <text class="tips">长按二维码关注</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

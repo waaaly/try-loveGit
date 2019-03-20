@@ -1,0 +1,42 @@
+<view class="news" hidden="{{hideModule}}">
+    <view bind:tap="gotoUrl" class="news-title" data-url="https://wqs.jd.com/my/toutiao.shtml?ptag=138067.32.34"></view>
+    <view bindtouchend="handletouchend" bindtouchmove="handletouchmove" bindtouchstart="handletouchstart" class="news-slider">
+        <view bind:tap="gotoUrl" class="news-slider__item {{classIndex[index]}}" data-url="{{item.url}}" wx:for="{{entries}}" wx:key="{{ item.title }}">
+            <image class="saleIcon" hidden="{{!config.icon}}" src="{{config.icon}}"></image>
+            <view class="news-head">
+                <view class="news-head__tag" wx:if="{{item.tag}}">{{item.tag}}</view>
+                <view class="news-head__text">{{item.title}}</view>
+            </view>
+            <view class="news-content">
+                <view class="news-content__text" wx:if="{{item.type=='201'||item.type=='202'}}">来自<view>{{item.text}}</view>
+                </view>
+                <block wx:elif="{{item.type=='214'||item.type=='215'||item.type=='216'||item.type=='217'}}">
+                    <image class="news-content__image" hidden="{{!item.logo||!item.text}}" src="{{item.logo}}"></image>
+                    <view class="news-content__text">来自<view>购物圈好友<view style="max-width: 150rpx;margin-left: 0;">{{item.text}}</view>的分享</view>
+                    </view>
+                </block>
+                <block wx:elif="{{item.type=='212'}}">
+                    <image class="news-content__image" hidden="{{!item.logo||!item.text}}" src="{{item.logo}}"></image>
+                    <view class="news-content__text">来自<view>
+                            <view style="max-width: 240rpx;margin-left: 0;">{{item.text}}</view>的安利</view>
+                    </view>
+                </block>
+                <block wx:elif="{{item.type=='213'}}">
+                    <image class="news-content__image" src="{{item1}}" wx:if="{{index1<3}}" wx:for="{{item.logo}}" wx:for-index="index1" wx:for-item="item1" wx:key="item1"></image>
+                    <view class="news-content__text" wx:if="{{item.logo.length==1}}">来自<view>购物圈好友{{item.text}}</view>
+                    </view>
+                    <view class="news-content__text" wx:elif="{{item.logo.length>1}}">等{{item.logo.length}}位好友都在参与</view>
+                    <view class="news-content__text" wx:else>购物圈好友都在玩</view>
+                </block>
+                <block wx:else>
+                    <view class="news-content__logo" hidden="{{!item.shop||!item.text}}"></view>
+                    <image class="news-content__image" hidden="{{!item.logo||!item.text}}" src="{{item.logo}}"></image>
+                    <view class="news-content__text" wx:if="{{item.logo&&item.text}}">来自<view>{{item.text}}</view>
+                    </view>
+                    <view class="news-content__text" wx:else>{{item.text}}</view>
+                </block>
+            </view>
+            <image class="news-image" mode="aspectFill" src="{{item.image}}"></image>
+        </view>
+    </view>
+</view>

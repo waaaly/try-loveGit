@@ -1,0 +1,380 @@
+page {
+    background: #f2f2f2;
+}
+
+.swiper-tab {
+    width: 100%;
+    border-top: 1rpx solid #f2f2f2;
+    border-bottom: 2rpx solid #f1f1f1;
+    text-align: center;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    height: 80rpx;
+    padding: 0rpx 20rpx 0rpx 20rpx;
+    line-height: 73rpx;
+}
+
+.swiper-tab-list {
+    font-size: 28rpx;
+    display: inline-block;
+    flex: 1;
+    height: 100%;
+    color: #222;
+}
+
+.list {
+    padding-top: 69rpx;
+    overflow: hidden;
+    border-radius: 10rpx;
+}
+
+swiper-item {
+    margin-top: 80rpx;
+}
+
+.on {
+    color: #f11717;
+}
+
+.swiper-box {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.prompat {
+    text-align: center;
+    padding-top: 200rpx;
+}
+
+.sloadding {
+    text-align: center;
+    padding-top: 200rpx;
+    width: 100%;
+}
+
+.sloadding image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.brand {
+    background-color: white;
+    height: 126rpx;
+    line-height: 126rpx;
+    text-align: center;
+    border-bottom: 1rpx solid #f2f2f2;
+}
+
+.brand .name {
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 12px;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 20rpx;
+}
+
+.brand .name span {
+    float: right;
+    font-size: 14px;
+    color: #f4241a;
+    padding-right: 20rpx;
+}
+
+.brand .mbox {
+    background-color: #f1f1f1;
+}
+
+.brand .mbox .picbox {
+    float: left;
+    width: 200rpx;
+    padding: 20rpx;
+}
+
+.brand .mbox .picbox image {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.brand .mbox .name2 {
+    float: left;
+    width: 530rpx;
+}
+
+.brand .mbox .name2 .intro {
+    margin-top: 20rpx;
+    font-size: 12px;
+    height: 75rpx;
+    overflow: hidden;
+}
+
+.brand .mbox .par {
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #f4241a;
+    font-size: 30rpx;
+}
+
+.brand .mbox .par span {
+    float: right;
+    font-size: 12px;
+    color: black;
+}
+
+.brand .total {
+    width: 100%;
+    font-size: 12px;
+    background-color: white;
+    text-align: right;
+    padding-right: 20rpx;
+    padding-bottom: 20rpx;
+}
+
+.brand .total span {
+    color: #f4241a;
+}
+
+.brand .total i {
+    padding-left: 30rpx;
+}
+
+.brand .buttons {
+    background-color: white;
+    height: 100rpx;
+    border-top: 1px solid #f1f1f1;
+    padding-top: 20rpx;
+}
+
+.brand .buttons .box {
+    float: right;
+}
+
+.brand .buttons .box view {
+    border-radius: 10rpx;
+    margin-right: 10px;
+    border: 1px solid #f1f1f1;
+    float: left;
+    text-align: center;
+    font-size: 12px;
+    padding: 10rpx 20rpx 10rpx 20rpx;
+}
+
+.brand .button2 {
+    width: 138rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 22rpx!important;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(241,23,23,1)!important;
+    background: rgba(242,242,242,0)!important;
+    border: 1rpx solid rgba(241,23,23,1)!important;
+    border-radius: 25rpx!important;
+    padding: 0!important;
+}
+
+.zhanwei {
+    height: 100rpx;
+}
+
+.bottom {
+    height: 100rpx;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    background-color: white;
+}
+
+.bottom .slider {
+    position: relative;
+    height: 1px;
+    background-color: #e8e8e8;
+}
+
+.bottom .slider .line {
+    position: absolute;
+    top: 0;
+    height: 1px;
+    background-color: limegreen;
+}
+
+.bottom .content {
+    padding: 0rpx 20rpx 20rpx 20rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.bottom .content view {
+    float: left;
+}
+
+.bottom .content .img {
+    position: relative;
+    width: 90rpx;
+    padding-bottom: 20rpx;
+}
+
+.bottom .content .img image {
+    position: absolute;
+    top: 15rpx;
+    width: 65rpx;
+    height: 65rpx;
+    border-radius: 50%;
+}
+
+.bottom .content .name {
+    width: 500rpx;
+}
+
+.bottom .content .pause {
+    width: 50rpx;
+    position: relative;
+}
+
+.bottom .content .pause image {
+    width: 50rpx;
+    height: 50rpx;
+    left: 30rpx;
+    position: absolute;
+    top: 22rpx;
+}
+
+.login {
+    background-color: #fff;
+    padding-top: 300rpx;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.login .prompt {
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    line-height: 150rpx;
+}
+
+.login .button {
+    width: 200rpx;
+    line-height: 80rpx;
+    font-size: 14px;
+    height: 80rpx;
+    background-color: #f4241a;
+    border-radius: 8rpx;
+    text-align: center;
+    margin-left: 275rpx;
+    color: white;
+    position: relative;
+}
+
+.scroll-view_H {
+    width: 710rpx;
+    margin: 0 auto;
+    padding-top: 20rpx;
+    border-radius: 10rpx;
+}
+
+.list_title {
+    width: 710rpx;
+    margin: 0 auto;
+    height: 69rpx;
+    line-height: 69rpx;
+    font-size: 26rpx;
+    background: #fff;
+    position: fixed;
+    top: 20rpx;
+    border-radius: 10rpx 10rpx 0 0;
+    font-family: HiraginoSansGB-W3;
+    font-weight: normal;
+    text-align: center;
+    border-bottom: 1rpx solid #f2f2f2;
+    color: rgba(102,102,102,1);
+}
+
+.list_title_txt1 {
+    width: 138rpx;
+}
+
+.list_title_txt2 {
+    width: 165rpx;
+}
+
+.list_title_txt3 {
+    width: 175rpx;
+    font-size: 28rpx;
+    font-family: HiraginoSansGB-W3;
+    font-weight: normal;
+    color: rgba(0,34,34,1);
+}
+
+.list_title_txt4 {
+    width: 240rpx;
+    font-size: 32rpx;
+    color: #222;
+}
+
+.spa_line {
+    width: 76rpx;
+    height: 5rpx;
+    margin: 0 auto;
+    background: linear-gradient(90deg,rgba(241,23,23,1),rgba(252,67,67,1));
+    border: 1rpx solid rgba(241,23,23,1);
+    box-shadow: 0rpx 1rpx 3rpx 0rpx rgba(242,29,29,0.18);
+    border-radius: 2rpx;
+}
+
+.on::after {
+    width: 76rpx;
+    height: 5rpx;
+    margin: 0 auto;
+    background: linear-gradient(90deg,rgba(241,23,23,1),rgba(252,67,67,1));
+    border: 1rpx solid rgba(241,23,23,1);
+    box-shadow: 0rpx 1rpx 3rpx 0rpx rgba(242,29,29,0.18);
+    border-radius: 2rpx;
+}
+
+.no_txt {
+    text-align: center;
+    font-size: 28rpx;
+    font-family: HiraginoSansGB-W3;
+    font-weight: normal;
+}
+
+.spaCols {
+    color: #eb5536;
+    font-size: 32rpx;
+    font-weight: bold;
+}
+
+.spaCols2 {
+    color: #222;
+    font-size: 32rpx;
+    font-weight: bold;
+}
+
+.no_img {
+    width: 64rpx;
+    height: 72rpx;
+}
+
+.user_logo {
+    width: 88rpx;
+    height: 88rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.spaFont {
+    font-size: 28rpx;
+}
+
+.spaColor {
+    color: #666;
+}

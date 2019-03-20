@@ -1,0 +1,10 @@
+var protocol2HTTPS = (function(url) {
+    url = undefined === url ? '' : url;
+    if (!url || url.constructor !== 'String') {
+        return (url)
+    };
+    return (url.replace(getRegExp('(^|http:|https:)\x5c/\x5c/'), 'https://'))
+});
+module.exports = ({
+    protocol2HTTPS: protocol2HTTPS,
+});

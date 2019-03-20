@@ -1,0 +1,53 @@
+page {
+    background-color: F2F2F2;
+}
+
+.header {
+    padding: 30rpx 45rpx;
+    background: #fff;
+    align-items: flex-end;
+}
+
+.px50 {
+    font-size: 70rpx;
+    line-height: 1;
+    margin-right: 10rpx;
+}
+
+.norcord {
+    text-align: center;
+    font-size: 15px;
+    padding: 20px 0px 30px 0px;
+}
+
+.record {
+    margin-top: 10rpx;
+}
+
+.header text {
+    line-height: 1;
+}
+
+.record .item {
+    padding: 30rpx 45rpx;
+    background: #fff;
+}
+
+.record .item:nth-child(2n) {
+    background: rgb(244,245,247);
+}
+
+.item image {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 100rpx;
+    margin: 0 20rpx;
+    border: 4rpx solid #fff;
+}
+
+.item .name {
+    width: 450rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

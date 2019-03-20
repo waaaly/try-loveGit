@@ -1,0 +1,28 @@
+<import src="/template/footer/footer.wxml"></import>
+<view class="item-box">
+    <view class="items">
+        <view class="item" wx:for="{{list}}" wx:key="{{index}}">
+            <view bindtouchend="touchE" bindtouchmove="touchM" bindtouchstart="touchS" catchtap="gotoShop" class="inner txt" data-goodsid="{{item.goodsId}}" data-index="{{index}}" style="{{'left:'+item.txtStyle+'rpx'}}">
+                <view class="row ali-center">
+                    <image class="shop-img" src="{{item.defalutPhotoURL}}"></image>
+                    <view class="col infos spa">
+                        <text class="shop-t px28 w100  {{item.isEnable?'black':'color999'}}">{{item.goodsName}}</text>
+                        <text class="num color999 px24">{{item.starNum}}人收藏</text>
+                        <text class="price">￥{{item.price}}</text>
+                    </view>
+                    <image alt="" class="not-in-shop" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/not_in_shop.png" wx:if="{{!item.isEnable}}"></image>
+                </view>
+            </view>
+            <view catchtap="delItem" class="inner px20 del {{item.txtStyle?'show':'hide'}}" data-index="{{index}}">取消收藏</view>
+        </view>
+        <template is="footer" data wx:if="{{page.total>=6}}"></template>
+        <view class="not-data col ali-center" wx:if="{{page.total==0}}">
+            <image src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/not_collection.png"></image>
+            <view class="col">
+                <text class="px30 text-center black">暂无收藏</text>
+                <text class="px22 text-center color999">喜欢就收藏，万一降价了呢~</text>
+                <view catchtap="gotoShoping" class="goto_btn text-center px30">逛逛跨境优选</view>
+            </view>
+        </view>
+    </view>
+</view>

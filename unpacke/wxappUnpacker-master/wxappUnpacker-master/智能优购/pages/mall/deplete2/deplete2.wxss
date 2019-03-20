@@ -1,0 +1,6 @@
+.box {
+    background-color: white;
+    padding: 20rpx;
+    line-height: 50rpx;
+    font-size: 14px;
+}

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "促销搜索",
+    "usingComponents": {
+        "filter-sort": "../../components/filter-sort/index",
+        "search-bar": "../../components/search-bar/index",
+        "cart-subtotal": "../../components/cart-subtotal/index",
+        "gift-panel": "../../components/gift-panel/index"
+    }
+}

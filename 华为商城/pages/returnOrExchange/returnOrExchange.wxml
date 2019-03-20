@@ -1,0 +1,157 @@
+<view class="rma-nav bg_white">
+    <view class="rma-nav-tab bg_white">
+        <view bindtap="goToMainList" class="{{mainOrdersTab?'selected':'default'}}">
+            <text>售后申请</text>
+        </view>
+        <view bindtap="goToApplyedList" class="{{applyedOrdersTab?'selected':'default'}}">
+            <text>申请记录</text>
+        </view>
+    </view>
+</view>
+<scroll-view bindscrolltolower="loadMainOrder" class="rma-tab-box" lowerThreshold="5" scrollTop="{{scrollTop}}" scrollY="true" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" wx:if="{{mainOrdersTab}}">
+    <view class="rma-mate-area" data-index="{{index}}" wx:for="{{userOrderList}}" wx:key="{{index}}">
+        <view class="rma-mate-list bg_white">
+            <view class="rma-mate-header">
+                <view class="order-number">
+                    <text class="spell" wx:if="{{item.orderType==33}}">拼团</text>
+                    <text>订单号：{{item.orderCode}}</text>
+                </view>
+                <view class="order-time">{{item.signDate}} 签收</view>
+            </view>
+            <navigator class="sys-good-area" url="../orderDetail/orderDetail?orderCode={{item.orderCode}}" wx:if="{{item.userOrder}}">
+                <block wx:for="{{item.userOrder.productList}}" wx:for-item="subitem" wx:key="{{index}}">
+                    <view class="sys-good-item rma-good-item">
+                        <view class="good-panels">
+                            <view class="good-img">
+                                <image src="{{cdnPath}}{{subitem.photoPath}}428_428_{{subitem.photoName}}"></image>
+                            </view>
+                            <view class="good-info">
+                                <view class="good-name">
+                                    <text>{{subitem.name}}</text>
+                                </view>
+                                <view class="good-price-num">
+                                    <view class="good-price red">¥ {{subitem.orderPrice}}</view>
+                                    <view class="good-num">x{{subitem.quantity}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="sys-good-item rma-good-item" wx:for="{{subitem.prdGiftList}}" wx:for-item="item3" wx:key="{{index}}">
+                        <view class="good-panels">
+                            <view class="good-icon">
+                                <image src="../../imgs/icon_gift.png"></image>
+                            </view>
+                            <view class="good-img">
+                                <image src="{{cdnPath}}{{item3.photoPath}}428_428_{{item3.photoName}}"></image>
+                            </view>
+                            <view class="good-info">
+                                <view class="good-name">
+                                    <text>{{item3.giftName}}</text>
+                                </view>
+                                <view class="good-price-num">
+                                    <view class="good-price red">
+                                        <text class="good-order-price"></text>
+                                    </view>
+                                    <view class="good-num">x{{item3.giftQuantity}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </navigator>
+            <view class="rma-mate-footer">
+                <view class="rma-mate-cont">
+                    <view class="price">金额 :
+                <text class="price-text" wx:if="{{item.userOrder}}">¥ {{item.userOrder.cashPay}}</text>
+                    </view>
+                </view>
+                <view class="rma-mate-action">
+                    <navigator class="wxButton-style-3" hoverClass="navigator-hover" url="../returnOrExchange/returnExchangeSubmit?orderCode={{item.orderCode}}&applyType=1" wx:if="{{item.rmaStatus=='2'}}">
+                        <text>退货</text>
+                    </navigator>
+                    <navigator class="wxButton-style-3" hoverClass="navigator-hover" url="../returnOrExchange/returnExchangeSubmit?orderCode={{item.orderCode}}&applyType=2" wx:if="{{item.rmaStatus=='2'||item.rmaStatus=='1'}}">
+                        <text>换货</text>
+                    </navigator>
+                    <view class="rma-mate-action-text red" wx:if="{{item.rmaStatus=='0'}}">
+                已过退换货时限
+              </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="rma-tip" wx:if="{{userOrderList.length>0}}">
+        <text>自签收日起，七天内可退货；15天内可换货</text>
+    </view>
+    <view wx:if="{{!totalListloaded&&userOrderList.length>0}}">
+        <view bindtap="onToast" class="loading">
+            <image src="../../imgs/icon_pull.png"></image>
+            <text class="more-loading">上拉加载更多订单</text>
+        </view>
+        <view class="loading" wx:if="{{loadingShow}}">
+            <image src="../../imgs/loading.gif"></image>
+        </view>
+    </view>
+    <view class="rma-empty" wx:if="{{userOrderList.length==0&&getListFaild}}">
+        <view class="rma-empty-cont">
+            <view class="rma-empty-icon">
+                <image src="imgs/empty-order.png"></image>
+            </view>
+            <view class="rma-empty-title">
+                <text>您没有可以申请退换货的订单</text>
+            </view>
+            <view class="rma-empty-tip">
+                <text>提示：按照国家三包政策，华为商城针对所销售商品提供7天退货、15天换货服务，有效期从签收次日0点算起。部分特殊商品不支持7天无理由退货。</text>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="rma-tab-box" wx:if="{{applyedOrdersTab}}">
+    <view class="rma-mate-area" data-index="{{index}}" wx:for="{{rmaInfoList}}" wx:key="{{index}}">
+        <view class="rma-mate-list bg_white">
+            <navigator url="../returnOrExchange/returnExchangeDetail?orderCode={{item.orderCode}}&rmaCode={{item.rmaCode}}&applyType={{item.applyType}}">
+                <view class="rma-mate-header rma-apply-header">
+                    <view class="order-number">退款单号：{{item.rmaCode}}</view>
+                    <view class="more">
+                        <image src="../../imgs/icon_arrow_more.png"></image>
+                    </view>
+                </view>
+            </navigator>
+            <view class="rma-mate-footer rma-apply-footer">
+                <view class="rma-mate-cont">
+                    <view class="state">状态：
+              <text class="red">{{item.statusDis}}</text>
+                    </view>
+                    <view class="time">申请时间：
+              <text>{{item.applyDate}}</text>
+                    </view>
+                </view>
+                <view class="rma-mate-action">
+                    <view bindtap="cancalApply" class="wxButton-style-3" data-rmaCode="{{item.rmaCode}}" hoverClass="navigator-hover" wx:if="{{item.status=='1'||item.status=='3'}}">
+                        <text>取消申请</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="rma-empty" wx:if="{{rmaInfoList.length==0}}">
+        <view class="rma-empty-cont">
+            <view class="rma-empty-icon">
+                <image src="imgs/empty-order.png"></image>
+            </view>
+            <view class="rma-empty-title">
+                <text>没有退换货申请记录</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="rma-empty" wx:if="{{0}}">
+    <view class="rma-empty-cont">
+        <view class="rma-empty-icon">
+            <image src="imgs/empty-order.png"></image>
+        </view>
+        <view class="rma-empty-title">
+            <text>此订单的商品已全部办理退换货，
+不可重复操作</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,3 @@
+<template is="tplCartGift" data="{{showGiftBar:showGiftBar,showGiftDetail:showGiftDetail,gifts:gifts,totle:totle}}" wx:if="{{!isEmptyCart}}"></template>
+<template is="tplEmptyGift" data="{{showToUse:showToUse,gifts:gifts}}" wx:if="{{isEmptyCart}}"></template>
+<import src="templates.wxml"></import>

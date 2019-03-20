@@ -1,0 +1,20 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="caption">点击海报，长按后保存到相册</view>
+<view class="haibao">
+    <image class="img1" src="{{bimg}}"></image>
+    <image bindload="bindimgloadded" bindtap="bindOpenImg" class="img2" src="{{mainpic}}"></image>
+</view>
+<view style=" height:200rpx;"></view>
+<view class="bottom">
+    <scroll-view scrollWithAnimation="{{true}}" scrollX="{{true}}">
+        <view class="picbox" style="width:1750rpx; ">
+            <view bindtap="bindSwitchImgtap" class="pic" data-index="{{index}}" wx:for="{{dataset}}" wx:key="unique">
+                <image src="{{item.smallpic}}"></image>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

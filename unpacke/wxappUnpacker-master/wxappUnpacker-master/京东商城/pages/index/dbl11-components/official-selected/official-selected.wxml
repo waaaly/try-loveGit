@@ -1,0 +1,84 @@
+<view class="selected" hidden="{{!entries1.length&&!entries2.length}}" style="{{config.bg}}">
+    <view class="selected-header">
+        <view class="selected-header__image"></view>
+        <view bindtap="gotoUrl" class="selected-header__btn selected-header__btn-left" data-url="{{config.leftUrl}}" hidden="{{!config.leftText}}">{{config.leftText}}</view>
+        <view bindtap="gotoUrl" class="selected-header__btn selected-header__btn-right" data-url="{{config.rightUrl}}" hidden="{{!config.rightText}}">{{config.rightText}}</view>
+        <view bindtap="changeTab" class="selected-header__tab selected-header__tab-left {{showTab=='1'?'selected-header__tab-on':''}}" data-id="1" style="{{!hidenTc?hidenTcStyle:''}}">{{config.tab1}}</view>
+        <view bindtap="changeTab" class="selected-header__tab selected-header__tab-right {{showTab=='2'?'selected-header__tab-on':''}}" data-id="2" hidden="{{!hidenTc}}">{{config.tab2}}</view>
+    </view>
+    <block wx:if="{{showTab=='1'}}">
+        <view class="selected-list1" hidden="{{entries1.length==0}}">
+            <view bindtap="gotoUrl" class="selected-list1__item" data-url="{{item.url}}" wx:for="{{entries1}}" wx:key="title">
+                <view class="selected-list1__dl selected-list1__dl-dt">{{item.title}}</view>
+                <view class="selected-list1__dl selected-list1__dl-dd selected-list1__dl-dd{{index}}">{{item.des}}</view>
+                <image class="selected-list1__image" src="{{item.image}}"></image>
+            </view>
+        </view>
+        <view class="selected-list2">
+            <view bindtap="gotoUrl" class="selected-list2__item" data-url="{{item.url}}" wx:for="{{entries2}}" wx:key="title">
+                <view class="selected-slide {{class[index]?'selected-slide--on':''}}">
+                    <view class="selected-slide__item selected-slide__item--bg {{class[index]?'selected-slide--change':''}}">
+                        <view class="selected-slide__title">{{item.title}}</view>
+                        <view class="selected-slide__des">{{item.des}}</view>
+                    </view>
+                    <view class="selected-slide__item {{class[index]?'selected-slide--change':''}}">
+                        <image class="selected-slide__image" src="{{item.image}}"></image>
+                        <view class="selected-slide__des">{{item.des}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="selected-list3" hidden="{{entries3.length!==2}}">
+            <view bindtap="gotoUrl" class="selected-list3__item" data-url="{{entries3[0].url}}">
+                <image class="selected-list3__image" mode="aspectFill" src="{{entries3[0].image}}"></image>
+                <view class="selected-list3__content">
+                    <view class="selected-list3__content--title">{{entries3[0].title}}</view>
+                    <view class="selected-list3__content--des">{{entries3[0].des}}</view>
+                </view>
+            </view>
+            <view bindtap="gotoUrl" class="selected-list3__item" data-url="{{entries3[1].url}}">
+                <image class="selected-list3__image" mode="aspectFill" src="{{entries3[1].image}}"></image>
+                <view class="selected-list3__content nth2">
+                    <view class="selected-list3__content--title">{{entries3[1].title}}</view>
+                    <view class="selected-list3__content--des">{{entries3[1].des}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view hidden="{{!hidenTc}}" wx:else>
+        <view class="selected-tab">
+            <view class="selected-tab__left" hidden="{{!tcLabConfig.pg}}">
+                <view class="selected-tab__header">{{config.pgTitle}}</view>
+                <view class="selected-tab__left--goods">
+                    <view bindtap="gotoUrl" class="selected-tab__left--goods-item" data-pg="1" data-url="{{item.url}}" wx:for="{{tcLabConfig.pg}}" wx:key="index">
+                        <view class="selected-tab__left--goods-image">
+                            <image mode="aspectFill" src="{{item.img}}"></image>
+                        </view>
+                        <view class="selected-tab__left--goods-price">￥<text>{{item.dwChPrice}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="selected-tab__right" hidden="{{!tcLabConfig.sns}}">
+                <view class="selected-tab__header">{{config.mfTitle}}</view>
+                <view bindtap="gotoUrl" class="selected-tab__right--image" data-url="{{tcLabConfig.sns.url}}">
+                    <image mode="aspectFill" src="{{tcLabConfig.sns.image}}"></image>
+                    <view class="selected-tab__right--content">
+                        <view>{{tcLabConfig.sns.des}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="selected-tab__bottom" hidden="{{!tcLabConfig.gwq}}">
+            <view class="selected-tab__bottom--header">
+                <view class="selected-tab__bottom--header-tt">{{config.gwqTitle}}</view>
+            </view>
+            <view class="selected-tab__bottom--goods">
+                <view bindtap="gotoUrl" class="selected-tab__bottom--item" data-url="{{item.url}}" wx:for="{{tcLabConfig.gwq}}" wx:key="shareid">
+                    <image class="selected-tab__bottom--item-image" mode="aspectFill" src="{{item.img}}"></image>
+                    <view class="selected-tab__bottom--item-desc">{{item.desc}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

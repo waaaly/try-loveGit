@@ -1,0 +1,5 @@
+<view class="floating" hidden="{{hideModule}}">
+    <image bindtap="gotoUrl" class="floating__image" data-url="{{config.url}}" src="{{config.image}}"></image>
+    <view bindtap="hideModule" class="floating__close"></view>
+    <view class="floating__text {{anim?'':'anim'}}" hidden="{{hideText}}">{{config.text}}</view>
+</view>

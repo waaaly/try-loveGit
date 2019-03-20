@@ -1,0 +1,67 @@
+.xlist_group {
+    background-color: #fff;
+}
+
+.xlist_group.my_cell {
+    line-height: 88rpx;
+    margin: 15px 0;
+}
+
+.xlist_group.align_top {
+    margin-top: 0;
+    background-color: #f3f2f8;
+}
+
+.xlist_item {
+    position: relative;
+    margin-left: 10px;
+    min-height: 40px;
+}
+
+.rel_container {
+    height: 72px;
+}
+
+.rel_container.rel_container_has_logis {
+    height: 280rpx;
+}
+
+.top_line_box {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+}
+
+.dot {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    margin-left: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    text-align: center;
+    font-size: 8px;
+    color: #fff;
+    background-color: #e93b3d;
+}
+
+.dot.dot_num {
+    box-sizing: border-box;
+    width: auto;
+    min-width: 14px;
+    padding: 0 4px;
+    height: 28rpx;
+    border-radius: 14px;
+    line-height: 27rpx;
+}
+
+.dot.dot-store {
+    top: 5px;
+}
+
+.dot.dot_spe {
+    top: 13px;
+    left: 55%;
+}

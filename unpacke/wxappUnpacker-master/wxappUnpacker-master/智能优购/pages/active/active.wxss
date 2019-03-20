@@ -1,0 +1,317 @@
+.act_box {
+    width: 750rpx;
+    height: auto;
+    overflow: hidden;
+    background-image: url("https://grtimg.oss-cn-beijing.aliyuncs.com/temp/active_bg_bot.png");
+}
+
+.top_bg {
+    width: 100%;
+    height: 810rpx;
+    display: block;
+}
+
+.score_gift {
+    width: 100%;
+    height: 112rpx;
+    display: block;
+    margin-top: -300rpx;
+}
+
+.big_gift {
+    width: 706rpx;
+    height: 512rpx;
+    overflow: hidden;
+    margin: 20rpx auto 45rpx;
+    background-image: url("https://grtimg.oss-cn-beijing.aliyuncs.com/temp/jingpin_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.big_gift>.big_gift_tit {
+    width: 317rpx;
+    height: 103rpx;
+    display: block;
+    margin: 30rpx auto 70rpx;
+}
+
+.big_gift>.gift_info {
+    width: 680rpx;
+    height: 230rpx;
+    margin: 0 auto;
+    position: relative;
+}
+
+.big_gift>.gift_info>.goods_img {
+    width: 232rpx;
+    height: 223rpx;
+    display: block;
+    float: left;
+    margin-left: 57rpx;
+}
+
+.big_gift>.gift_info>.sendA_score {
+    width: 116rpx;
+    height: 117rpx;
+    display: block;
+    position: absolute;
+    top: -55rpx;
+    left: 184rpx;
+}
+
+.big_gift>.gift_info>.gift_right {
+    width: 318rpx;
+    height: 100%;
+    margin-left: 44rpx;
+    float: left;
+}
+
+.big_gift>.gift_info>.gift_right>.drink {
+    width: 100%;
+    height: 35rpx;
+    display: block;
+    margin-bottom: 9rpx;
+}
+
+.big_gift>.gift_info>.gift_right>.line {
+    width: 100%;
+    height: 2rpx;
+    display: block;
+    margin-bottom: 22rpx;
+}
+
+.big_gift>.gift_info>.gift_right>.star,.star_2 {
+    display: block;
+    height: 20rpx;
+    margin-bottom: 10rpx;
+}
+
+.big_gift>.gift_info>.gift_right>.star_2 {
+    width: 266rpx;
+}
+
+.big_gift>.gift_info>.gift_right>.buy_btn {
+    width: 251rpx;
+    height: 52rpx;
+    display: block;
+    margin-top: 20rpx;
+}
+
+.wish {
+    width: 706rpx;
+    height: 682rpx;
+    margin: 0 auto 45rpx;
+    overflow: hidden;
+    background-image: url("https://grtimg.oss-cn-beijing.aliyuncs.com/temp/game_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.wish>.tip {
+    font-size: 22rpx;
+    color: #515151;
+    margin: 272rpx 0 30rpx 160rpx;
+}
+
+.wish>.act_end {
+    width: 360rpx;
+    height: 80rpx;
+    display: block;
+    margin-left: 142rpx;
+}
+
+.wish>.make_btn {
+    width: 268rpx;
+    height: 70rpx;
+    display: block;
+    margin: 20rpx 0 0 192rpx;
+}
+
+.jingpin {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 50rpx;
+}
+
+.jingpin>.jingpin_tit {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.jingpin>.jingpin_tit>.tit_img {
+    width: 640rpx;
+    height: 180rpx;
+    display: block;
+    margin-left: 32rpx;
+}
+
+.jingpin>.jingpin_tit>.tit_tip {
+    width: 714rpx;
+    height: 170rpx;
+    display: block;
+    margin: -20rpx auto 0;
+}
+
+.jingpin>.jingpin_tit>.jingpin_flower {
+    width: 95rpx;
+    height: 132rpx;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 70rpx;
+}
+
+.jingpin>.jingpin_tit>.jingpin_focus {
+    width: 247rpx;
+    height: 31rpx;
+    display: block;
+    position: absolute;
+    top: 230rpx;
+    left: 190rpx;
+}
+
+.jingpin>.jingpin_tit>.start_time {
+    padding: 5rpx;
+    text-align: center;
+    line-height: 25rpx;
+    color: #fff;
+    border-radius: 4rpx;
+    background-color: #AC0505;
+    font-size: 20rpx;
+    position: absolute;
+    top: 230rpx;
+    left: 456rpx;
+}
+
+.jingpin>.jingpin_tit>.circle_tip {
+    width: 116rpx;
+    height: 117rpx;
+    display: block;
+    position: absolute;
+    top: 150rpx;
+    left: 58rpx;
+}
+
+.jingpin>.jingpin_list {
+    width: 714rpx;
+    height: auto;
+    overflow: hidden;
+    margin: 30rpx auto 0;
+}
+
+.jingpin>.jingpin_list>.goods_item {
+    width: 222rpx;
+    height: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 2rpx solid #FFE71D;
+    background-color: #C4362D;
+    position: relative;
+    padding: 7rpx;
+    float: left;
+    margin: 0 8rpx 22rpx;
+}
+
+.jingpin>.jingpin_list>.goods_item>.hot {
+    width: 61rpx;
+    height: 64rpx;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 17rpx;
+}
+
+.jingpin>.jingpin_list>.goods_item>.goods_img {
+    width: 208rpx;
+    height: 218rpx;
+    display: block;
+    margin-bottom: 7rpx;
+}
+
+.jingpin>.jingpin_list>.goods_item>.goods_bot {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.jingpin>.jingpin_list>.goods_item>.goods_bot>.bot_left {
+    width: 135rpx;
+    height: 94rpx;
+    overflow: hidden;
+    float: left;
+}
+
+.jingpin_list>.goods_item>.goods_bot>.bot_left>.goods_name {
+    color: #FFE09B;
+    font-size: 18rpx;
+    height: 50rpx;
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.jingpin_list>.goods_item>.goods_bot>.bot_left>.price_sign {
+    color: #FFE09B;
+    font-size: 18rpx;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.jingpin_list>.goods_item>.goods_bot>.bot_left>.price {
+    color: #FFE09B;
+    font-size: 35rpx;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 30rpx;
+}
+
+.jingpin_list>.goods_item>.goods_bot>.bot_left>.act_type {
+    color: #FFDB8C;
+    font-size: 16rpx;
+    margin-left: 5rpx;
+}
+
+.jingpin_list>.goods_item>.goods_bot>.bot_right {
+    float: left;
+    margin-left: 9rpx;
+    width: 64rpx;
+    height: 74rpx;
+    border-radius: 8rpx;
+    background-color: #fff;
+    margin-top: 10rpx;
+}
+
+.jingpin_list>.goods_item>.goods_bot>.bot_right>image {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.limit>.prog_percent {
+    display: inline-block;
+    width: 194rpx;
+    margin-top: 15rpx;
+    position: absolute;
+    top: 180rpx;
+    left: 14rpx;
+}
+
+.limit>.prog_percent>.prog_bar {
+    width: 100%;
+    border-radius: 22rpx;
+    overflow: hidden;
+}
+
+.limit>.prog_percent>.percent_num {
+    position: absolute;
+    left: 35%;
+    top: -4rpx;
+    color: #fff;
+    font-size: 20rpx;
+}

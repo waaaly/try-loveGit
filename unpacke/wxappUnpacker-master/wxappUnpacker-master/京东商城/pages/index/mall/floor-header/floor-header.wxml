@@ -1,0 +1,5 @@
+<view class="floor-header" style="color: {{color}};background-image: {{bg}};">
+    <view class="floor-header__group">
+        <view class="floor-header__zh">{{zh}}</view>
+    </view>
+</view>

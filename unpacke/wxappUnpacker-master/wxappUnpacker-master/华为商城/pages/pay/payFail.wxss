@@ -1,0 +1,50 @@
+.order-form-are {
+    margin-bottom: 13rpx;
+}
+
+.order-form-are .failure {
+    padding-bottom: 42rpx;
+}
+
+.order-form-are .icon-failure {
+    width: 105rpx;
+    height: 105rpx;
+    padding: 67rpx 0 30rpx;
+    margin: 0 auto;
+}
+
+.order-form-are .icon-failure image {
+    width: 105rpx;
+    height: 105rpx;
+}
+
+.order-pay-state .title {
+    text-align: center;
+}
+
+.order-pay-state .title .title-span {
+    font-size: 32rpx;
+}
+
+.order-pay-state .title .title-em {
+    font-size: 23rpx;
+    color: #bbb;
+    padding-top: 9rpx;
+}
+
+.order-pay-info {
+    padding: 21rpx 34rpx;
+}
+
+.order-pay-info view {
+    font-size: 27rpx;
+    line-height: 1.5;
+}
+
+.order-form-are.tips-style {
+}
+
+.order-form-are.tips-style view {
+    color: #333;
+    line-height: 1.5;
+}

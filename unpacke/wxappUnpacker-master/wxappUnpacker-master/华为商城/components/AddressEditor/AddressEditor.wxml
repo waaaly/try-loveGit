@@ -1,0 +1,56 @@
+<view class="form-edit bg_white">
+    <view class="form-edit-item ui-border-b">
+        <view class="form-edit-title">收货人</view>
+        <view class="form-edit-box textbox">
+            <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" id="consignee" placeholder="收货人姓名" type="text" value="{{newAddress.consignee}}"></input>
+        </view>
+        <view bindtap="clearInputValue" class="form-edit-clear {{clearIcons['consignee']}}" data-contentid="consignee">
+            <image src="../../imgs/icon-textbox-clear.png"></image>
+        </view>
+    </view>
+    <view class="form-edit-item ui-border-b">
+        <view class="form-edit-title">手机号码</view>
+        <view class="form-edit-box textbox">
+            <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" id="mobile" maxlength="11" placeholder="收货人电话" type="number" value="{{newAddress.mobile}}"></input>
+        </view>
+        <view bindtap="clearInputValue" class="form-edit-clear {{clearIcons['mobile']}}" data-contentid="mobile">
+            <image src="../../imgs/icon-textbox-clear.png"></image>
+        </view>
+    </view>
+    <view class="form-edit-item ui-border-b">
+        <view class="form-edit-title">所在地区</view>
+        <view class="form-edit-box textbox">
+            <input bindtap="toOpenAddress" disabled="true" id="addressSelect" placeholder="请选择省份／城市／地区／街道" type="text" value="{{newAddress.provinceName=='请选择'?'':newAddress.provinceName}}{{newAddress.cityName=='请选择'?'':newAddress.cityName}}{{newAddress.districtName=='请选择'?'':newAddress.districtName}}{{newAddress.streetName=='请选择'?'':newAddress.streetName}}"></input>
+        </view>
+        <view class="form-edit-clear">
+            <image src="../../imgs/icon-textbox-clear.png"></image>
+        </view>
+    </view>
+    <view class="form-edit-item ui-border-b">
+        <view class="form-edit-title">详细地址</view>
+        <view class="form-edit-box textbox">
+            <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" id="address" placeholder="请输入小区／门牌号／楼层" type="text" value="{{newAddress.address}}"></input>
+        </view>
+        <view bindtap="clearInputValue" class="form-edit-clear {{clearIcons['address']}}" data-contentid="address">
+            <image src="../../imgs/icon-textbox-clear.png"></image>
+        </view>
+    </view>
+    <view class="form-edit-item justify-content-between" wx:if="{{onceDefaultShow}}">
+        <view class="form-edit-action">设置为默认地址</view>
+        <view class="selectbox">
+            <checkbox-group bindchange="toSetDefault">
+                <label class="checkbox">
+                    <checkbox checked="true" class="{{newAddress.defaultFlag==0?'':'checked'}}"></checkbox>
+                    <view class="state"></view>
+                </label>
+            </checkbox-group>
+        </view>
+    </view>
+</view>
+<view bindtap="toSaveAddress" class="button-area">
+    <view class="button-style-1-big">
+        <text>保存并使用</text>
+    </view>
+</view>
+<RegionPicker bind:change="toChangeRegion" isShow="{{showRegionPicker}}" region="{{newAddress}}"></RegionPicker>
+<Toast options="{{toastOptions}}"></Toast>

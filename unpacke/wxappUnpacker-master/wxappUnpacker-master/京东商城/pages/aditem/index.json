@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "京东购物-商品详情",
+    "usingComponents": {
+        "Specific": "./components/specific/specific",
+        "AddressLayer": "./components/address-layer/index"
+    }
+}

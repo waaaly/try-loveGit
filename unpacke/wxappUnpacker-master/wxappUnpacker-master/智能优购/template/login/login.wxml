@@ -1,0 +1,8 @@
+<template name="login">
+    <view catchtouchmove="myCatchTouch" class="login">
+        <view class="prompt">您还没有登录!</view>
+        <view class="button">
+            <button bindgetuserinfo="bindLoginTap" class="sharebutton" openType="getUserInfo"></button>
+	  登录</view>
+    </view>
+</template>

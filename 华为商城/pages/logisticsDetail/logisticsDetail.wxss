@@ -1,0 +1,98 @@
+.order-logistics {
+    padding: 19rpx 34rpx;
+    margin-bottom: 17rpx;
+}
+
+.order-logistics .order-number,.order-logistics .order-company {
+    font-size: 25rpx;
+    color: #888;
+    line-height: 1.5;
+}
+
+.order-logistics .order-number text,.order-logistics .order-company text {
+    color: #333;
+}
+
+.logistics-area {
+    padding: 0 34rpx;
+}
+
+.logistics-list {
+    position: relative;
+}
+
+.logistics-list:before {
+    content: '';
+    width: 3rpx;
+    position: absolute;
+    top: 30rpx;
+    bottom: 0;
+    left: 13rpx;
+    z-index: 2;
+    background-position: center top;
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(0.5,transparent),color-stop(0.5,#d9d9d9),to(#d9d9d9));
+    background-repeat: repeat-y;
+    -webkit-background-size: 1px 100%;
+}
+
+.logistics-list .logistics-item {
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+}
+
+.logistics-list .logistics-item:last-child:before {
+    content: '';
+    width: 3rpx;
+    position: absolute;
+    top: 37rpx;
+    bottom: 0;
+    left: 13rpx;
+    z-index: 2;
+    background-position: center top;
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(0.5,transparent),color-stop(0.5,#fff),to(#fff));
+    background-repeat: repeat-y;
+    -webkit-background-size: 1px 100%;
+}
+
+.logistics-item .logistics-icon {
+    width: 28rpx;
+    padding: 23rpx 34rpx 0 0;
+    -webkit-box-flex: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.logistics-item .logistics-icon image {
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.logistics-list .logistics-item:last-child image {
+    position: relative;
+    z-index: 5;
+}
+
+.logistics-item .logistics-cont {
+    width: 100%;
+    font-size: 25rpx;
+    line-height: 1.3;
+    padding: 21rpx 0 9rpx;
+    color: #888;
+    border-bottom: 1px solid #eaeaea;
+    -webkit-box-flex: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.logistics-item:last-of-type .logistics-cont {
+    border-bottom: 0;
+}
+
+.logistics-item:first-child .logistics-cont .logistics-info {
+    color: #333;
+}

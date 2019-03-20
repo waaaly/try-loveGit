@@ -1,0 +1,106 @@
+.clothes {
+    position: relative;
+    height: 310rpx;
+    border-top: 1rpx solid #f7f7f7;
+}
+
+.clothes-title {
+    position: absolute;
+    left: 30rpx;
+    top: 90rpx;
+    right: 560rpx;
+}
+
+.clothes-title__dt {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.clothes-title__dd {
+    font-size: 24rpx;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.clothes-keyword {
+    position: absolute;
+    right: 30rpx;
+    top: 30rpx;
+    bottom: 30rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.clothes-keyword__item {
+    color: #666;
+    font-size: 28rpx;
+    width: 206rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    border-radius: 4rpx;
+    background-color: #f7f7f7;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.clothes-image {
+    width: 240rpx;
+    height: 240rpx;
+    position: absolute;
+    left: 250rpx;
+    top: 35rpx;
+}
+
+.clothes-image__item {
+    width: 200rpx;
+    height: 200rpx;
+    padding: 20rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 8rpx 16rpx 0 rgba(0,0,0,0.05);
+    border-radius: 4rpx;
+    background-color: #fff;
+}
+
+.clothes-image__item image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.clothes-image__item--before {
+    transform: scale(1) translateX(0);
+    transform-origin: left center;
+    z-index: 2;
+}
+
+.clothes-image__item--after {
+    transform: scale(.7) translateX(-80rpx);
+    transform-origin: left center;
+    z-index: 1;
+}
+
+.clothes-coupon {
+    width: 101rpx;
+    height: 48rpx;
+    background: url('https://img11.360buyimg.com/jdphoto/s101x48_jfs/t21733/8/1238291110/738/9c503819/5b235dc9Ndd51fada.png') no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 180rpx;
+    left: 30rpx;
+    font-size: 24rpx;
+    color: #fff;
+    line-height: 40rpx;
+    padding-left: 30rpx;
+    box-sizing: border-box;
+}

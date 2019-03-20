@@ -1,0 +1,19 @@
+{
+    "navigationBarTitleText": "我的",
+    "usingComponents": {
+        "my-header": "./components/my-header/index",
+        "bind-floor": "./components/bind-floor/index",
+        "my-order": "./components/my-order/index",
+        "my-asset": "./components/my-asset/index",
+        "my-fav": "./components/my-fav/index",
+        "my-activity": "./components/my-activity/index",
+        "bind-curtain": "./components/bind-curtain/index",
+        "new-curtain": "./components/new-curtain/index",
+        "plus-curtain": "./components/plus-curtain/index",
+        "recommend": "../../../components/recommend/index",
+        "toutiao": "./components/toutiao/toutiao",
+        "follow-wx-account": "./components/follow-wx-account/index",
+        "pinGouBack": "/components/return_app/return_app",
+        "guideAddXcx": "/components/guide-add-xcx/guide-add-xcx"
+    }
+}

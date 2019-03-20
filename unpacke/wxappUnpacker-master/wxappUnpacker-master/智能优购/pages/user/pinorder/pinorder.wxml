@@ -1,0 +1,239 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="swiper-tab">
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==0?'on':''}}" data-current="0" style="width:{{bar.item[0].w}}">全部</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==1?'on':''}}" data-current="1" style="width:{{bar.item[1].w}}">待付款</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==2?'on':''}}" data-current="2" style="width:{{bar.item[1].w}}">拼团中</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==3?'on':''}}" data-current="3" style="width:{{bar.item[2].w}}">已成团</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==4?'on':''}}" data-current="4" style="width:{{bar.item[3].w}}">已失败</view>
+</view>
+<swiper bindchange="bindChange" circular="{{false}}" class="swiper-box" current="{{currentTab}}" duration="{{duration}}" style="height:{{winHeight-31}}px">
+    <swiper-item>
+        <scroll-view bindscrolltolower="bindScrollTolowerTap" class="scroll-view_H" enableBackToTop="{{true}}" scrollY="true" style="height:{{scheight}}rpx;">
+            <view class="prompat" wx:if="{{tabdata[0].prompat}}">没有任何记录~~</view>
+            <view class="sloadding" wx:if="{{tabdata[0].switchtaping==1}}">
+                <image src="/images/loadding.gif"></image>
+            </view>
+            <view class="list">
+                <view class="brand" wx:if="{{item.show}}" wx:for="{{tabdata[0].dataset}}" wx:key="unique">
+                    <view class="name">
+                        <span>{{item.statename}}</span>下单时间：{{item.successtime}}</view>
+                    <view class="mbox">
+                        <view class="picbox">
+                            <image src="{{item.mainpic}}"></image>
+                        </view>
+                        <view class="name2">
+                            <view class="intro">{{index}}{{item.title}}</view>
+                            <view class="par">￥{{item.cost}}<span>x {{item.geshu}}</span>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="total clear">快递：<span>{{item.postcost}}元</span>
+                        <i>总额：</i>
+                        <span>￥{{item.totalcost}}元</span>
+                    </view>
+                    <view class="buttons clear">
+                        <view class="box">
+                            <view bindtap="bindPinOkTap" data-oid="{{item.oid}}" wx:if="{{item.state>0}}">拼团详情</view>
+                            <view bindtap="bindDeleteOrderTap" data-index="{{index}}" data-oid="{{item.oid}}" wx:if="{{item.state==0}}">删除订单</view>
+                            <view bindtap="bindGoBuyTap" class="button2" data-id="{{item.bid}}" data-oid="{{item.oid}}" data-type="{{item.type}}" wx:if="{{item.state==0}}">重新支付</view>
+                        </view>
+                        <view class="clear"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="recommend_bottom" wx:if="{{tabdata[0].loadview&&tabdata[0].dataset.length>0}}">
+                <view class="bottomcenter" wx:if="{{!tabdata[0].loadIsEnd}}">
+                    <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+                  </view>
+                <view class="endparent" wx:if="{{tabdata[0].loadIsEnd&&tabdata[0].dataset.length>0}}">
+                    <view bindtap="bindShareTap" class="bottomp">分享赚数贝</view>
+                    <view class="bottomline"></view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view bindscrolltolower="bindScrollTolowerTap" class="scroll-view_H" enableBackToTop="{{true}}" scrollY="true" style="height:{{scheight}}rpx;">
+            <view class="prompat" wx:if="{{tabdata[1].prompat}}">没有任何记录~~</view>
+            <view class="sloadding" wx:if="{{tabdata[1].switchtaping==1}}">
+                <image src="/images/loadding.gif"></image>
+            </view>
+            <view class="list">
+                <view class="brand" wx:if="{{item.show}}" wx:for="{{tabdata[1].dataset}}" wx:key="unique">
+                    <view class="name">
+                        <span>{{item.statename}}</span>下单时间：{{item.successtime}}</view>
+                    <view class="mbox">
+                        <view class="picbox">
+                            <image src="{{item.mainpic}}"></image>
+                        </view>
+                        <view class="name2">
+                            <view class="intro">{{index}}{{item.title}}</view>
+                            <view class="par">￥{{item.cost}}<span>x {{item.geshu}}</span>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="total clear">快递：<span>{{item.postcost}}元</span>
+                        <i>总额：</i>
+                        <span>￥{{item.totalcost}}元</span>
+                    </view>
+                    <view class="buttons clear">
+                        <view class="box">
+                            <view bindtap="bindPinOkTap" data-oid="{{item.oid}}" wx:if="{{item.state>0}}">拼团详情</view>
+                            <view bindtap="bindDeleteOrderTap" data-index="{{index}}" data-oid="{{item.oid}}" wx:if="{{item.state==0}}">删除订单</view>
+                            <view bindtap="bindGoBuyTap" class="button2" data-id="{{item.bid}}" data-oid="{{item.oid}}" data-type="{{item.type}}" wx:if="{{item.state==0}}">重新支付</view>
+                        </view>
+                        <view class="clear"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="recommend_bottom" wx:if="{{tabdata[1].loadview}}">
+                <view class="bottomcenter" wx:if="{{!tabdata[1].loadIsEnd}}">
+                    <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+                  </view>
+                <view class="endparent" wx:if="{{tabdata[1].loadIsEnd}}">
+                    <view bindtap="bindShareTap" class="bottomp">分享赚数贝</view>
+                    <view class="bottomline"></view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view bindscrolltolower="bindScrollTolowerTap" class="scroll-view_H" enableBackToTop="{{true}}" scrollY="true" style="height:{{scheight}}rpx;">
+            <view class="prompat" wx:if="{{tabdata[2].prompat}}">没有任何记录~~</view>
+            <view class="sloadding" wx:if="{{tabdata[2].switchtaping==1}}">
+                <image src="/images/loadding.gif"></image>
+            </view>
+            <view class="list">
+                <view class="brand" wx:if="{{item.show}}" wx:for="{{tabdata[2].dataset}}" wx:key="unique">
+                    <view class="name">
+                        <span>{{item.statename}}</span>下单时间：{{item.successtime}}</view>
+                    <view class="mbox">
+                        <view class="picbox">
+                            <image src="{{item.mainpic}}"></image>
+                        </view>
+                        <view class="name2">
+                            <view class="intro">{{index}}{{item.title}}</view>
+                            <view class="par">￥{{item.cost}}<span>x {{item.geshu}}</span>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="total clear">快递：<span>{{item.postcost}}元</span>
+                        <i>总额：</i>
+                        <span>￥{{item.totalcost}}元</span>
+                    </view>
+                    <view class="buttons clear">
+                        <view class="box">
+                            <view bindtap="bindPinOkTap" data-oid="{{item.oid}}" wx:if="{{item.state>0}}">拼团详情</view>
+                            <view bindtap="bindDeleteOrderTap" data-index="{{index}}" data-oid="{{item.oid}}" wx:if="{{item.state==0}}">删除订单</view>
+                            <view bindtap="bindGoBuyTap" class="button2" data-id="{{item.bid}}" data-oid="{{item.oid}}" data-type="{{item.type}}" wx:if="{{item.state==0}}">重新支付</view>
+                        </view>
+                        <view class="clear"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="recommend_bottom" wx:if="{{tabdata[2].loadview}}">
+                <view class="bottomcenter" wx:if="{{!tabdata[2].loadIsEnd}}">
+                    <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+                  </view>
+                <view class="endparent" wx:if="{{tabdata[2].loadIsEnd}}">
+                    <view bindtap="bindShareTap" class="bottomp">分享赚数贝</view>
+                    <view class="bottomline"></view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view bindscrolltolower="bindScrollTolowerTap" class="scroll-view_H" enableBackToTop="{{true}}" scrollY="true" style="height:{{scheight}}rpx;">
+            <view class="prompat" wx:if="{{tabdata[3].prompat}}">没有任何记录~~</view>
+            <view class="sloadding" wx:if="{{tabdata[3].switchtaping==1}}">
+                <image src="/images/loadding.gif"></image>
+            </view>
+            <view class="list">
+                <view class="brand" wx:if="{{item.show}}" wx:for="{{tabdata[3].dataset}}" wx:key="unique">
+                    <view class="name">
+                        <span>{{item.statename}}</span>下单时间：{{item.successtime}}</view>
+                    <view class="mbox">
+                        <view class="picbox">
+                            <image src="{{item.mainpic}}"></image>
+                        </view>
+                        <view class="name2">
+                            <view class="intro">{{index}}{{item.title}}</view>
+                            <view class="par">￥{{item.cost}}<span>x {{item.geshu}}</span>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="total clear">快递：<span>{{item.postcost}}元</span>
+                        <i>总额：</i>
+                        <span>￥{{item.totalcost}}元</span>
+                    </view>
+                    <view class="buttons clear">
+                        <view class="box">
+                            <view bindtap="bindPinOkTap" data-oid="{{item.oid}}" wx:if="{{item.state>0}}">拼团详情</view>
+                            <view bindtap="bindDeleteOrderTap" data-index="{{index}}" data-oid="{{item.oid}}" wx:if="{{item.state==0}}">删除订单</view>
+                            <view bindtap="bindGoBuyTap" class="button2" data-id="{{item.bid}}" data-oid="{{item.oid}}" data-type="{{item.type}}" wx:if="{{item.state==0}}">重新支付</view>
+                        </view>
+                        <view class="clear"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="recommend_bottom" wx:if="{{tabdata[3].loadview}}">
+                <view class="bottomcenter" wx:if="{{!tabdata[3].loadIsEnd}}">
+                    <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+                  </view>
+                <view class="endparent" wx:if="{{tabdata[3].loadIsEnd}}">
+                    <view bindtap="bindShareTap" class="bottomp">分享赚数贝</view>
+                    <view class="bottomline"></view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view bindscrolltolower="bindScrollTolowerTap" class="scroll-view_H" enableBackToTop="{{true}}" scrollY="true" style="height:{{scheight}}rpx;">
+            <view class="prompat" wx:if="{{tabdata[4].prompat}}">没有任何记录~~</view>
+            <view class="sloadding" wx:if="{{tabdata[4].switchtaping==1}}">
+                <image src="/images/loadding.gif"></image>
+            </view>
+            <view class="list">
+                <view class="brand" wx:if="{{item.show}}" wx:for="{{tabdata[4].dataset}}" wx:key="unique">
+                    <view class="name">
+                        <span>{{item.statename}}</span>下单时间：{{item.successtime}}</view>
+                    <view class="mbox">
+                        <view class="picbox">
+                            <image src="{{item.mainpic}}"></image>
+                        </view>
+                        <view class="name2">
+                            <view class="intro">{{index}}{{item.title}}</view>
+                            <view class="par">￥{{item.cost}}<span>x {{item.geshu}}</span>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="total clear">快递：<span>{{item.postcost}}元</span>
+                        <i>总额：</i>
+                        <span>￥{{item.totalcost}}元</span>
+                    </view>
+                    <view class="buttons clear">
+                        <view class="box">
+                            <view bindtap="bindPinOkTap" data-oid="{{item.oid}}" wx:if="{{item.state>0}}">拼团详情</view>
+                            <view bindtap="bindDeleteOrderTap" data-index="{{index}}" data-oid="{{item.oid}}" wx:if="{{item.state==0}}">删除订单</view>
+                            <view bindtap="bindGoBuyTap" class="button2" data-id="{{item.bid}}" data-oid="{{item.oid}}" data-type="{{item.type}}" wx:if="{{item.state==0}}">重新支付</view>
+                        </view>
+                        <view class="clear"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="recommend_bottom" wx:if="{{tabdata[4].loadview}}">
+                <view class="bottomcenter" wx:if="{{!tabdata[4].loadIsEnd}}">
+                    <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+                  </view>
+                <view class="endparent" wx:if="{{tabdata[4].loadIsEnd}}">
+                    <view bindtap="bindShareTap" class="bottomp">分享赚数贝</view>
+                    <view class="bottomline"></view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+</swiper>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

@@ -1,0 +1,30 @@
+<view class="iden">
+    <view class="iden-box">
+        <view class="iden-form">
+            <view class="iden-item row ali-center ">
+                <text bindinput="getUserName" class="iden-item-tit" decode="{{true}}">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</text>
+                <input class="iden-item-input" disabled="{{true}}" placeholder="请输入您的真实姓名" placeholderClass="phcolor" type="text" value="{{userName}}"></input>
+            </view>
+            <view class="iden-item row ali-center ">
+                <text class="iden-item-tit " decode="{{true}}">银&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;行</text>
+                <view bindtap="showBanks" class="iden_picker row ali-center">
+                    <view class="row ali-center iden-item-tits">
+                        <input class="iden-item-input iden-item-inputs" disabled="{{true}}" placeholder="请选择您的银行" placeholderClass="phcolor" style="margin:0" type="text" value="{{bankname}}"></input>
+                        <image mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_next.png" style="width:30rpx;height:30rpx;"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="iden-item row ali-center" style="border:none;">
+                <text class="iden-item-tit">银行卡号</text>
+                <input bindinput="getBankNumber" class="iden-item-input" placeholder="请输入您的银行卡号" placeholderClass="phcolor" type="number" value="{{bankNumber}}"></input>
+            </view>
+        </view>
+        <view bindtap="goWithdraw" class="iden-btn">
+      {{type==1?'提交下一步':'保存'}}
+
+    </view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

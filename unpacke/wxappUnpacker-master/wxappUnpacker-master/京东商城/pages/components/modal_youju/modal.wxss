@@ -1,0 +1,207 @@
+.modal__mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.3);
+    z-index: 1000;
+}
+
+.modal__header {
+    padding: 20px 15px 0;
+    text-align: center;
+}
+
+.modal__header .title {
+    color: #333;
+    font-size: 16px;
+}
+
+.modal__cnt {
+    position: fixed;
+    width: 72%;
+    max-width: 300px;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    background-color: #FFF;
+    border-radius: 6px;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    z-index: 5000;
+}
+
+.modal__body {
+    padding: 25px 15px 21px;
+}
+
+.modal__body.normal {
+    padding-top: 8px;
+    padding-bottom: 12px;
+}
+
+.modal__body.normal .content {
+    color: #999;
+    font-size: 12px;
+}
+
+.modal__body.coupon {
+    padding-bottom: 12px;
+}
+
+.modal__body.coupon-fail {
+    margin-top: 6px;
+    padding-top: 0;
+}
+
+.modal__body.coupon-fail .coupon {
+    height: 138rpx;
+}
+
+.modal__body.coupon-fail .coupon image {
+    width: 256rpx;
+    height: 138rpx;
+}
+
+.modal__body .content {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.modal__body .tips {
+    color: #999;
+    font-size: 12px;
+}
+
+.modal__body .coupon {
+    position: relative;
+    margin: 9px 0 12px;
+    height: 102rpx;
+    font-size: 0;
+}
+
+.modal__body .coupon image {
+    position: absolute;
+    left: 50%;
+    margin-left: -128rpx;
+    width: 256rpx;
+    height: 102rpx;
+    z-index: -1;
+}
+
+.modal__body .coupon-info {
+    padding-top: 8rpx;
+    color: #fff;
+    font-size: 20rpx;
+    text-align: center;
+    z-index: 1;
+}
+
+.modal__body .coupon-info .price {
+    margin-left: -18rpx;
+    font-family: 'font_steelfish';
+    line-height: 1;
+}
+
+.modal__body .coupon-info .price text {
+    vertical-align: text-top;
+}
+
+.modal__body .coupon-info .price .mark {
+    font-size: 18rpx;
+}
+
+.modal__body .coupon-info .price .num {
+    margin: 0 auto;
+    width: 180rpx;
+    font-size: 60rpx;
+}
+
+.modal__body .icon-cnt {
+    margin-bottom: 11px;
+    font-size: 0;
+}
+
+.modal__body .icon-success,.modal__body .icon-warning {
+    display: inline-block;
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.modal__footer {
+    position: relative;
+    display: flex;
+    font-size: 14px;
+    line-height: 44px;
+}
+
+.modal__footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #E5E5E5;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+}
+
+.modal__btn {
+    position: relative;
+    display: block;
+    flex: 1;
+    color: #333;
+}
+
+.modal__btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    border-left: 1px solid #E5E5E5;
+    transform-origin: 0 0;
+    transform: scaleX(0.5);
+}
+
+.modal__btn:first-child:after {
+    display: none;
+}
+
+.modal__btn.default {
+    color: #333;
+}
+
+.modal__btn.primary {
+    color: #FF724F;
+}
+
+.modal__btn.phone {
+    background-color: transparent;
+    padding: 0;
+    font-size: 14px;
+    line-height: 44px;
+}
+
+.line1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.line2,.line3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.line3 {
+    -webkit-line-clamp: 3;
+}

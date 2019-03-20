@@ -1,0 +1,170 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<import src="/template/footer/footer.wxml"></import>
+<view class="container">
+    <view catchtap="gotoSearchPage" class="search">
+        <view class="input row ali-center">
+            <image class="search-icon" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/search_icon.png"></image>
+            <text class="px24 color666">请输入商品名称</text>
+        </view>
+    </view>
+    <view class="head_pad" style="height:65rpx"></view>
+    <swiper autoplay="{{dataset.mainad.length>1}}" circular="true" class="swiper" duration="{{1000}}" indicatorActiveColor="#fff" indicatorColor="#999" indicatorDots="{{true}}" interval="{{5000}}">
+        <swiper-item wx:for="{{dataset.mainad}}" wx:key="index">
+            <image bindtap="headpicclicktap" class="slide-image" data-index="{{index}}" src="{{item.pic}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="active-module-list w100 row spa">
+        <view catchtap="goto_two_page" class="active-item col ju-center" data-index="1">
+            <image src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/index_active_1.png"></image>
+            <text class="px22 black text-center">爆赚数贝</text>
+        </view>
+        <button bindgetuserinfo="bindShareTap" class="active-item col ju-center" openType="getUserInfo">
+            <image src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/index_active_2.png"></image>
+            <text class="px22 black text-center">分享海报</text>
+        </button>
+        <view catchtap="goto_two_page" class="active-item col ju-center" data-index="3">
+            <image src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/inx_vip_gifts.png"></image>
+            <text class="px22 black text-center">会员礼包</text>
+        </view>
+        <view catchtap="goto_two_page" class="active-item col ju-center" data-index="4">
+            <image src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/index_active_4.png"></image>
+            <text class="px22 black text-center">跨境优选</text>
+        </view>
+        <view catchtap="goto_two_page" class="active-item col ju-center" data-index="5">
+            <image src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/index_active_5.png"></image>
+            <text class="px22 black text-center">天天特价</text>
+        </view>
+    </view>
+    <view class="second-kill col">
+        <view class="row spa">
+            <view class="col kill-item">
+                <view class="row ali-center second-kill-title">
+                    <image class="title-logo" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/inx_choose.png"></image>
+                    <text class="px22 interval-title2">/ 全球优选好货</text>
+                </view>
+                <image catchtap="goto_two_page" class="second-kill-banner" data-index="4" src="{{Homedata.goodInfo.prePro.imgUrl}}"></image>
+            </view>
+            <view class="col kill-item">
+                <view class="row ali-center second-kill-title">
+                    <text class="px30 title1 interval-title">爆赚数贝</text>
+                    <text class="px22 interval-title2">/ 超高数贝等你来</text>
+                </view>
+                <image catchtap="goto_two_page" class="second-kill-banner" data-index="1" src="{{Homedata.goodInfo.secKillAndScorePro[1].imgUrl}}"></image>
+            </view>
+        </view>
+        <view class="shop-list row ali-center spa">
+            <view bindtap="bindContentTap" class="shop-item col" data-id="{{item.goodsId}}" wx:for="{{Homedata.goodInfo.recPro.promotionGoods}}" wx:key="index">
+                <image src="{{item.defalutPhotoURL}}"></image>
+                <text class="price-not px24 color999 text-center price_not">￥{{item.marketPrice}}</text>
+                <text class="price px30 text-center bold">￥{{item.price}}</text>
+            </view>
+        </view>
+    </view>
+    <swiper circular="true" class="swiper2 row ju-center" indicatorActiveColor="#fff" nextMargin="30rpx" previousMargin="30rpx" wx:if="{{Homedata.centerPostion.imgsList.length>0}}">
+        <swiper-item wx:for="{{Homedata.centerPostion.imgsList}}" wx:key="index">
+            <image bindtap="headpicclicktap" class="slide-image" data-d="{{item}}" data-index="{{index}}" src="{{item.imgSrc}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="collage col" wx:if="{{false}}">
+        <view class="row collage-title ju-center ali-center">
+            <view class="row ali-center">
+                <view class="title-txt px32">超值拼团好物</view>
+            </view>
+            <view catchtap="goto_two_page" class="more row ali-center ju-center" data-index="3">
+                <text class="px20 bold">更多</text>
+                <image class="next-icon" src="/images/arrow.png"></image>
+            </view>
+        </view>
+        <swiper circular="true" class="collage-swiper" indicatorActiveColor="#fff" indicatorColor="#999" indicatorDots="{{true}}">
+            <swiper-item>
+                <view class="collage-content row">
+                    <view bindtap="bindContentTap" class="collage-shop col ali-center" data-catalog="{{item.goodsId}}" data-id="{{item.goodsId}}" wx:for="{{Homedata.goodInfo.groupPro.promotionGoods.arr1}}" wx:key="index">
+                        <image class="collage-shop-img" src="{{item.defalutPhotoURL}}"></image>
+                        <view class="collage-item row spa ali-center ju-center">
+                            <text class="collage-person-num white px18 text-center">{{Homedata.goodInfo.groupPro.prGroupnum}}人拼</text>
+                            <text class="px18 price text-center">惊爆价</text>
+                        </view>
+                        <view class="row ju-center ali-center prices">
+                            <text class="price px22 bold">￥{{item.price}}</text>
+                            <text class="prive-not px18 color999 price_not">￥{{item.marketPrice}}</text>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+            <swiper-item wx:if="{{Homedata.goodInfo.groupPro.promotionGoods.arr2.length}}">
+                <view class="collage-content row">
+                    <view class="collage-shop col ali-center" wx:for="{{Homedata.goodInfo.groupPro.promotionGoods.arr2}}" wx:key="index">
+                        <image class="collage-shop-img" src="{{item.defalutPhotoURL}}"></image>
+                        <view class="collage-item row spa ali-center ju-center">
+                            <text class="collage-person-num white px18 text-center">{{item.sucnums}}人拼</text>
+                            <text class="px18 price text-center">惊爆价</text>
+                        </view>
+                        <view class="row ju-center ali-center prices">
+                            <text class="price px22 ">￥{{item.price}}</text>
+                            <text class="prive-not px18 color999 price_not">￥{{item.marketPrice}}</text>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>
+<view class="optimization col" wx:if="{{Homedata.goodInfo.prePro}}">
+    <view class="row optimization-title ju-center ali-center">
+        <view class="row ali-center">
+            <view class="title-txt px32">跨境优选</view>
+        </view>
+        <view catchtap="goto_two_page" class="more row ali-center ju-center" data-index="4">
+            <text class="px20 bold">更多</text>
+            <image class="next-icon" src="/images/arrow.png"></image>
+        </view>
+    </view>
+    <view class="optimization-content col">
+        <view bindtap="bindContentTap" class="optimization-item row spa ju-center" data-catalog="{{item.goodsId}}" data-id="{{item.goodsId}}" wx:for="{{Homedata.goodInfo.prePro.promotionGoods}}" wx:key="index">
+            <image class="optimization-shop-img" src="{{item.defalutPhotoURL}}"></image>
+            <view class="optimization-shop-info col">
+                <text class="optimization-shop-title px30 black">{{item.goodsName}}</text>
+                <text class="px24 color666 optimization-shop-title2">{{item.goodsTitle}}</text>
+                <view class="tag-list row"></view>
+                <view class="row spa">
+                    <view class="prices row ali-center">
+                        <view class="price px22 color666 bold">￥<text class="px34 price bold">{{item.price}}</text>
+                            <text class="price-not px20 price_not color999">￥{{item.marketPrice}}</text>
+                        </view>
+                    </view>
+                    <view class="now-buy text-center px22">立即抢购</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="like col">
+    <text class="like-title text-center px30">猜你喜欢</text>
+    <view class="like-content row spa">
+        <view bindtap="bindContentTap" class="like-item" data-catalog="{{item.goodsId}}" data-id="{{item.goodsId}}" wx:for="{{Homedata.guessYouLike}}" wx:key="index">
+            <image class="like-shop-img" src="{{item.defalutPhotourl}}"></image>
+            <view class="like-shop-info col">
+                <view class="col">
+                    <view class="row like-shop-titles">
+                        <view class="self-shop white like-shop-tag text-center px20" wx:if="{{item.goodsPropery==1&&item.channelId==0}}">自营</view>
+                        <view class="self-shop white like-shop-tag text-center px20" wx:if="{{item.goodsPropery==2&&item.channelId==1}}">京东</view>
+                        <view class="self-shop white like-shop-tag text-center px20" wx:if="{{item.goodsPropery==2&&item.channelId==2}}">楚楚街</view>
+                        <text class="like-shop-title px24">{{item.goodsName}}</text>
+                    </view>
+                    <view class="row spa ali-center">
+                        <view class="row ali-center">
+                            <text class="price px26 bold">￥{{item.price}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <button class="loading_btn_tip" disabled="{{true}}" hidden="{{isLoading}}" loading="{{true}}">努力加载中...</button>
+    <template is="footer" data wx:if="{{isEnd}}"></template>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>
+<wxs module="filter" src="../../../numberToFix.wxs" />

@@ -1,0 +1,26 @@
+.check_box {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 84rpx;
+    height: 86rpx;
+}
+
+.check_box.checked::after {
+    background-image: url(https://img11.360buyimg.com/jdphoto/s40x40_jfs/t19963/40/1627697203/369/195de517/5b226ae2N3a8765b3.png);
+}
+
+.check_box::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    content: "";
+    display: block;
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: -15rpx;
+    background-image: url(https://img11.360buyimg.com/jdphoto/s40x40_jfs/t24001/317/8605566/386/90ae9225/5b226ae2Nb0531918.png);
+    background-size: 40rpx;
+}

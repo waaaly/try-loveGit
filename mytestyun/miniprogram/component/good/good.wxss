@@ -1,0 +1,35 @@
+/* component/good.wxss */
+.goodView {
+  background:rgb(216, 85, 85);
+
+ 
+}
+
+.goodImage image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.goodText {
+    height: 56rpx;
+    margin-top: 17rpx;
+    font-size: 31rpx;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+.text{
+  color: #fff;
+}
+/* .goodText text {
+    width: 100%;
+    text-align: center;
+    line-height: 1.2;
+    display: -webkit-box;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+} */

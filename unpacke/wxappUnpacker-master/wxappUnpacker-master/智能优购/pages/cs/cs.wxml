@@ -1,0 +1,7 @@
+<view>
+    <form bindreset="formReset" bindsubmit="formSubmitTwo" reportSubmit="true">
+        <button class="kf_button" formType="submit" openType="contact" sessionFrom="weapp">
+      123123
+        </button>
+    </form>
+</view>

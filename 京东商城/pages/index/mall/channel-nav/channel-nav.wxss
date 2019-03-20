@@ -1,0 +1,103 @@
+@import "../../../../__wuBaseWxss__/18.wxss";
+
+.channel-nav {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    height: 334rpx;
+    padding: 40rpx 20rpx;
+    background-size: 100%;
+}
+
+.channel-nav-wrapper {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    border-radius: 20rpx 20rpx 0 0;
+    background-size: 100%;
+    background-color: #fff;
+}
+
+.channel-nav-wrapper.hide-radius {
+    border-radius: 0;
+}
+
+.channel-nav__swiper {
+    height: 334rpx;
+}
+
+.channel-nav__item {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 30rpx;
+}
+
+.channel-nav__icon {
+    position: relative;
+    display: block;
+    width: 72rpx;
+    height: 72rpx;
+    margin: 0 auto 10rpx;
+}
+
+.channel-nav__icon-image {
+    width: 100%;
+    height: 100%;
+}
+
+.channel-nav__text {
+    font-size: 24rpx;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.channel-nav__tag {
+    position: absolute;
+    top: 0;
+    left: 42rpx;
+    width: 80rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    border-radius: 28rpx 28rpx 28rpx 0;
+    text-align: center;
+    font-size: 20rpx;
+    color: #fff;
+    background: linear-gradient(to right,#e93b3d 0%,#ff9574);
+    box-shadow: 0 4rpx 8rpx 0;
+}
+
+.channel-nav__swiper-wrapper {
+    position: relative;
+}
+
+.channel-nav__dot {
+    position: absolute;
+    left: 0;
+    bottom: 9rpx;
+    right: 0;
+    height: 10rpx;
+    text-align: center;
+    font-size: 0;
+}
+
+.channel-nav__dot-item {
+    display: inline-block;
+    margin: 0 10rpx;
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 6rpx;
+    background: rgba(0,0,0,0.1);
+    transition: all .2s;
+}
+
+.channel-nav__dot-item--cur {
+    width: 20rpx;
+    background: rgba(0,0,0,0.3);
+}
+
+.channel-nav__dot-nhj {
+    bottom: 18rpx;
+}

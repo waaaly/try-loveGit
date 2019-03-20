@@ -1,0 +1,99 @@
+.swrap {
+    position: relative;
+    display: inline-block;
+    height: 80rpx;
+    width: 494rpx;
+    vertical-align: bottom;
+    background-color: #FEF1F1;
+}
+
+.swrap .item {
+    display: inline-block;
+    border-style: solid;
+    border-width: 2rpx 0 2rpx 2rpx;
+    border-color: #FF6B6A;
+    width: 82rpx;
+    height: 78rpx;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 78rpx;
+    vertical-align: middle;
+}
+
+.swrap .item .content {
+    width: 80rpx;
+    height: 74rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swrap .item .content .cursor {
+    width: 0;
+    height: 0;
+    border-left: 2rpx solid #555;
+    border-bottom: 40rpx solid #555;
+    animation: flash 1s linear infinite;
+}
+
+.swrap .item .content .dot {
+    width: 0;
+    height: 0;
+    border-radius: 16rpx;
+    border: 16rpx solid #555;
+}
+
+.swrap .item.first {
+    border-top-left-radius: 4rpx;
+    border-bottom-left-radius: 4rpx;
+}
+
+.swrap .item.last {
+    width: 84rpx;
+    border-right-width: 2rpx;
+    border-top-right-radius: 4rpx;
+    border-bottom-right-radius: 4rpx;
+}
+
+.swrap .item.last .content {
+    width: 82rpx;
+}
+
+.swrap .input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    background: transparent;
+}
+
+.swrap .long_input {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 4rpx solid rgba(233,59,61,0.20);
+    padding: 0 20rpx;
+    font-size: 28rpx;
+}
+
+@-webkit-keyframes flash {
+    0%,50% {
+        opacity: 0;
+    }
+
+    60%,100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flash {
+    0%,50% {
+        opacity: 0;
+    }
+
+    60%,100% {
+        opacity: 1;
+    }
+}

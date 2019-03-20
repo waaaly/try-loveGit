@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "活动类公共组件演示",
+    "usingComponents": {
+        "market-floor": "../components/market_floor/index",
+        "pingou-floor": "../components/pingou_floor/index",
+        "dialogs": "../components/dialogs/index",
+        "page-loading": "../components/page_loading/index",
+        "foot": "../components/foot/index",
+        "floating": "../components/floating/index",
+        "rule": "../components/rule/index",
+        "prize-list": "../components/prize_list/index",
+        "jd-fans": "../components/fans/index"
+    }
+}

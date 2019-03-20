@@ -1,0 +1,277 @@
+<view wx:if="{{showcontent}}">
+    <view class="order-submit-time" wx:if="{{showCurrentTime}}">
+    请您在  <text class="time-hour red">{{hourSold}}</text>  小时 <text class="time-minute red">{{minSold}}</text>  分  <text class="time-second red">{{seconds}}</text>  秒内完成支付
+  </view>
+    <view class="tips-style-red" wx:if="{{!showCurrentTime}}">
+        <view>注意：华为不会以订单异常、系统升级为由，要求您点击任何链接进行退款！请谨防钓鱼链接或诈骗电话！</view>
+    </view>
+</view>
+<view class="order-detail">
+    <view class="order-form-area bg_white">
+        <view class="order-form-row ui-border-b">
+            <view class="order-form-header">订单状态：<text>{{orderStatus}}</text>
+            </view>
+            <view class="order-form-body">
+                <view class="order-form-cont">
+                    <view class="order-form-p" wx:if="{{isDepositShow}}">订金：<text class="red">{{depositPrice}}</text> {{depositStatus}} {{depositPayTime}}</view>
+                    <view class="order-form-p" wx:if="{{isDepositShow}}">尾款：<text class="red">{{balancePrice}}</text> {{balanceStatus}} <block wx:if="{{balanceEndTime&&balanceStartTime}}">（{{balanceStartTime}}至{{balanceEndTime}}）</block>
+                    </view>
+                    <view class="order-form-p" wx:if="{{balancePrice&&balancePrice=='暂无报价'}}">订单金额：暂无报价</view>
+                    <view class="order-form-p" wx:else>订单金额：¥{{cashPay}}</view>
+                    <view class="order-form-p" wx:if="{{balancePrice&&balancePrice=='暂无报价'}}">商品总价：暂无报价  运费：¥{{deliveryFee}} 优惠：¥{{discountMount}}</view>
+                    <view class="order-form-p" wx:else>商品总价：¥{{totalOriginalPrice}}  运费：¥{{deliveryFee}} 优惠：¥{{discountMount}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="order-form-row ui-border-b">
+            <view class="order-form-header">订单跟踪</view>
+            <view bindtap="opentext" class="order-form-body order-track">
+                <view class="order-form-cont {{openIcon?'openDesc':''}}">
+                    <view class="order-form-p justify-content-between" wx:for="{{logisticsList}}" wx:key="key">
+                        <text class="order-form-l">{{item.time}}</text>
+                        <text class="order-form-r">{{item.disposeInfo}}</text>
+                    </view>
+                </view>
+                <view class="icon-arrow-more {{openIcon?'icon-more-top':'icon-more-bottom'}}">
+                    <image src="../../imgs/icon_arrow_more.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="order-form-row ui-border-b" wx:if="{{isDelivery}}">
+            <view class="order-form-body">
+                <view class="order-form-cont">
+                    <view class="order-form-p">收货人：{{consignee}} {{mobile}}</view>
+                    <view class="order-form-p">收货地址：{{province}}{{city}}{{district}}{{street}}{{address}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="order-form-row ui-border-b" wx:if="{{!isDelivery}}">
+            <view class="order-form-body">
+                <view class="order-form-cont">
+                    <view class="order-form-p system-follow-l">
+                        <text class="system-fixed-l">配送方式：</text>
+                        <text class="system-flex-r">门店自提</text>
+                    </view>
+                    <view class="order-form-p system-follow-l">
+                        <text class="system-fixed-l">联系店家：</text>
+                        <text class="system-flex-r">{{shopTelephone}}</text>
+                    </view>
+                    <view class="order-form-p system-follow-l" wx:if="{{businessHrs}}">
+                        <text class="system-fixed-l">营业时间：</text>
+                        <text class="system-flex-r">{{businessHrs}}</text>
+                    </view>
+                    <view class="order-form-p system-follow-l">
+                        <text class="system-fixed-l">自提地点：</text>
+                        <text class="system-flex-r">{{provinceName}}{{cityName}}{{districtName}}{{streetName}}{{addressName}}</text>
+                    </view>
+                    <view class="order-form-p system-follow-l">
+                        <text class="system-fixed-l">自提说明：</text>
+                        <text class="system-flex-r">您可到现场对实体产品进行查收，提货时间请联系店家</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="order-form-row">
+            <view class="order-form-body">
+                <view class="order-form-cont">
+                    <view class="order-form-p">发票类型：{{titleType}}
+            <navigator class="invoice-link" hoverClass="navigator-hover" url="../invoiceDetail/invoiceDetail?orderCode={{orderCode}}" wx:if="{{titleType=='增值税专票'}}">发票详情</navigator>
+                    </view>
+                    <view class="order-form-p" wx:if="{{titleType!='不开发票'}}">
+                        <text class="invoice-title">发票抬头：{{invoiceTitle}}</text>
+                        <navigator class="invoice-link" hoverClass="navigator-hover" url="../orderDetail/downLoad?downloadUrl={{encryptElectronicUrl}}" wx:if="{{encryptElectronicUrl&&orderStatus=='已完成'}}">下载发票</navigator>
+                        <navigator class="invoice-link" hoverClass="navigator-hover" url="../orderDetail/downLoad?downloadUrl={{encryptPicUrl}}" wx:if="{{encryptPicUrl&&orderStatus=='已完成'}}">
+              发票图片
+            </navigator>
+                        <image bindtap="openTip" class="invoice-mark" src="../../imgs/icon_mark.png" wx:if="{{(encryptPicUrl||encryptElectronicUrl)&&orderStatus=='已完成'}}"></image>
+                    </view>
+                    <view class="order-form-p" wx:if="{{cashPay!=0&&paymentList.length>0}}">支付方式：<text>{{paymentType}}</text>
+                    </view>
+                    <view class="order-form-p">订单编号：{{orderCode}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="order-sc-area">
+        <view class="order-header" wx:if="{{!isDelivery}}">
+            <text>{{shopName}}</text>
+        </view>
+        <view class="order-header" wx:else>
+            <text>{{shopName}}配送</text>
+        </view>
+        <view class="order-sc-list bg_white">
+            <view class="sys-good-area" wx:for="{{productList}}" wx:key="index">
+                <view class="sys-good-item">
+                    <view class="good-panels">
+                        <view class="good-img">
+                            <image src="{{cdnPath}}{{item.photoPath}}428_428_{{item.photoName}}"></image>
+                        </view>
+                        <view class="good-info">
+                            <view class="good-name">
+                                <text>{{item.name}}</text>
+                            </view>
+                            <view class="good-price-num">
+                                <view class="good-price" wx:if="{{item.balancePrice&&item.balancePrice=='暂无报价'}}">暂无报价</view>
+                                <view class="good-price" wx:else>¥{{item.salePrice}} </view>
+                                <view class="good-num">x{{item.quantity}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="sys-good-item" wx:for="{{item.prdGiftList}}" wx:key="index">
+                    <view class="good-panels">
+                        <view class="good-icon">
+                            <image src="../../imgs/icon_gift.png"></image>
+                        </view>
+                        <view class="good-img">
+                            <image src="{{cdnPath}}{{item.photoPath}}428_428_{{item.photoName}}"></image>
+                        </view>
+                        <view class="good-info">
+                            <view class="good-name">
+                                <text>{{item.giftName}}</text>
+                            </view>
+                            <view class="good-price-num">
+                                <view class="good-price">
+                                    <text class="good-order-price"></text>
+                                </view>
+                                <view class="good-num">x{{item.giftQuantity}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="order-good-annex ui-border-t order-good-counp" wx:if="{{item.giftCouponList&&item.giftCouponList.length>0||orderDetailInfo.giftCouponList&&orderDetailInfo.giftCouponList.length>0}}">
+                    <view class="order-annex-list">
+                        <view class="order-annex-title system-l">赠品</view>
+                        <view class="order-annex-box disabled" wx:if="{{item.giftCouponList&&item.giftCouponList.length>0}}" wx:for="{{item.giftCouponList}}" wx:for-index="indx" wx:for-item="proCouponList" wx:key="key">
+                            <view class="system-l-l-r">
+                                <view class="system-l g-img">
+                                    <image src="../../imgs/icon_coupon.png"></image>
+                                </view>
+                                <view class="system-between-l">
+                                    <text class="g-name">{{proCouponList.couponName}}</text>
+                                </view>
+                                <view class="system-r g-summary system-only-between">
+                                    <view class="g-amount">x{{item.quantity}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="order-annex-box disabled" wx:if="{{orderDetailInfo.giftCouponList&&orderDetailInfo.giftCouponList.length>0}}" wx:for="{{orderDetailInfo.giftCouponList}}" wx:for-index="indx" wx:for-item="giftCouponList" wx:key="key">
+                            <view class="system-l-l-r">
+                                <view class="system-l g-img">
+                                    <image src="../../imgs/icon_coupon.png"></image>
+                                </view>
+                                <view class="system-between-l">
+                                    <text class="g-name">{{giftCouponList.couponName}}</text>
+                                </view>
+                                <view class="system-r g-summary system-only-between">
+                                    <view class="g-amount">x1</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="order-tip" wx:if="{{showcontent}}">
+        <view class="order-header">
+            <text>相关服务</text>
+        </view>
+        <view class="order-tip-cont bg_white">
+            <view>如遇退换货等售后服务相关问题，请联系商城客服</view>
+            <view>1.客服热线 400-088-6888</view>
+            <view>2.或通过【华为商城】公众号【自助服务】菜单联系在线客服</view>
+        </view>
+    </view>
+</view>
+<view class="hr-65" wx:if="{{(gologistic||goPay||showCancelOrder)&&orderStatusNum!=17}}"></view>
+<view class="action-fixed bg_white" wx:if="{{(gologistic||goPay||showCancelOrder)&&orderStatusNum!=17}}">
+    <view class="action-btn">
+        <view bindtap="openGoCancel" class="wxButton-style-3" data-status="1" wx:if="{{showCancelOrder&&orderStatusNum!=17}}">
+            <text>取消订单</text>
+        </view>
+        <navigator bindtap="goToLogis" class="wxButton-style-3" hoverClass="navigator-hover" url="../logisticsDetail/logisticsDetail?orderCode={{orderCode}}" wx:if="{{gologistic}}">
+            <text>查物流</text>
+        </navigator>
+        <navigator class="wxButton-style-3" hoverClass="navigator-hover" url="/packageRushBuy/pages/rushOrderUpdate/rushOrderUpdate?orderCode={{orderCode}}" wx:if="{{(orderStatusNum==1||orderStatusNum==2||orderStatusNum==3)&&(orderType==5||orderType==18)}}">
+            <text>修改订单</text>
+        </navigator>
+        <view bindtap="goTobuy" class="wxButton-style-1" wx:if="{{goPay&&orderType!=18}}">
+            <text>去付款</text>
+        </view>
+        <view bindtap="goTobuy" class="wxButton-style-2" wx:if="{{orderType==18&&depositStatus=='待支付'}}">
+            <text>支付订金</text>
+        </view>
+        <view bindtap="goTobuy" class="wxButton-style-2" wx:if="{{orderType==18&&depositStatus=='已支付'&&couldPayBalancePrice==1&&balancePrice!='暂无报价'&&balanceStatus=='待支付'}}">
+            <text>支付尾款</text>
+        </view>
+        <view class="wxButton-style-2-disabled" wx:if="{{orderType==18&&depositStatus=='已支付'&&(couldPayBalancePrice==2||balancePrice=='暂无报价')&&balanceStatus=='待支付'&&couldPayBalancePrice!=3&&couldPayBalancePrice!=0}}">
+            <text>支付尾款</text>
+        </view>
+        <navigator class="wxButton-style-3" hoverClass="navigator-hover" url="../returnOrExchange/returnOrExchange" wx:if="{{returnOrexchange}}">
+            <text>退换货</text>
+        </navigator>
+    </view>
+</view>
+<view bindtap="openGoCancel" class="ecWap-mask" data-status="0" wx:if="{{showCancel}}"></view>
+<view animation="{{animationData}}" class="ecWap-box ecWap-box-lower" style="position: fixed; left: 0px; width: 100%; z-index: 991; top: auto; height: 750rpx;" wx:if="{{showCancel}}">
+    <view class="ecWap-box-header">
+        <text class="ecWap-box-title">取消订单</text>
+        <view class="ecWap-box-close box-close">
+            <image bindtap="openGoCancel" data-status="0" src="../../imgs/icon_ecWap_close.png"></image>
+        </view>
+    </view>
+    <view class="ecWap-box-content order-box-content">
+        <view class="tips-style-red">
+            <view>
+                <text class="tips-style-bold">温馨提示：</text>1.订单一旦取消将无法恢复，并且本单享有的优惠可能会一并取消。2.订单成功取消后，该订单已付金额将返还到您的支付账户中，取消日起5个工作日内退款完成。</view>
+        </view>
+        <view class="selectGroup">
+            <view class="selectGroup-title">
+                <text>请选择取消订单的原因（必选）:</text>
+            </view>
+            <radio-group bindchange="chooseReason">
+                <label wx:for="{{cancel}}" wx:key="key">
+                    <view class="selectGroup-dl">
+                        <view class="selectGroup-dt">
+                            <view class="system-l radiobox">
+                                <radio class="selectbox {{item.checked?'checked':''}}" value="{{item.id}}"></radio>
+                                <view class="state"></view>
+                            </view>
+                        </view>
+                        <view class="selectGroup-dd">
+                            <view>{{item.value}}</view>
+                        </view>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+    </view>
+    <view bindtap="submit" class="ecWap-box-footer" data-status="0">
+        <view class="ecWap-box-ok box-ok {{disabled?'disabled':''}}">提交</view>
+    </view>
+</view>
+<view bindtap="openInvalid" class="ecWap-mask" data-status="0" wx:if="{{showBackMoney}}"></view>
+<view class="ecWap-box-middle" wx:if="{{showBackMoney}}">
+    <view class="ecWap-box ecWap-box-center ecWap-box-normal">
+        <view class="ecWap-box-content">
+            <view class="ecWap-dialog-header">退款说明</view>
+            <view class="ecWap-dialog-content">
+                <text>退款方式：原路退回到您的支付账户中（代金券支付的款项将退回到您的华为商城代金券账户中）。
+
+退款周期：一般情况下，华为商城会在1~5个工作日内将款项退出，具体到账时间取决于第三方支付平台或银行的到账时间。</text>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <view bindtap="cancelOrder" class="ecWap-box-ok" wx:if="{{!needRemoveAll}}">
+                <text>确认</text>
+            </view>
+        </view>
+    </view>
+</view>
+<Toast options="{{toastOptions}}"></Toast>
+<view bindtap="openTip" class="ecWap-mask" wx:if="{{showTip}}"></view>
+<view class="mp-text-middle" wx:if="{{showTip}}">
+    <text>如需开具纸质普通发票或者专用发票，请您在提交订单后修改。路径：我的订单>修改订单>发票信息。</text>
+    <text class="gray">（仅部分商品支持开具专用发票，请以修改页为准）</text>
+</view>

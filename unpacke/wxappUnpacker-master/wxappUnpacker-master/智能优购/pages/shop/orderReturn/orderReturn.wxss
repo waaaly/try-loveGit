@@ -1,0 +1,532 @@
+.search {
+    width: 100%;
+    height: 75rpx;
+    padding: 7rpx 0;
+    background: #fff;
+    position: fixed;
+    z-index: 10001;
+    top: 0;
+}
+
+page {
+    background: #f2f2f2;
+}
+
+.search-icon {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 18rpx;
+    left: 35rpx;
+}
+
+.second-kill .kill-item:nth-child(1) {
+    padding-left: 15rpx;
+    box-sizing: border-box;
+    border-right: 2rpx solid #eee;
+}
+
+.kill-item {
+    width: 50%;
+    border-bottom: 2rpx solid #eee;
+}
+
+.search .input {
+    width: 710rpx;
+    height: 54rpx;
+    margin: 5rpx auto;
+    border: 2rpx solid #f11717;
+    border-radius: 40rpx;
+    padding-left: 60rpx;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.swiper,.swiper,swiper-item,.swiper swiper-item image {
+    width: 100%;
+    height: 382rpx;
+}
+
+.active-module-list {
+    background: #fff;
+    padding: 15rpx;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: -10rpx;
+    border-radius: 10rpx 10rpx 0 0;
+    margin-bottom: 10rpx;
+}
+
+.active-item {
+    background: none;
+    padding: 0;
+    border: none;
+    margin: 0;
+    line-height: 2;
+}
+
+.active-item::after {
+    border: none;
+}
+
+.active-item image {
+    width: 116rpx;
+    height: 112rpx;
+}
+
+.title-time {
+    border: 2rpx solid #e71e21;
+    border-radius: 8rpx;
+    height: 29rpx;
+}
+
+.time-name {
+    background: #e71e21;
+    color: #fff;
+    height: 28rpx;
+    line-height: 28rpx;
+    padding: 0 10rpx 0 15rpx;
+}
+
+.second-kill {
+    margin-top: 20rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    border-radius: 8rpx;
+}
+
+.second-kill>view {
+    background: #fff;
+}
+
+.second-kill-time {
+    color: #e71e21;
+    padding: 0 8rpx;
+}
+
+.second-kill-title {
+    height: 70rpx;
+    padding-left: 10rpx;
+}
+
+.title-logo {
+    width: 121rpx;
+    height: 28rpx;
+}
+
+.second-kill-banner {
+    width: 340rpx;
+    height: 180rpx;
+}
+
+.interval-title {
+    color: #f11717;
+}
+
+.interval-title2 {
+    color: #999;
+    margin-left: 15rpx;
+}
+
+.second-kill .shop-item {
+    margin-right: 4rpx;
+    width: 176rpx;
+    overflow: hidden;
+    border-right: 2rpx solid #eee;
+}
+
+.second-kill .shop-item:nth-child(2) {
+    width: 180rpx;
+}
+
+.second-kill .shop-item:nth-child(4) {
+    margin-right: 0;
+    border-right: none;
+}
+
+.second-kill .shop-item image {
+    width: 176rpx;
+    height: 168rpx;
+}
+
+.price {
+    color: #e71e21;
+    line-height: 1;
+}
+
+.second-kill .shop-item text {
+    line-height: 40rpx;
+}
+
+.swiper2 {
+    width: 100%;
+    height: 180rpx;
+    margin: 30rpx 0 20rpx;
+}
+
+.swiper2 swiper-item {
+    width: 100%;
+}
+
+.swiper2 swiper-item image {
+    width: 100%;
+    box-sizing: border-box;
+    height: 180rpx;
+    border-radius: 15rpx;
+    padding: 0 7rpx;
+}
+
+.collage {
+    width: 710rpx;
+    margin: 10rpx auto 0;
+    background: linear-gradient(150deg,rgba(255,191,195,1),rgba(255,231,234,1));
+    box-shadow: 0rpx 2rpx 10rpx 0rpx rgba(255,37,91,0.3);
+    border-radius: 10rpx;
+    position: relative;
+}
+
+.collage-title {
+    width: 100%;
+    margin: 30rpx 0;
+    position: relative;
+}
+
+.title-txt {
+    width: 100%;
+    text-align: center;
+}
+
+.next-icon {
+    width: 22rpx;
+    height: 15rpx;
+}
+
+.collage .title-txt {
+    width: 300rpx;
+    font-weight: bold;
+    text-align: center;
+    background-image: url('https://grtimg.oss-cn-beijing.aliyuncs.com/temp/collage-title.png');
+    background-size: 300rpx 16rpx;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.more {
+    position: absolute;
+    line-height: 1;
+    right: 20rpx;
+}
+
+.collage-swiper {
+    width: 100%;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+
+.collage-content,.collage-swiper {
+    height: 600rpx;
+}
+
+.collage-swiper swiper-item,.collage-swiper {
+    height: 650rpx;
+}
+
+.collage-content {
+    margin-bottom: 150rpx;
+    box-sizing: content-box;
+}
+
+.collage-shop {
+    border-radius: 10rpx;
+    background: #fff;
+    overflow: hidden;
+    height: 272rpx;
+    margin-top: 10rpx;
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.collage-content .collage-shop:nth-child(3n) {
+    margin-right: 0;
+}
+
+.collage-shop-img {
+    width: 215rpx;
+    height: 170rpx;
+}
+
+.collage-person-num {
+    width: 50%;
+    max-width: 50%;
+    background: #e71e21;
+    border-radius: 8rpx 0 0 8rpx;
+    line-height: 28rpx;
+}
+
+.collage-content {
+    flex-wrap: wrap;
+}
+
+.collage-item {
+    width: 115rpx;
+    text-align: center;
+    height: 28rpx;
+    border: 2rpx solid #e71e21;
+    border-radius: 8rpx;
+    margin: 20rpx 0;
+}
+
+.collage-item .price {
+    height: 28rpx;
+    line-height: 25rpx;
+}
+
+.collage-content .prices {
+    margin-bottom: 20rpx;
+}
+
+.optimization {
+    width: 710rpx;
+    margin: 20rpx auto;
+    background: linear-gradient(-30deg,rgba(255,241,220,1),rgba(255,215,161,1));
+    box-shadow: 0rpx 2rpx 10rpx 0rpx rgba(251,173,29,0.3);
+    border-radius: 10rpx;
+    position: relative;
+}
+
+.optimization-title {
+    width: 100%;
+    margin: 30rpx 0;
+    position: relative;
+}
+
+.optimization .title-txt {
+    width: 300rpx;
+    font-weight: bold;
+    text-align: center;
+    background-image: url('https://grtimg.oss-cn-beijing.aliyuncs.com/temp/optimization-title.png');
+    background-size: 300rpx 16rpx;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.optimization-content {
+    padding: 0 15rpx;
+}
+
+.optimization-item {
+    height: 240rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    margin: 8rpx 0;
+    overflow: hidden;
+}
+
+.optimization-shop-img {
+    width: 194rpx;
+    height: 240rpx;
+    margin-right: 24rpx;
+}
+
+.optimization-shop-info .optimization-shop-title {
+    line-height: 36rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.optimization-shop-title2 {
+    line-height: 36rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    height: 75rpx;
+    page-break-after: 15rpx;
+}
+
+.optimization-shop-info {
+    width: 438rpx;
+    padding: 19rpx;
+    margin-right: 20rpx;
+    box-sizing: border-box;
+}
+
+.tag-list .tag {
+    padding: 3rpx 15rpx;
+    border: 2rpx solid #f11717;
+    border-radius: 20rpx;
+    margin: 3rpx;
+    color: #f11717;
+}
+
+.optimization-shop-info .price-not {
+    margin-left: 10rpx;
+}
+
+.optimization-shop-info .now-buy {
+    width: 130rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    background: #e71e21;
+    color: #fff;
+    border-radius: 30rpx;
+}
+
+.like {
+    width: 710rpx;
+    margin: 0 auto;
+}
+
+.like-title {
+    font-weight: bold;
+    width: 300rpx;
+    margin: 0 auto;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    background-image: url('https://grtimg.oss-cn-beijing.aliyuncs.com/temp/like-title.png');
+    background-size: 300rpx 16rpx;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.like-content {
+    flex-wrap: wrap;
+}
+
+.like-shop-img {
+    width: 350rpx;
+    height: 356rpx;
+}
+
+.like-item {
+    width: 350rpx;
+    height: 526rpx;
+    margin-bottom: 15rpx;
+    background: rgba(255,255,255,1);
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+
+.like-shop-info {
+    line-height: 1;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.like-shop-titles {
+    position: relative;
+}
+
+.like-shop-title {
+    line-height: 32rpx;
+    text-indent: 76rpx;
+    height: 60rpx;
+    margin-bottom: 15rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.like-shop-tag {
+    position: absolute;
+    top: 3rpx;
+    width: 66rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    border-radius: 34rpx;
+    left: 2rpx;
+}
+
+.purchase {
+    background: #884dff;
+}
+
+.self-shop {
+    background: #f11717;
+}
+
+.subtraction {
+    color: #f11717;
+    padding: 4rpx 8rpx;
+    border-radius: 15rpx;
+    margin-left: 10rpx;
+    border: 2rpx solid #f11717;
+}
+
+.similar {
+    width: 92rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    border-radius: 21rpx;
+    font-size: 20rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    text-align: center;
+    border: 2rpx solid #dcdcdc;
+    color: rgba(102,102,102,1);
+}
+
+.order_right {
+    width: 100%;
+    background: #fff;
+    padding: 85rpx 0 50rpx;
+}
+
+.order_r_img {
+    width: 154rpx;
+    height: 154rpx;
+}
+
+.order_r_txt1 {
+    margin-top: 40rpx;
+    font-size: 30rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(34,34,34,1);
+}
+
+.order_r_txt2 {
+    margin-top: 20rpx;
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(153,153,153,1);
+}
+
+.order_r_btns {
+    margin-top: 39rpx;
+    height: 88rpx;
+}
+
+.order_r_btns1 {
+    width: 258rpx;
+    height: 88rpx;
+    text-align: center;
+    line-height: 88rpx;
+    background: linear-gradient(90deg,rgba(241,23,23,1),rgba(255,75,75,1));
+    box-shadow: 0rpx 1rpx 8rpx 0px rgba(241,23,23,0.2);
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(255,255,255,1);
+    border-radius: 44rpx;
+}
+
+.order_r_btns2 {
+    width: 258rpx;
+    height: 88rpx;
+    text-align: center;
+    line-height: 88rpx;
+    margin-left: 30rpx;
+    font-size: 28rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(241,23,23,1);
+    background: rgba(251,251,251,0);
+    border: 2rpx solid rgba(241,23,23,1);
+    border-radius: 44rpx;
+}

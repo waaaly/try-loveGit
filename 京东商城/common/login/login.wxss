@@ -1,0 +1,83 @@
+.login_mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.3);
+    z-index: 99999;
+}
+
+.login_main {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+}
+
+.login_main_header {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.login_main_header .header_logo {
+    width: 52px;
+    height: 52px;
+    transform: translateY(2px);
+}
+
+.login_main_header .header_text {
+    font-size: 22px;
+    padding-left: 10px;
+}
+
+.login_main_content {
+    margin-top: 30px;
+}
+
+.login_main_content .content_msg {
+    font-size: 16px;
+    line-height: 24px;
+    white-space: normal;
+}
+
+.login_main_content .content_list {
+    margin-top: 8px;
+}
+
+.login_main_content .content_list_item {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 12px;
+    color: #999;
+    line-height: 18px;
+}
+
+.login_main_content .content_list_item_dot {
+    display: inline-block;
+    line-height: 18px;
+    padding-right: 5px;
+}
+
+.login_main_confirm {
+    margin-top: 45px;
+}
+
+.login_main_reject {
+    overflow: hidden;
+    margin-top: 22px;
+    margin-bottom: 26px;
+}
+
+.login_main_reject .reject_btn {
+    float: right;
+    font-size: 12px;
+    line-height: 18px;
+    color: #333;
+}

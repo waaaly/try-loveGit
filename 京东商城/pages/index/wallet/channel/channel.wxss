@@ -1,0 +1,50 @@
+@import "../../../../__wuBaseWxss__/20.wxss";
+
+.channel {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    padding: 40rpx 30rpx 34rpx;
+    height: 126rpx;
+    background: #fff;
+    z-index: 1;
+}
+
+.channel__item {
+    position: relative;
+    flex: 1;
+    padding-top: 80rpx;
+    width: 138rpx;
+    text-align: center;
+    font-size: 0;
+}
+
+.channel__icon-wrap {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -40rpx;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 80rpx;
+    overflow: hidden;
+}
+
+.channel__icon-wrap.channel__icon-wrap--cover {
+    width: 90rpx;
+    height: 90rpx;
+    margin: -10rpx 0 0 -45rpx;
+    background: transparent;
+    border-radius: none;
+}
+
+.channel__icon {
+    width: 100%;
+    height: 100%;
+}
+
+.channel__name {
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #666;
+}

@@ -1,0 +1,96 @@
+/**index.wxss**/
+.top-navigation-bar{
+    top:20rpx;
+    width: 700rpx;
+    height: 54rpx;
+    margin: 5rpx auto;
+    border: 1rpx solid #dadddf;
+    border-radius: 40rpx;
+    padding-left: 60rpx;
+    margin-left: 25rpx;
+    outline: none;
+    box-sizing: border-box;
+    position: fixed;
+    background:transparent;
+}
+
+.search-icon{
+  position: absolute;
+  top: 15rpx;
+  background-size: 100%;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.search-input{
+  position: absolute;
+  top: 10rpx;
+  left: 200rpx;
+  color:#194aec;
+  bottom: 10rpx;
+  font-size: 30rpx;
+}
+
+.index-swiper{
+  position: relative;
+  width: 100%;
+  height: 350rpx;
+  z-index: -1;
+}
+
+.swiper-pics{
+  width: 750rpx;
+  height: 350rpx;
+}
+
+.classify-list{
+  justify-content: space-between;   
+  background: #eee;
+  padding: 15rpx;
+  box-sizing: border-box;
+  position: relative;
+  margin-top: 10rpx;
+  border-radius: 10rpx 10rpx 0 0;
+  margin-bottom: 10rpx;
+  width:100%;    
+  display: flex;
+  flex-direction: row;
+}
+
+.classify-node{
+  background: none;
+  padding: 0;
+  border: none;
+  margin: 0;
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.font{
+  text-align: center;
+  color:#0f0f0f;
+}
+
+.scroll{
+  margin-top: 10rpx;
+  display: flex;
+  white-space: nowrap;
+  background: #eee;
+}
+
+.scroll-view{
+  display: inline-block;
+  margin: 20rpx;
+}
+
+.scroll-view-image{
+  height:128rpx;
+  width:128rpx;
+  margin-left: 50rpx;
+}
+
+.scroll-view-text{
+  display: block;
+}

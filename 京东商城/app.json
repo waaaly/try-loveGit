@@ -1,0 +1,625 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/ptag/ptag",
+        "pages/cate/cate",
+        "pages/cart/cart/index",
+        "pages/cart/cart/cart",
+        "pages/my/index/index",
+        "pages/my/pay/index",
+        "pages/my/coupon/coupon",
+        "pages/my/coupon_detail/coupon_detail",
+        "pages/my/coupon_share/coupon_share",
+        "pages/my/ecard/index/index",
+        "pages/my/ecard/bind/bind",
+        "pages/my/account/account",
+        "pages/my/bindresult/bindresult",
+        "pages/my/unbindtel/unbindtel",
+        "pages/my/guide/guide",
+        "pages/my/balance/balance",
+        "pages/my/frozenaccount/frozenaccount",
+        "pages/common/auth_fail/index",
+        "pages/common/update/index",
+        "pages/h5/index",
+        "pages/gwq/index",
+        "pages/wechatpay/index",
+        "pages/login/index",
+        "pages/index/subpack/special/special",
+        "pages/index/subpack/channel/index",
+        "pages/index/subpack/wallet-channel/index",
+        "pages/bean/index/index",
+        "pages/my_pages/coupon_detail/coupon_detail",
+        "pages/my_pages/coupon_share/coupon_share",
+        "pages/my_pages/ecard/index/index",
+        "pages/my_pages/ecard/bind/bind",
+        "pages/my_pages/account/account",
+        "pages/my_pages/accountv2/index",
+        "pages/my_pages/bindresult/bindresult",
+        "pages/my_pages/unbindtel/unbindtel",
+        "pages/my_pages/guide/guide",
+        "pages/my_pages/balance/balance",
+        "pages/my_pages/frozenaccount/frozenaccount",
+        "pages/my_pages/coupon/coupon",
+        "pages/my_pages/actmsgs/index",
+        "pages/order/list/list",
+        "pages/order/sub-list/index",
+        "pages/order/detail/detail",
+        "pages/order/follow/follow",
+        "pages/order/cancle/cancle",
+        "pages/order/wuliumap/wuliumap",
+        "pages/seckill/index/index",
+        "pages/seckill/category/category",
+        "pages/seckill/brand/brand",
+        "pages/seckill/detail/detail",
+        "pages/seckill/cate/cate",
+        "pages/pay/index/index",
+        "pages/pay_second/address/address",
+        "pages/pay_second/giftDetail/giftDetail",
+        "pages/pay_second/coupon/coupon",
+        "pages/pay_second/gift/gift",
+        "pages/pay_second/coudan/coudan",
+        "pages/pay_second/ecard/index/index",
+        "pages/pay_second/invoice/index",
+        "pages/pay_second/shipment/index",
+        "pages/pay_second/shipment/svc",
+        "pages/pay_second/shipment/ztpicklist",
+        "pages/pay_second/done/done",
+        "pages/pay_second/finally/finally",
+        "pages/pay_second/daifu/daifu",
+        "pages/pay_second/payGift/index",
+        "pages/pay_second/payGift/jump",
+        "pages/specialpay/qianggou/qianggou",
+        "pages/specialpay/second_pages/invoice/invoice",
+        "pages/specialpay/second_pages/coupon/coupon",
+        "pages/specialpay/second_pages/jdcard/jdcard",
+        "pages/specialpay/grouppay/grouppay",
+        "pages/store/index/index",
+        "pages/coupon/index",
+        "pages/couponv4/index/index",
+        "pages/couponv4/more/index",
+        "pages/promote/tool/index",
+        "pages/promote/moneytreev2/index/index",
+        "pages/promote/moneytreev2/gift/index",
+        "pages/promote/cashhb2/index",
+        "pages/promote/miandan/index/index",
+        "pages/promote/miandan/item/index",
+        "pages/promote/miandan/rule/index",
+        "pages/promote/signin/asset/asset",
+        "pages/promote/signin/index/index",
+        "pages/promote/signin/coupon/index",
+        "pages/promote/signin/detail/index",
+        "pages/promote/yiy1/index",
+        "pages/promote/yiy2/index",
+        "pages/promote/yiy3/index",
+        "pages/promote/yiy4/index",
+        "pages/promote/yiy5/index",
+        "pages/offlineStore/index",
+        "pages/item/detail/detail",
+        "pages/item/featured/featured",
+        "pages/item/pingou/pingou",
+        "pages/item/subPackages/address/address",
+        "pages/item/subPackages/freight/freight",
+        "pages/item/subPackages/gift/gift",
+        "pages/item/subPackages/pool/pool",
+        "pages/item/subPackages/review/review",
+        "pages/item/subPackages/service/service",
+        "pages/item/subPackages/suit/suit",
+        "pages/item/subPackages/chooseShop/index",
+        "pages/item/subPackages/ldp/ldp",
+        "pages/search/list/list",
+        "pages/search/subPackages/filter/index",
+        "pages/search/subPackages/category/category",
+        "pages/search/subPackages/brand/brand",
+        "pages/search/subPackages/address/address",
+        "pages/search/subPackages/sales/sales",
+        "pages/search/subPackages/coupon/coupon",
+        "pages/search/subPackages/exchange/index",
+        "pages/events/chb_jd/index/index",
+        "pages/events/pjdsyh/index/index",
+        "pages/events/pjdsyh/my/my",
+        "pages/events/pjdsyh/index_start/index_start",
+        "pages/events/laxin_jd/index/index",
+        "pages/events/kj_sksm/index/index",
+        "pages/events/kj_sksm/my/my",
+        "pages/events/fudai/index/index",
+        "pages/events/fudai/result/result",
+        "pages/events/fudai/usercenter/usercenter",
+        "pages/events/nhhb/index/index",
+        "pages/events/nhhb/result/result",
+        "pages/events/nhhb/uc/uc",
+        "pages/events/sportshb/index/index",
+        "pages/events/sportshb/prizes/index",
+        "pages/events/yyzc/index/index",
+        "pages/events/yyzc/active/active",
+        "pages/events/yyzcv3/index/index",
+        "pages/events/yyzcv3/active/active",
+        "pages/events/common/demo/index",
+        "pages/events/common_ywyy/demo/index",
+        "pages/events/qsq/qsq",
+        "pages/events/pintuantreasure/index/index",
+        "pages/events/pintuantreasure/activity/activity",
+        "pages/events/groupcoupon/index/index",
+        "pages/events/groupcoupon/progress/progress",
+        "pages/events/groupcoupon/record/record",
+        "pages/events/divide_bean/index/index",
+        "pages/events/divide_bean/my/my",
+        "pages/events/ddplf/index/index",
+        "pages/events/ddplf/layer/layer",
+        "pages/market/index/index",
+        "pages/market/preview/preview",
+        "pages/market/review/review",
+        "pages/market/demo/demo",
+        "pages/run/index/index",
+        "pages/union/proxy/proxy",
+        "pages/union/item/item",
+        "pages/union/share/share",
+        "pages/pingou/index/index",
+        "pages/pingou/detail/index",
+        "pages/pingou/item/item",
+        "pages/pingou/my/my",
+        "pages/pingou/tuan99/tuan99",
+        "pages/pingou/ziying/ziying",
+        "pages/pingou/brand/detail",
+        "pages/pingou/brand/index",
+        "pages/pingou/darentuan/darentuan",
+        "pages/pingou/account/index",
+        "pages/pingou/cate/cate",
+        "pages/pingou_second/darentuan/darentuan",
+        "pages/pingou_second/brand/detail",
+        "pages/pingou_second/brand/index",
+        "pages/pingou_second/tuan99/tuan99",
+        "pages/pingou_second/ziying/ziying",
+        "pages/pingou_second/miandan/index",
+        "pages/pingou_second/miandanindex/index",
+        "pages/pingou_second/miandanrule/index",
+        "pages/pingou_second/index_sectab/index_sectab",
+        "pages/pingou_second/signin/asset/asset",
+        "pages/pingou_second/signin/index/index",
+        "pages/pingou_second/signin/coupon/index",
+        "pages/pingou_second/signin/detail/index",
+        "pages/pingou_second/bipin/index",
+        "pages/pingou_second/promote/index",
+        "pages/pingou_second/search/search",
+        "pages/pingou_second/yiy/index",
+        "pages/pingou_second/cashhb2/index",
+        "pages/penny/index/index",
+        "pages/penny/item/item",
+        "pages/penny/detail/detail",
+        "pages/pingou_shop/shop",
+        "pages/recharge/index",
+        "pages/recharge/coupon/coupon",
+        "pages/adpage/item/item",
+        "pages/adpage/lp/lp",
+        "pages/adpage/rule/index",
+        "pages/aditem/index",
+        "pages/aditem/h5/index",
+        "pages/aditem/subPackages/address/address",
+        "pages/data_station/index/index",
+        "pages/data_station/extract/index",
+        "pages/data_station/history/index",
+        "pages/cart/subpack/gifts/index",
+        "pages/services/index",
+        "pages/freight_addon/index",
+        "pages/moneytreev2/index/index",
+        "pages/moneytreev2/gift/index",
+        "pages/shop/index/index",
+        "pages/shop/index/search_panel/index"
+    ],
+    "window": {
+        "backgroundColor": "#f7f7f7",
+        "backgroundTextStyle": "dark",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff",
+        "qbDebugKey": [
+            "d8964071a1a0b66f9d37d73abc887b31",
+            "e9e402bc44f65eb4b6f8ea01bc887b31",
+            "4b46a01eb408dc161442a9a3bc887b31",
+            "11a34d5c9444a182b041a467bc887b31",
+            "1becd944dcaeaa7c4efb3f69bc887b31",
+            "48bf8a17a677963f1d7d588abc887b31",
+            "1f0651ef436258e7e5f32102bc887b31"
+        ]
+    },
+    "tabBar": {
+        "color": "#666",
+        "selectedColor": "#e22d3d",
+        "borderStyle": "black",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "assets/images/tabbar_home.png",
+                "selectedIconPath": "assets/images/tabbar_home_on.png"
+            },
+            {
+                "pagePath": "pages/cate/cate",
+                "text": "分类",
+                "iconPath": "assets/images/tabbar_cate.png",
+                "selectedIconPath": "assets/images/tabbar_cate_on.png"
+            },
+            {
+                "pagePath": "pages/gwq/index",
+                "text": "购物圈",
+                "iconPath": "assets/images/tabbar_circle.png",
+                "selectedIconPath": "assets/images/tabbar_circle_on.png"
+            },
+            {
+                "pagePath": "pages/cart/cart/index",
+                "text": "购物车",
+                "iconPath": "assets/images/tabbar_cart.png",
+                "selectedIconPath": "assets/images/tabbar_cart_on.png"
+            },
+            {
+                "pagePath": "pages/my/index/index",
+                "text": "我的",
+                "iconPath": "assets/images/tabbar_my.png",
+                "selectedIconPath": "assets/images/tabbar_my_on.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 8000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "subPackages": [
+        {
+            "root": "pages/index/subpack/",
+            "pages": [
+                "pages/index/subpack/special/special",
+                "pages/index/subpack/channel/index",
+                "pages/index/subpack/wallet-channel/index"
+            ]
+        },
+        {
+            "root": "pages/bean/",
+            "pages": [
+                "pages/bean/index/index"
+            ]
+        },
+        {
+            "root": "pages/my_pages/",
+            "plugins": {
+                "jcap_verify": {
+                    "version": "1.0.2",
+                    "provider": "wx8568bdcce6406770",
+                    "subpackage": "/pages/my_pages/"
+                }
+            },
+            "pages": [
+                "pages/my_pages/coupon_detail/coupon_detail",
+                "pages/my_pages/coupon_share/coupon_share",
+                "pages/my_pages/ecard/index/index",
+                "pages/my_pages/ecard/bind/bind",
+                "pages/my_pages/account/account",
+                "pages/my_pages/accountv2/index",
+                "pages/my_pages/bindresult/bindresult",
+                "pages/my_pages/unbindtel/unbindtel",
+                "pages/my_pages/guide/guide",
+                "pages/my_pages/balance/balance",
+                "pages/my_pages/frozenaccount/frozenaccount",
+                "pages/my_pages/coupon/coupon",
+                "pages/my_pages/actmsgs/index"
+            ]
+        },
+        {
+            "root": "pages/order/",
+            "pages": [
+                "pages/order/list/list",
+                "pages/order/sub-list/index",
+                "pages/order/detail/detail",
+                "pages/order/follow/follow",
+                "pages/order/cancle/cancle",
+                "pages/order/wuliumap/wuliumap"
+            ]
+        },
+        {
+            "root": "pages/seckill/",
+            "pages": [
+                "pages/seckill/index/index",
+                "pages/seckill/category/category",
+                "pages/seckill/brand/brand",
+                "pages/seckill/detail/detail",
+                "pages/seckill/cate/cate"
+            ]
+        },
+        {
+            "root": "pages/pay/",
+            "pages": [
+                "pages/pay/index/index"
+            ]
+        },
+        {
+            "root": "pages/pay_second/",
+            "pages": [
+                "pages/pay_second/address/address",
+                "pages/pay_second/giftDetail/giftDetail",
+                "pages/pay_second/coupon/coupon",
+                "pages/pay_second/gift/gift",
+                "pages/pay_second/coudan/coudan",
+                "pages/pay_second/ecard/index/index",
+                "pages/pay_second/invoice/index",
+                "pages/pay_second/shipment/index",
+                "pages/pay_second/shipment/svc",
+                "pages/pay_second/shipment/ztpicklist",
+                "pages/pay_second/done/done",
+                "pages/pay_second/finally/finally",
+                "pages/pay_second/daifu/daifu",
+                "pages/pay_second/payGift/index",
+                "pages/pay_second/payGift/jump"
+            ]
+        },
+        {
+            "root": "pages/specialpay/",
+            "pages": [
+                "pages/specialpay/qianggou/qianggou",
+                "pages/specialpay/second_pages/invoice/invoice",
+                "pages/specialpay/second_pages/coupon/coupon",
+                "pages/specialpay/second_pages/jdcard/jdcard",
+                "pages/specialpay/grouppay/grouppay"
+            ]
+        },
+        {
+            "root": "pages/store/",
+            "pages": [
+                "pages/store/index/index"
+            ]
+        },
+        {
+            "root": "pages/coupon/",
+            "pages": [
+                "pages/coupon/index"
+            ]
+        },
+        {
+            "root": "pages/couponv4/",
+            "pages": [
+                "pages/couponv4/index/index",
+                "pages/couponv4/more/index"
+            ]
+        },
+        {
+            "root": "pages/promote/",
+            "pages": [
+                "pages/promote/tool/index",
+                "pages/promote/moneytreev2/index/index",
+                "pages/promote/moneytreev2/gift/index",
+                "pages/promote/cashhb2/index",
+                "pages/promote/miandan/index/index",
+                "pages/promote/miandan/item/index",
+                "pages/promote/miandan/rule/index",
+                "pages/promote/signin/asset/asset",
+                "pages/promote/signin/index/index",
+                "pages/promote/signin/coupon/index",
+                "pages/promote/signin/detail/index",
+                "pages/promote/yiy1/index",
+                "pages/promote/yiy2/index",
+                "pages/promote/yiy3/index",
+                "pages/promote/yiy4/index",
+                "pages/promote/yiy5/index"
+            ]
+        },
+        {
+            "root": "pages/offlineStore/",
+            "pages": [
+                "pages/offlineStore/index"
+            ]
+        },
+        {
+            "root": "pages/item/",
+            "pages": [
+                "pages/item/detail/detail",
+                "pages/item/featured/featured",
+                "pages/item/pingou/pingou",
+                "pages/item/subPackages/address/address",
+                "pages/item/subPackages/freight/freight",
+                "pages/item/subPackages/gift/gift",
+                "pages/item/subPackages/pool/pool",
+                "pages/item/subPackages/review/review",
+                "pages/item/subPackages/service/service",
+                "pages/item/subPackages/suit/suit",
+                "pages/item/subPackages/chooseShop/index",
+                "pages/item/subPackages/ldp/ldp"
+            ]
+        },
+        {
+            "root": "pages/search/",
+            "pages": [
+                "pages/search/list/list",
+                "pages/search/subPackages/filter/index",
+                "pages/search/subPackages/category/category",
+                "pages/search/subPackages/brand/brand",
+                "pages/search/subPackages/address/address",
+                "pages/search/subPackages/sales/sales",
+                "pages/search/subPackages/coupon/coupon",
+                "pages/search/subPackages/exchange/index"
+            ]
+        },
+        {
+            "root": "pages/events/",
+            "pages": [
+                "pages/events/chb_jd/index/index",
+                "pages/events/pjdsyh/index/index",
+                "pages/events/pjdsyh/my/my",
+                "pages/events/pjdsyh/index_start/index_start",
+                "pages/events/laxin_jd/index/index",
+                "pages/events/kj_sksm/index/index",
+                "pages/events/kj_sksm/my/my",
+                "pages/events/fudai/index/index",
+                "pages/events/fudai/result/result",
+                "pages/events/fudai/usercenter/usercenter",
+                "pages/events/nhhb/index/index",
+                "pages/events/nhhb/result/result",
+                "pages/events/nhhb/uc/uc",
+                "pages/events/sportshb/index/index",
+                "pages/events/sportshb/prizes/index",
+                "pages/events/yyzc/index/index",
+                "pages/events/yyzc/active/active",
+                "pages/events/yyzcv3/index/index",
+                "pages/events/yyzcv3/active/active",
+                "pages/events/common/demo/index",
+                "pages/events/common_ywyy/demo/index",
+                "pages/events/qsq/qsq",
+                "pages/events/pintuantreasure/index/index",
+                "pages/events/pintuantreasure/activity/activity",
+                "pages/events/groupcoupon/index/index",
+                "pages/events/groupcoupon/progress/progress",
+                "pages/events/groupcoupon/record/record",
+                "pages/events/divide_bean/index/index",
+                "pages/events/divide_bean/my/my",
+                "pages/events/ddplf/index/index",
+                "pages/events/ddplf/layer/layer"
+            ]
+        },
+        {
+            "root": "pages/market/",
+            "pages": [
+                "pages/market/index/index",
+                "pages/market/preview/preview",
+                "pages/market/review/review",
+                "pages/market/demo/demo"
+            ]
+        },
+        {
+            "root": "pages/run/",
+            "pages": [
+                "pages/run/index/index"
+            ]
+        },
+        {
+            "root": "pages/union/",
+            "pages": [
+                "pages/union/proxy/proxy",
+                "pages/union/item/item",
+                "pages/union/share/share"
+            ]
+        },
+        {
+            "root": "pages/pingou/",
+            "pages": [
+                "pages/pingou/index/index",
+                "pages/pingou/detail/index",
+                "pages/pingou/item/item",
+                "pages/pingou/my/my",
+                "pages/pingou/tuan99/tuan99",
+                "pages/pingou/ziying/ziying",
+                "pages/pingou/brand/detail",
+                "pages/pingou/brand/index",
+                "pages/pingou/darentuan/darentuan",
+                "pages/pingou/account/index",
+                "pages/pingou/cate/cate"
+            ]
+        },
+        {
+            "root": "pages/pingou_second",
+            "pages": [
+                "pages/pingou_second/darentuan/darentuan",
+                "pages/pingou_second/brand/detail",
+                "pages/pingou_second/brand/index",
+                "pages/pingou_second/tuan99/tuan99",
+                "pages/pingou_second/ziying/ziying",
+                "pages/pingou_second/miandan/index",
+                "pages/pingou_second/miandanindex/index",
+                "pages/pingou_second/miandanrule/index",
+                "pages/pingou_second/index_sectab/index_sectab",
+                "pages/pingou_second/signin/asset/asset",
+                "pages/pingou_second/signin/index/index",
+                "pages/pingou_second/signin/coupon/index",
+                "pages/pingou_second/signin/detail/index",
+                "pages/pingou_second/bipin/index",
+                "pages/pingou_second/promote/index",
+                "pages/pingou_second/search/search",
+                "pages/pingou_second/yiy/index",
+                "pages/pingou_second/cashhb2/index"
+            ]
+        },
+        {
+            "root": "pages/penny/",
+            "pages": [
+                "pages/penny/index/index",
+                "pages/penny/item/item",
+                "pages/penny/detail/detail"
+            ]
+        },
+        {
+            "root": "pages/pingou_shop/",
+            "pages": [
+                "pages/pingou_shop/shop"
+            ]
+        },
+        {
+            "root": "pages/recharge/",
+            "pages": [
+                "pages/recharge/index",
+                "pages/recharge/coupon/coupon"
+            ]
+        },
+        {
+            "root": "pages/adpage/",
+            "pages": [
+                "pages/adpage/item/item",
+                "pages/adpage/lp/lp",
+                "pages/adpage/rule/index"
+            ]
+        },
+        {
+            "root": "pages/aditem/",
+            "independent": true,
+            "pages": [
+                "pages/aditem/index",
+                "pages/aditem/h5/index",
+                "pages/aditem/subPackages/address/address"
+            ]
+        },
+        {
+            "root": "pages/data_station/",
+            "pages": [
+                "pages/data_station/index/index",
+                "pages/data_station/extract/index",
+                "pages/data_station/history/index"
+            ]
+        },
+        {
+            "root": "pages/cart/subpack",
+            "pages": [
+                "pages/cart/subpack/gifts/index"
+            ]
+        },
+        {
+            "root": "pages/services",
+            "pages": [
+                "pages/services/index"
+            ]
+        },
+        {
+            "root": "pages/freight_addon/",
+            "pages": [
+                "pages/freight_addon/index"
+            ]
+        },
+        {
+            "root": "pages/moneytreev2/",
+            "pages": [
+                "pages/moneytreev2/index/index",
+                "pages/moneytreev2/gift/index"
+            ]
+        },
+        {
+            "root": "pages/shop",
+            "pages": [
+                "pages/shop/index/index",
+                "pages/shop/index/search_panel/index"
+            ]
+        }
+    ],
+    "navigateToMiniProgramAppIdList": [
+        "wxca1fe42a16552094",
+        "wx1ffacfd507365bbb",
+        "wx64adec0ff1c22386",
+        "wxbd687630cd02ce1d",
+        "wxf9a14e8a92b51ceb"
+    ],
+    "debug": true
+}

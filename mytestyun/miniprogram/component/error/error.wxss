@@ -1,0 +1,55 @@
+/* component/error/error.wxss */
+.system-empty  {
+    width: 100%;
+    margin-bottom: 21rpx;
+      font-size: 32rpx;
+    color: #888;
+    line-height: 1.3;
+}
+
+.system-empty-cont {
+    padding: 30% 34rpx;
+    text-align: center;
+}
+
+.system-empty-icon {
+   width: 100%;
+    margin-bottom: 21rpx;
+}
+
+.system-empty-icon image {
+    width: 209rpx;
+    height: 209rpx;
+}
+
+.system-empty-tip {
+    width: 100%;
+    font-size: 32rpx;
+    color: #888;
+    line-height: 1.3;
+}
+
+.system-empty-btn {
+    padding: 46rpx 0;
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+}
+
+.button-style-3{
+    padding: 0 28rpx;
+    height: 48rpx;
+    line-height: 1.2;
+    border-radius: 32rpx;
+    text-align: center;
+    min-width: 75rpx;
+    box-sizing: border-box;
+    display: -ms-inline-flexbox;
+    display: inline-box;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    align-items: center;
+}
+

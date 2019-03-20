@@ -1,0 +1,108 @@
+@import "../public/bottom.wxss";
+
+page {
+    background: #F2F2F2;
+}
+
+.banner {
+    width: 100%;
+    height: 312rpx;
+}
+
+.title-txt {
+    width: 100%;
+    text-align: center;
+}
+
+.optimization {
+    width: 710rpx;
+    margin: 20rpx auto;
+    position: relative;
+}
+
+.optimization-title {
+    width: 100%;
+    margin: 30rpx 0;
+    position: relative;
+}
+
+.optimization .title-txt {
+    font-weight: bold;
+    width: 300rpx;
+    text-align: center;
+    background-image: url('https://grtimg.oss-cn-beijing.aliyuncs.com/temp/optimization-title2.png');
+    background-size: 300rpx 16rpx;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.optimization-content {
+    padding: 0 15rpx;
+}
+
+.optimization-item {
+    background: #fff;
+    border-radius: 10rpx;
+    margin: 8rpx 0;
+    overflow: hidden;
+}
+
+.optimization-shop-img {
+    width: 194rpx;
+    height: 240rpx;
+    margin-right: 24rpx;
+}
+
+.optimization-shop-info {
+    width: 462rpx;
+    padding: 19rpx;
+    box-sizing: border-box;
+}
+
+.tag-list .tag {
+    padding: 3rpx 15rpx;
+    border: 2rpx solid #f11717;
+    border-radius: 20rpx;
+    margin: 3rpx;
+    color: #f11717;
+}
+
+.optimization-shop-info .price-not {
+    margin-left: 10rpx;
+}
+
+.optimization-shop-info .now-buy {
+    padding: 15rpx 30rpx;
+    background: #e71e21;
+    color: #fff;
+    border-radius: 30rpx;
+}
+
+.prices text {
+    line-height: 1;
+    margin: 0 5rpx;
+}
+
+.price {
+    color: #e71e21;
+    font-weight: 600;
+}
+
+.optimization-shop-title {
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.goods-info {
+    min-height: 64rpx;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

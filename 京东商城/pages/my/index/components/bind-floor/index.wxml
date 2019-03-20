@@ -1,0 +1,13 @@
+<view class="xlist_group my_cell" wx:if="{{userInfo.definePin!=0&&userInfo.isbind&&bindConfig||showNewFloor}}">
+    <view class="xlist_item">
+        <view class="new_user_task">
+            <text class="task_icon"></text>
+            <text class="gift"></text>
+            <view class="info">
+                <view class="main">{{showNewFloor?'首次下单':'登录京东账号'}}</view>
+                <view class="sub_desc">{{showNewFloor?'完成任务立即领取100京豆':'完成任务立即领取 88元优惠券'}}</view>
+            </view>
+            <view bindtap="navToBindPage" class="button">{{showNewFloor?'去完成':'去领取'}}</view>
+        </view>
+    </view>
+</view>

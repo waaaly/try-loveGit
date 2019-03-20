@@ -1,0 +1,179 @@
+.head {
+    width: 750rpx;
+    height: 400rpx;
+    position: relative;
+}
+
+.head .bgimg {
+    width: 750rpx;
+    height: 400rpx;
+}
+
+.head .headimg {
+    position: absolute;
+    left: 40rpx;
+    bottom: 50rpx;
+    border-radius: 10rpx;
+    border: 2px solid #cccccc;
+    width: 120rpx;
+    height: 120rpx;
+    z-index: 100;
+}
+
+.head .bline {
+    position: absolute;
+    left: 0rpx;
+    bottom: 0rpx;
+    border-radius: 10rpx;
+    height: 150rpx;
+    z-index: 50;
+    width: 100%;
+    background-color: #000000;
+    opacity: 0.5;
+}
+
+.head .name {
+    position: absolute;
+    left: 200rpx;
+    bottom: 90rpx;
+    z-index: 90;
+    color: white;
+    font-size: 16px;
+}
+
+.nums {
+    height: 120rpx;
+    background-color: white;
+    padding: 20rpx;
+}
+
+.nums .left {
+    float: left;
+    border-right: 1px solid #f1f1f1;
+    text-align: center;
+    font-size: 14px;
+    width: 50%;
+}
+
+.nums .right {
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    width: 50%;
+}
+
+.list {
+    background-color: white;
+    margin-top: 20rpx;
+}
+
+.list .item {
+    background-color: #fff;
+    border-bottom: 1px solid #F1F1F1;
+    padding: 10px;
+}
+
+.productimg {
+    width: 280rpx;
+    float: left;
+    padding-left: 10rpx;
+}
+
+.productimg image {
+    display: block;
+    width: 250rpx;
+    height: 250rpx;
+    border: 1px solid #e8e8e8;
+    border-radius: 10rpx;
+}
+
+.divright {
+    float: left;
+    margin-left: 8px;
+    width: 400rpx;
+}
+
+.divright .classname {
+    font-size: 16px;
+    margin-top: 5rpx;
+    height: 50rpx;
+    overflow: hidden;
+    line-height: 50rpx;
+}
+
+.divright .cost {
+    font-size: 12px;
+    color: #444444;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-decoration: line-through;
+}
+
+.divright .pin {
+    padding-left: 40rpx;
+    color: #F4241A;
+    font-size: 14px;
+    height: 50rpx;
+    line-height: 50rpx;
+    position: relative;
+}
+
+.divright .pin .pinimg {
+    height: 30rpx;
+    left: 0px;
+    width: 30rpx;
+    position: absolute;
+    top: 10rpx;
+}
+
+.divright .partake .button {
+    position: absolute;
+    right: 10rpx;
+    z-index: 60;
+    top: -10rpx;
+    width: 150rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    background-color: #F4241A;
+    font-size: 14px;
+    text-align: center;
+    float: right;
+    margin-right: 0rpx;
+    color: white;
+    border-radius: 10rpx;
+}
+
+.divright .partake {
+    font-size: 12px;
+    position: relative;
+    width: 100%;
+    color: #F4241A;
+    line-height: 55rpx;
+}
+
+.divright .partake span {
+    padding-left: 5px;
+    font-size: 19px;
+    color: #F4241A;
+}
+
+.divright .autor {
+    font-size: 12px;
+    height: 25px;
+    color: #848484;
+    line-height: 25px;
+    overflow: hidden;
+}
+
+.zhuanlan .bottom {
+    height: 25px;
+    line-height: 25px;
+    padding-top: 8px;
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+}
+
+.zhanwei {
+    height: 100rpx;
+}

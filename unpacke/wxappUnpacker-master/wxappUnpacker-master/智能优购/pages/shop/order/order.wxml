@@ -1,0 +1,98 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<form bindsubmit="bindConfirmTab">
+    <view class="container">
+        <view bindtap="gotoAds" class="address" wx:if="{{!addressObj.id&&isNull}}">
+            <view class="left">寄到：</view>
+            <view class="right">
+                <button class="name">请选择地址</button>
+            </view>
+            <view class="arrow">
+                <image src="/images/arrow.png"></image>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view bindtap="{{canChangeAddress&&isChangeNum?'gotoAds':''}}" class="address" wx:if="{{addressObj.id}}">
+            <view class="left">寄到：</view>
+            <view class="right">
+                <view class="name">{{addressObj.username}} {{addressObj.mobile}}</view>
+                <view class="addr">{{addressObj.addr}}{{addressObj.detailAddress}}</view>
+            </view>
+            <view class="arrow">
+                <image src="/images/arrow.png" wx:if="{{canChangeAddress&&isChangeNum}}"></image>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view class="brand">
+            <view>
+                <view class="left">
+                    <image src="{{pv_data.sku.defaultPhotoPath}}"></image>
+                </view>
+                <view class="right">
+                    <view class="title">{{pv_data.goods.goodsName}}</view>
+                    <view class="sucnums">
+                        <span wx:if="{{pv_data.sku.promotionType==0}}">单独购买</span>
+                        <span wx:if="{{pv_data.sku.promotionType==1}}">拼团购买</span>
+                        <span class="attr">{{attr}}</span>
+                    </view>
+                    <view class="cost2">
+                        <view class="jia">
+                            <view bindtap="shopNumberAction" class="bt1" data-type="2">-</view>
+                            <view class="bt2">{{shop_num}}</view>
+                            <view bindtap="shopNumberAction" class="bt3" data-type="1">+</view>
+                        </view>
+            ￥{{pv_data.sku.price}}
+            </view>
+                </view>
+            </view>
+            <view class="liuyan clear">
+                <view class="f1">留言：</view>
+                <view class="f2">
+                    <input bindinput="addText" maxlength="50" name="textarea" placeholder=""></input>
+                </view>
+            </view>
+            <view class="feiyong clear">
+        快递费：
+        <span>{{moneys.express_money==0?'￥包邮':'￥'+moneys.express_money}}</span>
+        实付：
+        <span>￥{{moneys.shop_money}}</span>
+            </view>
+        </view>
+        <view class="pay">
+            <view class="title">支付方式</view>
+            <view class="weixin">
+                <view class="w1">
+                    <image src="/images/weixin.png"></image>
+                </view>
+                <view class="w2"> 微信支付</view>
+                <view class="w3">
+                    <image class="right" src="/images/select.png"></image>
+                </view>
+            </view>
+            <button catchtap="downOrder" class="button"> {{submitText}} </button>
+        </view>
+    </view>
+</form>
+<view catchtouchmove="myCatchTouch" class="cover_box" wx:if="{{coverStatus}}">
+    <view class="cover_content">
+        <view class="cover_in">
+            <image bindtap="confirm" class="cover_close" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_close.png"></image>
+            <image class="cover_bg" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_tipBg.png"></image>
+            <view class="cover_top col ali-center" wx:if="{{true}}">
+                <view class="cover_top_txt cover_top_txt1  row ali-center ju-center ">
+                    <text class="cover_top_line1"></text>
+                    <text style="margin:0rpx 15rpx;">哇?恭喜您</text>
+                    <image class="vip_up_gold" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_gold.png"></image>
+                    <text class="cover_top_line2"></text>
+                </view>
+                <view class="cover_top_txt cover_top_txt2" mode="widthFix" style="margin-top:5rpx;">成功升级为VIP导购?</view>
+            </view>
+            <view class="cover_btn_box row jcsa ali-center" wx:if="{{tipType!=10&&tipType!=1}}">
+                <view bindtap="confirm" class="cover_in_btn1">确定</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

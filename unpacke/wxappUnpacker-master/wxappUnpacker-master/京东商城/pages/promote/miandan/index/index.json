@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "团长免单",
+    "onReachBottomDistance": 100,
+    "usingComponents": {
+        "recommend-tuan": "../../../components/recommend-tuan/recommend-tuan",
+        "quick-nav": "../../../../components/quick-nav/quick-nav"
+    }
+}

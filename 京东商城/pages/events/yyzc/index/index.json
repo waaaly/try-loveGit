@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "一元领礼盒",
+    "usingComponents": {
+        "Index": "./components/index/index",
+        "Tab": "./components/tab/index",
+        "My": "./components/my/index",
+        "rule": "../common/components/rule/index"
+    }
+}

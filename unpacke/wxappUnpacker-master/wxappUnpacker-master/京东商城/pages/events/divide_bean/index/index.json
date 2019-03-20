@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "瓜分京豆",
+    "usingComponents": {
+        "divide_bean_main": "./components/main/main"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "退换货申请",
+    "usingComponents": {
+        "RegionPicker": "/components/RegionPicker/RegionPicker"
+    }
+}

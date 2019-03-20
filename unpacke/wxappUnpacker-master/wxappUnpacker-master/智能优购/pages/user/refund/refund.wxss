@@ -1,0 +1,77 @@
+page {
+    background-color: white;
+}
+
+.titel-a,.titel-b {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.titel-a {
+    margin-bottom: 20rpx;
+}
+
+.titel-cl {
+    color: #357C6E;
+}
+
+.identification {
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20rpx;
+    background-color: white;
+}
+
+.identification .rule {
+    background-color: #f2f7fd;
+    font-size: 14px;
+    padding: 20rpx;
+    line-height: 40rpx;
+    border: 1px dashed #D5E4F9;
+}
+
+.titel-box {
+    margin: 0 30rpx;
+    padding: 30rpx 30rpx;
+    border: 1px solid #cccccc;
+}
+
+.incolor {
+    color: #F4241A;
+}
+
+.crad {
+    padding: 20rpx 30rpx;
+    font-size: 12px;
+}
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.input {
+    background-color: white;
+    padding-left: 20rpx;
+    direction: rtl;
+}
+
+.button1 {
+    height: 90rpx;
+    background-color: #e15517;
+    width: 650rpx;
+    margin-left: 50rpx;
+    font-size: 16px;
+    text-align: center;
+    line-height: 90rpx;
+    border-radius: 10rpx;
+    margin-top: 50px;
+    color: #ffffff;
+}

@@ -1,0 +1,31 @@
+.margin-bar {
+    position: relative;
+    padding: 0 60rpx 0 20rpx;
+    font-size: 24rpx;
+    line-height: 64rpx;
+    color: #e93b3d!important;
+    background-color: #fdf0f0;
+}
+
+.margin-bar_text {
+    margin-left: 20rpx;
+}
+
+.margin-bar_icon {
+    display: inline-block;
+    width: 50rpx;
+    height: 50rpx;
+    background: url(https://img11.360buyimg.com/jdphoto/s26x26_jfs/t28666/7/802467985/195/6b0e6c19/5bfe4cc9N523f82c3.png) no-repeat 50%;
+    background-size: 26rpx;
+    margin-top: -2rpx;
+    vertical-align: middle;
+}
+
+.margin-bar.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 10;
+}

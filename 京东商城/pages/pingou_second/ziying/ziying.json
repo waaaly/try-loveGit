@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "自营好货团",
+    "usingComponents": {
+        "product-list": "./components/product_list/product_list",
+        "ping-bottom": "../components/ping_bottom/ping_bottom"
+    }
+}

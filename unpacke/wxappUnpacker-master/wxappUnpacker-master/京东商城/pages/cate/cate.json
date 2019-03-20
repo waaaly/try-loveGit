@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "banner": "./components/banner/index",
+        "promotion": "./components/promotion/index",
+        "cate-list": "./components/cate-list/index",
+        "tab-nav": "./components/tab-nav/index"
+    },
+    "navigationBarTitleText": "商品分类"
+}

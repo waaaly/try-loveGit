@@ -1,0 +1,53 @@
+var price = require('p_./common/wxs/price.wxs')();
+
+function getYDStyle(yd) {
+    return (yd && yd.url ? 'background-image:url({0});'.replace('{0}', yd.url) : '')
+};
+
+function getYDPrice(val) {
+    var int = price(val / 100).int;
+    var decimal = price(val / 100).decimal;
+    return (int.length > 3 ? ({
+        int: int,
+        decimal: '',
+    }) : ({
+        int: int,
+        decimal: +decimal ? '.' + decimal : '',
+    }))
+};
+
+function getPromotionTipText(v) {
+    return (({
+        '0': '',
+        '1': '满减',
+        '2': '券',
+        '3': '闪购',
+        '4': '新品',
+        '5': '秒杀',
+    })[((nt_0 = (v), null == nt_0 ? undefined : 'number' === typeof nt_0 ? nt_0 : "" + nt_0))] || '')
+};
+
+function formatMoney(v) {
+    var priceObj = price(v / 100);
+    var int = priceObj.int;
+    var decimal = priceObj.decimal;
+    if (decimal[(0)] === '0' && +decimal > 0) {
+        decimal = decimal
+    } else if (decimal[(1)] === '0' && +decimal > 0) {
+        decimal = decimal[(0)]
+    } else if (+decimal > 0) {
+        decimal = decimal
+    } else {
+        decimal = ''
+    };
+    return (({
+        int: int,
+        decimal: decimal,
+    }))
+};
+module.exports = ({
+    getYDStyle: getYDStyle,
+    getYDPrice: getYDPrice,
+    getPromotionTipText: getPromotionTipText,
+    formatMoney: formatMoney,
+});

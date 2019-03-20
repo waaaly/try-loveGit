@@ -1,0 +1,8 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "我的仓库",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee",
+    "disableScroll": true
+}

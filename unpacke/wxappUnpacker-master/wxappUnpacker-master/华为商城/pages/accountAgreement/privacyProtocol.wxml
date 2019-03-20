@@ -1,0 +1,424 @@
+<view class="templateDIV">
+    <view class="templateH1" style="text-align: center;">关于华为帐号与隐私的声明</view>
+    <view class="templateP">
+    “华为帐号”是由华为软件技术有限公司 (以下称“我们”或“华为”) 运营的，帮助您访问所有华为服务的帐号。我们深知个人信息对您的重要性，并会尽全力保护您的个人信息安全可靠。我们承诺，将按业界成熟的安全标准，采取相应的安全保护措施来保护您的个人信息。
+  </view>
+    <view class="templateP">
+    请在使用我们的产品 (或服务) 前，仔细阅读并了解本《关于华为帐号与隐私的声明》。
+  </view>
+    <view class="templateP">
+    您承诺在您开始使用本产品/服务时是成年人。如您是未成年人，则需要您的监护人同意您使用本应用并同意相关应用服务条款。
+  </view>
+    <view class="templateP">如果您有任何疑问、意见或建议，请通过客服热线：400-830-8300 / 800-830-8300 (座机) ，或通过在线客服与我们联系，或者将其提交至我们的全球办事处。如需获取办事处的完整列表，请访问“联系华为”。</view>
+    <view class="templateP">
+    我们设立了个人信息保护专职部门 (或个人信息保护专员)，您可以发送电子邮件至consumer_privacy@huawei.com与其取得联系。
+  </view>
+    <view class="templateP">一般情况下，我们将在一个月内回复。</view>
+    <view class="templateP">
+    如果您对我们的回复不满意，特别是当我们的个人信息处理行为损害了您的合法权益时，您还可以通过向有管辖权的人民法院提起诉讼、向行业自律协会或政府相关管理机构投诉等外部途径进行解决。
+  </view>
+    <view class="templateH3">一、我们如何收集和使用您的个人信息</view>
+    <view class="templateP">
+    个人信息是指以电子或者其他方式记录的，能够单独或者与其他信息结合识别特定自然人身份或者反映特定自然人活动情况的各种信息。
+  </view>
+    <view class="templateP">
+    个人敏感信息包括身份证号码、个人生物识别信息、银行账号、财产信息、行踪轨迹、交易信息、14岁以下 (含) 儿童的个人信息等。
+  </view>
+    <view class="templateP">
+    我们仅会出于本声明所述的以下目的，收集和使用您的个人信息：
+  </view>
+    <view class="templateH3">
+    （一）为您提供以下功能服务
+  </view>
+    <view class="templateP">
+     1、注册
+  </view>
+    <view class="templateP">
+    当您注册华为帐号时，我们需要收集您的以下信息：手机号、邮件地址、密码。其中手机号、邮件地址和密码属于个人敏感信息，收集此类信息的目的是帮助您完成华为帐号注册。
+  </view>
+    <view class="templateP">我们将按照以下方式使用您的个人信息：匿名化展示手机号、邮件地址。</view>
+    <view class="templateP">
+    若您不提供这类信息，您将无法使用华为帐号。
+  </view>
+    <view class="templateP">
+    2、实名认证
+  </view>
+    <view class="templateP">
+    当您实名认证时，我们需要收集您的以下信息：姓名、身份证号码。其中身份证号码属于个人敏感信息，收集此类信息的目的是满足相关法律法规的网络实名制要求。
+  </view>
+    <view class="templateP">
+    我们将按照以下方式使用您的个人信息：匿名化展示上述信息。
+  </view>
+    <view class="templateP">
+    若您不提供这类信息，您将无法使用有实名制要求的华为服务。
+  </view>
+    <view class="templateH3">
+    3、在设备上使用华为帐号
+  </view>
+    <view class="templateP">
+    为确保您正常使用我们的服务，我们需要收集您的以下信息：唯一设备标识符、PLMN、国家/地区、语言、设备型号、设备名称、版本号、IP 地址等，此类信息是为提供服务所必须收集的基础信息。</view>
+    <view class="templateP">
+    若您不提供这类信息，您将无法使用华为帐号。
+  </view>
+    <view class="templateP">
+    如果您提供以下额外信息，将有助于我们给您提供更好的服务和体验：头像、昵称、性别、地区、个性签名、出生日期等。但如果您不提供这些信息，并不会影响使用本服务的基本功能。上传或更改头像时，需要使用存储和相机权限。选择地区时，需要使用位置权限。
+  </view>
+    <view class="templateH3">
+    4、在浏览器上使用华为帐号
+  </view>
+    <view class="templateP">
+    为防止欺诈行为，当您在浏览器上使用华为帐号时，华为需采集浏览器信息 (类型、时区、插件、语言、字体、canvas 图片渲染哈希值、WebGL 图片渲染哈希值)，IP 地址，您在页面上的鼠标和键盘操作信息，并使用 cookie、local storage和flash cookie。
+  </view>
+    <view class="templateP">若您不提供这类信息，您将无法使用华为帐号。</view>
+    <view class="templateP">
+    如果您提供以下额外信息，将有助于我们给您提供更好的服务和体验：头像、昵称、性别、地区、个性签名、出生日期等。但如果您不提供这些信息，并不会影响使用本服务的基本功能。
+  </view>
+    <view class="templateH3">
+    5、自助申诉
+  </view>
+    <view class="templateP">
+    为了方便您在手机号或邮件地址无法使用情况下，能继续使用华为帐号，我们提供了自助申诉帮助您自助更改手机号、邮件地址、安全手机号或安全邮件地址。我们可能需要收集您的以下信息：手机常用地区、帐号注册时间、曾用密码、曾用手机号、曾用邮件地址、设备型号、唯一设备标识符、姓名、身份证号码、手持身份证的相片、护照、港澳通行证、台胞证照片等。</view>
+    <view class="templateP">
+    我们将按照以下方式使用您的个人信息：上述信息仅用于身份验证，我们根据 IP 地址判断您的手机常用地区，我们并不存储您的位置信息。
+  </view>
+    <view class="templateP">
+    请尽可能提供上述信息，有助于申诉成功
+  </view>
+    <view class="templateH3">
+    6、消息
+  </view>
+    <view class="templateP">
+    当您使用消息功能时，我们会获取您发送给接收方的消息，包括：文本、图片、表情、链接，用于传递给接收方。当接收方不在线时，会缓存在服务器上以待接收方收取，缓存将会保留7天。超过7天未接收的消息，将会被自动清除。发送图片时，需要使用存储和相机权限。
+  </view>
+    <view class="templateP">
+    您发送给系统通知号的消息将会保存到华为服务器，并由华为客服人员查看和处理。如果您长期未收到回复，请重试或更换其他渠道联系客服。
+  </view>
+    <view class="templateP">
+    若您不提供这类信息，您将无法使用消息功能。
+  </view>
+    <view class="templateH3">
+    7、好友
+  </view>
+    <view class="templateP">
+    当您使用好友功能时，我们会保存您添加的好友关系或提交的群信息，包括：好友、备注名、群名称、群昵称、家庭名称、家庭昵称、家庭头像，用于建立好友关系。当您打开通信录推荐好友时，我们会搜集您的通信录特征码，用于匹配好友，此时需要使用通讯录权限。
+  </view>
+    <view class="templateP">
+    若您不提供这类信息，您将无法使用好友功能。
+  </view>
+    <view class="templateH2">
+    （二）从第三方服务提供商获取您的个人信息
+  </view>
+    <view class="templateP">
+    当您使用微信、QQ、支付宝、微博登录华为帐号时，我们将在征得您的同意后，从第三方服务提供商处获取您的个人信息：头像、昵称。
+  </view>
+    <view class="templateP">
+    以上信息将用作华为帐号的头像、昵称。
+  </view>
+    <view class="templateP">
+    如我们在开展业务时所需进行的个人信息处理活动超出您原本向第三方服务提供商提供个人信息时的授权同意范围，我们将在处理您的该等个人信息前，征得您的明示同意。此外，我们也将会严格遵守相关法律法规的规定，并要求第三方服务提供商保障其提供的信息的合法性。
+  </view>
+    <view class="templateP">
+    当我们要将信息用于本声明未载明的其它用途时，会事先征求您的同意。
+  </view>
+    <view class="templateP">
+    当我们要将基于特定目的收集而来的信息用于其他目的时，会事先征求您的同意。
+  </view>
+    <view class="templateH2">二、您的数据主体权利</view>
+    <view class="templateP">
+    为使您在使用华为帐号期间更加便捷地访问、更改和删除您的个人信息，同时保障您有权撤回对个人信息的使用许可，我们在产品设计中为您提供了相应的操作设置，您可以参考下面的指引进行操作。
+  </view>
+    <view class="templateH3">
+    （一）访问个人信息
+  </view>
+    <view class="templateP">
+    访问头像、昵称、性别、地区、个性签名、出生日期、姓名、身份证号码等基本信息
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击头像栏；
+  </view>
+    <view class="templateP">
+    3) 进行信息查询访问。
+  </view>
+    <view class="templateP">
+    访问帐号信息
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击“帐号”；
+  </view>
+    <view class="templateP">
+    3) 进行信息查询访问。
+  </view>
+    <view class="templateP">
+    访问安全手机号、安全邮件地址
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击“帐号保护”；
+  </view>
+    <view class="templateP">
+    3) 点击“安全手机号和邮件地址”；
+  </view>
+    <view class="templateP">
+    4) 进行信息查询访问。
+  </view>
+    <view class="templateP">
+    访问好友关系
+  </view>
+    <view class="templateP">
+    1） 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2） 点击“好友”；
+  </view>
+    <view class="templateP">
+    3） 进行信息查询访问。
+  </view>
+    <view class="templateH3">
+    （二）删除个人信息
+  </view>
+    <view class="templateP">
+    删除昵称、个性签名等基本信息 (无法删除头像、性别、地区、出生日期、姓名、身份证号码等)
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击头像栏；
+  </view>
+    <view class="templateP">
+    3) 删除昵称、个性签名等基本信息。
+  </view>
+    <view class="templateP">
+    删除帐号信息
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击“帐号”；
+  </view>
+    <view class="templateP">
+    3) 同时绑定手机号和邮件地址时，只能删除其中一个；只绑定手机号或邮件地址时，无法删除。
+  </view>
+    <view class="templateP">
+    删除安全手机号、安全邮件地址
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击“帐号保护”；
+  </view>
+    <view class="templateP">
+    3) 点击“安全手机号和邮件地址”；
+  </view>
+    <view class="templateP">
+    4) 当您的华为帐号已开启帐号保护时，将不能删除安全手机号或安全邮件地址。
+  </view>
+    <view class="templateP">
+    删除好友关系
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击“好友”；
+  </view>
+    <view class="templateP">
+    3) 点击需要删除的项目，进入详细资料，可删除好友、删除并退出群聊、解散家庭或退出家庭群组、不再关注系统通知号；
+  </view>
+    <view class="templateH3">
+    （三）更改个人信息
+  </view>
+    <view class="templateP">
+    更改头像、昵称、性别、地区、个性签名、出生日期等基本信息 (帐号一但完成实名，姓名、和身份证号码不允许修改)
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击头像栏；
+  </view>
+    <view class="templateP">
+    3) 更改头像、昵称、性别、地区、个性签名、出生日期。
+  </view>
+    <view class="templateP">
+    更改帐号信息
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击“帐号”；
+  </view>
+    <view class="templateP">
+    3) 更改手机号、邮件地址。
+  </view>
+    <view class="templateP">
+    更改安全手机号、安全邮件地址
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击“帐号保护”；
+  </view>
+    <view class="templateP">
+    3) 点击“安全手机号和邮件地址”；
+  </view>
+    <view class="templateP">
+    4) 更改安全手机号或安全邮件地址。
+  </view>
+    <view class="templateP">
+    更改好友关系
+  </view>
+    <view class="templateP">
+    1) 前往“设置 ”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击“好友”；
+  </view>
+    <view class="templateP">
+    3) 点击需要更改的项目，进入详细资料，可更改备注名、群聊名、群聊昵称、家庭昵称；群管理员可更改群聊成员、家庭名或头像、家庭成员；
+  </view>
+    <view class="templateH3">
+    （四）撤回同意
+  </view>
+    <view class="templateP">
+    取消对授权第三方应用或网站的授权。
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击“设置”；
+  </view>
+    <view class="templateP">
+    3) 点击“授权”；
+  </view>
+    <view class="templateP">
+    4) 点击某个应用或网站，进入详情；
+  </view>
+    <view class="templateP">
+    5) 点击“取消授权”。
+  </view>
+    <view class="templateH3">
+    （五）销户 (注销华为帐号)
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击“设置”；
+  </view>
+    <view class="templateP">
+    3) 点击“销户”；
+  </view>
+    <view class="templateP">
+    注：销户后，您将不能使用该帐号，且不可恢复；同时，将永久删除该帐号在华为服务、第三方应用和游戏的全部个人信息，被删除后无法恢复。
+  </view>
+    <view class="templateH3">
+    （六）隐私功能设置
+  </view>
+    <view class="templateP">
+    华为帐号用户可以通过手机号或邮件地址搜索到您，并可查看您的公开信息，包括：头像、昵称、地区等。您也可以在华为帐号的设置中关闭此功能。
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击“设置”；
+  </view>
+    <view class="templateP">
+    3) 点击“隐私”；
+  </view>
+    <view class="templateP">
+    4) 关闭“通过华为帐号搜到我”。
+  </view>
+    <view class="templateP">
+    若您已经开启“匹配联系人”功能，您也可以在华为帐号的设置中关闭此功能。
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击“设置”；
+  </view>
+    <view class="templateP">
+    3) 点击“隐私”；
+  </view>
+    <view class="templateP">
+    4) 关闭“匹配联系人” (EMUI 5.0以下版本) 或“匹配联系人并更新头像” (EMUI 5.0及以上版本)。
+  </view>
+    <view class="templateP">
+    关闭系统通知
+  </view>
+    <view class="templateP">
+    若您不想要收到某个应用 (或服务) 发送的文章或消息时，你可以关闭系统通知。
+  </view>
+    <view class="templateP">
+    1) 前往“设置”>“华为帐号”；
+  </view>
+    <view class="templateP">
+    2) 点击“消息”；
+  </view>
+    <view class="templateP">
+    3) 点击某个应用 (或服务)；
+  </view>
+    <view class="templateP">
+    4) 点击右上角图标；
+  </view>
+    <view class="templateP">
+    5) 关闭“接收文章推送”或“不再关注”。
+  </view>
+    <view class="templateP">
+    我们可能在必要时向您发出与服务有关的消息 (例如：系统维护、安全提醒、消费提醒等)。您可能无法取消这些与服务有关的非广告类重要通知。
+  </view>
+    <view class="templateP">
+    如您对您的数据主体权利存在任何疑问、意见或建议，请通过本声明文首的联系方式与我们取得联系并行使您的相关权利。
+  </view>
+    <view class="templateH2">
+    三、数据存储地点及期限
+  </view>
+    <view class="templateH3">
+    （一）数据存储地点
+  </view>
+    <view class="templateP">
+    我们在本服务项下收集和产生的个人信息，将存储在中华人民共和国境内。
+  </view>
+    <view class="templateH3">
+    （二）数据存储期限
+  </view>
+    <view class="templateP">
+    我们仅在为实现目的所必需的时间内保留您的个人信息，并将在下述保留时间之后删除或匿名化处理您的个人信息，但法律法规另有要求的除外。
+  </view>
+    <view class="templateP">
+    若您需要使用华为帐号，我们将一直保存本隐私声明中提到您的个人信息，以保证您正常使用华为帐号及业务；当您销户后，我们将永久删除这些个人信息。
+  </view>
+    <view class="templateP">
+    此外，当我们的产品或服务发生停止运营的情况时，我们将以推送通知、公告等的方式通知您，并在合理的期限内删除您的个人信息或进行匿名化处理。
+  </view>
+    <view class="templateH2">
+    四、本声明的更新
+  </view>
+    <view class="templateP">
+    华为保留适时更新本声明的权利，当声明发生变更时，我们会通过弹窗方式向您展示变更后的声明，只有在获取您的同意后，我们才会按照更新后的声明收集、使用和存储您的个人信息。
+  </view>
+    <view class="templateP">
+    本声明自更新之日起生效。
+  </view>
+    <view class="templateP">
+    最近更新日期：2018-1-31
+  </view>
+    <view class="templateP">
+     重要提示：本隐私声明是关于华为帐号在隐私方面的陈述与承诺，如您希望了解更多关于数据主体权利、信息安全措施等详细信息，请阅读<text bindtap="toUserAgreement" class="upBlue">《华为消费者业务隐私声明》</text>。
+  </view>
+</view>

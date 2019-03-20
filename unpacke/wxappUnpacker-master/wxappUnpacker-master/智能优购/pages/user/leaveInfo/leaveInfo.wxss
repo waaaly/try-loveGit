@@ -1,0 +1,50 @@
+.container {
+    width: 100%;
+    position: relative;
+}
+
+.header {
+    width: 750rpx;
+    height: 460rpx;
+    background-image: url('https://grtimg.oss-cn-beijing.aliyuncs.com/temp/leave_info.png');
+    background-size: 100% 100%;
+}
+
+.black {
+    color: #3A3A3A;
+}
+
+.main {
+    position: absolute;
+    top: 200rpx;
+    left: 25rpx;
+    width: 700rpx;
+    line-height: 60rpx;
+    border-radius: 6rpx;
+}
+
+.card {
+    background: #fff;
+    padding: 25rpx;
+    min-height: 400rpx;
+    border-radius: 6rpx;
+}
+
+.card .color80 {
+    width: 565rpx;
+    line-height: 40rpx;
+}
+
+.card .icon {
+    width: 33rpx;
+    max-height: 33rpx;
+    margin-right: 10rpx;
+}
+
+.card .item {
+    margin-bottom: 50rpx;
+}
+
+.card:nth-child(1) {
+    margin-bottom: 20rpx;
+}

@@ -1,0 +1,71 @@
+@-webkit-keyframes icon_loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes icon_loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 84rpx;
+    height: 86rpx;
+}
+
+.checkbox.checked::after {
+    background-image: url(https://img11.360buyimg.com/jdphoto/s40x40_jfs/t19963/40/1627697203/369/195de517/5b226ae2N3a8765b3.png);
+}
+
+.checkbox.loading::after {
+    margin-top: -20rpx;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAtUExURUdwTH9/f3FubnBwcG5ubnRycnd0dHNzc3d3d3Z0dFxcXHd2dnJwcHZ1dXx5ecEAxN4AAAAPdFJOUwAGMUATTbJbkW4doCV+wcpkWcgAAAG2SURBVCjPZdO9SwMxFADwFz0pSIVUBREc6tmhikLh/EBRKOogilCQqw5OgsHFoohGVxENfoCKDsFRB3FTsMstrZOCg4OO3RR0yd9gcnfJVZsp98vlvZeXOwA9Wm8w1Izpu+xfSGgcj95utLMBxov3BuvszgCbyJLBuN0T4CD5NIhsGytE+4XTKNGTXVIYI6SqrGY7JRHPkK8QLKzS98riYatwDyilsGsUy6C9apovJGFQJGUSxxnB0FFW2P4Iz0K8+eikTPBZIUROJZFa0vELQiz7swnHyYQYE+InaAu6dpL6vOJbb0KvpuThcDmRSFQ1EfmPE67rLkaYJ4Q8wIBE12xH0sjKfyxKXIWWOdftj7anGWPvtReIw22TUQ9NoBaqi7eOHkNtpnQtxHrP2/UnHfOU5vQNep53oSZDlG6YSGmp8vSI0s0sWH5vrDJa8Dx5oWieyqXuc4W3J9i68lQfx+XXYXEObR+wwHIQ39ChGvgl9FVKabZXdYoXfgFjlWQ7O6hq4g7PKIwzVoq+Os6xQthmZwbbuEyucIodG4zx9QAb2GH0D9BsgLCT+dtHWVJtc2XxevwCDNN899QQoLEAAAAASUVORK5CYII=);
+    animation: icon_loading .8s linear infinite;
+}
+
+.checkbox::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0,-50%);
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: -20rpx;
+    background-image: url(https://img11.360buyimg.com/jdphoto/s40x40_jfs/t24001/317/8605566/386/90ae9225/5b226ae2Nb0531918.png);
+    background-size: 40rpx;
+    background-color: #fff;
+}
+
+.checkbox.disabled::after {
+    background-image: url(https://img11.360buyimg.com/jdphoto/s40x40_jfs/t25462/264/1268371245/1323/8bcf081/5b90a530Ne12bd695.png);
+}
+
+.checkbox.presale::after {
+    background-size: 54rpx;
+    width: 54rpx;
+    height: 30rpx;
+    border-radius: 4rpx;
+    background-image: url(https://img11.360buyimg.com/jdphoto/s54x30_jfs/t27787/172/2098037507/621/b9734f95/5bf68158Ncec89cd4.png);
+}

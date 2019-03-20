@@ -1,0 +1,105 @@
+.order-top-tips {
+    padding: 13rpx 0;
+    font-size: 23rpx;
+    color: #999;
+    text-align: center;
+}
+
+.order-mate-area {
+    margin-bottom: 13rpx;
+}
+
+.order-mate-header {
+    font-size: 25rpx;
+    height: 63rpx;
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 34rpx;
+    border-bottom: 1rpx solid #eaeaea;
+}
+
+.order-mate-header .order-number {
+    -webkit-box-flex: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+    height: 63rpx;
+    line-height: 64rpx;
+}
+
+.order-mate-header .order-number .spell {
+    display: inline-block;
+    width: 54rpx;
+    height: 24rpx;
+    line-height: 25rpx;
+    margin-right: 17rpx;
+    color: #CA141D;
+    border: 1rpx solid #CA141D;
+    text-align: center;
+    font-size: 19rpx;
+    border-radius: 7rpx;
+}
+
+.order-mate-header .order-time {
+    color: #bbb;
+    -webkit-box-flex: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.order-mate-area .sys-good-item {
+    margin: 0 34rpx;
+    border-bottom: 1rpx solid #eaeaea;
+}
+
+.order-good-counp.order-good-annex {
+    margin-top: -1rpx;
+}
+
+.order-mate-footer {
+    padding: 13rpx 34rpx 9rpx;
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.order-mate-footer .order-mate-cont {
+    font-size: 28rpx;
+    line-height: 1.4;
+    width: 100%;
+    -webkit-box-flex: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.order-mate-footer .order-mate-cont .price-text {
+    padding-right: 14rpx;
+}
+
+.order-mate-footer .order-mate-cont .time-text {
+    font-size: 23rpx;
+}
+
+.order-mate-footer .order-mate-action {
+    padding-left: 34rpx;
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    align-items: center;
+}
+
+.order-mate-footer .order-mate-action view,.order-mate-footer .order-mate-action navigator {
+    margin-left: 17rpx;
+}
+
+.order-mate-footer .order-mate-action view:first-child {
+    margin-left: 0;
+}

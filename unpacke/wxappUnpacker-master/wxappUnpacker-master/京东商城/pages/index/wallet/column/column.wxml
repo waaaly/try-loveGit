@@ -1,0 +1,38 @@
+<view class="column" hidden="{{hideKanjia&&hideLihe&&hidePintuan}}" style="{{isSale?saleColor:''}}">
+    <view bindtap="gotoUrl" class="column__item column__item-kanjia" data-url="{{kanjia.url}}" hidden="{{hideKanjia}}">
+        <view class="column__title"></view>
+        <view class="column__images">
+            <block wx:if="{{hideLihe||hidePintuan}}">
+                <image class="column__image" src="{{item}}" wx:for="{{kanjia.images}}"></image>
+            </block>
+            <block wx:else>
+                <image class="column__image" src="{{item}}" wx:if="{{index<2}}" wx:for="{{kanjia.images}}"></image>
+            </block>
+        </view>
+        <swiper autoplay="true" circular="true" class="column-swiperText" interval="3000" vertical="true" wx:if="{{kanjia.slideText.length}}">
+            <swiper-item class="column-swiperText__item" wx:for="{{kanjia.slideText}}" wx:key="image">
+                <image src="{{item.image}}"></image>
+				{{item.price}}元砍走了<text>{{item.name}}</text>
+            </swiper-item>
+        </swiper>
+        <view class="column__text" wx:else>随砍随买，底价购好货</view>
+    </view>
+    <view bindtap="gotoUrl" class="column__item column__item-lihe" data-url="{{lihe.url}}" hidden="{{hideLihe}}">
+        <view class="column__title"></view>
+        <image class="column__image" src="{{lihe.image}}"></image>
+        <view class="column__text" wx:if="{{lihe.face.length}}">
+            <image src="{{item}}" wx:for="{{lihe.face}}"></image>
+			已领
+		</view>
+        <view class="column__text" wx:else>1元拿好货</view>
+    </view>
+    <view bindtap="gotoUrl" class="column__item column__item-pintuan" data-url="{{pintuan.list[idx].url}}" hidden="{{hidePintuan}}">
+        <view class="column__title"></view>
+        <swiper autoplay="true" bindchange="onSwiperChange" circular="true" class="column-swiper" interval="3000" vertical="true">
+            <swiper-item class="column-swiper__item" wx:for="{{pintuan.list}}" wx:key="image">
+                <image class="column-swiper__image" src="{{item.image}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="column__text">{{pintuan.text}}</view>
+    </view>
+</view>

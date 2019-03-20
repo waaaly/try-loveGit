@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "红包集结令",
+    "usingComponents": {
+        "AuthorizeModal": "../../components/AuthorizeModal/AuthorizeModal"
+    }
+}

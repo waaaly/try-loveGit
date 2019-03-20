@@ -1,0 +1,49 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="center_p" wx:if="{{list.length>0}}">
+    <view bindtap="toCleanOrder" class="item" data-cityCode="{{item.cityCode}}" data-countryCoee="{{item.countryCoee}}" data-detailAddress="{{item.detailAddress}}" data-id="{{item.id}}" data-index="{{index}}" data-isDefault="{{item.isDefault}}" data-mobile="{{item.mobile}}" data-postcode="{{item.postcode}}" data-provinceCode="{{item.provinceCode}}" data-townCode="{{item.townCode}}" data-userid="{{item.userid}}" data-username="{{item.username}}" wx:for="{{list}}" wx:key="index">
+        <view class="col">
+            <view class="info">
+                <view class="row spa ali-center">
+                    <text class="a px28">{{item.username}}</text>
+                    <text class="black px26">{{item.mobile}}</text>
+                </view>
+                <text class="px22 black ads-txt">地址：{{item.addr}} {{item.detailAddress}}</text>
+            </view>
+            <view class="imagebox row spa" wx:if="{{item.isDefault}}">
+                <view catchtap="address_del_changeDefault" class="row ali-center" data-index="{{index}}" data-type="2" wx:if="{{isJd!=2}}">
+                    <image class="sel-img" src="/images/xuanzhong_address2.png"></image>
+                    <text class="red px24">默认地址</text>
+                </view>
+                <view class="row ali-center">
+                    <view catchtap="toModifyAddre" class="px22 text-center ads-btn" data-cityCode="{{item.cityCode}}" data-countryCoee="{{item.countryCoee}}" data-detailAddress="{{item.detailAddress}}" data-id="{{item.id}}" data-index="{{item.index}}" data-isDefault="{{item.isDefault}}" data-mobile="{{item.mobile}}" data-postcode="{{item.postcode}}" data-provinceCode="{{item.provinceCode}}" data-townCode="{{item.townCode}}" data-userid="{{item.userid}}" data-username="{{item.username}}">编辑</view>
+                    <text catchtap="address_del_changeDefault" class="px22 text-center ads-btn" data-index="{{index}}" data-type="1">删除</text>
+                </view>
+            </view>
+            <view class="imagebox row spa" wx:else>
+                <view catchtap="address_del_changeDefault" class="row ali-center" data-index="{{index}}" data-type="2" wx:if="{{isJd!=2}}">
+                    <image class="sel-img" src="/images/weixuanzhong_address.png"></image>
+                    <text class="color666 px24">设为默认地址</text>
+                </view>
+                <view class="row ali-center">
+                    <view catchtap="toModifyAddre" class="px22 text-center ads-btn" data-cityCode="{{item.cityCode}}" data-countryCoee="{{item.countryCoee}}" data-detailAddress="{{item.detailAddress}}" data-id="{{item.id}}" data-index="{{index}}" data-isDefault="{{item.isDefault}}" data-mobile="{{item.mobile}}" data-postcode="{{item.postcode}}" data-provinceCode="{{item.provinceCode}}" data-townCode="{{item.townCode}}" data-userid="{{item.userid}}" data-username="{{item.username}}">编辑</view>
+                    <text catchtap="address_del_changeDefault" class="px22 text-center ads-btn" data-index="{{index}}" data-type="1">删除</text>
+                </view>
+            </view>
+        </view>
+        <view class=""></view>
+        <view catchtap="toModifyAddre" class="modify" data-cityCode="{{item.cityCode}}" data-countryCoee="{{item.countryCoee}}" data-detailAddress="{{item.detailAddress}}" data-id="{{item.id}}" data-index="{{index}}" data-isDefault="{{item.isDefault}}" data-mobile="{{item.mobile}}" data-postcode="{{item.postcode}}" data-provinceCode="{{item.provinceCode}}" data-townCode="{{item.townCode}}" data-userid="{{item.userid}}" data-username="{{item.username}}"></view>
+        <view class="clear"></view>
+    </view>
+    <view bindtap="addAddre" class="add">
+        <view class="text white px26">新增收货地址</view>
+    </view>
+</view>
+<view class="not-data col ali-center" wx:elif="{{list.length==0&&noData}}">
+    <image src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/center_address_icon.png"></image>
+    <view class="col">
+        <text class="px30 text-center black">暂未设置</text>
+        <text class="px22 text-center color999">没有收货地址收不了快递哦~</text>
+        <view catchtap="newAddress" class="goto_btn text-center px30">新增地址</view>
+    </view>
+</view>

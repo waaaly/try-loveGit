@@ -1,0 +1,309 @@
+<template name="tplStock">
+    <view class="good_reduce_price" id="margin_{{product.uuid}}" wx:if="{{margins[product.mainSku.id]&&!product.presale&&(!suit||!suit.presale)}}">
+        <text>已降价</text>
+        <text>￥{{margins[product.mainSku.id]}}</text>
+    </view>
+    <view class="goods_status" wx:if="{{stock[product.mainSku.id]==0}}">无货</view>
+    <view class="goods_status" wx:elif="{{stock[product.mainSku.id]>0}}">剩余{{stock[product.mainSku.id]}}件</view>
+    <view class="presale_good" wx:if="{{suit&&suit.presale&&(!suit.presale.selectable||!product.presale)}}">
+        <view class="status">套装{{utils.getPresaleStatusDesc(suit.presale)}}</view>
+        <view class="time">{{utils.getPresaleTimeDesc(suit.presale)}}</view>
+    </view>
+    <view class="presale_good" wx:elif="{{product.presale}}">
+        <view class="status">{{utils.getPresaleStatusDesc(product.presale)}}</view>
+        <view class="time">{{utils.getPresaleTimeDesc(product.presale)}}</view>
+    </view>
+</template>
+<template name="tplNumberPicker">
+    <view class="number_picker">
+        <view bind:tap="bubble" class="number_picker_minus {{num*1<=min*1?'disabled':''}}" data-action="{{num*1<=min*1?'':'sub'}}" data-uuid="{{uuid}}"></view>
+        <input bindblur="updateNum" bindfocus="showInputMask" class="number_picker_input" data-uuid="{{uuid}}" type="number" value="{{num}}"></input>
+        <view bind:tap="" class="number_picker_plus {{num*1<max*1?'':'disabled'}}" data-action="{{num*1<max*1?'add':''}}" data-uuid="{{uuid}}"></view>
+    </view>
+</template>
+<template name="tplTag">
+    <view class="sign_tip {{item.mainSku.isNoZY==1&&item.mainSku.factoryShip==1?'type_factory':'type_jdzy'}}" wx:if="{{showFactoryShipTag}}"></view>
+    <view class="sign_tip type_one_hour" wx:elif="{{item.mainSku.yxsd==1}}"></view>
+    <block wx:elif="{{item.mainSku.isJdJx==1}}">
+        <view class="sign_tip type_jdjx"></view>
+        <view class="sign_tip type_poor" wx:if="{{item.mainSku.isHelpPoor==1}}"></view>
+    </block>
+    <view class="sign_tip type_global_haitun" wx:elif="{{item.mainSku.isOverseaPurchase>0}}"></view>
+    <view class="sign_tip type_nsng" wx:elif="{{item.mainSku.isNSNGgoods==1}}"></view>
+    <view class="sign_tip type_fresh" wx:elif="{{item.mainSku.isFresh==1}}"></view>
+    <view class="sign_tip type_jdmarket" wx:elif="{{item.mainSku.isJDMarket==1}}"></view>
+    <view class="sign_tip type_poor" wx:elif="{{item.mainSku.isHelpPoor==1}}"></view>
+    <view class="sign_tip type_sams" wx:elif="{{item.isSamClub==1}}"></view>
+    <view class="sign_tip type_otc" wx:if="{{item.mainSku.isOtcDrug==1}}"></view>
+    <view class="sign_tip type_loc" wx:elif="{{item.mainSku.locType==1}}"></view>
+</template>
+<template name="tplGoodsAddon">
+    <view class="goods_addon" wx:if="{{product.selectPromotion.list.length||!product.isVirtualSuit&&product.gifts.listGiftPools.length||!product.isVirtualSuit&&product.showGifts.length&&product.gifts.virtualSuit!=1||product.donatedCouponList.length||product.showAttachments.length||services.entries[ utils.getServiceId(product) ]||services.entries[ utils.getServiceId(product,isSuit?vSkuId:'') ]||services.yb[ utils.getServiceId(product) ].length||services.home[ utils.getServiceId(product,isSuit?vSkuId:'') ].length||product.mainSku.isSupportCard==1&&!isSuit||product.giftServiceSku||product.jdBeanPromo&&product.jdBeanPromo.promoId!=0||product.mainSku.score*1>0}}">
+        <view class="goods_addon_inner">
+            <view catch:tap="showPromotionPanel" class="goods_addon_inner_content promotion" data-item-id="{{product.itemId}}" data-sku-id="{{product.mainSku.id}}" data-uuid="{{product.uuid}}" wx:if="{{product.selectPromotion.list.length}}">
+                <view class="label">促销</view>
+                <view class="content">
+                    <view class="list arrow">
+                        <view class="item">
+                            <text class="left">{{product.selectPromotion.value}}</text>
+                            <text class="right">{{product.selectPromotion.list.length}}个可选</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="goods_addon_inner_content" wx:if="{{!product.isVirtualSuit&&product.gifts.listGiftPools.length||!product.isVirtualSuit&&product.showGifts.length&&product.gifts.virtualSuit!=1||product.donatedCouponList.length}}">
+                <block wx:if="{{!product.isVirtualSuit&&product.gifts.listGiftPools.length}}">
+                    <view class="label">赠品</view>
+                    <view class="content">
+                        <view class="list arrow_right">
+                            <block wx:for="{{product.gifts.listGiftPools}}">
+                                <view bind:tap="gotoGiftDetail" class="item" data-uuid="{{product.uuid}}" wx:if="{{product.giftPoolType==28&&product.gifts.skus.length>5}}">
+                                    <text class="left">已选{{product.num}}件赠品</text>
+                                    <text class="right">切换</text>
+                                </view>
+                                <block wx:else>
+                                    <view bind:tap="gotoGiftDetail" class="item" data-uuid="{{product.uuid}}" wx:if="{{skuItem.selectState==2}}" wx:for="{{item.skus}}" wx:for-item="skuItem" wx:key="id">
+                                        <text class="left">{{skuItem.name}}</text>
+                                        <text class="right">x {{product.giftPoolType==28?skuItem.num:skuItem.num*product.num}}</text>
+                                    </view>
+                                </block>
+                            </block>
+                        </view>
+                        <view class="list" wx:if="{{product.donatedCouponList.length}}">
+                            <view class="item" wx:for="{{product.donatedCouponList}}">
+                                <text class="left">赠{{item.quota}}元京券({{item.ad}})</text>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="label">{{utils.getGiftLabel(product.gifts.extProp)}}</view>
+                    <view class="content">
+                        <view bind:tap="gotoGiftDetail" class="list arrow" data-sku-id="{{item.id}}" wx:for="{{product.showGifts}}" wx:key="id">
+                            <view class="item">
+                                <text class="left">{{item.name}}</text>
+                                <text class="right">x {{item.num*(num||product.num)}}</text>
+                            </view>
+                        </view>
+                        <view class="list" wx:if="{{product.donatedCouponList.length}}">
+                            <view class="item" wx:for="{{product.donatedCouponList}}">
+                                <text class="left">赠{{item.quota}}元京券({{item.ad}})</text>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <view class="goods_addon_inner_content attachment" wx:if="{{product.showAttachments.length}}">
+                <view class="label">附件</view>
+                <view class="content">
+                    <view class="list arrow">
+                        <view bind:tap="gotoAttachmentsDetail" class="item" data-sku-id="{{item.id}}" wx:for="{{product.showAttachments}}" wx:key="id">
+                            <text class="left">{{item.name}}</text>
+                            <text class="right">x {{item.num*product.num}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="goods_addon_inner_content" wx:if="{{services.entries[ utils.getServiceId(product) ]||services.entries[ utils.getServiceId(product,isSuit?vSkuId:'') ]||services.yb[ utils.getServiceId(product) ].length||services.home[ utils.getServiceId(product,isSuit?vSkuId:'') ].length||product.mainSku.isSupportCard==1&&!isSuit||product.giftServiceSku}}">
+                <view class="label">服务</view>
+                <view bind:tap="gotoServicesPage" class="content" data-uuid="{{product.uuid}}" data-vskuid="{{vSkuId}}">
+                    <view class="list arrow ">
+                        <block wx:if="{{services.yb[ utils.getServiceId(product) ].length||services.home[ utils.getServiceId(product,isSuit?vSkuId:'') ].length||product.giftServiceSku&&product.giftServiceSku.id}}">
+                            <view class="item" wx:for="{{services.yb[ utils.getServiceId(product) ]}}" wx:for-item="ybItem" wx:key="platformId">
+                                <text class="left">{{'['+ybItem.brandName+']'+ybItem.platformName}}</text>
+                                <text class="right">￥{{ybItem.price}} x {{num||product.num}}</text>
+                            </view>
+                            <view class="item" wx:for="{{services.home[ utils.getServiceId(product,isSuit?vSkuId:'') ]}}" wx:for-item="ybItem" wx:key="skuId">
+                                <text class="left">{{'['+ybItem.scName+']'+ybItem.name}}</text>
+                                <text class="right">￥{{ybItem.price}} x {{num||product.num}}</text>
+                            </view>
+                            <view class="item" wx:if="{{product.giftServiceSku&&product.giftServiceSku.id}}">
+                                <text class="left">[礼品购]礼品服务</text>
+                                <text class="right">￥{{product.giftServiceSku.promoPrice}}</text>
+                            </view>
+                        </block>
+                        <view class="item" wx:elif="{{services.entries[ utils.getServiceId(product) ]==1||services.entries[ utils.getServiceId(product,isSuit?vSkuId:'') ]==1||product.mainSku.isSupportCard==1&&!isSuit}}">
+                            <text class="left">
+                                <block wx:if="{{!isSuit&&(services.entries[ utils.getServiceId(product) ]==1||services.entries[ utils.getServiceId(product,isSuit?vSkuId:'') ]==1)&&product.mainSku.isSupportCard==1}}">选择增值服务(包含礼品服务)</block>
+                                <block wx:elif="{{services.entries[ utils.getServiceId(product) ]==1||services.entries[ utils.getServiceId(product,isSuit?vSkuId:'') ]==1}}">选择增值服务</block>
+                                <block wx:else>[礼品购]礼品服务</block>
+                            </text>
+                        </view>
+                    </view>
+                    <view class="list" wx:if="{{services.invalid}}">
+                        <view class="item">
+                            <text class="left">[当前地址暂不支持]</text>
+                            <view class="right">￥{{ybItem.price}} x {{num||product.num}} | 删除</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="goods_addon_inner_content jdbean" wx:if="{{product.jdBeanPromo&&product.jdBeanPromo.promoId!=0}}">
+                <view class="label">京豆优惠购</view>
+                <view class="content">
+                    <view class="list arrow">
+                        <view class="item">
+                            <text class="left">{{utils.getBeanPromoText(product.isUsedJBeanPromo,product.jdBeanPromo,product.num)}}</text>
+                            <text bind:tap="bubble" class="right" data-action="onUseJDBean">{{product.isUsedJBeanPromo==0?'兑换优惠':'取消兑换'}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="goods_addon_inner_content" wx:if="{{product.mainSku.score*1>0}}">
+                <view class="label">赠京豆</view>
+                <view class="content">
+                    <view class="list">
+                        <view class="item">
+                            <text class="left">赠{{product.mainSku.score}}京豆</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <block wx:if="{{shopServices[product.mainSku.id]}}">
+                <view class="goods_addon_inner_content">
+                    <view class="label">门店服务</view>
+                    <view class="content">
+                        <view class="list">
+                            <view class="item">
+                                <text class="left" wx:if="{{shopServices[product.mainSku.id].status==0}}">所选服务已下线</text>
+                                <block wx:else>
+                                    <text class="left">{{shopServices[product.mainSku.id].serviceProjectName}}</text>
+                                    <text>x {{product.num}}</text>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="goods_addon_inner_content" wx:if="{{shopServices[product.mainSku.id].status!=0}}">
+                    <view class="label">门店</view>
+                    <view class="content">
+                        <view class="list">
+                            <view class="item">
+                                <text class="left">{{shopServices[product.mainSku.id].status==-1?'门店已失效':shopServices[product.mainSku.id].locShopName}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</template>
+<template name="tplGoodsSuit">
+    <view class="suit hide_op_promo" wx:for="{{suits}}" wx:key="uuid">
+        <view class="suit_title" id="id_{{item.uuid}}">
+            <view bind:tap="onCheck" class="checkbox {{item.checkType==1?'checked':''}}" data-index="{{0}}" data-type="product" data-uuid="{{item.uuid}}" hidden="{{editable}}" wx:if="{{item.selectable}}"></view>
+            <view class="checkbox presale" hidden="{{editable}}" wx:elif="{{!item.selectable}}"></view>
+            <view bind:tap="onEditCheck" class="checkbox {{item.editChecked?'checked':''}}" data-checked="{{item.editChecked}}" data-type="product" data-uuid="{{item.uuid}}" hidden="{{!editable}}"></view>
+            <view class="name">
+                <view class="sign_tip icon_suit"></view>{{item.name}}</view>
+            <view bind:tap="showPromotionPanel" class="promotions" data-uuid="{{item.uuid}}" wx:if="{{item.selectPromotion.list.length}}">
+                <text>{{item.selectPromotion.value}}</text>
+                <view class="choice">{{item.selectPromotion.list.length}} 个可选</view>
+            </view>
+        </view>
+        <view catch:tap="doAction" class="goods  {{utils.getClsLastGoods(item.products,productIndex)}} {{stock[product.mainSku.id]==0?'nostack':''}}" data-shop-id="{{shopId}}" data-uuid="{{product.uuid}}" id="id_{{product.uuid}}" wx:for="{{item.products}}" wx:for-index="productIndex" wx:for-item="product" wx:key="wxKey">
+            <slider-view bind:remove="onRemove" data-uuid="{{item.uuid}}">
+                <view class="goods_image">
+                    <image bind:tap="bubble" data-action="gotoItemDetail" lazyLoad="true" model="aspectFit" src="{{product.mainSku.image}}"></image>
+                    <template is="tplStock" data="{{stock:stock,margins:margins,product:product,suit:item}}"></template>
+                </view>
+                <view class="goods_content" style="{{utils.getMinHeight( margins[product.mainSku.id] )}}">
+                    <view bind:tap="bubble" class="goods_content_name line2" data-action="gotoItemDetail">
+                        <template is="tplTag" data="{{item:product,showFactoryShipTag:showFactoryShipTag}}"></template>{{product.mainSku.name}}</view>
+                    <view bind:tap="bubble" class="goods_content_attr readonly" data-action="gotoItemDetail" wx:if="{{spec[product.mainSku.id]}}">{{spec[product.mainSku.id]}}</view>
+                    <view class="goods_content_line">
+                        <view bind:tap="bubble" class="goods_content_line_num" data-action="gotoItemDetail">
+                            {{product.num}} 件/套 x {{item.num}}
+                        </view>
+                        <view bind:tap="gotoPopItemDetail" class="goods_content_line_similar" data-sku="{{partition[product.mainSku.id]}}" wx:if="{{stock[product.mainSku.id]==0&&partition[product.mainSku.id]}}">
+                            <view class="btn_similar">查看同款</view>
+                        </view>
+                        <view bind:tap="gotoSimilarPage" class="goods_content_line_similar" data-sku="{{product.mainSku.id}}" wx:elif="{{stock[product.mainSku.id]==0}}">
+                            <view class="btn_similar">查看相似</view>
+                        </view>
+                    </view>
+                    <view class="goods_content_line_tips left_red" wx:if="{{item.presale&&item.presale.toSkuDetailText}}">{{item.presale.toSkuDetailText}}</view>
+                    <view class="goods_content_line_tips left_red" wx:elif="{{product.presale&&product.presale.toSkuDetailText}}">{{product.presale.toSkuDetailText}}</view>
+                </view>
+            </slider-view>
+            <template is="tplGoodsAddon" data="{{num:item.num,product:product,services:services,shopServices:shopServices,isSuit:true,vSkuId:item.vSkuId}}"></template>
+        </view>
+        <view class="suit_price">
+            <view class="price" wx:if="{{!item.hidePrice}}">套装价<text>￥{{item.promoPrice}}</text>
+            </view>
+            <view class="price" wx:elif="{{item.hidePrice}}">
+                <text>待发布</text>
+            </view>
+            <template is="tplNumberPicker" data="{{num:item.num,min:1,max:item.maxNum,uuid:item.uuid}}"></template>
+        </view>
+    </view>
+</template>
+<template name="tplGoods">
+    <view catch:tap="doAction" class="goods {{utils.getClsLastGoods(item.products,productIndex,item.suits.length)}} {{stock[product.mainSku.id]==0?'nostack':''}}" data-shop-id="{{shopId}}" data-uuid="{{product.uuid}}" id="id_{{product.uuid}}" wx:for="{{item.products}}" wx:for-index="productIndex" wx:for-item="product" wx:key="wxKey">
+        <slider-view bind:open="onSliderViewOpen" bind:remove="onRemove" data-uuid="{{product.uuid}}">
+            <view bind:tap="bubble" class="checkbox {{product.checkType==1?'checked':''}}" data-action="onCheck" data-type="product" hidden="{{editable}}" wx:if="{{product.selectable}}"></view>
+            <view bind:tap="bubble" class="checkbox presale" data-action="gotoItemDetail" hidden="{{editable}}" wx:elif="{{!product.selectable}}"></view>
+            <view bind:tap="bubble" class="checkbox {{product.editChecked?'checked':''}}" data-action="onEditCheck" data-checked="{{product.editChecked}}" data-type="product" hidden="{{!editable}}"></view>
+            <view class="goods_image">
+                <image bind:tap="bubble" data-action="gotoItemDetail" lazyLoad="true" model="aspectFit" src="{{product.mainSku.image}}"></image>
+                <template is="tplStock" data="{{stock:stock,margins:margins,product:product}}"></template>
+            </view>
+            <view class="goods_content" style="{{utils.getMinHeight( margins[product.mainSku.id] )}}">
+                <view bind:tap="bubble" class="goods_content_name line2" data-action="gotoItemDetail">
+                    <template is="tplTag" data="{{item:product,showFactoryShipTag:showFactoryShipTag}}"></template>{{product.mainSku.name}}</view>
+                <view bind:tap="bubble" class="goods_content_attr {{product.mainSku.locType==1?'loc':''}} {{!editable&&utils.canSwitchSku(product)?'':'readonly'}}" data-action="{{!editable&&product.mainSku.locType==1?'gotoItemDetail':utils.canSwitchSku(product)?'showSwitchSkuPanel':'gotoItemDetail'}}" wx:if="{{spec[product.mainSku.id]}}">{{locShops[product.mainSku.lsId].name||spec[product.mainSku.id]}}</view>
+                <view class="goods_content_line">
+                    <view bind:tap="bubble" class="goods_content_line_price {{utils.getClsPrice(product)}}" data-action="{{utils.showSwitchPrice(product)?'showSwitchPrices':'gotoItemDetail'}}" wx:if="{{!product.hidePrice}}">
+                    ￥<text bind:tap="bubble" data-action="{{utils.showSwitchPrice(product)?'showSwitchPrices':'gotoItemDetail'}}">{{product.show_price[0]}}</text>.{{product.show_price[1]}}
+                    <view class="icon" data-action="{{utils.showSwitchPrice(product)?'showSwitchPrices':'gotoItemDetail'}}" wx:if="{{utils.getClsPrice(product)}}"></view>
+                        <view class="arrow_btm" data-action="showSwitchPrices" wx:if="{{utils.showSwitchPrice(product)}}"></view>
+                    </view>
+                    <view bind:tap="bubble" class="goods_content_line_price" data-action="gotoItemDetail" wx:if="{{product.hidePrice}}">
+                        ￥<text bind:tap="bubble" data-action="gotoItemDetail">待发布</text>
+                    </view>
+                    <view bind:tap="gotoPopItemDetail" class="goods_content_line_similar" data-sku="{{partition[product.mainSku.id]}}" wx:if="{{stock[product.mainSku.id]==0&&partition[product.mainSku.id]}}">
+                        <view class="btn_similar">查看同款</view>
+                    </view>
+                    <view bind:tap="gotoSimilarPage" class="goods_content_line_similar" data-sku="{{product.mainSku.id}}" wx:elif="{{stock[product.mainSku.id]==0}}">
+                        <view class="btn_similar">查看相似</view>
+                    </view>
+                    <view class="goods_content_line_num" wx:else>
+                        <template is="tplNumberPicker" data="{{num:product.num,min:product.mainSku.lowestBuy>0?product.mainSku.lowestBuy:1,max:product.mainSku.maxNum,uuid:product.uuid}}"></template>
+                    </view>
+                </view>
+                <view class="goods_content_limit" wx:if="{{product.mainSku.cartMessageList.length||product.mainSku.lowestBuy*1>1}}">
+                    <text>
+                        <block wx:if="{{product.mainSku.cartMessageList.length}}">{{product.mainSku.cartMessageList[0].messageInfo}}</block>
+                        <block wx:elif="{{product.mainSku.lowestBuy*1>1}}">{{product.mainSku.lowestBuy}}件起售</block>
+                    </text>
+                </view>
+                <view class="goods_content_line_tips left_red" wx:if="{{product.presale&&product.presale.toSkuDetailText}}">{{product.presale.toSkuDetailText}}</view>
+                <view class="goods_content_line_pingou" wx:if="{{pinGouInfos[product.mainSku.id]&&pinGouInfos[product.mainSku.id].priceDiff>0}}">
+                    <view bind:tap="bubble" class="goods_content_line_pingou_item arrow" data-action="onTapPingouTag">
+                    {{pinGouInfos[product.mainSku.id].tuanMemberCount}}人拼购仅
+                    <text class="price"> ¥ {{pinGouInfos[product.mainSku.id].pinGouPrice}}</text>，立省<text class="price">{{pinGouInfos[product.mainSku.id].priceDiff}}</text>元</view>
+                </view>
+            </view>
+        </slider-view>
+        <template is="tplGoodsAddon" data="{{product:product,services:services,shopServices:shopServices}}"></template>
+    </view>
+</template>
+<template name="tplGoodsGift">
+    <view bind:tap="gotoGiftDetail" class="goods goods_gift hide_op_promo" data-sku-id="{{product.id}}" wx:if="{{product.giftSelectState==2}}" wx:for="{{products}}" wx:for-item="product" wx:key="id">
+        <slider-view bind:remove="onRemoveGift" data-item-id="{{itemId}}" data-sku-id="{{product.id}}">
+            <view class="goods_image">
+                <image lazyLoad="true" model="aspectFit" src="{{product.image}}"></image>
+            </view>
+            <view class="goods_content">
+                <view class="goods_content_name line2">
+                    <view class="sign_tip type_promotion_gift_bg">{{type}}</view>{{product.name}}</view>
+                <view class="goods_content_line">
+                    <view class="goods_content_line_price">
+                        ￥<text>{{product.promoPrice[0]}}</text>.{{product.promoPrice[1]}}
+                    </view>
+                </view>
+            </view>
+        </slider-view>
+    </view>
+</template>
+<wxs module="utils" src="index.wxs" />

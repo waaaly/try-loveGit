@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="search">
+        <view class="row ali-center">
+            <input bindconfirm="search" bindinput="inputVal" confirmType="search" placeholder="请输入商品名称" type="text"></input>
+            <text catchtap="search" class="cancel px24 text-center">搜索</text>
+            <image class="search-icon" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/search_icon.png"></image>
+        </view>
+    </view>
+    <view class="search-list">
+        <view class="row spa search-title">
+            <view class="px26 black">历史搜索</view>
+            <text catchtap="clearSearchHistory" class="px16 clear">清空</text>
+        </view>
+        <view class="row hisyory-list">
+            <view catchtap="search_his" class="px22 list-item black" data-index="{{index}}" wx:for="{{searchHistoryList}}" wx:key="index">{{item}}</view>
+        </view>
+    </view>
+</view>

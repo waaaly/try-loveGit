@@ -1,0 +1,39 @@
+<view class="partakeActive" wx:if="{{listAggregation&&listAggregation.length>0}}">
+    <navigator class="partakeActive-item system-l-l-r" hoverClass="navigator-hover" url="../redEnvelopesCreat/redEnvelopesCreat?activityCode={{item.activityCode}}&aggregationId={{item.aggregationId}}" wx:for="{{listAggregation}}" wx:key="{{key}}">
+        <view class="system-l partakeActive-user-img">
+            <view>
+                <image src="{{item.headUrl}}" wx:if="{{item.headUrl}}"></image>
+                <image src="imgs/defaultface_user.png" wx:else></image>
+            </view>
+        </view>
+        <view class="system-between-l partakeActive-user">
+            <view class="partakeActive-user-info" wx:if="{{item.isOriginate==1}}">
+                <text class="partakeActive-user-name">我</text>发起的活动</view>
+            <view class="partakeActive-user-info" wx:if="{{item.isOriginate!=1}}">
+                <text class="partakeActive-user-name">{{item.displayName}}</text>发起的活动</view>
+            <view class="partakeActive-user-time">
+                <text>{{item.userCreateTime}}</text>
+            </view>
+        </view>
+        <view class="btn-next">
+            <view class="icon-more-right">
+                <image src="../../imgs/icon_arrow_more.png"></image>
+            </view>
+        </view>
+    </navigator>
+</view>
+<view class="system-empty" wx:if="{{!listAggregation}}">
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="imgs/empty-order.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>您暂未参加活动，去创建自己的活动吧</text>
+        </view>
+        <view class="system-empty-btn">
+            <navigator class="wxButton-style-2" hoverClass="navigator-hover" url="../redEnvelopesCreat/redEnvelopesCreat?from=activityList&activityCode={{activityCode}}">
+                <text>发起召集令</text>
+            </navigator>
+        </view>
+    </view>
+</view>

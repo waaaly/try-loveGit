@@ -1,0 +1,37 @@
+<view class="registerArea">
+    <view class="registerAreaLeft">
+        <view class="registerAreaTitle">国家/地区</view>
+        <view class="registerAreaTip">正在注册中国华为帐号。</view>
+    </view>
+    <view class="registerAreaRight">
+        <text>中国</text>
+    </view>
+</view>
+<view class="registerRule templateUL">
+    <view class="templateLI">华为帐号是用于访问所有华为服务的帐号，为实现上述功能，<text class="srtong">本应用使用过程中需要连接网络，并调用一下手机权限：电话、短位置，</text>并需要收集、使用您的下列信息：</view>
+    <view class="templateLI">
+        <text class="dot">.</text>设备信息，包括（设备标识符、PLMN、国家/地区、语言、设备型号和版本号）；</view>
+    <view class="templateLI">
+        <text class="dot">.</text>个人信息，包括（手机号、邮件地址和密码）；</view>
+    <view class="templateLI">
+        <text class="dot">.</text>网络信息，包括（IP 地址）。</view>
+    <view class="templateLI">上述数据将会传输并保存至中华人民共和国境内的服务器。</view>
+    <view class="templateLI">
+        <text>
+</text>
+    </view>
+    <view class="templateLI">如果您不同意我们采集上述信息，或不同意调用相关手机权限，将导致本软件无法正常运行，我们将无法为您提供服务。您可通过销户以终止以上数据或权限的收集与处理。</view>
+    <view class="templateLI">
+        <text>
+</text>
+    </view>
+    <view class="templateLI">点击“同意”，即表示您同意上述内容及<text bindtap="toUserProtocol" class="upBlue">华为帐号用户协议</text>、<text bindtap="toPrivacyProtocol" class="upBlue">关于华为帐号与隐私的声明</text>。</view>
+</view>
+<view class="upActive registerRuleActive">
+    <view bindtap="toPersonal" class="upButton-style-1">
+        <text>上一步</text>
+    </view>
+    <view bindtap="toRegisterPhone" class="upButton-style-1">
+        <text>同意</text>
+    </view>
+</view>

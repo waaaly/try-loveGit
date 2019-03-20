@@ -1,0 +1,64 @@
+<view class="header_con">
+    <view class="my_header {{isPlus?'plus_user':''}} {{atmosConfig.headerBg?'':'shadow'}}" style="{{atmosConfig.headerBg?'background: url('+atmosConfig.headerBg+') no-repeat 0 0 / 100% 100%;':''}}">
+        <view class="user_info">
+            <view class="head-tip" style="{{atmosConfig.headImg?'background: url('+atmosConfig.headImg+') no-repeat 0 0 / 100% 100%;':''}}" wx:if="{{atmosConfig.headImg}}"></view>
+            <view class="avatar_wrap">
+                <view bindtap="navToAccountPage" class="avatar">
+                    <view class="image_info" style="{{userInfo.avatarUrl?'background: url('+userInfo.avatarUrl+') no-repeat 0 0 / 100% 100%;':''}}" wx:if="{{userInfo.avatarUrl}}"></view>
+                </view>
+                <view class="hor-tips" style="z-index:{{isRealName?-1:1}}">
+                    <view class="real_name">
+                        <view bindtap="navToRealName" class="real_name_item line1" style="background:{{atmosConfig.arrowBgColor}};color:{{atmosConfig.arrowTextColor}}" wx:if="{{!isRealName&&userInfo.definePin==0}}">待实名认证
+                        </view>
+                    </view>
+                    <view bindtap="navToBindPage" class="login bind-wrap" style="background-color:{{atmosConfig.arrowBgColor}};color:{{atmosConfig.arrowTextColor}}" wx:if="{{newBindConfig.length&&userInfo.isbind&&userInfo.definePin!=0}}">绑定手机号·领取礼包 ></view>
+                    <view bindtap="changeToJd" class="login line1 change-account" style="background:{{atmosConfig.arrowBgColor}};color:{{atmosConfig.arrowTextColor}}" wx:if="{{!userInfo.isbind&&userInfo.definePin==1}}">
+                        切换账号至{{userInfo.pinlist}}>
+                    </view>
+                    <view bindtap="navToJdMember" class="login line1 {{openJvalue}} {{isPlus?'plus_label_bg':''}}" style="background:{{atmosConfig.arrowBgColor}};color:{{atmosConfig.arrowTextColor}}" wx:if="{{!userInfo.definePin&&userInfo.jvalue}}">
+                        京享值{{userInfo.jvalue}}
+                    </view>
+                    <view bindtap="navToXBCredit" class="login line1 goto_arrow {{isPlus?'plus_label_bg':''}}" style="background:{{atmosConfig.arrowBgColor}};color:{{atmosConfig.arrowTextColor}}" wx:if="{{showXBCredit&&!userInfo.definePin}}">
+                        {{XBCreditWord}}{{XBCreditScore}}
+                    </view>
+                </view>
+            </view>
+            <view class="personal_wrap">
+                <view class="name line1" wx:if="{{!userInfo.isbind&&userInfo.definePin==0}}">
+                    <text bindtap="showEditName" class="line1">{{userInfo.isbind?'用户名：'+userInfo.pin||'京东用户':userInfo.definePin==0?userInfo.nickName||'京东用户':'用户名：'+userInfo.pin}}</text>
+                    <text bindtap="showEditName" class="my_header_v4_name_edit"></text>
+                    <view class="vip {{userInfo.level}} {{isPlus?'plus_label_bg':''}}" style="background:{{atmosConfig.arrowBgColor}};color:{{atmosConfig.arrowTextColor}}" wx:if="{{userInfo.definePin==0&&!!userInfo.jvalue}}"></view>
+                </view>
+                <text class="pin line1">用户名：{{userInfo.pin||'京东用户'}}</text>
+            </view>
+            <view class="account_wrap">
+                <view bindtap="navToAccountPage" class="account_wrap_content" style="color:{{atmosConfig.accountTextColor}}" wx:if="{{userInfoNotError&&userInfo.definePin!=2}}">
+                    <text class="account-icon" style="{{'background: url('+(atmosConfig.accountIcon||'https://img11.360buyimg.com/jdphoto/s26x26_jfs/t14701/329/1603887827/338/bdda401f/5a53570bN44d2baad.png')+') no-repeat 0 0 / 100% 100%;'}}"></text>账号管理
+                </view>
+            </view>
+            <view bindtap="navToPlus" class="plus_account" wx:if="{{plusTips.length&&userInfoNotError}}">
+                <view class="plus_account_text" wx:for="{{plusTips}}" wx:key="id">{{item.name}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="edit_nick_alert_mask" hidden="{{!editNameShow}}">
+        <view class="my_alert fixed" style="{{inputTop?'top:'+inputTop:''}}">
+            <view class="my_alert_title">编辑京东账号信息</view>
+            <view class="my_alert_input type_disabled">
+                <view class="my_alert_input_label">用户名</view>
+                <view class="user_name">{{userInfo.pin||''}}</view>
+            </view>
+            <view class="my_alert_input_text">用户名不可修改</view>
+            <view class="my_alert_input my_alert_nickname_input {{editNameFail?'type_alert':''}}">
+                <view class="my_alert_input_label" for="nickname">昵称</view>
+                <input bindblur="editNickNameBlur" bindfocus="editNickNameFocus" id="nickName" type="text" value="{{nickName||''}}"></input>
+            </view>
+            <view class="my_alert_input_text type_alert nick_name_point" hidden="{{!editNameFail}}">{{editNameFailMSg}}</view>
+            <view class="my_alert_input_text {{editNameFail?'type_alert':''}}">4-20个字符，可由中英文、数字、"-"、"_" 组成</view>
+            <view class="my_alert_btns">
+                <view bindtap="cancleEditName" class="my_alert_btn">取消</view>
+                <view bindtap="clickSaveNickName" class="my_alert_btn color_red">保存</view>
+            </view>
+        </view>
+    </view>
+</view>

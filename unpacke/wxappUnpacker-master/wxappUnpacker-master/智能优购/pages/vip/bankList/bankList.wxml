@@ -1,0 +1,8 @@
+<scroll-view class="pick_view" scrollY="{{true}}">
+    <view class="pick_mask">
+        <view catchtap="choseBank" class="pick_item row spa ali-center" data-bankcode="{{item.bankcode}}" data-bankname="{{item.bankname}}" data-inx="{{index}}" wx:for="{{banks}}">
+            <text>{{item.bankname}}</text>
+            <image class="infor_checked" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/infor_checked.png" wx:if="{{choseIndex==index}}"></image>
+        </view>
+    </view>
+</scroll-view>

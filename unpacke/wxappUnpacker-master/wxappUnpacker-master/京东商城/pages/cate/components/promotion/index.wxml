@@ -1,0 +1,11 @@
+<view wx:if="{{!promotion}}"></view>
+<view class="marketing" wx:else>
+    <view class="marketing__header">{{promotion.keyword}}</view>
+    <view class="marketing__list">
+        <view bindtap="handleItemClick" class="marketing__list-item" data-key="{{item.key}}" data-url="{{item.url}}" wx:if="{{index<4}}" wx:for="{{promotion.level2words}}" wx:key="{{item.marketing}}">
+            <view class="marketing__list-item-title">{{item.keyword}}</view>
+            <view class="marketing__list-item-des">{{item.extInfo2}}</view>
+            <image class="marketing__list-item-image" mode="aspectFill" src="{{item.imageUrl}}"></image>
+        </view>
+    </view>
+</view>

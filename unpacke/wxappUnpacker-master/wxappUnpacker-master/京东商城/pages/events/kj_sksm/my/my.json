@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "京东砍价",
+    "usingComponents": {
+        "bargain-detail": "./comps/bargain-detail/bargain-detail",
+        "bargain-tab": "./comps/bargain-tab/bargain-tab"
+    }
+}

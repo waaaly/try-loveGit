@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "名品特卖",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "Go2Index": "../components/go2index/go2index",
+        "BrandGroup": "./components/brand_group/brand_group",
+        "BrandSkus": "./components/brand_skus/brand_skus",
+        "PingBottom": "../components/ping_bottom/ping_bottom"
+    }
+}

@@ -1,0 +1,57 @@
+<view class="xlist_group my_cell">
+    <view class="rel_container">
+        <view class="top_line_box">
+            <view bindtap="navToCouponPage" class="assets_item">
+                <view class="assets_item_val">
+                    <view wx:if="{{couponNum}}">
+                        <text class="assets_val">{{couponNum}}</text>
+                        <text class="assets_unit">张</text>
+                    </view>
+                </view>
+                <text class="assets_item_key">京东券</text>
+                <text class="dot dot_spe" wx:if="{{couponNum&&isCouponRed}}"></text>
+            </view>
+            <view bindtap="navToBalancePage" class="assets_item" wx:if="{{isXcx}}">
+                <view class="assets_item_val">
+                    <view wx:if="{{balance}}">
+                        <text class="assets_val">{{balance}}</text>
+                        <text class="assets_unit">元</text>
+                    </view>
+                </view>
+                <text class="assets_item_key">账户余额</text>
+            </view>
+            <view bindtap="navToBaiTiaoPage" class="assets_item" wx:if="{{showAssetsTips}}">
+                <text class="openBaitiaoRed" wx:if="{{notOpenBaitiao}}">百元礼包</text>
+                <view class="assets_item_val">
+                    <view wx:if="{{baiTiaoNum}}">
+                        <text class="assets_val" style="{{notOpenBaitiao?'font-size:12px':''}}">{{baiTiaoNum}}</text>
+                        <text class="assets_unit" wx:if="{{isBaiTiaoNum}}">元</text>
+                    </view>
+                </view>
+                <text class="assets_item_key">{{baiTiaoText}}</text>
+            </view>
+            <view bindtap="navToBeanPage" class="assets_item">
+                <view class="assets_item_val">
+                    <view wx:if="{{jdNum}}">
+                        <text class="assets_val">{{jdNum}}</text>
+                        <text class="assets_unit">个</text>
+                    </view>
+                </view>
+                <text class="assets_item_key">京豆</text>
+            </view>
+            <view bindtap="navToECardPage" class="assets_item">
+                <view class="assets_item_val">
+                    <view wx:if="{{eCardNum}}">
+                        <text class="assets_val">{{eCardNum}}</text>
+                        <text class="assets_unit">张</text>
+                    </view>
+                </view>
+                <text class="assets_item_key">礼品卡</text>
+            </view>
+            <view bindtap="navToAssetPage" class="assets_item assets-all">
+                <view class="assets_item_val my_asset"></view>
+                <text class="assets_item_key">我的资产</text>
+            </view>
+        </view>
+    </view>
+</view>

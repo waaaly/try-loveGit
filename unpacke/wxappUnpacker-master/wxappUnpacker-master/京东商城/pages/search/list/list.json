@@ -1,0 +1,23 @@
+{
+    "navigationBarTitleText": "搜索",
+    "onReachBottomDistance": 500,
+    "usingComponents": {
+        "tags-repanel": "../components/tags-repanel/index",
+        "filter-sort": "../components/filter-sort/index",
+        "search-popup": "../components/search-popup/index",
+        "search-bar": "../components/search-bar/index",
+        "smart-box": "../components/smart_box/index",
+        "tags-hotpanel": "../components/tags-hotpanel/index",
+        "tags-hispanel": "../components/tags-hispanel/index",
+        "tips-bar": "../components/tips-bar/index",
+        "quick-nav": "../../../components/quick-nav/quick-nav",
+        "search-egg": "../components/search-egg/index",
+        "advert-egg": "../components/advert-egg/index",
+        "shop-list": "../components/shop-list/index",
+        "similar-mask": "../components/similar-mask/index",
+        "exhibition": "../components/exhibition/index",
+        "shop-belt": "../components/shop-belt/index",
+        "topic": "../components/topic/index",
+        "auto-rank": "../components/auto-rank/index"
+    }
+}

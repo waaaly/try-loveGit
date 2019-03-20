@@ -1,0 +1,190 @@
+<view class="rma-nav spell-nav bg_white">
+    <view class="rma-nav-tab bg_white">
+        <view bindtap="switchTabOption" class="{{tabFlag.tabFlag1?'selected':''}}" data-status="1">
+            <text>进行中</text>
+        </view>
+        <view bindtap="switchTabOption" class="{{tabFlag.tabFlag2?'selected':''}}" data-status="2">
+            <text>已成团</text>
+        </view>
+        <view bindtap="switchTabOption" class="{{tabFlag.tabFlag3?'selected':''}}" data-status="3">
+            <text>已失效</text>
+        </view>
+    </view>
+</view>
+<scroll-view bindscrolltolower="loadSpellMore" class="rma-tab-box spell-tab-box" lowerThreshold="5" scrollTop="{{scrollTop}}" scrollY="true" style="height: {{windowHeight-100/2.0833}}px; width: {{windowWidth}}px;" wx:if="{{tabFlag.tabFlag1&&dataArr.dataArr1.length>0}}">
+    <view class="rma-mate-area" wx:for="{{dataArr.dataArr1}}" wx:key="index">
+        <view class="rma-mate-list bg_white">
+            <view class="rma-mate-header">
+                <view class="order-number">订单号：{{item.orderCode}}</view>
+                <view class="order-status red">进行中</view>
+            </view>
+            <view bindtap="gotoGoodsDetail" class="sys-good-area" data-prdid="{{item.disPrdId}}" data-skucode="{{item.sbomCode}}" hoverClass="navigator-hover">
+                <view class="sys-good-item rma-good-item">
+                    <view class="good-panels">
+                        <view class="good-img">
+                            <image src="{{cdnPath}}{{item.photoPath}}428_428_{{item.photoName}}"></image>
+                        </view>
+                        <view class="good-info">
+                            <view class="good-name">
+                                <text>{{item.sbomName}}</text>
+                            </view>
+                            <view class="spell-name">
+                                <view class="good-spell wxButton-style-2">{{item.teamBuyNumber}}人拼团</view>
+                                <view class="good-price">¥{{item.teamBuyPrice}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="rma-mate-footer">
+                <view class="rma-mate-action">
+                    <view bindtap="gotoSpellDetail" class="wxButton-style-2" data-skucode="{{item.sbomCode}}" data-teamcode="{{item.teamCode}}" hoverClass="navigator-hover">
+                        <text>邀请好友</text>
+                    </view>
+                    <view bindtap="gotoOrderDetail" class="wxButton-style-3" data-ordercode="{{item.orderCode}}" hoverClass="navigator-hover">
+                        <text>订单详情</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{loadMore.loadMore1}}">
+        <view bindtap="onToast" class="loading">
+            <image src="../../imgs/icon_pull.png"></image>
+            <text class="more-loading">上拉加载更多拼团</text>
+        </view>
+        <view class="loading">
+            <image src="../../imgs/loading.gif"></image>
+        </view>
+    </view>
+    <view class="buttonMore loading" wx:if="{{totalList.totalList1}}">
+        <text class="loading-end">已加载全部拼团</text>
+    </view>
+</scroll-view>
+<scroll-view bindscrolltolower="loadSpellMore" class="rma-tab-box spell-tab-box" lowerThreshold="5" scrollTop="{{scrollTop}}" scrollY="true" style="height: {{windowHeight-100/2.0833}}px; width: {{windowWidth}}px;" wx:if="{{tabFlag.tabFlag2&&dataArr.dataArr2.length>0}}">
+    <view class="rma-mate-area" wx:for="{{dataArr.dataArr2}}" wx:key="index">
+        <view class="rma-mate-list bg_white">
+            <view class="rma-mate-header">
+                <view class="order-number">订单号：{{item.orderCode}}</view>
+                <view class="order-status red" wx:if="{{item.gbType==2&&item.isRun==0}}">等待开奖</view>
+                <view class="order-status red" wx:elif="{{item.gbType==2&&item.isRun==1&&item.isWin==1}}">已中奖</view>
+                <view class="order-status red" wx:elif="{{item.gbType==2&&item.isRun==1&&item.isWin==0}}">未中奖</view>
+                <view class="order-status red" wx:else>已成团</view>
+            </view>
+            <view bindtap="gotoGoodsDetail" class="sys-good-area" data-prdid="{{item.disPrdId}}" data-skucode="{{item.sbomCode}}" hoverClass="navigator-hover">
+                <view class="sys-good-item rma-good-item">
+                    <view class="good-panels">
+                        <view class="good-img">
+                            <image src="{{cdnPath}}{{item.photoPath}}428_428_{{item.photoName}}"></image>
+                        </view>
+                        <view class="good-info">
+                            <view class="good-name">
+                                <text>{{item.sbomName}}</text>
+                            </view>
+                            <view class="spell-name">
+                                <view class="good-spell wxButton-style-2">{{item.teamBuyNumber}}人拼团</view>
+                                <view class="good-price">¥{{item.teamBuyPrice}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="rma-mate-footer">
+                <view class="rma-mate-action">
+                    <view bindtap="gotoSpellDetail" class="wxButton-style-2" data-skucode="{{item.sbomCode}}" data-teamcode="{{item.teamCode}}" hoverClass="navigator-hover" wx:if="{{item.gbType==2&&item.isRun&&item.isRun==1}}">
+                        <text>中奖名单</text>
+                    </view>
+                    <view bindtap="gotoSpellDetail" class="wxButton-style-3" data-skucode="{{item.sbomCode}}" data-teamcode="{{item.teamCode}}" hoverClass="navigator-hover" wx:else>
+                        <text>拼团详情</text>
+                    </view>
+                    <view bindtap="gotoOrderDetail" class="wxButton-style-3" data-ordercode="{{item.orderCode}}" hoverClass="navigator-hover">
+                        <text>订单详情</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{loadMore.loadMore2}}">
+        <view bindtap="onToast" class="loading">
+            <image src="../../imgs/icon_pull.png"></image>
+            <text class="more-loading">上拉加载更多拼团</text>
+        </view>
+        <view class="loading">
+            <image src="../../imgs/loading.gif"></image>
+        </view>
+    </view>
+    <view class="buttonMore loading" wx:if="{{totalList.totalList2}}">
+        <text class="loading-end">已加载全部拼团</text>
+    </view>
+</scroll-view>
+<scroll-view bindscrolltolower="loadSpellMore" class="rma-tab-box spell-tab-box" lowerThreshold="5" scrollTop="{{scrollTop}}" scrollY="true" style="height: {{windowHeight-100/2.0833}}px; width: {{windowWidth}}px;" wx:if="{{tabFlag.tabFlag3&&dataArr.dataArr3.length>0}}">
+    <view class="rma-mate-area" wx:for="{{dataArr.dataArr3}}" wx:key="index">
+        <view class="rma-mate-list bg_white">
+            <view class="rma-mate-header">
+                <view class="order-number">订单号：{{item.orderCode}}</view>
+                <view class="order-status gray">已失效</view>
+            </view>
+            <view bindtap="gotoGoodsDetail" class="sys-good-area" data-prdid="{{item.disPrdId}}" data-skucode="{{item.sbomCode}}" hoverClass="navigator-hover">
+                <view class="sys-good-item rma-good-item">
+                    <view class="good-panels">
+                        <view class="good-img">
+                            <image src="{{cdnPath}}{{item.photoPath}}428_428_{{item.photoName}}"></image>
+                        </view>
+                        <view class="good-info">
+                            <view class="good-name">
+                                <text>{{item.sbomName}}</text>
+                            </view>
+                            <view class="spell-name">
+                                <view class="good-spell wxButton-style-2">{{item.teamBuyNumber}}人拼团</view>
+                                <view class="good-price">¥{{item.teamBuyPrice}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="rma-mate-footer">
+                <view class="rma-mate-action">
+                    <view bindtap="gotoSpellDetail" class="wxButton-style-3" data-skucode="{{item.sbomCode}}" data-teamcode="{{item.teamCode}}" hoverClass="navigator-hover">
+                        <text>拼团详情</text>
+                    </view>
+                    <view bindtap="gotoOrderDetail" class="wxButton-style-3" data-ordercode="{{item.orderCode}}" hoverClass="navigator-hover">
+                        <text>订单详情</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{loadMore.loadMore3}}">
+        <view bindtap="onToast" class="loading">
+            <image src="../../imgs/icon_pull.png"></image>
+            <text class="more-loading">上拉加载更多拼团</text>
+        </view>
+        <view class="loading">
+            <image src="../../imgs/loading.gif"></image>
+        </view>
+    </view>
+    <view class="buttonMore loading" wx:if="{{totalList.totalList3}}">
+        <text class="loading-end">已加载全部拼团</text>
+    </view>
+</scroll-view>
+<button bindtap="goSpellCenter" class="spell-fixed" hoverClass="navigator-hover" wx:if="{{showBottomTab}}">
+    <view>
+        <text>更多拼团商品，去逛逛</text>
+        <image src="../../imgs/icon_arrow_more.png"></image>
+    </view>
+</button>
+<view class="system-empty" wx:if="{{showNoSpell}}">
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="../../imgs/empty-list.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>您暂无{{emptyStatus}}的拼团</text>
+        </view>
+        <view class="system-empty-btn system-empty-new">
+            <button bindtap="goSpellCenter" class="wxButton-style-3">
+                <text>更多拼团商品，去逛逛</text>
+            </button>
+        </view>
+    </view>
+</view>

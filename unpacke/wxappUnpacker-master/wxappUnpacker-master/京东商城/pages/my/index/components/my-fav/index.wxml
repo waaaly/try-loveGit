@@ -1,0 +1,31 @@
+<view class="xlist_group my_cell">
+    <view class="rel_container">
+        <view class="top_line_box">
+            <view bindtap="navToGoodsFav" class="assets_item">
+                <view class="assets_item_val take_place">
+                    <text class="store_val {{goodsRedPoint}}">{{goodsFavNum||' '}}</text>
+                </view>
+                <text class="assets_item_key">商品收藏</text>
+            </view>
+            <view bindtap="navToShopFav" class="assets_item">
+                <view class="assets_item_val take_place">
+                    <text class="store_val {{shopRedPoint}}">{{shopFavNum||' '}}</text>
+                </view>
+                <text class="assets_item_key">店铺收藏</text>
+            </view>
+            <view bindtap="navToH5" class="assets_item" wx:if="{{!isMenv}}">
+                <view class="assets_item_val take_place">
+                    <text class="store_val">{{dpFavNum||' '}}</text>
+                </view>
+                <text class="assets_item_key">搭配收藏</text>
+            </view>
+            <view bindtap="navToFootPrint" class="assets_item">
+                <text class="dot dot_num dot-store" wx:if="{{footDot}}">店铺</text>
+                <view class="assets_item_val take_place">
+                    <text class="store_val">{{recentNum||' '}}</text>
+                </view>
+                <text class="assets_item_key">我的足迹</text>
+            </view>
+        </view>
+    </view>
+</view>

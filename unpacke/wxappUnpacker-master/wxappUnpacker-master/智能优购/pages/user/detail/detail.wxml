@@ -1,0 +1,141 @@
+<view class="pabox {{showModalStatus?hiddenScroll:''}}">
+    <view class="top">
+        <image src="/images/o{{dataset.order.poststate}}.png"></image>
+    {{dataset.order.statename}}
+  </view>
+    <view bindtap="" class="address" data-statu="open">
+        <view class="biao">
+            <image src="/images/location.png"></image>
+        </view>
+        <view class="addrbox">
+            <view class="name">{{dataset.address.name}}
+        <span>{{dataset.address.mobile}}</span>
+            </view>
+            <view class="addr">{{dataset.address.addr}}</view>
+        </view>
+        <view class="clear"></view>
+    </view>
+    <view wx:if="{{dataset.order.poststate==5||dataset.order.poststate==6}}">
+        <view bindtap="powerDrawer" class="address" data-statu="open" wx:if="{{dataset.order.ordertype==1}}">
+            <view class="biao">
+                <image src="/images/location.png"></image>
+            </view>
+            <view class="addrbox">
+                <view class="name">{{dataset.address.name}}
+          <span>{{dataset.address.mobile}}</span>
+                </view>
+                <view class="addr">{{dataset.address.addr}}</view>
+            </view>
+            <view class="clear"></view>
+        </view>
+    </view>
+    <view class="brand">
+        <view class="name">
+            <span>{{dataset.order.statename}}</span>
+      {{dataset.brand.shorttitle}}</view>
+        <view class="mbox">
+            <view class="picbox">
+                <image src="{{dataset.brand.mainpic}}"></image>
+            </view>
+            <view class="name2">
+                <view class="intro">{{dataset.brand.title}}</view>
+                <view class="par">￥{{dataset.order.cost}}
+          <span>x {{dataset.order.geshu}}</span>
+                </view>
+            </view>
+        </view>
+        <view class="total clear">快递费：
+      <span>{{dataset.order.postcost}}元</span>
+            <i>实付：</i>
+            <span>￥{{dataset.order.totalcost}}元</span>
+        </view>
+        <view class="buttons clear" wx:if="{{dataset.order.poststate==5}}">
+            <view class="box">
+                <view bindtap="bindDeliveryTap" class="button2" data-oid="{{dataset.order.oid}}">确认收货</view>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view class="remark clear">
+            <view class="title">订单留言：</view>
+            <view class="content">{{dataset.order.remark}}</view>
+        </view>
+        <view class="remark clear" wx:if="{{dataset.order.attr}}">
+            <view class="title">商品属性</view>
+            <view class="content">{{dataset.order.attr}}</view>
+        </view>
+    </view>
+    <view bindtap="goWbv" class="servier" style="position:relative">联系客服
+    </view>
+    <view class="order">
+        <view class="item">订单编号：
+      <span>{{dataset.order.oid}}</span>
+        </view>
+        <view class="item">支付方式：
+      <span>微信</span>
+        </view>
+        <view class="item">下单时间：
+      <span>{{dataset.order.buytime}}</span>
+        </view>
+        <view class="item" wx:if="{{dataset.order.poststate>1&&(dataset.order.type==1||dataset.order.type==3)}}">成团时间：
+      <span>{{dataset.order.successtime}}</span>
+        </view>
+        <view class="item" wx:if="{{dataset.order.poststate>1}}">发货时间：
+      <span>{{dataset.order.posttime}}</span>
+        </view>
+        <view class="item" wx:if="{{dataset.order.poststate==4}}">收货时间：
+      <span>{{dataset.order.endtime}}</span>
+        </view>
+        <view class="item" wx:if="{{dataset.order.poststate>2}}">快递名称：
+      <span>{{dataset.order.postname?dataset.order.postname:''}}</span>
+        </view>
+        <view class="item" wx:if="{{dataset.order.poststate>2}}">运单编号：
+      <span>{{dataset.order.postnumber?dataset.order.postnumber:''}}</span>
+        </view>
+    </view>
+    <view class="list" wx:if="{{dataset.list.length>0}}">
+        <view class="ititle">为你推荐</view>
+        <view bindtap="bindBuyTap" class="item" data-id="{{item.id}}" wx:for="{{dataset.list}}" wx:key="unique">
+            <view class="picbox">
+                <image src="{{item.mainpic}}"></image>
+            </view>
+            <view class="title">{{item.title}}</view>
+            <view class="cost">
+                <span>已团 {{item.suctotal}} 件</span>￥{{item.cost}}</view>
+        </view>
+        <view class="clear" style="height:20rpx;"></view>
+    </view>
+    <view class="recommend_bottom">
+        <view class="endparent">
+            <view class="bottomp">分享赚数贝</view>
+            <view class="bottomline"></view>
+        </view>
+    </view>
+    <view class="loadlayer" wx:if="{{loadlayer}}">
+        <image src="/images/loadding.gif"></image>
+    </view>
+</view>
+<view bindtap="powerDrawer" class="drawer_screen" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+    <view class="drawer_title">订单跟踪</view>
+    <view class="drawer_content">
+        <view class="stics_box" wx:for="{{datalist}}" wx:for-index="idx">
+            <view class="stics_box_img">
+                <view class="stics_img_view" wx:if="{{idx!=0}}"></view>
+                <view class="stics_img_view_2" wx:if="{{idx!=datalist.length-1}}"></view>
+                <view class="stics_box_img_t">
+                    <image src="/images/dingdan_dr.png" style="" wx:if="{{idx!=0}}"></image>
+                    <image src="/images/oder_new_msagge.png" style="" wx:if="{{idx==0}}"></image>
+                </view>
+            </view>
+            <view class="stics_center" wx:if="{{idx==0}}">
+                <view class="stics_title stics_title1">{{item.OrderLogisticDetails}}</view>
+                <view class="stics_text stics_text1">{{item.OrderLogisticTime}}</view>
+            </view>
+            <view class="stics_center" wx:if="{{idx!=0}}">
+                <view class="stics_title">{{item.OrderLogisticDetails}}</view>
+                <view class="stics_text">{{item.OrderLogisticTime}}</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="powerDrawer" class="btn_ok" data-statu="close">知道了</view>
+</view>

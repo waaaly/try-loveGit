@@ -1,0 +1,11 @@
+function priceCeil(price) {
+    return (Math.ceil(+price))
+};
+
+function priceOneDecimal(price) {
+    return (Math.floor(+price * 10) / 10)
+};
+module.exports = ({
+    priceCeil: priceCeil,
+    priceOneDecimal: priceOneDecimal,
+});

@@ -1,0 +1,88 @@
+<view class="pingou" hidden="{{hideModule}}">
+    <view class="pingou-header">
+        <navigator appId="{{appid}}" bindtap="tapOnNavigator" class="floor-title" data-rd="138067.37.2" hoverClass="none" path="{{path}}?EA_PTAG=17078.27.25" target="miniProgram" url="{{h5Path}}">京东拼购</navigator>
+        <navigator appId="{{appid}}" bindtap="tapToSign" class="pingou-hb {{sign.empty?'pingou-hb--empty':''}}" data-rd="138067.37.3" hidden="{{sign.hideQiandao}}" hoverClass="none" path="/pages/pingou_second/signin/index/index?EA_PTAG=17078.27.35" target="miniProgram" url="/pages/h5/index?url=//wq.jd.com/cube/front/activePublish/signin/12976.html">
+            <view class="pingou-hb__icon"></view>
+            <view class="pingou-hb__num" wx:if="{{sign.count>0}}">x{{sign.count}}</view>
+            <view class="pingou-hb__content">
+                <view class="pingou-hb__title">{{sign.desc}}</view>
+                <view class="pingou-hb__text" wx:if="{{sign.text}}">{{sign.text}}</view>
+            </view>
+            <view class="pingou-hb__btn">签到领钱</view>
+        </navigator>
+    </view>
+    <view class="pingou-body" hidden="{{hidePingouBody}}">
+        <scroll-view class="pingou-list" scrollX="true">
+            <navigator appId="{{appid}}" bindtap="tapOnNavigator" class="pingou-list__item" data-rd="138067.37.1" hoverClass="none" path="{{item.path}}&EA_PTAG=17078.27.24" target="miniProgram" url="{{item.h5Path}}" wx:for="{{goods}}" wx:key="sSkuId">
+                <image bindload="onImgLoad" class="pingou-list__cover {{item.showImage||index>=5?'pingou-list__cover--show':''}}" data-index="{{index}}" src="{{item.image}}"></image>
+                <view class="pingou-list__info">
+                    <view class="pingou-list__info-count" hidden="{{!item.count}}">{{item.count}}人拼</view>
+                    <view class="pingou-list__info-price">¥{{filter.priceCeil(item.dwChPrice)}}</view>
+                </view>
+                <view class="pingou-list__oldprice">¥{{filter.priceCeil(item.dwPCPrice)}}</view>
+            </navigator>
+            <navigator appId="{{appid}}" bindtap="tapOnNavigator" class="pingou-list__item pingou-list__item-more" data-rd="138067.37.10" hoverClass="none" path="{{path}}?EA_PTAG=17078.27.24" target="miniProgram" url="{{h5Path}}">
+                <text>查看更多</text>
+            </navigator>
+        </scroll-view>
+    </view>
+    <view class="pingou-group">
+        <navigator appId="{{appid}}" bindtap="tapOnNavigator" class="pingou-group__item pingou-group__item-large" data-rd="138067.37.4" hidden="{{hideNinePointNine}}" hoverClass="none" path="/pages/pingou_second/tuan99v2/tuan99v2?EA_PTAG=17078.27.36" target="miniProgram" url="/pages/h5/index?url=https://wqs.jd.com/pingou/tuan99v2.shtml">
+            <view class="pingou-group__title">{{ninePointNineTitle}}<text>{{ninePointNineDesc}}</text>
+            </view>
+            <view class="pingou-group-list">
+                <navigator appId="{{appid}}" catchtap="tapOnNavigator" class="pingou-group-list__item" data-rd="138067.37.4" hoverClass="none" path="{{item.path}}&EA_PTAG=17078.27.36" target="miniProgram" url="{{item.url}}" wx:for="{{ninePointNine}}" wx:key="sSkuId">
+                    <view class="pingou-group__image bg_stamp">
+                        <image hidden="{{!item.image}}" src="{{item.image}}"></image>
+                    </view>
+                    <view class="pingou-list__info">
+                        <view class="pingou-list__info-count" hidden="{{!item.count}}">{{item.count}}人拼</view>
+                        <view class="pingou-list__info-price">¥{{filter.priceOneDecimal(item.dwChPrice)}}</view>
+                    </view>
+                </navigator>
+            </view>
+        </navigator>
+        <navigator appId="{{appid}}" bindtap="tapOnNavigator" class="pingou-group__item" data-rd="{{yiYuanPinGoods[yiYuanIdx].ptag}}" hoverClass="none" path="{{yiYuanPinGoods[yiYuanIdx].path}}" target="miniProgram" url="{{yiYuanPinGoods[yiYuanIdx].url}}">
+            <view class="pingou-group__title">
+                <block wx:if="{{isShowYiYuanPinRecovery}}">
+                    {{yiYuanRecoveryTitle}}
+                </block>
+                <block wx:else>
+                    {{isFreshmen?'新人1元拼':'1元福利'}}
+                </block>
+            </view>
+            <swiper autoplay="true" bindchange="onYiYuanSwiperChange" circular="true" class="pingou-group__swiper" vertical="true">
+                <swiper-item wx:for="{{yiYuanPinGoods}}" wx:key="sSkuId">
+                    <view class="pingou-group__image bg_stamp">
+                        <image hidden="{{!item.image}}" src="{{item.image}}"></image>
+                    </view>
+                    <view class="pingou-group__user line1" wx:if="{{isShowYiYuanPinRecovery}}">{{yiYuanRecoveryPrice}}</view>
+                    <view class="pingou-group__price" wx:else>￥{{filter.priceCeil(item.dwChPrice)}}<text>¥{{filter.priceCeil(item.dwPCPrice)}}</text>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </navigator>
+        <navigator appId="{{appid}}" bindtap="tapOnNavigator" class="pingou-group__item" data-rd="{{kanPtag}}" hidden="{{hideKan}}" hoverClass="none" path="{{kanPath}}" target="miniProgram" url="{{kanUrl}}">
+            <view class="pingou-group__title">{{kanRecovery?kanRecoveryTitle:'砍价0元领'}}</view>
+            <view class="pingou-group__image bg_stamp">
+                <image hidden="{{!kanImage}}" src="{{kanImage}}"></image>
+            </view>
+            <view class="pingou-group__user {{kanRecovery?'line1':''}}">
+                <block wx:if="{{!kanRecovery}}">
+                    <block wx:if="{{avatarsList.length}}">
+                        <image class="pingou-group__user-avatar" src="{{item}}" wx:for="{{avatarsList}}"></image>
+                        <view class="pingou-group__user-more"></view>
+                        已领
+                    </block>
+                    <block wx:else>
+                        免费带回家
+                    </block>
+                </block>
+                <block wx:else>
+                   {{kanRecoveryPrice}}
+                </block>
+            </view>
+        </navigator>
+    </view>
+</view>
+<wxs module="filter" src="../filter.wxs" />

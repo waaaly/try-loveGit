@@ -1,0 +1,52 @@
+<view class="withdrawR">
+    <view class="withdrawR_header">
+    领取金额：<text class="withdrawR_header_num" decode="{{true}}">{{datas.amout}}</text>
+        <text class="withdrawR_header_nums">元</text>
+    </view>
+    <view class="withdrawR_content">
+        <view class="withdrawR_item">
+            <view class="withdrawR_item_in row">
+                <view class="row ali-center spa  w100">
+                    <text class="withdrawR_item_txt2">领取状态</text>
+                    <text class="withdrawR_item_txt3" wx:if="{{datas.state==0}}">{{datas.stateDisplay}}</text>
+                    <text class="withdrawR_item_txt5" wx:if="{{datas.state==-1}}">{{datas.stateDisplay}}</text>
+                    <text class="withdrawR_item_txt4" wx:if="{{datas.state==1}}">{{datas.stateDisplay}}</text>
+                    <text class="withdrawR_item_txt5" wx:if="{{datas.state==-2}}">{{datas.stateDisplay}}</text>
+                    <text class="withdrawR_item_txt4" wx:if="{{datas.state==2}}">{{datas.stateDisplay}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="withdrawR_item">
+            <view class="withdrawR_item_in row">
+                <view class="row ali-center spa w100">
+                    <text class="withdrawR_item_txt2">时间</text>
+                    <text class="withdrawR_item_txt5">{{datas.sysCreateTime}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="withdrawR_item">
+            <view class="withdrawR_item_in row ">
+                <view class="row ali-center spa w100">
+                    <text class="withdrawR_item_txt2">银行</text>
+                    <text class="withdrawR_item_txt5">{{datas.bankName}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="withdrawR_item">
+            <view class="withdrawR_item_in row ">
+                <view class="row ali-center spa w100">
+                    <text class="withdrawR_item_txt2">银行卡号</text>
+                    <text class="withdrawR_item_txt5">{{datas.bankCard}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="withdrawR_item">
+            <view class="withdrawR_item_in row " style="border:none">
+                <view class="row ali-center spa w100">
+                    <text class="withdrawR_item_txt2">手续费</text>
+                    <text class="withdrawR_item_txt5">{{datas.serviceAmount}}元</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

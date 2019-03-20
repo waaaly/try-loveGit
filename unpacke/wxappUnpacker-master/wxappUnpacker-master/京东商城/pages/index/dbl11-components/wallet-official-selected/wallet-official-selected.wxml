@@ -1,0 +1,16 @@
+<view class="selected" hidden="{{hideModule}}" style="{{config.bg}}">
+    <view class="selected-header">
+        <view class="selected-header__title">{{config.title}}</view>
+        <view bindtap="gotoUrl" class="selected-header__btn selected-header__btn-left" data-url="{{config.leftUrl}}" hidden="{{!config.leftText}}">{{config.leftText}}</view>
+        <view bindtap="gotoUrl" class="selected-header__btn selected-header__btn-right" data-url="{{config.rightUrl}}" hidden="{{!config.rightText}}">{{config.rightText}}</view>
+    </view>
+    <view class="selected-list">
+        <view bindtap="gotoUrl" class="selected-list__item" data-url="{{item.url}}" wx:for="{{entries}}">
+            <view class="selected-list__info">
+                <view class="selected-list__title">{{item.title}}</view>
+                <view class="selected-list__des">{{item.des}}</view>
+            </view>
+            <image class="selected-list__image" src="{{item.image}}"></image>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,46 @@
+<template name="auth">
+    <view class="login_mask" wx:if="{{showAuth}}">
+        <view class="login_main">
+            <view class="login_main_header">
+                <image class="header_logo" src="https://img11.360buyimg.com/jdphoto/s156x156_jfs/t1/5281/4/6999/14627/5ba4a473Ee973934f/66d353ef40b55afd.png" wx:if="{{!isPingou}}"></image>
+                <image class="header_logo" src="https://img11.360buyimg.com/jdphoto/s156x156_jfs/t26692/235/466336095/14247/6e114fd1/5baf6cbdN94c5bef9.png" wx:if="{{isPingou}}"></image>
+                <view class="header_text">欢迎来到{{isPingou?'京东拼购':'京东购物'}}</view>
+            </view>
+            <view class="login_main_content">
+                <view class="content_msg">为提供优质的服务，{{isPingou?'京东拼购':'京东购物'}}需要获取以下信息</view>
+                <view class="content_list">
+                    <view class="content_list_item">
+                        · 你的公开信息（昵称、头像等）
+                    </view>
+                </view>
+            </view>
+            <button bindgetuserinfo="bindGetWXAuth" class="login_main_confirm" openType="getUserInfo" type="primary">确认微信授权</button>
+            <view class="login_main_reject">
+                <view bindtap="bindHideWXAuth" class="reject_btn">暂不授权</view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="login">
+    <view class="login_mask" wx:if="{{showLogin}}">
+        <view class="login_main">
+            <view class="login_main_header">
+                <image class="header_logo" src="https://img11.360buyimg.com/jdphoto/s156x156_jfs/t1/5281/4/6999/14627/5ba4a473Ee973934f/66d353ef40b55afd.png" wx:if="{{!isPingou}}"></image>
+                <image class="header_logo" src="https://img11.360buyimg.com/jdphoto/s156x156_jfs/t26692/235/466336095/14247/6e114fd1/5baf6cbdN94c5bef9.png" wx:if="{{isPingou}}"></image>
+                <view class="header_text">欢迎来到{{isPingou?'京东拼购':'京东购物'}}</view>
+            </view>
+            <view class="login_main_content">
+                <view class="content_msg">为提供优质的服务，{{isPingou?'京东拼购':'京东购物'}}需要获取以下信息</view>
+                <view class="content_list">
+                    <view class="content_list_item">
+                        · 你的公开信息（昵称、头像等）
+                    </view>
+                </view>
+            </view>
+            <button bindgetuserinfo="bindGetUserInfo" class="login_main_confirm" openType="getUserInfo" type="primary">确认微信授权</button>
+            <view class="login_main_reject">
+                <view bindtap="bindHideAuth" class="reject_btn" wx:if="{{!hideLoginUnAuth}}">暂不授权</view>
+            </view>
+        </view>
+    </view>
+</template>

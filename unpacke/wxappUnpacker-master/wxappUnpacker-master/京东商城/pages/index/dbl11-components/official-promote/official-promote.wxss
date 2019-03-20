@@ -1,0 +1,121 @@
+.promote {
+    display: flex;
+    width: 750rpx;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 20rpx 20rpx 0 0;
+    overflow: hidden;
+    margin-top: -30rpx;
+    position: relative;
+    z-index: 1;
+}
+
+.promote,.promote__item {
+    height: 272rpx;
+}
+
+.promote__item {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+}
+
+.promote__item-1 .promote-dl {
+    left: 80rpx;
+    right: 0;
+    text-align: left;
+}
+
+.promote__item-2 {
+    flex: none;
+    width: 290rpx;
+}
+
+.promote__item-2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.promote__item-3 .promote-dl {
+    left: 0;
+    right: 80rpx;
+    text-align: right;
+}
+
+.promote-dl {
+    color: #fff;
+    position: absolute;
+    top: 66rpx;
+    text-shadow: 0 4rpx 2rpx rgba(0,0,0,.2);
+}
+
+.promote-dl__dt,.promote-dl__dd {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.promote-dl__dt {
+    color: #ffea63;
+    font-size: 30rpx;
+    font-weight: bold;
+    margin-bottom: -5rpx;
+}
+
+.promote-dl__dd {
+    font-size: 24rpx;
+}
+
+.promote-imageSwiper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 56rpx;
+    border-radius: 10rpx;
+    border: solid 2rpx #f4db35;
+    overflow: hidden;
+    display: block;
+    width: 150rpx;
+    height: 150rpx;
+    box-sizing: border-box;
+    padding: 10rpx;
+    background-color: #fff;
+}
+
+.promote-imageSwiper__item,.promote-imageSwiper__image {
+    display: block;
+    width: 130rpx;
+    height: 130rpx;
+}
+
+.promote-imageSwiper__image {
+    overflow: hidden;
+}
+
+.promote-textSwiper {
+    position: absolute;
+    left: 14rpx;
+    bottom: 22rpx;
+    height: 40rpx;
+}
+
+.promote-textSwiper,.promote-textSwiper__item,.promote-textSwiper__text {
+    width: 200rpx;
+}
+
+.promote-textSwiper__text {
+    font-weight: bold;
+    font-size: 24rpx;
+    color: #fff;
+    text-shadow: 0 4rpx 2rpx rgba(0,0,0,.2);
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

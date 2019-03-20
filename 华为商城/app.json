@@ -1,0 +1,112 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/classify/classify",
+        "pages/orderConfirm/orderConfirm",
+        "pages/personal/personal",
+        "pages/redEnvelopesCreat/redEnvelopesCreat",
+        "pages/login/login",
+        "pages/goodsDetail/goodsDetail",
+        "pages/orderDetail/orderDetail",
+        "pages/orderList/orderList",
+        "pages/orderSpellList/orderSpellList",
+        "pages/orderSpellDetail/orderSpellDetail",
+        "pages/addressAdd/addressAdd",
+        "pages/addressManage/addressManage",
+        "pages/addressList/addressList",
+        "pages/couponList/couponList",
+        "pages/couponGoods/couponGoods",
+        "pages/couponCenter/couponCenter",
+        "pages/invoiceDetail/invoiceDetail",
+        "pages/invoiceSelect/invoiceSelect",
+        "pages/privacyAgreement/privacyAgreement",
+        "pages/logisticsDetail/logisticsDetail",
+        "pages/logs/logs",
+        "pages/error/default/default",
+        "pages/pay/paySuccess",
+        "pages/pay/payFail",
+        "pages/orderDetail/downLoad",
+        "pages/returnOrExchange/returnOrExchange",
+        "pages/returnOrExchange/returnExchangeDetail",
+        "pages/returnOrExchange/returnExchangeSubmit",
+        "pages/returnOrExchange/returnExchangeResult",
+        "pages/redEnvelopesList/redEnvelopesList",
+        "pages/linkingAccount/linkingSelect",
+        "pages/linkingAccount/linkingAccount",
+        "pages/linkingRegister/registerRule",
+        "pages/linkingRegister/registerPhone",
+        "pages/linkingRegister/registerEmail",
+        "pages/linkingRegister/registerEmailVerify",
+        "pages/accountAgreement/userProtocol",
+        "pages/accountAgreement/privacyProtocol",
+        "pages/AccountRule/AccountRule",
+        "pages/webview/webview",
+        "pages/IntegrationCenter/IntegrationCenter",
+        "packageClassify/pages/classifyList/classifyList",
+        "packageRushBuy/pages/rushOrderConfirm/rushOrderConfirm",
+        "packageRushBuy/pages/rushOrderUpdate/rushOrderUpdate",
+        "packageRushBuy/pages/queue/queue",
+        "packageActivity/pages/inviteGift/inviteGift",
+        "packageActivity/pages/awardRecord/awardRecord",
+        "packageActivity/pages/inviteRule/inviteRule"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": false
+    },
+    "tabBar": {
+        "color": "#333",
+        "selectedColor": "#ca151e",
+        "borderStyle": "black",
+        "list": [
+            {
+                "text": "首页",
+                "pagePath": "pages/index/index",
+                "iconPath": "imgs/indexNew.png",
+                "selectedIconPath": "imgs/indexNew-selected.png"
+            },
+            {
+                "text": "分类",
+                "pagePath": "pages/classify/classify",
+                "iconPath": "imgs/classify.png",
+                "selectedIconPath": "imgs/classify-selected.png"
+            },
+            {
+                "text": "我的",
+                "pagePath": "pages/personal/personal",
+                "iconPath": "imgs/personNew.png",
+                "selectedIconPath": "imgs/personNew-select.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 3000
+    },
+    "subPackages": [
+        {
+            "root": "packageClassify",
+            "pages": [
+                "packageClassify/pages/classifyList/classifyList"
+            ]
+        },
+        {
+            "root": "packageRushBuy",
+            "pages": [
+                "packageRushBuy/pages/rushOrderConfirm/rushOrderConfirm",
+                "packageRushBuy/pages/rushOrderUpdate/rushOrderUpdate",
+                "packageRushBuy/pages/queue/queue"
+            ]
+        },
+        {
+            "root": "packageActivity",
+            "pages": [
+                "packageActivity/pages/inviteGift/inviteGift",
+                "packageActivity/pages/awardRecord/awardRecord",
+                "packageActivity/pages/inviteRule/inviteRule"
+            ]
+        }
+    ]
+}

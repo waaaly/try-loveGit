@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "price-instructions": "../components/priceInstructions/priceInstructions",
+        "back-to-top": "../components/backToTop/backToTop",
+        "footnav": "../components/footnav/footnav"
+    },
+    "navigationBarTitleText": "京东秒杀"
+}

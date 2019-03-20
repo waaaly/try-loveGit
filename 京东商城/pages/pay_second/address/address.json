@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "收货地址",
+    "usingComponents": {
+        "dialog": "../../../common/dialog/dialog"
+    }
+}

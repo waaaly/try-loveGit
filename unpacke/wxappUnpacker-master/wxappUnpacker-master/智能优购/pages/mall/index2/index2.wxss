@@ -1,0 +1,59 @@
+.head {
+    position: relative;
+}
+
+.head .img {
+    width: 750rpx;
+    height: 300rpx;
+}
+
+.head .bimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 750rpx;
+    height: 300rpx;
+}
+
+.container {
+    padding: 20rpx 20rpx 20rpx 0rpx;
+}
+
+.item {
+    float: left;
+    width: 345rpx;
+    margin-left: 20rpx;
+    background-color: #ffffff;
+    margin-bottom: 20rpx;
+}
+
+.item .img {
+    width: 345rpx;
+    height: 345rpx;
+}
+
+.item .title {
+    font-size: 14px;
+    height: 50rpx;
+    line-height: 50rpx;
+    overflow: hidden;
+    padding: 10rpx 20rpx 0rpx 20rpx;
+}
+
+.item .cost {
+    font-size: 12px;
+    padding: 10rpx 20rpx 20rpx 20rpx;
+    color: #F4241A;
+}
+
+.item .button {
+    font-size: 14px;
+    text-align: center;
+    border-radius: 10rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin: 0rpx 10rpx 10rpx 10rpx;
+    background-color: #F4241A;
+    color: white;
+}

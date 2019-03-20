@@ -1,0 +1,31 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<form bindsubmit="bindSubmitTap">
+    <view class="identification">
+        <view class="databox">
+            <view class="item" wx:if="{{dataset.sitename=='guirun'}}">
+                <view class="caption">GRT-贵人通</view>
+                <input class="input" name="grt" placeholder="请粘贴地址" value="{{dataset.grt}}" wx:if="{{dataset.grt!=''}}"></input>
+                <input class="input" name="grt" placeholder="请粘贴地址" value="{{dataset.grt}}" wx:if="{{dataset.grt==''}}"></input>
+            </view>
+            <view class="item" wx:if="{{dataset.sitename=='chatong'}}">
+                <view class="caption">TT-茶通</view>
+                <input class="input" name="tt" placeholder="请粘贴地址" value="{{dataset.tt}}" wx:if="{{dataset.tt!=''}}"></input>
+                <input class="input" name="tt" placeholder="请粘贴地址" value="{{dataset.tt}}" wx:if="{{dataset.tt==''}}"></input>
+            </view>
+            <view class="item" wx:if="{{dataset.sitename=='chatong'}}">
+                <view class="caption">ETH-以太币</view>
+                <input class="input" name="eth" placeholder="请粘贴地址" wx:if="{{dataset.eth!=''}}"></input>
+                <input class="input" name="tt" placeholder="请粘贴地址" value="{{dataset.eth}}" wx:if="{{dataset.eth==''}}"></input>
+            </view>
+        </view>
+        <view class="button">
+            <button class="button1" formType="submit"> {{submitText}} </button>
+            <view bindtap="bindInToTap" class="button2">返回</view>
+            <view class="clear"></view>
+        </view>
+    </view>
+</form>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

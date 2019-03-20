@@ -1,0 +1,25 @@
+<view class="xmodal" wx:if="{{show}}">
+    <view catch:tap="close" class="xmodal_mask"></view>
+    <view class="xmodal_content">
+        <view catchtap="close" class="xmodal_hd">
+            <view class="xmodal_title">
+                切换价格
+            </view>
+        </view>
+        <view class="xmodal_bd">
+            <view class="xmodal_bd_item">若您考虑到使用优惠券或其他促销，可进行价格切换，以便达到券或促销的使用门槛。</view>
+            <view catch:tap="select" class="xmodal_bd_item" data-checked="{{memberPriceType==promoTag}}" data-name="{{memberPriceType}}" data-uuid="{{uuid}}">
+                <view class="check_box {{memberPriceType==promoTag?'checked':''}}"></view>
+                <view class="text">使用{{utils.getMemPriceDesc(memberPriceType)}}<view class="price {{utils.getClsPrice(memberPriceType)}}">{{memberPrice}}</view>
+                </view>
+            </view>
+            <view catch:tap="select" class="xmodal_bd_item" data-checked="{{memberPriceType!=promoTag}}" data-name="" data-uuid="{{uuid}}">
+                <view class="check_box {{memberPriceType==promoTag?'':'checked'}}"></view>
+                <view class="text">使用京东价
+                    <view class="price">{{price}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="utils" src="index.wxs" />

@@ -1,0 +1,39 @@
+<view class="promo" hidden="{{hide}}">
+    <view class="promo_tips" id="optimalPromo" wx:if="{{showTips}}">
+        <view bind:tap="onClosePromoTips" class="promo_tips_close"></view>
+        <view class="promo_tips_text">
+            所选商品有更优惠促销，可立省
+            <text class="promo_tips_text_yen">¥</text>
+            <text class="promo_tips_text_num">{{discount}}</text>
+        </view>
+        <view bind:tap="onViewAIChoose" class="promo_tips_link">立即查看</view>
+    </view>
+    <view catch:touchmove="" class="promo_AIchoose {{showAIChoose?'show':''}}">
+        <view bind:tap="onCloseAIChoose" capture-catch:touchmove="noscroll" class="mask"></view>
+        <view class="promo_AIchoose_main">
+            <view class="promo_AIchoose_header">
+                部分商品切换为以下促销后，可获得更大优惠
+                <text bind:tap="onCloseAIChoose" class="promo_AIchoose_close"></text>
+            </view>
+            <scroll-view scrollY class="promo_AIchoose_body" scrollIntoView="{{intoView}}">
+                <view class="top" id="top"></view>
+                <block wx:for="{{promotions}}" wx:for-item="promotion" wx:key="promotionId">
+                    <view class="promo_AIchoose_title">
+                        <view class="mod_sign_tip bor" wx:if="{{promotion.promoteFlag}}">
+                            <text>{{promotion.promoteFlag}}</text>
+                        </view>
+                        {{promotion.promoNote}}
+                    </view>
+                    <view class="promo_AIchoose_goods">
+                        <view class="promo_AIchoose_good" wx:for="{{promotion.skus}}" wx:for-item="product" wx:key="skuId">
+                            <image mode="aspectFit" src="{{product.imageUrl}}"></image>
+                        </view>
+                    </view>
+                </block>
+            </scroll-view>
+            <view bind:tap="onSwitchPromo" class="promo_AIchoose_btn">
+                切换促销，立省¥{{discount}}
+            </view>
+        </view>
+    </view>
+</view>

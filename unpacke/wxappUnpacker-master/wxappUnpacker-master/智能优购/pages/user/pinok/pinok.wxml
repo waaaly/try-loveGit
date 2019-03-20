@@ -1,0 +1,79 @@
+<view bindtap="bindGoHomeTap" class="gohome" wx:if="{{fromshare==1}}">返回到首页>></view>
+<view class="head">
+    <view class="picbox">
+        <image src="{{dataset.brand.mainpic}}"></image>
+    </view>
+    <view class="caption" wx:if="{{dataset.order.state==1&&dataset.order.poid==dataset.order.oid}}">
+        <view class="success">开团成功</view>
+        <view class="shengyu">还差 <span>{{dataset.order.differ}}</span> 个名额</view>
+        <view class="cost">￥{{dataset.order.cost}}/件</view>
+    </view>
+    <view class="caption" wx:if="{{dataset.order.state==1&&dataset.order.poid!=dataset.order.oid}}">
+        <view class="success">参团成功</view>
+        <view class="shengyu">还差 <span>{{dataset.order.differ}}</span> 个名额</view>
+        <view class="cost">￥{{dataset.order.cost}}/件</view>
+    </view>
+    <view class="caption" wx:if="{{dataset.order.state==2}}">
+        <view class="shengyu">拼团成功</view>
+        <view class="cost">￥{{dataset.order.cost}}/件</view>
+    </view>
+    <view class="caption" wx:if="{{dataset.order.state==6||dataset.order.state==7}}">
+        <view class="shengyu">拼团失败</view>
+        <view class="cost">￥{{dataset.order.cost}}/件</view>
+    </view>
+</view>
+<view class="tuninfo">
+    <view class="pic" style="width:{{(dataset.userimg.length+1)*139}}rpx;">
+        <view class="imgbox">
+            <image class="mimg" src="{{mainpic}}"></image>
+            <view class="tuanzhang">团长</view>
+        </view>
+        <view class="imgbox" wx:for="{{dataset.userimg}}" wx:key="unique">
+            <image class="oimg nopic" src="{{item}}"></image>
+        </view>
+        <view class="clear"></view>
+    </view>
+    <view class="applybutton" wx:if="{{dataset.order.isbuy&&dataset.order.state==1}}">
+        <view bindtap="bindApplyTap" class="button">
+            <view class="f1">邀请好友参团</view>
+            <view class="f2">{{ddiffertime}}</view>
+            <view class="f3">后结束</view>
+        </view>
+        <button class="sharebutton" openType="share">x</button>
+    </view>
+    <view bindtap="bindScoreMallTap" class="caption clear" wx:if="{{false}}">数贝可兑换，前往<span style="color:#75AFFF">兑换中心</span>
+    </view>
+    <view class="button" wx:if="{{dataset.order.state==2||dataset.order.state==6||dataset.order.state==7}}">
+        <button bindgetuserinfo="bindNewGroupTap" class="sharebutton" openType="getUserInfo"></button>
+      我要开新团</view>
+    <view class="button" wx:if="{{!dataset.order.isbuy&&dataset.order.state==1}}">
+        <button bindgetuserinfo="bindCanTuanTap" class="sharebutton" openType="getUserInfo"></button>
+  我要参团</view>
+    <view class="par" style="height:20px;" wx:if="{{oid==0}}"></view>
+    <view class="par" wx:if="{{oid>0}}">商品名称 <span>{{dataset.brand.shorttitle}}</span>
+    </view>
+    <view class="par" wx:if="{{oid>0}}">下单时间 <span>{{dataset.order.buytime}}</span>
+    </view>
+</view>
+<view class="list">
+    <view class="ititle">为你推荐</view>
+    <view bindtap="bindGoBrandTap" class="item" data-id="{{item.id}}" wx:for="{{dataset.list}}" wx:key="unique">
+        <view class="picbox">
+            <image src="{{item.mainpic}}"></image>
+        </view>
+        <view class="title">{{item.title}}</view>
+        <view class="cost">
+            <span>已团 {{item.suctotal}} 件</span>￥{{item.cost}}</view>
+    </view>
+    <view class="clear" style="height:20rpx;"></view>
+</view>
+<view class="recommend_bottom">
+    <view class="endparent">
+        <button bindgetuserinfo="bindShareTap" class="sharebutton" openType="getUserInfo"></button>
+        <view class="bottomp">分享赚数贝</view>
+        <view class="bottomline"></view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

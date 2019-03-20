@@ -1,0 +1,28 @@
+<view class="container">
+    <image class="banner" data-index="{{index}}" src="{{banner}}"></image>
+    <view class="optimization col">
+        <view class="row optimization-title ju-center ali-center">
+            <view class="row ali-center">
+                <view class="title-txt color222 px32">跨境优选</view>
+            </view>
+        </view>
+        <view class="optimization-content col">
+            <view catchtap="gotoShop" class="optimization-item row spa ju-center" data-goodsid="{{item.goodsId}}" wx:for="{{list}}" wx:key="{{index}}">
+                <image class="optimization-shop-img" src="{{item.defalutPhotoURL}}"></image>
+                <view class="optimization-shop-info col">
+                    <text class="optimization-shop-title px30 black">{{item.goodsTitle}}</text>
+                    <text class="px24 color666 goods-info">{{item.goodsName}}</text>
+                    <view class="tag-list row"></view>
+                    <view class="row spa">
+                        <view class="prices row ali-center">
+                            <text class="price px22">￥{{item.price}}</text>
+                            <text class="price_not color999 px20">￥{{item.marketPrice}}</text>
+                        </view>
+                        <view class="now-buy text-center px22">立即抢购</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<include src="../public/bottom.wxml" wx:if="{{list.length>3}}"></include>

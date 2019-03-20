@@ -1,0 +1,61 @@
+page {
+    background-color: #fff;
+}
+
+.registerArea {
+    padding: 19rpx 0;
+    margin: 0 34rpx;
+    border-bottom: 3rpx solid rgba(0,0,0,0.1);
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.registerArea .registerAreaLeft {
+    width: 100%;
+    -webkit-box-flex: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.registerArea .registerAreaLeft .registerAreaTitle {
+    font-size: 32rpx;
+    color: #000;
+}
+
+.registerArea .registerAreaLeft .registerAreaTip {
+    font-size: 28rpx;
+    color: rgba(0,0,0,0.5);
+    line-height: 1.5;
+}
+
+.registerArea .registerAreaRight {
+    font-size: 27rpx;
+    color: rgba(0,0,0,0.5);
+    -webkit-box-flex: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.registerRule .templateLI {
+    font-size: 28rpx;
+    padding-bottom: 0;
+}
+
+.registerRule .dot {
+    line-height: 40rpx;
+    position: relative;
+    top: -9rpx;
+    padding-right: 5rpx;
+}
+
+.registerRuleActive {
+    padding: 0 34rpx;
+    margin: 34rpx 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

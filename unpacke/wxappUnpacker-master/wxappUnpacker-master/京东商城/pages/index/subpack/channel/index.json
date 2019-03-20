@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "floor-channel": "./components/floor-channel/index"
+    },
+    "navigationBarTitleText": "全部频道"
+}

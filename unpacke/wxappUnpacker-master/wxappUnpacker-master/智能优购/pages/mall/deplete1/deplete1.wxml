@@ -1,0 +1,6 @@
+<view class="box">
+    <rich-text nodes="{{dataset.intro}}"></rich-text>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

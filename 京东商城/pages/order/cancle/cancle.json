@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "取消原因",
+    "usingComponents": {
+        "cancle-upload": "./components/cancleUpload/cancleUpload",
+        "wq-dialog": "../oCommon/components/wqDialog/wqDialog"
+    }
+}

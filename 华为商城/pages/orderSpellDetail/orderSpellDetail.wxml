@@ -1,0 +1,303 @@
+<view class="goods-spell-main">
+    <view class="goods-spell-area bg_white">
+        <view bindtap="goGoodsDetail" class="goods-spell-cont system-item-between-center">
+            <view class="goods-spell-img">
+                <image src="{{cdnPath}}{{AttendTeamInfo.photoPath}}428_428_{{AttendTeamInfo.photoName}}"></image>
+            </view>
+            <view class="goods-spell-box">
+                <view class="goods-spell-title">{{AttendTeamInfo.sbomName}}</view>
+                <view class="goods-spell-price">
+                    <view class="price-num">{{AttendTeamInfo.teamBuyNumber}}人拼</view>
+                    <view class="price-new red">
+            ¥<text class="">{{AttendTeamInfo.teamBuyPrice}}</text>
+                    </view>
+                    <view class="price-old" wx:if="{{AttendTeamInfo.teamBuyPrice!=AttendTeamInfo.price}}">¥{{AttendTeamInfo.price}}</view>
+                </view>
+            </view>
+            <view class="goods-spell-stauts" wx:if="{{showSuccess}}">
+                <image src="imgs/success.png"></image>
+            </view>
+            <view class="goods-spell-stauts" wx:if="{{showFull}}">
+                <image src="imgs/full.png"></image>
+            </view>
+            <view class="goods-spell-stauts" wx:if="{{showFail}}">
+                <image src="imgs/fail.png"></image>
+            </view>
+        </view>
+        <view class="good-spell-team">
+            <view class="spell-team-title">{{tip}}</view>
+            <view class="spell-team-time" wx:if="{{showTime}}">
+        剩余时间
+        <text class="time-box">{{showDate.day}}</text>
+        天
+        <text class="time-box">{{showDate.hour}}</text>
+                <text class="time-colon">:</text>
+                <text class="time-box">{{showDate.minute}}</text>
+                <text class="time-colon">:</text>
+                <text class="time-box">{{showDate.second}}</text>
+            </view>
+            <view class="spell-team-icon system-item-between-center">
+                <view class="flex-shrink-1 display-flex">
+                    <view class="icon-area" wx:for="{{attendTeamBuyList}}" wx:for-item="teamBuyItem" wx:key="index">
+                        <view class="icon-box">
+                            <image binderror="getDefaultImg" data-index="{{index}}" src="{{teamBuyItem.headUrl}}"></image>
+                        </view>
+                        <view class="captain" wx:if="{{teamBuyItem.isOwner==1}}">团长</view>
+                    </view>
+                </view>
+            </view>
+            <form bindsubmit="joinTeam" data-status="1" reportSubmit="true" wx:if="{{showBtn&&btnContent=='我要参团'}}">
+                <button class="good-spell-btn" formType="submit">
+                    <text>我要参团</text>
+                    <text class="small" wx:if="{{isNewTeamType}}">（仅限新用户）</text>
+                </button>
+            </form>
+            <form bindsubmit="createTeam" data-status="1" reportSubmit="true" wx:if="{{showBtn&&btnContent=='自己开团'}}">
+                <button class="good-spell-btn" formType="submit">
+                    <text>自己开团</text>
+                </button>
+            </form>
+            <form bindsubmit="createTeam" data-status="1" reportSubmit="true" wx:if="{{showBtn&&btnContent=='再开一团'}}">
+                <button class="good-spell-btn" formType="submit">
+                    <text>再开一团</text>
+                </button>
+            </form>
+            <form bindsubmit="createTeam" data-status="1" reportSubmit="true" wx:if="{{showBtn&&btnContent=='再开一团 提高中奖率'}}">
+                <button class="good-spell-btn" formType="submit">
+                    <text>再开一团 提高中奖率</text>
+                </button>
+            </form>
+            <button bindtap="inviteFriends" class="good-spell-btn" wx:if="{{showBtn&&btnContent=='邀请好友参团'}}">
+                <text>邀请好友参团</text>
+                <text class="small" wx:if="{{isNewTeamType}}">（仅限新用户）</text>
+            </button>
+        </view>
+    </view>
+    <view class="winning-list" wx:if="{{showLucky}}">
+        <view class="good-meta-header winning-header">中奖名单</view>
+        <view class="winning-main system-item-between-center">
+            <view class="flex-shrink-1 display-flex" wx:if="{{showLuckyList}}">
+                <view class="icon-area" wx:for="{{winningList}}" wx:for-item="winningItem" wx:key="index">
+                    <view class="icon-box">
+                        <image src="{{winningItem.headUrl}}"></image>
+                    </view>
+                    <view class="spell-user-name">
+                        <text>{{winningItem.displayName}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="icon-empty" wx:if="{{!showLuckyList}}">
+                <image src="imgs/icon_empty.png"></image>
+                <view class="empty-tips">
+                    <text>待开奖</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="panic-rules bg_white" wx:if="{{!(detailRules.length==0&&mpWapDetailRuleUrl==''&&teamBuyFlowUrl=='')}}">
+        <view class="good-meta-header display-flex align-items-center">
+            <text class="good-meta-title">拼团玩法</text>
+            <view bindtap="toTeamBuyRule" class="btn-next" wx:if="{{detailRules.length!=0||mpWapDetailRuleUrl}}">
+                <text>详细规则</text>
+                <view class="icon-more-right">
+                    <image src="../../imgs/icon_arrow_more.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="panic-rules-main display-flex" wx:if="{{teamBuyFlowUrl}}">
+            <image binderror="rulePicErr" src="{{teamBuyFlowUrl}}"></image>
+        </view>
+    </view>
+    <view class="recommend-goods-area" wx:if="{{recommendationList.length>0}}">
+        <view class="recommend-goods-header">为您推荐</view>
+        <view class="recommend-goods-list display-flex justify-content-between">
+            <view bindtap="toGoodsDetail" class="recommend-goods-item" data-prdid="{{recommendation.prdId}}" data-skucode="{{recommendation.skuCode}}" wx:for="{{recommendationList}}" wx:for-item="recommendation" wx:key="index">
+                <view class="item-goods-pic">
+                    <image src="{{cdnPath}}{{recommendation.photoPath}}428_428_{{recommendation.photoName}}"></image>
+                </view>
+                <view class="item-goods-name ellipsis-pub-one">
+                    <text>{{recommendation.displayName?recommendation.displayName:recommendation.skuName}}</text>
+                </view>
+                <view class="item-goods-introd ellipsis-pub-one">
+                    <text>{{recommendation.displayPromWord}}</text>
+                </view>
+                <view class="item-goods-price ellipsis-pub-one" wx:if="{{recommendation.priceMode!='2'}}">
+                    <text class="yuan">¥</text>
+                    <text class="new-price">{{recommendation.promPrice}}</text>
+                    <text class="old-price" wx:if="{{recommendation.promPrice!=recommendation.price}}">¥{{recommendation.price}}</text>
+                </view>
+                <view class="item-goods-price" wx:if="{{recommendation.priceMode=='2'}}">
+                    <text class="new-price">暂无报价</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="spell-hr"></view>
+    <view class="spell-bottom-btn system-only-between" wx:if="{{loginStatus==1}}">
+        <view bindtap="goIndex">
+            <text>返回首页</text>
+        </view>
+        <view bindtap="goSpellCenter">
+            <text>更多拼团商品</text>
+        </view>
+    </view>
+    <view class="spell-btn-author display-flex" wx:elif="{{loginStatus==2}}">
+        <navigator class="spell-menu-index flex-shrink-0" openType="switchTab" url="../index/index">
+            <image src="../../imgs/index_goods.png"></image>
+            <text>首页</text>
+        </navigator>
+        <view class="spell-menu-other display-flex flex-shrink-1">
+            <view bindtap="goSpellCenter">
+                <text>更多拼团商品</text>
+            </view>
+            <button bindgetuserinfo="onAuthSelect" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                <text bindtap="openAuthModal">授权登录</text>
+            </button>
+        </view>
+    </view>
+</view>
+<view class="system-empty" wx:if="{{false}}">
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="imgs/empty.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>该商品已下架</text>
+        </view>
+        <view class="system-empty-btn">
+            <navigator class="button-style-2" openType="switchTab" url="../index/index">
+                <text>返回首页</text>
+            </navigator>
+        </view>
+    </view>
+</view>
+<view bindtap="openGetSku" catchtouchmove="preventD" class="ecWap-mask" data-status="0" wx:if="{{showSku}}"></view>
+<view animation="{{animationData}}" class="ecWap-box ecWap-box-lower" style="height:80%;" wx:if="{{showSku}}">
+    <view bindtap="openGetSku" class="ecWap-new-header" data-status="0">
+        <image src="../../imgs/icon_ecWap_close.png"></image>
+    </view>
+    <view class="ecWap-box-content">
+        <view class="spell-cont">
+            <view class="spell-goods display-flex">
+                <view class="spell-goods-img flex-shrink-0">
+                    <image src="{{cdnPath}}{{currentSkuObj.photoPath}}428_428_{{currentSkuObj.photoName}}"></image>
+                </view>
+                <view class="spell-goods-dec flex-shrink-1">
+                    <view class="price">
+                        <view class="red">¥ <text class="big">{{currTeamBuyPrice}}</text>
+                        </view>
+                        <view class="grey text-dec" wx:if="{{currentSkuObj.price&&currentSkuObj.price!=currTeamBuyPrice}}">¥ {{currentSkuObj.price}}</view>
+                        <view class="grey text-dec" wx:elif="{{currentSkuObj.price==currTeamBuyPrice}}"></view>
+                        <view class="grey" wx:else>暂无报价</view>
+                    </view>
+                    <view class="name">
+                        <text>已选：</text>{{currentSkuSelectName}}<text>x{{amount}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="spell-gift display-flex" wx:if="{{showGifts}}">
+                <view class="flex-shrink-0">
+                    <text>赠品</text>
+                </view>
+                <view class="flex-shrink-1" wx:if="{{giftItemList&&giftItemList.length>0}}">
+                    <image src="{{cdnPath}}{{item.photoPath}}428_428_{{item.photoName}}" wx:for="{{giftItemList}}" wx:key="key"></image>
+                </view>
+            </view>
+            <view class="spell-sku">
+                <view class="sku-box" wx:for="{{deal_skuAttrValueList}}" wx:key="key">
+                    <view class="sku-title">
+                        <text>{{item.classifyName}}</text>
+                    </view>
+                    <view class="sku-checkbox display-flex">
+                        <view bindtap="selectGood" class="checkbox-text {{subItem.status==2?'checkbox-text-checked':subItem.status==0?'checkbox-text-disabled':''}}" data-attrname="{{subItem.attrName}}" data-indexnum="{{item.indexNum}}" data-skuIdList="{{subItem.skuIdList}}" data-status="{{subItem.status}}" wx:for="{{item.attrList}}" wx:for-item="subItem" wx:key="key">
+                            <text>{{subItem.attrName}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="sku-box system-only-between">
+                    <view class="sku-title flex-shrink-0">
+                        <text>数量</text>
+                    </view>
+                    <view class="good-sku-list flex-shrink-0">
+                        <view class="good-sku-num display-flex">
+                            <view bindtap="reduceNum" class="sku-minu {{numDelClass}}" data-skuLimitQty="{{skuLimitQty}}">
+                                <image src="../goodsDetail/imgs/icon_minus.png"></image>
+                            </view>
+                            <input class="sku-editNum" disabled="disabled" placeholder="" type="text" value="{{amount}}"></input>
+                            <view bindtap="addNum" class="sku-add {{numAddClass}}" data-skuLimitQty="{{skuLimitQty}}">
+                                <image src="../goodsDetail/imgs/icon_add.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="ecWap-box-footer">
+        <view bindtap="gotoPay" class="ecWap-box-ok box-ok {{buttonClass}}" data-button="{{buttonText}}" data-status="0">{{buttonText}}</view>
+    </view>
+</view>
+<view class="ecWap-mask" wx:if="{{showRules}}"></view>
+<view class="ecWap-box-middle ecWap-radius-middle" wx:if="{{showRules}}">
+    <view class="ecWap-box-radius">
+        <view class="ecWap-radius-header">拼团玩法</view>
+        <view class="ecWap-radius-content panic-radius-content">
+            <view class="panic-rules-pop" wx:for="{{detailRules}}" wx:key="item">{{item}}</view>
+        </view>
+        <view bindtap="closeRules" class="ecWap-radius-footer display-flex">
+            <view class="red">确定</view>
+        </view>
+    </view>
+</view>
+<view class="ecWap-mask" wx:if="{{false}}"></view>
+<view class="ecWap-box-middle" wx:if="{{false}}">
+    <view class="ecWap-box ecWap-box-center ecWap-box-normal ecWap-box-change">
+        <view class="ecWap-box-content">
+            <view class="ecWap-dialog-header">提示</view>
+            <view class="ecWap-dialog-content" style="text-align: center">
+                <text>此团仅限新用户参与，您已经成功参与过商城的拼团活动了，请将机会留给其他人吧。</text>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <button class="ecWap-box-ok">
+                <text>去逛其他商品</text>
+            </button>
+        </view>
+    </view>
+</view>
+<view bindtap="closeShareModle" class="ecWap-mask" hidden="{{!isShowShareModle}}"></view>
+<view class="mp-share-area" hidden="{{!isShowShareModle}}">
+    <view class="share-header">分享</view>
+    <view class="display-flex">
+        <view class="share-list flex">
+            <button class="list-box" openType="share">
+                <image src="../goodsDetail/imgs/wechat_logo.png"></image>
+                <text>微信好友</text>
+            </button>
+        </view>
+        <view class="share-list flex">
+            <view bindtap="sharePoster" class="list-box">
+                <image src="../goodsDetail/imgs/friends_logo.png"></image>
+                <text>海报图</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view catchtouchmove="preventD" class="ecWap-mask" hidden="{{isHiddenPoster}}" wx:if="{{isShowPoster}}"></view>
+<view catchtouchmove="preventD" class="ecWap-box-middle post-pop-middle" hidden="{{isHiddenPoster}}" wx:if="{{isShowPoster}}">
+    <view class="post-pop">
+        <view bindtap="closePoster" class="post-close" hidden="{{isHiddenAll}}">
+            <image src="../../imgs/post_close.png"></image>
+        </view>
+        <SharePoster bind:cannotUseCtx="cannotUse" bind:closePoster="closeSuccessPoster" bind:hiddenAll="hiddenAll" bind:showAllPoster="showAllPoster" bind:showButton="showButton" comeFrom="teamBuy" id="SharePoster" skuPriceInfo="{{allSkuInfo}}"></SharePoster>
+        <view class="post-bottom" hidden="{{isHiddenAll}}">
+            <view class="post-btn">
+                <view bindtap="saveCanvas" class="wxButton-style-6-big">
+                    <text>保存图片</text>
+                </view>
+            </view>
+            <view class="post-tips">保存后可到相册选取图片分享</view>
+        </view>
+    </view>
+</view>
+<AuthorizeModal authWords="{{authWords}}" bind:authSelect="onAuthSelect" bind:closeModal="onCloseModal" bind:showWXModal="onShowWXModal" showFlag="{{isShowAuthModal}}"></AuthorizeModal>

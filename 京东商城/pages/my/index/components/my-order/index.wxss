@@ -1,0 +1,63 @@
+@import "../../../../../__wuBaseWxss__/21.wxss";
+
+.my_order_entrance {
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+
+.my_order_entrance .entrance_text {
+    color: #666;
+    font-size: 12px;
+    position: relative;
+    top: 30px;
+}
+
+.my_order_entrance.type_unpay {
+    background: url(https://img11.360buyimg.com/jdphoto/s40x40_jfs/t14911/113/1615678148/168/7734f24f/5a53578eN0e2811b6.png) 50%/auto 20px no-repeat;
+}
+
+.my_order_entrance.type_unrecieve {
+    background: url('https://img11.360buyimg.com/jdphoto/s40x40_jfs/t14608/2/1636876268/266/b4ebb3f2/5a535791N627c296c.png') 50%/auto 20px no-repeat;
+}
+
+.my_order_entrance.type_uncomment {
+    background: url('https://img11.360buyimg.com/jdphoto/s40x40_jfs/t15211/104/1578705066/227/4dcc522c/5a5357d8N0ba3b4eb.png') 50%/auto 20px no-repeat;
+}
+
+.my_order_entrance.type_consult {
+    background: url('https://img11.360buyimg.com/jdphoto/s40x40_jfs/t15049/345/1573771240/492/7ef15694/5a5357eaNab882dcb.png') 50%/auto 20px no-repeat;
+}
+
+.my_order_entrance.type_orders {
+    background: url('https://img30.360buyimg.com/jdphoto/jfs/t14953/346/2113764063/185/1a1dcd24/5a6d7b8bN8431ea1a.png') 50%/auto 20px no-repeat;
+}
+
+.my_order_entrance.type_orders::before {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -5px;
+    width: 10px;
+    height: 72px;
+    background: url('https://img11.360buyimg.com/jdphoto/s20x144_jfs/t14743/330/1610539369/321/10d659d3/5a53580eNa26a8177.png');
+    background-size: 10px;
+    content: "";
+}
+
+.type_all {
+    height: 50rpx;
+    line-height: 66rpx;
+}
+
+.type_bill {
+    height: 30rpx;
+    line-height: 30rpx;
+    font-size: 9px;
+    color: #ccc;
+}
+
+.my-logistics {
+    position: relative;
+    top: 30px;
+}

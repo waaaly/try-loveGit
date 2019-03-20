@@ -1,0 +1,53 @@
+<view class="container col ali-center">
+    <view class="header"></view>
+    <view class="main px24 col">
+        <view class="card w100 col">
+            <text class="title px32 black text-center bold">升级店长条件</text>
+            <view class="item col ju-center ali-center">
+                <view class="item-title-row row ali-center w100">
+                    <image class="icon" src="/images/headimg.png"></image>
+                    <text class="px30 black">升级店长条件介绍</text>
+                </view>
+                <text class="px24 color80">淘气值是根据会员近12个月在淘宝和天猫，飞猪以及淘票票上的“购买金额、购买频次、互动、信誉”等行为，而综合算出的会员价值分。每月8号更新；淘气值1000分以上成为88超级会员。</text>
+            </view>
+            <view class="item col ju-center ali-center">
+                <view class="item-title-row row ali-center w100">
+                    <image class="icon" src="/images/headimg.png"></image>
+                    <text class="px30 black">升级店长条件介绍</text>
+                </view>
+                <text class="px24 color80">淘气值是根据会员近12个月在淘宝和天猫，飞猪以及淘票票上的“购买金额、购买频次、互动、信誉”等行为，而综合算出的会员价值分。每月8号更新；淘气值1000分以上成为88超级会员。</text>
+            </view>
+        </view>
+        <view class="card w100 col">
+            <text class="title px32 black text-center bold">升级店长条件</text>
+            <view class="item col ju-center ali-center">
+                <view class="item-title-row row ali-center w100">
+                    <image class="icon" src="/images/headimg.png"></image>
+                    <text class="px30 black">升级店长条件介绍</text>
+                </view>
+                <text class="px24 color80">淘气值是根据会员近12个月在淘宝和天猫，飞猪以及淘票票上的“购买金额、购买频次、互动、信誉”等行为，而综合算出的会员价值分。每月8号更新；淘气值1000分以上成为88超级会员。</text>
+            </view>
+            <view class="item col ju-center ali-center">
+                <view class="item-title-row row ali-center w100">
+                    <image class="icon" src="/images/headimg.png"></image>
+                    <text class="px30 black">升级店长条件介绍</text>
+                </view>
+                <text class="px24 color80">淘气值是根据会员近12个月在淘宝和天猫，飞猪以及淘票票上的“购买金额、购买频次、互动、信誉”等行为，而综合算出的会员价值分。每月8号更新；淘气值1000分以上成为88超级会员。</text>
+            </view>
+            <view class="item col ju-center ali-center">
+                <view class="item-title-row row ali-center w100">
+                    <image class="icon" src="/images/headimg.png"></image>
+                    <text class="px30 black">升级店长条件介绍</text>
+                </view>
+                <text class="px24 color80">淘气值是根据会员近12个月在淘宝和天猫，飞猪以及淘票票上的“购买金额、购买频次、互动、信誉”等行为，而综合算出的会员价值分。每月8号更新；淘气值1000分以上成为88超级会员。</text>
+            </view>
+            <view class="item col ju-center ali-center">
+                <view class="item-title-row row ali-center w100">
+                    <image class="icon" src="/images/headimg.png"></image>
+                    <text class="px30 black">升级店长条件介绍</text>
+                </view>
+                <text class="px24 color80">淘气值是根据会员近12个月在淘宝和天猫，飞猪以及淘票票上的“购买金额、购买频次、互动、信誉”等行为，而综合算出的会员价值分。每月8号更新；淘气值1000分以上成为88超级会员。</text>
+            </view>
+        </view>
+    </view>
+</view>

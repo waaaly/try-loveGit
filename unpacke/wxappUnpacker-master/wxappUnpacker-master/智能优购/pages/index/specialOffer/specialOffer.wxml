@@ -1,0 +1,28 @@
+<view class="container">
+    <image class="banner" data-index="{{index}}" src="{{banner}}"></image>
+    <view class="header-title row spa">
+        <text class="px28 color222">天天特价</text>
+        <text class="px24 color222" wx:if="{{dataStatus!=0&&dataStatus!=200}}">活动已结束</text>
+        <view class="row times ali-center" wx:if="{{dataStatus==0||dataStatus==200}}">
+            <text class="px24 color222" wx:if="{{dataStatus==0}}">距本场开始</text>
+            <text class="px24 color222" wx:if="{{dataStatus==200}}">距本场结束</text>
+            <view class="time px22 white">{{downTime.h}}</view>
+            <view class="black px22">:</view>
+            <view class="time px22 white">{{downTime.m}}</view>
+            <view class="black px22">:</view>
+            <view class="time px22 white">{{downTime.s}}</view>
+        </view>
+    </view>
+    <view class="list-content row">
+        <view catchtap="gotoShop" class="list-item col ali-center" data-goodsid="{{item.goodsId}}" wx:for="{{list}}" wx:key="{{index}}">
+            <image class="list-img" src="{{item.defalutPhotoURL}}"></image>
+            <text class="list-title px22 black">{{item.goodsName}}</text>
+            <div class="row ali-center price">
+                <text class="px20">￥</text>
+                <text class=" px34">{{item.price}}</text>
+            </div>
+            <view class="buy-btn white text-center">立即购买</view>
+        </view>
+    </view>
+</view>
+<include src="../public/bottom.wxml" wx:if="{{IsBottom}}"></include>

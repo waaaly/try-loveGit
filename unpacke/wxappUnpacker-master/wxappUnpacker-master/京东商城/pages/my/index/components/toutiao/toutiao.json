@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "shop-toutiao": "../../components/shop-toutiao/index"
+    }
+}

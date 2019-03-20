@@ -1,0 +1,40 @@
+<view class="withdrawR">
+    <view class="withdrawR_headers">
+        <view class="withdrawR_header row spa ali-center">
+            <view class="col withdrawR_h_item col jcsc ali-center">
+                <view class="spa_font2">
+                    <text class="spa_font1">{{moneyList.grandTotalIncome}}</text>元</view>
+                <view class="spa_font3">累计劳务费</view>
+            </view>
+            <view class="with_line"></view>
+            <view class="col withdrawR_h_item col jcsc ali-center">
+                <view class="spa_font2">
+                    <text class="spa_font1">{{moneyList.hasCollectServiceFee}}</text>元</view>
+                <view class="spa_font3">已领取劳务费</view>
+            </view>
+        </view>
+    </view>
+    <view class="withdrawR_content">
+        <view class="withdrawR_item" data-detail="{{item}}" wx:for="{{withdrawDataList}}">
+            <view class="withdrawR_item_in col jcsc {{index==withdrawDataList.length-1?'':'bor'}}">
+                <view class="row ali-center spa">
+                    <view class="row ali-center">
+                        <text class="withdrawR_item_txt1">{{item.remark}}</text>
+                    </view>
+                    <text class="withdrawR_item_txt4" wx:if="{{item.type<0}}">-{{filters.numberToFix(item.amount,2)}}</text>
+                    <text class="withdrawR_item_txt5" wx:if="{{item.type>=0}}">+{{filters.numberToFix(item.amount,2)}}</text>
+                </view>
+                <view class="withdrawR_item_time" decode="{{true}}">
+                    <text class="withdrawR_item_timesa">领取时间</text>
+                    <text class="withdrawR_item_timesb">{{item.sysCreateTime}}</text>
+                </view>
+            </view>
+        </view>
+        <button class="loading_btn_tip" disabled="{{true}}" loading="{{true}}" style="background: rgba(242, 242, 242, 1);" wx:if="{{isLoading}}">努力加载中...</button>
+        <button class="loading_btn_tip" disabled="{{true}}" style=" background:rgba(242, 242, 242, 1);" wx:if="{{isEnd}}">我也是有底线的</button>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>
+<wxs module="filters" src="../../../utils/numberToFixs.wxs" />

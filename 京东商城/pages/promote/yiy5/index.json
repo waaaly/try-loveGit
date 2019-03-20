@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "京东拼购低价包邮",
+    "usingComponents": {
+        "rule": "../yiy1/components/rule/index",
+        "nav": "../yiy1/components/nav/index",
+        "one-sale": "../yiy1/components/oneSale/index",
+        "two-sale": "../yiy1/components/twoSale/index",
+        "three-sale": "../yiy1/components/threeSale/index"
+    }
+}

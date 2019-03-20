@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="mask"></view>
+    <view class="inner">
+        <form bindsubmit="save">
+            <view class="item">
+                <text class="key">对方称呼</text>
+                <input bindinput="setToName" class="value" name="toname" value="{{toname}}"></input>
+            </view>
+            <view class="item best-wishes">
+                <textarea bindinput="bindChangeText" class="textarea" id="best-wishes" maxlength="{{max_input}}" name="best-wishes" value="{{wishes}}"></textarea>
+                <text class="word-tips {{isRed?'red':''}}">可输入:{{txtNum}}</text>
+            </view>
+            <view class="btns">
+                <button class="save-btn" formType="submit" hoverClass="hover-btn">保存</button>
+            </view>
+        </form>
+    </view>
+</view>

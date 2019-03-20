@@ -1,0 +1,56 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="container col ali-center">
+    <view class="main px24 col">
+        <view class="card w100 col">
+            <view class="title row ali-center">
+                <text class="px32 black ">当前可用数贝</text>
+                <text class="px40 black">{{dataArr.total}}</text>
+            </view>
+            <view class="col w100 card-content">
+                <view class="row ali-center label">
+                    <text class="px26 color80">兑换数贝数</text>
+                    <view class="row ali-center">
+                        <text class="px26 gray">(</text>
+                        <text class="px26 colorEC6">{{dataArr.minExchangeNum}}</text>
+                        <text class="px26 gray">个数贝起兑换)</text>
+                    </view>
+                </view>
+                <view class="row label ali-center">
+                    <input bindinput="onInput" class="px60 lea-ipt" data-val="integral" maxlength="8" placeholder="请输入本次数贝兑换数" placeholderClass="placeholder-style" type="number" value="{{numbers}}"></input>
+                </view>
+            </view>
+            <view class="row label spa ali-center">
+                <view class="col">
+                    <view class="px26 black">
+          
+            此次数贝可兑换<text class="colorEC6">{{rateNumS}}</text>个GDT
+
+          </view>
+                </view>
+                <text bindtap="wholeClick" class="colorEC6 px27">全部兑换</text>
+            </view>
+        </view>
+        <view class="card w100 col">
+            <text class="title px32">手机号</text>
+            <view class="col w100 card-content box-bottom">
+                <view class="row label ali-center">
+                    <input bindinput="onInput" class="px60 colorC7C" data-val="phone" disabled="true" maxlength="13" placeholder="请输入对应的手机号" placeholderClass="placeholder-style" type="number" value="{{phone}}"></input>
+                </view>
+                <view class="row label ali-center">
+                    <text class="px26 black">请填写验证码</text>
+                </view>
+                <view class="label row spa ali-center vali-code">
+                    <view class="ali-center row">
+                        <input bindinput="onInput" class="px28" data-val="code" placeholder="请输入6位验证码" value="{{code}}"></input>
+                    </view>
+                    <text bindtap="sendCode" class="colorEC6 px27" wx:if="{{!isShow}}">获取验证码</text>
+                    <view class="colorEC6 px27" wx:if="{{isShow}}">{{sec}}s后重新发送</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="changeClick" class="btn px30 white text-center">
+    立即兑换
+  </view>
+</view>

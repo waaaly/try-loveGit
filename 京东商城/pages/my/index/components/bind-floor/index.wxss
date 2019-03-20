@@ -1,0 +1,91 @@
+@import "../../../../../__wuBaseWxss__/21.wxss";
+
+.xlist_item {
+    margin-left: 0;
+}
+
+.new_user_task {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    align-items: center;
+    -webkit-box-align: center;
+    height: 55px;
+}
+
+.new_user_task .task_icon {
+    display: inline-block;
+    width: 24px;
+    height: 26px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAA0CAMAAAD7TUujAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABdUExURUxpcTMzMzc3NzMzMzMzMzQ0NOo7Pes9QO5DRDMzMzY2NjQ0NOo7PTQ0NOo8PTQ0NDQ0NDMzM+o8Pus8Puo8Pu0+Qeo7Pes8PzMzM+o8PTMzM+s8Pus7Puk7PTMzM29g43wAAAAddFJOUwC0ItSfOvQxDvAUZK9OunzBiOlqhSTeRePN+V2bK8AbZQAAAolJREFUSMftlGkCoyAMhVFxF9S6W/X+x5w8QMGtMweY/KgU8oXkEWAMlnRdwt4sJrvOyXWV+HZYjIehXZzFfl37UwAp5WddP/SJi9XY9AMY1sMGA3ym1nFANBfo2sM6AtpbOQhxmvhO06B+v4yA5lpfB6C75EQ1km/8CMQAXJk6munjuF+jGClFypykvwC+ZxF2k4dKkV1f8H95B5YmosptYkmkAjhCJGQNOeOravicUv7qWG5OFmAPgERZphG0NTal7x2ARm170uknkPTIH3X0RxUJtRuFmOhzrwEStTqoFarpe6pMLn1xqwF9VmAAvYcdKFYFNCR+ATks0NFwUqkkE3Vgdwi9AKDyYok4BxDDf/cCEZsNog4AnaDscUI7MFCphS0VbTOoZoyGZEGqCILSDAB/91qwVhNdEasr1KhtIZ4BpnUaLn07mZtIQKREWyQy7qMIgGzu70Ej9+YwqriLj8/I+9vy3+4WhqH/uhLeZ/1t20rnf3bgNa3w7LDdIafpkHvGqnTbcuvv2LgDHOPRXVJA6G3PQDYjo5pzDo+Al3lIm/v4M/NQW454nk00zY5iaptnuqWBp8oRqeMvaFyxG+DTNiXtPdcJcqbi90jzM6BVRSZjgOTyfQ7+rwDLAl1vak+jKr0XIBOlZ7UbvVJkh6oVG1MY9laDjPHUxPbynJt9TN0KSM+SZ6wiiXgpBKnt4/Dz2gvSygI5rEQQNaL0skNDYbO0wL2GOoBpmbR5jP0C+Ha14DcgStiIozODvwB6Zt6lqf4JUOcm/h0IAztxBfLTwan7J1SDl7oT89m2qwZOepCXr2iuL2tqr9UO+MI1cgu32Sv3uz3O8zweyYZCPLwMWfj4jPwBGTRdClJAaucAAAAASUVORK5CYII=) no-repeat;
+    background-size: 24px 26px;
+    vertical-align: middle;
+    margin: auto 10px;
+    position: relative;
+}
+
+.new_user_task .task_icon::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    background-color: #e5e5e5;
+    width: 1px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 26px;
+    right: -10px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) {
+    .new_user_task .task_icon::after {
+        -webkit-transform: scaleX(.5);
+        -webkit-transform-origin: 100% 50%;
+    }
+}
+
+.new_user_task .info {
+    width: 170px;
+    font-size: 12px;
+    -webkit-box-flex: 1;
+    flex: 1;
+    overflow: hidden;
+}
+
+.new_user_task .info .main {
+    color: #333;
+}
+
+.new_user_task .info .sub_desc {
+    color: #999;
+}
+
+.new_user_task .gift {
+    margin: auto 10px;
+    width: 16px;
+    height: 20px;
+    background: url(https://img11.360buyimg.com/jdphoto/s33x40_jfs/t1/5355/22/14674/1234/5bdc2e3dE99e5c35b/9f875ab6d52f0499.png);
+    background-size: 16px 20px;
+}
+
+.new_user_task .button {
+    width: 76px;
+    height: 30px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    background: #e93b3d;
+    margin: 0 10px;
+}
+
+.new_user_task .info .main,.new_user_task .info .sub_desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 40rpx;
+    line-height: 40rpx;
+}

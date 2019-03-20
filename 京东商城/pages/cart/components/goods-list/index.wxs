@@ -1,0 +1,128 @@
+function getClsLastGoods(list, index, hasSuit) {
+    hasSuit = hasSuit || false;
+    return (!hasSuit && list.length - 1 === index ? 'goods_last' : '')
+};
+
+function getConnectLine(type) {
+    var cls = '';
+    if (type == 3 || type == 4) {
+        cls = 'connect_line'
+    };
+    return (cls)
+};
+
+function getMinHeight(val) {
+    var style = '';
+    if (val) {
+        style = 'min-height: 224rpx;'
+    };
+    return (style)
+};
+
+function getClsPrice(product) {
+    return (({
+        '15': 'sams_price',
+        '18': 'exclusive_price',
+        '23': 'fans_price',
+        '25': 'newer_price',
+        '201': 'plus_price',
+        '101': 'plus_price',
+    })[((nt_0 = (product.promoTag + ''), null == nt_0 ? undefined : 'number' === typeof nt_0 ? nt_0 : "" + nt_0))] || '')
+};
+
+function showSwitchPrice(product) {
+    var flags = ['15', '18', '23', '25', '101', '201'];
+    if (product.memberPrice && flags.indexOf(product.memberPriceType) > -1) return (true);;
+    return (false)
+};
+var getBeanPromoText = (function(hasUseBean, beanPromo, num) {
+    hasUseBean = hasUseBean == 0;
+    return (hasUseBean ? '使用' + beanPromo.needJdBeanNum * num + '京豆可享受优惠价' + (beanPromo.promoPrice / 100 * num).toFixed(2) + '元' : '已享受优惠，下单后扣' + (beanPromo.needJdBeanNum * num) + '京豆')
+});
+var getServiceId = (function(product, vSkuId) {
+    var id = vSkuId || product.pid;
+    return (id ? id + '_' + product.mainSku.id : product.mainSku.id)
+});
+var canSwitchSku = (function(product) {
+    var mainSku = product.mainSku;
+    if (mainSku && (mainSku.color || mainSku.size) && +mainSku.colorSizeNum > 1) return (true);
+    else return (false)
+});
+var PRESALE_STATUS = ({
+    BEFORE_PRESALE: 1,
+    PRESALE: 2,
+    BEFORE_SNAP_UP: 3,
+    SNAP_UP: 4,
+    SNAP_UP_END: 5,
+    UNKNONW: -1,
+});
+var getPresaleStatusDesc = (function(presale) {
+    var desc = '';
+    if (presale.status == PRESALE_STATUS.PRESALE) {
+        desc = statusDesc = '预约中'
+    } else if (presale.status == PRESALE_STATUS.BEFORE_SNAP_UP) {
+        desc = statusDesc = '待抢购'
+    } else if (presale.status == PRESALE_STATUS.SNAP_UP) {
+        desc = statusDesc = '抢购中'
+    };
+    return (desc)
+});
+var getPresaleTimeDesc = (function(presale) {
+    var timeDesc = '';
+    var h = presale.hours;
+    if (presale.status == PRESALE_STATUS.PRESALE) {
+        if (presale.buyStartTime) {
+            if (h > 24) {
+                timeDesc = presale.dateTime + '开抢'
+            } else if (h > 1) {
+                h = parseInt(h);
+                timeDesc = h + '小时后开抢'
+            } else {
+                timeDesc = '即将开抢'
+            }
+        } else if (presale.endTime) {
+            timeDesc = presale.dateTime + '结束'
+        }
+    } else if (presale.status == PRESALE_STATUS.BEFORE_SNAP_UP) {
+        if (h > 24) {
+            timeDesc = presale.dateTime + '开抢'
+        } else if (h > 1) {
+            h = parseInt(h);
+            timeDesc = h + '小时后开抢'
+        } else {
+            timeDesc = '即将开抢'
+        }
+    } else if (presale.status == PRESALE_STATUS.SNAP_UP) {
+        if (h > 24) {
+            timeDesc = presale.dateTime + '结束'
+        } else if (h > 1) {
+            h = parseInt(h);
+            timeDesc = h + '小时后结束'
+        } else {
+            timeDesc = '即将结束'
+        }
+    };
+    return (timeDesc)
+});
+var formatPrice = (function(price) {
+    return (Number)(price).toFixed(2)
+});
+var getGiftLabel = (function(props) {
+    if (!props) return ('赠品');;
+    if (!props.glt || props.glt == 1) return ('赠品');;
+    return (props.gli)
+});
+module.exports = ({
+    getClsLastGoods: getClsLastGoods,
+    getClsConnectLine: getConnectLine,
+    getMinHeight: getMinHeight,
+    getClsPrice: getClsPrice,
+    getBeanPromoText: getBeanPromoText,
+    getServiceId: getServiceId,
+    canSwitchSku: canSwitchSku,
+    getPresaleStatusDesc: getPresaleStatusDesc,
+    getPresaleTimeDesc: getPresaleTimeDesc,
+    formatPrice: formatPrice,
+    getGiftLabel: getGiftLabel,
+    showSwitchPrice: showSwitchPrice,
+});

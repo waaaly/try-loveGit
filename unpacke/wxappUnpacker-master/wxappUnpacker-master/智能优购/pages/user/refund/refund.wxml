@@ -1,0 +1,44 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="identification">
+    <view class="rule">
+        <text> 领取规则:
+    
+不得低于最低额度并为倍增基数的倍数.
+    
+比如:最低额度1000,倍增基数100，则申请金额只能是1000、1100、1200……</text>
+    </view>
+</view>
+<view class="titel-box">
+    <view class="titel-a">
+        <span>历史总数贝</span>
+        <span class="titel-cl">{{dataset.totalbscore}}</span>
+    </view>
+    <view class="titel-a">
+        <span>可用总数贝</span>
+        <span>{{dataset.cashbscore}}</span>
+    </view>
+    <view class="titel-a">
+        <span>领取最低额度</span>
+        <span>{{investment||'--'}}</span>
+    </view>
+    <view class="titel-a">
+        <span>倍增基数</span>
+        <span>{{baseAmount||'--'}}</span>
+    </view>
+</view>
+<view class="crad">
+  查看银行卡信息:	
+  <span bindtap="goCard" class="incolor">点击查看</span>
+</view>
+<form bindsubmit="bindDuiHuanTap">
+    <view class="input-box">
+        <span>兑换金额:</span>
+        <input bindinput="chargeEvent" class="input" name="grt" placeholder="输入兑换金额" type="number" value="{{inputvalue}}"></input>
+    </view>
+    <view class="input-box">
+        <span>手续费</span>
+        <span>{{charge}}</span>
+    </view>
+    <button class="button1" formType="submit">兑换</button>
+</form>

@@ -1,0 +1,714 @@
+page {
+    height: 100%;
+}
+
+.top {
+    background-color: white;
+    overflow: hidden;
+}
+
+scroll-view {
+    padding-top: 76rpx;
+    height: 100vh;
+}
+
+.spaBg {
+    background-color: #d0d0d0!important;
+}
+
+.topimg {
+    position: relative;
+}
+
+.headimg {
+    width: 750rpx;
+    height: 750rpx;
+}
+
+.collage {
+    background: #f5dcdc;
+    color: #e30d0c;
+}
+
+.headimg2 {
+    position: absolute;
+    left: 0rpx;
+    top: 0rpx;
+    z-index: 3;
+    width: 750rpx;
+    height: 750rpx;
+}
+
+.headpar {
+    background-color: white;
+    padding: 20rpx;
+    position: relative;
+}
+
+.headpar .cost3 {
+    font-size: 30px;
+    color: #f4241a;
+}
+
+.headpar .cost1 {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #444;
+    padding-left: 20rpx;
+}
+
+.headpar .num {
+    color: #444;
+    font-size: 14px;
+}
+
+.headpar .title {
+    width: 484rpx;
+    font-size: 16px;
+    padding-top: 10rpx;
+    line-height: 1.2;
+}
+
+.warp {
+    flex-wrap: wrap;
+}
+
+.noBuy {
+    background: #ddd!important;
+}
+
+.headpar .share2 {
+    right: 110rpx;
+}
+
+.cost3 .share:nth-child(2) {
+    border-left: 2rpx dashed #ddd;
+}
+
+.headpar .sharebox {
+    position: relative;
+    margin: 0 10rpx;
+    padding: 0 10rpx;
+    background: none;
+    height: 90rpx;
+}
+
+.headpar .sharebox .sharetitle {
+    margin-top: 10rpx;
+}
+
+.headpar .sharebox::after {
+    border: none;
+    background: none;
+}
+
+.headpar .share image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.headpar .share .sharetitle {
+    font-size: 12px;
+    height: 20rpx;
+    line-height: 20rpx;
+    color: #444;
+}
+
+.htag {
+    width: 100%;
+    line-height: 80rpx;
+    font-size: 14px;
+    float: left;
+    color: #222;
+    padding: 0 20rpx;
+    border-top: 10rpx solid #f2f2f2;
+    background: #f9f9f9;
+}
+
+.open {
+    margin-top: 10px;
+    background-color: white;
+    padding: 20rpx 20rpx 0rpx 20rpx;
+}
+
+.open .title {
+    font-size: 14px;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 20rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.open .title .more {
+    float: right;
+    font-size: 13px;
+}
+
+.open .item {
+    padding-top: 13rpx;
+    height: 115rpx;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.open .item .it1 {
+    float: left;
+    width: 120rpx;
+}
+
+.open .item .userimg {
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 50%;
+}
+
+.open .item .it2 {
+    float: left;
+    width: 230rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 15px;
+    overflow: hidden;
+}
+
+.open .item .it3 {
+    float: left;
+    width: 230rpx;
+}
+
+.open .item .it3 span {
+    color: #f4241a;
+}
+
+.open .item .it3 view {
+    padding-top: 5rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 14px;
+}
+
+.open .item .it3 .time {
+    font-size: 12px;
+    line-height: 20rpx;
+}
+
+.open .item .it4 {
+    position: relative;
+    float: left;
+    width: 90rpx;
+}
+
+.open .item .it4 view {
+    margin-top: 15rpx;
+    font-size: 14px;
+    text-align: center;
+    height: 60rpx;
+    line-height: 60rpx;
+    width: 120rpx;
+    background-color: #f4241a;
+    color: white;
+    border-radius: 10rpx;
+}
+
+.mask {
+    z-index: 70;
+}
+
+.layer {
+    height: 750rpx;
+    z-index: 80;
+}
+
+.listcost {
+    padding-left: 20rpx;
+    color: red;
+}
+
+.attr {
+    margin: 20rpx;
+}
+
+.attr .name {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 20rpx;
+}
+
+.attr .item view {
+    float: left;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 12px;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    border-radius: 10rpx;
+    margin-right: 10rpx;
+    margin: 6rpx;
+}
+
+.menuitemon {
+    background-color: #ec828a;
+    color: white;
+}
+
+.menuitem {
+    background-color: #f1f1f1;
+}
+
+.intro {
+    border-top: 10rpx solid #f2f2f2;
+    background-color: white;
+    padding: 20rpx;
+}
+
+.intro .title {
+    font-size: 16px;
+    margin-bottom: 20rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+}
+
+.intro .text {
+    font-size: 14px;
+    line-height: 50rpx;
+    padding-top: 20rpx;
+}
+
+.shop {
+    background-color: white;
+    margin-top: 10px;
+    padding: 30rpx;
+    height: 150rpx;
+}
+
+.shop .s1 {
+    float: left;
+    width: 120rpx;
+}
+
+.shop .s2 {
+    float: left;
+    width: 340rpx;
+    padding-top: 5rpx;
+}
+
+.shop .s2 .shopname {
+    font-size: 15px;
+}
+
+.shop .s2 .sellnums {
+    font-size: 12px;
+}
+
+.shop .s2 .sellnums span {
+    color: #f4241a;
+    padding: 5rpx;
+}
+
+.shop .s3 {
+    margin-top: 7rpx;
+    float: left;
+    background-color: white;
+    border: 1px solid #f1f1f1;
+    padding: 15rpx;
+    border-radius: 10rpx;
+    width: 220rpx;
+    text-align: center;
+}
+
+.shop image {
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 50%;
+}
+
+.price-title {
+    align-items: flex-end;
+    line-height: 1;
+}
+
+.content {
+    margin-top: 10px;
+    background-color: white;
+    padding: 20rpx;
+}
+
+.content image {
+    width: 100%;
+}
+
+.title66 {
+    font-size: 16px;
+    height: 38rpx;
+    line-height: 38rpx;
+    margin: 30rpx 0;
+    background: url('https://grtimg.oss-cn-beijing.aliyuncs.com/temp/shop_datail_datail_title.png') no-repeat;
+    background-size: 100% 100%;
+    padding-bottom: 20rpx;
+}
+
+.intro text {
+    font-size: 14px;
+    line-height: 40rpx;
+}
+
+.recommend {
+    margin-top: 10px;
+    background-color: white;
+}
+
+.recommend .title {
+    font-size: 16px;
+    margin-right: 20rpx;
+    padding-top: 20rpx;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 10rpx;
+    margin-left: 20rpx;
+}
+
+.recommend .item {
+    float: left;
+    width: 33.333%;
+    padding-bottom: 20rpx;
+    overflow: hidden;
+}
+
+.recommend .subtitle {
+    font-size: 12px;
+    height: 70rpx;
+    line-height: 35rpx;
+    overflow: hidden;
+    padding: 0 20rpx;
+}
+
+.recommend image {
+    width: 230rpx;
+    height: 230rpx;
+    border-radius: 10rpx;
+}
+
+.recommend .cost {
+    font-size: 14px;
+    color: #f4241a;
+    padding: 0 20rpx;
+}
+
+.recommend .cost span {
+    font-size: 12px;
+    padding-right: 10rpx;
+    color: #444;
+    text-decoration: line-through;
+}
+
+.zhanwei {
+    height: 100rpx;
+}
+
+.bottom {
+    position: fixed;
+    z-index: 10;
+    bottom: 0rpx;
+    width: 100%;
+    height: 100rpx;
+    background-color: white;
+    text-align: center;
+}
+
+.bottom .bword {
+    line-height: 9px;
+    font-size: 11px;
+}
+
+.bottom .word1 {
+    line-height: 30px;
+    font-size: 14px;
+    height: 30rpx;
+}
+
+.bottom .word2 {
+    line-height: 35px;
+    font-size: 17px;
+    letter-spacing: 5rpx;
+}
+
+.bottom .b1 {
+    width: 20%;
+    float: left;
+    font-size: 12px;
+    color: #444;
+    text-align: center;
+    height: 100rpx;
+    border-top: 1px solid #f1f1f1;
+}
+
+.bottom .b1 image {
+    width: 50rpx;
+    height: 50rpx;
+    padding-top: 5rpx;
+}
+
+.bottom .b2 {
+    position: relative;
+    width: 20%;
+    float: left;
+    font-size: 12px;
+    color: #444;
+    text-align: center;
+    border-right: 1px solid #b4b4b4;
+    height: 100rpx;
+    border-top: 1px solid #f1f1f1;
+}
+
+.bottom .b2 .contacts {
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+    z-index: 10;
+    opacity: 0;
+}
+
+.bottom .b2 image {
+    width: 50rpx;
+    height: 50rpx;
+    padding-top: 5rpx;
+}
+
+.bottom .b3 {
+    position: relative;
+    width: 30%;
+    float: left;
+    text-align: center;
+    border-right: 1px solid #b4b4b4;
+    height: 100rpx;
+}
+
+.buy {
+    color: #fff;
+    line-height: 100rpx;
+    background: #f11717;
+    border-radius: 0;
+}
+
+.buy::after {
+    content: '';
+    border-radius: 0;
+    border: none;
+}
+
+.not-buy {
+    background: #ccc;
+    color: #fff;
+}
+
+.bottom .b4 {
+    position: relative;
+    width: 30%;
+    float: left;
+    text-align: center;
+    color: white;
+    height: 100rpx;
+}
+
+.bottom .buyfalse {
+    background-color: #ccc;
+}
+
+.listtitle {
+    padding: 0px 10px 0px 10px;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.listtitle .listbox {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.listbox .close {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    height: 90rpx;
+    width: 100%;
+    line-height: 90rpx;
+    border-top: 3rpx solid #e8e8e8;
+    background-color: white;
+}
+
+.closeview {
+    position: relative;
+    width: 100%;
+    height: 90rpx;
+}
+
+.editimg {
+    min-width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.jd_img {
+    height: 30rpx;
+    float: left;
+    background-color: #c81623;
+    padding: 0 10rpx;
+    color: #fff;
+    border-radius: 10rpx;
+    font: 24rpx "Helvetica Neue","Hiragino Sans GB",SimSun,serif;
+    margin-top: 5rpx;
+    margin-right: 10rpx;
+    line-height: 30rpx;
+}
+
+.head-tabs {
+    width: 100%;
+    padding: 25rpx 206rpx;
+    line-height: 1;
+    box-sizing: border-box;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.head-tab {
+    width: 33.33%;
+    text-align: center;
+}
+
+.head-tabs text:nth-child(3) {
+    margin-right: 0;
+}
+
+.head-tabs .head-tab-active {
+    color: #f11717;
+}
+
+.sku {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1001;
+}
+
+.main {
+    position: absolute;
+    bottom: 0;
+    height: 1014rpx;
+    background: rgba(255,255,255,1);
+    border-radius: 8rpx 8rpx 0 0;
+    padding: 13rpx;
+    box-sizing: border-box;
+}
+
+.sku-shop-img {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 5rpx;
+    margin-right: 26rpx;
+}
+
+.sku-head {
+    align-items: flex-end;
+    padding-top: 15rpx;
+    padding-bottom: 30rpx;
+    border-bottom: 2rpx solid #ddd;
+}
+
+.sku-price {
+    color: #ea1414;
+}
+
+.sku-proto-list {
+    padding: 30rpx 0;
+    border-bottom: 2rpx solid #ddd;
+}
+
+.sku-proto-tags {
+    flex-wrap: wrap;
+}
+
+.sku-proto-item {
+    padding: 0 20rpx;
+    text-align: center;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    background: rgba(245,245,245,1);
+    border-radius: 8rpx;
+}
+
+.sku-tag-active {
+    background: rgba(254,244,243,1);
+    border: 2rpx solid rgba(241,23,23,1);
+}
+
+.sku-proto-title {
+    margin-bottom: 25rpx;
+    line-height: 1;
+}
+
+.skui-close {
+    position: absolute;
+    right: 17rpx;
+    top: 17rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.sku-shop-num-btn {
+    width: 60rpx;
+    height: 56rpx;
+}
+
+.sku-shop-num-txt {
+    width: 68rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    text-align: center;
+    background: rgba(245,245,245,0.91);
+    border-radius: 2rpx;
+}
+
+.now-buy {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 26rpx;
+    background: #f11717;
+}
+
+.now-buy::after {
+    border-radius: 0;
+    border: none;
+}
+
+.datails {
+    margin-top: 15rpx;
+    padding-top: 20rpx;
+    border-top: 1rpx dashed #ddd;
+}
+
+.price-txt {
+    font-size: 40rpx;
+}
+
+.ss {
+    display: flex;
+}
+
+.spjs .img {
+    display: block;
+}

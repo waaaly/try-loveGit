@@ -1,0 +1,100 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="act_box">
+    <image class="top_bg" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/active_bg_top.png"></image>
+    <image class="score_gift" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/score_gift.png"></image>
+    <view catchtap="toGamePage" class="wish">
+        <view class="tip">操作极其简单，动动手指便可完成</view>
+        <image class="act_end" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/act_end.png?a=2"></image>
+        <image class="make_btn" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/gameBtn.png"></image>
+    </view>
+    <view class="jingpin">
+        <view class="jingpin_tit">
+            <image class="tit_img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/jingpintit_img.png"></image>
+            <image class="tit_tip" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/jingpin_tip.png"></image>
+            <image class="jingpin_flower" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/jingpin_flower.png"></image>
+            <image class="jingpin_focus" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/jingpin_focus.png"></image>
+            <image class="circle_tip" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/5.png"></image>
+            <view class="start_time">9月10日~9月24日</view>
+        </view>
+        <view class="jingpin_list">
+            <view bindtap="bindContentTap" class="goods_item" data-id="{{item.goods.id}}" wx:for="{{activeData.top1.promotionGoodsList}}">
+                <image class="hot" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/hot.png"></image>
+                <image class="goods_img" src="{{item.goods.mainpic}}"></image>
+                <view class="goods_bot">
+                    <view class="bot_left">
+                        <view class="goods_name">
+              {{item.goods.shorttitle}}
+            </view>
+                        <text class="price_sign">￥</text>
+                        <text class="price">{{item.goods.cost3}}</text>
+                    </view>
+                    <view class="bot_right">
+                        <image class="buyNow" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/buyNow.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="jingpin">
+        <view class="jingpin_tit">
+            <image class="tit_img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/limit_buy.png"></image>
+            <image class="tit_tip" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/limit_tip.png"></image>
+            <image class="jingpin_flower" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/jingpin_flower.png"></image>
+            <image class="jingpin_focus" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/limit_focus.png"></image>
+            <image class="circle_tip" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/limit3.png"></image>
+            <view class="start_time">9月10日~9月24日</view>
+        </view>
+        <view class="jingpin_list">
+            <view bindtap="bindContentTap" class="goods_item limit" data-id="{{item.goods.id}}" wx:for="{{activeData.top2.promotionGoodsList}}">
+                <image class="hot" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/hot2@3x.png"></image>
+                <image class="goods_img" src="{{item.goods.mainpic}}"></image>
+                <view class="prog_percent">
+                    <progress active activeColor="#E30D0D" backgroundColor="#FC9191" class="prog_bar" percent="{{item.goods.sucnums}}" strokeWidth="11"></progress>
+                    <text class="percent_num">已抢{{item.goods.sucnums}}件</text>
+                </view>
+                <view class="goods_bot">
+                    <view class="bot_left">
+                        <view class="goods_name">
+              {{item.goods.shorttitle}}
+            </view>
+                        <text class="price_sign">￥</text>
+                        <text class="price">{{item.goods.cost3}}</text>
+                    </view>
+                    <view class="bot_right">
+                        <image class="buyNow" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/buyNow.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="jingpin">
+        <view class="jingpin_tit">
+            <image class="tit_img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/nice_tit.png"></image>
+            <image class="tit_tip" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/nice_tip.png"></image>
+            <image class="jingpin_flower" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/jingpin_flower.png"></image>
+            <image class="jingpin_focus" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/nice_focus.png"></image>
+            <image class="circle_tip" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/limit3.png"></image>
+            <view class="start_time">9月10日~9月24日</view>
+        </view>
+        <view class="jingpin_list">
+            <view bindtap="bindContentTap" class="goods_item" data-id="{{item.goods.id}}" wx:for="{{activeData.top3.promotionGoodsList}}">
+                <image class="hot" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/b_score.png"></image>
+                <image class="goods_img" src="{{item.goods.mainpic}}"></image>
+                <view class="goods_bot">
+                    <view class="bot_left">
+                        <view class="goods_name">
+              {{item.goods.shorttitle}}
+            </view>
+                        <text class="price_sign">￥</text>
+                        <text class="price">{{item.goods.cost3}}</text>
+                    </view>
+                    <view class="bot_right">
+                        <image class="buyNow" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/buyNow.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="filter" src="../../numberToFix.wxs" />

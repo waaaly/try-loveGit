@@ -1,0 +1,36 @@
+.top-tips {
+    background-color: rgba(0,0,0,.7);
+    color: #fff;
+    font-size: 24rpx;
+    position: fixed;
+    top: 10rpx;
+    right: 105rpx;
+    z-index: 201;
+    padding: 0 20rpx 0 65rpx;
+    border-radius: 50rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.top-tips::after {
+    position: absolute;
+    top: -8rpx;
+    right: 40rpx;
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 8rpx solid transparent;
+    border-right: 8rpx solid transparent;
+    border-bottom: 10rpx solid rgba(0,0,0,.7);
+}
+
+.top-tips__close {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70rpx;
+    height: 50rpx;
+    background: url('https://img11.360buyimg.com/jdphoto/s33x21_jfs/t21643/89/1253104836/215/16d8139b/5b2334f6N5d1f4e7e.png') no-repeat center;
+    background-size: 33rpx 21rpx;
+}

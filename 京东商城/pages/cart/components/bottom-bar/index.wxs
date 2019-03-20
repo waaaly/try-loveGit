@@ -1,0 +1,10 @@
+var getSummaryTexts = (function(details) {
+    var texts = [];
+    details.forEach((function(item) {
+        item.category !== 'other' && texts.push(item.text)
+    }));
+    return (texts.join('、'))
+});
+module.exports = ({
+    getSummaryTexts: getSummaryTexts,
+});

@@ -1,0 +1,30 @@
+<view class="auth_fail">
+    <view class="fail_intro">
+        <view class="fail_intro_img">
+            <image src="https://img11.360buyimg.com/jdphoto/s346x277_jfs/t22288/292/1023488848/5654/7ddb7138/5b1e3c26N5d5f1287.png"></image>
+        </view>
+        <view class="fail_intro_tit">登录失败</view>
+        <view class="fail_intro_reason">登录京东购物需允许授权，请重新进入并允许授权</view>
+        <view class="fail_intro_rst">拒绝授权京东购物小程序将无法使用领取优惠券、下单、查看订单等功能。</view>
+    </view>
+    <view class="fail_how">
+        <view class="fail_how_tit">如何允许微信授权</view>
+        <view class="fail_how_do">
+            <view class="order">1.</view>
+            <view class="fail_how_todo">
+                <view class="line">退出京东购物小程序，十分钟后重新进入；</view>
+                <view class="line">或在小程序列表中左滑删除京东购物小程序后，重新搜索“京东购物”进入。</view>
+            </view>
+        </view>
+        <view class="fail_how_img again">
+            <image src="https://img11.360buyimg.com/jdphoto/s421x217_jfs/t20044/17/1513160214/5493/40cd749a/5b1e3c26Na13a41f5.png"></image>
+        </view>
+        <view class="fail_how_do">
+            <view class="order">2.</view>
+            <view class="fail_how_todo">点击进入京东购物小程序后，将出现以下微信授权页面，点击“允许”。</view>
+        </view>
+        <view class="fail_how_img auth">
+            <image src="https://img11.360buyimg.com/jdphoto/s422x357_jfs/t21379/121/1028574126/12723/54d1fdaa/5b1e3c26N4df932a8.png"></image>
+        </view>
+    </view>
+</view>

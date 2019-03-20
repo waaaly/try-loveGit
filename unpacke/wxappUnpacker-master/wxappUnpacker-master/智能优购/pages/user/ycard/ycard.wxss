@@ -1,0 +1,71 @@
+.identification {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20rpx;
+    background-color: white;
+}
+
+.identification .rule {
+    background-color: #f2f7fd;
+    font-size: 14px;
+    padding: 20rpx;
+    line-height: 40rpx;
+    border: 1px dashed #D5E4F9;
+}
+
+.item {
+    font-size: 14px;
+}
+
+.item .caption {
+    height: 70rpx;
+    line-height: 70rpx;
+    background-color: #f1f1f1;
+    font-size: 14px;
+    padding-left: 20rpx;
+}
+
+.item .input {
+    background-color: white;
+    height: 90rpx;
+    padding-left: 20rpx;
+}
+
+.databox {
+    border: 1px solid #f1f1f1;
+    margin-top: 20rpx;
+}
+
+.button1 {
+    margin-left: 40rpx;
+    float: left;
+    width: 300rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    background-color: #A84F25;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.button2 {
+    margin-left: 20rpx;
+    float: left;
+    width: 300rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    background-color: #666666;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.button {
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}

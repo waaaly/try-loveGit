@@ -1,0 +1,21 @@
+<view class="ecWap-mask" hidden="{{!isShow}}"></view>
+<view class="ecWap-box ecWap-box-lower ecWap-box-addressbox" hidden="{{!isShow}}">
+    <view class="ecWap-box-header">
+        <text class="ecWap-box-title">选择地区</text>
+        <view catchtap="toCloseRegion" class="ecWap-box-close box-close">
+            <image data-status="0" src="../../imgs/icon_ecWap_close.png"></image>
+        </view>
+    </view>
+    <view class="ecWap-box-content">
+        <view bindtap="toChangeRegion" class="form-select-area ui-border-b system-follow-l bg_white">
+            <view class="{{currentLevel==index?'current':''}}" data-index="{{index}}" data-type="{{item}}" wx:if="{{newRegion[item+'Name']!=''}}" wx:for="{{levelSequence}}" wx:key="*this">
+        {{newRegion[item+'Name']}}
+      </view>
+        </view>
+        <scroll-view scrollY class="current-box" scrollIntoView="{{scrollId}}">
+            <view bindtap="toChooseRegion" class="current-list {{selectedRegionIndex==index?'active':''}}" data-index="{{index}}" id="{{'scroll'+item.id}}" wx:for="{{regionList}}" wx:key="id">
+                <view>{{item.name}}</view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

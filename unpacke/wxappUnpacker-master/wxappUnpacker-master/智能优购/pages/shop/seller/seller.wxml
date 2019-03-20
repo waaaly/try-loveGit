@@ -1,0 +1,55 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="head">
+    <image class="bgimg" src="{{shop.pic}}"></image>
+    <image class="headimg" src="{{shop.headpic}}"></image>
+    <view class="name">{{shop.name}}</view>
+    <view class="bline"></view>
+</view>
+<view class="nums">
+    <view class="left">商品<view>{{shop.goodsnums}}</view>
+    </view>
+    <view class="right">已售<view>{{shop.sellnums}}</view>
+    </view>
+</view>
+<view class="container">
+    <view class="list">
+        <view bindtap="bindContentTap" class="item " data-catalog="{{item.catalog}}" data-id="{{item.id}}" wx:for="{{dataset}}" wx:key="unique">
+            <view class="productimg">
+                <image src="{{item.pic}}?2"></image>
+            </view>
+            <view class="divright">
+                <view class="classname">{{item.shorttitle}}</view>
+                <view class="autor">{{item.tags}}</view>
+                <view class="pin">
+                    <image class="pinimg" src="/images/headimg.png"></image>
+                    <span wx:if="{{item.isgroup}}">已拼{{item.suctotal}}件</span>
+                    <span wx:if="{{!item.isgroup}}">已售{{item.suctotal}}件</span>
+                </view>
+                <view class="cost">¥{{item.cost1}}</view>
+                <view class="partake" wx:if="{{item.isgroup}}">
+                    <view class="button">去拼团</view>
+                  ¥<span>{{item.cost3}}</span>
+                </view>
+                <view class="partake" wx:if="{{!item.isgroup}}">
+                    <view class="button">单独买</view>
+                  ¥<span>{{item.cost2}}</span>
+                </view>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view bindtap="bindAllAlbum" class="newmore" wx:if="{{bar.show&&!isVerfity}}">查看更多>></view>
+    </view>
+    <view class="recommend_bottom">
+        <view class="bottomcenter" wx:if="{{!loadIsEnd}}">
+            <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+        </view>
+        <view class="endparent" wx:if="{{loadIsEnd}}">
+            <view class="bottomp">分享赚数贝</view>
+            <view class="bottomline"></view>
+        </view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

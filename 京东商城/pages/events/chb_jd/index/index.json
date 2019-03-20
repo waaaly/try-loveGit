@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "攒京豆",
+    "usingComponents": {
+        "dialogs": "../../common/components/dialogs/index",
+        "main-show": "../comps/main-show/main-show",
+        "help-list": "../comps/help-list/help-list",
+        "rule": "../../common/components/rule/index",
+        "goods-long": "../comps/goods-long/goods-long",
+        "market-floor": "../../common/components/market_floor/index",
+        "pingou-floor": "../../common/components/pingou_floor/index",
+        "foot": "../../common/components/foot/index"
+    }
+}

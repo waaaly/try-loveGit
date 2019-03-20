@@ -1,0 +1,188 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="row ali-center spa ju-center head-tabs">
+    <text catchtap="toggleView" class="px28 black head-tab {{content_index==0?'head-tab-active':''}}" data-index="0">商品</text>
+    <text catchtap="toggleView" class="px28 black  head-tab {{content_index==1?'head-tab-active':''}}" data-index="1">详情</text>
+    <text catchtap="toggleView" class="px28 black  head-tab {{content_index==2?'head-tab-active':''}}" data-index="2">推荐</text>
+</view>
+<scroll-view scrollY bindscroll="scrollWin" scrollTop="{{scroll_top}}px">
+    <view class="top" id="head">
+        <view class="topimg">
+            <image class="headimg" src="/images/brand.jpg"></image>
+            <image class="headimg2" mode="aspectFill" src="{{dataset.goods.seekGoodsImgsVOSPart.length!==0?dataset.goods.seekGoodsImgsVOSPart[0]:dataset.goods.defalutPhotourl}}"></image>
+        </view>
+        <view class="headpar">
+            <view class="cost3">
+                <view class="col ali-center w100">
+                    <view class="row price-title w100">
+                        <span class="px28 bold">¥</span>
+                        <span class="px56 bold price-txt">{{dataset.goods.priceSection}}</span>
+                        <span class="cost1 color999">¥{{dataset.goods.mallPriceSection}}</span>
+                    </view>
+                    <view class="row w100 spa">
+                        <view class="title">
+                            <view class="jd_img" wx:if="{{dataset.goods.goodsPropery==1&&dataset.goods.channelId==0}}">自营</view>
+                            <view class="jd_img" wx:if="{{dataset.goods.goodsPropery==2&&dataset.goods.channelId==1}}">京东</view>
+                            <view class="jd_img" wx:if="{{dataset.goods.goodsPropery==2&&dataset.goods.channelId==2}}">楚楚街</view>
+                            <text class="black px30">{{dataset.goods.goodsName}}</text>
+                        </view>
+                        <view class="row">
+                            <view class="share share2" wx:if="{{is_collection==0}}">
+                                <button bindgetuserinfo="clickCollection" bindtap="judgePhone" class="sharebox" data-type="0" openType="getUserInfo">
+                                    <view class="col ju-center">
+                                        <image mode="widthFix" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/shop_active_0.png"></image>
+                                        <view class="sharetitle">收藏</view>
+                                    </view>
+                                </button>
+                            </view>
+                            <view class="share share2" wx:if="{{is_collection!=0}}">
+                                <button catchtap="shopCollectionChange" class="sharebox">
+                                    <view class="col ju-center">
+                                        <image mode="widthFix" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/shop_active.png"></image>
+                                        <view class="sharetitle">收藏</view>
+                                    </view>
+                                </button>
+                            </view>
+                            <view class="share" wx:if="{{isShare==1}}">
+                                <button class="sharebox" openType="share">
+                                    <view class="col ju-cente">
+                                        <image src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/shop_datail_share.png"></image>
+                                        <view class="sharetitle">分享</view>
+                                    </view>
+                                </button>
+                            </view>
+                            <view class="share" wx:if="{{isShare==2}}">
+                                <button bindgetuserinfo="bindShareTap" class="sharebox" openType="getUserInfo">
+                                    <view class="col ju-cente">
+                                        <image src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/shop_datail_share.png"></image>
+                                        <view class="sharetitle">分享</view>
+                                    </view>
+                                </button>
+                            </view>
+                        </view>
+                    </view>
+                    <text class="px24 datails w100 color666" wx:if="{{dataset.goods.miniDetails}}">{{dataset.goods.miniDetails}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="htag">{{des1}}<text style="color:#f4241a;font-weight: bold;">{{dataset.goods.mscore}}</text>{{des2}}</view>
+        <view class="htag" style="border-top:0;" wx:if="{{isGift}}">
+            <text style="color:#f4241a; font-size:14px; font-weight: bold;">*本品是为vip会员定制的礼包产品，不支持退货。
+</text>
+        </view>
+        <view class="clear"></view>
+    </view>
+    <view class="open" wx:if="{{dataset.pinlist.length>0}}">
+        <view class="title">
+            <view class="more" wx:if="{{false}}">全部></view>
+      已有{{dataset.pinlist.length}}人在开团，可直接参与
+    </view>
+        <view class="item clear" wx:for="{{dataset.pinlist}}" wx:key="unique">
+            <view class="it1">
+                <image class="userimg" src="{{item.userimg}}"></image>
+            </view>
+            <view class="it2">{{item.nickname}}</view>
+            <view class="it3">
+                <view>还差
+          <span>{{item.cha}}</span>人拼成</view>
+                <view class="time">剩余{{item.timestr}}</view>
+            </view>
+            <view class="it4">
+                <button bindgetuserinfo="bindPinTuanTap2" class="sharebutton" data-brandtype="{{brandtype}}" data-oid="{{item.oid}}" openType="getUserInfo" style="width:130rpx; z-index: 2;"></button>
+                <view class="button">去参团</view>
+            </view>
+        </view>
+    </view>
+    <view class="intro" wx:if="{{dataset.goods.goodsNote.length>0}}">
+        <view class="title color333">商品描述</view>
+        <view class="text">
+            <text>{{dataset.goods.goodsNote}}</text>
+        </view>
+    </view>
+    <view class="content clear spjs" id="content" wx:if="{{dataset.goods.datail_imgs.length}}">
+        <view class="title66 color333 text-center">商品介绍</view>
+        <image class="w100 img" mode="widthFix" src="{{item}}" wx:for="{{dataset.goods.datail_imgs}}" wx:key="index"></image>
+    </view>
+    <view class="recommend content" wx:if="{{dataset.list.length}}">
+        <view class="title66 color333 text-center">为你推荐</view>
+        <view class="row warp" style="border-left:1rpx solid #DDDDDD;border-top:1rpx solid #DDDDDD;">
+            <view bindtap="bindGoBrandTap" class="item" data-id="{{item.goodsId}}" style="border-right:1rpx solid #DDDDDD;border-bottom:1rpx solid #DDDDDD;" wx:for="{{dataset.list}}" wx:key="unique">
+                <view id="recommend">
+                    <image src="{{item.defalutPhotourl}}"></image>
+                </view>
+                <view class="subtitle">{{item.goodsName}}</view>
+                <view class="cost">¥{{item.price}}
+          <span>¥{{item.marketPrice}}</span>
+                </view>
+            </view>
+        </view>
+        <view class="clear"></view>
+    </view>
+    <view class="zhanwei"></view>
+</scroll-view>
+<view class="bottom row">
+    <view bindtap="bindGoHomeTap" class="b1">
+        <image src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/shop_datail_home.png"></image>
+        <view class="bword">首页</view>
+    </view>
+    <view bindtap="goWbv" class="b2">
+        <image src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/shop_datail_server.png"></image>
+        <view class="bword">客服</view>
+    </view>
+    <view catchtap="{{buyStatus==1?'showSku':''}}" class="buy {{buyStatus==1?'':'noBuy'}}" style="width:80%;">立即购买</view>
+</view>
+<view bindtap="bindHideBuyTap" class="mask" wx:if="{{maskShow}}"></view>
+<view class="layer {{layclass}}">
+    <view class="listbox">
+        <view class="listtitle">
+            <view class="right">共 {{dataset.programe.count}} 条</view>播放列表
+    </view>
+        <scroll-view class="scroll-view_H" scrollY="true">
+            <view class="ended clear">没有了</view>
+        </scroll-view>
+        <view bindtap="bindHideBuyTap" class="close">关闭</view>
+    </view>
+</view>
+<view class="sku" wx:if="{{sku.show}}">
+    <view class="main w100 col">
+        <image catchtap="hideSku" class="skui-close" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/shop_datail_close.png"></image>
+        <view class="row w100 sku-head">
+            <image class="sku-shop-img" src="{{sku.skuObj.defaultPhotoPath}}"></image>
+            <view class="col sku-shop-info">
+                <text class="sku-price px30">￥{{sku.skuObj.price}}</text>
+                <text class="color999 px22">库存{{sku.skuObj.stock}}件</text>
+                <text class="px22 color333">已选：{{sku.txt}}</text>
+            </view>
+        </view>
+        <view class="sku-proto-list col" wx:for="{{dataset.sku.seekGoodsItemVOS}}" wx:key="index">
+            <text class="sku-proto-title px26 black">{{item.itemName}}</text>
+            <view class="row ali-cetnr sku-proto-tags">
+                <text catchtap="clickProto" class="{{index2==sku.select[index]?'sku-tag-active':''}} sku-proto-item px22 black" data-index="{{index}},{{index2}}" wx:for="{{item.norms}}" wx:for-index="index2" wx:for-item="item2" wx:key="index2">{{item2.normName}}</text>
+            </view>
+        </view>
+        <view class="sku-proto-list row ali-center spa">
+            <text class="px26 black">购买数量</text>
+            <view class="row ali-center">
+                <image catchtap="shopNumberAction" class="sku-shop-num-btn" data-type="1" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/shop_num_datail_remove.png"></image>
+                <text class="sku-shop-num-txt black text-cetner px26">{{shop_num}}</text>
+                <image catchtap="shopNumberAction" class="sku-shop-num-btn" data-type="2" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/shop_num_datail_add.png"></image>
+            </view>
+        </view>
+        <button bindgetuserinfo="nowBuy" class="now-buy px26 white text-center  " data-type="0" openType="getUserInfo">{{sku.skuObj.promotionType==1?'拼团':'立即购买'}}</button>
+    </view>
+</view>
+<view bindtap="bindCloseWinTap" class="mask" wx:if="{{maskShow}}"></view>
+<view class="layer {{layclass}}">
+    <view class="listbox">
+        <view class="listtitle">{{dataset.goods.goodsName}}</view>
+        <view class="listcost">￥{{dataset.goods.cost2}}</view>
+        <view class="attr" wx:for="{{dataset.goods.attr}}" wx:for-index="mainindex" wx:key="*this">
+            <view class="name">{{mainindex}}</view>
+            <view bindtap="bindSelectAttrTap" class="item" data-name="{{mainindex}}" data-value="{{item}}" wx:for="{{dataset.goods.attr[mainindex]}}" wx:key="*this">
+                <view class=" {{attrname[mainindex]==item?'menuitemon':'menuitem'}}">{{item}}</view>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view bindtap="bindBuyTap" class="close" data-attr="{{true}}" data-type="{{buytype}}">下一步</view>
+    </view>
+</view>

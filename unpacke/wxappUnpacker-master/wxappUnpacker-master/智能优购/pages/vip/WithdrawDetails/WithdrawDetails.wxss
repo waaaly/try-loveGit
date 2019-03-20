@@ -1,0 +1,121 @@
+.withdrawR {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-top: 1rpx solid #E8E8E8;
+    background: rgba(242,242,242,1);
+}
+
+.withdrawR_header {
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    width: 710rpx;
+    margin: 20rpx auto 10rpx;
+    font-size: 26rpx;
+    border-radius: 8rpx;
+    background-color: #fff;
+    padding: 40rpx 30rpx;
+    color: rgba(102,102,102,1);
+}
+
+.withdrawR_header_num {
+    font-size: 40rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(241,23,23,1);
+}
+
+.withdrawR_header_nums {
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(241,23,23,1);
+}
+
+.withdrawR_content {
+    padding: 0 20rpx;
+    margin-top: 10rpx;
+}
+
+.withdrawR_item {
+    background-color: #fff;
+    height: 95rpx;
+    width: 710rpx;
+    margin: 0 auto;
+}
+
+.withdrawR_item_in {
+    width: 650rpx;
+    margin: 0 auto;
+    height: 100%;
+    border-bottom: 1rpx solid #E8E8E8;
+}
+
+.withdrawR_item_txt1 {
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    float: left;
+    color: rgba(102,102,102,1);
+}
+
+.withdrawR_item_txt2 {
+    width: 110rpx;
+    height: 34rpx;
+    overflow: hidden;
+    text-align: justify;
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(102,102,102,1);
+}
+
+.withdrawR_item_txt2:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+.withdrawR_item_txt3 {
+    font-size: 24rpx;
+    float: right;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(215,178,133,1);
+}
+
+.withdrawR_item_txt4 {
+    font-size: 24rpx;
+    float: right;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(153,153,153,1);
+}
+
+.withdrawR_item_txt5 {
+    font-size: 24rpx;
+    float: right;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: #222;
+}
+
+.withdrawR_item_time {
+    font-size: 22rpx;
+    margin-top: 15rpx;
+    font-family: ArialMT;
+    font-weight: 400;
+    color: rgba(199,199,199,1);
+}
+
+.withdrawR_item_timesa {
+    letter-spacing: 8rpx;
+}
+
+.withdrawR_item_timesb {
+    margin-left: 20rpx;
+}
+
+.loading_btn_tip[disabled] {
+    background-color: #000;
+}

@@ -1,0 +1,19 @@
+{
+    "navigationBarTitleText": "抢神券",
+    "usingComponents": {
+        "q_s_q_header": "./components/header/header",
+        "qsq_coupon_body": "./components/coupon/coupon",
+        "qsq_dialog": "./components/dialog/dialog",
+        "dialogs": "../common/components/dialogs/index",
+        "rule": "../common/components/rule/index",
+        "share_btn": "../common_ywyy/components/share_btn/index",
+        "page-loading": "../common/components/page_loading/index",
+        "market-floor": "../common/components/market_floor/index",
+        "pingou-floor": "../common/components/pingou_floor/index",
+        "floating": "../common/components/floating/index",
+        "foot": "../common/components/foot/index",
+        "cy-joinnum": "../common_ywyy/components/joinnum/index",
+        "qsq_adv": "./components/adv/adv",
+        "quick-nav": "../common_ywyy/components/quick-nav/index"
+    }
+}

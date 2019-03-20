@@ -1,0 +1,68 @@
+@import "../../../../../__wuBaseWxss__/21.wxss";
+
+.assets_item {
+    position: relative;
+    flex: 1;
+    padding: 17px 0 10px;
+    text-align: center;
+}
+
+.assets_item_val {
+    font-size: 10px;
+    line-height: 32rpx;
+    height: 36rpx;
+    color: #e93b3d;
+    white-space: nowrap;
+}
+
+.assets_item_val.my_asset {
+    background: url('https://img11.360buyimg.com/jdphoto/s40x40_jfs/t20329/11/1228908740/243/73a7934c/5b235f37Ne85fdb85.png') no-repeat center center scroll;
+    background-size: auto 100%;
+}
+
+.assets_item_key {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    line-height: 68rpx;
+}
+
+.assets_val {
+    display: inline;
+    font-size: 16px;
+}
+
+.assets_unit {
+    display: inline;
+}
+
+.assets-all::before {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -5px;
+    width: 10px;
+    height: 72px;
+    background: url('https://img11.360buyimg.com/jdphoto/s20x144_jfs/t14743/330/1610539369/321/10d659d3/5a53580eNa26a8177.png');
+    background-size: 10px;
+    content: "";
+}
+
+.openBaitiaoRed {
+    position: absolute;
+    top: 0;
+    left: 30%;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    padding: 0 8px;
+    background: #E93B3D;
+    background: linear-gradient(left,#E93B3D,#FF9574);
+    background: -webkit-linear-gradient(left,#E93B3D,#FF9574);
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    transform: scale(0.8);
+    transform-origin: left bottom;
+    white-space: nowrap;
+    color: white;
+}

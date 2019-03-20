@@ -1,0 +1,33 @@
+<view class="withdrawR">
+    <view class="withdrawR_headers">
+        <view class="withdrawR_header row  ali-center">
+  您累积领取： <text class="withdrawR_header_num" decode="{{true}}">{{totalAmount}} </text>元
+</view>
+    </view>
+    <view class="withdrawR_content">
+        <view bindtap="goWithdrawDetails" class="withdrawR_item" data-detail="{{item}}" wx:for="{{withdrawDataList}}">
+            <view class="withdrawR_item_in col jcsc {{index==withdrawDataList.length-1?'':'bor'}}">
+                <view class="row ali-center spa">
+                    <view class="row ali-center">
+                        <text class="withdrawR_item_txt1">领取金额</text>
+                        <text class="withdrawR_item_txt2">{{item.amout}}元</text>
+                    </view>
+                    <text class="withdrawR_item_txt3" wx:if="{{item.state==0}}">{{item.stateDisplay}}</text>
+                    <text class="withdrawR_item_txt5" wx:if="{{item.state==-1}}">{{item.stateDisplay}}</text>
+                    <text class="withdrawR_item_txt4" wx:if="{{item.state==1}}">{{item.stateDisplay}}</text>
+                    <text class="withdrawR_item_txt5" wx:if="{{item.state==-2}}">{{item.stateDisplay}}</text>
+                    <text class="withdrawR_item_txt4" wx:if="{{item.state==2}}">{{item.stateDisplay}}</text>
+                </view>
+                <view class="withdrawR_item_time" decode="{{true}}">
+                    <text class="withdrawR_item_timesa">领取时间</text>
+                    <text class="withdrawR_item_timesb">{{item.sysCreateTime}}</text>
+                </view>
+            </view>
+        </view>
+        <button class="loading_btn_tip" disabled="{{true}}" loading="{{true}}" style="background: rgba(242, 242, 242, 1);" wx:if="{{isLoading}}">努力加载中...</button>
+        <button class="loading_btn_tip" disabled="{{true}}" style=" background:rgba(242, 242, 242, 1);" wx:if="{{isEnd}}">我也是有底线的</button>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

@@ -1,0 +1,376 @@
+.pabox {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.hiddenScroll {
+    overflow: hidden;
+}
+
+.top {
+    height: 200rpx;
+    line-height: 200rpx;
+    padding-left: 50rpx;
+    font-size: 18px;
+    color: white;
+    background-color: #F4241A;
+}
+
+.top image {
+    width: 100rpx;
+    height: 100rpx;
+    float: right;
+    padding: 45rpx 80rpx;
+}
+
+.address {
+    background-color: white;
+    padding: 30rpx;
+    font-size: 14px;
+}
+
+.address .biao {
+    float: left;
+    width: 70rpx;
+}
+
+.address image {
+    width: 50rpx;
+    height: 50rpx;
+    padding-top: 20rpx;
+}
+
+.address .addrbox {
+    float: left;
+    width: 600rpx;
+}
+
+.address .addrbox .name {
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.address .addrbox .name span {
+    padding-left: 20rpx;
+}
+
+.address .addrbox .addr {
+    line-height: 40rpx;
+}
+
+.brand {
+    margin-top: 10px;
+    background-color: white;
+}
+
+.brand .name {
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 14px;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 20rpx;
+}
+
+.brand .name span {
+    float: right;
+    color: #F4241A;
+    padding-right: 20rpx;
+}
+
+.brand .mbox {
+    background-color: #f1f1f1;
+}
+
+.brand .mbox .picbox {
+    float: left;
+    width: 200rpx;
+    padding: 20rpx;
+}
+
+.brand .mbox .picbox image {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.brand .mbox .name2 {
+    float: left;
+    width: 530rpx;
+}
+
+.brand .mbox .name2 .intro {
+    margin-top: 20rpx;
+    font-size: 12px;
+    height: 75rpx;
+    overflow: hidden;
+}
+
+.brand .mbox .par {
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #F4241A;
+    font-size: 14px;
+}
+
+.brand .mbox .par span {
+    float: right;
+    font-size: 12px;
+    color: black;
+}
+
+.brand .total {
+    width: 100%;
+    font-size: 12px;
+    background-color: white;
+    border-top: 1px solid #f1f1f1;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: right;
+    padding-right: 20rpx;
+}
+
+.brand .total span {
+    color: #F4241A;
+}
+
+.brand .total i {
+    padding-left: 30rpx;
+}
+
+.brand .buttons {
+    background-color: white;
+    height: 100rpx;
+    border-top: 1px solid #f1f1f1;
+    padding-top: 20rpx;
+}
+
+.brand .buttons .box {
+    float: right;
+}
+
+.brand .buttons .box view {
+    border-radius: 10rpx;
+    margin-right: 10px;
+    border: 1px solid #f1f1f1;
+    float: left;
+    text-align: center;
+    font-size: 12px;
+    padding: 10rpx 20rpx 10rpx 20rpx;
+}
+
+.brand .button2 {
+    color: white;
+    background-color: #F4241A;
+}
+
+.remark {
+    border-top: 1px solid #f1f1f1;
+    background-color: white;
+    padding: 20rpx;
+}
+
+.remark .title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.remark .content {
+    font-size: 14px;
+    line-height: 45rpx;
+}
+
+.order {
+    margin-top: 20rpx;
+    padding: 20rpx;
+    background-color: white;
+}
+
+.order .item {
+    font-size: 14px;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.order .item span {
+    padding-left: 20rpx;
+}
+
+.servier {
+    margin-top: 10px;
+    height: 90rpx;
+    line-height: 90rpx;
+    background-color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+.list {
+    margin-top: 10px;
+}
+
+.list .ititle {
+    padding-left: 20rpx;
+    background-color: white;
+    font-size: 15px;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.list .item {
+    float: left;
+    padding: 20rpx;
+    background-color: white;
+    width: 345rpx;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+}
+
+.list .item .picbox image {
+    width: 300rpx;
+    height: 300rpx;
+}
+
+.list .item .title {
+    font-size: 12px;
+    height: 70rpx;
+    line-height: 35rpx;
+    overflow: hidden;
+}
+
+.list .item .cost {
+    color: #F4241A;
+    font-size: 12px;
+}
+
+.list .item .cost span {
+    font-size: 12px;
+    color: black;
+    float: right;
+}
+
+.btn {
+    width: 80%;
+    padding: 20rpx 0;
+    border-radius: 10rpx;
+    text-align: center;
+    margin: 40rpx 10%;
+    background: #000;
+    color: #fff;
+}
+
+.drawer_screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+}
+
+.drawer_box {
+    width: 650rpx;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 1001;
+    background: #fafafa;
+    margin: -150px 50rpx 0 50rpx;
+    border-radius: 3px;
+}
+
+.drawer_title {
+    padding: 15px;
+    font: 14px "microsoft yahei";
+    text-align: center;
+    background-color: #cccccc;
+}
+
+.drawer_content {
+    height: 540rpx;
+    overflow-y: scroll;
+}
+
+.btn_ok {
+    padding: 10px;
+    font: 14px "microsoft yahei";
+    text-align: center;
+    border-top: 1px solid #e8e8ea;
+    color: #ffffff;
+    background-color: #FF0000;
+}
+
+.stics_box {
+    max-height: 200rpx;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.stics_box_img {
+    width: 100rpx;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.stics_box_img_t {
+    position: relative;
+    background: #ffffff;
+    height: 50rpx;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+.stics_box_img_t image {
+    width: 50rpx;
+    height: 50rpx;
+    margin: 0 auto;
+}
+
+.stics_img_view {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 1px;
+    height: 50%;
+    background-color: #cdcdcd;
+}
+
+.stics_img_view_2 {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 1px;
+    height: 50%;
+    background-color: #cdcdcd;
+}
+
+.stics_center {
+    height: 100%;
+    width: 500rpx;
+    padding: 15rpx 0;
+}
+
+.stics_title {
+    color: #050505;
+    font-size: 12px;
+    margin-bottom: 10rpx;
+}
+
+.stics_text {
+    color: #707070;
+    font-size: 12px;
+    margin-bottom: 10rpx;
+}
+
+.stics_title1 {
+    color: #ff0000;
+}
+
+.stics_text1 {
+    color: #ff0000;
+}

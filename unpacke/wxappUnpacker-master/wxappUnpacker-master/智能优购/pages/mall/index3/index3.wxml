@@ -1,0 +1,27 @@
+<view class="head">
+    <image class="img" src="/images/loadding.jpg"></image>
+    <image class="bimg" src="{{dataset.pic}}"></image>
+</view>
+<view class="container">
+    <view bindtap="bindContentTap" class="item" data-id="{{item.id}}" wx:for="{{dataset.list}}" wx:key="unique">
+        <view>
+            <image class="img" src="{{item.pic}}"></image>
+        </view>
+        <view class="title">{{item.title}}</view>
+        <view class="cost">{{item.cost}}数贝</view>
+        <view class="button">去兑换</view>
+    </view>
+</view>
+<view class="clear"></view>
+<view class="recommend_bottom">
+    <view class="bottomcenter" wx:if="{{!loadIsEnd}}">
+        <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+        </view>
+    <view class="endparent" wx:if="{{loadIsEnd}}">
+        <view bindtap="bindShareTap" class="bottomp">分享赚数贝</view>
+        <view class="bottomline"></view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

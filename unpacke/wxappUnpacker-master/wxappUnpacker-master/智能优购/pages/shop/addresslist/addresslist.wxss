@@ -1,0 +1,111 @@
+page {
+    min-height: 100vh;
+}
+
+.item {
+    padding: 20rpx;
+    background: #fff;
+    border-top: 20rpx solid #f6f6f6;
+}
+
+.item:first-child {
+    border-top: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.imagebox {
+    padding-top: 20rpx;
+    float: left;
+}
+
+.imagebox image {
+    margin-right: 10rpx;
+}
+
+.modify {
+    padding-top: 20rpx;
+    margin-left: 20rpx;
+    float: left;
+}
+
+image {
+    height: 50rpx;
+    width: 50rpx;
+    float: left;
+}
+
+.info {
+    float: left;
+    width: 100%;
+    font-size: 12px;
+}
+
+.info text {
+    display: block;
+}
+
+.add {
+    height: 80rpx;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f11717;
+    border-top: 1px solid #f1f1f1;
+}
+
+.center_p {
+    height: 100%;
+    padding-bottom: 80rpx;
+    overflow-y: scroll;
+}
+
+.ads-btn {
+    width: 100rpx;
+    height: 45rpx;
+    margin: 0 8rpx;
+    line-height: 45rpx;
+    background: rgba(255,255,255,1);
+    border: 1px solid rgba(153,153,153,1);
+    border-radius: 4rpx;
+    text-align: center;
+}
+
+.ads-txt {
+    padding: 15rpx 0;
+    border-bottom: 2rpx dashed #ddd;
+    word-wrap: break-word;
+}
+
+.sel-img {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.not-data {
+    padding-top: 200rpx;
+}
+
+.not-data image {
+    width: 180rpx;
+    height: 180rpx;
+}
+
+.not-data text {
+    margin: 10rpx 0 0;
+}
+
+.goto_btn {
+    width: 400rpx;
+    height: 72rpx;
+    margin-top: 20rpx;
+    line-height: 72rpx;
+    border: 2rpx solid #F11717;
+    color: #F11717;
+    border-radius: 36rpx;
+}

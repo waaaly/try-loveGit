@@ -1,0 +1,13 @@
+<view class="list">
+    <view class="list-item" wx:for="{{entries}}" wx:for-index="cateIdx" wx:for-item="entry" wx:key="{{entry.keywordId}}">
+        <view class="list-item__header">{{entry.keyword}}</view>
+        <view class="sub-list">
+            <view bindtap="handleItemClick" class="sub-list__item" data-cate-idx="{{cateIdx}}" data-key="{{item.key}}" data-pps="{{item.pps||''}}" data-url="{{item.url}}" wx:for="{{entry.level2words}}" wx:key="{{item.keywordId}}">
+                <view class="sub-list__img">
+                    <image class="sub-list__image" lazyLoad="{{true}}" mode="aspectFill" src="{{item.imageUrl}}"></image>
+                </view>
+                <view class="sub-list__name line2">{{item.keyword}}</view>
+            </view>
+        </view>
+    </view>
+</view>

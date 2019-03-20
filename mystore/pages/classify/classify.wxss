@@ -1,0 +1,76 @@
+/**index.wxss**/
+.top-navigation-bar{
+  top:0;
+  width: 700rpx;
+  height: 54rpx;
+  margin: 5rpx auto;
+  border: 1rpx solid #dadddf;
+  border-radius: 40rpx;
+  padding-left: 60rpx;
+  margin-left: 25rpx;
+  outline: none;
+  box-sizing: border-box;
+  background:rgb(141, 139, 139);
+  display: flex;
+  justify-content:center ;
+  align-items:center;
+}
+
+.search-icon{
+  background-size: 100%;
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 30rpx;
+}
+
+.search-input{
+  color:#eee;
+  font-size: 30rpx;
+}
+
+.srcoll{
+  height: 1080rpx;
+  width:150rpx;
+}
+
+.scroll-text{
+  width: 100%; 
+  height: 100rpx; 
+  border: 1rpx solid #123852;
+  display: flex;
+  justify-content:center ;
+  align-items:center;
+}
+
+.classify-detial{
+  position: absolute;
+  top:65rpx;
+  left:160rpx;
+  height: 1080rpx;
+  width: 100%;
+  border: 1rpx solid #2690d6;
+}
+
+.classify-pic{
+  margin-top:5rpx;
+  margin-left: 10rpx; 
+  height:300rpx;
+}
+
+.classify-good{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.good-pic{
+  margin: 10rpx; 
+  height:180rpx;
+  width:180rpx;
+  border-radius: 20rpx;
+}
+
+.good-text{
+  margin-left: 85rpx;
+}

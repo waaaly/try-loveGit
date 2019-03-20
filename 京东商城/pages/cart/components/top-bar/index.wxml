@@ -1,0 +1,13 @@
+<pinbind bind:tap="onPinbindTap" id="cmpPinBind"></pinbind>
+<view class="top_bar {{editable||fixed?'fixed':''}}">
+    <view class="top_bar_address">
+        <view bindtap="showSwitchAddressPanel" class="top_bar_address_text">{{address}}</view>
+        <block wx:if="{{editable}}">
+            <view bind:tap="doEdit" class="top_bar_address_btn">完成</view>
+            <view bindtap="showQuickClearPanel" class="top_bar_address_btn btn_quick_clear" wx:if="{{showQuickCleanButton}}">快速清理</view>
+        </block>
+        <view bind:tap="doEdit" class="top_bar_address_btn" wx:else>编辑商品</view>
+    </view>
+</view>
+<address-layer addressList="{{addressOpts.list}}" adid="{{addressOpts.adid}}" areaid="{{addressOpts.areaid}}" bind:closeAddress="onAddressPanelClose" bind:switchAddress="onAddressChange" showAddressLayerFlag="{{addressOpts.show}}"></address-layer>
+<quick-clear bind:close="onQuickClearPanelClose" options="{{quickClearOptions}}"></quick-clear>

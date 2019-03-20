@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "marquee": "./components/marquee/index",
+        "pingou-floor": "../../common/components/pingou_floor/index",
+        "treasure-list": "../components/treasure_list/index"
+    },
+    "onReachBottomDistance": 500
+}

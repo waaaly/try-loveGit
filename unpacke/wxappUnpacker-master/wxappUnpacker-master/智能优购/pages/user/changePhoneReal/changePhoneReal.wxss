@@ -1,0 +1,118 @@
+page {
+    height: 100%;
+}
+
+.iden {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-top: 1rpx solid #ddd;
+    background: rgba(242,242,242,1);
+}
+
+.iden-box {
+    width: 700rpx;
+    padding-top: 20rpx;
+    margin: 0 auto;
+}
+
+.iden-form {
+    background-color: #fff;
+    border-radius: 10rpx;
+    padding: 0 25rpx 0;
+}
+
+.iden-item {
+    height: 128rpx;
+    line-height: 128rpx;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.iden-item:last-child {
+    border: none;
+}
+
+.iden-btn {
+    margin-top: 40rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 28rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    color: #fff;
+    background-color: #f62828;
+}
+
+.iden-item-tit {
+    display: block;
+    width: 152rpx;
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(102,102,102,1);
+}
+
+.iden-item-input {
+    width: 500rpx;
+    margin-left: 20rpx;
+    color: #222222;
+    font-size: 26rpx;
+}
+
+.phcolor {
+    color: #c4c4c4;
+}
+
+.noClick {
+    background: #ddd;
+}
+
+.iden-code-btn {
+    width: 210rpx;
+    padding: 0;
+    justify-content: flex-end;
+    background-color: transparent;
+    text-align: center;
+    color: #F11717;
+    margin-left: 30rpx;
+    font-size: 26rpx;
+}
+
+.iden-code-btn::after {
+    border: 0;
+}
+
+.btn_hover {
+    background-color: none;
+}
+
+button[disabled] {
+    color: #F11717;
+    background: transparent;
+}
+
+.clearInput {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.iden_cha {
+    width: 120rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(102,102,102,1);
+    background: rgba(255,255,255,1);
+    border: 1px solid rgba(102,102,102,1);
+    border-radius: 30rpx;
+}
+
+.iden-tip {
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    padding: 20rpx 0;
+    color: rgba(241,24,24,1);
+}

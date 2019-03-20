@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "category-grid": "../components/categoryGrid/categoryGrid",
+        "nav": "../components/nav/nav",
+        "back-to-top": "../components/backToTop/backToTop",
+        "footnav": "../components/footnav/footnav"
+    },
+    "navigationBarTitleText": "秒杀分类",
+    "onReachBottomDistance": 250
+}

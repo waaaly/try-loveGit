@@ -1,0 +1,221 @@
+.gohome {
+    height: 70rpx;
+    padding-left: 20rpx;
+    line-height: 70rpx;
+    border-bottom: 1px solid #f1f1f1;
+    background-color: white;
+    font-size: 14px;
+}
+
+.head {
+    background-color: white;
+    padding: 30rpx;
+    height: 410rpx;
+}
+
+.head .picbox {
+    float: left;
+    width: 50%;
+}
+
+.head .picbox image {
+    width: 350rpx;
+    height: 350rpx;
+    border-radius: 10rpx;
+}
+
+.head .caption {
+    float: left;
+    width: 50%;
+    padding-left: 50rpx;
+}
+
+.head .caption .share {
+    margin-top: 30rpx;
+    height: 55rpx;
+    line-height: 55rpx;
+    font-size: 12px;
+    background-color: #FF6A6A;
+    text-align: center;
+    border-radius: 30rpx;
+    color: white;
+}
+
+.head .caption .time {
+    font-size: 16px;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.head .caption .success {
+    font-size: 16px;
+    padding-top: 30rpx;
+}
+
+.head .caption .shengyu {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 10rpx;
+}
+
+.head .caption .shengyu span {
+    color: #F4241A;
+    font-size: 20px;
+}
+
+.head .caption .cost {
+    font-size: 18px;
+    color: #F4241A;
+    padding-top: 30rpx;
+}
+
+.tuninfo {
+    margin-top: 10px;
+    background-color: white;
+}
+
+.tuninfo .pic {
+    margin: auto;
+    padding: 20rpx;
+}
+
+.tuninfo .pic .imgbox {
+    float: left;
+    position: relative;
+}
+
+.tuninfo .pic image {
+    height: 100rpx;
+    width: 100rpx;
+    float: left;
+    border-radius: 50%;
+}
+
+.tuninfo .pic .oimg {
+    margin-left: 16rpx;
+}
+
+.tuninfo .nopic {
+    border: 1px dashed #cccccc;
+}
+
+.tuninfo .tuanzhang {
+    position: absolute;
+    top: -10rpx;
+    left: 0;
+    z-index: 10;
+    font-size: 10px;
+    border-radius: 15rpx;
+    color: white;
+    text-align: center;
+    background-color: #F0B500;
+    border: 1px solid #fff;
+    width: 60rpx;
+}
+
+.tuninfo .button {
+    background-color: #F4241A;
+    color: white;
+    text-align: center;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin: 20rpx;
+    border-radius: 10rpx;
+    position: relative;
+}
+
+.tuninfo .f1 {
+    float: left;
+    padding-left: 100rpx;
+}
+
+.tuninfo .f2 {
+    float: left;
+    text-align: left;
+    padding-left: 10rpx;
+    width: 190rpx;
+}
+
+.tuninfo .f3 {
+    float: left;
+}
+
+.tuninfo .caption {
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 30rpx;
+}
+
+.tuninfo .caption span {
+    color: #F4241A;
+}
+
+.tuninfo .par {
+    border-top: 1px solid #f1f1f1;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding-left: 20rpx;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.tuninfo .par span {
+    padding-left: 40rpx;
+}
+
+.list {
+    background-color: white;
+    margin-top: 10px;
+}
+
+.list .ititle {
+    padding-left: 20rpx;
+    font-size: 15px;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.list .item {
+    float: left;
+    width: 345rpx;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+}
+
+.list .item .picbox image {
+    width: 100%;
+    height: 300rpx;
+}
+
+.list .item .title {
+    font-size: 12px;
+    height: 70rpx;
+    line-height: 35rpx;
+    overflow: hidden;
+}
+
+.list .item .cost {
+    color: #F4241A;
+    font-size: 12px;
+}
+
+.list .item .cost span {
+    font-size: 12px;
+    color: black;
+    float: right;
+}
+
+.applybutton {
+    position: relative;
+}
+
+.sharebutton {
+    position: absolute;
+    top: 0;
+    height: 90rpx;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    opacity: 0;
+}

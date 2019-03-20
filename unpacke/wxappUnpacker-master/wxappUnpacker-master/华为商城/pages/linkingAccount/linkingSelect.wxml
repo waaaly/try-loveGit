@@ -1,0 +1,21 @@
+<view class="wxAccount" style="height: {{windowHeight}}px">
+    <view class="wxAccount-cont">
+        <view class="wxAccount-Img">
+            <image src="{{userIcon}}"></image>
+        </view>
+        <view class="wxAccount-name">
+            <text>{{userName}}</text>
+        </view>
+        <view class="wxAccount-p">
+            <text>为了给您更好的服务，请绑定华为帐号</text>
+        </view>
+    </view>
+</view>
+<view class="wxAccount-list">
+    <view bindtap="toConnect" class="upButton-style-1">
+        <text>绑定已有华为帐号</text>
+    </view>
+    <view bindtap="toRegister" class="upButton-style-1">
+        <text>绑定新华为帐号</text>
+    </view>
+</view>

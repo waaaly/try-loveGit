@@ -1,0 +1,16 @@
+<view hidden="{{hideModule}}">
+    <view bind:tap="gotoUrl" class="floor-title" data-url="https://wqs.jd.com/hawaii/729/dest/release/index.shtml?ptag=138067.15.36">店铺推荐</view>
+    <view class="shop">
+        <view bind:tap="gotoUrl" class="shop__item" data-clk="{{item.clk}}" data-url="{{item.url}}" wx:for="{{entries}}" wx:key="url">
+            <view class="shop-head">
+                <image class="shop-head__logo" src="{{item.logo}}"></image>
+                <view class="shop-head__title">{{item.name}}</view>
+            </view>
+            <view class="shop-image">
+                <view class="shop-image__item bg_stamp" wx:for="{{item.images}}" wx:for-index="imgIndex" wx:for-item="imgItem">
+                    <image hidden="{{!imgItem}}" src="{{imgItem}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "pingou-floor": "../../common/components/pingou_floor/index",
+        "market-floor": "../../common/components/market_floor/index",
+        "dialogs": "../../common/components/dialogs/index",
+        "page-loading": "../../common/components/page_loading/index",
+        "foot": "../../common/components/foot/index",
+        "toast": "../../common/components/toast/index",
+        "welfare-list": "./comps/welfare-list/index",
+        "help-list": "./comps/help-list/index",
+        "rank-list": "./comps/rank-list/index",
+        "share-btn": "./comps/share-btn/index",
+        "modal-last-award": "./comps/modal-last-award/index",
+        "modal-detail": "./comps/modal-detail/index"
+    }
+}

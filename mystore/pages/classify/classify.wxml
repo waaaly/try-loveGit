@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view style="he">
+  <view class="container">
+      <view class='top-navigation-bar'>
+          <image class="search-icon" src="/staticFiles/icons/search.png"></image> 
+          <text class='search-input'>输入关键字搜索</text>
+      </view>
+
+      <scroll-view scroll-y class="srcoll"  >
+        <view class="scroll-text" wx:for="{{classifyStr}}" wx:for-index="i" data-index='{{i}}' bindtap="scrollViewClick">{{item}}</view>
+    </scroll-view>
+  </view>
+
+  <view class="classify-detial">
+      <image class="classify-pic" src="/staticFiles/pics/loading.jpg" > </image>
+      <scroll-view scroll-y style="height: 770rpx;width:600rpx;">
+          <view class="classify-good" wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]}}">
+              <image src="/staticFiles/pics/sloadingjpg.jpg" class="good-pic">{{item}}</image>
+              <text class="good-text">${{item}}</text>
+          </view>
+      </scroll-view>
+  </view>
+
+</view>

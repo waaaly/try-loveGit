@@ -1,0 +1,246 @@
+page {
+    background-color: #ffffff;
+}
+
+.swiper-tab {
+    width: 100%;
+    border-bottom: 2rpx solid #f1f1f1;
+    text-align: center;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    height: 80rpx;
+    padding: 0rpx 20rpx 0rpx 20rpx;
+    line-height: 73rpx;
+}
+
+.swiper-tab-list {
+    font-size: 30rpx;
+    display: inline-block;
+    width: 24.6%;
+    color: #777777;
+}
+
+swiper-item {
+    margin-top: 80rpx;
+}
+
+.on {
+    color: #F4241A;
+    border-bottom: 5rpx solid #F4241A;
+}
+
+.swiper-box {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.prompat {
+    text-align: center;
+    padding-top: 200rpx;
+}
+
+.sloadding {
+    text-align: center;
+    padding-top: 200rpx;
+    width: 100%;
+}
+
+.sloadding image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.brand {
+    margin-top: 10px;
+    background-color: white;
+    border-bottom: 1px solid #cccccc;
+}
+
+.brand .name {
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 12px;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 20rpx;
+}
+
+.brand .name span {
+    float: right;
+    font-size: 14px;
+    color: #F4241A;
+    padding-right: 20rpx;
+}
+
+.brand .mbox {
+    background-color: #f1f1f1;
+}
+
+.brand .mbox .picbox {
+    float: left;
+    width: 200rpx;
+    padding: 20rpx;
+}
+
+.brand .mbox .picbox image {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.brand .mbox .name2 {
+    float: left;
+    width: 530rpx;
+}
+
+.brand .mbox .name2 .intro {
+    margin-top: 20rpx;
+    font-size: 12px;
+    height: 75rpx;
+    overflow: hidden;
+}
+
+.brand .mbox .par {
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #F4241A;
+    font-size: 14px;
+}
+
+.brand .mbox .par span {
+    float: right;
+    font-size: 12px;
+    color: black;
+}
+
+.brand .total {
+    width: 100%;
+    font-size: 12px;
+    background-color: white;
+    text-align: right;
+    padding-right: 20rpx;
+    padding-bottom: 20rpx;
+}
+
+.brand .total span {
+    color: #F4241A;
+}
+
+.brand .total i {
+    padding-left: 30rpx;
+}
+
+.brand .buttons {
+    background-color: white;
+    height: 100rpx;
+    border-top: 1px solid #f1f1f1;
+    padding-top: 20rpx;
+}
+
+.brand .buttons .box {
+    float: right;
+}
+
+.brand .buttons .box view {
+    border-radius: 10rpx;
+    margin-right: 10px;
+    border: 1px solid #f1f1f1;
+    float: left;
+    text-align: center;
+    font-size: 12px;
+    padding: 10rpx 20rpx 10rpx 20rpx;
+}
+
+.brand .button2 {
+    color: white;
+    background-color: #F4241A;
+}
+
+.zhanwei {
+    height: 100rpx;
+}
+
+.bottom {
+    height: 100rpx;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    background-color: white;
+}
+
+.bottom .slider {
+    position: relative;
+    height: 1px;
+    background-color: #e8e8e8;
+}
+
+.bottom .slider .line {
+    position: absolute;
+    top: 0;
+    height: 1px;
+    background-color: limegreen;
+}
+
+.bottom .content {
+    padding: 0rpx 20rpx 20rpx 20rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.bottom .content view {
+    float: left;
+}
+
+.bottom .content .img {
+    position: relative;
+    width: 90rpx;
+    padding-bottom: 20rpx;
+}
+
+.bottom .content .img image {
+    position: absolute;
+    top: 15rpx;
+    width: 65rpx;
+    height: 65rpx;
+    border-radius: 50%;
+}
+
+.bottom .content .name {
+    width: 500rpx;
+}
+
+.bottom .content .pause {
+    width: 50rpx;
+    position: relative;
+}
+
+.bottom .content .pause image {
+    width: 50rpx;
+    height: 50rpx;
+    left: 30rpx;
+    position: absolute;
+    top: 22rpx;
+}
+
+.state1 {
+    float: left;
+    width: 23%;
+    font-size: 13px;
+    text-align: center;
+}
+
+.state3 {
+    width: 25%;
+}
+
+.state2 {
+    width: 29%;
+}
+
+.statitel {
+    height: 80rpx;
+    line-height: 80rpx;
+    border-bottom: 1px solid #cccccc;
+}

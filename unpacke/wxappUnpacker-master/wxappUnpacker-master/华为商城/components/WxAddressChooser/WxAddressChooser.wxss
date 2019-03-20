@@ -1,0 +1,5 @@
+@import "../../app.wxss";
+
+.ecWap-mask,.ecWap-box-middle {
+    z-index: 999;
+}

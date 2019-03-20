@@ -1,0 +1,130 @@
+<view class="xlist_group shopInfo" wx:if="{{!isPingouApp&&shopInfo.shopName}}">
+    <view bindtap="gotoShop" class="shopInfo_shot">
+        <image class="shopInfo_logo" src="{{shopInfo.shopLogoUrl}}"></image>
+        <view class="shopInfo_name ">
+            <text class="line1">{{shopInfo.shopName}}</text>
+            <view class="shopInfo_name_sub" wx:if="{{shopInfo.scoreRankRateGrade&&shopInfo.commonGoodShopCode!='1'&&shopInfo.categoryGoodShopCode!='1002'}}">
+                <text class="shopInfo_name_sub_text">店铺星级</text>
+                <view class="star">
+                    <view class="num" style="width:{{shopInfo.scoreRankRateGrade*20}}%"></view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{shopFlag=='global'}}">
+            <image class="icon_global" src="https://img10.360buyimg.com/jdphoto/s68x28_jfs/t19774/351/2377805112/2165/35f3b101/5af16e93N9cbb5d45.png"></image>
+        </view>
+        <view wx:elif="{{shopFlag=='global_zy'}}">
+            <image class="icon_global_zy" src="https://img10.360buyimg.com/jdphoto/s116x28_jfs/t16666/177/2434981533/3178/61e2c559/5af16e95N5f8bea61.png"></image>
+        </view>
+        <view wx:elif="{{shopInfo.commonGoodShopCode=='1'}}">
+            <image class="icon_goodShop" src="https://img11.360buyimg.com/jdphoto/s135x30_jfs/t22000/84/1042640119/5702/4b8f807d/5b1e2906N4d55f535.png"></image>
+        </view>
+        <view wx:elif="{{shopInfo.categoryGoodShopCode=='1002'}}">
+            <image class="icon_categShop" src="https://img11.360buyimg.com/jdphoto/s110x25_jfs/t19969/294/1481309125/4036/d21672cd/5b1e2f65N135b12f1.png"></image>
+        </view>
+        <view class="flag_solid {{isJx?'jx':''}}" wx:elif="{{shopInfo.flag}}">{{shopInfo.flag}}</view>
+    </view>
+    <view bindtap="gotoShop" class="shopInfo_detail">
+        <view class="shopInfo_detail_wrap">
+            <view class="shopInfo_detail_item" data-type="fans">
+                <view>
+                    <view class="num">{{shopInfo.shopFansNum}}</view>
+                    <view class="name">粉丝人数</view>
+                </view>
+            </view>
+            <view class="shopInfo_detail_item" data-type="all">
+                <view>
+                    <view class="num">{{shopInfo.goodsNum}}</view>
+                    <view class="name">全部商品</view>
+                </view>
+            </view>
+        </view>
+        <view class="shopInfo_detail_score" wx:if="{{!shopInfo.isZy&&shopInfo.isScoreShow}}">
+            <view>评价 <text class="{{shopInfo.commentFactorScoreRankGrade=='高'||shopInfo.commentFactorScoreRankGrade=='中'?'red':'green'}}">{{shopInfo.userEvaluateScore}} | {{shopInfo.commentFactorScoreRankGrade}}</text>
+            </view>
+            <view>物流 <text class="{{shopInfo.logisticsFactorScoreRankGrade=='高'||shopInfo.logisticsFactorScoreRankGrade=='中'?'red':'green'}}">{{shopInfo.logisticsLvyueScore}} | {{shopInfo.logisticsFactorScoreRankGrade}}</text>
+            </view>
+            <view>售后 <text class="{{shopInfo.afsFactorScoreRankGrade=='高'||shopInfo.afsFactorScoreRankGrade=='中'?'red':'green'}}">{{shopInfo.afterServiceScore}} | {{shopInfo.afsFactorScoreRankGrade}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="shopInfo_enter" wx:if="{{shopInfo.isShopEnterShow}}">
+        <image bindtap="gotoShop" class="shopInfo_enter_banner" src="{{shopInfo.fPicUrl}}"></image>
+        <view class="shopInfo_enter_right">
+            <view bindtap="gotoShopWithCate" class="shopInfo_enter_right_button" data-cateid="{{shopInfo.shopEnterHotCateId1}}" data-index="1">
+                    {{shopInfo.shopEnterHotCateName1}}
+                </view>
+            <view bindtap="gotoShopWithCate" class="shopInfo_enter_right_button" data-cateid="{{shopInfo.shopEnterHotCateId2}}">
+                    {{shopInfo.shopEnterHotCateName2}}
+                </view>
+            <view bindtap="gotoShopWithCate" class="shopInfo_enter_right_button" data-cateid="{{shopInfo.shopEnterHotCateId3}}">
+                    {{shopInfo.shopEnterHotCateName3}}
+                </view>
+        </view>
+    </view>
+    <view class="shopInfo_operation" wx:if="{{venderId!=0}}">
+        <view bindtap="favShop" class="shopInfo_operation_item {{favStatus?'faved':''}}" data-type="{{favStatus?'del':'add'}}">
+            <image src="https://img11.360buyimg.com/jdphoto/s30x30_jfs/t19192/160/2541768216/431/95111c6d/5af93e74N11ea39f2.png" wx:if="{{!favStatus}}"></image>
+            <image src="https://img11.360buyimg.com/jdphoto/s30x30_jfs/t19921/180/484564962/432/f500efbe/5af93e78N75586b6b.png" wx:else></image>
+            <text>{{favStatus?'已收藏店铺':'收藏店铺'}}</text>
+        </view>
+        <view bindtap="gotoShop" class="shopInfo_operation_item">
+            <image src="https://img11.360buyimg.com/jdphoto/s40x39_jfs/t19960/14/1205164255/1117/d7bbaa02/5b3ae74aN95302da2.png"></image>
+            <text>进入店铺</text>
+        </view>
+    </view>
+</view>
+<view class="xlist_group shopInfo pingou" wx:if="{{isPingouApp&&shopInfo.shopName}}">
+    <view bindtap="gotoShop" class="shopInfo_shot">
+        <image class="shopInfo_logo" src="{{shopInfo.shopLogoUrl}}"></image>
+        <view class="shopInfo_name ">
+            <text class="line1">{{shopInfo.shopName}}</text>
+        </view>
+        <view wx:if="{{shopFlag=='global'}}">
+            <image class="icon_global" src="https://img10.360buyimg.com/jdphoto/s68x28_jfs/t19774/351/2377805112/2165/35f3b101/5af16e93N9cbb5d45.png"></image>
+        </view>
+        <view wx:elif="{{shopFlag=='global_zy'}}">
+            <image class="icon_global_zy" src="https://img10.360buyimg.com/jdphoto/s116x28_jfs/t16666/177/2434981533/3178/61e2c559/5af16e95N5f8bea61.png"></image>
+        </view>
+        <view wx:elif="{{shopInfo.commonGoodShopCode=='1'}}">
+            <image class="icon_goodShop" src="https://img11.360buyimg.com/jdphoto/s135x30_jfs/t22000/84/1042640119/5702/4b8f807d/5b1e2906N4d55f535.png"></image>
+        </view>
+        <view wx:elif="{{shopInfo.categoryGoodShopCode=='1002'}}">
+            <image class="icon_categShop" src="https://img11.360buyimg.com/jdphoto/s110x25_jfs/t19969/294/1481309125/4036/d21672cd/5b1e2f65N135b12f1.png"></image>
+        </view>
+        <view class="flag_solid {{isJx?'jx':''}}" wx:elif="{{shopInfo.flag}}">{{shopInfo.flag}}</view>
+    </view>
+    <view bindtap="gotoShop" class="shopInfo_detail">
+        <view class="shopInfo_detail_wrap">
+            <view class="shopInfo_detail_item" data-type="fans">
+                <view>
+                    <view class="num">{{shopInfo.shopFansNum}}</view>
+                    <view class="name light-gray">粉丝人数</view>
+                </view>
+            </view>
+            <view class="shopInfo_detail_item" data-type="all">
+                <view>
+                    <view class="num" wx:if="{{shopInfo.pgGoodsNum||shopInfo.pgGoodsNum==0}}">{{shopInfo.pgGoodsNum}}件</view>
+                    <view class="name light-gray">拼购商品</view>
+                </view>
+            </view>
+            <view class="shopInfo_detail_item" data-type="all" wx:if="{{shopInfo.pinNum&&shopInfo.pinNum!='0'}}">
+                <view>
+                    <view class="num">{{shopInfo.pinNum}}</view>
+                    <view class="name light-gray">已拼商品数</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="shopInfo_operation" wx:if="{{venderId!=0}}">
+        <view bindtap="favShop" class="shopInfo_operation_item {{favStatus?'faved':''}}" data-type="{{favStatus?'del':'add'}}">
+            <image src="https://img11.360buyimg.com/jdphoto/s30x30_jfs/t19192/160/2541768216/431/95111c6d/5af93e74N11ea39f2.png" wx:if="{{!favStatus}}"></image>
+            <image src="https://img11.360buyimg.com/jdphoto/s30x30_jfs/t19921/180/484564962/432/f500efbe/5af93e78N75586b6b.png" wx:else></image>
+            <text>{{favStatus?'已收藏店铺':'收藏店铺'}}</text>
+        </view>
+        <view bindtap="gotoShop" class="shopInfo_operation_item">
+            <image src="https://img11.360buyimg.com/jdphoto/s40x39_jfs/t19960/14/1205164255/1117/d7bbaa02/5b3ae74aN95302da2.png"></image>
+            <text>进入店铺</text>
+        </view>
+    </view>
+</view>

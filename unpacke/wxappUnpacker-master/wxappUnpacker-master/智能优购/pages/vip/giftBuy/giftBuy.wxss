@@ -1,0 +1,211 @@
+page {
+}
+
+.giftBuy {
+    width: 100%;
+    height: 100%;
+    background: #FBFBFB;
+}
+
+.giftBuy_boxs {
+    width: 100%;
+    height: 820rpx;
+    position: relative;
+    background: url('https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_buy_bg1.png');
+    background-size: 100% 100%;
+}
+
+.giftBuy_bg {
+    width: 100%;
+}
+
+.giftBuy_box {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.giftBuy_box1 {
+    margin-top: 102rpx;
+}
+
+.giftBuy_icon6 {
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.giftBuy_txt1 {
+    padding-left: 8rpx;
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(34,34,34,1);
+}
+
+.giftBuy_txt2 {
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 20rpx;
+    font-family: DengXian-Regular;
+    font-weight: 400;
+    color: rgba(153,153,153,1);
+}
+
+.giftBuy_txt3 {
+    margin-top: 15rpx;
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(102,102,102,1);
+}
+
+.giftBuy_txt4 {
+    margin-top: 25rpx;
+    width: 550rpx;
+    text-align: justify;
+    font-size: 22rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(102,102,102,1);
+    line-height: 32rpx;
+}
+
+.giftBuy_icon5 {
+    width: 480rpx;
+}
+
+.giftBuy_box5 {
+    height: 200rpx;
+    margin: 0;
+}
+
+.giftBuy_header_item {
+    width: 90rpx;
+    text-align: center;
+    height: 100%;
+}
+
+.giftBuy_item_img {
+    width: 83rpx;
+    margin-bottom: 20rpx;
+}
+
+.giftBuy_box3 {
+    height: 28rpx;
+    line-height: 28rpx;
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(34,34,34,1);
+}
+
+.giftBuy_box3_box {
+    position: relative;
+    height: 28rpx;
+}
+
+.giftBuy_box3_img {
+    position: absolute;
+    width: 447rpx;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.giftBuy_list_tit {
+    margin-top: 216rpx;
+    height: 42rpx;
+    background-color: #FBFBFB;
+}
+
+.giftBuy_list {
+    width: 100%;
+    margin-top: -38rpx;
+}
+
+.giftBuy_listItem {
+    width: 100%;
+    background-color: #fff;
+    height: 261rpx;
+    padding: 0 25rpx;
+    margin-top: 10rpx;
+}
+
+.giftBuy_listItem_img {
+    width: 274rpx;
+    height: 261rpx;
+}
+
+.giftBuy_listItem_tit {
+    font-size: 30rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(34,34,34,1);
+    line-height: 46rpx;
+    text-align: left;
+}
+
+.giftBuy_listItem_intro {
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(231,30,33,1);
+    line-height: 24rpx;
+}
+
+.giftBuy_listItem_price {
+    font-size: 24rpx;
+    color: #C59067;
+    font-weight: bold;
+}
+
+.giftBuy_listItem_priceNum {
+    font-size: 34rpx;
+    font-weight: bold;
+}
+
+.giftBuy_btn {
+    width: 180rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    background: rgba(241,23,23,1);
+    border-radius: 30rpx;
+    text-align: center;
+    font-size: 24rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(255,255,255,1);
+}
+
+.giftBuy_listItem_btnBox {
+    height: 61rpx;
+    align-items: flex-end;
+}
+
+.giftBuy_listItem_box {
+    width: 426rpx;
+    padding: 25rpx;
+}
+
+.noData {
+    width: 100%;
+    padding-top: 100rpx;
+    padding-bottom: 40rpx;
+}
+
+.noData_Img {
+    width: 281rpx;
+    height: 209rpx;
+}
+
+.noData_txt {
+    width: 100%;
+    text-align: center;
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(153,153,153,1);
+}

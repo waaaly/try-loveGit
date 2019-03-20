@@ -1,0 +1,39 @@
+<view class="header">
+    <search-bar scrollTop="{{scrollTop}}" shakePayload="{{shakePayload}}"></search-bar>
+    <carousel bind:componentLoad="onComponentLoad"></carousel>
+    <sale-official-promote bind:componentLoad="onComponentLoad" showIndex="2"></sale-official-promote>
+    <sale-climax-promote bind:componentLoad="onComponentLoad" showIndex="2"></sale-climax-promote>
+    <sale-official-timeline bind:componentLoad="onComponentLoad" indexName="mall"></sale-official-timeline>
+    <channel-nav bind:componentLoad="onComponentLoad"></channel-nav>
+    <promote-banner bind:componentLoad="onComponentLoad"></promote-banner>
+    <curtain bind:curtainFinish="onCurtainFinish" showTime="{{showTime}}"></curtain>
+</view>
+<gifts bind:componentLoad="onComponentLoad"></gifts>
+<sale-official-selected bind:componentLoad="onComponentLoad"></sale-official-selected>
+<sale-climax-selected bind:componentLoad="onComponentLoad"></sale-climax-selected>
+<news bind:componentLoad="onComponentLoad"></news>
+<pingou bind:componentLoad="onComponentLoad" showTime="{{showTime}}"></pingou>
+<block wx:if="{{loadOthers}}">
+    <view class="floor" hidden="{{!showSelected}}">
+        <floor-header bg="{{dbl11Config.bg_selected}}" color="#754F8C" zh="购·精选"></floor-header>
+        <group-seckill bind:showModule="showSelected" config="{{selectedConfig}}"></group-seckill>
+        <group-selected bind:showModule="showSelected" config="{{selectedConfig}}"></group-selected>
+    </view>
+    <floor-banner bannerData="{{bannerData.selected}}" refreshTime="{{refreshTime}}"></floor-banner>
+    <view class="floor" hidden="{{!showQuality}}">
+        <floor-header bg="{{dbl11Config.bg_quality}}" color="#DA8F11" zh="购·品质"></floor-header>
+        <small-video bind:showModule="showQuality" config="{{videoConfig}}"></small-video>
+        <group-quality bind:showModule="showQuality" config="{{qualityConfig}}"></group-quality>
+    </view>
+    <floor-banner bannerData="{{bannerData.featured}}" refreshTime="{{refreshTime}}"></floor-banner>
+    <view class="floor" hidden="{{!showRecommended&&hideRecommendModule}}">
+        <floor-header zh="为你推荐"></floor-header>
+        <group-recommend bind:showModule="showRecommended" refreshTime="{{refreshTime}}"></group-recommend>
+        <recommend bind:hideModule="hideRecommendModule" wx:if="{{!hideRecommendModule}}"></recommend>
+    </view>
+</block>
+<view hidden="{{hideFloating}}">
+    <floating></floating>
+</view>
+<view bindtap="back2top" class="back2top" wx:if="{{scrollTop>1000}}"></view>
+<shake bind:shakeAnimLoaded="onShakeAnimLoaded" config="{{saleConfig}}" curtainFinish="{{curtainFinish}}"></shake>

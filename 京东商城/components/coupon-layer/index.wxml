@@ -1,0 +1,51 @@
+<view class="coupon-layer">
+    <view bindtap="closeCoupon" catchtouchmove="noscroll" class="popup__mask {{isShowCouponLayerFlag?'popup__mask--show':''}} {{showAnim?'popup__mask--anim':''}}"></view>
+    <view class="popup__main {{isShowCouponLayerFlag&&showAnim?'show':''}}" hidden="{{!isShowCouponLayerFlag}}">
+        <view class="popup__header">
+            <view class="popup__header-l">优惠券</view>
+            <view bindtap="closeCoupon" class="popup__header-r">
+                <view class="icon-close"></view>
+            </view>
+        </view>
+        <view class="coupon-layer__content">
+            <block wx:for="{{coupons}}" wx:key="encryptedKey">
+                <view bindtap="gotoBinding" class="coupon_item--img" data-activeid="{{item.activeid}}" data-level="{{item.levelid}}" data-ptag="{{item.ptag}}" data-sceneid="{{item.sceneid}}" wx:if="{{item.type==='binding'}}">
+                    <image mode="widthFix" src="{{item.cover}}"></image>
+                </view>
+                <view class="coupon_item {{item.type}}" wx:else>
+                    <view class="coupon_item_wrap">
+                        <view class="coupon_item_pri" wx:if="{{item.style==3&&item.descDiscount.length==1}}">
+                            <view class="coupon_item_pri_dis_num">{{item.descDiscount[0].discount}}</view>
+                            <view class="tips">满{{item.descDiscount[0].quota}}元可用</view>
+                            <view class="tips high_tip" wx:if="{{item.descDiscount2}}">{{item.descDiscount2}}</view>
+                        </view>
+                        <view class="coupon_item_pri" wx:elif="{{item.style==3&&item.descDiscount.length>1}}">
+                            <view class="coupon_item_pri_dis_num_muti" wx:for="{{item.descDiscount}}" wx:for-item="dis" wx:key="{{ index }}">满{{dis.quota}}元/<text>{{dis.discount}}</text>
+                            </view>
+                            <view class="tips high_tip" wx:if="{{item.descDiscount2}}">{{item.descDiscount2}}</view>
+                        </view>
+                        <view class="coupon_item_pri" wx:else>
+                            <block wx:if="{{item.type!='bg_jing'&&item.desc1!=''}}">
+                                <view class="coupon_item_pri_num {{item.level?'gift_coupon':''}}">{{item.money}}</view>
+                                <view class="tips">{{item.desc1}}</view>
+                            </block>
+                            <view class="coupon_item_pri_num coupon_item_pri_num--only-price {{item.level?'gift_coupon':''}}" wx:else>{{item.money}}</view>
+                        </view>
+                        <view class="coupon_item_info">
+                            <view class="coupon_item_info_head">
+                                <view class="type">{{item.typeName}}</view>
+                                {{item.desc2}}
+                            </view>
+                            <view class="coupon_item_info_btm">
+                                <view class="coupon_item_info_date">{{item.time}}</view>
+                                <view bindtap="drawCoupon" class="coupon_item_info_btn {{item.didGet?'disabled':''}}" data-get="{{item.didGet}}" data-index="{{index}}" data-key="{{item.key}}" data-level="{{item.level}}" data-newuser="{{item.isNewUserCoupon}}" data-roleid="{{item.roleId}}" data-type="{{item.couponstyle}}">{{item.didGet?'已领取':'领取'}}
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="coupon_item_corner col_red" wx:if="{{item.level}}">{{item.isNewUserCoupon?'新用户专享':item.isPingouCoupon?'拼购专享':'会员福利'}}</view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

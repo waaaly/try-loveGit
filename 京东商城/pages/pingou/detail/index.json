@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "拼购详情",
+    "onReachBottomDistance": 300,
+    "usingComponents": {
+        "status-error": "./components/status-error/index",
+        "status-host-ing": "./components/status-host-ing/index",
+        "status-host-success": "./components/status-host-success/index",
+        "status-host-fail": "./components/status-host-fail/index",
+        "status-guest-ing": "./components/status-guest-ing/index",
+        "status-guest-success": "./components/status-guest-success/index",
+        "status-guest-fail": "./components/status-guest-fail/index",
+        "bottom-rec-area": "./components/bottom-rec-area/index"
+    }
+}

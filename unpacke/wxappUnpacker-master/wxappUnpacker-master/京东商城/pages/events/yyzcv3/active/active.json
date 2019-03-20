@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "rule": "../common/components/rule/index",
+        "share": "../../../../components/share-wqvue/index",
+        "market-floor": "../../common/components/market_floor/index",
+        "modal": "../common/components/modal/modal",
+        "pingou-floor": "../../common/components/pingou_floor/index"
+    }
+}

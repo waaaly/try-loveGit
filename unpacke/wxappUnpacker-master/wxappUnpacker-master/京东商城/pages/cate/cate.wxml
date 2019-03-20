@@ -1,0 +1,28 @@
+<view class="wrapper">
+    <view bindtap="handleTapOnSearchBar" class="fake_search_bar">
+        <view class="search_box">
+            <icon size="16" type="search"></icon>
+            <text>搜索京东商品</text>
+        </view>
+    </view>
+    <view class="cate">
+        <tab-nav __fn_onTabClick="{{true}}" __triggerObserer="{{_triggerObserer}}" bindontabclick="handleTabClick" curIdx="{{curIdx}}" st="{{st1}}" tabEntries="{{tabEntries}}"></tab-nav>
+        <scroll-view class="level2" enableBackToTop="{{true}}" scrollTop="{{st2}}" scrollY="{{true}}">
+            <view class="loading" wx:if="{{tabEntries[curIdx].loading}}">
+                <view class="xloading"></view>
+            </view>
+            <view class="err_tips" wx:if="{{!tabEntries[curIdx].loading&&tabEntries[curIdx].errMsg}}">
+                <view bindtap="handleClickRetryBtn" class="error_retry">
+                    <text>{{tabEntries[curIdx].errMsg}}</text>
+                    <button>刷新</button>
+                </view>
+            </view>
+            <view class="level2__content" wx:elif="{{!tabEntries[curIdx].loading}}">
+                <banner __triggerObserer="{{_triggerObserer}}" config="{{bannerConfig}}"></banner>
+                <promotion __triggerObserer="{{_triggerObserer}}" promotion="{{promotion}}" wx:if="{{promotion}}"></promotion>
+                <cate-list __triggerObserer="{{_triggerObserer}}" entries="{{commonWords}}"></cate-list>
+                <view bindtap="handleChannelClick" class="promote" data-url="{{channelInfo.url}}" wx:if="{{channelInfo}}">{{channelInfo.name}}</view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

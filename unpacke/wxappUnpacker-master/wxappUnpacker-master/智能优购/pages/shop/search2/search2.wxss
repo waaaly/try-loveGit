@@ -1,0 +1,123 @@
+page {
+    background-color: white;
+}
+
+.search {
+    background-color: white;
+    border-bottom: 0px solid #f1f1f1;
+    padding-top: 15rpx;
+    width: 100%;
+    padding: 0rpx 20rpx 10rpx 20rpx;
+    height: 90rpx;
+}
+
+.search .keybox {
+    border-radius: 10rpx;
+    position: fixed;
+    width: 600rpx;
+    border: 1px solid #f1f1f1;
+    border-right: 1px solid #ffffff;
+    height: 60rpx;
+    padding: 10rpx;
+    background-color: white;
+}
+
+.search .rbox {
+    border-radius: 10rpx;
+    position: fixed;
+    width: 150rpx;
+    right: 20rpx;
+    background-color: white;
+    border: 1px solid #f1f1f1;
+    border-left: 1px solid #ffffff;
+    height: 84rpx;
+}
+
+.search .searchimg {
+    position: fixed;
+    top: 15rpx;
+    width: 60rpx;
+    height: 60rpx;
+    right: 35rpx;
+}
+
+.search .button {
+    z-index: 9999;
+    width: 150rpx;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 85rpx;
+    opacity: 0;
+}
+
+.container .menu {
+    float: left;
+    width: 160rpx;
+    background-color: #f1f1f1;
+}
+
+.bigcate {
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 12px;
+}
+
+.itemon {
+    background-color: white;
+    color: red;
+}
+
+.list {
+    width: 590rpx;
+    float: left;
+}
+
+.item {
+    padding-top: 30rpx;
+}
+
+.item .title {
+    font-size: 16px;
+    height: 60rpx;
+    padding-left: 10rpx;
+    line-height: 60rpx;
+    border-bottom: 1px solid #f1f1f1;
+    width: 100%;
+}
+
+.item .title span {
+    float: right;
+    font-size: 12px;
+    margin-right: 20rpx;
+}
+
+.item .subitem {
+    float: left;
+    height: 146rpx;
+    width: 146rpx;
+    text-align: center;
+}
+
+.item .imgbox {
+    height: 80rpx;
+}
+
+.item .subitem .img {
+    height: 80rpx;
+    width: 110rpx;
+    padding-top: 10rpx;
+}
+
+.item .subitem .name {
+    font-size: 12px;
+    text-align: center;
+    height: 75rpx;
+    line-height: 75rpx;
+}
+
+.item .subitem .name2 {
+    font-size: 12px;
+    padding-top: 55rpx;
+}

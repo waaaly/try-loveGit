@@ -1,0 +1,4 @@
+<view class="floating" hidden="{{!showFloating}}">
+    <view bindtap="hideFloating" class="floating__close"></view>
+    <image bindload="imageLoaded" bindtap="gotoUrl" class="floating__image" data-url="{{floating.url}}" data-wxapp-id="{{floating.wxappId}}" data-wxapp-path="{{floating.wxappPath}}" data-wxapp-rd="{{floating.wxappRd}}" mode="aspectFill" src="{{floating.image}}"></image>
+</view>

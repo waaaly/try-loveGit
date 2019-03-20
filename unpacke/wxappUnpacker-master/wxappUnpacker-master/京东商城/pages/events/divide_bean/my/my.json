@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "我的记录",
+    "usingComponents": {
+        "divide_bean_my": "./components/main/main"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "twogoods-floor": "./components/twogoods-floor/twogoods-floor",
+        "material-floor1": "./components/material-floor1/material-floor1",
+        "threegoods-floor": "./components/threegoods-floor/threegoods-floor",
+        "mixingoods-floor": "./components/mixingoods-floor/mixingoods-floor",
+        "market-tab": "./components/market-tab/market-tab",
+        "index-tab": "./components/index-tab/index-tab",
+        "error": "../common/comps/error/error",
+        "subscribe": "./components/subscribe/subscribe",
+        "go-store": "./components/go-store/go-store",
+        "share-btn": "./components/share-btn/index",
+        "pop-window": "../common/comps/pop-window/pop-window",
+        "friends": "./components/friends/friends",
+        "bottom-to-top": "./components/bottom-to-top/bottom-to-top"
+    }
+}

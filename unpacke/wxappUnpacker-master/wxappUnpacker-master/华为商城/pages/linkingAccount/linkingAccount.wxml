@@ -1,0 +1,95 @@
+<view class="AccountTitleBox">
+    <view class="AccountImg">
+        <view class="PortraitImg">
+            <image src="{{userIcon}}"></image>
+        </view>
+        <view class="AccountIcon">
+            <image src="imgs/icon_account.png"></image>
+        </view>
+        <view class="PortraitImg">
+            <image src="../../imgs/defaultface_user.png"></image>
+        </view>
+    </view>
+    <view class="AccountTitle">
+        <text>关联华为帐号</text>
+    </view>
+</view>
+<view class="AccountBox">
+    <view class="AccountDL AccountInput">
+        <input bindinput="setAccount" placeholder="请输入手机号/邮箱地址" type="text" value="{{account}}"></input>
+    </view>
+    <view class="AccountDL AccountInput">
+        <input bindinput="setPwd" placeholder="请输入密码" type="password" value="{{pwd}}"></input>
+    </view>
+    <view class="AccountDL AccountProtocol">
+        <checkbox-group name="checkbox-group">
+            <label bindtap="setAgree" class="system-l-l-r">
+                <view class="system-l checkbox">
+                    <checkbox class="selectbox {{setAgree?'checked':''}}"></checkbox>
+                    <view class="state"></view>
+                </view>
+                <view class="system-between-l">
+                    <view>同意<text catchtap="toUserAgreement">《用户协议》</text>
+                    </view>
+                </view>
+            </label>
+        </checkbox-group>
+    </view>
+    <view bindtap="connectHWAccount" class="AccountActiveBtn">
+        <view class="wxButton-style-1-big  {{setAgree?'':'wxButton-style-1-big-disabled'}}">
+            <text>确认关联帐号</text>
+        </view>
+    </view>
+</view>
+<view class="AccountRule">
+    <text bindtap="goToRule">了解帐号关联详细规则</text>
+</view>
+<view class="toast {{toastState?'show':''}}" id="toast">
+    <view class="toast_cont">{{toastCont}}</view>
+</view>
+<view class="ecWap-mask {{secondAuthShow?'':'hide'}}"></view>
+<view class="ecWap-box-middle ecWap-box-up {{secondAuthShow?'':'hide'}}">
+    <view class="ecWap-box ecWap-box-center">
+        <view class="ecWap-box-header">
+            <text class="ecWap-box-title">帐号保护</text>
+        </view>
+        <view class="ecWap-box-content ecWap-box-common">
+            <view class="verify-box">
+                <view class="verifyCode-tip">
+          您已开启帐号保护，请输入验证码以完成登录。
+        </view>
+                <view class="verify-select">
+                    <view class="upBox">
+                        <picker bindchange="bindAuthTypePickerChange" range="{{secondAuthTypeArray}}" value="{{secondAuthTypeIndex}}">
+                            <view class="picker">
+                {{secondAuthTypeArray[secondAuthTypeIndex]}}
+              </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="upItem">
+                    <view class="upBox">
+                        <view class="upInput">
+                            <input bindinput="setSecondAuthCode" placeholder="验证码" type="text" value="{{secondAuthCode}}"></input>
+                        </view>
+                        <view bindtap="getSecondAuthCode" class="{{getSMSClass}}">
+                            <text>{{getSMSText}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="verifyCode-link hide">
+                    <view>无法使用邮件地址获取验证码？</view>
+                    <view class="upBlue">申诉更改</view>
+                </view>
+            </view>
+            <view class="ecWap-box-common-footer">
+                <view bindtap="closeSecondAuthDialog" class="upButton-style-1">
+                    <text>取消</text>
+                </view>
+                <view bindtap="secondAuthLogin" class="upButton-style-1 {{secondAuthCode!=''?'':'upButton-style-1-disabled'}}">
+                    <text>下一步</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

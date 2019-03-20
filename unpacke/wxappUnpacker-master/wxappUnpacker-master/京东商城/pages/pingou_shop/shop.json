@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "店铺详情",
+    "usingComponents": {
+        "shop-flex-list": "./components/shop_flex_list/shop_flex_list",
+        "quick-nav": "../../components/quick-nav/quick-nav"
+    }
+}

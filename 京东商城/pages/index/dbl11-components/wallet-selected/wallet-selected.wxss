@@ -1,0 +1,121 @@
+.selected {
+    width: 750rpx;
+    max-height: 1210rpx;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 750rpx 1210rpx;
+    overflow: hidden;
+}
+
+.selected-banner {
+    position: relative;
+}
+
+.selected-banner,.selected-banner__image {
+    display: block;
+    width: 690rpx;
+    height: 100rpx;
+    margin: 30rpx auto 20rpx;
+}
+
+.selected-banner__btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 180rpx;
+    height: 100rpx;
+}
+
+.selected-header {
+    position: relative;
+    width: 690rpx;
+    margin: 30rpx auto 20rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+}
+
+.selected-header__title {
+    font-size: 36rpx;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+}
+
+.selected-header__btn {
+    height: 36rpx;
+    line-height: 36rpx;
+    position: absolute;
+    top: 0;
+    color: #fff3e2;
+    padding: 0 15rpx 0 20rpx;
+    font-size: 24rpx;
+    border-radius: 36rpx;
+}
+
+.selected-header__btn::after {
+    content: '';
+    display: inline-block;
+    width: 12rpx;
+    height: 20rpx;
+    background: url('https://img11.360buyimg.com/jdphoto/s12x20_jfs/t27292/211/426000361/150/d38884e9/5bae21e9N0d7b41cd.png') no-repeat 0 0;
+    background-size: 12rpx 20rpx;
+    vertical-align: middle;
+    margin: -4rpx 0 0 10rpx;
+}
+
+.selected-header__btn-left {
+    left: 0;
+}
+
+.selected-header__btn-right {
+    right: 0;
+}
+
+.selected-list {
+    overflow: hidden;
+    margin: 0 0 30rpx 30rpx;
+}
+
+.selected-list__item {
+    float: left;
+    width: 216rpx;
+    height: 308rpx;
+    background-color: #fff;
+    border-radius: 4rpx;
+    margin: 0 20rpx 20rpx 0;
+    overflow: hidden;
+}
+
+.selected-list__image {
+    display: block;
+    width: 180rpx;
+    height: 180rpx;
+    margin: 0 auto;
+}
+
+.selected-list__info {
+    text-align: center;
+    margin: 20rpx 20rpx 10rpx;
+}
+
+.selected-list__title,.selected-list__des {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.selected-list__title {
+    font-size: 26rpx;
+    margin-bottom: 5rpx;
+}
+
+.selected-list__des {
+    width: 145rpx;
+    margin: 0 auto;
+    font-size: 20rpx;
+    border-radius: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #fff;
+    font-weight: bold;
+}

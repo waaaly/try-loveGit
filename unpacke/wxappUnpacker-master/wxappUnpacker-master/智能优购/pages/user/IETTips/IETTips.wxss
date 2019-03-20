@@ -1,0 +1,74 @@
+.tips-box {
+    background: url('https://grtimg.oss-cn-beijing.aliyuncs.com/temp/iet_bg.png');
+    height: 460rpx;
+    background-size: 100% 100%;
+    padding-top: 20rpx;
+}
+
+.colorF11 {
+    color: #F11717;
+}
+
+.title-box {
+    width: 700rpx;
+    height: 585rpx;
+    background: #ffffff;
+    margin: 0rpx auto;
+    border-radius: 10rpx;
+    overflow: hidden;
+    padding: 0 25rpx;
+}
+
+.title-box .box-img {
+    width: 169rpx;
+    height: 169rpx;
+    margin: 0 auto;
+    margin-top: 57rpx;
+}
+
+.title-box image {
+    width: 149rpx;
+    height: 149rpx;
+    margin: 10rpx 10rpx;
+}
+
+.w650 {
+    width: 650rpx;
+}
+
+.zctxt {
+    margin-top: 30rpx;
+}
+
+.tishi {
+    text-align: center;
+}
+
+.tips-txt {
+    padding: 14rpx 21rpx 14rpx 25rpx;
+    background: #FEE7E7;
+    margin-top: 30rpx;
+}
+
+.huifu {
+    margin-top: 40rpx;
+}
+
+.kf_button {
+    width: 700rpx;
+    height: 88rpx;
+    background: #F11717;
+    margin-top: 20rpx;
+    line-height: 88rpx;
+}
+
+.copy {
+    width: 100rpx;
+    height: 40rpx;
+    text-align: center;
+    line-height: 38rpx;
+    margin-left: 20rpx;
+    border-radius: 20rpx;
+    background: rgba(175,2,2,1);
+    border: 2rpx solid rgba(164,1,1,1);
+}

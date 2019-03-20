@@ -1,0 +1,8 @@
+<!--index.wxml-->
+  <navigator class='top-navigation-bar' url='/pages/logs/logs'>
+    <view class="search-icon"></view>
+    <text class='search-input'>输入关键字搜索</text>
+  </navigator>
+  <view style="height:100%;width:1rpx;background:#2690d6;">12</view>
+  
+

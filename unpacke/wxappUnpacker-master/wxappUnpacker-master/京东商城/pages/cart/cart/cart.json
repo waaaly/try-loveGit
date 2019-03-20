@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "购物车",
+    "disableScroll": true,
+    "usingComponents": {
+        "top-bar": "/pages/cart/components/top-bar/index",
+        "goods-list": "/pages/cart/components/goods-list/index",
+        "bottom-bar": "/pages/cart/components/bottom-bar/index",
+        "quick-nav": "/components/quick-nav/quick-nav",
+        "recommend": "/components/recommend/index"
+    }
+}

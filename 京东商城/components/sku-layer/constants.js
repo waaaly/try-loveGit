@@ -1,0 +1,14 @@
+Object.defineProperty(exports, "__esModule", {
+    value: !0
+});
+
+exports.VIEW_BUYING = "7418.2.1", exports.VIEW_ADD_TO_CART = "7418.2.2", exports.EXP_DETAIL_SUBSCRIBE_SECKILL_BTN = "7538.1.3", 
+exports.DETAIL_SUBSCRIBE_SECKILL_BTN = "7538.1.4", exports.DETAIL_LOOK_SIMILAR_BUTTON = "7418.12.17", 
+exports.DETAIL_STOCK_NOTICE = "7418.12.19", exports.DETAIL_SUBSCRIBE_BTN = "7538.1.2", 
+exports.DETAIL_BUYING_SPREE_BTN = "7536.1.2", exports.EXP_LINE_PRICE = "7001.1.326", 
+exports.DETAIL_GIFT_PROMOTION = "7418.6.8", exports.EXP_VIEW_CAN_BUY = "7418.9.1", 
+exports.EXP_VIEW_CANNOT_BUY = "7418.9.2", exports.LAYER_SKU_CHANGE = "7418.4.7", 
+exports.LAYER_SKU_CLOSE = "7418.4.8", exports.LAYER_SKU_TOW_CONFIRM = "7418.4.10", 
+exports.LAYER_SKU_COVER_VIEW = "7418.4.11", exports.LAYER_SKU_COVER_VIEW_PINGOU = "7418.16.33", 
+exports.EXP_SIZE_GUIDE = "7418.4.4", exports.CLICK_SIZE_GUIDE = "7418.4.5", exports.CLICK_JOIN_TUAN = "7145.8.31", 
+exports.CLICK_START_TUAN_CONFIRM = "7145.8.27";

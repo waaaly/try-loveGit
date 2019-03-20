@@ -1,0 +1,236 @@
+<view class="userInfo bg_white">
+    <view class="u-face">
+        <view class="u-img">
+            <image src="{{loginImage}}"></image>
+        </view>
+        <button bindgetuserinfo="onAuthSelect" bindtap="logIn" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}"></button>
+    </view>
+    <view class="u-name-active">
+        <button bindgetuserinfo="onAuthSelect" bindtap="logIn" class="u-name" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">{{userName}}</button>
+        <view class="u-id" wx:if="{{isShowHWAccount}}">
+            <text>华为帐号ID:{{hxAccountText}}</text>
+        </view>
+        <view class="linkAccountBtn">
+            <view bindtap="toConnect" class="button-style-3" style="{{linkAccShow?'':'display:none'}}">
+                <text>{{isLinkText}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="system-menu">
+    <view class="sm-box bg_white">
+        <button bindgetuserinfo="onAuthSelect" bindtap="toMyOrderList" class="sm-list system-l-l-r" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">
+            <view class="system-l sm-img">
+                <image src="imgs/icon_order.png"></image>
+            </view>
+            <text class="system-between-l sm-title">我的订单</text>
+            <view class="btn-next">
+                <text>全部订单</text>
+                <view class="icon-more-right">
+                    <image src="../../imgs/icon_arrow_more.png"></image>
+                </view>
+            </view>
+        </button>
+        <button bindgetuserinfo="onAuthSelect" bindtap="toMyIntegration" class="sm-list system-l-l-r" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">
+            <view class="system-l sm-img">
+                <image src="imgs/icon_inter.png"></image>
+            </view>
+            <text class="system-between-l sm-title">我的积分</text>
+            <view class="btn-next">
+                <view class="icon-more-right">
+                    <image src="../../imgs/icon_arrow_more.png"></image>
+                </view>
+            </view>
+        </button>
+        <button bindgetuserinfo="onAuthSelect" bindtap="toAddressManage" class="sm-list system-l-l-r" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">
+            <view class="system-l sm-img">
+                <image src="imgs/icon_address.png"></image>
+            </view>
+            <text class="system-between-l sm-title">地址管理</text>
+            <view class="btn-next">
+                <view class="icon-more-right">
+                    <image src="../../imgs/icon_arrow_more.png"></image>
+                </view>
+            </view>
+        </button>
+        <button bindgetuserinfo="onAuthSelect" bindtap="toMyCouponList" class="sm-list system-l-l-r" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">
+            <view class="system-l sm-img">
+                <image src="imgs/icon_coupon.png"></image>
+            </view>
+            <text class="system-between-l sm-title">我的优惠券</text>
+            <view class="btn-next">
+                <view class="icon-more-right">
+                    <image src="../../imgs/icon_arrow_more.png"></image>
+                </view>
+            </view>
+        </button>
+        <button bindgetuserinfo="onAuthSelect" bindtap="toOrderSpellList" class="sm-list system-l-l-r" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">
+            <view class="system-l sm-img">
+                <image src="imgs/icon_spell.png"></image>
+            </view>
+            <text class="system-between-l sm-title">我的拼团</text>
+            <view class="btn-next">
+                <view class="icon-more-right">
+                    <image src="../../imgs/icon_arrow_more.png"></image>
+                </view>
+            </view>
+        </button>
+        <view bindtap="toInviteGift" class="sm-list system-l-l-r">
+            <view class="system-l sm-img">
+                <image src="imgs/icon_activ.png"></image>
+            </view>
+            <text class="system-between-l sm-title">邀请有礼</text>
+            <view class="btn-next">
+                <view class="icon-more-right">
+                    <image src="../../imgs/icon_arrow_more.png"></image>
+                </view>
+            </view>
+        </view>
+        <button bindgetuserinfo="onAuthSelect" bindtap="toReturnOrExchange" class="sm-list system-l-l-r" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">
+            <view class="system-l sm-img">
+                <image src="imgs/icon_rma.png"></image>
+            </view>
+            <text class="system-between-l sm-title">我的退换货</text>
+            <view class="btn-next">
+                <view class="icon-more-right">
+                    <image src="../../imgs/icon_arrow_more.png"></image>
+                </view>
+            </view>
+        </button>
+        <view bindtap="toUserAgreement" class="sm-list system-l-l-r">
+            <view class="system-l sm-img">
+                <image src="imgs/icon_protocol.png"></image>
+            </view>
+            <text class="system-between-l sm-title">华为商城用户协议</text>
+            <view class="btn-next">
+                <view class="icon-more-right">
+                    <image src="../../imgs/icon_arrow_more.png"></image>
+                </view>
+            </view>
+        </view>
+        <view bindtap="toPrivacyAgreement" class="sm-list system-l-l-r">
+            <view class="system-l sm-img">
+                <image src="imgs/icon_privacy.png"></image>
+            </view>
+            <text class="system-between-l sm-title">华为隐私协议</text>
+            <view class="btn-next">
+                <view class="icon-more-right">
+                    <image src="../../imgs/icon_arrow_more.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="sign-out-area">
+    <view bindtap="logOut" class="sign-out {{hideClass}}">
+        <text>退出登录</text>
+    </view>
+</view>
+<view class="tips tips-pure">
+    <view class="tips-cont">
+        <view>如遇退换货等售后服务相关问题，请联系商城客服</view>
+        <view>1.客服热线 400-088-6888</view>
+        <view>2.或通过【华为商城】公众号【自助服务】菜单联系在线客服</view>
+    </view>
+</view>
+<view class="toast {{toastState?'show':''}}" id="toast">
+    <view class="toast_cont">{{toastCont}}</view>
+</view>
+<view class="ecWap-mask {{secondAuthShow?'':'hide'}}"></view>
+<view class="ecWap-box-middle ecWap-box-up {{secondAuthShow?'':'hide'}}">
+    <view class="ecWap-box ecWap-box-center">
+        <view class="ecWap-box-header">
+            <text class="ecWap-box-title">帐号保护</text>
+        </view>
+        <view class="ecWap-box-content ecWap-box-common">
+            <view class="verify-box">
+                <view class="verifyCode-tip">
+          您已开启帐号保护，请输入验证码以完成登录。
+        </view>
+                <view class="verify-select">
+                    <view class="upBox">
+                        <picker bindchange="bindAuthTypePickerChange" range="{{secondAuthTypeArray}}" value="{{secondAuthTypeIndex}}">
+                            <view class="picker">
+                {{secondAuthTypeArray[secondAuthTypeIndex]}}
+              </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="upItem">
+                    <view class="upBox">
+                        <view class="upInput">
+                            <input bindinput="setSecondAuthCode" placeholder="验证码" type="text" value="{{secondAuthCode}}"></input>
+                        </view>
+                        <view bindtap="getSecondAuthCode" class="{{getSMSClass}}">
+                            <text>{{getSMSText}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="verifyCode-link hide">
+                    <view>无法使用邮件地址获取验证码？</view>
+                    <view class="upBlue">申诉更改</view>
+                </view>
+            </view>
+            <view class="ecWap-box-common-footer">
+                <view bindtap="closeSecondAuthDialog" class="upButton-style-1">
+                    <text>取消</text>
+                </view>
+                <view bindtap="secondUserThirdAuthV2" class="upButton-style-1 {{secondAuthCode!=''?'':'upButton-style-1-disabled'}}">
+                    <text>下一步</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<AuthorizeModal authWords="{{authWords}}" bind:authSelect="onAuthSelect" bind:closeModal="onCloseModal" bind:showWXModal="onShowWXModal" showFlag="{{isShowAuthModal}}"></AuthorizeModal>
+<view class="ecWap-mask" wx:if="{{isShowHWTips}}"></view>
+<view class="ecWap-box-middle" wx:if="{{isShowHWTips}}">
+    <view class="ecWap-box ecWap-box-center">
+        <view class="ecWap-box-header">
+            <text class="ecWap-box-title">帐号切换说明</text>
+        </view>
+        <view class="ecWap-box-content account-pop">
+            <view>切换华为帐号后，我们会保存华为帐号与微信帐号的关联关系，并在小程序及微信商城为您登录华为帐号以便您进行后续操作（包括但不限于查看/使用积分）；</view>
+            <view>您可到华为商城+小程序个人中心切换到微信帐号登录，若希望重新使用华为帐号登录，需要再次进行帐号切换；</view>
+            <view>点击“同意”，即代表您同意上述内容及<text bindtap="toUserAgreement" class="blue">华为商城服务协议</text>、<text bindtap="toPrivacyAgreement" class="blue">关于华为商城与隐私的声明</text>。</view>
+        </view>
+        <view class="ecWap-box-footer">
+            <view bindtap="hideHWTips" class="ecWap-box-cancel">
+                <text>取消</text>
+            </view>
+            <view bindtap="onHWTipsConfirm" class="ecWap-box-ok">
+                <text>同意</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="ecWap-mask" wx:if="{{isShowWXTips}}"></view>
+<view class="ecWap-box-middle" wx:if="{{isShowWXTips}}">
+    <view class="ecWap-box ecWap-box-center">
+        <view class="ecWap-box-content account-pop">
+            <view class="has-padding">
+                <text>切换帐号后，将使用微信帐号登录，是否确认继续</text>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <view bindtap="hideWXTips" class="ecWap-box-cancel">
+                <text>取消</text>
+            </view>
+            <view bindtap="onWXTipsConfirm" class="ecWap-box-ok">
+                <text>确定</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="openMaskTips" class="guide-tips" wx:if="{{showToastInfo}}">
+    <text>点击【添加小程序】，实现快捷访问></text>
+</view>
+<view catchtouchmove="preventD" class="ecWap-mask" wx:if="{{showGuideInfo}}"></view>
+<view catchtouchmove="preventD" class="ecWap-box-middle guide-box-middle" wx:if="{{showGuideInfo}}">
+    <view class="ecWap-box guide-cont">
+        <image class="guide-image" src="../index/imgs/guide.png"></image>
+        <view bindtap="closeGuideInfo" class="guide-btn">
+            <text>我知道了</text>
+        </view>
+    </view>
+</view>

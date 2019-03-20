@@ -1,0 +1,6 @@
+<view style="width:100%;text-align:center">
+    <a>默认错误</a>
+</view>
+<view class="toast {{toastState?'show':''}}" id="toast">
+    <view class="toast_cont">{{toastCont}}</view>
+</view>

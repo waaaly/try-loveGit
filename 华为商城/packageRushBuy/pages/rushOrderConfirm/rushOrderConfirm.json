@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "确认订单",
+    "usingComponents": {
+        "InvoiceSelect": "../../../components/InvoiceSelect/InvoiceSelect",
+        "Toast": "/components/Toast/Toast",
+        "AddressRow": "/components/AddressRow/AddressRow"
+    }
+}

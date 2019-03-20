@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "京东砍价",
+    "usingComponents": {
+        "p-prestart": "./comps/p-prestart/p-prestart",
+        "p-started": "./comps/p-started/p-started",
+        "error": "../common/comps/error/error",
+        "toast-white": "./comps/toast-white/index",
+        "toast-bargain": "./comps/toast-bargain/index",
+        "cube-foot": "./comps/cube-foot/index",
+        "modal-coupon": "./comps/modal-coupon/modal-coupon"
+    }
+}

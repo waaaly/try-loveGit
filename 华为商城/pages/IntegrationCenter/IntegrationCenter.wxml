@@ -1,0 +1,126 @@
+<view class="integral-area" wx:if="{{!isShowReload}}">
+    <view class="integral-score">
+        <view class="integral-rule">
+            <image bindtap="goToRules" src="imgs/icon_rule.png"></image>
+        </view>
+        <view class="score-main system-all-between">
+            <view class="score-area" wx:if="{{isHuaweiNum&&!isEmpty}}">
+                <view class="score">
+                    <text>{{pointinfo.pointBlance||''}}</text>
+                    <text>积分</text>
+                </view>
+                <view class="money">
+                    <text>可抵现金{{pointinfo.pointAmount}}元</text>
+                </view>
+            </view>
+            <view class="score-area" wx:if="{{isEmpty&&isHuaweiNum}}">
+                <view class="score">
+                    <text>0</text>
+                </view>
+                <view class="money">
+                    <text></text>
+                </view>
+            </view>
+            <view class="account-area" wx:if="{{!isHuaweiNum}}">
+                <view class="account-icon">
+                    <image src="imgs/icon_tips.png"></image>
+                </view>
+                <view class="account-describe">
+                    <text>切换华为帐号即可查看积分</text>
+                </view>
+            </view>
+        </view>
+        <view class="integral-deadline" wx:if="{{isHuaweiNum&&!isEmpty&&pointinfo.lastPointValue}}">
+            <text>{{pointinfo.lastPointValue}}积分将于{{pointinfo.lastExpireTime}}过期</text>
+        </view>
+    </view>
+    <view class="system-item-between-center" wx:if="{{!isHuaweiNum||pointHisDetail.length<=0}}">
+        <view class="integral-empty">
+            <view class="empty-icon">
+                <image src="imgs/icon_empty.png"></image>
+            </view>
+            <view class="empty-title">
+                <text>暂无积分明细</text>
+            </view>
+            <view bindtap="showSwitchAccount" class="empty-btn" wx:if="{{isHuaweiLogin}}">
+                <text>登录华为帐号</text>
+            </view>
+        </view>
+    </view>
+    <view class="bg_white" wx:if="{{isHuaweiNum}}">
+        <view bindtap="switchUp" class="integral-list" data-idx="{{index}}" wx:for="{{pointHisDetail}}" wx:key="index">
+            <view class="system-only-between">
+                <view class="list-title ellipsis-pub-one">
+                    <text>{{item.actionDesc}}</text>
+                </view>
+                <view class="list-score flex-shrink-0">
+                    <text class="red {{item.sign=='+'?'':'green'}}">{{item.sign+item.pointValue}}</text>
+                </view>
+            </view>
+            <view class="list-time ellipsis-pub-one">
+                <text>{{item.serviceUnitName||'华为商城'}}</text>
+                <text>{{item.createTime}}</text>
+            </view>
+            <view class="list-info display-flex" hidden="{{item.orderCode==''||!item.orderCode}}" id="code_father">
+                <view class="flex-shrink-0">订单编号:</view>
+                <view class="flex-shrink-1 {{item.isSwitchup?'':'max-hg'}}">
+                    <text class="code_height">{{item.orderCode}}</text>
+                </view>
+                <view class="flex-shrink-0 list-icon list-icon-{{item.isSwitchup?'up':'down'}}">
+                    <image src="../../imgs/icon_arrow_more.png" wx:if="{{item.isShowUp}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:if="{{loadComplete}}">
+    <view wx:if="{{isLoadMore}}">
+        <view bindtap="onToast" class="loading">
+            <image src="../../imgs/icon_pull.png"></image>
+            <text class="more-loading">上拉加载</text>
+        </view>
+        <view class="loading" wx:if="{{isLoadMore}}">
+            <image src="../../imgs/loading.gif"></image>
+        </view>
+    </view>
+    <view class="buttonMore loading" wx:if="{{!isLoadMore}}">
+        <text class="loading-end">已加载全部记录</text>
+    </view>
+</view>
+<view class="system-empty" wx:if="{{isShowReload}}">
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="../../imgs/system-error.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>抱歉，服务器开小差了</text>
+        </view>
+        <view class="system-empty-btn">
+            <view bindtap="toReload" class="button-style-3">
+                <text>重新加载</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="ecWap-mask" wx:if="{{isSwitchAccount}}"></view>
+<view class="ecWap-box-middle" wx:if="{{isSwitchAccount}}">
+    <view class="ecWap-box ecWap-box-center">
+        <view class="ecWap-box-header">
+            <text class="ecWap-box-title">帐号切换说明</text>
+        </view>
+        <view class="ecWap-box-content account-pop">
+            <view>切换华为帐号后，我们会保存华为帐号与微信帐号的关联关系，并在小程序及微信商城为您登录华为帐号以便您进行后续操作（包括但不限于查看/使用积分）；</view>
+            <view>您可到华为商城+小程序个人中心切换到微信帐号登录，若希望重新使用华为帐号登录，需要再次进行帐号切换；</view>
+            <view>点击“同意”，即代表您同意上述内容及<text bindtap="toUserAgreement" class="blue">华为商城服务协议</text>、<text bindtap="toPrivacyAgreement" class="blue">关于华为商城与隐私的声明</text>。</view>
+        </view>
+        <view class="ecWap-box-footer">
+            <view bindtap="showSwitchAccount" class="ecWap-box-cancel">
+                <text>取消</text>
+            </view>
+            <view bindtap="loginHuawei" class="ecWap-box-ok">
+                <text>同意</text>
+            </view>
+        </view>
+    </view>
+</view>
+<BindAccountModal accountName="{{secondAuthTypeArray}}" bind:nextStep="nextStep" loginCookie="{{loginCookie}}" showFlag="{{secondAuthShow}}"></BindAccountModal>

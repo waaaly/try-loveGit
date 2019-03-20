@@ -1,0 +1,32 @@
+<import src="/template/footer/footer.wxml"></import>
+<import src="/template/noData/noData.wxml"></import>
+<view class="dat" wx:if="{{!loadlayer}}">
+    <view class="dat_headers">
+        <view class="dat_header">
+            <text class="dat_header_num">{{totalCount}}</text> {{textArr[inx]}}</view>
+        <view class="dat_content_header row spa ali-center">
+            <text>序号</text>
+            <text class="dat_spa">用户信息</text>
+            <text>总数</text>
+        </view>
+    </view>
+    <view class="dat_content">
+        <view class="dat_item row" wx:for="{{dataList}}">
+            <view class="dat_item_inx">{{index+1}}.</view>
+            <image class="dat_item_img" mode="aspectFill" src="{{item.pic}}"></image>
+            <view class="dat_item_name ovr col ju-center">
+                <view> {{item.nickname}}</view>
+                <view>
+                    <text bindtap="callPhone" class="dat_phone" data-phone="{{item.mobile}}" wx:if="{{item.mobile}}">{{item.mobile}}</text>
+                </view>
+            </view>
+            <view class="dat_item_num">{{item.teamUserCount}}</view>
+        </view>
+        <template is="footer" data wx:if="{{isEnd&&dataList.length>5}}"></template>
+        <template is="noData" data wx:if="{{dataList.length==0&&!isLoading}}"></template>
+        <button class="loading_btn_tip" disabled="{{true}}" loading="{{true}}" style="background: rgba(242, 242, 242, 1);" wx:if="{{isLoading}}">努力加载中...</button>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

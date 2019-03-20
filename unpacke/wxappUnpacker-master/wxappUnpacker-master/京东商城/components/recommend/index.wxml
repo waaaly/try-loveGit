@@ -1,0 +1,99 @@
+<template name="product">
+    <view bindtap="gotoDetails" class="mod_recommend_list_item {{item.source==1?'mod_item_scoure1':''}}  {{item.img?'':'lazy'}} {{isLast?'last':''}} {{hasBorderLeft?'odd_border':''}} {{item.isTopic?'gray_bg':''}}" data-actual-index="{{actualIndex}}" data-index="{{index}}" data-isleft="{{isLeft}}" id="gyl_sku_{{item.sku}}">
+        <view wx:if="{{!item.isTopic}}">
+            <view class="mrli_cover">
+                <image mode="aspectFit" src="{{item.img}}"></image>
+                <view class="yuyue_belt" wx:if="{{item.jpnonshow==1}}">预约</view>
+                <block wx:else>
+                    <view class="tag" style="background-image:url({{plusImg}})" wx:if="{{item.prom==2&&plusImg}}"></view>
+                    <view class="tag {{item.psp.tp?'pre_price':''}}" style="{{tools.getYDStyle(item.psp.yd)}}" wx:elif="{{item.psp.yd}}">
+                        <text>{{item.psp.yd.content}}</text>
+                    </view>
+                    <view class="price_wrap" wx:if="{{item.psp.tp}}">
+                        <view class="title">{{item.psp.tp.c}}</view>
+                        <view class="price">{{tools.getYDPrice(item.psp.tp.p).int}}<view class="cents">{{tools.getYDPrice(item.psp.tp.p).decimal}}</view>
+                        </view>
+                        <view class="date" wx:if="{{item.psp.tp.date}}">{{item.psp.tp.date}}</view>
+                    </view>
+                </block>
+            </view>
+            <view class="mrli_info">
+                <view class="mrli_info_name">
+                    <image class="icon" mode="aspectFit" src="{{cornerMark}}" style="width:90rpx;height:28rpx;" wx:if="{{item.prom==1&&cornerMark}}"></image>
+                    <image class="icon" mode="aspectFit" src="{{iconList[item.icon].imgSrc}}" style="width:{{iconList[item.icon].width}}rpx;height:{{iconList[item.icon].height}}rpx;" wx:if="{{item.icon!=0&&iconList[item.icon]&&iconList[item.icon].imgSrc}}"></image>
+                    <text>{{item.t}}</text>
+                </view>
+                <view style="position: relative">
+                    <view class="{{item.hasClsDoublePrice?'flex_wrap price_max_heigth':''}}">
+                        <view class="mrli_info_price" wx:if="{{item.jpnonshow==1}}">
+                            <view class="price">¥ <text class="daifabu">待发布</text>
+                            </view>
+                        </view>
+                        <view class="mrli_info_price" wx:elif="{{(prices[item.sku].price*1||item.jp)<=-1}}">暂无定价</view>
+                        <view class="mrli_info_price" wx:else>
+                            <view class="price">
+                                <text class="pinggou_count" wx:if="{{item.dpicon&&item.dpicon.icon=='4'}}">{{item.dpicon.count}}人拼</text>
+                                ¥
+                                <text>{{tools.formatMoney(item.paicon==6?item.dpicon.p:item.jp).int}}</text>{{tools.formatMoney(item.paicon==6?item.dpicon.p:item.jp).decimal?'.'+tools.formatMoney(item.paicon==6?item.dpicon.p:item.jp).decimal:''}}
+                            </view>
+                            <text class="promotion_tip" wx:if="{{item.paicon&&item.paicon!=0&&item.paicon!=6}}">{{tools.getPromotionTipText(item.paicon)}}</text>
+                            <view class="plus_price" wx:if="{{item.dpicon&&item.dpicon.icon=='2'}}">￥{{tools.formatMoney(item.dpicon.p).int}}{{tools.formatMoney(item.dpicon.p).decimal?'.'+tools.formatMoney(item.dpicon.p).decimal:''}}</view>
+                            <view class="pinggou_jd_price" wx:if="{{item.paicon=='6'}}">单买价￥{{tools.formatMoney(item.jp).int}}{{tools.formatMoney(item.jp).decimal?'.'+tools.formatMoney(item.jp).decimal:''}}</view>
+                            <view class="miaosha_origin_price" wx:if="{{item.dpicon&&item.dpicon.icon=='3'}}">￥{{tools.formatMoney(item.dpicon.p).int}}{{tools.formatMoney(item.dpicon.p).decimal?'.'+tools.formatMoney(item.dpicon.p).decimal:''}}</view>
+                        </view>
+                    </view>
+                    <view catchtap="add2Cart" class="mrli_info_buy" data-index="{{index}}" wx:if="{{enableAdd2Cart==1}}"></view>
+                    <view catchtap="onMoreBtnTap" class="mrli_info_more" data-index="{{index}}" wx:if="{{enableAdd2Cart==2&&markBtns&&markBtns.length>0}}"></view>
+                </view>
+            </view>
+            <view class="mrli_reason" wx:if="{{enableWaterfallFlow&&item.tip}}">{{item.tip}}</view>
+            <view class="mrli_mark" wx:if="{{index==curMoreIndex}}">
+                <view catchtouchstart="" class="sheld"></view>
+                <view catchtap="onMoreMarkTap" class="ctn" data-actual-index="{{actualIndex}}" data-index="{{index}}" data-price="{{item.jp}}" data-sku="{{item.sku}}">
+                    <view class="item {{item.buttonText=='看相似'?'similar':item.buttonText=='不喜欢'?'dislike':''}}" data-isleft="{{isLeft}}" data-ptag="{{item.ptag}}" data-type="{{item.buttonText=='看相似'?'similar':item.buttonText=='不喜欢'?'dislike':''}}" wx:for="{{markBtns}}" wx:key="{{ index }}">
+                        {{item.buttonText}}</view>
+                    <image class="close" data-type="close" src="https://img11.360buyimg.com/jdphoto/s30x30_jfs/t21031/266/716567579/205/a6be32af/5b163f38N73c15d63.png"></image>
+                </view>
+            </view>
+            <view class="mrli_black_point" wx:if="{{item.source==1}}"></view>
+        </view>
+        <view wx:else>
+            <view class="mrli_cover">
+                <image mode="aspectFit" src="{{item.img}}"></image>
+            </view>
+            <view class="rec_title">
+                <view class="rec_title_text line1">{{item.title}}</view>
+            </view>
+            <view class="rec_desp line1">{{item.desp}}</view>
+            <view class="rec_topic">
+                <view class="rec_topic_inline line1">购·话题</view>
+            </view>
+        </view>
+    </view>
+</template>
+<view class="mod_recommend" hidden="{{hidden}}" wx:if="{{enableWaterfallFlow&&(leftList&&leftList.length||rightlist&&rightlist.length)||list&&list.length}}">
+    <view class="{{titleBg?'mod_recommend_bgtitle':'mod_recommend_title'}}" wx:if="{{title}}">
+        <view class="mod_recommend_bgtitle_bgtext" style="background:{{'url('+titleBg+') no-repeat 0 0 / 100% 100% !important'}}" wx:if="{{titleBg}}">{{title}}</view>
+        <view class="mod_recommend_title_text" wx:else>{{title}}</view>
+    </view>
+    <view class="mod_recommend_list" wx:if="{{!enableWaterfallFlow}}">
+        <template is="product" data="{{item:item,index:item.index,actualIndex:index,hasBorderLeft:index%2!=0,isLast:list.length-1==index,enableWaterfallFlow:enableWaterfallFlow,enableAdd2Cart:enableAdd2Cart,curMoreIndex:curMoreIndex,markBtns:markBtns,plusImg:plusImg,cornerMark:cornerMark,showHaitunGlobal:showHaitunGlobal,iconList:iconList}}" wx:for="{{list}}" wx:key="{{ item.sku }}"></template>
+    </view>
+    <view class="mod_recommend_list list2" wx:else>
+        <view class="col" id="leftList">
+            <template is="product" data="{{item:item,index:item.index,actualIndex:index,isLast:leftList.length-1==index,isLeft:1,enableAdd2Cart:enableAdd2Cart,enableWaterfallFlow:enableWaterfallFlow,curMoreIndex:curMoreIndex,markBtns:markBtns,plusImg:plusImg,cornerMark:cornerMark,showHaitunGlobal:showHaitunGlobal,iconList:iconList}}" wx:for="{{leftList}}" wx:key="{{ item.sku }}"></template>
+        </view>
+        <view class="col" id="rightList">
+            <template is="product" data="{{item:item,index:item.index,actualIndex:index,isLast:rightList.length-1==index,isLeft:0,enableAdd2Cart:enableAdd2Cart,enableWaterfallFlow:enableWaterfallFlow,curMoreIndex:curMoreIndex,markBtns:markBtns,plusImg:plusImg,cornerMark:cornerMark,showHaitunGlobal:showHaitunGlobal,iconList:iconList}}" wx:for="{{rightList}}" wx:key="{{ item.sku }}"></template>
+        </view>
+    </view>
+    <view class="xloading" wx:if="{{loading}}"></view>
+    <view bindtap="onRetry" class="error_retry" wx:elif="{{error}}">
+        <text>网络加载失败</text>
+        <button>刷新</button>
+    </view>
+</view>
+<import src="../../common/toast/toast.wxml"></import>
+<template is="toast" data="{{...toast}}"></template>
+<wxs module="price" src="../../common/wxs/price.wxs" />
+<wxs module="tools" src="tools.wxs" />

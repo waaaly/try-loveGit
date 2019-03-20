@@ -1,0 +1,11 @@
+Object.defineProperty(exports, "__esModule", {
+    value: !0
+});
+
+exports.CART_RED_POINT_A = "7014.13.1", exports.CART_RED_POINT_CART_TAB_A = "7014.18.96", 
+exports.CART_RED_POINT_B = "7014.18.97", exports.CART_RED_POINT_CART_TAB_B = "7014.18.99", 
+exports.CART_RED_POINT_SEITCH_TO_TAB_A = "7014.18.95", exports.CART_RED_POINT_SEITCH_TO_TAB_B = "7014.18.98", 
+exports.CART_NUM_RED_POINT_A = "7014.18.100", exports.CART_NUM_RED_POINT_CART_TAB_A = "7014.18.101", 
+exports.CART_NUM_RED_POINT_B = "7014.18.102", exports.CART_NUM_RED_POINT_CART_TAB_B = "7014.18.103", 
+exports.CART_RED_POINT_A_PV = "138435.1.2", exports.CART_RED_POINT_B_PV = "138435.1.1", 
+exports.CART_NUM_RED_POINT_A_PV = "138435.1.4", exports.CART_NUM_RED_POINT_B_PV = "138435.1.3";

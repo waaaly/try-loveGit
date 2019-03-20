@@ -1,0 +1,29 @@
+page {
+    border-top: 0;
+}
+
+.rma-good-item .good-panels .good-name {
+    height: 69rpx;
+}
+
+.rma-mate-header .order-number {
+    height: 63rpx;
+    line-height: 64rpx;
+}
+
+.rma-mate-header .order-number .spell {
+    display: inline-block;
+    width: 54rpx;
+    height: 24rpx;
+    line-height: 25rpx;
+    margin-right: 17rpx;
+    color: #CA141D;
+    border: 1rpx solid #CA141D;
+    text-align: center;
+    font-size: 19rpx;
+    border-radius: 7rpx;
+}
+
+.rma-empty-tip {
+    padding: 0 34rpx;
+}

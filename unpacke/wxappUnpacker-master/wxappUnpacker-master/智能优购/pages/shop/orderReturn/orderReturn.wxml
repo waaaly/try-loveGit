@@ -1,0 +1,40 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="order_right col ali-center">
+    <image class="order_r_img " mode="widthFix" src="/images/order_right.png"></image>
+    <text class="order_r_txt1">订单提交成功！</text>
+    <text class="order_r_txt2">小主，您的{{score}}数贝已经到账啦，赶快去升级吧~</text>
+    <view class="order_r_btns row ali-center">
+        <text bindtap="goUp" class="order_r_btns1">立即升级VIP导购</text>
+        <text bindtap="goOrder" class="order_r_btns2">查看订单</text>
+    </view>
+</view>
+<view class="like col">
+    <text class="like-title text-center px30">猜你喜欢</text>
+    <view class="like-content row spa">
+        <view bindtap="bindContentTap" class="like-item" data-catalog="{{item.goodsId}}" data-id="{{item.goodsId}}" wx:for="{{likesData}}" wx:key="index">
+            <image class="like-shop-img" src="{{item.defalutPhotourl}}"></image>
+            <view class="like-shop-info col">
+                <view class="col">
+                    <view class="row like-shop-titles">
+                        <view class="self-shop white like-shop-tag text-center px20" wx:if="{{item.goodsPropery==1&&item.channelId==0}}">自营</view>
+                        <view class="self-shop white like-shop-tag text-center px20" wx:if="{{item.goodsPropery==2&&item.channelId==1}}">京东</view>
+                        <view class="self-shop white like-shop-tag text-center px20" wx:if="{{item.goodsPropery==2&&item.channelId==2}}">楚楚街</view>
+                        <text class="like-shop-title px24">{{item.goodsName}}</text>
+                    </view>
+                    <view class="row spa ali-center">
+                        <view class="row ali-center">
+                            <text class="price px26 bold">￥{{item.price}}</text>
+                            <text class="subtraction px16">满减</text>
+                        </view>
+                        <view class="similar px20">看相似</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>
+<wxs module="filter" src="../../../numberToFix.wxs" />

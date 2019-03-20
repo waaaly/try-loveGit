@@ -1,0 +1,3 @@
+.download-img image {
+    width: 100%;
+}

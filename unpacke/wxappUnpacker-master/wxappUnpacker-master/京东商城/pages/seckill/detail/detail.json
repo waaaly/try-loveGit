@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "brand-head": "../components/brandHead/brandHead",
+        "nav": "../components/nav/nav",
+        "back-to-top": "../components/backToTop/backToTop"
+    },
+    "navigationBarTitleText": "秒杀详情",
+    "onReachBottomDistance": 100
+}

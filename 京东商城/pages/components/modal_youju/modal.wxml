@@ -1,0 +1,56 @@
+<view class="modal" wx:if="{{show}}">
+    <view class="modal__mask"></view>
+    <view class="modal__cnt">
+        <view class="modal__header line1" wx:if="{{title}}">
+            <text class="title">{{title}}</text>
+        </view>
+        <view class="modal__body coupon" wx:if="{{type==='coupon'}}">
+            <view class="icon-cnt">
+                <image class="icon-success" src="../../../assets/images/icon_success@2x.png"></image>
+            </view>
+            <view class="content line1">{{content}}</view>
+            <view class="coupon">
+                <image src="../../assets/modal_coupon@2x.png"></image>
+                <view class="coupon-info">
+                    <view class="price">
+                        <text class="mark">￥</text>
+                        <text class="num">{{couponPrice}}</text>
+                    </view>
+                    <view class="name line1">{{couponName}}</view>
+                </view>
+            </view>
+            <view class="tips">{{couponTips}}</view>
+        </view>
+        <view class="modal__body coupon coupon-fail" wx:elif="{{type==='fail'}}">
+            <view class="coupon">
+                <image src="../../assets/modal_coupon_fail@2x.png"></image>
+            </view>
+        </view>
+        <view class="modal__body {{title?'normal':''}}" wx:elif="{{type==='normal'}}">
+            <view class="content line3">{{content}}</view>
+        </view>
+        <view class="modal__body {{title?'normal':''}}" wx:else>
+            <view class="icon-cnt" wx:if="{{icon!=='none'}}">
+                <image class="icon-success" src="{{ICONS[icon]||ICONS['warn']}}"></image>
+            </view>
+            <view class="content line3">
+                <view>{{content}}</view>
+            </view>
+            <view class="content">
+                <slot></slot>
+            </view>
+        </view>
+        <view class="modal__footer">
+            <view bindtap="cancelCallback" class="modal__btn default" wx:if="{{showCancel}}">{{cancelText}}</view>
+            <button bindgetphonenumber="getPhoneNumCallback" bindtap="onGetPhoneNumTap" class="modal__btn phone primary" openType="getPhoneNumber" wx:if="{{confirmButtonType=='getPhoneNumber'}}">{{confirmText}}</button>
+            <view bindtap="confirmCallback" class="modal__btn primary" wx:else>{{confirmText}}</view>
+        </view>
+    </view>
+</view>
+<wxs module="ICONS">
+module.exports = ({
+    'warn': '../../../assets/images/icon_warning@2x.png',
+    'success': '../../../assets/images/icon_success@2x.png',
+    'none': '',
+});
+</wxs>

@@ -1,0 +1,35 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="top">
+    <view class="topimg">
+        <image class="headimg" src="/images/brand.jpg"></image>
+        <image class="headimg2" src="{{dataset.pic}}"></image>
+    </view>
+    <view class="headpar">
+        <view class="title">{{dataset.title}}</view>
+        <view class="cost">所需：<span>{{dataset.cost}}个{{dataset.scoretype}}数贝</span>
+        </view>
+    </view>
+    <view class="clear"></view>
+</view>
+<view class="content clear">
+    <view class="title">介绍</view>
+    <text>{{dataset.intro}}
+     
+     </text>
+    <rich-text nodes="{{dataset.imgs}}"></rich-text>
+</view>
+<view class="recommend_bottom">
+    <view class="endparent">
+        <view class="bottomp">分享赚数贝</view>
+        <view class="bottomline"></view>
+    </view>
+</view>
+<view class="bottom">
+    <button bindgetuserinfo="bindBuyTap" class="sharebutton" openType="getUserInfo"></button>
+    兑换
+    
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

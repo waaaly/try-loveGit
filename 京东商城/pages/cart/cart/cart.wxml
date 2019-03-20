@@ -1,0 +1,18 @@
+<view class="wrapper">
+    <view class="xloading full_page" wx:if="{{loading}}"></view>
+    <view bindtap="refresh" class="error_retry full_page" wx:if="{{hasError}}">
+        <text>页面开小差，试试</text>
+        <button>刷新</button>
+    </view>
+    <goods-list bind:toggletarbarfixed="toggleTarBarFixed" bind:updatebottombar="onUpdateBottomBar" id="goodslist" options="{{venders:venders,scrollIntoView:scrollIntoView,viewLoaded:viewLoaded,isHeadScreenLoad:isHeadScreenLoad,isTab:isTab,freight:freight,showRecommend:showRecommend,partition:partition,graySwitch:graySwitch}}" wx:else>
+        <top-bar address="{{address}}" id="topbar" showQuickCleanButton="{{showQuickCleanButton}}" slot="before"></top-bar>
+        <bottom-bar bind:check="onCheck" bind:editcheck="onEditCheck" id="btmbar" options="{{summary}}" slot="after"></bottom-bar>
+    </goods-list>
+    <quick-nav bottom="145" id="quickNav" wxappPageUrl="cart" wx:if="{{showQuickNav}}"></quick-nav>
+</view>
+<import src="../../../common/toast/toast.wxml"></import>
+<template is="toast" data="{{...toast}}"></template>
+<import src="../../../common/modal/modal.wxml"></import>
+<template is="modal" data="{{...modal}}"></template>
+<import src="../../components/message-box/index.wxml"></import>
+<template is="tplMessageBox" data="{{msgbox:msgbox}}"></template>

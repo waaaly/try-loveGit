@@ -1,0 +1,130 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="swiper-tab">
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==0?'on':''}}" data-current="0">全部</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==1?'on':''}}" data-current="1">未处理</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==2?'on':''}}" data-current="2">处理中</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==3?'on':''}}" data-current="3">已完成</view>
+</view>
+<swiper bindchange="bindChange" circular="{{false}}" class="swiper-box" current="{{currentTab}}" duration="{{duration}}" style="">
+    <swiper-item>
+        <view class="">
+            <view class="state1 statitel">申请状态</view>
+            <view class="state1 statitel">申请额度</view>
+            <view class="state1 state3 statitel">实际领取金额</view>
+            <view class="state1 state2 statitel">申请时间</view>
+            <view class="clear"></view>
+        </view>
+        <scroll-view bindscrolltolower="bindScrollTolowerTap" class="scroll-view_H" enableBackToTop="{{true}}" scrollY="true" style="height:1070rpx">
+            <view class="prompat" wx:if="{{tabdata[0].prompat}}">没有任何记录~~</view>
+            <view class="list">
+                <view class="brand" wx:for="{{tabdata[0].dataset}}" wx:key="unique">
+                    <view class="state1">{{item.state}}</view>
+                    <view class="state1">{{item.applyamount}}</view>
+                    <view class="state1">{{item.actualamount}}</view>
+                    <view class="state1 state2">{{item.time}}</view>
+                    <view class="clear"></view>
+                </view>
+            </view>
+            <view class="recommend_bottom" wx:if="{{tabdata[0].loadview&&tabdata[0].dataset.length>0}}">
+                <view class="bottomcenter" wx:if="{{!tabdata[0].loadIsEnd}}">
+                    <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+                  </view>
+                <view class="endparent" wx:if="{{tabdata[0].loadIsEnd}}">
+                    <button bindgetuserinfo="bindShareTap" class="sharebutton" openType="getUserInfo"></button>
+                    <view class="bottomp">分享赚数贝</view>
+                    <view class="bottomline"></view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <view class="">
+            <view class="state1 statitel">申请状态</view>
+            <view class="state1 statitel">申请额度</view>
+            <view class="state1 state3 statitel">实际领取金额</view>
+            <view class="state1 state2 statitel">申请时间</view>
+            <view class="clear"></view>
+        </view>
+        <scroll-view bindscrolltolower="bindScrollTolowerTap" class="scroll-view_H" enableBackToTop="{{true}}" scrollY="true" style="height:1070rpx">
+            <view class="prompat" wx:if="{{tabdata[1].prompat}}">没有任何记录~~</view>
+            <view class="list">
+                <view class="brand" wx:for="{{tabdata[1].dataset}}" wx:key="unique">
+                    <view class="state1">{{item.state}}</view>
+                    <view class="state1">{{item.applyamount}}</view>
+                    <view class="state1">{{item.actualamount}}</view>
+                    <view class="state1 state2">{{item.time}}</view>
+                    <view class="clear"></view>
+                </view>
+            </view>
+            <view class="recommend_bottom" wx:if="{{tabdata[1].loadview}}">
+                <view class="bottomcenter" wx:if="{{!tabdata[1].loadIsEnd}}">
+                    <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+                  </view>
+                <view class="endparent" wx:if="{{tabdata[1].loadIsEnd}}">
+                    <button bindgetuserinfo="bindShareTap" class="sharebutton" openType="getUserInfo"></button>
+                    <view class="bottomp"> 分享赚数贝</view>
+                    <view class="bottomline"></view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <view class="">
+            <view class="state1 statitel">申请状态</view>
+            <view class="state1 statitel">申请额度</view>
+            <view class="state1 state3 statitel">实际领取金额</view>
+            <view class="state1 state2 statitel">申请时间</view>
+            <view class="clear"></view>
+        </view>
+        <scroll-view bindscrolltolower="bindScrollTolowerTap" class="scroll-view_H" enableBackToTop="{{true}}" scrollY="true" style="height:1070rpx">
+            <view class="prompat" wx:if="{{tabdata[2].prompat}}">没有任何记录~~</view>
+            <view class="list">
+                <view class="brand" wx:for="{{tabdata[2].dataset}}" wx:key="unique">
+                    <view class="state1">{{item.state}}</view>
+                    <view class="state1">{{item.applyamount}}</view>
+                    <view class="state1">{{item.actualamount}}</view>
+                    <view class="state1 state2">{{item.time}}</view>
+                    <view class="clear"></view>
+                </view>
+            </view>
+            <view class="recommend_bottom" wx:if="{{tabdata[2].loadview}}">
+                <view class="bottomcenter" wx:if="{{!tabdata[2].loadIsEnd}}">
+                    <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+                  </view>
+                <view class="endparent" wx:if="{{tabdata[2].loadIsEnd}}">
+                    <button bindgetuserinfo="bindShareTap" class="sharebutton" openType="getUserInfo"></button>
+                    <view class="bottomp"> 分享赚数贝</view>
+                    <view class="bottomline"></view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view bindscrolltolower="bindScrollTolowerTap" class="scroll-view_H" enableBackToTop="{{true}}" scrollY="true" style="height:1070rpx">
+            <view class="prompat" wx:if="{{tabdata[3].prompat}}">没有任何记录~~</view>
+            <view class="list">
+                <view class="brand" wx:for="{{tabdata[3].dataset}}" wx:key="unique">
+                    <view class="state1">{{item.state}}</view>
+                    <view class="state1">{{item.applyamount}}</view>
+                    <view class="state1">{{item.actualamount}}</view>
+                    <view class="state1 state2">{{item.time}}</view>
+                    <view class="clear"></view>
+                </view>
+            </view>
+            <view class="recommend_bottom" wx:if="{{tabdata[3].loadview}}">
+                <view class="bottomcenter" wx:if="{{!tabdata[3].loadIsEnd}}">
+                    <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+                  </view>
+                <view class="endparent" wx:if="{{tabdata[3].loadIsEnd}}">
+                    <button bindgetuserinfo="bindShareTap" class="sharebutton" openType="getUserInfo"></button>
+                    <view class="bottomp"> 分享赚数贝</view>
+                    <view class="bottomline"></view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+</swiper>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

@@ -1,0 +1,20 @@
+<view class="channel-nav-wrapper {{showBorderRadius?'':'hide-radius'}}" hidden="{{hideModule}}" style="{{bg&&'background-image: url('+bg+')'}}">
+    <view>
+        <swiper bindchange="onSwiperChange" class="channel-nav__swiper" current="{{swiperCurrent}}" indicatorDots="{{false}}">
+            <swiper-item wx:for="{{pages}}" wx:for-item="page">
+                <view class="channel-nav" style="{{page.bg&&'background-image: url('+page.bg+')'}}">
+                    <view bindtap="tapOnItem" class="channel-nav__item" data-appid="{{item.appid}}" data-ptag="{{item.ptag}}" data-url="{{item.link}}" data-wxapp-path="{{item.otherLink}}" wx:for="{{page.entries}}" wx:key="name">
+                        <view class="channel-nav__icon">
+                            <image class="channel-nav__icon-image" hidden="{{page.hideIcons}}" src="{{item.imgUrl}}"></image>
+                            <view class="channel-nav__tag line1" wx:if="{{item.corner}}">{{item.corner}}</view>
+                        </view>
+                        <view class="channel-nav__text" style="color: {{page.textColor?page.textColor:'#666'}}">{{item.name}}</view>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="channel-nav__dot {{changeDot?'channel-nav__dot-nhj':''}}" wx:if="{{pages.length>1}}">
+            <view class="channel-nav__dot-item channel-nav__dot-item--{{index==swiperIdx?'cur':''}}" wx:for="{{pages}}"></view>
+        </view>
+    </view>
+</view>

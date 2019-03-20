@@ -1,0 +1,62 @@
+<template name="tplNumberPicker">
+    <view class="number_picker">
+        <view class="number_picker_minus {{num*1<=min*1?'disabled':''}}" data-action="{{num*1<=min*1?'':'sub'}}"></view>
+        <input bindblur="updateNum" bindfocus="showInputMask" class="number_picker_input" data-id="{{id}}" maxlength="3" type="number" value="{{num}}"></input>
+        <view class="number_picker_plus {{num*1<max*1?'':'disabled'}}" data-action="{{num*1<max*1?'add':''}}"></view>
+    </view>
+</template>
+<template name="tplGoods">
+    <view bind:tap="doAction" class="goods {{mainSku?'main':''}}" data-id="{{id}}">
+        <view bind:tap="bubble" class="checkbox {{checked?'checked':''}}" data-action="onCheck" wx:if="{{!mainSku}}"></view>
+        <view class="goods_image">
+            <image bind:tap="bubble" data-action="gotoItemDetail" lazyLoad="true" model="aspectFit" src="{{image}}"></image>
+        </view>
+        <view bind:tap="bubble" class="goods_content" data-action="gotoItemDetail">
+            <view class="goods_content_name line2" data-action="gotoItemDetail"> {{name}}</view>
+            <view class="goods_content_line" data-action="gotoItemDetail">
+                <view class="goods_content_line_price">
+                    <block wx:if="{{mainSku}}">￥<text>{{integer}}</text>.{{decimals}}</block>
+                </view>
+                <view class="goods_content_line_num">
+                    <text wx:if="{{!allowMulti}}">x {{mainSku?num:mainGoods.num}}</text>
+                    <template is="tplNumberPicker" data="{{num:num,min:1,max:mainGoods.num,id:id}}" wx:else></template>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<view class="xloading full_page" wx:if="{{loading}}"></view>
+<view class="gifts" wx:else>
+    <view class="gifts_wrap">
+        <template is="tplGoods" data="{{mainSku:true,...mainGoods}}"></template>
+        <view class="tips">
+            <text wx:if="{{allowMulti}}">你可以任选{{mainGoods.num}}件搭配赠品</text>
+            <text wx:else>可以搭配以下赠品</text>
+        </view>
+        <view class="list">
+            <view class="list_item" wx:for="{{list}}" wx:for-item="pool" wx:key="no">
+                <view class="list_item_title" wx:if="{{!allowMulti}}">
+                    <text>{{pool.name}}</text>
+                    <text class="list_item_title_gray">（{{pool.items.length}}选1）</text>
+                </view>
+                <view class="list_item_goods">
+                    <template is="tplGoods" data="{{...item,allowMulti:allowMulti,mainGoods:mainGoods}}" wx:for="{{pool.items}}" wx:key="id"></template>
+                </view>
+            </view>
+        </view>
+        <view bind:tap="submit" class="bottom_bar" wx:if="{{!allowMulti}}">
+            <text>确认</text>
+        </view>
+        <view class="bottom_bar summary" wx:else>
+            <view class="bottom_bar_content">
+                <view>
+                    <text class="bottom_bar_content_selected">已选择<text>{{selectedTotal}}</text>件</text>
+                    <text class="bottom_bar_content_num">还需选{{total-selectedTotal}}件</text>
+                </view>
+            </view>
+            <view bind:tap="submit" class="bottom_bar_submit">确认</view>
+        </view>
+    </view>
+    <view bind:focus="hideInputMask" class="input_mask" wx:if="{{showMask}}"></view>
+</view>
+<wxs module="utils" src="index.wxs" />

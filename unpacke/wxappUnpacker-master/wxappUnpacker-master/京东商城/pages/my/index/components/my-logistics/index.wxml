@@ -1,0 +1,17 @@
+<view class="my_logistics" id="myLogistics" wx:if="{{show}}">
+    <swiper autoplay="{{true}}" circular="{{list.length>1?true:false}}" class="my_logistics_swiper" indicatorDots="{{false}}" interval="3000" vertical="{{true}}">
+        <swiper-item wx:for="{{list}}" wx:key="id">
+            <view class="my_logistics_list" id="my_logistics_list">
+                <view bindtap="jumpLogisDetail" class="my_logistics_item" data-dealid="{{item.orderId}}" data-dealstate="{{item.state}}" data-ordertype="{{item.orderType}}" data-venderid="{{item.venderId}}">
+                    <image class="my_logistics_item_img" src="{{item.img}}"></image>
+                    <view class="my_logistics_item_num">共{{item.num}}件</view>
+                    <view class="my_logistics_item_state">
+                        <text class="my_logistics_item_type">{{item.stateText}}</text>
+                        <text class="my_logistics_item_date">{{item.createTime}}</text>
+                    </view>
+                    <view class="my_logistics_item_text">{{item.wlStateDesc}}</view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>

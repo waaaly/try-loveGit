@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "个人中心",
+    "usingComponents": {
+        "dialogs": "../../common/components/dialogs/index",
+        "rule": "../../common/components/rule/index"
+    }
+}

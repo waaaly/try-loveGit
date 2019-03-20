@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "增值服务",
+    "usingComponents": {
+        "services": "/pages/services/components/services/index"
+    }
+}

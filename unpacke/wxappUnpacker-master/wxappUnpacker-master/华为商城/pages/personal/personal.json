@@ -1,0 +1,8 @@
+{
+    "navigationBarBackgroundColor": "#DE2F38",
+    "navigationBarTitleText": "我的",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "AuthorizeModal": "../../components/AuthorizeModal/AuthorizeModal"
+    }
+}

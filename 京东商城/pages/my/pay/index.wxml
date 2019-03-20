@@ -1,0 +1,6 @@
+<view class="non-secret--container">
+    <view class="non-secret__icon"></view>
+    <view class="non-secret__tips">{{tips}}</view>
+</view>
+<import src="../../../common/toast/toast.wxml"></import>
+<template is="toast" data="{{...toast}}"></template>

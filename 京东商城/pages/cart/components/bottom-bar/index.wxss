@@ -1,0 +1,107 @@
+@import "../../../../app.wxss";
+
+@import "../../../../__wuBaseWxss__/14.wxss";
+
+@import "../../../../__wuBaseWxss__/15.wxss";
+
+.summary_bar,.editor_bar {
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1rpx solid #ddd;
+    height: 98rpx;
+    background: #fff;
+    display: flex;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.summary_bar .checkbox,.editor_bar .checkbox {
+    width: 80rpx;
+    font-size: 20rpx;
+    text-align: center;
+    height: 76rpx;
+    color: #999;
+}
+
+.summary_bar .checkbox text,.editor_bar .checkbox text {
+    position: absolute;
+    left: 20rpx;
+    top: 68rpx;
+}
+
+.summary_bar .price,.editor_bar .price {
+    flex: 1;
+    padding-right: 20rpx;
+    text-align: right;
+    line-height: 1.4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.summary_bar .price .total,.editor_bar .price .total {
+    font-size: 32rpx;
+    font-weight: 700;
+}
+
+.summary_bar .price .total text,.editor_bar .price .total text {
+    color: #E93B3D;
+}
+
+.summary_bar .price .desc,.editor_bar .price .desc {
+    font-size: 20rpx;
+    color: #999;
+}
+
+.summary_bar .btn,.editor_bar .btn {
+    width: 200rpx;
+    line-height: 100rpx;
+    font-size: 32rpx;
+    text-align: center;
+    color: #fff;
+    background: #E93B3D;
+    font-weight: 700;
+}
+
+.summary_bar .btn text,.editor_bar .btn text {
+    font-size: 20rpx;
+}
+
+.summary_bar .btn.disabled,.editor_bar .btn.disabled {
+    color: #999;
+    background: #ccc;
+    pointer-events: none;
+}
+
+.summary_bar .btn:active,.editor_bar .btn:active {
+    background: rgb(179,59,61);
+}
+
+.summary_bar .btns,.editor_bar .btns {
+    position: absolute;
+    right: 20rpx;
+    top: 16rpx;
+}
+
+.summary_bar .btns .btn,.editor_bar .btns .btn {
+    display: inline-block;
+    margin-left: 10rpx;
+    width: 152rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 400;
+    border: 2rpx solid #CCCCCC;
+    border-radius: 8rpx;
+}
+
+.summary_bar .btns .remove,.editor_bar .btns .remove {
+    border: 2rpx solid #E93B3D;
+    color: #fff;
+    background: #E93B3D;
+}

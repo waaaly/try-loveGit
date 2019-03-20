@@ -1,0 +1,136 @@
+<view class="envelopesPage" style="background-color:{{redColor}}">
+    <image bind:error="toSetDefaultBg" class="bgImg" src="{{redUrl}}"></image>
+    <view class="envelopesMask">
+        <view>
+            <view class="envelopesTop">
+                <navigator class="activityHome" hoverClass="navigator-hover" openType="reLaunch" url="../index/index?from=redEnvelop">
+                    <text>首页</text>
+                </navigator>
+                <navigator class="activityRule" hoverClass="navigator-hover" url="../webview/webview?url=https://msale.vmall.com/hbjjlhdgz.html&title=活动规则">
+                    <text>活动规则</text>
+                </navigator>
+                <button bindgetuserinfo="onAuthSelect" bindtap="gotoMyActivity" class="myActivity" hoverClass="navigator-hover" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                    <text>我的活动</text>
+                </button>
+                <view class="activityCont" wx:if="{{redUrl=='imgs/bg_envelopes.jpg'||redColor=='#e23141'}}">
+                    <view class="activityPeople" wx:if="{{peopleMounts}}">召集<text>{{peopleMounts}}</text>人</view>
+                    <view class="activityMoney" wx:if="{{allAmount}}">共享<text>{{allAmount}}</text>元红包</view>
+                    <view class="activityName">
+                        <text>红包集结令</text>
+                    </view>
+                </view>
+            </view>
+            <view class="activityActive" wx:if="{{showEnvelopCreat}}">
+                <view class="activityActiveCont">
+                    <view class="actorList">
+                        <view class="actorItem" wx:if="{{item.isOriginate==1}}" wx:for="{{user}}" wx:key="{{key}}">
+                            <view class="actorImg">
+                                <image src="{{item.headUrl}}" wx:if="{{item.headUrl}}"></image>
+                                <image src="imgs/defaultface_user.png" wx:else></image>
+                            </view>
+                            <view class="actorName">
+                                <text>{{item.displayName}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="avtiveTime">
+            活动将于{{endTime}}结束
+          </view>
+                    <form bindsubmit="createCallUp" class="formActiveBtn" data-callUp="{{callUp}}" id="createCallUpEl" reportSubmit="true" wx:if="{{callUp}}">
+                        <button bindgetuserinfo="onAuthSelect" formType="submit" openType="{{isNeedOpenType?'getUserInfo':''}}">发起召集令</button>
+                    </form>
+                    <form bindsubmit="helpCallUp" class="formActiveBtn" data-callUp="{{callUp}}" id="helpCallUpEl" reportSubmit="true" wx:else>
+                        <button bindgetuserinfo="onAuthSelect" formType="submit" openType="{{isNeedOpenType?'getUserInfo':''}}">帮TA拆红包</button>
+                    </form>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{showDetail}}">
+            <view class="activityActive">
+                <view class="activityActiveCont">
+                    <view class="actorList">
+                        <view class="actorItem" wx:for="{{user}}" wx:key="{{key}}">
+                            <view class="actorRole" wx:if="{{item.isOriginate==1}}">发起人</view>
+                            <view class="actorImg {{item.isOriginate==1?'top':''}}">
+                                <image src="{{item.headUrl}}" wx:if="{{item.headUrl}}"></image>
+                                <image src="imgs/defaultface_user.png" wx:else></image>
+                            </view>
+                            <view class="actorName">
+                                <text>{{item.displayName}}</text>
+                            </view>
+                            <view class="actorPrice" wx:if="{{aggregationState==1&&isCurrentUserReceiveCoupon==1}}">
+                                <text>{{ticketAmt}}元</text>
+                            </view>
+                        </view>
+                        <view class="actorItem" wx:for="{{friendsMount}}" wx:key="{{key}}">
+                            <view class="actorImg">
+                                <image src="imgs/defaultface_user_empty.png"></image>
+                            </view>
+                            <view class="actorName">
+                                <text></text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="avtiveTime" wx:if="{{showCutDownTime}}">
+            活动于{{dayold!=''?daysold:''}}<text class="timeBox">{{hoursold}}</text>
+                        <text class="gray">:</text>
+                        <text class="timeBox">{{minsold}}</text>
+                        <text class="gray">:</text>
+                        <text class="timeBox">{{seconds}}</text>后到期
+          </view>
+                    <button bindgetuserinfo="onAuthSelect" bindtap="openAuthModal4Btn" class="activeBtn" openType="{{isNeedOpenType?'getUserInfo':''}}" wx:if="{{!isLogin}}">
+                        <text>授权登录</text>
+                    </button>
+                    <button bindtap="callUpFriends" class="activeBtn" openType="{{share}}" wx:if="{{aggregationState==-1}}">
+                        <text>再召集{{friendsMount}}个好友</text>
+                    </button>
+                    <view class="activeBtnException" wx:if="{{isCurrentUserAggregated==1}}">
+                        <view bindtap="getCoupon" class="activeBtn" wx:if="{{aggregationState==1&&isCurrentUserReceiveCoupon==-1}}">
+                            <text>人已凑齐，马上领券</text>
+                        </view>
+                        <view class="activeBtn" wx:if="{{aggregationState==1&&isCurrentUserReceiveCoupon==1}}">
+                            <text>已领取</text>
+                        </view>
+                    </view>
+                    <form bindsubmit="createCallUp" class="formActiveBtn formActiveBtn-yellow" data-callUp="{{callUp}}" id="createCallUpEl2" reportSubmit="true" wx:if="{{buildMyActivity}}">
+                        <button class="activeBtn-yellow" formType="submit">
+                            <text>发起我的活动</text>
+                        </button>
+                    </form>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="ecWap-mask" wx:if="{{showWidown}}"></view>
+<view class="ecWap-box-middle" wx:if="{{showWidown}}">
+    <view class="ecWap-box ecWap-box-center">
+        <view class="ecWap-box-content ecWap-box-common">
+            <view bindtap="closeWindown" class="ecWap-box-common-close" wx:if="{{closeBox}}"></view>
+            <view class="ecWap-box-common-header">
+                <text class="ecWap-box-title">{{activitys}}</text>
+            </view>
+            <view class="ecWap-box-common-core">
+                <view class="ecWap-box-common-p">{{activityState}}</view>
+            </view>
+            <view class="ecWap-box-common-footer">
+                <navigator class="wxButton-style-5-big" openType="reLaunch" url="{{url}}" wx:if="{{isUrl&&urlContent=='去华为商城逛逛'}}">
+                    <text>{{urlContent}}</text>
+                </navigator>
+                <view bindtap="goToSeeRelatedPrd" class="wxButton-style-5-big" wx:if="{{isUrl&&urlContent=='查看我的优惠券'}}">
+                    <text>{{urlContent}}</text>
+                </view>
+                <view bindtap="closeWindown" class="wxButton-style-5-big" wx:if="{{isUrl&&urlContent=='确定'}}">
+                    <text>{{urlContent}}</text>
+                </view>
+                <navigator class="wxButton-style-5-big" url="{{url}}" wx:if="{{isUrl&&urlContent=='查看我参与的活动'}}">
+                    <text>{{urlContent}}</text>
+                </navigator>
+                <button bindgetuserinfo="onAuthSelect" bindtap="creactMyActivity" class="wxButton-style-5-big" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}" wx:if="{{!isUrl}}">
+                    <text>发起我的活动</text>
+                </button>
+            </view>
+        </view>
+    </view>
+</view>
+<AuthorizeModal authWords="{{authWords}}" bind:authSelect="onAuthSelect" bind:closeModal="onCloseModal" bind:showWXModal="onShowWXModal" showFlag="{{isShowAuthModal}}"></AuthorizeModal>

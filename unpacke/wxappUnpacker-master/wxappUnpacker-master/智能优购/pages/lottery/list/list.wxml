@@ -1,0 +1,38 @@
+<view class="container">
+    <view class="top">
+        <image class="img" src="/images/loadding.jpg"></image>
+        <image class="bimg" src="{{dataset.pic}}"></image>
+    </view>
+    <view class="list">
+        <view bindtap="bindContentTap" class="item " data-catalog="{{item.catalog}}" data-id="{{item.id}}" wx:for="{{dataset.list}}" wx:key="unique">
+            <view class="productimg">
+                <image src="{{item.pic}}?2"></image>
+            </view>
+            <view class="divright">
+                <view class="classname">{{item.title}}</view>
+                <view class="pin">
+                    <image class="pinimg" src="/images/headimg.png"></image>
+                    <span>已有{{item.suctotal}}人参与</span>
+                </view>
+                <view class="cost">¥{{item.cost1}}</view>
+                <view class="partake">
+                    <view class="button">去抽奖</view>
+                  ¥<span>{{item.cost3}}</span>
+                </view>
+            </view>
+            <view class="clear"></view>
+        </view>
+    </view>
+    <view class="recommend_bottom" wx:if="{{dataset.list.length>4}}">
+        <view class="bottomcenter" wx:if="{{!loadIsEnd}}">
+            <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+        </view>
+        <view class="endparent" wx:if="{{loadIsEnd}}">
+            <view bindtap="bindShareTap" class="bottomp">分享赚数贝</view>
+            <view class="bottomline"></view>
+        </view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

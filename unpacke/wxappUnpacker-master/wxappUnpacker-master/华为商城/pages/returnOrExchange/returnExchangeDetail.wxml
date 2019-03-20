@@ -1,0 +1,237 @@
+<view wx:if="{{hasDetail}}">
+    <view class="rma-form">
+        <view class="rma-progress bg_white" wx:if="{{status!='5'}}">
+            <view class="rma-progress-tab {{status=='1'||status=='2'?'current':''}}">
+                <icon></icon>
+                <text>提交申请</text>
+            </view>
+            <view class="rma-progress-tab {{status=='3'||status=='6'||status=='9'||status=='10'?'current':''}}">
+                <icon></icon>
+                <text>商城审核</text>
+            </view>
+            <view class="rma-progress-tab {{status=='7'||status=='8'?'current':''}}">
+                <icon></icon>
+                <text>{{applyType==1?'等待退款':'等待重新发货'}}</text>
+            </view>
+            <view class="rma-progress-tab {{status=='4'?'current':''}}">
+                <icon></icon>
+                <text>{{applyType==1?'已退款':'已换货'}}</text>
+            </view>
+        </view>
+        <view class="rma-progress bg_white" wx:if="{{status=='5'}}">
+            <view class="rma-progress-tab">
+                <icon></icon>
+                <text>提交申请</text>
+            </view>
+            <view class="rma-progress-tab current">
+                <icon></icon>
+                <text>已关闭</text>
+            </view>
+        </view>
+    </view>
+    <view class="rma-form">
+        <view class="rma-explain bg_white">
+            <view bindtap="openProgress" class="rma-header">
+                <view class="rma-header-txt">
+                    <image src="imgs/icon_time.png"></image>
+                    <text>进度说明</text>
+                </view>
+                <view class="rma-header-a">
+                    <view class="arrow-more {{openCont?'arrow-more-top':'arrow-more-down'}}">
+                        <image src="../../imgs/icon_arrow_more.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="rma-process {{openCont?'rma-process-top':'rma-process-down'}}">
+                <view class="rma-process-list" wx:for="{{processTimeList}}" wx:key="{{index}}">
+                    <view class="rma-process-node">
+                        <icon></icon>
+                    </view>
+                    <view class="rma-process-cont">
+                        <view class="rma-process-text">
+                            <text>{{item.auditNote}}</text>
+                        </view>
+                        <view class="rma-process-time">
+                            <text>{{item.processtime}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="rma-process-footer" wx:if="{{0&&isExchange&&showRmaLog==1}}">
+                <text class="rma-order-time">订单生成时间：{{item.processTime}}</text>
+                <navigator hoverClass="none" url="">查看订单</navigator>
+            </view>
+        </view>
+    </view>
+    <view class="rma-form" wx:if="{{(logisticsCompony==''||logisticsNo=='')&&deliveryAddr&&deliveryAddr.contactAddress&&deliveryAddr.contactBy&&(deliveryAddr.contactMobile||deliveryAddr.contactPhone)}}">
+        <view class="rma-logistics bg_white">
+            <view class="rma-header">
+                <view class="rma-header-txt">
+                    <image src="imgs/icon_addr.png"></image>
+                    <text>商品寄回</text>
+                </view>
+            </view>
+            <view class="rma-logistics-cont">
+                <view class="rma-logistics-list rma-logistics-list-l">
+                    <view class="rma-logistics-label">寄回地址：</view>
+                    <view class="rma-logistics-text">{{deliveryAddr.contactAddress}} 收货人  {{deliveryAddr.contactBy}}  {{deliveryAddr.contactMobile!=''?deliveryAddr.contactMobile:deliveryAddr.contactPhone}}</view>
+                </view>
+                <view class="rma-logistics-list rma-logistics-list-l">
+                    <view class="rma-logistics-label">退货说明：</view>
+                    <view class="rma-logistics-text">请您一次性退回清单中所有商品及相关物件（退货 请退回发票，换货则不需要寄回发票和赠品），华 为自营商品退换货建议您选择顺丰到付寄回。对于 代销商品，如是质量问题退货，请先使用普通快递 垫付寄回，如代销商品无故障或个人原因退货，建 议您自费寄回</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="rma-form" wx:if="{{status=='3'||status=='9'}}">
+        <view class="rma-logistics bg_white">
+            <view class="rma-header">
+                <view class="rma-header-txt">
+                    <image src="imgs/icon_logistics.png"></image>
+                    <text>物流信息</text>
+                </view>
+                <view bindtap="openModify" class="rma-header-a" data-status="1">
+                    <text>修改</text>
+                </view>
+            </view>
+            <view class="rma-logistics-cont">
+                <view class="rma-logistics-list">
+                    <view class="rma-logistics-label">物流公司：</view>
+                    <view class="rma-logistics-text">{{logisticsCompony}}</view>
+                </view>
+                <view class="rma-logistics-list">
+                    <view class="rma-logistics-label">物流单号：</view>
+                    <view class="rma-logistics-text">{{logisticsNo}}</view>
+                </view>
+            </view>
+            <view class="rma-logistics-footer">
+                <text wx:if="{{applyType=='1'}}">若您退回的完整商品及相关物件成功入库，商城会在1-5个工作日内退款</text>
+                <text wx:if="{{applyType=='2'}}">若您退回的完整商品及相关物件成功入库，商城会7个工作日内寄出换货商品</text>
+            </view>
+        </view>
+    </view>
+    <view class="rma-form">
+        <view class="rma-good bg_white">
+            <view class="rma-header">
+                <view class="rma-header-txt">
+                    <image src="imgs/icon_txt.png"></image>
+                    <text>退换货信息</text>
+                </view>
+            </view>
+            <view class="rma-good-area">
+                <view class="sys-good-area" wx:for="{{rmaProductsList}}" wx:key="{{index}}">
+                    <view class="sys-good-item rma-good-item">
+                        <view class="good-panels">
+                            <view class="good-img">
+                                <image src="{{cdnPath}}{{item.photoPath}}428_428_{{item.photoName}}"></image>
+                            </view>
+                            <view class="good-info">
+                                <view class="good-name">
+                                    <text>{{item.skuName}}</text>
+                                </view>
+                                <view class="good-price-num">
+                                    <view class="good-price red">
+                                        <text wx:if="{{item.salePrice}}">¥{{item.salePrice}}	</text>
+                                        <text class="good-price-del" wx:if="{{item.originalPrice}}">¥{{item.originalPrice}}</text>
+                                    </view>
+                                    <view class="good-num">x{{item.quantity}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="sys-good-other" wx:if="{{item.giftList.length>0}}">
+                            <view class="other-good-panels" wx:for="{{item.giftList}}" wx:key="index">
+                                <view class="other-good-img">
+                                    <image src="{{cdnPath}}{{item.photoPath}}428_428_{{item.photoName}}"></image>
+                                </view>
+                                <view class="other-good-name">
+                                    <text>【赠品】</text>{{item.giftName}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="sys-good-area" wx:for="{{rmaGiftsList}}" wx:key="{{index}}">
+                    <view class="sys-good-item rma-good-item">
+                        <view class="good-panels">
+                            <view class="good-img">
+                                <image src="{{cdnPath}}{{item.photoPath}}428_428_{{item.photoName}}"></image>
+                            </view>
+                            <view class="good-info">
+                                <view class="good-name">
+                                    <text>{{item.skuName}}</text>
+                                </view>
+                                <view class="good-price-num">
+                                    <view class="good-price red">
+                                        <text wx:if="{{item.salePrice}}">¥{{item.salePrice}}	</text>
+                                        <text class="good-price-del" wx:if="{{item.originalPrice}}">¥{{item.originalPrice}}</text>
+                                    </view>
+                                    <view class="good-num">x{{item.quantity}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="rma-handle-footer">
+                <view class="rma-handle-cont">
+                    <text>处理方式：{{applyType=='1'?'退货':'换货'}}</text>
+                    <text>寄送清单：{{packageStatus}} {{repairCredentials=='1'?'发票':'无发票'}}</text>
+                    <text>退换货原因：{{repairReason}}</text>
+                    <text>问题描述：{{problemDescription}}</text>
+                    <text>联系人：{{contactBy}}</text>
+                    <text>手机号码：{{contactMobile}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{status=='1'||status=='3'}}">
+        <view class="hr-45"></view>
+        <view class="action-fixed bg_white">
+            <view class="action-btn">
+                <view bindtap="cancalApply" class="wxButton-style-3">
+                    <text>取消申请</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="openModify" class="ecWap-mask" data-status="0" wx:if="{{showModify}}"></view>
+    <view animation="{{animationData}}" class="ecWap-box ecWap-box-lower" style="position: fixed; left: 0px; width: 100%; z-index: 991; top: auto; height: 463rpx;" wx:if="{{showModify}}">
+        <view class="ecWap-box-header hide">
+            <text class="ecWap-box-title">填写物流信息</text>
+            <view class="ecWap-box-close box-close">
+                <image bindtap="openGetCoupon" data-status="0" src="../../imgs/icon_ecWap_close.png"></image>
+            </view>
+        </view>
+        <view class="ecWap-box-content">
+            <view class="ecWap-box-close box-close">
+                <image bindtap="openModify" data-status="0" src="../../imgs/icon_ecWap_close.png"></image>
+            </view>
+            <view class="logisticsModify">
+                <view class="logisticsModify-header">
+                    <text class="big">填写物流信息</text>
+                    <text class="small">（建议填写，以便商城及时确认并为您退款/换货）</text>
+                </view>
+                <view class="logisticsModify-cont">
+                    <view class="logisticsModify-list">
+                        <input bindinput="changeLogCompony" maxlength="50" placeholder="请填写物流公司" placeholderStyle="color:#888" type="text"></input>
+                    </view>
+                    <view class="logisticsModify-list">
+                        <input bindinput="changeLogNO" maxlength="50" placeholder="请填写物流单号" placeholderStyle="color:#888" type="text"></input>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <view bindtap="saveLogisticInfo" class="ecWap-box-ok box-ok" data-status="0">确定</view>
+        </view>
+    </view>
+</view>
+<view class="system-empty " wx:elif="{{showError}}">
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="../couponList/imgs/empty-coupon.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>暂时没有退换货申请</text>
+        </view>
+    </view>
+</view>

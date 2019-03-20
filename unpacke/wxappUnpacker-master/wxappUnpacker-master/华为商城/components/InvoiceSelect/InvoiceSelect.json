@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "RegionPicker": "/components/RegionPicker/RegionPicker"
+    }
+}

@@ -1,0 +1,245 @@
+page {
+    background-color: #fff;
+}
+
+.card-seach {
+    padding: 10rpx 34rpx;
+}
+
+.card-seach-input input {
+    width: 463rpx;
+    height: 73rpx;
+    line-height: 73rpx;
+    margin-right: 33rpx;
+    font-size: 25rpx;
+    padding: 0 21rpx;
+    position: relative;
+}
+
+.card-seach-input input::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    border-radius: 17rpx;
+    border: 1px solid rgba(0,0,0,.3);
+    transform-origin: 0 0;
+    transform: scale(0.5,0.5);
+    box-sizing: border-box;
+}
+
+.card-seach-btn {
+    width: 146rpx;
+    height: 73rpx;
+    line-height: 73rpx;
+    border-radius: 8rpx;
+    background: #ca141d;
+    font-size: 25rpx;
+    color: #fff;
+    text-align: center;
+}
+
+.card-seach-btn.disabled {
+    background: rgba(0,0,0,.3);
+}
+
+.card-area {
+    height: 100vh;
+}
+
+.Card {
+    padding: 32rpx 34rpx 0;
+}
+
+.card-list-item {
+    min-height: 234rpx;
+    border-radius: 11rpx;
+    position: relative;
+    overflow: hidden;
+    background-color: #d75158;
+    box-sizing: border-box;
+}
+
+.card-list-discount {
+    background-color: #895fcd;
+}
+
+.card-list-noPostage {
+    background-color: #518de5;
+}
+
+.card-list-item .card-list-bg {
+    height: 171rpx;
+}
+
+.card-list-item .card-list-bg image {
+    width: 100%;
+    height: 171rpx;
+}
+
+.card-list-item .card-item-box {
+    width: 100%;
+    height: 171rpx;
+    padding: 0 32rpx;
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card-list-item .card-price {
+    color: #fff;
+    min-width: 182rpx;
+    margin-right: 17rpx;
+    -webkit-box-flex: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card-list-item .card-price .card-em {
+    font-size: 42rpx;
+    color: #fff;
+}
+
+.card-list-item .card-price .price-length {
+    font-size: 84rpx;
+    color: #fff;
+}
+
+.card-list-item .card-price .price-length-4 {
+    font-size: 63rpx;
+}
+
+.card-list-item .card-price .card-noPostage {
+    font-size: 48rpx;
+}
+
+.card-list-item .card-info {
+    width: 100%;
+    max-width: 319rpx;
+    -webkit-box-flex: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.card-list-item .c-button {
+    -webkit-box-flex: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    padding-left: 13rpx;
+}
+
+.card-list-item .c-button view {
+    font-size: 23rpx;
+    color: #64ca75;
+    height: 42rpx;
+    line-height: 42rpx;
+    padding: 0 11rpx;
+    display: block;
+    border-radius: 5rpx;
+    background-color: #dff4e3;
+}
+
+.card-list-item .c-name,.card-list-item .c-number,.card-list-item .c-time {
+    font-size: 23rpx;
+    color: #fff;
+    line-height: 1.7;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-list-item .card-btns {
+    width: 94rpx;
+    -webkit-box-flex: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    margin-left: 8rpx;
+}
+
+.card-list-item .card-btns .c-btn {
+    width: 94rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    background-color: #fff;
+    font-size: 25rpx;
+    display: inline-block;
+    border-radius: 4rpx;
+    color: #d75158;
+    text-align: center;
+}
+
+.card-list-discount .card-btns .c-btn {
+    color: #895fcd;
+}
+
+.card-list-noPostage .card-btns .c-btn {
+    color: #518de5;
+}
+
+.card-list-item .c-name {
+    font-size: 25rpx;
+}
+
+.card-list-item .c-name text {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-list-item .card-action {
+    font-size: 23rpx;
+    padding: 17rpx 13rpx;
+    color: #fff;
+    line-height: 1.3;
+    width: 100%;
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.card-list-item .card-action .card-details {
+    width: 100%;
+    -webkit-box-flex: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.card-list-item .card-action-more .card-details {
+    padding-right: 21rpx;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.card-list-item .card-action-open .card-details {
+    padding-right: 21rpx;
+}
+
+.card-list-item .card-action .c-password {
+    margin-right: 21rpx;
+}
+
+.ecWap-box-content .exchange-info {
+    font-size: 25rpx;
+    text-align: center;
+}

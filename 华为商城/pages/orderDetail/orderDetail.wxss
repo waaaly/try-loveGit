@@ -1,0 +1,197 @@
+.order-submit-time {
+    font-size: 23rpx;
+    line-height: 55rpx;
+    text-align: center;
+    height: 55rpx;
+    background-color: #fae6e6;
+}
+
+.order-detail .order-header {
+    font-size: 25rpx;
+    color: #888;
+    line-height: 63rpx;
+    height: 63rpx;
+    padding: 0 34rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.order-form-area {
+    padding: 0 34rpx;
+}
+
+.order-form-area .order-form-row {
+    padding: 13rpx 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.order-form-area .order-form-row:last-of-type {
+    border-bottom: 0;
+}
+
+.order-form-area .order-form-header {
+    font-size: 30rpx;
+    padding-bottom: 13rpx;
+}
+
+.order-form-area .order-form-body {
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-form-area .order-form-cont {
+    word-break: break-all;
+    -webkit-box-flex: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.order-form-area .order-form-p {
+    font-size: 23rpx;
+    color: #888;
+    line-height: 1.4;
+}
+
+.order-form-area .order-form-p.system-follow-l {
+    align-items: flex-start;
+}
+
+.order-form-area .order-track .order-form-p {
+    display: none;
+}
+
+.order-form-area .order-track .openDesc .order-form-p,.order-form-area .order-track .order-form-p:first-child {
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.order-form-area .order-track .openDesc .order-form-p:first-child {
+    color: #ca141d;
+}
+
+.order-form-area .order-form-p .order-form-l {
+    padding-right: 17rpx;
+    -webkit-box-flex: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.order-form-area .order-form-p .order-form-r {
+    width: 100%;
+    display: block;
+    -webkit-box-flex: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.order-form-area .order-form-p .invoice-title {
+    margin-right: 32rpx;
+    vertical-align: middle;
+}
+
+.order-form-area .order-form-p .invoice-link {
+    color: #4a90e2;
+    margin-right: 21rpx;
+    display: inline;
+    vertical-align: middle;
+}
+
+.order-form-area .order-form-p .invoice-mark {
+    width: 29rpx;
+    height: 29rpx;
+    vertical-align: middle;
+    padding: 25rpx;
+    margin: -25rpx;
+    position: relative;
+    top: -1rpx;
+}
+
+.order-form-area .icon-arrow-more {
+    -webkit-box-flex: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.order-sc-area {
+}
+
+.order-sc-area .order-sc-list .sys-good-item {
+    margin: 0 34rpx;
+    border-top: 3rpx solid #eaeaea;
+    border-bottom: 0;
+}
+
+.order-sc-area .order-sc-list .sys-good-item:first-child {
+    border-top: 0;
+}
+
+.order-tip-cont {
+    font-size: 23rpx;
+    line-height: 1.4;
+    padding: 21rpx 34rpx;
+}
+
+.selectGroup {
+}
+
+.selectGroup .selectGroup-title {
+    height: 73rpx;
+}
+
+.selectGroup .selectGroup-title text {
+    font-size: 28rpx;
+    font-weight: bold;
+    line-height: 73rpx;
+}
+
+.selectGroup .selectGroup-dl {
+    height: 84rpx;
+    border-top: 3rpx solid #eaeaea;
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.selectGroup .selectGroup-dl .selectGroup-dt {
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    -webkit-box-flex: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.selectGroup .selectGroup-dl .selectGroup-dd {
+    width: 100%;
+    padding-left: 21rpx;
+    -webkit-box-flex: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.selectGroup .selectGroup-dl .selectGroup-dd view {
+    font-size: 28rpx;
+    line-height: 1;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.ecWap-box-lower .order-box-content {
+    top: 92rpx;
+}

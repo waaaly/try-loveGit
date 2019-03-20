@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "tab": "./components/tab/tab",
+        "marquee": "./components/marquee/marquee",
+        "zzpp": "./components/zzpp/zzpp",
+        "error": "../common/comps/error/error",
+        "pop-window": "../common/comps/pop-window/pop-window",
+        "back-homepage": "../common/comps/back-homepage/back-homepage"
+    }
+}

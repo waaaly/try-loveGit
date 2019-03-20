@@ -1,0 +1,8 @@
+<view class="timeline" hidden="{{hideModule}}">
+    <view bindtap="gotoUrl" class="timeline-main" data-url="{{config.url}}" style="{{config.image}}">
+        <view class="timeline-dl" wx:for="{{entries}}" wx:key="title">
+            <view class="timeline-dl__dt">{{item.title}}</view>
+            <view class="timeline-dl__dd">{{item.des}}</view>
+        </view>
+    </view>
+</view>

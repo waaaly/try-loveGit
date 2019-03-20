@@ -1,0 +1,64 @@
+.guide_add_xcx {
+    margin: 10px;
+}
+
+.guide_add_xcx .ziyuanwei {
+    width: 100%;
+    height: 0;
+    padding-top: 25.35%;
+    background-image: url("https://wq.360buyimg.com/fd/h5/wxsq_dev/my/images/guide_ziyuanweiv2_c0b0b18c.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.guide_add_xcx .guide_layer {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.75);
+}
+
+.guide_add_xcx .guide_layer .guide_layer_bg {
+    width: 100%;
+    height: 0;
+    padding-top: 126%;
+    background-size: 100% 100%;
+}
+
+.guide_add_xcx .guide_layer .add_to_my_xcx {
+    background-image: url("https://img11.360buyimg.com/jdphoto/s750x945_jfs/t1/199/38/9161/77977/5bab36ecE92ca1bcb/cd09fc4da4a063f7.png");
+}
+
+.guide_add_xcx .guide_layer .add_to_desk {
+    background-image: url("https://img11.360buyimg.com/jdphoto/s750x945_jfs/t1/792/28/9295/47704/5bab36ecEa69e8e2a/ba60ad8bfb0b87ee.png");
+}
+
+.guide_add_xcx .guide_layer .guide_button_wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.guide_add_xcx .guide_layer .guide_button_wrap .guide_button {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.guide_add_xcx .guide_layer .guide_button_wrap .left {
+    margin-right: 15px;
+    border: solid 1px #CCCCCC;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.guide_add_xcx .guide_layer .guide_button_wrap .right {
+    background: -webkit-linear-gradient(left,#FF4141,#FF9761);
+    box-shadow: 0px 0px 5px 1px #FF9761;
+}

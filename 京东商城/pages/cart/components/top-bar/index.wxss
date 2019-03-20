@@ -1,0 +1,94 @@
+.top_bar.fixed .top_bar_address {
+    z-index: 11;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.top_bar {
+    position: relative;
+    height: 90rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.top_bar_address {
+    overflow: hidden;
+    position: relative;
+    padding: 0 20rpx;
+    height: 90rpx;
+    margin-bottom: -2rpx;
+    line-height: 90rpx;
+    background: #fff;
+}
+
+.top_bar_address_text {
+    position: relative;
+    display: inline-block;
+    color: #999;
+    max-width: 40%;
+    margin-right: 40rpx;
+    white-space: nowrap;
+    font-size: 28rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.top_bar_address_text::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 26rpx;
+    height: 30rpx;
+    margin: -4rpx 10rpx 0 0;
+    background: url(https://img11.360buyimg.com/jdphoto/s26x30_jfs/t23887/210/5388573/289/48745302/5b225924N948acf83.png);
+    background-size: 26rpx!important;
+}
+
+.top_bar_address_btn {
+    float: right;
+    padding-left: 20rpx;
+    font-size: 28rpx;
+    color: #e93b3d;
+    display: inline-block;
+}
+
+.top_bar_address .btn_quick_clear::before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 2rpx;
+    margin-right: 12rpx;
+    width: 14rpx;
+    height: 24rpx;
+    background: url(https://img11.360buyimg.com/jdphoto/s14x24_jfs/t18418/311/1432226713/512/833d56c7/5ac9c99dN3cbb3e25.png);
+    background-size: 14rpx 24rpx;
+}
+
+.top_bar~.quick_clear_tip {
+    padding: 10rpx 20rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    font-size: 24rpx;
+    color: #fff;
+    background: rgba(0,0,0,.7);
+    border-radius: 30rpx;
+    position: absolute;
+    top: 80rpx;
+    right: 20rpx;
+}
+
+.top_bar~.quick_clear_tip::after {
+    content: "";
+    position: absolute;
+    top: -8rpx;
+    right: 48rpx;
+    width: 0;
+    height: 0;
+    border-width: 0 10rpx 10rpx;
+    border-style: solid;
+    border-color: transparent transparent rgba(0,0,0,.7);
+}

@@ -1,0 +1,68 @@
+.container {
+    width: 100vw;
+    background: #F2F2F2;
+}
+
+.golden {
+    color: #CEA164;
+}
+
+.prompat {
+    text-align: center;
+    padding-top: 80rpx;
+    font-size: 30rpx;
+}
+
+.sloadding {
+    text-align: center;
+    padding-top: 200rpx;
+    width: 100%;
+}
+
+.sloadding image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.header {
+    width: 100%;
+    padding: 30rpx 45rpx;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.header .serach-btn {
+    width: 180rpx;
+    height: 60rpx;
+}
+
+.header .val {
+    margin-top: 10rpx;
+}
+
+.list {
+    margin-top: 12rpx;
+}
+
+.list-item {
+    padding: 30rpx 45rpx;
+    border-bottom: 2rpx solid #E8E8E8;
+    background: #fff;
+}
+
+.list .list-item:nth-child(2n) {
+    background: #FBFBFB;
+}
+
+.exchange-txt {
+    line-height: 65rpx;
+}
+
+.list-item .color80 {
+    margin-left: 15rpx;
+}
+
+.list-item .date {
+    margin-top: 10rpx;
+    color: #C7C7C7;
+}

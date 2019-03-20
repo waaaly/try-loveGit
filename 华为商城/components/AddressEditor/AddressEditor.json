@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "RegionPicker": "/components/RegionPicker/RegionPicker",
+        "Toast": "/components/Toast/Toast"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "AddressList": "/components/AddressList/AddressList",
+        "AddressEditor": "/components/AddressEditor/AddressEditor",
+        "WxAddressChooser": "/components/WxAddressChooser/WxAddressChooser"
+    }
+}

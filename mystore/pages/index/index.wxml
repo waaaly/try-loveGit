@@ -1,0 +1,75 @@
+<!--index.wxml-->
+<view class='container'>
+    <view class='top-navigation-bar'>
+        <image class="search-icon" src="/staticFiles/icons/search.png"></image> 
+        <text class='search-input'>输入关键字搜索</text>
+    </view>
+
+  <swiper class='index-swiper' indicator-dots='true' interval='3000' autoplay='true' duration='1000'>
+    <swiper-item wx:for='{{indexSwiperPics}}'>
+      <image class='swiper-pics' src='{{item}}'></image>
+    </swiper-item>
+  </swiper>
+
+    <text>李白乘舟</text>
+
+    <view class='classify-list'>
+        <view catchtap="goto_two_page" class="classify-node" data-index="1">
+            <image src="/staticFiles/icons/q11.png" style="width:120rpx;height:120rpx;"></image>
+            <text class="font">床</text>
+        </view>
+        <view catchtap="goto_two_page" class="classify-node" data-index="3">
+            <image src="/staticFiles/icons/q4.png" style="width:120rpx;height:120rpx;"></image>
+            <text class="font">前</text>
+        </view>
+        <view catchtap="goto_two_page" class="classify-node" data-index="3">
+            <image src="/staticFiles/icons/q3.png" style="width:120rpx;height:120rpx;"></image>
+            <text class="font">明</text>
+        </view>
+        <view catchtap="goto_two_page" class="classify-node" data-index="4">
+            <image src="/staticFiles/icons/q2.png" style="width:120rpx;height:120rpx;"></image>
+            <text class="font">月</text>
+        </view>
+        <view catchtap="goto_two_page" class="classify-node" data-index="5">
+            <image src="/staticFiles/icons/q1.png" style="width:120rpx;height:120rpx;"></image>
+            <text class="font">光</text>
+        </view>
+    </view>
+
+  <scroll-view scroll-x class='scroll' >
+    <view class="scroll-view">
+        <image  class="scroll-view-image" src='/staticFiles/icons/q10.png'></image>
+        <text class="scroll-view-text">抢购价：$111.1</text>
+    </view>
+    <view class="scroll-view">
+        <image  class="scroll-view-image" src='/staticFiles/icons/q1.png'></image>
+        <text class="scroll-view-text">抢购价：$111.1</text>
+    </view>
+    <view class="scroll-view">
+        <image  class="scroll-view-image" src='/staticFiles/icons/q11.png'></image>
+        <text class="scroll-view-text">抢购价：$111.1</text>
+    </view>
+    <view class="scroll-view">
+        <image  class="scroll-view-image" src='/staticFiles/icons/q12.png'></image>
+         <text class="scroll-view-text">抢购价：$111.1</text>
+    </view>
+    <view class="scroll-view">
+        <image  class="scroll-view-image" src='/staticFiles/icons/q2.png'></image>
+        <text class="scroll-view-text">抢购价：$111.1</text>
+    </view>
+    <view class="scroll-view">
+        <image  class="scroll-view-image" src='/staticFiles/icons/q6.png'></image>
+        <text class="scroll-view-text">抢购价：$111.1</text>
+    </view>
+    <view class="scroll-view">
+        <image  class="scroll-view-image" src='/staticFiles/icons/q4.png'></image>
+        <text class="scroll-view-text">抢购价：$111.1</text>
+    </view>
+    <view class="scroll-view">
+        <image  class="scroll-view-image" src='/staticFiles/icons/q3.png'></image>
+        <text class="scroll-view-text">抢购价：$111.1</text>
+    </view>
+  </scroll-view>
+
+</view>
+

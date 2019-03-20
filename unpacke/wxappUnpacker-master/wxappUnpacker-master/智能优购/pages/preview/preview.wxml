@@ -1,0 +1,52 @@
+<view class="container">
+    <view class="inner">
+        <view class="wishes-panel">
+            <view bindtap="bindViewTap" wx:if="{{state==='0'}}">
+                <view class="userinfo">
+                    <image backgroundSize="cover" class="userinfo-avatar" src="{{userInfo.pic}}"></image>
+                </view>
+                <view class="to-name">
+                    <text>祝 {{toname}} :</text>
+                </view>
+                <view class="best-wishes">
+                    <text>{{sentence}}</text>
+                </view>
+            </view>
+            <block wx:if="{{state==='1'}}">
+                <view class="userinfo">
+                    <image backgroundSize="cover" class="userinfo-avatar" src="{{fromavatar}}"></image>
+                </view>
+                <view class="to-name">
+                    <text>祝 {{toname}} :</text>
+                </view>
+                <view class="best-wishes">
+                    <text>{{sentence}}</text>
+                </view>
+                <view class="from-name">
+                    <text>{{fromname}}</text>
+                </view>
+                <view class="date">
+                    <text>{{sentday}}</text>
+                </view>
+            </block>
+        </view>
+        <view class="btns">
+            <block wx:if="{{state==='0'}}">
+                <button bindtap="changeOne" class="change-btn">换一个</button>
+                <button bindgetphonenumber="shareTips" class="finish-btn" openType="getPhoneNumber">送祝福</button>
+            </block>
+            <button bindgetphonenumber="getPhoneNumber" class="custom-btn" openType="getPhoneNumber" wx:if="{{state==='1'}}">制作我的祝福话</button>
+        </view>
+        <view class="copy-right col ju-center">
+            <view bindtap="gotoActive" class="col ju-center">
+                <text class="h3">顺便带一些中秋礼品吧</text>
+                <text class="h4">中秋大促,嗨购15天!</text>
+                <text class="h4">[点我了解详情]</text>
+            </view>
+            <text class="last-txt">—— 智融优购产品中心 ——</text>
+        </view>
+    </view>
+</view>
+<div bindtap="hideOverlay" class="overlay" wx:if="{{showOverlay}}">
+    <image class="tips" src="../../images/share_img_game.png"></image>
+</div>

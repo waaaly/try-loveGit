@@ -1,0 +1,24 @@
+{
+    "component": true,
+    "usingComponents": {
+        "header": "../header/header",
+        "search-bar": "../search-bar/search-bar",
+        "carousel": "../carousel/carousel",
+        "c-channel": "../channel/channel",
+        "banner": "../banner/banner",
+        "task": "../task/task",
+        "grid-selected": "../grid-selected/grid-selected",
+        "curtain": "../curtain/curtain",
+        "floating": "../floating/floating",
+        "tab-selected": "../tab-selected/tab-selected",
+        "bottom-tips": "../bottom-tips/bottom-tips",
+        "shake": "../../components/shake/shake",
+        "column": "../column/column",
+        "sale-floating": "../../dbl11-components/floating/floating",
+        "sale-wallet-official-selected": "../../dbl11-components/wallet-official-selected/wallet-official-selected",
+        "sale-official-promote": "../../dbl11-components/official-promote/official-promote",
+        "sale-official-timeline": "../../dbl11-components/official-timeline/official-timeline",
+        "sale-wallet-climax-selected": "../../dbl11-components/wallet-climax-selected/wallet-climax-selected",
+        "sale-climax-promote": "../../dbl11-components/climax-promote/climax-promote"
+    }
+}

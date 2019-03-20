@@ -1,0 +1,90 @@
+<view class="{{hideEmptyClass=='hide'?'card-area':''}}">
+    <view class="card-seach display-flex align-items-center">
+        <view class="card-seach-input">
+            <input bindfocus="toChangeExchangeCode" bindinput="toChangeExchangeCode" placeholder="请输入16-32位券码" placeholderStyle="color:#999;opacity:0.5;" type="text" value="{{initExchangeCode}}"></input>
+        </view>
+        <view bind:tap="toExchangeCoupon" class="card-seach-btn {{!exchangeCode.length&&'disabled'}}">
+            <text>兑换</text>
+        </view>
+    </view>
+    <view class="Card" wx:for="{{couponList}}" wx:for-index="idx" wx:for-item="coupon" wx:key="couponCode">
+        <view class="card-list-item card-list-{{coupon.frontType}}">
+            <view class="card-list-bg">
+                <image src="imgs/bg_card_{{coupon.frontType}}.png"></image>
+            </view>
+            <view class="card-item-box">
+                <view class="card-price">
+                    <text class="card-em" wx:if="{{coupon.frontType=='coupon'}}">¥ </text>
+                    <text class="price-length price-length-4" wx:if="{{coupon.frontType=='coupon'}}">{{coupon.amount}}</text>
+                    <text class="price-length price-length-3" wx:if="{{coupon.frontType=='discount'}}">{{coupon.discount*10}}</text>
+                    <text class="card-em" wx:if="{{coupon.frontType=='discount'}}">折</text>
+                    <text class="card-noPostage price-length price-length-3" wx:if="{{coupon.frontType=='noPostage'}}">免邮券</text>
+                </view>
+                <view class="card-info">
+                    <view class="c-name">
+                        <text>{{coupon.couponName}}</text>
+                    </view>
+                    <view class="c-time">
+                        <text>{{coupon.beginDate}}~{{coupon.endDate}}</text>
+                    </view>
+                    <view class="c-number">编号：<text>{{coupon.couponCode}}</text>
+                    </view>
+                </view>
+                <view class="card-btns">
+                    <view bindtap="goUse" data-couponCode="{{coupon.couponCode}}" id="goUse">
+                        <text class="c-btn">去使用</text>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="opentext" class="card-action {{coupon.openIcon?'card-action-open':'card-action-more'}}" data-idx="{{idx}}">
+                <view class="card-details">
+                    <text class="c-user">使用要求：</text>
+                    <text class="c-term">{{coupon.couponDes}}</text>
+                </view>
+                <view class="{{coupon.openIcon?'icon-more-top':'icon-more-bottom'}}">
+                    <image class="{{coupon.showIcon?'show':'hide'}}" src="../../imgs/icon_arrow_more_white.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{loadMore}}">
+        <view class="loading">
+            <image src="../../imgs/icon_pull.png"></image>
+            <text class="more-loading">上拉加载更多优惠券</text>
+        </view>
+        <view class="loading" wx:if="{{loadMore}}">
+            <image src="../../imgs/loading.gif"></image>
+        </view>
+    </view>
+    <view class="buttonMore loading" wx:if="{{totalList}}">
+        <text class="loading-end">已加载全部优惠券</text>
+    </view>
+    <view class="system-empty {{hideEmptyClass}}">
+        <view class="system-empty-cont">
+            <view class="system-empty-icon">
+                <image src="imgs/empty-coupon.png"></image>
+            </view>
+            <view class="system-empty-tip">
+                <text>您还没领取优惠券</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="ecWap-mask" wx:if="{{exchangeModal.isShow}}"></view>
+<view class="ecWap-box-middle" wx:if="{{exchangeModal.isShow}}">
+    <view class="ecWap-box ecWap-box-center">
+        <view class="ecWap-box-header">
+            <text class="ecWap-box-title ellipsis-pub-one">{{exchangeModal.title}}</text>
+        </view>
+        <view class="ecWap-box-content">
+            <view class="exchange-info ellipsis-pub-one">
+                <text>{{exchangeModal.content}}</text>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <view bind:tap="toComfirmExchangeModal" class="ecWap-box-cancel">
+                <text>{{exchangeModal.confirmText}}</text>
+            </view>
+        </view>
+    </view>
+</view>

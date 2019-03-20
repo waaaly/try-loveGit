@@ -1,0 +1,22 @@
+.floor-header {
+    padding: 30rpx 0 20rpx;
+    position: relative;
+    text-align: center;
+    border-bottom: 1rpx solid #f0f0f0;
+    height: 106rpx;
+    box-sizing: border-box;
+    background-size: 750rpx 106rpx;
+}
+
+.floor-header__group {
+    display: inline-block;
+}
+
+.floor-header__zh {
+    font-size: 36rpx;
+    font-weight: bold;
+}
+
+.floor-header__zh:first-letter {
+    color: #333;
+}

@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "京东微店",
+    "usingComponents": {
+        "quick-nav": "../../../components/quick-nav/quick-nav",
+        "shop-header": "./components/shop-header/index",
+        "shop-marketing-bar": "./components/shop-marketing-bar/index",
+        "shop-promotion": "./components/shop-promotion/index",
+        "shop-dynamic": "./components/shop-dynamics/index",
+        "shop-all": "./components/shop-all/index",
+        "shop-default": "./components/shop-default/index",
+        "shop-footer": "./components/shop-footer/index",
+        "shop-dtm-tmp": "./components/shop-dtm-tmp/tmp",
+        "modal": "../../components/modal_youju/modal",
+        "shop-marketing-dialog": "./components/shop-marketing-dialog/index",
+        "closing-shop-notification": "./components/closing-shop-notification/index"
+    }
+}

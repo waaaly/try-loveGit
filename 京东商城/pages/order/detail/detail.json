@@ -1,0 +1,21 @@
+{
+    "navigationBarTitleText": "订单详情",
+    "usingComponents": {
+        "shops": "./components/shops/shops",
+        "invoice": "./components/invoice/invoice",
+        "middle-block": "./components/middleBlock/middleBlock",
+        "top-block": "./components/topBlock/topBlock",
+        "mid-bannerblock": "./components/midBannerblock/midBannerblock",
+        "wq-dialog": "../oCommon/components/wqDialog/wqDialog",
+        "quick-nav": "../../../components/quick-nav-wqvue/index",
+        "recommend": "/components/recommend/index",
+        "detail-dialog": "./components/detailDialog/detailDialog",
+        "pay-box": "../oCommon/components/payBox/pay-box",
+        "out-sale-dialog": "../oCommon/components/outSaleDialog/outSaleDialog",
+        "loc-code": "./components/locCode/locCode",
+        "recommend-tuan": "/pages/components/recommend-tuan/recommend-tuan",
+        "pin-group": "./components/pinGroup/pinGroup",
+        "delete-thoroughly": "./components/deleteThoroughly/deleteThoroughly",
+        "guideAddXcx": "/components/guide-add-xcx/guide-add-xcx"
+    }
+}

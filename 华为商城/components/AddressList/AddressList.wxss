@@ -1,0 +1,180 @@
+@import "../../app.wxss";
+
+.address-list {
+}
+
+.address-list .address-item {
+    padding: 25rpx 0 25rpx 34rpx;
+    position: relative;
+}
+
+.address-list .address-item:after {
+    content: '';
+    position: absolute;
+    left: 34rpx;
+    right: 34rpx;
+    bottom: 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.address-list .address-item:nth-last-child(1):after {
+    content: '';
+    border-bottom: 0;
+}
+
+.address-item .address-default {
+    width: 75rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.address-item .address-default image {
+    width: 75rpx;
+    height: 30rpx;
+}
+
+.address-item label {
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    -webkit-box-flex: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.address-item label .radiobox {
+    padding-right: 21rpx;
+    -webkit-box-flex: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.address-item label .address-cont {
+    width: 100%;
+    word-break: break-all;
+    -webkit-box-flex: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.address-item label .addr-user {
+    font-size: 28rpx;
+}
+
+.address-item label .addr-user view {
+    display: inline-block;
+}
+
+.address-item label .addr-user-name {
+    font-weight: bold;
+    padding-right: 21rpx;
+}
+
+.address-item label .addr-info {
+    font-size: 25rpx;
+    line-height: 1.3;
+    padding-top: 11rpx;
+}
+
+.address-item label .address-btn {
+    width: 38rpx;
+    height: 38rpx;
+    padding: 15rpx 49rpx 15rpx 15rpx;
+    margin-left: 34rpx;
+    -webkit-box-flex: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.address-item label .address-btn image {
+    width: 38rpx;
+    height: 38rpx;
+    display: block;
+    margin-left: 15rpx;
+}
+
+.address-pop-box .address-item {
+    position: relative;
+    padding: 27rpx 0;
+    border-bottom: 1rpx solid #eaeaea;
+}
+
+.address-pop-box .address-item:after {
+    border: 0;
+}
+
+.address-pop-box .address-item label .radiobox {
+    padding-right: 33rpx;
+}
+
+.address-pop-box .address-item label .radiobox radio+.state {
+    background-image: url(data:image/png;base64,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);
+    background-position: center;
+    background-size: 100%;
+}
+
+.address-pop-box .address-item label .address-cont {
+    padding-top: 37rpx;
+}
+
+.address-pop-box .address-item label .address-btn {
+    width: 50rpx;
+    height: 50rpx;
+    margin-left: 65rpx;
+    padding-right: 20rpx;
+    position: relative;
+    right: -20rpx;
+}
+
+.address-pop-box .address-item label .address-btn image {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+}
+
+.address-pop-box .address-item label .addr-info {
+    font-size: 23rpx;
+    color: #999;
+    padding-top: 3rpx;
+}
+
+.address-pop-box .address-item .addr-user {
+    font-size: 27rpx;
+    position: absolute;
+    left: 69rpx;
+    top: 27rpx;
+    width: 100%;
+    height: 37rpx;
+}
+
+.address-pop-box .address-item .addr-user view {
+    vertical-align: middle;
+}
+
+.address-pop-box .address-item .addr-user .addr-user-phone {
+    font-weight: bold;
+    padding-right: 21rpx;
+}
+
+.address-pop-box .address-item .addr-user .addr-user-defalut {
+    position: relative;
+    width: 64rpx;
+    padding: 15rpx 0 14rpx;
+    line-height: 2rpx;
+    font-size: 21rpx;
+    border-radius: 17rpx;
+    border: 1rpx solid #ca141d;
+    color: #ca141d;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.address-pop-box .addr-user .addr-user-defalut text {
+    display: block;
+    height: 100%;
+    position: relative;
+    left: 1rpx;
+}

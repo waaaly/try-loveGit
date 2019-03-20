@@ -1,0 +1,35 @@
+<view class="filter">
+    <view bindtap="bindSortTap" class="{{sort==0?'cur':''}}" data-tab="0">最新</view>
+    <view bindtap="bindSortTap" class="{{sort==1?'cur':''}}" data-tab="1">销量</view>
+    <view bindtap="bindSortTap" class="{{sort==2?'cur':''}}" data-tab="2">价格</view>
+</view>
+<view class="container">
+    <view bindtap="bindContentTap" class="item" data-id="{{item.id}}" wx:for="{{dataset}}" wx:key="unique">
+        <view>
+            <image class="img" src="{{item.mainpic}}"></image>
+        </view>
+        <view class="title">
+            <view class="jd_img" wx:if="{{item.brandtype==1}}">京东</view>  
+    {{item.title}}</view>
+        <view class="cost">
+            <span>原价:{{item.cost1}}</span>
+            <i wx:if="{{item.isgroup}}">￥{{item.cost3}}</i>
+            <i wx:if="{{!item.isgroup}}">￥{{item.cost2}}</i>
+        </view>
+        <view class="button" wx:if="{{item.isgroup}}">去拼团</view>
+        <view class="button" wx:if="{{!item.isgroup}}">去购买</view>
+    </view>
+</view>
+<view class="clear"></view>
+<view class="recommend_bottom">
+    <view class="bottomcenter" wx:if="{{!loadIsEnd}}">
+        <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+        </view>
+    <view class="endparent" wx:if="{{loadIsEnd}}">
+        <view class="prompat" wx:if="{{dataset.length==0}}">没有任何记录~~</view>
+        <view class="bottomline" wx:if="{{dataset.length>0}}"></view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

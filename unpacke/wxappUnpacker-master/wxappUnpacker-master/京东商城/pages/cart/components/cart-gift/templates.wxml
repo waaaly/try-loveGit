@@ -1,0 +1,61 @@
+<template name="tplEmptyGift">
+    <view class="empty_cart_coupon" wx:if="{{gifts.length>0}}">
+        <view class="mod_coupon_head" wx:if="{{!showToUse}}">
+            <view class="mod_coupon_title">恭喜获得<text class="dot"></text>专属优惠礼包</view>
+            <view bindtap="onTabGetGift" class="mod_coupon_get">一键领取</view>
+        </view>
+        <view class="mod_coupon_head" wx:if="{{showToUse}}">
+            <view class="mod_coupon_title">已领取<text class="dot"></text>专属优惠礼包</view>
+            <view bindtap="onTabToUse" class="mod_coupon_get">去使用<text class="arrow"></text>
+            </view>
+        </view>
+        <view class="mod_coupon_area">
+            <view class="mod_coupon {{gift.c_type}}" wx:if="{{gift.bingo}}" wx:for="{{gifts}}" wx:for-index="giftIndex" wx:for-item="gift" wx:key="giftIndex">
+                <view class="mod_coupon_info">
+                    <text class="c_type">{{gift.prizeName}}</text>
+                    <view class="c_count">
+                        <text class="yen">{{gift.iconText}}</text>
+                        <text class="num">{{gift.discount}}</text>
+                    </view>
+                    <text class="c_desc">{{gift.name}}</text>
+                </view>
+                <view class="mod_coupon_more">{{gift.limitDesc}}</view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="tplCartGift">
+    <view bindtap="onTabGetGift" class="shopcart_btm_tips" wx:if="{{showGiftBar}}">
+        <text class="shopcart_btm_tips_text">送您专享购物福利，{{totle}}元礼包等您领！</text>
+        <text class="shopcart_btm_tips_link">点击领取</text>
+    </view>
+    <view class="shop_gift {{showGiftDetail?'show':''}}">
+        <view class="shop_gift_box">
+            <view class="shop_gift_box_header"></view>
+            <view class="shop_gift_box_wrap">
+                <view class="shop_gift_box_wrap_batch"></view>
+                <view class="shop_gift_box_wrap_title">专属购物礼包领取成功</view>
+                <view class="shop_gift_box_wrap_sub_title">快去选择商品下单吧</view>
+                <view class="shop_gift_box_wrap_quan">
+                    <view class="shop_gift_box_wrap_quan_wrap {{gift.c_type}}" wx:if="{{gift.bingo}}" wx:for="{{gifts}}" wx:for-index="giftIndex" wx:for-item="gift" wx:key="giftIndex">
+                        <view class="gift_amount">
+                            <view class="gift_amount_price">
+                                <text class="gift_amount_price_icon">{{gift.iconText}}</text>
+                                <text class="gift_amount_price_num">{{gift.discount}}</text>
+                            </view>
+                            <view class="gift_amount_con">{{gift.limitDesc}}</view>
+                        </view>
+                        <view class="gift_info">
+                            <view class="gift_info_text">
+                                <text class="gift_info_text_type">{{gift.prizeName}}</text>
+                            {{gift.name}}
+                        </view>
+                            <view class="gift_info_text_tip">{{gift.timedesc}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="closeGiftPanel" class="shop_gift_box_wrap_btn">知道了</view>
+            </view>
+        </view>
+    </view>
+</template>

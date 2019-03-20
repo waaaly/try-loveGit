@@ -1,0 +1,5 @@
+{
+    "navigationBarTitleText": "我的账单",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+}

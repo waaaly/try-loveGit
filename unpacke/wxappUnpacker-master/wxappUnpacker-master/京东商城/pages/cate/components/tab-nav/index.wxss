@@ -1,0 +1,21 @@
+.tab {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 160rpx;
+    background: #f8f8f8;
+}
+
+.tab__item {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.tab__item--cur {
+    font-size: 14px;
+    color: #e93b3d;
+    background: #fff;
+}

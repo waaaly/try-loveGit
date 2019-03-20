@@ -1,0 +1,12 @@
+.data_null {
+    padding-top: 10%;
+}
+
+.data_null_img {
+    width: 50%;
+}
+
+.data_null_txt {
+    font-size: 26rpx;
+    color: #808080;
+}

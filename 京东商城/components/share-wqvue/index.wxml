@@ -1,0 +1,15 @@
+<view class="share-box">
+    <form bindsubmit="onSubItem" class="share-box_xcx" reportSubmit="true" wx:if="{{isXcx}}">
+        <button data-attr="{{'share-button'}}" data-domdata="{{domDataStr}}" formType="submit" openType="share" style="{{btnStyleRes||btnStyle}}" type="default">{{btnText}}</button>
+    </form>
+    <view class="share-box_h5 " wx:else>
+        <button catchtap="showCurtain" class="share-box_btn" data-attr="{{'share-button'}}" data-domdata="{{domDataStr}}" style="{{btnStyleRes||btnStyle}}">{{btnText}}</button>
+        <view catchtap="close" class="share" wx:if="{{isShowCurtain}}">
+            <view class="share__main">
+                <image class="share__main-img" src="{{shareCurtainPic}}"></image>
+                <view class="share__main-text">{{guideText}}</view>
+            </view>
+            <view class="share__main-close" wx:if="{{showClose}}"></view>
+        </view>
+    </view>
+</view>

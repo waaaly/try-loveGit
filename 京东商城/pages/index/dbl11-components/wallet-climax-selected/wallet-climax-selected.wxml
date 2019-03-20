@@ -1,0 +1,15 @@
+<view class="selected" hidden="{{!entries1.length}}" style="{{config.bg}}">
+    <view class="selected-header">
+        <view class="selected-header__image"></view>
+        <view bindtap="gotoUrl" class="selected-header__btn selected-header__btn-left" data-url="{{config.leftUrl}}" hidden="{{!config.leftText}}">{{config.leftText}}</view>
+        <view bindtap="gotoUrl" class="selected-header__btn selected-header__btn-right" data-url="{{config.rightUrl}}" hidden="{{!config.rightText}}">{{config.rightText}}</view>
+        <view class="selected-header__tab selected-header__tab-left" style="left: 240rpx">{{config.tab1}}</view>
+    </view>
+    <view class="selected-list1" hidden="{{entries1.length==0}}">
+        <view bindtap="gotoUrl" class="selected-list1__item" data-url="{{item.url}}" wx:for="{{entries1}}" wx:key="title">
+            <view class="selected-list1__dl selected-list1__dl-dt">{{item.title}}</view>
+            <view class="selected-list1__dl selected-list1__dl-dd selected-list1__dl-dd{{index}}">{{item.des}}</view>
+            <image class="selected-list1__image" src="{{item.image}}"></image>
+        </view>
+    </view>
+</view>

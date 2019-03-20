@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "签到领现金",
+    "usingComponents": {
+        "header-cash": "./components/header/index",
+        "tab": "./components/tab/index",
+        "detail": "./components/detail/index",
+        "coupon": "./components/coupon/index",
+        "rule": "../../components/rule/index"
+    }
+}

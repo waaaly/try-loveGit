@@ -1,0 +1,12 @@
+<view class="action-sheet">
+    <view catchtap="closeLayer" catchtouchmove="noscroll" class="popup__mask action-sheet__mask {{isShowLayer?'popup__mask--show':''}} {{showAnim?'popup__mask--anim':''}}"></view>
+    <view class="popup__main action-sheet__wrap {{isShowLayer?'show':''}}">
+        <view class="action-sheet__body">
+            <view class="action-sheet__title line2" wx:if="{{title}}">{{title}}</view>
+            <view catchtap="handleItemClick" class="action-sheet__list-item line1" data-idx="{{index}}" wx:for="{{listData}}" wx:key="*this">{{item}}</view>
+        </view>
+        <view class="action-sheet__footer">
+            <view catchtap="closeLayer" class="action-sheet__btn">取消</view>
+        </view>
+    </view>
+</view>

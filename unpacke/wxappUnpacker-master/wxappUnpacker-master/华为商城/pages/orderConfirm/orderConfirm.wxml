@@ -1,0 +1,513 @@
+<view class="order-form-area bg_white" wx:if="{{!isGoToStore}}">
+    <view bindtap="changeAddress" class="order-form-area bg_white system-l-r-r order-confirm-address">
+        <view class="system-between-l address-cont" wx:if="{{hasAddress}}">
+            <view class="addr-user">
+                <view class="addr-user-name">{{orderDeliveryAddress.consignee}}</view>
+                <view class="addr-user-phone">{{orderDeliveryAddress.mobile}}</view>
+            </view>
+            <view class="addr-info">{{orderDeliveryAddress.provinceName}}{{orderDeliveryAddress.cityName}}{{orderDeliveryAddress.districtName}}{{orderDeliveryAddress.streetName}}{{orderDeliveryAddress.address}}</view>
+            <view class="addr-partial-tips" wx:if="{{needL4Addr}}">
+                <text>您的地址信息不全，完善街道地址后才能下单哦</text>
+            </view>
+        </view>
+        <view class="system-between-l address-cont" wx:else>
+            <view class="addr-empty">点击添加地址信息</view>
+        </view>
+        <view bindtap="opensupport" class="btn-next" data-status="1">
+            <view class="icon-more-right">
+                <image src="../../imgs/icon_arrow_more.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="order-form-area bg_white" wx:if="{{isGoToStore}}">
+    <view class="order-confirm-header order-confirm-header-small ui-border-b">
+        <text class="order-header">配送方式</text>
+    </view>
+    <view class="shipping-mode">
+        <view class="mode-nav">
+            <view bindtap="toStore" class="mode-nav-item {{goStore?'current':''}}" wx:if="{{isDisable}}">门店自提</view>
+            <view bindtap="toDelivery" class="mode-nav-item {{goDelivery?'current':''}}">物流派送</view>
+        </view>
+        <view class="mode-tab" wx:if="{{goStore}}">
+            <view class="mode-tab-p">
+                <text>自提地点：</text>{{offlineShopInfo.province}}{{offlineShopInfo.city}}{{offlineShopInfo.district}}{{offlineShopInfo.street}}{{offlineShopInfo.address}}</view>
+            <view class="mode-tab-p">
+                <text>联系店家：</text>{{offlineShopInfo.shopTelephone}}</view>
+            <view class="mode-tab-p">
+                <text>营业时间：</text>{{offlineShopInfo.businessHrs}}</view>
+            <view class="mode-tab-p">
+                <text>自提说明：</text>您可到现场对实体产品进行查收，提货时间请联系店家</view>
+        </view>
+        <view bindtap="changeAddress" class="mode-tab system-l-l-r" wx:if="{{goDelivery}}">
+            <view class="system-between-l" wx:if="{{hasAddress}}">
+                <view class="mode-tab-p">
+                    <view>{{orderDeliveryAddress.consignee}}</view>
+                    <view class="mode-tab-phone">{{orderDeliveryAddress.mobile}}</view>
+                </view>
+                <view class="mode-tab-p">
+                    <view>{{orderDeliveryAddress.provinceName}}{{orderDeliveryAddress.cityName}}{{orderDeliveryAddress.districtName}}{{orderDeliveryAddress.streetName}}{{orderDeliveryAddress.address}}</view>
+                </view>
+                <view class="addr-partial-tips" wx:if="{{needL4Addr}}">
+                    <text>您的地址信息不全，完善街道地址后才能下单哦</text>
+                </view>
+            </view>
+            <view class="system-between-l" wx:else>
+                <view class="mode-tab-p">点击添加地址信息</view>
+            </view>
+            <view class="btn-next">
+                <view class="icon-more-right">
+                    <image src="../../imgs/icon_arrow_more.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="order-create-area" wx:for="{{confirmVOLists}}" wx:for-index="idx" wx:for-item="confirmVO" wx:key="id">
+    <navigator hoverClass="navigator-hover" url="../invoiceSelect/invoiceSelect?params={{invoiceShowDataString}}">
+        <view class="order-form-area bg_white system-l-r-r o-invoice">
+            <view class="system-l">
+                <text class="invoice-type">{{invoiceShowData.invoiceTypeName}}</text>
+            </view>
+            <view class="system-between-r">
+                <text class="invoice-title">{{invoiceShowData.invoiceTitleTypeName}}</text>
+            </view>
+            <view class="btn-next">
+                <view class="icon-more-right">
+                    <image src="../../imgs/icon_arrow_more.png"></image>
+                </view>
+            </view>
+        </view>
+    </navigator>
+    <view class="order-form-area bg_white">
+        <view class="order-confirm-header ui-border-b order-confirm-shipper">
+            <view class="system-item-center">
+                <view class="icon-shipper">
+                    <image src="imgs/icon_shipper.png"></image>
+                </view>
+                <text class="order-header-big">{{shopCarrierName?shopCarrierName:'华为商城'}}配送</text>
+            </view>
+        </view>
+        <view class="order-good-list" wx:for="{{confirmVO.singlePrdList}}" wx:for-index="idx" wx:for-item="singlePrd" wx:key="id">
+            <view class="order-good-area order-good-module {{singlePrd.disableStatus!=0&&!goStore?'disabled':''}}">
+                <view class="order-good-box ui-border-b system-l-l-r">
+                    <view class="system-l g-img">
+                        <image src="{{cdnPath}}{{singlePrd.photoPath}}142_142_{{singlePrd.photoName}}"></image>
+                    </view>
+                    <view class="system-between-l system-item-center g-basic">
+                        <view class="g-name {{refreshStatus?'g-name-change':''}}">{{singlePrd.name}}</view>
+                        <view class="g-tip red" wx:if="{{singlePrd.disableStatus!=0&&singlePrd.disableStatus!=12}}">此商品已失效</view>
+                        <view class="g-tip red" wx:if="{{singlePrd.disableStatus==12}}">{{disableContent}}</view>
+                    </view>
+                    <view class="system-r g-summary system-only-between">
+                        <view class="g-amount">x{{singlePrd.quantity}}</view>
+                        <view class="g-price">¥ {{singlePrd.orderPrice}}</view>
+                    </view>
+                </view>
+                <view class="order-good-annex ui-border-b">
+                    <view class="order-annex-list ui-border-b order-annex-service" wx:if="{{singlePrd.extendList.length>0||singlePrd.extendList.length>0}}">
+                        <view class="order-annex-title">服务</view>
+                        <view class="order-annex-box" wx:if="{{singlePrd.extendList.length>0}}">
+                            <view class="system-l-l-r">
+                                <view class="system-between-l">
+                                    <text class="g-name">{{singlePrd.extendList[0].name}}</text>
+                                </view>
+                                <view class="system-r g-summary system-only-between">
+                                    <view class="g-amount">x{{singlePrd.extendList[0].quantity}}</view>
+                                    <view class="g-price">¥ {{singlePrd.extendList[0].skuPrice}}</view>
+                                </view>
+                            </view>
+                            <view class="g-tip red" wx:if="{{singlePrd.disableStatus!=0&&singlePrd.disableStatus!=12}}">此商品已失效</view>
+                            <view class="g-tip red" wx:if="{{singlePrd.disableStatus==12}}">{{disableContent}}</view>
+                        </view>
+                        <view class="order-annex-box" wx:if="{{singlePrd.accidentList.length>0}}">
+                            <view class="system-l-l-r">
+                                <view class="system-between-l">
+                                    <text class="g-name">{{singlePrd.accidentList[0].name}}</text>
+                                </view>
+                                <view class="system-r g-summary system-only-between">
+                                    <view class="g-amount">x{{singlePrd.accidentList[0].quantity}}</view>
+                                    <view class="g-price">¥ {{singlePrd.accidentList[0].skuPrice}}</view>
+                                </view>
+                            </view>
+                            <view class="g-tip red" wx:if="{{singlePrd.disableStatus!=0&&singlePrd.disableStatus!=12}}">此商品已失效</view>
+                            <view class="g-tip red" wx:if="{{singlePrd.disableStatus==12}}">{{disableContent}}</view>
+                        </view>
+                    </view>
+                    <view class="order-annex-giving">
+                        <view class="order-annex-list" wx:if="{{singlePrd.giftList.length>0}}">
+                            <view class="order-annex-title system-l">配</view>
+                            <view class="order-annex-box disabled" wx:for="{{singlePrd.giftList}}" wx:for-index="idx" wx:for-item="gift" wx:key="id">
+                                <view class="system-l-l-r">
+                                    <view class="system-l g-img">
+                                        <image src="{{cdnPath}}{{gift.photoPath}}428_428_{{gift.photoName}}"></image>
+                                    </view>
+                                    <view class="system-between-l">
+                                        <text class="g-name">{{gift.name}}</text>
+                                    </view>
+                                    <view class="system-r g-summary system-only-between">
+                                        <view class="g-amount">x{{singlePrd.quantity*gift.quantity}}</view>
+                                    </view>
+                                </view>
+                                <view class="g-tip red" wx:if="{{gift.disableStatus!=0&&singlePrd.disableStatus!=12}}">此商品已失效</view>
+                                <view class="g-tip red" wx:if="{{gift.disableStatus==12}}">{{disableContent}}</view>
+                            </view>
+                        </view>
+                        <view class="order-annex-list ui-border-t" wx:if="{{singlePrd.couponGifts&&singlePrd.couponGifts.length>0}}">
+                            <view class="order-annex-title system-l">赠品</view>
+                            <view class="order-annex-box disabled" wx:for="{{singlePrd.couponGifts}}" wx:for-index="idx" wx:for-item="couponGifts" wx:key="id">
+                                <view class="system-l-l-r">
+                                    <view class="system-l g-img g-img-noborder">
+                                        <image src="imgs/icon_coupon.png"></image>
+                                    </view>
+                                    <view class="system-between-l">
+                                        <text class="g-name">{{couponGifts.name}}</text>
+                                    </view>
+                                    <view class="system-r g-summary system-only-between">
+                                        <view class="g-amount">x{{singlePrd.quantity}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="order-good-annex ui-border-b" wx:if="{{confirmVO.couponList&&confirmVO.couponList.length>0}}">
+                    <view class="order-annex-list">
+                        <view class="order-annex-title system-l">订单赠</view>
+                        <view class="order-annex-box disabled" wx:for="{{confirmVO.couponList}}" wx:for-index="idx" wx:for-item="couponList" wx:key="id">
+                            <view class="system-l-l-r">
+                                <view class="system-l g-img g-img-noborder">
+                                    <image src="imgs/icon_coupon.png"></image>
+                                </view>
+                                <view class="system-between-l">
+                                    <text class="g-name">{{couponList.name}}</text>
+                                </view>
+                                <view class="system-r g-summary system-only-between">
+                                    <view class="g-amount">x1</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="order-good-area system-only-between ui-border-b order-confirm-deliver">
+                <view class="system-flex-l">配送费</view>
+                <view class="system-fixed-r" wx:if="{{!isLuckyOrder}}">¥ {{confirmVO.deliveryFee}}</view>
+                <view class="system-fixed-r" wx:if="{{isLuckyOrder}}">¥ 0.00</view>
+            </view>
+            <view class="order-good-area order-confirm-summary">
+                <view class=" system-follow-r">
+                    <view class="system-fixed-l order-summary-title">优惠：</view>
+                    <view class="system-flex-r order-summary-cont">
+                        <text class="order-summary-small">-¥</text> {{confirmVO.discount}}</view>
+                </view>
+                <view class=" system-follow-r">
+                    <view class="system-fixed-l order-summary-title">小计：</view>
+                    <view class="system-flex-r red order-summary-cont">
+                        <text class="order-summary-small">¥</text> {{confirmVO.subtotal}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="order-form-area bg_white" wx:if="{{!confirmVOLists[0].couponDisable&&!isLuckyOrder}}">
+    <view class="order-confirm-header ui-border-b system-item-center">
+        <text class="order-header-big">优惠抵用券</text>
+        <text class="order-header-small">( 仅适用于实物商品 )</text>
+    </view>
+    <view bindtap="openCoupon" class="order-confirm-coupon system-l-l-r" data-status="1">
+        <view class="system-l icon-coupon">
+            <image src="imgs/icon_coupon.png"></image>
+        </view>
+        <view class="system-between-l" wx:if="{{confirmVOLists[0].usedCouponInfos&&confirmVOLists[0].usedCouponInfos[0].couponName}}">
+            <text class="coupon-name">已用{{confirmVOLists[0].usedCouponInfos.length}}张</text>
+        </view>
+        <view class="system-between-l" wx:if="{{!confirmVOLists[0].usedCouponInfos||confirmVOLists[0].usedCouponInfos[0].couponCode=='0000'||confirmVOLists[0].usedCouponInfos[0].couponCode=='9999'}}">
+            <text class="coupon-name">使用优惠券</text>
+        </view>
+        <view class="btn-next">
+            <text class="coupon-price" wx:if="{{confirmVOLists[0].usedCouponInfos&&confirmVOLists[0].couponDeduct>0}}">- ¥ {{confirmVOLists[0].couponDeduct}}</text>
+            <view class="icon-more-right">
+                <image src="../../imgs/icon_arrow_more.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="order-confirm-banner order-form-area" wx:if="{{isShowLogin}}">
+    <image bindtap="switchAccount" src="imgs/order_banner.png"></image>
+</view>
+<view class="order-integral-area system-only-between" wx:if="{{!isShowLogin&&confirmVOLists[0].pointAndPetalUsable&&!sameId}}">
+    <view class="integral-left system-item-center">
+        <view>
+            <text>积分</text>
+        </view>
+        <view class="integral-icon">
+            <image bindtap="showtips" src="../../imgs/icon-tips.png"></image>
+        </view>
+    </view>
+    <view class="system-item-center" wx:if="{{pointBlance>=100}}">
+        <view class="integral-price" wx:if="{{isUsePoint}}">使用{{confirmVOLists[0].pointConsumed}}积分，抵<text class="red">￥{{confirmVOLists[0].pointPay}}</text>
+        </view>
+        <view class="integral-price" wx:if="{{!isUsePoint}}">积分余额{{pointBlance}}<text class="red"></text>
+        </view>
+        <view class="integral-switch">
+            <text bindtap="pointSwitch" class="mp-switch {{isUsePoint?'checked':''}}"></text>
+        </view>
+    </view>
+    <view class="system-item-center" wx:else>
+        <view class="integral-price">{{pointBlance}}积分，不足100不可使用<text class="red"></text>
+        </view>
+    </view>
+</view>
+<view class="hr-110"></view>
+<view class="order-fixed-address system-l-l-r" wx:if="{{!goStore}}">
+    <view class="system-l">
+        <text class="fixed-address-title">配送至：</text>
+    </view>
+    <view class="system-between-l">
+        <text class="fixed-address-cont">{{orderDeliveryAddress.provinceName}}{{orderDeliveryAddress.cityName}}{{orderDeliveryAddress.districtName}}{{orderDeliveryAddress.streetName}}{{orderDeliveryAddress.address}}</text>
+    </view>
+</view>
+<view class="action-fixed bg_white system-l-r-r order-sys-total">
+    <view class="system-between-r system-only-end total-price">
+        <text>应付总额：</text>
+        <text class="order-sys-price">¥ {{confirmVOLists[0].cashPay}}</text>
+    </view>
+    <view class="action-btn system-r action-btn-confirm">
+        <form bindsubmit="orderCreate" reportSubmit="true">
+            <button class="button-style-square" formType="submit">
+                <text>微信支付</text>
+            </button>
+        </form>
+    </view>
+</view>
+<view bindtap="openCoupon" class="ecWap-mask" data-status="0" wx:if="{{showCoupon}}"></view>
+<view animation="{{animationData}}" class="ecWap-box ecWap-box-lower ecWap-box-couponlist" wx:if="{{showCoupon}}">
+    <view class="ecWap-box-header">
+        <text class="ecWap-box-title">选择优惠券</text>
+        <view class="ecWap-box-close box-close">
+            <image bindtap="openCoupon" data-status="0" src="../../imgs/icon_ecWap_close.png"></image>
+        </view>
+    </view>
+    <view class="ecWap-box-content">
+        <view class="ecWap-box-coupon">
+            <checkbox-group name="checkbox-group">
+                <label bindtap="checkboxSelected" class="system-follow-l ui-border-b coupon-list {{effectiveCoupon.selectable?'':'disabled'}}" data-couponobj="{{effectiveCoupon}}" wx:for="{{confirmVOLists[0].effectiveCoupons}}" wx:for-index="idx" wx:for-item="effectiveCoupon" wx:key="id">
+                    <view class="system-fixed-l checkbox">
+                        <checkbox disabled class="selectbox disabled" value="{{effectiveCoupon.couponCode}}" wx:if="{{!effectiveCoupon.selectable}}"></checkbox>
+                        <checkbox checked="{{true}}" class="selectbox checked" value="{{effectiveCoupon.couponCode}}" wx:elif="{{orderReq.couponList[0].couponCodes[0]==effectiveCoupon.couponCode||orderReq.couponList[0].couponCodes[1]&&orderReq.couponList[0].couponCodes[1]==effectiveCoupon.couponCode||confirmVOLists[0].usedCouponInfos[0].couponCode==effectiveCoupon.couponCode}}"></checkbox>
+                        <checkbox class="selectbox" value="{{effectiveCoupon.couponCode}}" wx:else></checkbox>
+                        <view class="state"></view>
+                    </view>
+                    <view class="system-fixed-l checkbox" wx:if="{{!confirmVOLists[0].usedCouponInfos||confirmVOLists[0].usedCouponInfos.length==0}}">
+                        <checkbox class="selectbox" value="{{effectiveCoupon.couponCode}}"></checkbox>
+                        <view class="state"></view>
+                    </view>
+                    <view class="system-flex-r coupon-cont">
+                        <view class="coupon-basic display-flex" wx:if="{{effectiveCoupon.frontType=='coupon'}}">
+                            <view class="flex-shrink-0" wx:if="{{effectiveCoupon.kind==2&&effectiveCoupon.selectable}}">
+                                <image class="overlay-icon" src="imgs/icon_overlay.png"></image>
+                            </view>
+                            <view class="flex-shrink-0" wx:elif="{{effectiveCoupon.kind==2}}">
+                                <image class="overlay-icon" src="imgs/icon_overlay_dis.png"></image>
+                            </view>
+                            <view class="flex-shrink-1">{{effectiveCoupon.amount}}元优惠
+                <text class="coupon-time">（使用期限：{{effectiveCoupon.beginDate}}-{{effectiveCoupon.endDate}}）</text>
+                            </view>
+                        </view>
+                        <view class="coupon-basic display-flex" wx:if="{{effectiveCoupon.frontType=='discount'}}">
+                            <view class="flex-shrink-0" wx:if="{{effectiveCoupon.kind==2&&effectiveCoupon.selectable}}">
+                                <image class="overlay-icon" src="imgs/icon_overlay.png"></image>
+                            </view>
+                            <view class="flex-shrink-0" wx:elif="{{effectiveCoupon.kind==2}}">
+                                <image class="overlay-icon" src="imgs/icon_overlay_dis.png"></image>
+                            </view>
+                            <view class="flex-shrink-1">{{10*effectiveCoupon.discount}}折优惠券
+                <text class="coupon-time">（使用期限：{{effectiveCoupon.beginDate}}-{{effectiveCoupon.endDate}}）</text>
+                            </view>
+                        </view>
+                        <view class="coupon-basic display-flex" wx:if="{{effectiveCoupon.frontType=='noPostage'}}">
+                            <view class="flex-shrink-0" wx:if="{{effectiveCoupon.kind==2&&effectiveCoupon.selectable}}">
+                                <image class="overlay-icon" src="imgs/icon_overlay.png"></image>
+                            </view>
+                            <view class="flex-shrink-0" wx:elif="{{effectiveCoupon.kind==2}}">
+                                <image class="overlay-icon" src="imgs/icon_overlay_dis.png"></image>
+                            </view>
+                            <view class="flex-shrink-1">免邮券
+                  <text class="coupon-time">（使用期限：{{effectiveCoupon.beginDate}}-{{effectiveCoupon.endDate}}）</text>
+                            </view>
+                        </view>
+                        <view class="coupon-basic" wx:if="{{effectiveCoupon.frontType=='notSelect'}}">
+              不使用优惠券
+            </view>
+                        <view class="coupon-info" wx:if="{{effectiveCoupon.frontType!='notSelect'}}">{{effectiveCoupon.couponName}}</view>
+                    </view>
+                </label>
+            </checkbox-group>
+            <view class="coupon-empty ui-border-b" wx:if="{{confirmVOLists[0].effectiveCoupons.length==0}}">暂无可用优惠券</view>
+            <view class="coupon-input system-follow-l ui-border-b">
+                <view class="system-flex-l ">
+                    <view>
+                        <input bindinput="checkValue" placeholder="请输入优惠券码" type="text" value="{{userManulCouponCode}}"></input>
+                    </view>
+                </view>
+                <view class="system-fixed-r">
+                    <view bindtap="useCouponManual" class="{{couponDH}}" id="useCouponManual">
+                        <text>兑换</text>
+                    </view>
+                </view>
+                <view class="coupon-tips {{couponTipsClass}}">
+          {{couponTips}}
+        </view>
+            </view>
+            <checkbox-group name="checkbox-group">
+                <label class="system-follow-l ui-border-b coupon-list disabled" wx:for="{{confirmVOLists[0].invalidCoupons}}" wx:for-index="idx" wx:for-item="invalidCoupon" wx:key="id">
+                    <view class="system-fixed-l checkbox">
+                        <checkbox disabled class="selectbox disabled" value=""></checkbox>
+                        <view class="state"></view>
+                    </view>
+                    <view class="system-flex-r coupon-cont">
+                        <view class="coupon-basic display-flex" wx:if="{{invalidCoupon.frontType=='coupon'}}">
+                            <view class="flex-shrink-0" wx:if="{{invalidCoupon.kind==2}}">
+                                <image class="overlay-icon" src="imgs/icon_overlay_dis.png"></image>
+                            </view>
+                            <view class="flex-shrink-1">{{invalidCoupon.amount}}元优惠
+                  <text class="coupon-time">（使用期限：{{invalidCoupon.beginDate}}-{{invalidCoupon.endDate}}）</text>
+                            </view>
+                        </view>
+                        <view class="coupon-basic display-flex" wx:if="{{invalidCoupon.frontType=='discount'}}">
+                            <view class="flex-shrink-0" wx:if="{{invalidCoupon.kind==2}}">
+                                <image class="overlay-icon" src="imgs/icon_overlay_dis.png"></image>
+                            </view>
+                            <view class="flex-shrink-1">{{10*invalidCoupon.discount}}折优惠券
+                <text class="coupon-time">（使用期限：{{invalidCoupon.beginDate}}-{{invalidCoupon.endDate}}）</text>
+                            </view>
+                        </view>
+                        <view class="coupon-basic display-flex" wx:if="{{invalidCoupon.frontType=='noPostage'}}">
+                            <view class="flex-shrink-0" wx:if="{{invalidCoupon.kind==2}}">
+                                <image class="overlay-icon" src="imgs/icon_overlay_dis.png"></image>
+                            </view>
+                            <view class="flex-shrink-1">免邮券
+                <text class="coupon-time">（使用期限：{{invalidCoupon.beginDate}}-{{invalidCoupon.endDate}}）</text>
+                            </view>
+                        </view>
+                        <view class="coupon-info">{{invalidCoupon.couponName}}</view>
+                    </view>
+                </label>
+            </checkbox-group>
+        </view>
+    </view>
+    <view bindtap="confirmCoupon" class="ecWap-box-footer">
+        <view class="ecWap-box-ok box-ok">
+            <text>确定</text>
+        </view>
+    </view>
+</view>
+<view bindtap="openInvalid" class="ecWap-mask" data-status="0" wx:if="{{showInvalid}}"></view>
+<view class="ecWap-box-middle" wx:if="{{showInvalid}}">
+    <view class="ecWap-box ecWap-box-center">
+        <view class="ecWap-box-header">
+            <text class="ecWap-box-title">{{removeTips}}</text>
+        </view>
+        <view class="ecWap-box-content">
+            <view class="order-good-area invalid-good" wx:for="{{confirmVOLists[0].needRemoveProduct}}" wx:key="{{key}}">
+                <view class="order-good-box system-l-l-r">
+                    <view class="system-l g-img">
+                        <image src="{{cdnPath}}{{item.photoPath}}142_142_{{item.photoName}}"></image>
+                    </view>
+                    <view class="system-between-l system-item-center g-basic">
+                        <view class="g-name g-name-change">{{item.name}}</view>
+                    </view>
+                    <view class="system-r g-summary system-only-between">
+                        <view class="g-amount">x{{item.quantity}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <navigator class="ecWap-box-cancel" openType="switchTab" url="../index/index">
+                <text>返回首页</text>
+            </navigator>
+            <view bindtap="removeProducts" class="ecWap-box-ok" wx:if="{{!needRemoveAll}}">
+                <text>移除上述商品</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="ecWap-mask" wx:if="{{showTip}}"></view>
+<view class="ecWap-box-middle" wx:if="{{showTip}}">
+    <view class="ecWap-box ecWap-box-center ecWap-box-normal ecWap-box-change">
+        <view class="ecWap-box-content">
+            <view class="ecWap-dialog-header">提示</view>
+            <view class="ecWap-dialog-content" style="text-align: left">
+                <text>{{templateContent}}</text>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <button bindtap="goBack" class="ecWap-box-cancle" plain="true">
+                <text>返回修改</text>
+            </button>
+            <button bindtap="goOrder" class="ecWap-box-ok" id="goOrder" plain="true">
+                <text>继续提交</text>
+            </button>
+        </view>
+    </view>
+</view>
+<view class="toast {{toastState?'show':''}}" id="toast">
+    <view class="toast_cont">您的地址信息不全，完善后才能下单哦</view>
+</view>
+<view class="ecWap-mask" wx:if="{{isSwitchAccount}}"></view>
+<view class="ecWap-box-middle" wx:if="{{isSwitchAccount}}">
+    <view class="ecWap-box ecWap-box-center">
+        <view class="ecWap-box-header">
+            <text class="ecWap-box-title">帐号切换说明</text>
+        </view>
+        <view class="ecWap-box-content account-pop">
+            <view>切换华为帐号后，我们会保存华为帐号与微信帐号的关联关系，并在小程序及微信商城为您登录华为帐号以便您进行后续操作（包括但不限于查看/使用积分）；</view>
+            <view>您可到华为商城+小程序个人中心切换到微信帐号登录，若希望重新使用华为帐号登录，需要再次进行帐号切换；</view>
+            <view>点击“同意”，即代表您同意上述内容及<text bindtap="toUserAgreement" class="blue">华为商城服务协议</text>、<text bindtap="toPrivacyAgreement" class="blue">关于华为商城与隐私的声明</text>。</view>
+        </view>
+        <view class="ecWap-box-footer">
+            <view bindtap="switchAccount" class="ecWap-box-cancel">
+                <text>取消</text>
+            </view>
+            <view bindtap="loginHuawei" class="ecWap-box-ok">
+                <text>同意</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="ecWap-mask" wx:if="{{isShowPointRule}}"></view>
+<view class="ecWap-box-middle" wx:if="{{isShowPointRule}}">
+    <view class="ecWap-box ecWap-box-center">
+        <view class="ecWap-box-header">
+            <text class="ecWap-box-title">积分规则</text>
+        </view>
+        <view class="ecWap-box-content integral-rule-pop">
+            <view class="rule-title">VMALL积分是什么？</view>
+            <view class="rule-word">积分是用户在Vmall网站（www.vmall.com）进行购物行为时给予的回馈。积分仅可在Vmall使用，每100积分可在购物付款时抵扣1元。如遇用户帐号暂停使用等场景，Vmall将暂停该用户帐号内积分相关使用权益。获得但未使用的积分，将在下一个自然年底过期（例如2017年12月31日将清空用户在2016年度获得但未使用的积分），Vmall将对过期积分进行作废处理，请注意及时使用。</view>
+            <view class="rule-title">如何获取积分？</view>
+            <view class="rule-word">1.在Vmall购买自主品牌商品可获得实际支付金额（不含运费）数值的10%的积分，规则如下（具体请以页面提示为准）：</view>
+            <view class="rule-word">1) 必须是购买自主品牌实物产品订单（代销商品、虚拟商品、企业购商品不赠送积分），积分发放时小数点后数字按四舍五入计算，例如：购买999元的产品，发放100个积分；</view>
+            <view class="rule-word">2) 实际支付金额是指用户实际以银行卡/第三方支付/Vmall代金券等支付的金额，不包括订单中使用花瓣、积分以及各种形式的优惠券等发生的抵扣；</view>
+            <view class="rule-word">3) 订单完成（订单已显示完成且未办理退货手续）才可获得积分，积分会在订单完成后回馈到用户的个人中心；</view>
+            <view class="rule-word">4) 如订单包含不同类型商品，将按照上述规则对商品金额进行计算，具体以页面显示为准。</view>
+            <view class="rule-word">2. 用户在Vmall首次实名认证、首次填写地址信息、评价商品、或参与积分翻倍购等促销活动时，可获赠积分，具体以活动规则为准。</view>
+            <view class="rule-title">如何使用积分？</view>
+            <view class="rule-word">1. 用户可在订单结算页面使用积分抵扣订单金额，积分使用的最小值是100；商品是否可用积分抵扣以实际页面提示为准；</view>
+            <view class="rule-word">2. 当前Vmall的抢购商品、优购码商品、优享购商品、企业购商品、代销和虚拟商品不支持使用积分抵扣；</view>
+            <view class="rule-word">3. 使用积分、花瓣及其他优惠时，可用花瓣、积分抵扣不超过订单中可抵扣商品实付金额的30%；</view>
+            <view class="rule-word">4. 当订单中包含多个商品时，该笔订单可用积分抵扣的上限为所有允许使用积分支付的商品的实付金额上限之和的30%；使用积分支付的订单，消费的积分会在各个商品中按一定比例进行分摊；</view>
+            <view class="rule-word">5. 订单一经提交无法再修改积分使用数量，如需修改请重新提交订单，用户自行取消订单后积分将在一定时间内返还到账户；</view>
+            <view class="rule-word">6. 积分不可兑现、不可跨帐号使用，且使用积分抵扣部分不开发票，使用积分抵扣部分作为销售折扣行在发票上单独列示。</view>
+            <view class="rule-word">*企业购订单不能产生和使用积分</view>
+        </view>
+        <view class="ecWap-box-footer">
+            <view bindtap="showtips" class="ecWap-box-ok">
+                <text>我知道了</text>
+            </view>
+        </view>
+    </view>
+</view>
+<BindAccountModal accountName="{{secondAuthTypeArray}}" bind:nextStep="nextStep" loginCookie="{{loginCookie}}" showFlag="{{secondAuthShow}}"></BindAccountModal>
+<Toast options="{{toastOptions}}"></Toast>

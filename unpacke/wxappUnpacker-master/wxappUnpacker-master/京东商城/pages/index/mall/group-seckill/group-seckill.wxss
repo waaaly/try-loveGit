@@ -1,0 +1,173 @@
+@import "../../../../__wuBaseWxss__/18.wxss";
+
+.seckill {
+    display: flex;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.seckill__item {
+    flex: 1;
+    min-width: 188rpx;
+    height: 304rpx;
+    position: relative;
+    border-right: 1rpx solid #f0f0f0;
+    box-sizing: border-box;
+}
+
+.seckill__item:last-child {
+    border-right: none;
+}
+
+.seckill__item-large {
+    flex: none;
+    width: 376rpx;
+}
+
+.seckill-title,.seckill-des {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.seckill-title {
+    font-size: 32rpx;
+    color: #333;
+    font-weight: bold;
+    margin: 20rpx 25rpx 20rpx 30rpx;
+}
+
+.seckill-des {
+    font-size: 24rpx;
+    color: #999;
+    width: 148rpx;
+    margin: 15rpx auto 0;
+}
+
+.seckill-countdown {
+    position: absolute;
+    left: 170rpx;
+    top: 28rpx;
+    border: 1rpx solid #e93b3d;
+    background-color: #fff;
+    font-size: 20rpx;
+    line-height: 30rpx;
+    height: 30rpx;
+    border-radius: 4rpx;
+    overflow: hidden;
+}
+
+.seckill-countdown__title,.seckill-countdown__time {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -4rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    padding: 0 5rpx;
+}
+
+.seckill-countdown__title {
+    background-color: #e93b3d;
+    color: #fff;
+}
+
+.seckill-countdown__time {
+    color: #e93b3d;
+    font-weight: bold;
+}
+
+.seckill-image {
+    display: block;
+    width: 148rpx;
+    height: 148rpx;
+    margin: 0 auto;
+}
+
+.seckill-image image {
+    width: 100%;
+    height: 100%;
+    border-radius: 4rpx;
+    background-color: #fff;
+}
+
+.seckill-images {
+    display: flex;
+    margin: 0 30rpx;
+    text-align: center;
+}
+
+.seckill-images__item {
+    flex: 1;
+    min-width: 0;
+}
+
+.seckill-images__item--3 .seckill-images__cover {
+    width: 90rpx;
+    height: 90rpx;
+    margin-bottom: 20rpx;
+}
+
+.seckill-images__item--3 .seckill-images__price {
+    font-size: 24rpx;
+    margin-bottom: -5rpx;
+}
+
+.seckill-images__cover {
+    display: block;
+    width: 120rpx;
+    height: 120rpx;
+    margin: 0 auto 15rpx;
+}
+
+.seckill-images__cover image {
+    width: 100%;
+    height: 100%;
+    border-radius: 4rpx;
+    background-color: #fff;
+}
+
+.seckill-images__price {
+    font-size: 28rpx;
+    color: #e93b3d;
+    font-weight: bold;
+    margin-bottom: -10rpx;
+}
+
+.seckill-images__oldprice {
+    font-size: 24rpx;
+    color: #ccc;
+    text-decoration: line-through;
+}
+
+.seckill-list {
+    display: flex;
+    width: 100%;
+}
+
+.seckill-list__item {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+}
+
+.seckill-tag {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 120rpx;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    top: 200rpx;
+    display: inline-block;
+    height: 28rpx;
+    line-height: 28rpx;
+    font-size: 20rpx;
+    color: #E93B3D;
+    border: 1rpx solid #E93B3D;
+    border-radius: 20rpx;
+    padding: 0 5rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px 0 rgba(233,59,61,0.10);
+}

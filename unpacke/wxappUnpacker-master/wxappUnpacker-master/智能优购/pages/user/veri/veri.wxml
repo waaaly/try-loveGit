@@ -1,0 +1,13 @@
+<view class="veri_box">
+    <form bindconfirm="bindVeri" class="veri_list">
+        <input class="name" placeholder="请输入正确的中文姓名" type="text"></input>
+        <input class="name" placeholder="请输入您的银行卡号" type="number"></input>
+        <input class="name" placeholder="请输入您的手机号" type="number"></input>
+        <view class="veriCode">
+            <input class="name" placeholder="请输入验证码" type="number"></input>
+            <view class="getCode">获取验证码</view>
+        </view>
+        <input class="name" placeholder="请输入您的身份证号" type="idcard"></input>
+        <button class="veriBtn" formType="submit">立即认证</button>
+    </form>
+</view>

@@ -1,0 +1,55 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="changeInfo">
+    <view class="change ">
+        <view class="change_item">
+            <view class="change_item_header  row  ali-center">
+                <text style="border-left:6rpx solid #c6a36b;height:26rpx;"></text>
+                <text class="change_header_txt">当前推荐人信息</text>
+            </view>
+            <view class="change_header_box1">
+                <text decode="{{true}}" style="height:28rpx;line-height:28rpx;">推荐人：</text>
+                <text style="margin-left:16rpx;">{{nowUser.nickname||'无'}}</text>
+            </view>
+            <view class="change_header_box2">
+                <text style="height:28rpx;line-height:28rpx;">推荐ID：</text>
+                <text style="margin-left:16rpx;">{{nowUser.id||'无'}}</text>
+            </view>
+        </view>
+        <view class="change_item change_mt">
+            <view class="change_item_header row  ali-center">
+                <text style="border-left:6rpx solid #c6a36b;height:26rpx;"></text>
+                <text class="change_header_txt">修改推荐人信息</text>
+            </view>
+            <view class="change_header_tip">温馨提示：您的推荐人信息仅支持修改一次，修改后将永 久不能修改，请谨慎操作。</view>
+            <view class="change_content">
+                <view class="change_content_box row ali-center spa">
+                    <text class="change_content_txt1">推荐ID</text>
+                    <input bindinput="getUserId" class="change_content_input" type="number"></input>
+                    <text bindtap="lookUser" class="change_content_txt2">查询推荐人</text>
+                </view>
+                <view class="change_content_txt3" wx:if=" {{tip==1||tip==2}}">
+                    <text wx:if="{{tip==1}}">*请填写有效数字</text>
+                    <text wx:if="{{tip==2}}"> *不可以填写自己的ID</text>
+                </view>
+            </view>
+            <view class="change_content_res" wx:if="{{showType==1||showType==2}}">
+                <view class="change_content_txt4">搜索结果：</view>
+                <view>
+                    <text class="change_content_txt5" wx:if="{{showType==1}}">姓名：{{lookUserInfo.nickname||'无'}}</text>
+                    <text class="change_content_txt5 change_content_spa2" wx:if="{{lookUserInfo.id}}">ID：{{lookUserInfo.id||' 无'}}</text>
+                </view>
+                <view class="change_content_txt7" wx:if="{{showType==2}}">未搜索到该用户，请核实推荐人ID是否有误。</view>
+            </view>
+        </view>
+        <view class="row spa">
+            <text class="change_btn change_btn_spa}}" wx:if="{{showType==3}}">推荐人修改成功</text>
+            <text bindtap="makeChange" class="change_btn {{showType==1?'':'change_btn_spa'}}" wx:if="{{showType!=3}}">确定修改</text>
+            <text bindtap="goBack" class="change_btn change_btn_spa">取消修改</text>
+        </view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>
+<wxs module="filter" src="../../../numberToFix.wxs" />

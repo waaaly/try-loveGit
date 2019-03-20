@@ -1,0 +1,106 @@
+page {
+    background: #fff;
+    min-height: 100%;
+}
+
+.tesl {
+    height: 90rpx;
+    padding: 0 30rpx;
+}
+
+.bordersty {
+    height: 90rpx;
+    border-bottom: 1px solid #f1f1f1;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    font-size: 14px;
+}
+
+.placeholderst {
+    color: #d3d3d3;
+}
+
+.l_label {
+    width: 160rpx;
+    color: #999999;
+    font-size: 14px;
+}
+
+.r_label {
+    font-size: 14px;
+}
+
+.r_textarea {
+    margin: 27rpx 0 0;
+    height: 120rpx;
+}
+
+.r_textarea>.r_textarea {
+    margin: 0;
+    height: 120rpx;
+    align-items: flex-start;
+}
+
+.r_label textarea {
+    height: 80rpx;
+}
+
+.default-ads .bordersty {
+    border: none;
+}
+
+.text1 {
+    width: 480rpx;
+}
+
+.picker {
+    color: blue;
+}
+
+.tet-btn {
+    padding: 30rpx 30rpx 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.confirm {
+    display: flex;
+    height: 90rpx;
+    background-color: #FF0000;
+    border-radius: 15rpx;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30rpx;
+}
+
+.delete {
+    display: flex;
+    height: 90rpx;
+    border: 1px solid #999999;
+    border-radius: 15rpx;
+    justify-content: center;
+    align-items: center;
+}
+
+.default-ads {
+    border-top: 10rpx solid #F6F6F6;
+    border-bottom: 14rpx solid #F6F6F6;
+    box-sizing: content-box;
+    background: #fff;
+}
+
+.black {
+    color: #222;
+}
+
+.default-ads .l_label {
+    width: auto;
+}
+
+switch {
+    transform: scale(.8);
+}

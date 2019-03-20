@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "搭配赠品",
+    "usingComponents": {
+        "gifts": "/pages/cart/components/gifts/index"
+    }
+}

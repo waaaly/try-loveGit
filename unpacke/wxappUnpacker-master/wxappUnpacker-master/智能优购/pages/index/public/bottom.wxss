@@ -1,0 +1,14 @@
+.public-bottom {
+    height: 81rpx;
+    color: #999999;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0rpx;
+}
+
+.xian {
+    background: #DDDDDD;
+    height: 2rpx;
+    width: 270rpx;
+}

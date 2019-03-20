@@ -1,0 +1,40 @@
+page {
+    background-color: white;
+}
+
+.norcord {
+    text-align: center;
+    font-size: 15px;
+    padding: 20px 0px 30px 0px;
+    color: #848484;
+}
+
+.item {
+    border-top: 1px solid #f1f1f1;
+    padding: 20rpx;
+}
+
+.item .cost {
+    float: right;
+    font-size: 19px;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.item .name {
+    font-size: 15px;
+    font-weight: bold;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.item .time {
+    font-size: 12px;
+    color: #444444;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.item .in {
+    color: #357C6E;
+}

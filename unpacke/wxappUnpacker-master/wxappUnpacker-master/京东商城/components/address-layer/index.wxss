@@ -1,0 +1,78 @@
+@import "../../app.wxss";
+
+@import "../../__wuBaseWxss__/9.wxss";
+
+.address-layer__item {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    padding: 10px 10px 10px 0;
+    height: 42px;
+}
+
+.address-layer__item:not(:first-child) {
+    border-top: 1rpx solid #ddd;
+}
+
+.address-layer__txt {
+    flex: 1;
+}
+
+.address-layer__icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.address-layer__content {
+    width: 100%;
+    max-height: calc(60vh - 42px);
+    overflow: auto;
+    background: #fff;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.address-layer__other {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 42px;
+    background: #f7f7f7;
+    color: #999;
+}
+
+.address-layer__other::before,.address-layer__other::after {
+    position: absolute;
+    top: 50%;
+    content: '';
+    width: 300rpx;
+    height: 1rpx;
+    background: #ddd;
+}
+
+.address-layer__other::before {
+    left: 10px;
+}
+
+.address-layer__other::after {
+    right: 10px;
+}
+
+.address-layer__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+}
+
+.address-layer__more {
+    width: 15px;
+    height: 15px;
+    margin-left: 6px;
+}

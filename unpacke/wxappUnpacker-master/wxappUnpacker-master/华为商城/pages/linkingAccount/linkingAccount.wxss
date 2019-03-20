@@ -1,0 +1,101 @@
+page {
+    background-color: #fff;
+}
+
+.AccountTitleBox {
+    padding: 125rpx 0 63rpx;
+}
+
+.AccountImg {
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AccountImg .PortraitImg,.AccountImg .PortraitImg image {
+    width: 125rpx;
+    height: 125rpx;
+    border-radius: 50%;
+}
+
+.AccountImg .AccountIcon,.AccountImg .AccountIcon image {
+    width: 46rpx;
+    height: 46rpx;
+}
+
+.AccountImg .AccountIcon {
+    padding: 0 42rpx;
+}
+
+.AccountTitle {
+    padding-top: 42rpx;
+    text-align: center;
+}
+
+.AccountTitle text {
+    font-size: 32rpx;
+}
+
+.AccountBox {
+    padding: 0 34rpx;
+}
+
+.AccountBox .AccountDL {
+    padding: 48rpx 0 11rpx;
+    border-bottom: 3rpx solid #eaeaea;
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.AccountBox .AccountDL input {
+    font-size: 28rpx;
+    padding: 0 25rpx;
+    width: 100%;
+    height: 53rpx;
+    box-sizing: border-box;
+    -webkit-box-flex: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.AccountBox .AccountDL .button-style-3,.AccountBox .AccountDL .button-style-3-disabled {
+    height: 53rpx;
+    -webkit-box-flex: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.AccountBox .AccountProtocol {
+    padding: 34rpx 25rpx;
+    border-bottom: 0;
+}
+
+.AccountBox .AccountProtocol .system-between-l view {
+    font-size: 23rpx;
+    padding-left: 13rpx;
+}
+
+.AccountBox .AccountProtocol .system-between-l text {
+    color: #267eff;
+}
+
+.AccountBox .AccountActiveBtn {
+    padding: 50rpx 0;
+}
+
+.AccountRule {
+    padding-top: 75rpx;
+    text-align: center;
+}
+
+.AccountRule text {
+    font-size: 25rpx;
+    color: #267eff;
+    text-decoration: underline;
+    cursor: pointer;
+}

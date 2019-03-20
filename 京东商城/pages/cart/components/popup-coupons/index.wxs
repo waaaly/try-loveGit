@@ -1,0 +1,44 @@
+function getCouponCls(type) {
+    return (({
+        '0': 'bg_jing',
+        '1': 'bg_dong',
+        '2': 'bg_yun',
+    })[((nt_0 = (type), null == nt_0 ? undefined : 'number' === typeof nt_0 ? nt_0 : "" + nt_0))] || '')
+};
+
+function getCouponTypeText(typeCode, kindCode) {
+    var kind = ({
+        '2': '店铺',
+        '3': '店铺',
+    })[((nt_1 = (kindCode), null == nt_1 ? undefined : 'number' === typeof nt_1 ? nt_1 : "" + nt_1))] || '';
+    var type = ({
+        '0': '京券',
+        '1': '东券',
+        '2': '免运费券',
+    })[((nt_2 = (typeCode), null == nt_2 ? undefined : 'number' === typeof nt_2 ? nt_2 : "" + nt_2))] || '';
+    return (kind + type)
+};
+
+function getStatusCls(status) {
+    return (({
+        '1': '',
+        '2': 'disabled',
+        '3': '',
+        '4': 'disabled',
+    })[((nt_3 = (status), null == nt_3 ? undefined : 'number' === typeof nt_3 ? nt_3 : "" + nt_3))] || '')
+};
+
+function getStatusText(status) {
+    return (({
+        '1': '领取',
+        '2': '已领取',
+        '3': '领取中',
+        '4': '已抢光',
+    })[((nt_4 = (status), null == nt_4 ? undefined : 'number' === typeof nt_4 ? nt_4 : "" + nt_4))] || '')
+};
+module.exports = ({
+    getCouponCls: getCouponCls,
+    getCouponTypeText: getCouponTypeText,
+    getStatusCls: getStatusCls,
+    getStatusText: getStatusText,
+});

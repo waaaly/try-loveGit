@@ -1,0 +1,218 @@
+<view class="coup-center-area">
+    <view wx:if="{{!showNoData}}">
+        <scroll-view class="coup-nav" id="nav-box" scrollIntoView="{{toNavView}}" scrollWithAnimation="true" scrollX="true">
+            <view class="coup-nav-box">
+                <view bindtap="navMap" class="coup-nav-item {{currentTab==index?'current':''}}" data-current="{{index}}" id="nav{{index}}" wx:if="{{item.isShow}}" wx:for="{{coupNavDataList}}" wx:key="index">
+                    <view>{{item.floorName}}</view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="coup-cont" style="height: {{windowHeight}}px;">
+            <scroll-view bindscroll="coupScroll" bindscrolltoupper="doScrollToUp" scrollIntoView="{{toTabView}}" scrollTop="0" scrollWithAnimation="true" scrollY="true" style="height:100%">
+                <view class="coup-tab" data-current="{{index}}" id="tab{{index}}" wx:if="{{item.isShow}}" wx:for="{{coupNavDataList}}" wx:key="index">
+                    <view class="coup-tab-top">
+                        <view class="coup-tab-title">
+                            <text>{{item.floorName}}</text>
+                        </view>
+                    </view>
+                    <view class="coupons-cont">
+                        <view wx:for="{{item.couponDetailList}}" wx:for-item="one" wx:key="index">
+                            <view wx:if="{{one.promoType==1}}">
+                                <view class="coupons-item" wx:if="{{one.state==1}}">
+                                    <view class="coupons-box">
+                                        <view class="p-name">
+                                            <text class="sign_span">¥</text>
+                                            <text class="p-span">{{one.promoVal}}</text>优惠券</view>
+                                        <view class="p-desc">
+                                            <text>{{one.promoName}}</text>
+                                        </view>
+                                        <view class="p-date">
+                                            <text>有效期：{{one.beginTime}} - {{one.endTime}}</text>
+                                        </view>
+                                        <button bindgetuserinfo="onAuthSelect" bindtap="getCouponByAuth" class="p-button button-vip-get" data-activityCode="{{one.activityCode}}" data-batchCode="{{one.batchCode}}" data-idx="{{one.id}}" hoverClass="none" id="{{'couponElement_'+one.id}}" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                                            <image src="../../imgs/btn_Coupon.jpg"></image>
+                                            <text class="p-button-four">立即领取</text>
+                                        </button>
+                                        <view class="p-line">
+                                            <image src="../../imgs/bg_v1.png"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="coupons-item" wx:elif="{{one.state==2}}">
+                                    <view class="coupons-box">
+                                        <view class="p-name">
+                                            <text class="sign_span">¥</text>
+                                            <text class="p-span">{{one.promoVal}}</text>优惠券</view>
+                                        <view class="p-desc">
+                                            <text>{{one.promoName}}</text>
+                                        </view>
+                                        <view class="p-date">
+                                            <text>有效期：{{one.beginTime}} - {{one.endTime}}</text>
+                                        </view>
+                                        <view class="p-button button-vip-had">
+                                            <text class="p-button-three">已领取</text>
+                                        </view>
+                                        <view class="p-line">
+                                            <image src="../../imgs/bg_v1.png"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="coupons-item" wx:elif="{{one.state==-1}}">
+                                    <view class="coupons-box">
+                                        <view class="p-name">
+                                            <text class="sign_span">¥</text>
+                                            <text class="p-span">{{one.promoVal}}</text>优惠券</view>
+                                        <view class="p-desc">
+                                            <text>{{one.promoName}}</text>
+                                        </view>
+                                        <view class="p-date">
+                                            <text>有效期：{{one.beginTime}} - {{one.endTime}}</text>
+                                        </view>
+                                        <view class="p-button button-vip-had">
+                                            <text class="p-button-three">已领完</text>
+                                        </view>
+                                        <view class="p-line">
+                                            <image src="../../imgs/bg_v1.png"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view wx:elif="{{one.promoType==2}}">
+                                <view class="coupons-item coupons-discount" wx:if="{{one.state==1}}">
+                                    <view class="coupons-box">
+                                        <view class="p-name">
+                                            <text class="p-span">{{one.promoRat*10}}</text>
+                                            <text class="sign_span">折</text>优惠券</view>
+                                        <view class="p-desc">
+                                            <text>{{one.promoName}}</text>
+                                        </view>
+                                        <view class="p-date">
+                                            <text>有效期：{{one.beginTime}} - {{one.endTime}}</text>
+                                        </view>
+                                        <button bindgetuserinfo="onAuthSelect" bindtap="getCouponByAuth" class="p-button button-vip-get" data-activityCode="{{one.activityCode}}" data-batchCode="{{one.batchCode}}" data-idx="{{one.id}}" hoverClass="none" id="{{'couponElement_'+one.id}}" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                                            <image src="../../imgs/btn_Discount.jpg"></image>
+                                            <text class="p-button-four">立即领取</text>
+                                        </button>
+                                        <view class="p-line">
+                                            <image src="../../imgs/bg_v1.png"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="coupons-item coupons-discount" wx:elif="{{one.state==2}}">
+                                    <view class="coupons-box">
+                                        <view class="p-name">
+                                            <text class="p-span">{{one.promoRat*10}}</text>
+                                            <text class="sign_span">折</text>优惠券</view>
+                                        <view class="p-desc">
+                                            <text>{{one.promoName}}</text>
+                                        </view>
+                                        <view class="p-date">
+                                            <text>有效期：{{one.beginTime}} - {{one.endTime}}</text>
+                                        </view>
+                                        <view class="p-button button-vip-had">
+                                            <text class="p-button-three">已领取</text>
+                                        </view>
+                                        <view class="p-line">
+                                            <image src="../../imgs/bg_v1.png"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="coupons-item coupons-discount" wx:elif="{{one.state==-1}}">
+                                    <view class="coupons-box">
+                                        <view class="p-name">
+                                            <text class="p-span">{{one.promoRat*10}}</text>
+                                            <text class="sign_span">折</text>优惠券</view>
+                                        <view class="p-desc">
+                                            <text>{{one.promoName}}</text>
+                                        </view>
+                                        <view class="p-date">
+                                            <text>有效期：{{one.beginTime}} - {{one.endTime}}</text>
+                                        </view>
+                                        <view class="p-button button-vip-had">
+                                            <text class="p-button-three">已领完</text>
+                                        </view>
+                                        <view class="p-line">
+                                            <image src="../../imgs/bg_v1.png"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view wx:elif="{{one.promoType==3}}">
+                                <view class="coupons-item coupons-noPostage" wx:if="{{one.state==1}}">
+                                    <view class="coupons-box">
+                                        <view class="p-name">免邮券</view>
+                                        <view class="p-desc">
+                                            <text>{{one.promoName}}</text>
+                                        </view>
+                                        <view class="p-date">
+                                            <text>有效期：{{one.beginTime}} - {{one.endTime}}</text>
+                                        </view>
+                                        <button bindgetuserinfo="onAuthSelect" bindtap="getCouponByAuth" class="p-button button-vip-get" data-activityCode="{{one.activityCode}}" data-batchCode="{{one.batchCode}}" data-idx="{{one.id}}" hoverClass="none" id="{{'couponElement_'+one.id}}" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                                            <image src="../../imgs/btn_noPostage.jpg"></image>
+                                            <text class="p-button-four">立即领取</text>
+                                        </button>
+                                        <view class="p-line">
+                                            <image src="../../imgs/bg_v1.png"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="coupons-item coupons-noPostage" wx:elif="{{one.state==2}}">
+                                    <view class="coupons-box">
+                                        <view class="p-name">免邮券</view>
+                                        <view class="p-desc">
+                                            <text>{{one.promoName}}</text>
+                                        </view>
+                                        <view class="p-date">
+                                            <text>有效期：{{one.beginTime}} - {{one.endTime}}</text>
+                                        </view>
+                                        <view class="p-button button-vip-had">
+                                            <text class="p-button-three">已领取</text>
+                                        </view>
+                                        <view class="p-line">
+                                            <image src="../../imgs/bg_v1.png"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="coupons-item coupons-noPostage" wx:elif="{{one.state==-1}}">
+                                    <view class="coupons-box">
+                                        <view class="p-name">免邮券</view>
+                                        <view class="p-desc">
+                                            <text>{{one.promoName}}</text>
+                                        </view>
+                                        <view class="p-date">
+                                            <text>有效期：{{one.beginTime}} - {{one.endTime}}</text>
+                                        </view>
+                                        <view class="p-button button-vip-had">
+                                            <text class="p-button-three">已领完</text>
+                                        </view>
+                                        <view class="p-line">
+                                            <image src="../../imgs/bg_v1.png"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="system-empty" wx:if="{{showNoData}}">
+        <view class="system-empty-cont">
+            <view class="system-empty-icon">
+                <image src="../couponList/imgs/empty-coupon.png"></image>
+            </view>
+            <view class="system-empty-tip">
+                <text>暂无可领取的优惠券</text>
+            </view>
+        </view>
+    </view>
+    <view class="coup-btn">
+        <view hoverClass="none">
+            <view class="button-area-2">
+                <button bindgetuserinfo="onAuthSelect" bindtap="gotoCouponList" class="button-style-square" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">查看我的优惠券</button>
+            </view>
+        </view>
+    </view>
+</view>
+<AuthorizeModal authWords="{{authWords}}" bind:authSelect="onAuthSelect" bind:closeModal="onCloseModal" bind:showWXModal="onShowWXModal" showFlag="{{isShowAuthModal}}"></AuthorizeModal>

@@ -1,0 +1,25 @@
+<view bindtap="jumpShopTouTiao" class="my_msg" style="{{bgImg?'background: url('+bgImg+') no-repeat 0 0 / 100% 100%;':''}}">
+    <view class="my_msg_notice" wx:if="{{scrollMsg.length}}">
+        <view class="my_msg_notice_icon">
+            <image class="my_msg_notice_icon_img" src="https://wq.360buyimg.com/data/ppms/picture/dianputoutiao.png"></image>
+        </view>
+        <view class="my_msg_notice_inner" style="{{inlineStyle}}">
+            <view class="my_msg_notice_list_item" wx:for="{{scrollMsg}}">
+                <view class="mod_sign_tip">{{item.tip}}</view>
+                <view class="mod_sign_title">{{item.title}}</view>
+            </view>
+        </view>
+        <view class="my_msg_notice_dot" id="newMsgCount" wx:if="{{redNum}}">{{redNum}}</view>
+    </view>
+    <view class="my_msg_notice" wx:if="{{!scrollMsg.length}}">
+        <view class="my_msg_notice_icon">
+            <image class="my_msg_notice_icon_img" src="https://wq.360buyimg.com/data/ppms/picture/dianputoutiao.png"></image>
+        </view>
+        <view class="my_msg_notice_inner">
+            <view class="my_msg_notice_list_item">
+                <view class="mod_sign_title">只想把你喜欢的消息告诉你</view>
+            </view>
+        </view>
+        <view class="my_msg_notice_dot" id="newMsgCount" wx:if="{{redNum}}">{{redNum}}</view>
+    </view>
+</view>

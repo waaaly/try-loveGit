@@ -1,0 +1,59 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<form bindsubmit="bindConfirmTab">
+    <view class="container">
+        <view bindtap="bindSelectAddress" class="address" wx:if="{{addrid==0}}">
+            <view class="left">寄到：</view>
+            <view class="right">
+                <view class="name">请选择地址</view>
+            </view>
+            <view class="arrow">
+                <image src="/images/arrow.png"></image>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view bindtap="bindSelectAddress" class="address" wx:if="{{addrid>0}}">
+            <view class="left">寄到：</view>
+            <view class="right">
+                <view class="name">{{dataset.addrname}}</view>
+                <view class="addr">{{dataset.addrinfo}}</view>
+            </view>
+            <view class="arrow">
+                <image src="/images/arrow.png"></image>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view class="brand">
+            <view>
+                <view class="left">
+                    <image src="{{dataset.mainpic}}"></image>
+                </view>
+                <view class="right">
+                    <view class="title">{{dataset.shorttitle}}</view>
+                    <view class="sucnums">数贝兑换</view>
+                    <view class="cost2">
+                        <view class="jia">
+                            <view bindtap="bindBuyNumsTap" class="bt1" data-inc="-1">-</view>
+                            <view class="bt2">{{geshu}}</view>
+                            <view bindtap="bindBuyNumsTap" class="bt3" data-inc="1">+</view>
+                        </view>
+               {{dataset.cost}}数贝</view>
+                </view>
+            </view>
+            <view class="liuyan clear">
+                <view class="f1">留言：</view>
+                <view class="f2">
+                    <input maxlength="50" name="textarea" placeholder=""></input>
+                </view>
+            </view>
+        </view>
+        <view class="pay">
+            <view class="caption" wx:if="{{dataset.score<dataset.cost}}">您共持有{{dataset.score}}数贝，不够兑换此商品~~</view>
+            <view bindtap="bindShareTap" class="captionshare" wx:if="{{dataset.score<dataset.cost}}">分享赚更多数贝吧~</view>
+            <button class="button gray" formType="submit"> {{submitText}} </button>
+        </view>
+    </view>
+</form>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

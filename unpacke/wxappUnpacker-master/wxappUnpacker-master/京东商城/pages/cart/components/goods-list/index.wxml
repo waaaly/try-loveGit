@@ -1,0 +1,103 @@
+<view class="xloading full_page" wx:if="{{loading}}"></view>
+<scroll-view scrollY bind:scroll="onPageScroll" bind:scrolltolower="onScrollToLower" bind:scrolltoupper="onScrollToUpper" class="venders_container {{editable?'edit':''}}" lowerThreshold="{{400}}" scrollIntoView="{{scrollIntoView}}" wx:if="{{venders.length}}">
+    <view id="top"></view>
+    <margin-bar bind:click="onMarginBarTap" bind:fixedupdate="marginFixedUpdate" hide="{{editable}}" id="marginbar"></margin-bar>
+    <slot name="before"></slot>
+    <view bind:tap="doAction" class="vender {{venders.length-1==index?'last_vender':''}}" data-item-id="{{vender.vid}}" data-vid="{{vender.vid}}" wx:for="{{venders}}" wx:for-item="vender" wx:key="vid">
+        <view class="header">
+            <view class="header_inner  {{sticky[vender.vid]?'fixed':''}}">
+                <view bind:tap="bubble" class="checkbox {{vender.checked?'checked':''}}" data-action="onCheck" data-type="vender" hidden="{{editable}}" wx:if="{{vender.selectable}}"></view>
+                <view class="checkbox disabled" hidden="{{editable}}" wx:if="{{!vender.selectable}}"></view>
+                <view bind:tap="bubble" class="checkbox {{vender.editChecked?'checked':''}}" data-action="onEditCheck" data-checked="{{vender.editChecked}}" data-type="vender" hidden="{{!editable}}"></view>
+                <view class="header_icon {{vendersName[vender.vid].icon||vender.icon}}"></view>
+                <view bind:tap="bubble" class="header_name" data-action="{{vender.isVirtual?'gotoPromotionPage':'gotoShopPage'}}">{{vendersName[vender.vid].vname||vender.vname||'店铺'+vender.vid}}
+					<view class="icon_arrow_right" wx:if="{{vender.icon=='type_3rd'||vender.icon=='type_good'||vender.icon=='type_cate_good'||vender.isVirtual}}"></view>
+                </view>
+                <view class="header_buttons">
+                    <block wx:if="{{freight.show&&freight.vids[vender.vid]}}">
+                        <view class="notice" wx:if="{{vender.vid!=8888&&vender.vid!=1000076153}}">
+                            <view bind:tap="bubble" class="icon_tips" data-action="showFreightTips" data-category="2"></view>
+                            <block wx:if="{{freight.nofreshOverweight}}">需付运费</block>
+                            <block wx:elif="{{freight.nofreshIsFreeShipping}}">已免运费</block>
+                            <block wx:else>还差
+								<view class="amount">{{utils.formatPrice(freight.amount)}}元</view>
+								免运费
+							</block>
+                        </view>
+                        <view class="notice" wx:if="{{vender.vid==1000076153&&freight.show1hour}}">
+                            <view bind:tap="bubble" class="icon_tips" data-action="showFreightTips"></view>
+                            <block wx:if="{{freight.overweight}}">需付运费</block>
+                            <block wx:elif="{{freight.isFreeShipping}}">已免运费</block>
+                            <block wx:else>还差
+								<view class="amount">{{utils.formatPrice(freight.amount)}}元</view>
+								免运费
+							</block>
+                        </view>
+                        <view class="notice" wx:if="{{vender.vid==8888}}">
+                            <view bind:tap="bubble" class="icon_tips" data-action="showFreightTips"></view>
+                            <block wx:if="{{freight.overweight}}">需付运费</block>
+                            <block wx:elif="{{freight.isFreeShipping}}">已免运费</block>
+                            <block wx:else>还差
+								<view class="amount">{{utils.formatPrice(freight.amount)}}元</view>
+								免运费{{coupons[vender.vid]?',':''}}
+							</block>
+                            <view bind:tap="bubble" class="btn_addon" data-action="gotoFreightAddon" data-category="{{freight.category}}" data-price="{{freight.amount}}" data-weight="{{freight.weight}}" wx:if="{{vender.vid==8888&&freight.amount>0}}">去凑单
+							</view>
+                        </view>
+                    </block>
+                    <view class="header_buttons_coupon" wx:if="{{coupons[vender.vid]}}">
+                        <view bind:tap="bubble" class="header_buttons_coupon_inner {{coupons[vender.vid].hasRedPacket?'redpacket':''}}" data-action="showCouponPanel">
+                            <text data-action="showCouponPanel">优惠券</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="header_inner {{sticky[vender.vid]?'fixed':''}} freight_notice" wx:if="{{vender.vid!=8888&&vender.vid!=1000076153&&freight.vids[vender.vid]&&freight.btmTip}}">
+                <view class="title">{{freight.btmTip}}</view>
+            </view>
+        </view>
+        <view class="coupon_addon" wx:if="{{coupons[vender.vid].addOnItemCoupon}}">
+            <view class="coupon_addon_inner {{sticky[vender.vid]?'fixed':''}}">
+                <view class="coupon_addon_text">{{coupons[vender.vid].addOnItemTextBefore}}</view>
+                <view class="coupon_addon_coupon">
+                    <text>{{coupons[vender.vid].addOnItemCoupon}}</text>
+                </view>
+                <view class="coupon_addon_text">{{coupons[vender.vid].addOnItemTextAfter}}</view>
+                <view bind:tap="gotoCouponPromotion" class="coupon_addon_go" data-batch-id="{{coupons[vender.vid].pid}}" data-begin-time="{{coupons[vender.vid].beginTime}}" data-coupon-kind="{{coupons[vender.vid].couponKind}}" data-end-time="{{coupons[vender.vid].endTime}}" wx:if="{{coupons[vender.vid].showPromotion}}">去凑单
+				</view>
+            </view>
+        </view>
+        <view class="goods_group {{utils.getClsConnectLine(item.polyType)}} " wx:for="{{vender.list}}" wx:key="itemId">
+            <view class="goods_group_promotion" wx:if="{{item.promoteFlag}}">
+                <view class="goods_group_promotion_tag">{{item.promoteFlag}} </view>
+                <text class="goods_group_promotion_text">{{item.promoteTitle}}</text>
+                <view bind:tap="bubble" class="goods_group_promotion_addon" data-action="gotoPromotionPage" data-item-id="{{item.itemId}}">{{item.actLineTitle}}
+				</view>
+            </view>
+            <template is="tplGoodsGift" data="{{products:item.manGiftSkus,itemId:item.itemId,type:item.promoteFlag}}"></template>
+            <template is="tplGoods" data="{{editable:editable,item:item,stock:stock,margins:margins,spec:spec,services:services,shopServices:shopServices,locShops:locShops,shopId:vendersName[vender.vid].shopId,showFactoryShipTag:vender.showFactoryShipTag,partition:partition,pinGouInfos:pinGouInfos,pingouABTest:pingouABTest}}" wx:if="{{item.products.length&&item.polyType!=2}}"></template>
+            <template is="tplGoodsSuit" data="{{editable:editable,suits:item.suits.length?item.suits:[item],stock:stock,margins:margins,spec:spec,services:services,shopServices:shopServices,shopId:vendersName[vender.vid].shopId,showFactoryShipTag:vender.showFactoryShipTag,partition:partition}}" wx:if="{{item.suits.length||item.polyType==2}}"></template>
+        </view>
+    </view>
+    <cart-gift hidden="{{editable}}" isEmptyCart="{{false}}"></cart-gift>
+    <recommend bind:afteraddcart="onRecommendAfterAdd2Cart" bind:click="onRecommendClick" bind:ready="onRecommendReady" hidden="{{editable}}" options="{{recommendOptions}}" wx:if="{{showRecommend}}"></recommend>
+    <view class="placeholder"></view>
+    <slot name="after"></slot>
+</scroll-view>
+<scroll-view scrollY bind:scroll="onPageScroll" class="venders_container" wx:if="{{viewLoaded&&!venders.length}}">
+    <view class="empty">
+        <view class="icon"></view>
+        <text>购物车空空如也，去逛逛吧~</text>
+    </view>
+    <cart-gift isEmptyCart="{{true}}"></cart-gift>
+    <recommend bind:afteraddcart="onRecommendAfterAdd2Cart" bind:click="onRecommendClick" bind:ready="onRecommendReady" options="{{recommendOptions}}"></recommend>
+</scroll-view>
+<view bind:tap="back2top" class="back2top" hidden="{{!back2topVisabled}}"></view>
+<view bindfocus="hideInputMask" class="input_mask" wx:if="{{showInputMask}}"></view>
+<option-promotions bind:afterswitchpromo="onOptionSwitchPromo" bind:close="onOptionPromoTipsClose" hide="{{editable}}" id="optionpromotions"></option-promotions>
+<popup-coupons bind:close="onCouponPanelClose" bind:drawafter="onCouponDrawAfter" data="{{couponsData}}" id="popCouponsPanel"></popup-coupons>
+<popup-promotion bind:select="onPromoSelected" promotion="{{promotion}}"></popup-promotion>
+<switch-price bind:close="onSwitchPricePanelClose" bind:select="onSwitchPriceSelected" options="{{switchPriceOpts}}"></switch-price>
+<sku-layer isCart bind:closeSkuLayer="hideSwitchSkuPanel" bind:confirmSkuChange="onSkuChange" cover="{{skuPanelData.cover}}" id="skulayer" othersData="{{skuPanelData.othersData}}" price="{{skuPanelData.price}}" showSkuLayerFlag="{{showSkuLayerFlag}}" sku="{{skuPanelData.sku}}" suitPackData="{{skuPanelData.suitPackData}}"></sku-layer>
+<import src="templates.wxml"></import>
+<wxs module="utils" src="index.wxs" />

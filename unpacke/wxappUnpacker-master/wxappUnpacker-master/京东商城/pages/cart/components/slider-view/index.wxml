@@ -1,0 +1,8 @@
+<movable-area class="slider_view" style="width:calc({{moveMax}}rpx + 100vw);margin-left:-{{moveMax}}rpx;">
+    <movable-view bind:change="onChange" bind:touchend="onTouchEnd" bind:touchstart="onTouchStart" class="slider_view_content" damping="100" direction="horizontal" disabled="{{disabled}}" x="{{x}}">
+        <slot></slot>
+        <view class="slider_view_button">
+            <view catch:tap="onRemove" class="slider_view_button_remove" style="width:{{moveMax}}rpx">删除</view>
+        </view>
+    </movable-view>
+</movable-area>

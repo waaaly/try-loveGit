@@ -1,0 +1,129 @@
+.selected {
+    width: 750rpx;
+    max-height: 1107rpx;
+    background-repeat: no-repeat;
+    background-size: 750rpx 1107rpx;
+    overflow: hidden;
+}
+
+.selected-header {
+    position: relative;
+    width: 710rpx;
+    margin: 40rpx auto 50rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+}
+
+.selected-header__title {
+    font-size: 36rpx;
+    color: #ff0e00;
+    text-align: center;
+    font-weight: bold;
+}
+
+.selected-header__btn {
+    height: 36rpx;
+    position: absolute;
+    top: 0;
+    padding: 0 15rpx 0 20rpx;
+    font-size: 24rpx;
+    border-radius: 18rpx;
+    color: #ff682a;
+}
+
+.selected-header__btn-left {
+    left: 0;
+    border: 2rpx solid currentColor;
+    box-sizing: border-box;
+    line-height: 32rpx;
+}
+
+.selected-header__btn-left::after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 10rpx;
+    height: 10rpx;
+    border-top: 3rpx solid currentColor;
+    border-right: 3rpx solid currentColor;
+    transform: rotate(45deg);
+    margin: -2rpx 0 0 5rpx;
+}
+
+.selected-header__btn-right {
+    right: 0;
+    color: #fff3e2;
+    border: 2rpx solid #ffeb63;
+    background-color: #ff682a;
+    box-sizing: border-box;
+    line-height: 32rpx;
+}
+
+.selected-header__btn-right::after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 10rpx;
+    height: 10rpx;
+    border-top: 3rpx solid currentColor;
+    border-right: 3rpx solid currentColor;
+    transform: rotate(45deg);
+    margin: -2rpx 0 0 5rpx;
+}
+
+.selected-list {
+    overflow: hidden;
+    margin: 0 0 20rpx 30rpx;
+}
+
+.selected-list__item {
+    position: relative;
+    float: left;
+    color: #222;
+    width: 216rpx;
+    height: 308rpx;
+    background-color: #fff;
+    border-radius: 4rpx;
+    margin: 0 20rpx 10rpx 0;
+    overflow: hidden;
+    background: url('https://img11.360buyimg.com/jdphoto/s216x310_jfs/t1/23324/11/3727/8533/5c2b0f87E2963ee73/995af67ea636cbdf.png');
+    background-size: 100%;
+}
+
+.selected-list__image {
+    display: block;
+    width: 168rpx;
+    height: 168rpx;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.selected-list__info {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: 20rpx 20rpx 10rpx;
+}
+
+.selected-list__title,.selected-list__des {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.selected-list__title {
+    font-size: 32rpx;
+    margin-bottom: 5rpx;
+}
+
+.selected-list__des {
+    width: 145rpx;
+    margin: 0 auto;
+    font-size: 24rpx;
+    color: #f57300;
+    border-radius: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    font-weight: bold;
+}

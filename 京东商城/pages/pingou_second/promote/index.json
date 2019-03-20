@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "京东拼购",
+    "usingComponents": {
+        "quick-nav": "../components/quick-nav/quick-nav"
+    }
+}

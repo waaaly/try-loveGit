@@ -1,0 +1,16 @@
+<!--component/error/error.wxml-->
+<view class="system-empty" >
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="../../images/system-error.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>抱歉，服务器开小差了</text>
+        </view>
+        <view bindtap="getCategoryInfo" class="system-empty-btn">
+            <view class="button-style-3">
+                <text>重新加载</text>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,86 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="score_box">
+    <view class="scoreA">
+        <view class="score_type">
+      A数贝总收入
+      <text class="total_score">{{scoreInfo.totalascore}}</text>
+        </view>
+        <view class="score_info">
+            <view class="score_state">
+                <view class="score_useable">
+                    <image class="useable_img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/unlock.png"></image>
+                    <text class="useable_txt">可使用</text>
+                    <text class="useable_num">{{scoreInfo.cashascore}}</text>
+                </view>
+                <view class="score_unuseable">
+                    <image class="unuseable_img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/lock.png"></image>
+                    <text class="unuseable_txt">冻结中</text>
+                    <text class="unuseable_num">{{scoreInfo.frozenAscore}}</text>
+                </view>
+            </view>
+            <view class="cant_change">
+        兑换
+      </view>
+        </view>
+        <image class="score_img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/Ascore.png"></image>
+    </view>
+    <view class="scoreA">
+        <view class="score_type">
+      B数贝总收入
+      <text class="total_score">{{scoreInfo.totalbscore}}</text>
+        </view>
+        <view class="score_info">
+            <view class="score_state">
+                <view class="score_useable">
+                    <image class="useable_img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/unlock.png"></image>
+                    <text class="useable_txt">可使用</text>
+                    <text class="useable_num">{{scoreInfo.cashbscore}}</text>
+                </view>
+                <view class="score_unuseable">
+                    <image class="unuseable_img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/lock.png"></image>
+                    <text class="unuseable_txt">冻结中</text>
+                    <text class="unuseable_num">{{scoreInfo.frozenBscore}}</text>
+                </view>
+            </view>
+            <view class="cant_change">
+        兑换
+      </view>
+        </view>
+        <image class="score_img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/Bscore.png"></image>
+    </view>
+    <view class="scoreA">
+        <view class="score_type">
+      C数贝总收入
+      <text class="total_score">{{scoreInfo.totalcscore}}</text>
+        </view>
+        <view class="score_info">
+            <view class="score_state">
+                <view class="score_useable">
+                    <image class="useable_img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/unlock.png"></image>
+                    <text class="useable_txt">可使用</text>
+                    <text class="useable_num">{{scoreInfo.cashcscore}}</text>
+                </view>
+                <view class="score_unuseable">
+                    <image class="unuseable_img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/lock.png"></image>
+                    <text class="unuseable_txt">冻结中</text>
+                    <text class="unuseable_num">{{scoreInfo.frozenCscore}}</text>
+                </view>
+            </view>
+            <view class="cant_change">
+        兑换
+      </view>
+        </view>
+        <image class="score_img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/Cscore.png"></image>
+    </view>
+    <view catchtap="showShareWindow" class="instruc">
+    数贝兑换说明
+  </view>
+    <view catchtouchmove="true" class="share_window" wx:if="{{shareShow}}">
+        <view class="img_box">
+            <image class="share_img" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/score_img.png"></image>
+            <image class="share_txt" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/score_txt.png"></image>
+        </view>
+        <image catchtap="closeWindow" class="close_btn" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/close_btn.png"></image>
+    </view>
+</view>

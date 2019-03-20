@@ -1,0 +1,54 @@
+<view class="prompat" wx:if="{{prompat}}">
+
+
+  没有任何记录~~
+</view>
+<view class="row header_del row spa ali-center">
+    <view class="header_del_headers row ali-center">
+        <text bindtap="changeType" class="header_del_txt">显示有货</text>
+        <image class="header_del_img" src="/images/check_foot.png" wx:if="{{type==2}}"></image>
+    </view>
+    <text bindtap="showDelete" class="header_del_txt">{{showDeleteTxt}}</text>
+</view>
+<view class="list_new">
+    <view class="list_new_box row spa">
+        <view bindtap="{{det?'choseItem':'goContent'}}" class="list_new_item col ali-center" data-id="{{item.goodsId}}" data-inx="{{index}}" data-time="{{item.addTime}}" wx:for="{{list}}">
+            <image class="list_item_img" mode="aspectFill" src="{{item.defalutPhotourl}}"></image>
+            <view class="list_item_intros row jcsc">
+                <view class="list_item_introl row jcsc  ali-center" wx:if="{{det}}">
+                    <image class="list_item_check" src="/images/xuanzhong_address2.png" wx:if="{{item.isChose}}"></image>
+                    <image class="list_item_check" src="/images/no_checked.png" wx:if="{{!item.isChose}}"></image>
+                </view>
+                <view class="list_item_intror" style="{{det?'width:214rpx;':'width:309rpx;'}}">
+                    <view class="list_item_intro ovr2">{{item.goodsName}}</view>
+                    <view class="list_item_price">
+                        <text class="list_item_price1">￥</text>
+                        <text class="list_item_price2">{{item.price}}元</text>
+                        <text class="list_item_price3">￥{{item.marketPrice}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="recommend_bottom">
+    <view class="bottomcenter" wx:if="{{isReq}}">
+        <image class="img_rotate" src="/images/loadding.png"></image>
+    正在玩命的加载...
+  </view>
+    <view class="endparent" wx:if="{{isEnd&&!isnull&&list.length>4}}">
+        <view class="bottomp">我已经到底了</view>
+        <view class="bottomline"></view>
+    </view>
+    <view class="endparent" wx:if="{{isEnd&&isnull}}">
+        <view class="bottomp">暂无足迹~~</view>
+        <view class="bottomline"></view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>
+<view class="del_box row spa {{det?' hideBtn ':'showBtn'}}" wx:if="{{hide}}">
+    <view catchtap="deleteFooter" class="del_box_ll" data-type="2">全部删除</view>
+    <view catchtap="deleteFooter" class="del_box_r" data-type="1">删除</view>
+</view>

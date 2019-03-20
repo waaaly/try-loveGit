@@ -1,0 +1,51 @@
+page {
+    background-color: #fff;
+}
+
+.wxAccount {
+    width: 100%;
+    height: 66.7%;
+    position: relative;
+}
+
+.wxAccount-cont {
+    width: 100%;
+    height: 125rpx;
+    position: absolute;
+    top: 50%;
+    margin-top: -63rpx;
+    text-align: center;
+}
+
+.wxAccount-cont .wxAccount-Img {
+    padding-bottom: 17rpx;
+}
+
+.wxAccount-cont .wxAccount-Img image {
+    width: 125rpx;
+    height: 125rpx;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.wxAccount-cont .wxAccount-name {
+    font-size: 32rpx;
+    color: #000;
+}
+
+.wxAccount-cont .wxAccount-p {
+    font-size: 28rpx;
+    color: rgba(0,0,0,0.5);
+    line-height: 2.2;
+}
+
+.wxAccount-list {
+    position: fixed;
+    bottom: 0;
+    left: 34rpx;
+    right: 34rpx;
+}
+
+.wxAccount-list .upButton-style-1 {
+    margin-bottom: 34rpx;
+}

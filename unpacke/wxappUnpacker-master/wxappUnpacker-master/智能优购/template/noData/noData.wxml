@@ -1,0 +1,6 @@
+<template name="noData">
+    <view class="data_null col ali-center jusc">
+        <image class="data_null_img" mode="widthFix" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/data_null.png"></image>
+        <text class="data_null_txt">这里什么也没有~</text>
+    </view>
+</template>

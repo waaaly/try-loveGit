@@ -1,0 +1,12 @@
+.box {
+    width: 750rpx;
+}
+
+.box {
+    margin: 200rpx auto;
+    width: 400rpx;
+    height: 400rpx;
+}
+
+image {
+}

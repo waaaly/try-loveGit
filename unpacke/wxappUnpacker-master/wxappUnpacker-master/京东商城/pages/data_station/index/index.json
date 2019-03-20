@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "流量加油站",
+    "usingComponents": {
+        "rules": "../components/rules/rules"
+    }
+}

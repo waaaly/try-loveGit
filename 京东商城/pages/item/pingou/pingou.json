@@ -1,0 +1,32 @@
+{
+    "navigationBarTitleText": "商品详情",
+    "onReachBottomDistance": 0,
+    "usingComponents": {
+        "GuessYouLike": "/pages/item/components/guess-you-like/guess-you-like",
+        "Review": "/pages/components/review/review",
+        "Shop": "/pages/components/shop/shop",
+        "Specific": "/pages/components/specific/specific",
+        "Address": "/pages/item/components/address/address",
+        "xModal": "/pages/components/modal/modal",
+        "quick-nav": "/components/quick-nav/quick-nav",
+        "app-launch": "/components/app-launch/app-launch",
+        "Answers": "/pages/item/components/answers/index",
+        "GlobalInfo": "/pages/item/components/global-info/index",
+        "AddressLayer": "/components/address-layer/index",
+        "return-app": "/components/return_app/return_app",
+        "CouponLayer": "/components/coupon-layer/index",
+        "dialog": "/common/dialog/dialog",
+        "ShareLayer": "/components/share-layer/index",
+        "Navbar": "/pages/item/components/navbar/navbar",
+        "GlobalService": "/pages/item/components/global-service/index",
+        "CareFree": "/pages/item/components/care-free/index",
+        "Service": "/pages/item/components/service/service",
+        "GoodsDesc": "/pages/item/components/goods-desc/index",
+        "JingzaoLayer": "/pages/item/components/jingzao-layer/index",
+        "SkuLayer": "/components/sku-layer/index",
+        "ActionSheet": "/components/action-sheet/index",
+        "FxgLayer": "/pages/item/components/fangxingou-layer/index",
+        "added-service": "/pages/item/components/added-service/index",
+        "Activities": "/pages/item/components/activities/index"
+    }
+}

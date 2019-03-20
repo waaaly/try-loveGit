@@ -1,0 +1,105 @@
+.lea-ipt {
+    line-height: 60rpx;
+    height: 60rpx;
+    vertical-align: middle;
+}
+
+.container {
+    width: 100%;
+    position: relative;
+}
+
+.golden {
+    color: #CEA164;
+}
+
+.gray {
+    color: #C7C7C7;
+}
+
+.black {
+    color: #3A3A3A;
+}
+
+.color80 {
+    color: #4D4D4D;
+}
+
+.main {
+    width: 700rpx;
+    margin-top: 20rpx;
+    line-height: 60rpx;
+    border-radius: 6rpx;
+}
+
+.card {
+    background: #fff;
+    border-radius: 6rpx;
+}
+
+.card>.label {
+    padding: 0 25rpx;
+    border-top: 1px solid rgba(232,232,232,1);
+}
+
+.box-bottom {
+    margin-bottom: 30rpx;
+}
+
+.card-content {
+    padding: 0 25rpx;
+}
+
+.title {
+    padding: 0 25rpx;
+    color: #4D4D4D;
+    line-height: 104rpx;
+}
+
+.label {
+    height: 80rpx;
+}
+
+.px60 {
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.card:nth-child(1) {
+    margin-bottom: 20rpx;
+}
+
+.card:nth-child(1) .title {
+    border-bottom: 1px solid rgba(232,232,232,0.5);
+}
+
+.vali-code text {
+    padding-left: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    border-left: 1px solid #E8E8E8;
+}
+
+input::-webkit-input-placeholder {
+    color: #aab2bd;
+    font-size: 12px;
+    text-align: right;
+}
+
+.placeholder-style {
+    color: #C7C7C7;
+    font-size: 28rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    line-height: 60rpx;
+}
+
+.btn {
+    width: 700rpx;
+    height: 92rpx;
+    margin-top: 20rpx;
+    line-height: 92rpx;
+    background: #F11717;
+    border-radius: 10rpx;
+}

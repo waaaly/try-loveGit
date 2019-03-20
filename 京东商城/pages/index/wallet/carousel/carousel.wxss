@@ -1,0 +1,53 @@
+@import "../../../../__wuBaseWxss__/20.wxss";
+
+.carousel {
+    position: relative;
+    height: 366rpx;
+    margin-top: -28rpx;
+    margin-bottom: -30rpx;
+    overflow: hidden;
+    background: #f7f7f7;
+}
+
+.carousel--error {
+    height: 100rpx;
+}
+
+.carousel__swiper,.carousel__image {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel__mark {
+    position: absolute;
+    top: 120rpx;
+    left: 30rpx;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.carousel__dots {
+    position: absolute;
+    left: 0;
+    bottom: 50rpx;
+    right: 0;
+    height: 5px;
+    text-align: center;
+    font-size: 0;
+}
+
+.carousel__dot {
+    display: inline-block;
+    margin: 0 3px;
+    width: 5px;
+    height: 5px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.3);
+    transition: all .2s;
+}
+
+.carousel__dot--cur {
+    width: 10px;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(255,255,255,0.2);
+}

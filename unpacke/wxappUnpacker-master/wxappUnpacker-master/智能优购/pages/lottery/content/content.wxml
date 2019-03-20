@@ -1,0 +1,123 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="top">
+    <view class="topimg">
+        <image class="headimg" src="/images/brand.jpg"></image>
+        <image class="headimg2" src="{{dataset.content.mainpic}}"></image>
+    </view>
+    <view class="headpar">
+        <view class="cost">
+          ¥{{dataset.content.cost3}}<span>¥{{dataset.content.cost1}}
+          </span>
+            <span class="choujiang">抽奖</span>
+        </view>
+        <view class="num">已团{{dataset.content.suctotal}}件 • {{dataset.content.sucnums}}人团</view>
+        <view class="title">{{dataset.content.title}}</view>
+        <view class="share">
+            <view class="sharebox">
+                <button class="sharebutton" openType="share">x</button>
+                <image src="/images/bshare.png"></image>
+                <view class="sharetitle">分享</view>
+            </view>
+        </view>
+    </view>
+    <view class="rule">
+        <view class="title">抽奖规则</view>
+        <text>{{dataset.content.lotteryrule}}</text>
+    </view>
+</view>
+<view class="open" wx:if="{{dataset.pinlist.length>0}}">
+    <view class="title">
+        <view class="more" wx:if="{{false}}">全部></view>
+    已有{{dataset.pinlist.length}}人在开团，可直接参与</view>
+    <view class="item clear" wx:for="{{dataset.pinlist}}" wx:key="unique">
+        <view class="it1">
+            <image class="userimg" src="{{item.userimg}}"></image>
+        </view>
+        <view class="it2">{{item.nickname}}</view>
+        <view class="it3">
+            <view>还差<span>{{item.cha}}</span>人拼成</view>
+            <view class="time">剩余{{item.timestr}}</view>
+        </view>
+        <view class="it4">
+            <button bindgetuserinfo="bindPinTuanTap3" class="sharebutton" data-oid="{{item.oid}}" openType="getUserInfo" style="width:130rpx; z-index: 2;"></button>
+            <view class="button">去参团</view>
+        </view>
+    </view>
+</view>
+<view class="intro">
+    <view class="title">奖品描述</view>
+    <view class="text">
+        <text>{{dataset.content.intro}}</text>
+    </view>
+</view>
+<view class="content clear">
+    <view class="title">奖品图片</view>
+    <rich-text nodes="{{dataset.content.content}}"></rich-text>
+</view>
+<view class="recommend">
+    <view class="title">为你推荐</view>
+    <view bindtap="bindGoBrandTap" class="item" data-id="{{item.id}}" wx:for="{{dataset.list}}" wx:key="unique">
+        <view>
+            <image src="{{item.mainpic}}"></image>
+        </view>
+        <view class="subtitle">{{item.title}}</view>
+        <view class="cost">¥{{item.cost3}}<span>¥{{item.cost1}}</span>
+        </view>
+    </view>
+    <view class="clear"></view>
+</view>
+<view class="recommend_bottom">
+    <view class="endparent">
+        <view class="bottomp">分享赚数贝</view>
+        <view class="bottomline"></view>
+    </view>
+</view>
+<view class="zhanwei"></view>
+<view class="bottom">
+    <view bindtap="bindGoHomeTap" class="b1">
+        <image src="/images/main.png"></image>
+        <view class="bword">首页</view>
+    </view>
+    <view class="b2">
+        <contact-button class="contact" sessionFrom="weapp" size="100"></contact-button>
+        <image src="/images/kefu.png"></image>
+        <view class="bword">客服</view>
+    </view>
+    <view class="b3">
+        <button bindgetuserinfo="bindBuyTap3" class="sharebutton" data-type="0" openType="getUserInfo"></button>
+        <view class="word1">¥{{dataset.content.cost2}}</view>
+        <view class="word2">单独购买</view>
+    </view>
+    <view class="b4 buy{{dataset.content.isgroup}}">
+        <button bindgetuserinfo="bindBuyTap3" class="sharebutton" data-type="2" openType="getUserInfo"></button>
+        <view class="word1">¥{{dataset.content.cost3}}</view>
+        <view class="word2">3人团</view>
+    </view>
+</view>
+<view bindtap="bindHideBuyTap" class="mask" wx:if="{{maskShow}}"></view>
+<view class="layer {{layclass}}">
+    <view class="listbox">
+        <view class="listtitle">
+            <view class="right">共 {{dataset.programe.count}} 条</view>播放列表
+        </view>
+        <scroll-view class="scroll-view_H" scrollY="true">
+            <view>
+                  asdfasdf
+                 sssssd
+                  sssssdf
+                  as
+                  df
+                  asd
+                  fa
+                  sdf
+                  asdfsss
+            </view>
+            <view class="ended clear">没有了</view>
+        </scroll-view>
+        <view bindtap="bindHideBuyTap" class="close">关闭</view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

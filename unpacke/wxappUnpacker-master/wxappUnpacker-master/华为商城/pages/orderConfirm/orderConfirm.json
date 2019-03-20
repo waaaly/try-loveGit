@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "确认订单",
+    "usingComponents": {
+        "BindAccountModal": "../../components/BindAccountModal/BindAccountModal",
+        "Toast": "../../components/Toast/Toast"
+    }
+}

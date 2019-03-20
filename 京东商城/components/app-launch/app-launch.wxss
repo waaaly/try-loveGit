@@ -1,0 +1,76 @@
+.app-launch {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 98rpx;
+    font-size: 0;
+    background: #232228;
+    overflow: hidden;
+    z-index: 120;
+}
+
+.app-launch__close {
+    float: left;
+    padding: 0 20rpx;
+    display: flex;
+    justify-content: space-around;
+}
+
+.app-launch__close image {
+    position: relative;
+    top: 36rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.app-launch__logo {
+    float: left;
+}
+
+.app-launch__logo image {
+    position: relative;
+    top: 16rpx;
+    margin: 0 20rpx;
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.app-launch__txt {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 16rpx;
+    font-size: 24rpx;
+}
+
+.app-launch__txt text {
+    flex: 1;
+}
+
+.app-launch__txtf {
+    color: #fff;
+}
+
+.app-launch__txts {
+    color: #999;
+}
+
+.app-launch__btn {
+    float: right;
+    display: inline-block;
+    width: 270rpx;
+    height: 100%;
+    color: #fff;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 98rpx;
+    background: #ce2727;
+    border-radius: 0;
+}
+
+.line1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

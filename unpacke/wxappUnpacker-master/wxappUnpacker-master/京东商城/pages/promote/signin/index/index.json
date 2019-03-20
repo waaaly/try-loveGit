@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "header-at": "./components/header/index",
+        "smartlist": "./components/smartlist/smartlist",
+        "signin-tips": "./components/signinTips/index",
+        "coupon": "../coupon/components/coupon/index",
+        "rule": "../../components/rule/index",
+        "fans-rule": "./components/fansRule/index",
+        "qr-code": "./components/qrCode/index"
+    }
+}

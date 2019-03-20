@@ -1,0 +1,380 @@
+@import "../../index/public/bottom.wxss";
+
+page {
+    background: #F2F2F2;
+    height: auto;
+}
+
+.prompat {
+    text-align: center;
+    padding-top: 200rpx;
+}
+
+.sloadding {
+    text-align: center;
+    padding-top: 200rpx;
+    width: 100%;
+}
+
+.sloadding image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.brand {
+    margin-top: 10rpx;
+    background-color: #f2f2f2;
+    overflow: hidden;
+}
+
+.brand .name {
+    background: white;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 14px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 42rpx;
+    line-height: 42rpx;
+    padding-left: 20rpx;
+    background: #fff;
+}
+
+.brand .name span {
+    float: right;
+    font-size: 14px;
+    color: #f4241a;
+    padding-right: 20rpx;
+}
+
+.list .brand .mbox {
+    background-color: #fff;
+    margin-top: 10rpx;
+}
+
+.list .brand .mbox:nth-child(2) {
+    margin-top: 0;
+}
+
+.brand .mbox .picbox {
+    float: left;
+    width: 226rpx;
+}
+
+.brand .mbox .picbox image {
+    width: 226rpx;
+    height: 226rpx;
+}
+
+.brand .mbox .name2 {
+    float: left;
+    width: 530rpx;
+    padding: 20rpx 0rpx;
+}
+
+.brand .mbox .name2 .intro {
+    font-size: 28rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(51,51,51,1);
+    line-height: 34rpx;
+}
+
+.brand .mbox .par {
+    color: #f4241a;
+    font-size: 14px;
+    margin-left: 24rpx;
+}
+
+.brand .mbox .par .cost1 {
+    padding-left: 20rpx;
+    font-size: 24rpx;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: rgba(153,153,153,1);
+}
+
+.mbox_num {
+    font-size: 30rpx;
+    font-family: ArialMT;
+    font-weight: 400;
+    color: rgba(214,2,0,1);
+}
+
+.zhanwei {
+    height: 100rpx;
+}
+
+.bottom {
+    height: 100rpx;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    background-color: white;
+}
+
+.bottom .slider {
+    position: relative;
+    height: 1px;
+    background-color: #e8e8e8;
+}
+
+.bottom .slider .line {
+    position: absolute;
+    top: 0;
+    height: 1px;
+    background-color: limegreen;
+}
+
+.bottom .content {
+    padding: 0rpx 20rpx 20rpx 20rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.bottom .content view {
+    float: left;
+}
+
+.bottom .content .img {
+    position: relative;
+    width: 90rpx;
+    padding-bottom: 20rpx;
+}
+
+.bottom .content .img image {
+    position: absolute;
+    top: 15rpx;
+    width: 65rpx;
+    height: 65rpx;
+    border-radius: 50%;
+}
+
+.bottom .content .name {
+    width: 500rpx;
+}
+
+.bottom .content .pause {
+    width: 50rpx;
+    position: relative;
+}
+
+.bottom .content .pause image {
+    width: 50rpx;
+    height: 50rpx;
+    left: 30rpx;
+    position: absolute;
+    top: 22rpx;
+}
+
+.list_new {
+    padding: 75rpx 15rpx 0rpx;
+}
+
+.list_new_box {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.list_new_item {
+    width: 356rpx;
+    height: 500rpx;
+    margin-bottom: 10rpx;
+    overflow: hidden;
+    background: rgba(255,255,255,1);
+    box-shadow: 0px 0rpx 10rpx 0px rgba(0,0,0,0.04);
+    border-radius: 10rpx;
+}
+
+.list_item_img {
+    width: 356rpx;
+    height: 356rpx;
+}
+
+.list_item_intro {
+    min-height: 64rpx;
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(51,51,51,1);
+    line-height: 34rpx;
+}
+
+.list_item_price {
+    margin-top: 5rpx;
+}
+
+.list_item_price1 {
+    font-size: 20rpx;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(214,2,0,1);
+}
+
+.list_item_price2 {
+    font-size: 30rpx;
+    font-family: ArialMT;
+    font-weight: 400;
+    color: rgba(214,2,0,1);
+}
+
+.list_item_price3 {
+    font-size: 24rpx;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: rgba(153,153,153,1);
+}
+
+.list_item_intros {
+    width: 100%;
+    margin-top: 20rpx;
+}
+
+.list_item_check {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.list_item_intror {
+    width: 309rpx;
+    height: 120rpx;
+}
+
+.list_item_introl {
+    width: 36rpx;
+    margin-right: 47rpx;
+}
+
+.del_box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 88rpx;
+    animation-fill-mode: forwards;
+    background: rgba(255,255,255,1);
+}
+
+.del_box_l {
+    width: 140rpx;
+}
+
+.del_box_alltxt {
+    font-size: 24rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(102,102,102,1);
+    line-height: 40px;
+}
+
+.del_box_all {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.del_box_r {
+    width: 50%;
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(255,255,255,1);
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    background: linear-gradient(-90deg,rgba(241,23,23,1),rgba(252,67,67,1));
+}
+
+.del_box_ll {
+    font-size: 26rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(255,255,255,1);
+    text-align: center;
+    line-height: 88rpx;
+    width: 50%;
+    background: linear-gradient(-90deg,rgba(210,172,117,1),rgba(223,184,127,1));
+}
+
+.header_del {
+    width: 100%;
+    height: 65rpx;
+    padding: 0 15rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-top: 1rpx solid #ddd;
+}
+
+.header_del_txt {
+    font-size: 26rpx;
+    padding-right: 15rpx;
+    font-family: FZLTHJW--GB1-0;
+    font-weight: 400;
+    color: rgba(34,34,34,1);
+}
+
+.header_del_img {
+    width: 28rpx;
+    height: 19rpx;
+}
+
+.header_del_headers {
+    width: 200rpx;
+    height: 100%;
+    padding-left: 15rpx;
+}
+
+.showBtn {
+    animation: slideup 1s;
+    animation-fill-mode: forwards;
+}
+
+.hideBtn {
+    animation: slidedown 1s;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes slidedown {
+    from {
+        bottom: -88rpx;
+    }
+
+    to {
+        bottom: 0;
+    }
+}
+
+@keyframes slidedown {
+    from {
+        bottom: -88rpx;
+    }
+
+    to {
+        bottom: 0;
+    }
+}
+
+@-webkit-keyframes slideup {
+    from {
+        bottom: 0rpx;
+    }
+
+    to {
+        bottom: -88rpx;
+    }
+}
+
+@keyframes slideup {
+    from {
+        bottom: 0rpx;
+    }
+
+    to {
+        bottom: -88rpx;
+    }
+}

@@ -1,0 +1,147 @@
+<view class="task" style="{{saleColor}}{{isSale?'margin: 0':''}}" wx:if="{{showModule}}">
+    <header color="#fff" title="每日福利" wx:if="{{isSaleClimax}}"></header>
+    <header desc="DAILY QUESTS" icon="http://img11.360buyimg.com/jdphoto/s36x36_jfs/t12490/121/757365101/426/8a25d32a/5a1291e5Na2421113.png" title="每日福利" wx:else></header>
+    <view bindtap="gotoH5" class="task__more" data-url="{{entryLink}}" style="{{isSaleClimax?'color: rgba(255, 255, 255, 0.5)':'color: #BE8E40'}}" wx:if="{{entryLink&&entryText}}">{{entryText}}<view class="task__more-arrow" style="{{isSaleClimax?'border-color: rgba(255, 255, 255, 0.5)':'border-color: #BE8E40'}}"></view>
+    </view>
+    <scroll-view class="task__wrap" scrollX="true">
+        <view bindtap="gotoSign" class="task__item task__item--newsign" wx:if="{{signEntry&&signEntry.desc}}">
+            <view class="task__sign-inner">
+                <view class="task__sign-icon {{signEntry.finish?'sign':''}}">
+                    <image mode="aspectFill" src="{{signEntry.icon}}"></image>
+                </view>
+                <view class="task__sign-text line1">{{signEntry.desc}}</view>
+            </view>
+        </view>
+        <view bindtap="gotoH5" class="task__item task__item--banner" data-url="{{subpage.url}}" wx:if="{{subpage&&subpage.title&&signEntry&&signEntry.desc}}">
+            <view class="task__banner-content">
+                <view class="task__banner-title line1">{{subpage.title}}</view>
+                <view class="task__banner-text line1">{{subpage.desc}}</view>
+            </view>
+            <view class="task__banner-button">GO</view>
+        </view>
+        <view bindtap="gotoH5" class="task__item" data-url="{{welfareEntry.url}}" wx:if="{{welfareEntry&&welfareEntry.desc}}">
+            <view class="task__name">{{welfareEntry.title}}</view>
+            <view class="task__content">
+                <view class="task__desc line2">{{welfareEntry.desc}}</view>
+                <text class="task__btn">{{welfareEntry.btnDesc}}</text>
+            </view>
+            <view class="task__prize">
+                <image class="task__icon" mode="aspectFit" src="{{welfareEntry.icon}}"></image>
+            </view>
+        </view>
+        <view bindtap="gotoStatedGift" class="task__item {{statedGiftEntry.finish?'task__item--done':''}}" wx:if="{{statedGiftEntry&&statedGiftEntry.desc}}">
+            <view class="task__name">{{statedGiftEntry.title}}</view>
+            <view class="task__content">
+                <view class="task__desc line2">{{!statedGiftEntry.finish?statedGiftEntry.desc:statedGiftEntry.getDesc}}</view>
+                <text class="task__btn task__btn--done" wx:if="{{statedGiftEntry.finish}}">已抢到</text>
+                <text class="task__btn" wx:else>{{statedGiftEntry.btnDesc}}</text>
+            </view>
+            <view class="task__prize">
+                <image class="task__icon {{statedGiftEntry.finish?'task__icon--done':''}}" mode="aspectFit" src="{{statedGiftEntry.icon}}"></image>
+                <text class="task__status task__status--done" wx:if="{{statedGiftEntry.finish}}">已领</text>
+            </view>
+        </view>
+        <view bindtap="gotoFreshmenGift" class="task__item" data-url="{{freshmenEntry.url}}" wx:if="{{freshmenEntry&&freshmenEntry.desc}}">
+            <view class="task__name">{{freshmenEntry.title}}</view>
+            <view class="task__content">
+                <view class="task__desc line2">{{freshmenEntry.desc}}</view>
+                <text class="task__btn">{{freshmenEntry.btnDesc}}</text>
+            </view>
+            <view class="task__prize">
+                <image class="task__icon" mode="aspectFit" src="{{freshmenEntry.icon}}"></image>
+            </view>
+        </view>
+        <view bindtap="gotoGift" class="task__item {{item.url?'':'task__item--done'}}" data-type="{{item.type}}" data-url="{{item.url}}" wx:for="{{giftEntries}}" wx:key="id">
+            <view class="task__name">每日任务</view>
+            <view class="task__content">
+                <view class="task__desc line2">{{item.desc}}</view>
+                <text class="task__btn" wx:if="{{item.url}}">去领奖</text>
+                <text class="task__btn task__btn--done" wx:else>已完成</text>
+            </view>
+            <view class="task__prize">
+                <image class="task__icon {{item.url?'':'task__icon--done'}}" mode="aspectFit" src="{{item.icon}}"></image>
+                <text class="task__status task__status--done" wx:if="{{!item.url}}">已领</text>
+            </view>
+        </view>
+        <view bindtap="gotoFreshmenPingouGift" class="task__item {{freshmenPingouEntry.off?'task__item--done':''}}" data-url="{{freshmenPingouEntry.url}}" wx:if="{{freshmenPingouEntry&&freshmenPingouEntry.desc}}">
+            <view class="task__name">{{freshmenPingouEntry.title}}</view>
+            <view class="task__content">
+                <block wx:if="{{freshmenPingouEntry.off}}">
+                    <view class="task__desc line2">{{freshmenPingouEntry.offDesc}}</view>
+                    <text class="task__btn task__btn--done">已抢完</text>
+                </block>
+                <block wx:elif="{{freshmenPingouEntry.finish}}">
+                    <view class="task__desc line2">{{freshmenPingouEntry.getDesc}}</view>
+                    <text class="task__btn">立即使用</text>
+                </block>
+                <block wx:else>
+                    <view class="task__desc line2">{{freshmenPingouEntry.desc}}</view>
+                    <text class="task__btn">{{freshmenPingouEntry.btnDesc}}</text>
+                </block>
+            </view>
+            <view class="task__prize">
+                <image class="task__icon {{freshmenPingouEntry.off?'task__icon--done':''}}" mode="aspectFit" src="{{freshmenPingouEntry.icon}}"></image>
+            </view>
+        </view>
+        <view bindtap="gotoTree" class="task__item" wx:if="{{treeEntry}}">
+            <view class="task__name">{{treeEntry.title}}</view>
+            <view class="task__content">
+                <view class="task__desc line2">{{treeEntry.des}}</view>
+                <text class="task__btn">{{treeEntry.btn}}</text>
+            </view>
+            <view class="task__prize">
+                <image class="task__icon" mode="aspectFit" src="{{treeEntry.icon}}"></image>
+            </view>
+        </view>
+        <view bindtap="gotoRandowRedBag" class="task__item" data-url="{{randowRedBagEntry.url}}" wx:if="{{randowRedBagEntry&&randowRedBagEntry.des}}">
+            <view class="task__name">{{randowRedBagEntry.title}}</view>
+            <view class="task__content">
+                <view class="task__desc line2">{{randowRedBagEntry.des}}</view>
+                <text class="task__btn">{{randowRedBagEntry.btn}}</text>
+            </view>
+            <view class="task__prize">
+                <image class="task__icon" mode="aspectFit" src="{{randowRedBagEntry.icon}}"></image>
+            </view>
+        </view>
+        <view bindtap="gotoOldToNew" class="task__item" data-url="{{oldBringEntry.url}}" wx:if="{{oldBringEntry&&oldBringEntry.desc}}">
+            <view class="task__name">{{oldBringEntry.title}}</view>
+            <view class="task__content">
+                <view class="task__desc line2">{{oldBringEntry.desc}}</view>
+                <text class="task__btn">{{oldBringEntry.btnDesc}}</text>
+            </view>
+            <view class="task__prize">
+                <image class="task__icon" mode="aspectFit" src="{{oldBringEntry.icon}}"></image>
+            </view>
+        </view>
+        <view bindtap="gotoPlusGift" class="task__item" data-url="{{plusEntry.url}}" wx:if="{{plusEntry&&plusEntry.desc}}">
+            <view class="task__name">{{plusEntry.title}}</view>
+            <view class="task__content">
+                <view class="task__desc line2">{{plusEntry.desc}}</view>
+                <text class="task__btn">{{plusEntry.btnDesc}}</text>
+            </view>
+            <view class="task__prize">
+                <image class="task__icon" mode="aspectFit" src="{{plusEntry.icon}}"></image>
+            </view>
+        </view>
+        <view bindtap="gotoSport" class="task__item" wx:if="{{sportEntry&&sportEntry.desc}}">
+            <view class="task__name">{{sportEntry.title}}</view>
+            <view class="task__content">
+                <view class="task__desc line2">{{sportEntry.desc}}</view>
+                <text class="task__btn">{{sportEntry.btnDesc}}</text>
+            </view>
+            <view class="task__prize">
+                <image class="task__icon" mode="aspectFit" src="{{sportEntry.img}}"></image>
+            </view>
+        </view>
+        <view bindtap="gotoH5" class="task__item" data-url="{{beansEntry.url}}" wx:if="{{beansEntry&&beansEntry.desc}}">
+            <view class="task__name">每日任务</view>
+            <view class="task__content">
+                <view class="task__desc line2">{{beansEntry.desc}}</view>
+                <text class="task__btn">去领奖</text>
+            </view>
+            <view class="task__prize">
+                <image class="task__icon" mode="aspectFit" src="{{beansEntry.icon}}"></image>
+            </view>
+        </view>
+    </scroll-view>
+</view>

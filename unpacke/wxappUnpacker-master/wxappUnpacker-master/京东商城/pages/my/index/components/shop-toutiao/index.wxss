@@ -1,0 +1,116 @@
+.my_msg {
+    position: relative;
+    margin: 15px 0;
+    padding-right: 10px;
+    height: 55px;
+    background-color: #fff;
+}
+
+.my_msg .my_msg_notice {
+    position: relative;
+    padding-right: 18px;
+    display: flex;
+    height: 55px;
+    overflow: hidden;
+}
+
+.my_msg .my_msg_notice::after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0px;
+    width: 6px;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 12 20%22%3E%3Cpath fill=%22#CCCCCC%22 fill-rule=%22evenodd%22 d=%22M2 20c-.8 0-1.5-.5-1.8-1.2-.3-.8-.2-1.6.4-2.2L7.2 10 .6 3.4c-.8-.8-.8-2 0-2.8.8-.8 2-.8 2.8 0l8 8c.4.4.6 1 .6 1.4 0 .5-.2 1-.6 1.4l-8 8c-.4.4-1 .6-1.4.6z%22/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.my_msg .my_msg_notice_icon {
+    position: relative;
+    width: 50px;
+    height: 55px;
+}
+
+.my_msg .my_msg_notice_icon .my_msg_notice_icon_img {
+    margin: 12px 0 0 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.my_msg .my_msg_notice_icon::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    background-color: #e5e5e5;
+    width: 1px;
+    right: 5px;
+    top: 20px;
+    bottom: 20px;
+}
+
+.my_msg .my_msg_notice_inner {
+    flex: 1;
+    position: relative;
+    height: 55px;
+}
+
+.my_msg .my_msg_notice_inner .my_msg_notice_list_item {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #333;
+}
+
+.my_msg .my_msg_notice_inner .my_msg_notice_list_item .mod_sign_tip {
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #e4393c;
+    line-height: 1;
+    vertical-align: center;
+    border-radius: 12px;
+    border-top-right-radius: 0px;
+    padding: 3px 6px;
+    margin-right: 0px;
+    transform: scale(0.8);
+    transform-origin: left center;
+}
+
+.my_msg .my_msg_notice_inner .my_msg_notice_list_item .mod_sign_title {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.my_msg .my_msg_notice_dot {
+    position: relative;
+    text-align: center;
+    font-size: 8px;
+    color: #fff;
+    background-color: #e4393c;
+    box-sizing: border-box;
+    width: auto;
+    min-width: 14px;
+    padding: 0 4px;
+    height: 14px;
+    line-height: 14px;
+    border-radius: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.my_msg .my_msg_notice_dot::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%;
+    margin-top: 1px;
+}

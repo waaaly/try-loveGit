@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "floor-channel": "./components/floor-channel/index"
+    },
+    "navigationBarTitleText": "京东优选"
+}

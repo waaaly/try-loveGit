@@ -1,0 +1,366 @@
+<import src="/template/login/login.wxml"></import>
+<template is="login" data wx:if="{{isLogin}}"></template>
+<view class="vip" wx:if="{{!loadlayer&&dataset.userid!=0}}">
+    <view class="vip_hide">
+        <image class="vip_bg" mode="" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vipBg.png" wx:if="{{!isActive}}"></image>
+        <image class="vip_bg" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_active_bg.png" style="height:458rpx;" wx:if="{{isActive==1&&userType!=1}}"></image>
+        <view class="vip_content col ali-center">
+            <view class="vip_activ_box col ali-center " wx:if="{{isActive&&userType!=1}}">
+                <view class="row">
+                    <image class="vip_activ_logo" src="{{indexData.pic}}"></image>
+                    <view class="vip_activ_right col spa">
+                        <text class="vip_activ_name ovr">{{dataset.nickname}}</text>
+                        <view class="vip_activ_fen">
+                            <text>可提金额: </text>
+                            <text class="vip_activ_num">{{indexData.canWithdrawMoney}} 元</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="row vip_activ_tipBox ali-center">
+                    <text class="vip_activ_tip">LV.{{indexData.currentUserTypeStr}}</text>
+                    <text class="vip_activ_tip3">（您当前身份还未激活噢）</text>
+                </view>
+                <text class="vip_activ_tip2">激活身份，畅享VIP导购特权</text>
+                <image catchtap="goGiftBuy" class="vip_activ_btns" mode="widthFix" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_active_btn.png"></image>
+            </view>
+            <image class="vip_userIcon" mode="aspectFill" src=" {{indexData.pic}}" wx:if="{{!isActive}}"></image>
+            <view class="vip_userInfo1 row ali-center ju-center " wx:if="{{!isActive}}">
+                <view class="vip_user_l  row ali-center" style="justify-content:flex-end;">
+                    <view class="vip_user_txt3 ovr">{{dataset.nickname}} </view>
+                    <view class="vip_user_txt2">LV.{{indexData.currentUserTypeStr}}</view>
+                    <text style="border-right:1rpx solid rgba(255,255,255,0.2); height:20rpx;"></text>
+                </view>
+                <view class="vip_user_r  row">
+                    <text class="vip_user_txt1">总数贝：</text>
+                    <text class="vip_user_txt4">{{indexData.cashbScore}}</text>
+                </view>
+            </view>
+            <view class="vip_level" wx:if="{{!isActive}}">
+                <view class="vip_level_in" wx:if="{{userType==4?false:true}}">
+                    <image class="vip_level_img" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vipBox.png"></image>
+                    <view class="vip_level_box">
+                        <view bindtap="showIntro" class="vip_progress_bar row ali-center spa">
+                            <image mode="widthFix" src="/images/vip_lv.png" style="width:33rpx;"></image>
+                            <text class="vip_progress_txt2" style="margin-right:10rpx;">{{indexData.currentUserTypeStr}}</text>
+                            <view class="vip_progress_txt3 ">
+                                <view class="vip_progress_txt4" style="width:{{upgradeProgress}}%">
+                                    <view class="vip_progress_value">{{upgradeProgress}}%</view>
+                                </view>
+                            </view>
+                            <image mode="widthFix" src="/images/vip_lv.png" style="width:33rpx;"></image>
+                            <text class="vip_progress_txt2">{{indexData.nextUserTypeStr}}</text>
+                        </view>
+                        <view class="vip_box_btns row ali-center spa" wx:if="{{userType!=4}}">
+                            <view bindtap="showIntro" class="vip_btn row ali-center ju-center spa3" style="width:309rpx;">
+                                <text wx:if="{{userType==1}}">如何成为VIP导购</text>
+                                <text wx:if="{{userType==2}}">总监特权</text>
+                                <text wx:if="{{userType==3}}">店长特权</text>
+                                <view class="vip_triangle" style="margin-left: 20rpx;"></view>
+                                <view class="vip_triangle"></view>
+                            </view>
+                            <view bindtap="upVip" class="vip_btn row ali-center ju-center {{isUp==1?'spa5':'spa4'}} " style="width:309rpx;">
+                                <text>  {{userType==1&&isUp==1?'快速升级VIP导购':'去升级GO'}}</text>
+                                <view class="vip_triangle" style="margin-left: 20rpx;"></view>
+                                <view class="vip_triangle"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="vip_income {{isActive?'no_mt':''}} {{userType==4?'vip_no_style':''}}" wx:if="{{(userType==2||userType==3||userType==4)&&!isActive}}">
+                <view class="vip_income_header row spa"> 我的收入    <view bindtap="goMybill" class="row ali-center vip_tti_bill">账单 <image class="vip_abss" src="/images/yellow_arr.png"></image>
+                    </view>
+                </view>
+                <view class="vip_income_content row ali-center">
+                    <view class="vip_income_item vip_income_item1 col ali-center">
+                        <text class="vip_income_txt1">{{indexData.dayIncome}}</text>
+                        <text class="vip_income_txt2">今日收入</text>
+                    </view>
+                    <view class="vip_income_item vip_income_item2 col ali-center">
+                        <text class="vip_income_txt1">{{indexData.monthIncome}}</text>
+                        <text class="vip_income_txt2">本月收入</text>
+                    </view>
+                    <view class="vip_income_item col ali-center">
+                        <text class="vip_income_txt1">{{indexData.grandTotalIncome}}</text>
+                        <text class="vip_income_txt2">累计收入</text>
+                    </view>
+                </view>
+            </view>
+            <view class="vip_weChats col ali-center    {{userType==1?'vip_no_style1':''}} {{userType==4?'vip_no_style':''}}">
+                <view class=" vip_member_rights" wx:if="{{userType==1||isActive}}">
+                    <view class="vip_member_title">
+            VIP特权</view>
+                    <view class="vip_member_item row ali-center">
+                        <image class="vip_member_img" mode="aspectFill" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_icon1.png"></image>
+                        <view class="vip_member_right col">
+                            <view class="vip_member_right1">自买省钱</view>
+                            <view class="vip_member_right2">自买商品可返数贝，买的多省的多；</view>
+                        </view>
+                    </view>
+                    <view class="vip_member_item row ali-center">
+                        <image class="vip_member_img" mode="aspectFill" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_icon2.png"></image>
+                        <view class="vip_member_right col">
+                            <view class="vip_member_right1">分享赚钱</view>
+                            <view class="vip_member_right2">分享商品交易成功后，可获得数贝奖励；</view>
+                        </view>
+                    </view>
+                    <view class="vip_member_item row ali-center">
+                        <image class="vip_member_img" mode="aspectFill" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_icon3.png"></image>
+                        <view class="vip_member_right col">
+                            <view class="vip_member_right1">邀请有奖</view>
+                            <view class="vip_member_right2">每邀请1人购买VIP大礼包，可得高额培训奖励金；</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="vip_withdraw vip_income" wx:if="{{(userType==2||userType==3||userType==4)&&!isActive}}">
+                    <view class="vip_with_header">
+
+            可领取劳务费金额
+            <text class="vip_with_money">¥{{indexData.canWithdrawMoney}}</text> 元
+
+          </view>
+                    <view class="vip_with_content row ali-center ju-center">
+                        <view bindtap="goWithdrawRecord" class="vip_with_ben1">领取记录</view>
+                        <view bindtap="goWithdrawCash" class="vip_with_ben2">领取劳务费</view>
+                    </view>
+                </view>
+                <view class="vip_core_data vip_income" wx:if="{{(userType==2||userType==3||userType==4)&&!isActive}}">
+                    <view class="vip_income_header">核心数据</view>
+                    <view class="vip_core_content">
+                        <view catchtap="goDataDetails" class="vip_core_item col  ju-center ali-center" data-inx="0">
+                            <view class="vip_pos">
+                                <image class="vip_abs" src="/images/arrow.png"></image>
+                            </view>
+                            <text class="vip_core_txt1">{{indexData.myReferrer}}</text>
+                            <text class="vip_core_txt2">我服务的市场</text>
+                        </view>
+                        <view catchtap="goDataDetails" class="vip_core_item col  ju-center ali-center" data-inx="1">
+                            <view class="vip_pos">
+                                <image class="vip_abs" src="/images/arrow.png"></image>
+                            </view>
+                            <text class="vip_core_txt1">{{indexData.directReferrer}}</text>
+                            <text class="vip_core_txt2">服务VIP</text>
+                        </view>
+                        <view catchtap="goDataDetails" class="vip_core_item col  ju-center ali-center" data-inx="2">
+                            <view class="vip_pos">
+                                <image class="vip_abs" src="/images/arrow.png"></image>
+                            </view>
+                            <text class="vip_core_txt1">{{indexData.directDirectorPeople}}</text>
+                            <text class="vip_core_txt2">服务总监</text>
+                        </view>
+                        <view class="vip_core_item col  ju-center ali-center">
+                            <text class="vip_core_txt1">{{indexData.teamTotalPeople}}</text>
+                            <text class="vip_core_txt2">市场总数</text>
+                        </view>
+                        <view class="vip_core_item col  ju-center ali-center">
+                            <text class="vip_core_txt1">{{indexData.teamVipTotalPeople}}</text>
+                            <text class="vip_core_txt2">市场VIP总数</text>
+                        </view>
+                        <view class="vip_core_item col  ju-center ali-center">
+                            <text class="vip_core_txt1">{{indexData.teamDirectorPeople}}</text>
+                            <text class="vip_core_txt2">市场总监总数</text>
+                        </view>
+                        <view class="vip_core_item col  ju-center ali-center">
+                            <text class="vip_core_txt1">{{indexData.dayAddVipPeople}}</text>
+                            <text class="vip_core_txt2">今日新增VIP</text>
+                        </view>
+                        <view class="vip_core_item col  ju-center ali-center">
+                            <text class="vip_core_txt1">{{indexData.monthAddVipPeople}}</text>
+                            <text class="vip_core_txt2">本月新增VIP</text>
+                        </view>
+                        <view class="vip_core_item col  ju-center ali-center">
+                            <text class="vip_core_txt1">{{indexData.monthAddDirectorPeople}}</text>
+                            <text class="vip_core_txt2">本月新增总监</text>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="goWbv" class="vip_weChat row ali-center" style="position:relative">
+                    <image class="vip_userIcon" mode="aspectFill" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/list_tab5.png" style="width:44rpx;height:44rpx; margin-top:0rpx;border:none;  margin-left: 26rpx;"></image>
+                    <text class="vip_weChat_txt">我的客服</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view catchtouchmove="myCatchTouch" class="cover_box" wx:if="{{coverStatus}}">
+    <view class="cover_content">
+        <view class="cover_in">
+            <image bindtap="closeCover" class="cover_close" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_close.png"></image>
+            <image class="cover_bg" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_tipBg.png"></image>
+            <view class="cover_top col ali-center" wx:if="{{tipType==6||tipType==4}}">
+                <view class="cover_top_txt cover_top_txt1 row ali-center ju-center">
+                    <text class="cover_top_line1"></text>
+                    <text style="margin:0rpx 15rpx;">哎呀</text>
+                    <text class="cover_top_line2"></text>
+                </view>
+                <text class="cover_top_txt cover_top_txt2" style="margin-top:5rpx;">就差一点˜</text>
+            </view>
+            <view class="cover_top col ali-center" wx:if="{{tipType==11}}">
+                <view class="cover_top_txt cover_top_txt1 row ali-center ju-center">
+                    <text class="cover_top_line1"></text>
+                    <text style="margin:0rpx 10rpx;">升级</text>
+                    <text class="cover_top_line2"></text>
+                </view>
+                <view class="cover_top_txt cover_top_txt2" style="margin-top:20rpx;">条件及特权</view>
+            </view>
+            <view class="cover_top col ali-center" wx:if="{{tipType==8}}">
+                <view class="cover_top_txt cover_top_txt1  row ali-center ju-center ">
+                    <text class="cover_top_line1"></text>
+                    <text style="padding:0rpx 10rpx;">哇˜恭喜您</text>
+                    <text class="cover_top_line2"></text>
+                </view>
+                <view class="cover_top_txt cover_top_txt2" mode="widthFix" style="margin-top:20rpx;">成功升级为{{indexData.currentUserTypeStr}}˜</view>
+            </view>
+            <view class="cover_top col ali-center" wx:if="{{tipType==10}}">
+                <view class="cover_top_txt cover_top_txt1  row ali-center ju-center ">
+                    <text class="cover_top_line1"></text>
+                    <text style="padding:0rpx 10rpx;">升级提醒</text>
+                    <text class="cover_top_line2"></text>
+                </view>
+            </view>
+            <view class="cover_top col ali-center" wx:if="{{tipType==1}}">
+                <view class="cover_top_txt cover_top_txt1  row ali-center ju-center ">
+                    <text class="cover_top_line1"></text>
+                    <text style="padding:0rpx 10rpx;">去认证</text>
+                    <text class="cover_top_line2"></text>
+                </view>
+            </view>
+            <view class="cover_top col ali-center" wx:if="{{tipType==12||tipType==13}}">
+                <view class="cover_top_txt cover_top_txt1  row ali-center ju-center ">
+                    <text class="cover_top_line1"></text>
+                    <text style="padding:0rpx 10rpx;">温馨提示</text>
+                    <text class="cover_top_line2"></text>
+                </view>
+            </view>
+            <view class="cover_in_content" wx:if="{{tipType==4}}">
+                <view class="cover_in_item row ali-center">
+                    <view class="cover_item_txt1" wx:if="{{tipType==4}}">个人销售业绩:</view>
+                    <view class="cover_item_txt2">
+                        <view class="cover_item_progress" style="width:{{indexData.vipUpgradeProgress.directlyVipCnt}}%">
+                            <view class="cover_item_progressNum">{{indexData.vipUpgradeProgress.directlyVipCnt}}%</view>
+                        </view>
+                    </view>
+                    <text class="cover_item_txt3">8985</text>
+                </view>
+                <view class="cover_in_item row ali-center">
+                    <view class="cover_item_txt1" wx:if="{{tipType==4}}">服务市场业绩:</view>
+                    <view class="cover_item_txt2">
+                        <view class="cover_item_progress" style="width:{{indexData.vipUpgradeProgress.teamVipCount}}%">
+                            <view class="cover_item_progressNum">{{indexData.vipUpgradeProgress.teamVipCount}}%</view>
+                        </view>
+                    </view>
+                    <text class="cover_item_txt3">35940</text>
+                </view>
+                <view class="cover_in_item row ali-center">
+                    <view class="cover_item_txt1">个人总数贝:</view>
+                    <view class="cover_item_txt2">
+                        <view class="cover_item_progress" style="width:{{indexData.vipUpgradeProgress.directorIntegral}}%">
+                            <view class="cover_item_progressNum">{{indexData.vipUpgradeProgress.directorIntegral}}%</view>
+                        </view>
+                    </view>
+                    <text class="cover_item_txt3">{{indexData.vipUpgradeProgress.directorIntegralConfig}}</text>
+                </view>
+            </view>
+            <view class="cover_in_content" wx:if="{{tipType==6}}">
+                <view class="cover_in_item row ali-center">
+                    <view class="cover_item_txt1">个人服务市场业绩:</view>
+                    <view class="cover_item_txt2">
+                        <view class="cover_item_progress" style="width:{{indexData.directorUpgradeProgress.vipCntExceptDirectly}}%">
+                            <view class="cover_item_progressNum">{{indexData.directorUpgradeProgress.vipCntExceptDirectly}}%</view>
+                        </view>
+                    </view>
+                    <text class="cover_item_txt3">359400</text>
+                </view>
+                <view class="cover_in_item row ali-center">
+                    <view class="cover_item_txt1">服务整个市场业绩:</view>
+                    <view class="cover_item_txt2">
+                        <view class="cover_item_progress" style="width:{{indexData.directorUpgradeProgress.teamManagerCnt}}%">
+                            <view class="cover_item_progressNum">{{indexData.directorUpgradeProgress.teamManagerCnt}}%</view>
+                        </view>
+                    </view>
+                    <text class="cover_item_txt3">2156400</text>
+                </view>
+                <view class="cover_in_item row ali-center">
+                    <view class="cover_item_txt1">个人总数贝:</view>
+                    <view class="cover_item_txt2">
+                        <view class="cover_item_progress" style="width:{{indexData.directorUpgradeProgress.takeoutIntegral}}%">
+                            <view class="cover_item_progressNum">{{indexData.directorUpgradeProgress.takeoutIntegral}}%</view>
+                        </view>
+                    </view>
+                    <text class="cover_item_txt3">{{indexData.directorUpgradeProgress.takeoutIntegralConfig}}</text>
+                </view>
+            </view>
+            <view class="cover_tip_txt" wx:if="{{tipType==10&&userType==1}}">升级成{{indexData.nextUserTypeStr}}，需要扣除您
+        <text class="cover_tip_txtSpa">{{indexData.customerUpgradeIntegral}}数贝</text>呦</view>
+            <view class="cover_tip_txt" wx:if="{{tipType==10&&userType==2}}">升级成{{indexData.nextUserTypeStr}}，需要扣除您
+        <text class="cover_tip_txtSpa">{{indexData.vipUpgradeProgress.directorIntegralConfig}}数贝</text>呦</view>
+            <view class="cover_tip_txt" wx:if="{{tipType==10&&userType==3}}">升级成{{indexData.nextUserTypeStr}}，需要扣除您
+        <text class="cover_tip_txtSpa">{{indexData.directorUpgradeProgress.takeoutIntegralConfig}}数贝</text>呦</view>
+            <view class="cover_tip_txt" wx:if="{{tipType==1}}">{{tipTxt}}需要进行身份认证呦~</view>
+            <view class="cover_tip_txt" style="margin:20rpx 0;" wx:if="{{tipType==12}}">身份激活时间已过，请联系客服。</view>
+            <view class="cover_tip_txt noIn" wx:if="{{tipType==13}}">身份激活期间，领取功能暂未开放，敬请期待。</view>
+            <view class="cover_condition" wx:if="{{tipType==11&&userType==1}}">
+                <view class="cover_cond_p1">
+                    <view class="cover_p1_tit">如何成为VIP导购</view>
+                    <view class="cover_p1_content row">
+                        <text>方式1：</text>
+                        <view style="width:80%"> 在智融优购商城，购买大礼包产品即可成为VIP导购；</view>
+                    </view>
+                    <view class="cover_p1_content row">
+                        <text> 方式2：</text>
+                        <view style="width:80%">购买产品获得相应数贝，满{{indexData.customerUpgradeIntegral}}数贝可申请兑换VIP导购；</view>
+                    </view>
+                </view>
+            </view>
+            <view class="cover_condition" wx:if="{{tipType==11&&userType==2}}">
+                <view class="cover_cond_p1">
+                    <view class="cover_p1_tit">升级条件</view>
+                    <view class="cover_p1_content">1. 个人销售业绩达到8985元以上；</view>
+                    <view class="cover_p1_content">2. 服务市场业绩达到35940以上；</view>
+                    <view class="cover_p1_content">3. 个人账户数贝达到{{indexData.vipUpgradeProgress.directorIntegralConfig}}以上(含{{indexData.vipUpgradeProgress.directorIntegralConfig}})；</view>
+                </view>
+                <view class="cover_cond_p1">
+                    <view class="cover_p1_tit">总监特权</view>
+                    <view class="cover_p1_content">1. 自购商品返数贝；</view>
+                    <view class="cover_p1_content">2. 推荐注册奖励数贝；</view>
+                    <view class="cover_p1_content">3. 团队购买返数贝；</view>
+                    <view class="cover_p1_content">4. 成功培养总监返数贝奖励 </view>
+                </view>
+            </view>
+            <view class="cover_condition" wx:if="{{tipType==11&&userType==3}}">
+                <view class="cover_cond_p1">
+                    <view class="cover_p1_tit">升级条件</view>
+                    <view class="cover_p1_content">1. 个人服务市场业绩达到359400元以上；</view>
+                    <view class="cover_p1_content">2. 服务整个市场业绩达到2156400元以上；</view>
+                    <view class="cover_p1_content">3. 个人账户数贝达到3000以上(含3000);</view>
+                </view>
+                <view class="cover_cond_p1">
+                    <view class="cover_p1_tit">店长特权</view>
+                    <view class="cover_p1_content">1. 自购商品返数贝；</view>
+                    <view class="cover_p1_content">2. 推荐注册奖励数贝；</view>
+                    <view class="cover_p1_content">3. 团队购买返数贝；</view>
+                    <view class="cover_p1_content">4. 招募VIP享培训奖励；</view>
+                </view>
+            </view>
+            <view class="cover_btn_box row jcsa ali-center" wx:if="{{tipType!=10&&tipType!=1&&tipType!=12}}">
+                <view catchtap="confirm" class="cover_in_btn1">确定</view>
+            </view>
+            <view class="cover_btn_box row jcsa ali-center" wx:if="{{tipType==1}}">
+                <view catchtap="confirm" class="cover_in_btn1">去认证</view>
+            </view>
+            <view class="cover_btn_box row jcsa ali-center" wx:if="{{tipType==10}}">
+                <view catchtap="closeCover" class="cover_in_btn1 cover_in_btn1s">取消</view>
+                <view catchtap="confirm" class="cover_in_btn1">确定</view>
+            </view>
+            <view class="cover_btn_box row jcsa ali-center" wx:if="{{tipType==12}}">
+                <view catchtap="closeCover" class="cover_in_btn1 cover_in_btn1s">取消</view>
+                <view catchtap="confirm" class="cover_in_btn1" style="position:relative"> 联系客服
+          <view catchtap="goWbv" style="left:0;top:0;position: absolute; width:100%;height:100%;opacity:0;"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "流量加油站",
+    "usingComponents": {
+        "phone-tab": "./components/phone-tab/phone-tab",
+        "rules": "../components/rules/rules"
+    }
+}

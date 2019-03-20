@@ -1,0 +1,28 @@
+<view class="content" id="app">
+    <my-header atmosConfig="{{atmosImgConfig.headerBg}}" bindchangeAccountSuccess="changeAccountSuccess" bindchangeNickName="changeNickName" bindshowPopup="showPopup" grayInfo="{{grayInfo}}" id="myHeader" newBindConfig="{{newBindConfig}}" userInfo="{{userInfo}}" userInfoNotError="{{userInfoNotError}}"></my-header>
+    <toutiao bgImg="{{atmosImgConfig.toutiaoBg}}" fromPage="myIndex" id="touTiao"></toutiao>
+    <my-order id="myOrder"></my-order>
+    <bind-floor bindshowPopup="showPopup" grayInfo="{{grayInfo}}" id="myBindGuide" isNewUser="{{isNewUser}}" newBindConfig="{{newBindConfig}}" userInfo="{{userInfo}}"></bind-floor>
+    <my-asset bindchangeAccount="changeAccount" grayInfo="{{grayInfo}}" id="myAsset" jdNum="{{jdNum}}"></my-asset>
+    <my-fav id="myFav"></my-fav>
+    <my-activity bindchangeAccountSuccess="changeAccountSuccess" grayInfo="{{grayInfo}}" id="myActivity" userInfo="{{userInfo}}" wx:if="{{!isKaipule}}"></my-activity>
+    <view wx:if="{{delayRender}}">
+        <view bindtap="navToService" class="service">客户服务</view>
+        <view bindtap="navToAdBanner" class="ad-banner_my" data-h5url="{{adConfig.urlH5}}" data-xcxurl="{{adConfig.urlXcx}}" wx:if="{{adConfig.img}}">
+            <view class="banner-image" style="background:{{'url('+adConfig.img+') no-repeat 0 0 / 100% 100% !important'}}"></view>
+        </view>
+        <view id="appdlCon" wx:if="{{isShowModule}}"></view>
+        <follow-wx-account wx:if="{{env==1||env==2}}"></follow-wx-account>
+        <guideAddXcx></guideAddXcx>
+        <recommend id="recommend" isPosition="{{true}}" options="{{recommendOptions}}" recKey="{{h5RecomendOptions.recKey}}" title="为您推荐" titleBg="{{recommendOptions.titleBg}}"></recommend>
+    </view>
+    <bind-curtain bindshowPopup="showPopup" grayInfo="{{grayInfo}}" id="bindCurtain" newBindConfig="{{newBindConfig}}" userInfo="{{userInfo}}"></bind-curtain>
+    <new-curtain id="newCurtain" isNewUser="{{isNewUser}}" newBindConfig="{{newBindConfig}}" userInfo="{{userInfo}}"></new-curtain>
+    <plus-curtain id="plusCurtain" isNewUser="{{isNewUser}}" userInfo="{{userInfo}}"></plus-curtain>
+    <pinGouBack wx:if="{{fromPinGouApp==1}}"></pinGouBack>
+    <view bindtap="back2top" class="back2top" wx:if="{{showBack}}"></view>
+</view>
+<import src="../../../common/toast/toast.wxml"></import>
+<template is="toast" data="{{...toast}}"></template>
+<import src="../../../common/modal/modal.wxml"></import>
+<template is="modal" data="{{...modal}}"></template>

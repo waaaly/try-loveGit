@@ -1,0 +1,60 @@
+<AddressList addressList="{{addressList}}" bind:modify="modifyAddress" bind:select="selectAddress" selectedIndex="{{selectedIndex}}" wx:if="{{pageStatus==1}}"></AddressList>
+<view class="system-empty" wx:if="{{pageStatus==2}}">
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="imgs/empty-address.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>收货地址为空</text>
+        </view>
+    </view>
+</view>
+<view class="hr-60" wx:if="{{pageStatus==1||pageStatus==2}}"></view>
+<view class="button-area-3" wx:if="{{pageStatus==1||pageStatus==2}}">
+    <view bindtap="towxAddress" class="button-flex">
+        <text>选择微信地址</text>
+    </view>
+    <view bindtap="addAddress" class="button-flex">
+        <view>
+            <icon></icon>
+            <text>新增收货地址</text>
+        </view>
+    </view>
+</view>
+<view class="system-empty" wx:if="{{pageStatus==3}}">
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="../../../imgs/system-error.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>抱歉，服务器开小差了</text>
+        </view>
+        <view class="system-empty-btn">
+            <view bindtap="toReload" class="button-style-3">
+                <text>重新加载</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="ecWap-mask" wx:if="{{showLocationModel}}"></view>
+<view class="ecWap-box-middle" wx:if="{{showLocationModel}}">
+    <view class="ecWap-box ecWap-box-center ecWap-box-normal ecWap-box-change">
+        <view class="ecWap-box-content">
+            <view class="ecWap-dialog-header">提示</view>
+            <view class="ecWap-dialog-content" style="text-align: center">
+                <text>请打开通讯地址权限</text>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <button bindtap="closeLocationModel" class="ecWap-box-cancle" plain="true">
+                <text>取消</text>
+            </button>
+            <button class="ecWap-box-ok" openType="openSetting" plain="true" wx:if="{{!canIUseOpenSetting}}">
+                <text>去设置</text>
+            </button>
+            <button bindtap="getAuthority" class="ecWap-box-ok" plain="true" wx:if="{{canIUseOpenSetting}}">
+                <text>去设置</text>
+            </button>
+        </view>
+    </view>
+</view>

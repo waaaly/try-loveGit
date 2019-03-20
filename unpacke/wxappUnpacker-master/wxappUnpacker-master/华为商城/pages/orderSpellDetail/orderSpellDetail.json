@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "拼团详情",
+    "usingComponents": {
+        "SharePoster": "../../components/SharePoster/SharePoster",
+        "AuthorizeModal": "../../components/AuthorizeModal/AuthorizeModal"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "navigationBarTitleText": "登录",
+    "usingComponents": {
+        "log-status": "./components/log_status/index",
+        "bind-alert": "./components/bind_alert/index",
+        "help-alert": "./components/help_alert/index",
+        "bind-scene": "./components/bind_scene/index",
+        "bind-loading": "./components/bind_loading/index",
+        "wechat-login": "./components/wechat_login/index",
+        "jd-login": "./components/jd_login/index",
+        "mobile-login": "./components/mobile_login/index",
+        "account-login": "./components/account_login/index",
+        "switch-account": "./components/switch_account/index",
+        "set-password": "./components/set_password/index"
+    }
+}

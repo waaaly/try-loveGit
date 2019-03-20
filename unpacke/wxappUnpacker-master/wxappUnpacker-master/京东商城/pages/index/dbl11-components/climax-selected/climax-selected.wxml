@@ -1,0 +1,40 @@
+<view class="selected" hidden="{{!entries1.length}}" style="{{config.bg}}">
+    <view class="selected-header">
+        <view class="selected-header__image"></view>
+        <view bindtap="gotoUrl" class="selected-header__btn selected-header__btn-left" data-url="{{config.leftUrl}}" hidden="{{!config.leftText}}">{{config.leftText}}</view>
+        <view bindtap="gotoUrl" class="selected-header__btn selected-header__btn-right" data-url="{{config.rightUrl}}" hidden="{{!config.rightText}}">{{config.rightText}}</view>
+        <view bindtap="changeTab" class="selected-header__tab selected-header__tab-left {{showTab=='1'?'selected-header__tab-on':''}}" data-id="1" style="{{!hidenTc?hidenTcStyle:''}}">{{config.tab1}}</view>
+        <view bindtap="changeTab" class="selected-header__tab selected-header__tab-right {{showTab=='2'?'selected-header__tab-on':''}}" data-id="2" hidden="{{!hidenTc}}">{{config.tab2}}</view>
+    </view>
+    <view class="selected-list1" hidden="{{entries1.length==0}}" wx:if="{{showTab=='1'}}">
+        <view bindtap="gotoUrl" class="selected-list1__item" data-url="{{item.url}}" wx:for="{{entries1}}" wx:key="title">
+            <view class="selected-list1__dl selected-list1__dl-dt">{{item.title}}</view>
+            <view class="selected-list1__dl selected-list1__dl-dd selected-list1__dl-dd{{index}}">{{item.des}}</view>
+            <image class="selected-list1__image" src="{{item.image}}"></image>
+        </view>
+    </view>
+    <view hidden="{{!hidenTc}}" wx:else>
+        <view class="selected-tab">
+            <view class="selected-tab__left" hidden="{{!tcLabConfig.pg}}">
+                <view class="selected-tab__header">{{config.gwqTitle}}</view>
+                <view class="selected-tab__left--goods">
+                    <view bindtap="gotoUrl" class="selected-tab__left--goods-item" data-url="{{item.url}}" wx:for="{{tcLabConfig.pg}}" wx:key="index">
+                        <image class="selected-tab__left--goods-image" mode="aspectFill" src="{{item.img}}"></image>
+                        <view class="selected-tab__left--goods-tt">{{item.title}}</view>
+                        <view class="selected-tab__left--goods-desc">￥{{item.price}}</view>
+                        <view class="selected-tab__left--goods-btn">免费领取</view>
+                    </view>
+                </view>
+            </view>
+            <view class="selected-tab__right" hidden="{{!tcLabConfig.sns}}">
+                <view class="selected-tab__header">{{config.mfTitle}}</view>
+                <view bindtap="gotoUrl" class="selected-tab__right--image" data-url="{{tcLabConfig.sns.url}}">
+                    <image mode="aspectFill" src="{{tcLabConfig.sns.image}}"></image>
+                    <view class="selected-tab__right--content">
+                        <view>{{tcLabConfig.sns.des}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,136 @@
+@import "../../app.wxss";
+
+.invoice-box .tips-style {
+    padding: 0 20rpx 0 0;
+}
+
+.invoice-box .tips-style view {
+    font-size: 27rpx;
+}
+
+.invoice-box .checkbox-text,.invoice-box .checkbox-text-checked,.invoice-box .checkbox-text-disabled,.invoice-box .checkbox-text-disabledandchecked {
+    margin: 13rpx 9rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+}
+
+.invoice-box .invoice-header {
+    font-size: 29rpx;
+    margin-top: 40rpx;
+}
+
+.invoice-box .invoice-type-list {
+    margin-top: 23rpx;
+    margin-left: -9rpx;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+
+.invoice-form-area .invoice-type-list+view {
+    margin-top: -10rpx;
+}
+
+.invoice-box .invoice-tips image {
+    margin-top: 44rpx;
+    margin-left: 9rpx;
+    width: 33rpx;
+    height: 33rpx;
+}
+
+.invoice-box .invoice-type-list .checkbox-text.checkbox-text-hide {
+    display: none;
+}
+
+.invoice-box .invoice-tab {
+    margin-top: 13rpx;
+    margin-bottom: 21rpx;
+}
+
+.invoice-box .invoice-list {
+    height: 88rpx;
+    padding: 8rpx 0;
+    border-bottom: 1rpx solid #eaeaea;
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-end;
+}
+
+.invoice-box .invoice-list:first-of-type {
+    border-top: 0;
+}
+
+.invoice-box .invoice-identify {
+    padding-left: 59rpx;
+}
+
+.invoice-box .invoice-list.hide {
+    display: none;
+}
+
+.invoice-box .invoice-list .radiobox {
+    padding-right: 21rpx;
+}
+
+.invoice-box .invoice-list .invoice-cont {
+    font-size: 28rpx;
+}
+
+.invoice-box .invoice-list .invoice-cont input {
+    position: relative;
+    top: 3rpx;
+    margin-left: 17rpx;
+}
+
+.invoice-box .invoice-tab-gray .red {
+    color: #333;
+}
+
+.invoice-box .invoice-tab .tips {
+    font-size: 23rpx;
+    line-height: 1.6;
+    color: #888;
+    background-color: #fff;
+    padding: 37rpx 0 0;
+}
+
+.invoice-box .button-area {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 99;
+}
+
+.invoice-box .button-style-1-big {
+    border-radius: 0;
+    height: 83rpx;
+    line-height: 83rpx;
+    font-size: 31rpx;
+}
+
+.invoice-tab .invioce-notes {
+    padding: 37rpx 34rpx 42rpx;
+}
+
+.invoice-tab .invioce-notes-title {
+    padding-bottom: 10rpx;
+    text-align: center;
+    font-size: 25rpx;
+}
+
+.invoice-tab .invioce-notes-content {
+    font-size: 23rpx;
+    color: #888;
+}
+
+.invoice-tab .invioce-notes-content view {
+    padding-top: 31rpx;
+}
+
+.invoice-tab .invioce-notes-content view:first-child {
+    padding-top: 0;
+}

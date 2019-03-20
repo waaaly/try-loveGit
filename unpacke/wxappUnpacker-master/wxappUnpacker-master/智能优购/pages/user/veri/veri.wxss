@@ -1,0 +1,51 @@
+.veri_box {
+    width: 750rpx;
+    height: 100vh;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.veri_box .veri_list {
+    width: 660rpx;
+    height: 100%;
+    display: block;
+    margin: 30rpx auto;
+}
+
+.veri_list .name {
+    width: 100%;
+    padding: 30rpx 0;
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 20rpx;
+    border-bottom: 2rpx solid #999;
+}
+
+.veri_list .veriCode {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.veri_list .veriCode>.getCode {
+    width: 162rpx;
+    height: auto;
+    padding-left: 30rpx;
+    color: #FF7900;
+    font-size: 26rpx;
+    border-left: 2rpx solid #ddd;
+    position: absolute;
+    bottom: 40rpx;
+    right: 10rpx;
+}
+
+.veri_list .veriBtn {
+    width: 100%;
+    height: 82rpx;
+    background-color: #FF7900;
+    margin-top: 80rpx;
+    color: #fff;
+    line-height: 82rpx;
+    text-align: center;
+}

@@ -1,0 +1,23 @@
+<view class="address-layer">
+    <view bindtap="closeAddress" catchtouchmove="noscroll" class="popup__mask {{isShowAddressLayer?'popup__mask--show':''}} {{showAnim?'popup__mask--anim':''}}"></view>
+    <view class="popup__main {{isShowAddressLayer?'show':''}}">
+        <view class="popup__header">
+            <view class="popup__header-l">选择地址</view>
+            <view bindtap="closeAddress" class="popup__header-r">
+                <view class="icon-close"></view>
+            </view>
+        </view>
+        <view class="address-layer__content">
+            <view bindtap="switchAddress" class="address-layer__item" data-adid="{{item.adid}}" data-idx="{{index}}" wx:for="{{addressList}}" wx:key="adid">
+                <image class="address-layer__icon" src="https://img11.360buyimg.com/jdphoto/s30x30_jfs/t22735/307/540149551/318/2fed6bc9/5b34ab73N01f4ce0f.png" wx:if="{{item.adid==adid}}"></image>
+                <image class="address-layer__icon" src="https://img11.360buyimg.com/jdphoto/s30x30_jfs/t24169/322/547674326/306/1016a13b/5b34ab73Na757367d.png" wx:else></image>
+                <view class="address-layer__txt line2">{{item.addrfull}}</view>
+            </view>
+            <view class="address-layer__other">或者</view>
+            <view bindtap="gotoSelectNewAddress" class="address-layer__footer">
+                <text>选择区域地址</text>
+                <image class="address-layer__more" src="https://img11.360buyimg.com/jdphoto/s30x30_jfs/t17326/198/131287116/399/a33e74cb/5a5eee6bN46305bd4.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,226 @@
+<view class="sku-layer">
+    <view bindtap="closeSkuLayer" catchtouchmove="noscroll" class="popup__mask {{isShowPopup?'popup__mask--show':''}} {{isShowPopupAnim?'popup__mask--anim':''}}"></view>
+    <view class="popup__main {{isShowPopup&&isShowPopupAnim?'show':''}}" hidden="{{!isShowPopup}}">
+        <view class="sku-layer__header">
+            <view bind:tap="handlePreviewImage" class="sku-layer__header-img">
+                <image mode="aspectFill" src="{{info.cover}}" wx:if="{{info.cover}}"></image>
+            </view>
+            <view class="sku-layer__header-info">
+                <view class="sku-layer__header-price" wx:if="{{info.isPingou&&othersData.buyType!=1}}">
+                    <view class="pinicon" wx:if="{{info.pingouInfo.active_info}}">
+                        <view class="pinicon-left">
+                            <image src="https://img11.360buyimg.com/jdphoto/s23x21_jfs/t26020/10/1002487439/496/19e53cd2/5b852f2bN4b2778c5.png"></image>
+                        </view>
+                        <view class="pinicon-right">{{setCount(info.pingouInfo.active_info.tuan_member_count)}}人拼</view>
+                    </view>
+                    <view wx:if="{{info.pingouInfo.price}}">
+                        ￥<text>{{setPrice(info.pingouInfo.price).int}}</text>.{{setPrice(info.pingouInfo.price).decimal}}
+                    </view>
+                </view>
+                <view class="sku-layer__header-price" wx:elif="{{info.price}}">
+                    <view class="price-item main-price">
+                        <block wx:if="{{info.isPingou}}">单买价</block>
+                        ￥<text>{{setPrice(info.price).int}}</text>.{{setPrice(info.price).decimal}}
+                        <block wx:if="{{info.isLoc}}">{{othersData.offline&&othersData.choosed?'':'起'}}</block>
+                    </view>
+                    <block wx:if="{{info.extraPriceFlag}}">
+                        <view class="price-item plus-price" wx:if="{{info.priorityPrice==='plusPrice'&&info.plusPrice}}">
+                            <text>￥{{info.plusPrice}}</text>
+                            <image class="extra-price-flag extra-price-flag--plus" src="https://img11.360buyimg.com/jdphoto/s58x20_jfs/t22384/49/156468206/435/abf2d1c3/5affcff5Nddec6f46.png"></image>
+                        </view>
+                        <view class="price-item plus-price" wx:elif="{{info.priorityPrice==='trialPlusPrice'&&info.trialPlusPrice}}">
+                            <text>￥{{info.trialPlusPrice}}</text>
+                            <image class="extra-price-flag extra-price-flag--plus" src="https://img11.360buyimg.com/jdphoto/s58x20_jfs/t22384/49/156468206/435/abf2d1c3/5affcff5Nddec6f46.png"></image>
+                        </view>
+                        <view class="price-item special-price" wx:elif="{{info.priorityPrice==='specialPrice'&&info.specialPrice}}">
+                            <text>￥{{info.specialPrice}}</text>
+                            <image class="extra-price-flag extra-price-flag--special" src="https://img11.360buyimg.com/jdphoto/s90x30_jfs/t5857/103/5136913465/23872/dd568cf5/595a3043N72498825.png"></image>
+                        </view>
+                        <view class="price-item sam-price" wx:elif="{{info.priorityPrice==='samPrice'&&info.samPrice}}">
+                            <text>￥{{info.samPrice}}</text>
+                            <image class="extra-price-flag extra-price-flag--sam" src="https://img11.360buyimg.com/jdphoto/s56x18_jfs/t20956/289/165607467/527/307d382e/5affd10dN756de383.png"></image>
+                        </view>
+                        <view class="price-item fan-price" wx:elif="{{info.priorityPrice==='sfpPrice'&&info.sfpPrice}}">
+                            <text>￥{{info.sfpPrice}}</text>
+                            <image class="extra-price-flag extra-price-flag--fan" src="https://img11.360buyimg.com/jdphoto/s60x28_jfs/t21058/156/378881726/2556/b906583b/5b0b6377N4b71ffb4.png"></image>
+                        </view>
+                        <view class="price-item original-price" wx:elif="{{info.discount&&info.discount.price&&!info.seckillFlag&&!info.flashpurchaseFlag}}">
+                            <text>￥{{info.discount.price}}</text>
+                        </view>
+                    </block>
+                </view>
+                <view class="sku-layer__header-price pingou" wx:if="{{info.isPingou&&othersData.buyType!=1}}">
+                    <view class="price">单买价：<text>￥{{setPrice(info.price).int}}.{{setPrice(info.price).decimal}}</text>
+                    </view>
+                </view>
+                <view class="sku-layer__header-spec line2">
+                    已选 <text>{{info.text?info.text+', ':''}}{{goodsNum.value}}个</text>
+                </view>
+            </view>
+            <view bindtap="closeSkuLayer" class="sku-layer__header-close">
+                <view class="icon-close"></view>
+            </view>
+        </view>
+        <view class="popup__body sku-layer__content">
+            <view class="sku-layer__panel">
+                <block wx:if="{{skuProps.length||info.text}}">
+                    <view class="sku-layer__panel-item" wx:if="{{skuProp.value.length>=1}}" wx:for="{{skuProps}}" wx:for-item="skuProp" wx:key="name">
+                        <view class="sku-layer__label" wx:if="{{skuProp.isSizeGuideShow}}">
+                            <view class="sku-layer__label__left">
+                                <text>{{skuProp.text}}</text>
+                                <text class="sku-layer__label__text">({{skuProp.sizeText}})</text>
+                            </view>
+                            <view bindtap="gotoSizeGuide" class="label sku-layer__label__right" data-size="{{skuProp.sizeCode}}" data-sku="{{skuProp.sku[_index]}}" data-spu="{{skuProp.spuId}}">
+                                <text class="sku-layer__label__text__guide">查看尺码指南</text>
+                                <view class="xlist_icon_arrow"></view>
+                            </view>
+                        </view>
+                        <view class="sku-layer__label" wx:else>{{skuProp.text}}</view>
+                        <view class="sku-layer__item-list">
+                            <block wx:if="{{isPingouApp}}">
+                                <view bindtap="handleSkuChange" class="sku-layer__item line1 {{skuProp.current==item?'cur':''}} {{skuProp.disabled[idx]&&skuProp.current!=item?'disabled':''}}" data-disabled="{{skuProp.disabled[idx]}}" data-idx="{{idx}}" data-name="{{skuProp.name}}" data-pidx="{{index}}" data-val="{{item}}" wx:if="{{item}}" wx:for="{{skuProp.value}}" wx:for-index="idx" wx:key="*this">{{item}}</view>
+                            </block>
+                            <block wx:else>
+                                <view bindtap="handleSkuChange" class="sku-layer__item line1 {{skuProp.current==item?'cur':''}} {{!skuProp.sale&&!skuProp.sku[idx]?'disabled':''}} {{info.isJX?'sku-layer__item--jx':''}}" data-idx="{{idx}}" data-name="{{skuProp.name}}" data-pidx="{{index}}" data-val="{{item}}" wx:if="{{item}}" wx:for="{{skuProp.value}}" wx:for-index="idx" wx:key="*this">{{item}}</view>
+                            </block>
+                        </view>
+                    </view>
+                </block>
+                <view class="sku-layer__panel-item gift-pool" wx:if="{{!isCart&&info.poolList&&info.poolList.length}}">
+                    <view class="sku-layer__label">赠品</view>
+                    <view class="gift-pool__wrapper">
+                        <view class="gift-pool__desc" wx:if="{{info.poolFlag}}">已选{{goodsNum.value}}件搭配赠品</view>
+                        <view class="gift-pool__desc" wx:else>已选{{info.poolList.length}}种搭配赠品</view>
+                        <view bindtap="gotoGiftList" class="gift-pool__list" data-url="/pages/item/subPackages/pool/pool">
+                            <block wx:if="{{info.poolFlag}}">
+                                <block wx:for="{{info.poolList[0].selectedArr}}" wx:for-index="idx">
+                                    <view class="gift-pool__images" wx:if="{{idx<4}}">
+                                        <image src="{{item.img}}"></image>
+                                        <view class="gift-pool__images-number" wx:if="{{item.num>1}}">{{item.num}}</view>
+                                    </view>
+                                    <view class="gift-pool__dots" wx:if="{{idx==4}}">···</view>
+                                </block>
+                            </block>
+                            <block wx:else>
+                                <view class="gift-pool__images" wx:for="{{sliceArr(info.poolList,0,4)}}" wx:key="index">
+                                    <image src="{{item.list[item.selectedIndex].img}}"></image>
+                                </view>
+                                <view class="gift-pool__dots" wx:if="{{info.poolList.length>4}}">···</view>
+                            </block>
+                            <view class="gift-pool__right-tips">切换</view>
+                            <view class="xlist_icon_arrow"></view>
+                        </view>
+                    </view>
+                </view>
+                <view class="sku-layer__num-picker" wx:if="{{showNumController}}">
+                    <view class="sku-layer__num-picker-name">数量
+                        <text class="stock" wx:if="{{info.stock.rn>0}}">库存仅剩{{info.stock.rn}}件 </text>
+                        <text wx:if="{{info.pingouInfo.isNewerTuan&&(othersData.buyType===0||othersData.buyType===2)}}">（新人专享，限购1件）</text>
+                        <text wx:elif="{{info.pingouInfo.pinType==3&&(othersData.buyType===0||othersData.buyType===2)}}">（仅限购买1件可享受拼购价）</text>
+                        <text class="limit" wx:elif="{{goodsNum.limitText}}">{{goodsNum.limitText}}</text>
+                    </view>
+                    <view class="sku-layer__num-picker-calc num_picker">
+                        <view bindtap="doSubNum" class="sub {{goodsNum.subEnabled?'':'disabled'}}">
+                            <text>-</text>
+                        </view>
+                        <input bindblur="doInputNum" disabled="{{(info.pingouInfo.pinType==1||info.pingouInfo.pinType==2||info.pingouInfo.pinType==3)&&(othersData.buyType===0||othersData.buyType===2)||!goodsNum.subEnabled&&!goodsNum.addEnabled}}" maxlength="4" type="number" value="{{goodsNum.value}}"></input>
+                        <view bindtap="doAddNum" class="add {{goodsNum.addEnabled?'':'disabled'}} {{(info.pingouInfo.pinType==1||info.pingouInfo.pinType==2||info.pingouInfo.pinType==3)&&(othersData.buyType===0||othersData.buyType===2)?'disabled':''}}">
+                            <text>+</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="xloading sku-layer__content--center" wx:if="{{isLoading}}"></view>
+            </view>
+        </view>
+        <view class="sku-layer__tips" wx:if="{{tipsContent}}">
+            <text>{{tipsContent}}</text>
+        </view>
+        <view class="sku-layer__tips pintuan" wx:elif="{{info.isPingou&&(othersData.buyType===0||othersData.buyType===2||sceneType=='detail')&&pingouTipData.tuanList}}">
+            <view class="pintuan-left">
+                <view class="pintuan-left__wrapper">
+                    <view class="pintuan-left__image" style="z-index: calc(99 - {{index}}); left: calc(10px + {{index*15}}px); {{index===pingouTipData.tuanList.length-1?'background: none;':''}}" wx:for="{{pingouTipData.tuanList}}" wx:key="{{ index }}">
+                        <image src="{{item.head_portrait_url}}"></image>
+                    </view>
+                </view>
+                <view class="pintuan-left__text" style="padding-left: {{pingouTipData.tuanList&&pingouTipData.tuanList.length>2?'70px':'50px'}};">
+                    {{pingouTipData.masterNickname}}的团<text>只差1人</text>
+                </view>
+            </view>
+            <view bind:tap="gotoPingouDetail" class="pintuan-right">
+                <text>快速参团，立即拼成</text>
+                <view class="xlist_icon_arrow"></view>
+            </view>
+        </view>
+        <block wx:if="{{showActions}}">
+            <view class="sku-layer__btn" wx:if="{{info.isPingou&&(othersData.buyType==0||sceneType=='detail')}}">
+                <view bindtap="{{isPingouApp?'doBuy':'showBtns'}}" class="btn btn-cart btn-cart--pingou {{info.canBuy?'':'disabled'}}" data-report="1">
+                    <view class="btn_price">￥<text>{{setPrice(info.price).int}}</text>.{{setPrice(info.price).decimal}}</view>
+                    <view>单独购买</view>
+                </view>
+                <view bind:tap="startTuan" class="btn btn-buy btn-cart--pingou {{info.canBuy&&!info.pingouInfo.cannotBuy?'':'disabled'}}" data-report="1" wx:if="{{info.pingouInfo&&info.pingouInfo.price}}">
+                    <view class="btn_price">
+                        <block wx:if="{{info.pingouInfo.price}}">
+                            ￥<text>{{setPrice(info.pingouInfo.price).int}}</text>.{{setPrice(info.pingouInfo.price).decimal}}
+                        </block>
+                    </view>
+                    <view class="btn_tuan">我要开团<text wx:if="{{info.pingouInfo.isNewerTuan}}">(限新人)</text>
+                    </view>
+                </view>
+            </view>
+            <view class="sku-layer__btn" wx:elif="{{!info.isPingou||!isPingouApp&&othersData.buyType==1}}">
+                <block wx:if="{{info.buyingSpreeFlag||info.subscribeFlag}}">
+                    <view bindtap="method0" class="btn btn-cart {{bottomBtn[0].style}}" data-enable="{{bottomBtn[0].enable}}" wx:if="{{bottomBtn[0].text}}">
+                        {{bottomBtn[0].text}}
+                    </view>
+                    <view bindtap="method1" class="btn btn-buy {{bottomBtn[1].style}}" data-enable="{{bottomBtn[1].enable}}" wx:if="{{bottomBtn[1].text}}">
+                        {{bottomBtn[1].text}}
+                    </view>
+                </block>
+                <block wx:elif="{{info.stock.StockState==0||info.stock.StockState==34}}">
+                    <view bindtap="handleLookLike" class="btn btn-look-like">查看相似商品</view>
+                    <view bindtap="handleStockNotice" class="btn btn-stock-notice">到货通知</view>
+                </block>
+                <block wx:elif="{{info.canBuy===false||!info.skuId}}">
+                    <view class="btn btn-cart disabled {{info.isJX?'btn-cart--jx':''}}" wx:if="{{!info.isECardOnce}}">{{info.isECard?'加入卡清单':'加入购物车'}}</view>
+                    <view class="btn btn-buy disabled {{info.isJX?'btn-buy--jx':''}}">立即购买</view>
+                </block>
+                <view bindtap="cdkeyBuy" class="btn btn-buy {{info.hasBigouCode?'':'disabled'}}" wx:elif="{{info.isJMa}}">必购码购买</view>
+                <view bindtap="chooseShop" class="btn btn-buy" wx:elif="{{info.spAttr.isLOC==='1'&&!isOfflineHasShop}}">选择门店</view>
+                <block wx:elif="{{saleAtmos&&saleAtmos.ppmsItemId&&!info.isJX}}">
+                    <view bindtap="addToCart" class="btn btn-cart {{info.isJX?'btn-cart--jx':''}}" style="{{'background: '+saleAtmos.cartBtnColor}}">加入购物车</view>
+                    <view bindtap="doBuy" class="btn btn-buy {{info.isJX?'btn-buy--jx':''}}" style="{{'background: '+saleAtmos.buyBtnColor}}">立即购买</view>
+                </block>
+                <block wx:else>
+                    <view bindtap="addToCart" class="btn btn-cart {{info.spAttr.ysp=='1'||info.spAttr.ysp=='3'?'btn-cart--ysp':''}} {{info.isJX?'btn-cart--jx':''}}" wx:if="{{!isECardOnce}}">{{info.isECard?'加入卡清单':'加入购物车'}}</view>
+                    <view bindtap="buy" class="btn btn-buy {{info.spAttr.ysp=='1'||info.spAttr.ysp=='3'?'btn-buy--ysp':''}} {{info.isJX?'btn-buy--jx':''}}">立即购买</view>
+                </block>
+            </view>
+            <view bindtap="pingouConfirm" class="sku-layer__btn sku-layer__btn--red {{info.canBuy?'':'disabled'}}" wx:else>确认</view>
+            <view class="sku-layer__bottom-btns {{showAddCartBtns?'show':''}}">
+                <view bindtap="addToCart" class="sku-layer__add-cart" data-report="7418.16.31">加入购物车</view>
+                <view bindtap="doBuy" class="sku-layer__buy" data-report="7418.16.32">立即购买</view>
+                <view bindtap="hiddenBtns" class="sku-layer__arrow">
+                    <view class="xlist_icon_fold"></view>
+                </view>
+            </view>
+        </block>
+        <view bindtap="handleConfirmBtn" class="sku-layer__btn sku-layer__btn--red {{info.isJX?'sku-layer__btn--jx':''}} {{info.canBuy?'':'disabled'}}" wx:else>确认</view>
+    </view>
+</view>
+<import src="../../common/toast/toast.wxml"></import>
+<template is="toast" data="{{...toast}}"></template>
+<wxs module="setPrice" src="../../common/wxs/price.wxs" />
+<wxs module="setCount">
+module.exports = (function(count) {
+    var countStr = count ? ('' + count) : '';
+    if (countStr.length > 4) {
+        return ('' + countStr.slice(0, countStr.length - 4) + 'w')
+    };
+    return (countStr)
+});
+</wxs>
+<wxs module="sliceArr">
+module.exports = (function(arr, start, end) {
+    return (arr.slice(start, end))
+});
+</wxs>

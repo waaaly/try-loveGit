@@ -1,0 +1,21 @@
+.non-secret--container {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    background-color: #F5F5F5;
+    min-height: 100%;
+}
+
+.non-secret__icon {
+    margin-top: 172rpx;
+    background: url('https://img11.360buyimg.com/jdphoto/jfs/t22921/217/1827598516/199304/dc298463/5b6a9376N2c30465a.gif') scroll no-repeat center center;
+    width: 420rpx;
+    height: 440rpx;
+    background-size: 100% 100%;
+}
+
+.non-secret__tips {
+    color: #c6c6c6;
+}

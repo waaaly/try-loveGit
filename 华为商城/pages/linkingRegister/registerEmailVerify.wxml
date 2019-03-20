@@ -1,0 +1,23 @@
+<view class="system-empty upEmailVerify">
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="imgs/icon_email.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>验证邮件已发送至{{mail2}}，请3天内完成验证</text>
+        </view>
+        <view class="upBox">
+            <view bindtap="getMailAuthCode" class="{{getSMSClass}}">
+                <text>{{getSMSText}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="upActive">
+    <view bindtap="toRegisterEnd" class="upButton-style-1">
+        <text>以后验证</text>
+    </view>
+    <view bindtap="toRegisterPassword" class="upButton-style-1">
+        <text>已验证</text>
+    </view>
+</view>

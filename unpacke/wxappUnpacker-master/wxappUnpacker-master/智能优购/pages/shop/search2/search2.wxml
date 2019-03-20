@@ -1,0 +1,43 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<form bindsubmit="bindConfirmTab">
+    <view class="search">
+        <input class="keybox" name="keyword" placeholder="关键词"></input>
+        <view class="rbox"></view>
+        <image class="searchimg" src="/images/search.png"></image>
+        <button class="button" formType="submit"></button>
+    </view>
+</form>
+<view class="container">
+    <view class="menu">
+        <scroll-view bindscrolltolower="bindScrollTolowerTap" class="scroll-view_H" enableBackToTop="{{true}}" scrollY="true" style="height:{{cheight}}rpx;">
+            <view bindtap="bindSwitchClassTap" class="bigcate {{item.class}}" data-index="{{index}}" wx:for="{{dataset}}" wx:key="unique">
+        {{item.name}}
+        </view>
+        </scroll-view>
+    </view>
+    <view class="list">
+        <scroll-view class="scroll-view_H" enableBackToTop="{{true}}" scrollIntoView="{{toview}}" scrollWithAnimation="{{true}}" scrollY="true" style="height:{{cheight}}rpx;">
+            <view class="item" id="view{{index}}" wx:for="{{dataset}}" wx:key="unique">
+                <view class="title">
+                    <span bindtap="bindClassTap" data-bid="{{item.id}}">全部></span>
+        {{item.name}}</view>
+                <view bindtap="bindSmallClassTap" class="subitem" data-sid="{{item.id}}" wx:for="{{item.sublist}}" wx:key="unique">
+                    <view wx:if="{{item.pic!=''}}">
+                        <view class="imgbox">
+                            <image class="img" src="{{item.pic}}"></image>
+                        </view>
+                        <view class="name">{{item.name}}</view>
+                    </view>
+                    <view wx:if="{{item.pic==''}}">
+                        <view class="name2">{{item.name}}</view>
+                    </view>
+                </view>
+                <view class="clear"></view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

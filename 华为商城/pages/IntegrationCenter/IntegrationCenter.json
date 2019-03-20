@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "会员积分",
+    "usingComponents": {
+        "BindAccountModal": "../../components/BindAccountModal/BindAccountModal"
+    }
+}

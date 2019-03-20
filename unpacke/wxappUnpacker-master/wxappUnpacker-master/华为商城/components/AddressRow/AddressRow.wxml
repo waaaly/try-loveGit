@@ -1,0 +1,66 @@
+<view class="pub-address-header">
+    <view catch:tap="openAddressPanel" data-status="0" wx:if="{{loadStatus==1}}">
+        <view class="address-base-info">
+            <view class="user-name ellipsis-pub-one">{{newAddress.consignee}}</view>
+            <view class="user-tel">{{newAddress.mobile}}</view>
+            <view class="user-defalut" wx:if="{{newAddress.defaultFlag==1}}">
+                <text>默认</text>
+            </view>
+        </view>
+        <view class="address-main-info">
+            <view class="ellipsis-pub-tow">
+                <text>{{newAddress.provinceName}} {{newAddress.cityName}} {{newAddress.districtName}} {{newAddress.streetName}} {{newAddress.address}}</text>
+            </view>
+        </view>
+        <view class="addr-partial-tips" wx:if="{{newAddress.needL4Addr}}">
+            <text>您的地址信息不全，完善街道地址后才能下单哦</text>
+        </view>
+    </view>
+    <view class="system-only-between address-loading" wx:if="{{loadStatus==0}}">
+        <view class="loading-left">正在加载…</view>
+        <view catch:tap="addAddress" class="loading-right">
+            <text>设置地址</text>
+            <image src="../../imgs/icon_arrow_more.png"></image>
+        </view>
+    </view>
+    <view class="system-only-between address-loading" wx:if="{{loadStatus==3||loadStatus==4}}">
+        <view class="loading-left">
+      收货地址加载失败，
+      <text catch:tap="regain" class="blue">点击重试</text>
+        </view>
+        <view catch:tap="addAddress" class="loading-right">
+            <text>设置地址</text>
+            <image src="../../imgs/icon_arrow_more.png"></image>
+        </view>
+    </view>
+    <view catch:tap="{{addressList.length?'openAddressPanel':'addAddress'}}" class="system-only-between address-loading" wx:if="{{loadStatus==2}}">
+        <view class="loading-left">
+            <view class="address-empty">点击添加地址信息</view>
+        </view>
+        <view class="loading-right">
+            <image src="../../imgs/icon_arrow_more.png"></image>
+        </view>
+    </view>
+</view>
+<view catch:tap="closeAddressPanel" class="ecWap-mask" wx:if="{{isShowAddressPanel}}"></view>
+<view class="address-pop ecWap-box ecWap-box-lower mp-box-lower" style="{{animationStyle}}" wx:if="{{isShowAddressPanel}}">
+    <view class="ecWap-box-header">
+        <text class="ecWap-box-title">选择收货地址</text>
+        <view catch:tap="closeAddressPanel" class="ecWap-box-close box-close">
+            <image src="../../imgs/icon_ecWap_close.png"></image>
+        </view>
+    </view>
+    <view class="ecWap-box-content">
+        <AddressList addressList="{{addressList}}" bind:modify="modifyAddress" bind:select="selectAddress" selectedIndex="{{selectedIdx}}" theme="new"></AddressList>
+    </view>
+    <view class="ecWap-box-footer">
+        <view catch:tap="toWxAddress" class="button-style-4">
+            <text>选择微信地址</text>
+        </view>
+        <view catch:tap="addAddress" class="ecWap-box-ok box-ok">
+            <image src="../../imgs/icon-add.png"></image>
+            <text>新增收货地址</text>
+        </view>
+    </view>
+</view>
+<WxAddressChooser id="WxAddressChooser"></WxAddressChooser>

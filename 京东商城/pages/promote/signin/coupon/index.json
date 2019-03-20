@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "签到领红包",
+    "usingComponents": {
+        "header-cash": "./components/header/index",
+        "tab": "./components/tab/index",
+        "detail": "./components/detail/index",
+        "coupon": "./components/coupon/index",
+        "rule": "../../components/rule/index",
+        "qr-code": "../index/components/qrCode/index",
+        "fans-rule": "../index/components/fansRule/index"
+    }
+}

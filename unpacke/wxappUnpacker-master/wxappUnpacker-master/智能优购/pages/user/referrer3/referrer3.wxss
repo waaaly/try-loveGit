@@ -1,0 +1,421 @@
+page {
+    background-color: white;
+}
+
+.kuang {
+    float: left;
+    width: 310rpx;
+    margin: 20rpx;
+    border: 1px solid #f1f1f1;
+    text-align: center;
+    font-size: 15px;
+    padding: 20rpx;
+    height: 300rpx;
+    border-radius: 10rpx;
+}
+
+.kuang .title2 {
+    font-size: 12px;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.kuang .totalcost2 {
+    font-size: 12px;
+}
+
+.shouru {
+    position: relative;
+}
+
+.shouru image {
+    height: 260rpx;
+    width: 750rpx;
+}
+
+.income {
+    padding: 20rpx;
+}
+
+.income .toptitle {
+    font-size: 12px;
+    margin-top: 30rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+}
+
+.income .prompt {
+    font-size: 14px;
+    padding: 10px 0px 0px 0px;
+}
+
+.income .cost {
+    font-size: 30px;
+    color: #357C6E;
+}
+
+.income .totalcost {
+    font-size: 20px;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #357C6E;
+}
+
+.income .totalcost span {
+    font-size: 12px;
+    color: #000;
+    margin-left: 10rpx;
+}
+
+.income .tixian {
+    text-align: center;
+    padding-top: 20rpx;
+}
+
+.income .tixian span {
+    margin-left: 30rpx;
+    color: #0099FF;
+}
+
+.income .caption {
+    padding-top: 20rpx;
+    color: #357C6E;
+    text-align: center;
+    font-size: 14px;
+}
+
+.data {
+    font-size: 12px;
+    padding: 10px;
+}
+
+.data .item {
+    text-align: center;
+    float: left;
+    width: 33.3%;
+    line-height: 40rpx;
+}
+
+.split {
+    border-right: 1px solid #dce9f4;
+}
+
+.topblock {
+    text-align: center;
+    font-size: 12px;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.record {
+    background-color: white;
+    margin-top: 10px;
+}
+
+.record .title {
+    font-size: 14px;
+    padding: 20rpx;
+}
+
+.record .item view,.record .item2 view {
+    font-size: 12px;
+    float: left;
+    width: 25%;
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-top: 1px solid #f1f1f1;
+    overflow: hidden;
+}
+
+.record .item2 view {
+    font-weight: bold;
+}
+
+.norcord {
+    text-align: center;
+    padding: 20px 0px 30px 0px;
+    color: #848484;
+}
+
+.mask {
+    background-color: #000000;
+    opacity: 0.6;
+}
+
+.identification {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20rpx;
+    background-color: white;
+}
+
+.identification .rule {
+    background-color: #f2f7fd;
+    font-size: 14px;
+    padding: 20rpx;
+    line-height: 40rpx;
+    border: 1px dashed #D5E4F9;
+}
+
+.item {
+    font-size: 14px;
+}
+
+.item .caption {
+    height: 70rpx;
+    line-height: 70rpx;
+    background-color: #f1f1f1;
+    font-size: 14px;
+    padding-left: 20rpx;
+}
+
+.item .input {
+    background-color: white;
+    height: 90rpx;
+    padding-left: 20rpx;
+}
+
+.databox {
+    border: 1px solid #f1f1f1;
+    margin-top: 20rpx;
+}
+
+.button1 {
+    margin-left: 40rpx;
+    float: left;
+    width: 300rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    background-color: #A84F25;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.button2 {
+    margin-left: 20rpx;
+    float: left;
+    width: 300rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    background-color: #666666;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.button {
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.lukelayer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.codeline {
+    position: fixed;
+    z-index: 199;
+    border-radius: 10rpx;
+    margin: auto;
+    background-color: #fff;
+    width: 650rpx;
+    left: 50rpx;
+    top: 150rpx;
+    padding: 40rpx;
+}
+
+.codeline .title {
+    text-align: center;
+    font-size: 15px;
+    line-height: 70rpx;
+    font-weight: bold;
+}
+
+.codeline .caption {
+    font-size: 14px;
+    line-height: 45rpx;
+}
+
+.codeline .codebutton {
+    border-radius: 10rpx;
+    background-color: #6699ff;
+    height: 80rpx;
+    width: 300rpx;
+    margin: auto;
+    margin-top: 40rpx;
+    margin-bottom: 10rpx;
+    text-align: center;
+    line-height: 80rpx;
+    color: white;
+    font-size: 14px;
+}
+
+.codeline .close {
+    float: right;
+    z-index: 10;
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+    width: 50rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+}
+
+.help {
+    position: fixed;
+    z-index: 99;
+    bottom: 150rpx;
+    font-size: 14px;
+    padding: 8rpx;
+    color: #357C6E;
+    width: 100%;
+    text-align: center;
+    border-radius: 10rpx;
+}
+
+.id {
+    position: fixed;
+    z-index: 99;
+    bottom: 100rpx;
+    font-size: 12px;
+    padding: 8rpx;
+    color: #444444;
+    width: 100%;
+    text-align: center;
+    border-radius: 10rpx;
+}
+
+.button1 {
+    height: 90rpx;
+    background-color: #e15517;
+    width: 650rpx;
+    margin-left: 50rpx;
+    font-size: 16px;
+    text-align: center;
+    line-height: 90rpx;
+    border-radius: 10rpx;
+    margin-top: 50px;
+}
+
+.button2 {
+    height: 90rpx;
+    background-color: #ffffff;
+    width: 650rpx;
+    margin-left: 50rpx;
+    font-size: 16px;
+    text-align: center;
+    line-height: 90rpx;
+    border: 1px solid #cccccc;
+    border-radius: 10rpx;
+    margin-top: 15px;
+    color: black;
+}
+
+.mingxi {
+    float: right;
+    font-size: 14px;
+}
+
+.expand {
+    background-color: white;
+    padding-top: 20rpx;
+    height: 500rpx;
+    border-radius: 5px;
+    top: -400rpx;
+}
+
+.expand .title {
+    margin-left: 60rpx;
+    text-align: left;
+    font-size: 14px;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.expand input {
+    width: 440rpx;
+    font-size: 14px;
+    height: 65rpx;
+    border: 1px solid #f1f1f1;
+    margin-left: 60rpx;
+    padding: 0rpx 20rpx 0rpx 20rpx;
+    border-radius: 3px;
+}
+
+.expand .prompt {
+    font-size: 12px;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    color: #e15517;
+}
+
+.expand .inputcost {
+    width: 250rpx;
+    float: left;
+}
+
+.expand .buttonall {
+    width: 170rpx;
+    float: left;
+    height: 70rpx;
+    margin-left: 20rpx;
+    line-height: 65rpx;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid #f1f1f1;
+    border-radius: 8rpx;
+}
+
+.expand .button {
+    border-top: 1px solid #f1f1f1;
+}
+
+.expand .button view {
+    width: 50%;
+    height: 90rpx;
+    font-size: 14px;
+    line-height: 90rpx;
+    text-align: center;
+}
+
+.expand .button .confirm {
+    color: #357C6E;
+    position: relative;
+}
+
+.expand .button button {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 90rpx;
+    z-index: 80;
+    opacity: 0;
+}
+
+.expand .button .cancel {
+    float: right;
+    border-left: 1px solid #f1f1f1;
+    color: #848484;
+}
+
+.selcetdown {
+    color: #F4241A;
+}

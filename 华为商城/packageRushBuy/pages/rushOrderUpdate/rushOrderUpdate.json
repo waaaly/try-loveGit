@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "修改订单",
+    "usingComponents": {
+        "InvoiceSelect": "../../../components/InvoiceSelect/InvoiceSelect",
+        "AddressRow": "/components/AddressRow/AddressRow"
+    }
+}

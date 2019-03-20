@@ -1,0 +1,158 @@
+page {
+    background-color: #F2F2F2;
+    overflow: hidden;
+}
+
+.search {
+    width: 100%;
+    padding: 16rpx 0 20rpx 0;
+    background: #F2F2F2;
+    position: fixed;
+    z-index: 10001;
+    top: 0;
+}
+
+.search-icon {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 23rpx;
+    left: 35rpx;
+}
+
+.second-kill .kill-item:nth-child(1) {
+    padding-left: 15rpx;
+    box-sizing: border-box;
+    border-right: 2rpx solid #eee;
+}
+
+.kill-item {
+    width: 50%;
+    border-bottom: 2rpx solid #eee;
+}
+
+.search .input {
+    width: 710rpx;
+    height: 54rpx;
+    margin: 0 auto;
+    border-radius: 40rpx;
+    padding-left: 60rpx;
+    box-sizing: border-box;
+    outline: none;
+    background-color: white;
+}
+
+.container {
+    margin-top: 92rpx;
+}
+
+.container .menu {
+    float: left;
+    width: 168rpx;
+    background-color: #fff;
+}
+
+.bigcate {
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 12px;
+}
+
+.container .itemon {
+    width: 160rpx;
+    background-color: #F2F2F2;
+    color: red;
+    border-left: 8rpx solid #F11717;
+    padding-left: -8rpx;
+}
+
+.list {
+    width: 552rpx;
+    float: left;
+    margin-left: 10rpx;
+}
+
+.item {
+    background-color: #fff;
+    margin-bottom: 10rpx;
+    border-radius: 8rpx;
+    padding-bottom: 30rpx;
+}
+
+.item .title {
+    font-size: 16px;
+    padding-left: 10rpx;
+    line-height: 80rpx;
+    border-bottom: 1px solid #f1f1f1;
+    width: 100%;
+}
+
+.item .item-name {
+    font-size: 22rpx;
+    font-weight: bold;
+}
+
+.item .all {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.item-title {
+    padding: 30rpx;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.item .next-icon {
+    width: 24rpx;
+    height: 22rpx;
+    margin-left: 8rpx;
+}
+
+.item .subitem {
+    float: left;
+    height: 216rpx;
+    width: 144rpx;
+    text-align: center;
+    padding-top: 30rpx;
+    margin-left: 30rpx;
+}
+
+.item .imgbox {
+    height: 144rpx;
+}
+
+.item .subitem .img {
+    height: 104rpx;
+    width: 144rpx;
+}
+
+.item .subitem .name {
+    font-size: 12px;
+    text-align: center;
+    height: 44rpx;
+    line-height: 44rpx;
+}
+
+.item .subitem .name2 {
+    font-size: 12px;
+    padding-top: 55rpx;
+}
+
+::-webkit-scrollbar {
+    width: 4rpx;
+    height: 8rpx;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2rpx rgba(0,0,0,0.3);
+    border-radius: 10rpx;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10rpx;
+    -webkit-box-shadow: inset 0 0 2rpx rgba(0,0,0,.3);
+    background-color: #ccc;
+}

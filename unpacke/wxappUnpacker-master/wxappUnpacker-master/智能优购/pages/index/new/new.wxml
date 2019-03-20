@@ -1,0 +1,35 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="container">
+    <view class="box_tt">
+        <view class="text_titel">筹备中...</view>
+        <view class="text_center">预计2018年7月20号正式上线</view>
+    </view>
+    <view class="list">
+        <view bindtap="bindContentTap" class="item " data-catalog="{{item.catalog}}" data-id="{{item.id}}" wx:for="{{dataset}}" wx:key="unique">
+            <view class="productimg">
+                <image src="{{item.pic}}?2"></image>
+            </view>
+            <view class="divright">
+                <view class="classname">{{item.title}}</view>
+                <view class="pin">
+                    <span>购买送{{item.score}}个数贝</span>
+                </view>
+                <view class="cost">¥{{item.cost1}}</view>
+                <view class="partake" wx:if="{{item.isgroup}}">
+                    <view class="button">去拼团</view>
+                  ¥<span>{{item.cost3}}</span>
+                </view>
+                <view class="partake" wx:if="{{!item.isgroup}}">
+                    <view class="button">单独买</view>
+                  ¥<span>{{item.cost2}}</span>
+                </view>
+            </view>
+            <view class="clear"></view>
+        </view>
+        <view bindtap="bindAllAlbum" class="newmore" wx:if="{{bar.show&&!isVerfity}}">查看更多>></view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

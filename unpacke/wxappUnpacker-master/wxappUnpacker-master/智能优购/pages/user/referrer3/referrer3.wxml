@@ -1,0 +1,100 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="top">
+    <view class="shouru">
+        <view class="income">
+            <view class="kuang">
+                <view class="title">{{dataset.scorea}}数贝总收入</view>
+                <view class="totalcost">{{dataset.totalascore}}</view>
+                <view class="title2">可使用</view>
+                <view class="totalcost2">{{dataset.cashacost}}</view>
+            </view>
+            <view class="kuang">
+                <view class="title">{{dataset.scoreb}}数贝总收入</view>
+                <view class="totalcost">{{dataset.totalbscore}}</view>
+                <view class="title2">可使用</view>
+                <view class="totalcost2">{{dataset.cashbcost}}</view>
+            </view>
+            <view class="clear"></view>
+            <view class="toptitle">{{dataset.title}}
+   <span bindtap="bindDownTap" class="selcetdown" data-cote="{{dataset.usertype}}" wx:if="{{dataset.usertype==1||dataset.usertype==2}}">我的下属</span>
+            </view>
+        </view>
+    </view>
+    <view class="data">
+        <view bindtap="bindRecordTap" class="item split" data-t="1">
+            <view>直接分享</view>
+            <view>{{dataset.rectimes}}人</view>
+        </view>
+        <view bindtap="bindRecordTap" class="item split" data-t="2">
+            <view>间接分享</view>
+            <view>{{dataset.nextrectimes}}人</view>
+        </view>
+        <view bindtap="bindRecordTap" class="item" data-t="3">
+            <view>成交订单</view>
+            <view>{{dataset.buytimes}}</view>
+        </view>
+        <view class="clear"></view>
+    </view>
+</view>
+<view bindtap="bindDuiHuanTap" class="button1">兑换</view>
+<view bindtap="bindZhuangRanTap" class="button2" wx:if="{{false}}">转让</view>
+<view class="topblock clear">{{dataset.caption}}</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>
+<form bindsubmit="bindSubmitTap">
+    <view class="mask" wx:if="{{identification}}"></view>
+    <view class="identification" wx:if="{{identification}}">
+        <view class="rule">{{dataset.rule}}</view>
+        <view class="databox">
+            <view class="item">
+                <view class="caption">姓名：</view>
+                <input class="input" name="realname" placeholder="请输入性名"></input>
+                <view class="caption">联系方式</view>
+                <input class="input" name="mobile" placeholder="请输入固话或手机号码"></input>
+                <view class="caption">身份证号：
+      <input class="input" name="mobile" placeholder="18位身份证号"></input>
+                </view>
+            </view>
+        </view>
+        <view class="button">
+            <button class="button1" formType="submit"> {{submitText}} </button>
+            <view bindtap="bindInToTap" class="button2">以后在说</view>
+            <view class="clear"></view>
+        </view>
+    </view>
+</form>
+<view bindtap="bindInOutTap" class="help">数贝收支明细</view>
+<view class="id">您的ID:{{dataset.userid}}</view>
+<view class="lukelayer" wx:if="{{lukelayer}}"></view>
+<view class="codeline" wx:if="{{lukelayer}}">
+    <view bindtap="bindCopyCodeTap" class="close">╳</view>
+    <view class="title">领取说明</view>
+    <scroll-view scrollY="{{true}}" style="height:600rpx;">
+        <text class="caption">{{dataset.txcaption}}</text>
+    </scroll-view>
+    <view bindtap="bindCopyCodeTap" class="codebutton">我知道了</view>
+</view>
+<view class="{{mask}}"></view>
+<view class="expand {{proshowclass}}">
+    <form bindsubmit="bindReChargeTap">
+        <view class="title">请输入接收方ID</view>
+        <view class="code">
+            <input name="code" value="{{textcode}}"></input>
+        </view>
+        <view class="title">请输入转出数量</view>
+        <view class="code">
+            <input class="inputcost" name="cost" placeholder="0" value="{{cost}}"></input>
+            <view bindtap="bindClickAll" class="buttonall">全部</view>
+            <view class="clear"></view>
+        </view>
+        <view class="prompt">ID在页面底部可以找到</view>
+        <view class="button">
+            <view bindtap="bindCancelBuyTab" class="cancel">取消</view>
+            <view class="confirm">{{ReChargeButtonName}}
+        <button formType="submit"></button>
+            </view>
+        </view>
+    </form>
+</view>

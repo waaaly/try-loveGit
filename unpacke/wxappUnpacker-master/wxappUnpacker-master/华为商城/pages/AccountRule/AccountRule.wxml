@@ -1,0 +1,12 @@
+<view class="templateUL">
+    <view class="templateLI">1.为更好地为您提供订单管理服务，“华为商城+”小程序提供小程序微信帐号绑定华为帐号能力。</view>
+    <view class="templateLI">2.一经绑定一个华为帐号后，无法再次绑定不同的华为帐号，不支持解除绑定关系。</view>
+    <view class="templateLI">
+        <view>3.完成绑定动作后，可以在如下渠道查看您的小程序订单信息</view>
+        <view>华为商城WEB版网站：www.vmall.com</view>
+        <view>华为商城WAP版网站：m.vmall.com</view>
+        <view>华为商城APP<text class="gray">（暂不支持从小程序查看在以上渠道创建的订单）</text>
+        </view>
+    </view>
+    <view class="templateLI">4.完成帐号绑定后，在小程序下单时可以选择您华为帐号内已创建的收货人及地址信息。</view>
+</view>

@@ -1,0 +1,27 @@
+<view hidden="{{hideModule}}">
+    <view bind:tap="gotoUrl" class="floor-title" data-url="https://wq.jd.com/webportal/channel/theme_list?sceneid=1&ptag=138067.35.1">购·话题<view class="floor-title__more">发现更多</view>
+    </view>
+    <view bind:tap="gotoUrl" class="topic" data-url="{{firstItem.url}}">
+        <image class="topic-image bg_stamp" mode="aspectFill" src="{{firstItem.bg}}"></image>
+        <view class="topic-title">
+            <view class="topic-title__dt">{{firstItem.title}}</view>
+            <view class="topic-title__dd">{{firstItem.des}}</view>
+        </view>
+        <view class="topic-btn">去看看</view>
+    </view>
+    <view class="group">
+        <view bind:tap="gotoUrl" class="group__item group__item-m" data-url="{{item.url}}" wx:for="{{otherItem}}" wx:key="url">
+            <view class="group-title">
+                <view class="group-title__dt">
+                    <text>{{item.title}}</text>
+                </view>
+                <view class="group-title__dd">{{item.des}}</view>
+            </view>
+            <view class="group-images">
+                <view class="group-image bg_stamp" wx:for="{{item.images}}" wx:for-item="img">
+                    <image class="group-image__cover" hidden="{{!img}}" src="{{img}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

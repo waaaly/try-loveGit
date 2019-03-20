@@ -1,0 +1,51 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="top"></view>
+<view class="titel">
+    <view class="titel_l">总人数</view>
+    <view class="titel_r max-num">{{totalcount}}</view>
+    <view class="clear"></view>
+</view>
+<view class="titel">
+    <view class="titel_l">{{cote=='1'?'总监':'店长'}}</view>
+    <view class="titel_r max-num">{{cote=='1'?dataset.length:''}}</view>
+    <view class="clear"></view>
+</view>
+<view class="record">
+    <view class="norcord" wx:if="{{dataset.length==0}}">没有任何记录~~~</view>
+    <view class="child-list" wx:for="{{dataset}}">
+        <view bindtap="userdowm" class="row ali-center spa child-list-item" data-userid="{{item.id}}" wx:if="{{item.subcount!=0}}">
+            <view class="row">
+                <image class="head-img" src="{{item.pic}}"></image>
+                <view class="col ju-center">
+                    <text class="user-name">{{item.nickname}}</text>
+                    <text class="user-date">{{item.addtime}}</text>
+                </view>
+            </view>
+            <view class="child-num" wx:if="cote=='1'">下属店长:<text class="bold">{{item.subcount}}</text> ></view>
+        </view>
+        <view class="row ali-center spa child-list-item" data-userid="{{item.id}}" wx:if="{{item.subcount==0}}">
+            <view class="row">
+                <image class="head-img" src="{{item.pic}}"></image>
+                <view class="col ju-center">
+                    <text class="user-name">{{item.nickname}}</text>
+                    <text class="user-date">{{item.addtime}}</text>
+                </view>
+            </view>
+            <text class="child-num">0</text>
+        </view>
+    </view>
+    <view class="clear"></view>
+</view>
+<view class="recommend_bottom" wx:if="{{dataset.length>10}}">
+    <view class="bottomcenter" wx:if="{{!loadIsEnd}}">
+        <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载...
+  </view>
+    <view class="endparent" wx:if="{{loadIsEnd}}">
+        <view class="bottomp">已经到底部了</view>
+        <view class="bottomline"></view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

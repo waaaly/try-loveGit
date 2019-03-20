@@ -1,0 +1,11 @@
+<view class="gifts" hidden="{{hideModule}}" style="{{config.color}}">
+    <view class="gifts__wrap">
+        <rich-text bindtap="gotoUrl" class="gifts-title" data-url="{{title.url}}" nodes="{{title.text}}"></rich-text>
+        <view class="gifts-list">
+            <view bindtap="gotoUrl" class="gifts-list__item" data-url="{{item.url}}" wx:for="{{list}}" wx:key="{{ item.image }}">
+                <image class="gifts-list__image" src="{{item.image}}"></image>
+                <view class="gifts-list__tag">{{item.tag}}</view>
+            </view>
+        </view>
+    </view>
+</view>

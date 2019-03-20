@@ -1,0 +1,109 @@
+<!--index.wxml-->
+<!-- <view class="container"> -->
+
+  <!-- 用户 openid -->
+  <!-- <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+    ></button>
+    <view>
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+    </view>
+  </view> -->
+
+
+  <!-- 上传图片 -->
+  <!-- <view class="uploader">
+    <view class="uploader-text" bindtap="doUpload">
+      <text>上传图片</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view> -->
+
+
+  <!-- 操作数据库 -->
+  <!-- <view class="uploader">
+    <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
+      <text>前端操作数据库</text>
+    </navigator>
+  </view> -->
+
+  <!-- 新建云函数 -->
+  <!-- <view class="uploader">
+    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
+      <text>快速新建云函数</text>
+    </navigator>
+  </view>
+
+  <view wx:for="{{['0','1','2','3','4','5']}}" wx:for-index='i' >
+    <button bindtap="buttonClick" data-id="{{item}}">Click me test Cloud{{i}}</button>
+    
+  </view>
+    <image src="{{currentClass}}"></image>
+</view> -->
+<!--index.wxml-->
+<view class='page'>
+<view class='top-navigation-bar'>
+    <image class="search-icon" src="/staticFiles/icons/search.png"></image> 
+    <text class='search-input'>输入关键字搜索</text>
+</view>
+
+<view class='left'>
+      <scroll-view scroll-y class="srcoll"  >
+        <view  wx:for="{{classifyName}}" wx:for-index="i" wx:key="_id" data-id="classify{{i}}" bindtap="scrollViewClick" class="{{item.isCurrent===true?'current-scroll-text':'scroll-text'}}">{{item.name}}</view>
+    </scroll-view>
+</view>
+
+
+    <view class='pic'>
+        <image mode="scaleToFill" height="250rpx"src="https://gw.alicdn.com/tps/TB1ydZ2LVXXXXaJapXXXXXXXXXX-300-100.png"></image>
+    </view>
+
+    <view class="home_grids">
+        <view class='home_grid' wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]}}">
+            <view class='goodImage'> 
+                <image  src='../../images/icon_gift.png'></image>
+            </view>
+            <view  class='goodText'>
+                <text class='text'>静夜思{{item}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+                <view class="goods-title">
+                    <view class="goods-line">
+                        <text>举头望明月
+                        </text>
+                    </view>
+                </view>
+
+<!-- <view style="he">
+  <view class="container">
+      <view class='top-navigation-bar'>
+          <image class="search-icon" src="/staticFiles/icons/search.png"></image> 
+          <text class='search-input'>输入关键字搜索</text>
+      </view>
+
+      <scroll-view scroll-y class="srcoll"  >
+        <view  wx:for="{{classifyName}}" wx:for-index="i" wx:key="_id" data-id="classify{{i}}" bindtap="scrollViewClick" class="{{item.isCurrent===true?'current-scroll-text':'scroll-text'}}">{{item.name}}</view>
+    </scroll-view>
+
+  </view>
+
+  <view class="classify-detial">
+      <image class="classify-pic" src="{{currentPic}}" > </image>
+      <scroll-view scroll-y style="height: 770rpx;width:600rpx;">
+          <view class="classify-good" wx:for="{{classifyName}}">
+              <image src="/staticFiles/pics/sloadingjpg.jpg" class="good-pic">{{item.isCurrent}}</image>
+              <text class="good-text">{{item.isCurrent}}</text>
+          </view>
+      </scroll-view>
+  </view>
+
+</view> -->

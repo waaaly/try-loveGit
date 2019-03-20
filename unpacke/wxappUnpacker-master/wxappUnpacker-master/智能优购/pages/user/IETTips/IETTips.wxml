@@ -1,0 +1,19 @@
+<view class="tips-box w100">
+    <view class="title-box">
+        <view class="box-img">
+            <image src="{{wrongImg}}"></image>
+        </view>
+        <view class="zctxt">
+            <text class="px28 w650 color666" decode="{{true}}">&emsp;&emsp;对不起，您还没注册<text class="colorF11">钱包APP</text>帐号，请先下载钱包APP注册账号。</text>
+        </view>
+        <view class="px24 tips-txt colorF11">
+          温馨提示：钱包APP注册的手机号需跟智融商城身份认证的手机号保持一致。
+      </view>
+        <view class="color222 px28 huifu">联系客服回复关键字“1”，快速获取下载地址！</view>
+    </view>
+    <view>
+        <button class="kf_button white px30" openType="contact" sessionFrom="weapp">
+        联系客服
+      </button>
+    </view>
+</view>

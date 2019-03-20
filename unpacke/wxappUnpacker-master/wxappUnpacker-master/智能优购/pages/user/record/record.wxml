@@ -1,0 +1,56 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view class="top"></view>
+<view class="record">
+    <view class="norcord" wx:if="{{dataset.length==0}}">没有任何记录~~~</view>
+    <view class="item" wx:for="{{dataset}}" wx:key="unique">
+        <view class="cost {{item.color}}">{{item.reccost}}</view>
+        <view class="name">{{item.pname}}</view>
+        <view class="time">
+            <span>{{item.buytime}}</span>
+        </view>
+    </view>
+    <view class="clear"></view>
+</view>
+<view class="recommend_bottom" wx:if="{{dataset.length>10}}">
+    <view class="bottomcenter" wx:if="{{!loadIsEnd}}">
+        <image class="img_rotate" src="/images/loadding.png"></image>正在玩命的加载... 
+        </view>
+    <view class="endparent" wx:if="{{loadIsEnd}}">
+        <view class="bottomp">已经到底部了</view>
+        <view class="bottomline"></view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>
+<form bindsubmit="bindSubmitTap">
+    <view class="mask" wx:if="{{identification}}"></view>
+    <view class="identification" wx:if="{{identification}}">
+        <view class="rule">{{dataset.recommend.rule}}</view>
+        <view class="databox">
+            <view class="item">
+                <view class="caption">姓名：</view>
+                <input class="input" name="realname" placeholder="请输入性名"></input>
+                <view class="caption">联系方式</view>
+                <input class="input" name="mobile" placeholder="请输入固话或手机号码"></input>
+                <view class="caption">身份证号：</view>
+                <input class="input" name="cardid" placeholder="15或18位身份证号"></input>
+            </view>
+        </view>
+        <view class="button">
+            <button class="button1" formType="submit"> {{submitText}} </button>
+            <view bindtap="bindInToTap" class="button2">以后在说</view>
+            <view class="clear"></view>
+        </view>
+    </view>
+</form>
+<view class="lukelayer" wx:if="{{lukelayer}}"></view>
+<view class="codeline" wx:if="{{lukelayer}}">
+    <view bindtap="bindCopyCodeTap" class="close">╳</view>
+    <view class="title">领取说明</view>
+    <scroll-view scrollY="{{true}}" style="height:600rpx;">
+        <text class="caption">{{dataset.recommend.txcaption}}</text>
+    </scroll-view>
+    <view bindtap="bindCopyCodeTap" class="codebutton">我知道了</view>
+</view>

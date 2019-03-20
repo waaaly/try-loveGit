@@ -1,0 +1,30 @@
+<view class="dialog_wrap">
+    <view class="dialog_mask"></view>
+    <view class="dialog_cn">
+        <view class="dialog_title">
+            <text class="title">邀请您开通微信免密支付</text>
+        </view>
+        <view class="dialog_content">
+            <view class="sub_title">功能说明</view>
+            <view class="props">开通后，您在支付小于等于{{preHandle.formatePrice(maxMoney)}}元的订单时，将不再用输入支付密码，每天最多可使用{{perDayTimes}}次，达到限制后，将自动切换到普通微信支付(需验证密码)。</view>
+            <view class="sub_title" style="margin-top: 20rpx;">使用规则</view>
+            <view class="props">功能开通后，仅限在微信-发现-京东购物、京东购物小程序、京东拼购小程序渠道使用。</view>
+            <view class="props">开通后如想关闭，可前往[个人中心-账号管理-微信免密支付管理]操作关闭免密支付功能。</view>
+            <view class="props">功能开通后，默认扣款顺序为：零钱->信用卡->借记卡，如需调整，可先关闭功能，然后重新走开通流程，在开通过程中，可自由选择优先扣款方式。</view>
+            <view class="props" style="margin-top: 20rpx;">以下京东账号将开通微信免密支付功能：</view>
+            <view class="pin" wx:for="{{jdpins}}">账号：{{item}}</view>
+        </view>
+        <view class="dialog_btns">
+            <view bindtap="_onWechatNopwdPayTap" class="btn unopen" data-type="unopen">暂不开通</view>
+            <view bindtap="_onWechatNopwdPayTap" class="btn open" data-type="open">去开通并支付</view>
+        </view>
+    </view>
+</view>
+<wxs module="preHandle">
+var formatePrice = (function(price) {
+    return (parseInt(price / 100))
+});
+module.exports = ({
+    formatePrice: formatePrice,
+});
+</wxs>

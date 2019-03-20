@@ -1,0 +1,36 @@
+.slider_view {
+    overflow: hidden;
+    height: auto;
+}
+
+.slider_view_content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100vw;
+    background: inherit;
+    color: inherit;
+    position: relative;
+    z-index: 1;
+}
+
+.slider_view_button {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    left: 100vw;
+    right: -150rpx;
+    z-index: 0;
+    font-size: 28rpx;
+}
+
+.slider_view_button_remove {
+    background-color: #E93B3D;
+    width: 150rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}

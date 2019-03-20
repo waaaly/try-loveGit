@@ -1,0 +1,9 @@
+function sum(list, num) {
+    var len = list.reduce((function(acc, it) {
+        return (acc + it.items.length)
+    }), 0);
+    return (len * num)
+};
+module.exports = ({
+    sum: sum,
+});

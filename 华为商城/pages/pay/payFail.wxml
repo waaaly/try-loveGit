@@ -1,0 +1,31 @@
+<view class="order-form-are bg_white order-pay-state">
+    <view class="failure">
+        <view class="icon-failure">
+            <image src="../orderConfirm/imgs/icon_failure.png"></image>
+        </view>
+        <view class="title">
+            <view class="title-span">订单支付异常</view>
+            <view class="title-em">订单支付状态的更新可能稍有延迟，如未更新请半小时后查看。</view>
+        </view>
+    </view>
+</view>
+<view class="order-form-are bg_white order-pay-info">
+    <view>订单编号：{{orderCode}}</view>
+    <view>订单金额：¥{{cashPay}}</view>
+</view>
+<view class="order-form-are bg_white tips-style">
+    <view>如遇退换货等售后服务相关问题，请联系商城客服</view>
+    <view>1.客服热线 400-088-6888</view>
+    <view>2.或通过【华为商城】公众号【自助服务】菜单联系在线客服</view>
+</view>
+<view class="hr-65"></view>
+<view class="action-fixed bg_white">
+    <view class="action-btn">
+        <view bindtap="goToIndex" class="button-style-3">
+            <text>返回首页</text>
+        </view>
+        <view bindtap="goToOrderDetail" class="button-style-2">
+            <text>查看订单</text>
+        </view>
+    </view>
+</view>

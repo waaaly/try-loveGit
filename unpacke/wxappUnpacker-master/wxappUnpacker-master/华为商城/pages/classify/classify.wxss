@@ -1,0 +1,164 @@
+page {
+    border: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.classify-area {
+    height: 100%;
+}
+
+.classify-nav {
+    width: 177rpx;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-right: 1rpx solid #eaeaea;
+}
+
+.classify-nav .nav-list {
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    height: 93rpx;
+    padding: 0 12rpx;
+    border-bottom: 1rpx solid #eaeaea;
+    border-left: 4rpx solid transparent;
+    font-size: 27rpx;
+}
+
+.classify-nav .nav-list.current {
+    color: #ca141d;
+    border-left: 4rpx solid #ca141d;
+    background: #f6f6f6;
+}
+
+.classify-nav .nav-list text {
+    position: relative;
+    top: 4rpx;
+    width: 100%;
+    line-height: 1.3;
+    text-align: center;
+    display: -webkit-box;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.classify-goods {
+    width: 100%;
+    padding-top: 20rpx;
+}
+
+.classify-goods .goods-area {
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.classify-goods .goods-area.hide {
+    display: none;
+}
+
+.classify-goods .goods-cont {
+    padding: 0 15rpx;
+}
+
+.classify-goods .goods-title {
+    padding: 18rpx 0 46rpx;
+    font-size: 27rpx;
+    text-align: center;
+}
+
+.classify-goods .goods-title .goods-line {
+    display: inline-block;
+    position: relative;
+    padding: 0 83rpx;
+}
+
+.classify-goods .goods-title .goods-line text {
+    position: relative;
+    z-index: 2;
+    padding: 0 21rpx;
+    background: #fff;
+    display: -webkit-box;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.classify-goods .goods-title .goods-line:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1rpx;
+    background: #eaeaea;
+}
+
+.classify-goods .display-flex {
+    flex-wrap: wrap;
+}
+
+.classify-goods .goods-item {
+    width: 33.33%;
+    padding: 0 13rpx;
+    margin-bottom: 42rpx;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.classify-goods .goods-item image {
+    width: 115rpx;
+    height: 115rpx;
+}
+
+.classify-goods .goods-item .item-name {
+    height: 56rpx;
+    margin-top: 17rpx;
+    font-size: 23rpx;
+    display: -ms-flexbox;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.classify-goods .goods-item .item-name text {
+    width: 100%;
+    text-align: center;
+    line-height: 1.2;
+    display: -webkit-box;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+swiper {
+    width: 100%;
+    height: 100%;
+}
+
+swiper scroll-view {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+swiper swiper-item {
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+}

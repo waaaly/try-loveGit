@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "京东拼券频道",
+    "usingComponents": {
+        "dialogs": "../../common/components/dialogs/index",
+        "rule": "../../common/components/rule/index"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "brand-slogan": "../components/brandSlogan/brandSlogan",
+        "sub-title": "../components/subTitle/subTitle",
+        "brand-list": "../components/brandList/brandList",
+        "back-to-top": "../components/backToTop/backToTop",
+        "footnav": "../components/footnav/footnav"
+    },
+    "navigationBarTitleText": "品牌秒杀",
+    "onReachBottomDistance": 150
+}

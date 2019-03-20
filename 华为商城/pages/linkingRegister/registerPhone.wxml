@@ -1,0 +1,65 @@
+<view class="registerBox">
+    <view class="upItem">
+        <view class="upBox">
+            <picker bindchange="bindPickerChange" class="{{disabled?'disabled':''}}" disabled="{{disabled}}" range="{{array}}" value="{{index}}">
+                <view class="picker">
+          {{array[index]}}
+        </view>
+            </picker>
+            <view class="upInput">
+                <input bindinput="setPhone" maxlength="11" name="" placeholder="手机号" type="text" value="{{phone}}"></input>
+            </view>
+        </view>
+    </view>
+    <view class="upItem">
+        <view class="upBox">
+            <view class="upInput">
+                <input bindinput="setSMSCode" placeholder="短信验证码" type="text" value="{{smsCode}}"></input>
+            </view>
+            <view bindtap="getSMSAuthCode" class="{{getSMSClass}}">
+                <text>{{getSMSText}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="upItem">
+        <view class="upBox">
+            <view class="upInput">
+                <input bindblur="eyePasswordBlur" bindfocus="eyePasswordFocus" bindinput="setPwd" focus="{{passwordFocus}}" name="" placeholder="密码" type="{{showPassword?'text':'password'}}" value="{{pwd}}"></input>
+            </view>
+            <view bindtap="lookPassword" class="{{showPassword?'eyeon':'eyeoff'}}" data-status="{{showPassword?'1':'0'}}" wx:if="{{eyePasswordShow}}">
+                <icon></icon>
+            </view>
+        </view>
+    </view>
+    <view class="upItem">
+        <view class="upBox">
+            <view class="upInput">
+                <input bindblur="eyeConfirmBlur" bindfocus="eyeConfirmFocus" bindinput="setPwd2" focus="{{confirmFocus}}" name="" placeholder="确认密码" type="{{showConfirm?'text':'password'}}" value="{{pwd2}}"></input>
+            </view>
+            <view bindtap="lookConfirm" class="{{showConfirm?'eyeon':'eyeoff'}}" data-status="{{showConfirm?'1':'0'}}" wx:if="{{eyeConfirmShow}}">
+                <icon></icon>
+            </view>
+        </view>
+        <view class="upCondition">
+            <text>至少8个字符，必须包含字母、数字、符号中至少2种</text>
+        </view>
+    </view>
+</view>
+<view class="upLine"></view>
+<view class="upOther">
+    <view bindtap="toEmail" class="upToEmail">
+        <text>使用邮件地址注册</text>
+    </view>
+    <view class="registerTip">若使用邮件地址注册，您仍需要为帐号提供一个安全手机号用于验证您的身份。</view>
+</view>
+<view class="upActive">
+    <view bindtap="toRegisterRule" class="upButton-style-1">
+        <text>上一步</text>
+    </view>
+    <view bindtap="toRegisterPassword" class="upButton-style-1">
+        <text>下一步</text>
+    </view>
+</view>
+<view class="toast {{toastState?'show':''}}" id="toast">
+    <view class="toast_cont">{{toastCont}}</view>
+</view>

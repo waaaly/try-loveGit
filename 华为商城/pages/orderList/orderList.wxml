@@ -1,0 +1,159 @@
+<view class="order-top-tips" wx:if="{{isShowText}}">
+    <text>以下为小程序订单，更多订单请前往华为商城APP查看</text>
+</view>
+<view wx:if="{{showList}}">
+    <view wx:for="{{userOrderList}}" wx:key="index">
+        <view class="order-mate-area bg_white" data-index="{{index}}">
+            <view class="order-mate-header">
+                <view class="order-number">
+                    <text class="spell" wx:if="{{item.orderType==33||item.orderType==39}}">拼团</text>
+                    <text>订单号：{{item.orderCode}}</text>
+                </view>
+                <view class="order-time">{{item.orderTime}}</view>
+            </view>
+            <navigator class="sys-good-area" hoverClass="navigator-hover" url="../orderDetail/orderDetail?orderCode={{item.orderCode}}">
+                <view wx:for="{{item.productList}}" wx:for-item="productList" wx:key="index">
+                    <view class="sys-good-item">
+                        <view class="good-panels">
+                            <view class="good-img">
+                                <image src="{{cdnPath}}{{productList.photoPath}}428_428_{{productList.photoName}}"></image>
+                            </view>
+                            <view class="good-info">
+                                <view class="good-name">
+                                    <text>{{productList.name}}</text>
+                                </view>
+                                <view class="good-price-num">
+                                    <view class="good-price" wx:if="{{item.orderType!='18'}}">¥{{productList.salePrice}}</view>
+                                    <view class="good-price" wx:if="{{item.orderType=='18'&&item.cashOrderStatus==2}}">¥{{productList.salePrice}}</view>
+                                    <view class="good-price" wx:if="{{item.orderType=='18'&&item.cashOrderStatus==1&&item.promoDepositSku.skuCode==productList.skuCode}}">暂无报价</view>
+                                    <view class="good-price" wx:if="{{item.orderType=='18'&&item.cashOrderStatus==1&&item.promoDepositSku.skuCode!=productList.skuCode}}">¥{{productList.salePrice}}</view>
+                                    <view class="good-num">x{{productList.quantity}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="sys-good-item" wx:for="{{productList.prdGiftList}}" wx:for-item="prdGiftList" wx:key="{{index}}">
+                        <view class="good-panels">
+                            <view class="good-icon">
+                                <image src="../../imgs/icon_gift.png"></image>
+                            </view>
+                            <view class="good-img">
+                                <image src="{{cdnPath}}{{prdGiftList.photoPath}}428_428_{{prdGiftList.photoName}}"></image>
+                            </view>
+                            <view class="good-info">
+                                <view class="good-name">
+                                    <text>{{prdGiftList.giftName}}</text>
+                                </view>
+                                <view class="good-price-num">
+                                    <view class="good-price">
+                                        <text class="good-order-price"></text>
+                                    </view>
+                                    <view class="good-num">x{{prdGiftList.giftQuantity}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="order-good-annex ui-border-b ui-border-t order-good-counp" wx:if="{{productList.giftCouponList&&productList.giftCouponList.length>0||item.giftCouponList&&item.giftCouponList.length>0}}">
+                        <view class="order-annex-list">
+                            <view class="order-annex-title system-l">赠品</view>
+                            <view class="order-annex-box disabled" wx:if="{{productList.giftCouponList&&productList.giftCouponList.length>0}}" wx:for="{{productList.giftCouponList}}" wx:for-index="indx" wx:for-item="proCouponList" wx:key="key">
+                                <view class="system-l-l-r">
+                                    <view class="system-l g-img">
+                                        <image src="../../imgs/icon_coupon.png"></image>
+                                    </view>
+                                    <view class="system-between-l">
+                                        <text class="g-name">{{proCouponList.couponName}}</text>
+                                    </view>
+                                    <view class="system-r g-summary system-only-between">
+                                        <view class="g-amount">x{{productList.quantity}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="order-annex-box disabled" wx:if="{{item.giftCouponList&&item.giftCouponList.length>0}}" wx:for="{{item.giftCouponList}}" wx:for-index="indx" wx:for-item="giftCouponList" wx:key="key">
+                                <view class="system-l-l-r">
+                                    <view class="system-l g-img">
+                                        <image src="../../imgs/icon_coupon.png"></image>
+                                    </view>
+                                    <view class="system-between-l">
+                                        <text class="g-name">{{giftCouponList.couponName}}</text>
+                                    </view>
+                                    <view class="system-r g-summary system-only-between">
+                                        <view class="g-amount">x1</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+            <view class="order-mate-footer">
+                <view class="order-mate-cont">
+                    <view class="price" wx:if="{{item.orderType!='18'}}">金额：
+              <text class="price-text">¥{{item.cashPay}}</text>
+                        <text class="gray">共 {{item.productTotalCount}} 件商品</text>
+                    </view>
+                    <view class="price" wx:if="{{item.orderType=='18'&&(item.promoDepositSku.depositPayStatus=='2'||item.paymentStatus=='1')}}">订金：
+              <text class="price-text">¥{{item.promoDepositSku.depositPrice}}</text>
+                        <text class="gray">共 {{item.productTotalCount}} 件商品</text>
+                    </view>
+                    <view class="price" wx:if="{{item.orderType=='18'&&(item.promoDepositSku.depositPayStatus=='2'||item.paymentStatus=='1')}}">尾款：
+              <text class="price-text" wx:if="{{item.cashOrderStatus==2}}">¥{{item.promoDepositSku.balancePrice}}</text>
+                        <text class="price-text" wx:if="{{item.cashOrderStatus==1}}">暂无报价</text>
+                    </view>
+                    <view class="price" wx:if="{{item.orderType=='18'&&item.promoDepositSku.depositPayStatus=='1'&&item.promoDepositSku.balancePayStatus=='2'}}">应付尾款：
+              <text class="price-text" wx:if="{{item.cashOrderStatus==2}}">¥{{item.promoDepositSku.balancePrice}}</text>
+                        <text class="price-text" wx:if="{{item.cashOrderStatus==1}}">暂无报价</text>
+                        <text class="gray">共 {{item.productTotalCount}} 件商品</text>
+                    </view>
+                    <view class="time" wx:if="{{item.showBalanceTime}}">支付时间：
+                <text class="time-text">{{item.promoDepositSku.balanceStartTime}} 至 {{item.promoDepositSku.balanceEndTime}}</text>
+                    </view>
+                    <view class="state">状态：
+              <text class="red">{{item.orderStatusStr}} | {{item.paymentStatusStr}}</text>
+                    </view>
+                </view>
+                <view class="order-mate-action">
+                    <view bindtap="goTobuy" class="wxButton-style-1" data-cashPay="{{item.cash}}" data-code="{{item.orderCode}}" wx:if="{{item.goPay&&item.orderType!='18'}}">
+                        <text>去付款</text>
+                    </view>
+                    <view bindtap="goTobuy" class="wxButton-style-1" data-cashPay="{{item.deposit}}" data-code="{{item.orderCode}}" wx:if="{{item.showPayDeposit}}">
+                        <text>支付订金</text>
+                    </view>
+                    <view class="wxButton-style-1-disabled" wx:if="{{item.showDisBalance}}">
+                        <text>支付尾款</text>
+                    </view>
+                    <view bindtap="goTobuy" class="wxButton-style-1" data-cashPay="{{item.balance}}" data-code="{{item.orderCode}}" wx:if="{{item.showBalance}}">
+                        <text>支付尾款</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{loadMore}}">
+        <view bindtap="onToast" class="loading">
+            <image src="../../imgs/icon_pull.png"></image>
+            <text class="more-loading">上拉加载更多订单</text>
+        </view>
+        <view class="loading" wx:if="{{loadMore}}">
+            <image src="../../imgs/loading.gif"></image>
+        </view>
+    </view>
+    <view class="buttonMore loading" wx:if="{{totalList}}">
+        <text class="loading-end">已加载全部订单</text>
+    </view>
+</view>
+<view class="system-empty" wx:if="{{!showList}}">
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="imgs/empty-order.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>未在小程序下过订单哦</text>
+        </view>
+        <view class="system-empty-btn">
+            <navigator class="button-style-3" openType="switchTab" url="../index/index">
+                <text>随便逛逛</text>
+            </navigator>
+        </view>
+    </view>
+</view>

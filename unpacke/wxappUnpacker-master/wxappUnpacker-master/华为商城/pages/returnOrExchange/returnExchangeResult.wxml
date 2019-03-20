@@ -1,0 +1,22 @@
+<view class="rma-form-are bg_white rma-apply-state">
+    <view class="success">
+        <view class="icon-success">
+            <image src="../orderConfirm/imgs/icon_success.png"></image>
+        </view>
+        <view class="title">
+            <view class="title-span">{{applyType=='1'?'退货':'换货'}}申请成功！</view>
+            <view class="title-em">客服会在24小时内审核，审核结果将以短信的形式告知，或者您可以在 “ 退换货详情 ” 页查看。</view>
+        </view>
+    </view>
+</view>
+<view class="hr-65"></view>
+<view class="action-fixed wx-action-fixed bg_white">
+    <view class="action-btn">
+        <navigator class="action-button action-button-3" openType="switchTab" url="../index/index">
+            <text>返回首页</text>
+        </navigator>
+        <navigator class="action-button action-button-3" url="../returnOrExchange/returnOrExchange">
+            <text>退换货管理</text>
+        </navigator>
+    </view>
+</view>

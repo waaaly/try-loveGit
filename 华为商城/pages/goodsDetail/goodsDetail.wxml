@@ -1,0 +1,927 @@
+<import src="../../plugins/wxParse/wxParse.wxml"></import>
+<view class="goods-box" wx:if="{{!showProDown}}">
+    <scroll-view class="good-nav-tab" scrollIntoView="tab{{currentTab}}" scrollWithAnimation="{{true}}" scrollX="true">
+        <view class="good-nav bg_white">
+            <view class="display-flex bg_white">
+                <view bindtap="goToGoods" class="{{currentTab==0?'selected':'default'}} flex" id="tab0">商品</view>
+                <view bindtap="goToDetails" class="{{currentTab==1?'selected':'default'}} flex" id="tab1">详情</view>
+                <view bindtap="goToParam" class="{{currentTab==2?'selected':'default'}} flex" id="tab2">参数</view>
+                <view bindtap="goToEvaluate" class="{{currentTab==3?'selected':'default'}} flex" id="tab3">评价</view>
+            </view>
+        </view>
+    </scroll-view>
+    <swiper autoplay="{{false}}" bindchange="doSwitchTab" current="{{currentTab}}" duration="500" style="height: {{windowHeight}}px; width: {{windowWidth}}px;">
+        <swiper-item>
+            <scroll-view class="good-tab-box" scrollTop="{{scrollTop}}" scrollY="true" style="height: 100%;width:100%;">
+                <view class="good-swiper">
+                    <swiper autoplay="true" bindchange="changIndex" circular="true" class="good-swiper-img imgbox bg_white" current="{{currentIndex}}">
+                        <swiper-item wx:if="{{mainPhoto.photoName}}">
+                            <image class="slide-image" data-index="{{0}}" src="{{cdnPath}}{{mainPhoto.photoPath}}428_428_{{mainPhoto.photoName}}"></image>
+                        </swiper-item>
+                        <swiper-item wx:for="{{groupPhotoList}}" wx:key="key">
+                            <image class="slide-image" data-index="{{index+1}}" src="{{cdnPath}}{{item.photoPath}}428_428_{{item.photoName}}"></image>
+                        </swiper-item>
+                    </swiper>
+                    <view class="swiper-process">
+                        <text class="current">{{imgIndex}}</text>/{{imgAmt}}</view>
+                </view>
+                <view class="panic-status system-only-between" wx:if="{{buttonShowMode=='16'||buttonShowMode=='21'}}">
+                    <view class="system-only-between">
+                        <view class="panic-price">
+              ¥<text class="panic-new">{{teamBuyInfo.teamBuyPrice}}</text>
+                            <text class="panic-old" wx:if="{{orderPrice&&teamBuyInfo.teamBuyPrice!=orderPrice}}">¥{{orderPrice}}</text>
+                            <text class="panic-new" style="font-size: 23rpx;" wx:if="{{!orderPrice}}">暂无报价</text>
+                        </view>
+                        <view class="panic-num">
+                            <text>{{teamBuyInfo.teamBuyNumber}}人拼</text>
+                        </view>
+                    </view>
+                    <view class="panic-time">
+                        <view class="title">{{teamBuyInfo.state=='2'?'距拼团开始还剩:':'距拼团结束还剩:'}}</view>
+                        <view class="time">
+              {{cutDownDay}}天<view>{{cutDownHour}}</view>:<view>{{cutDownMinute}}</view>:<view>{{cutDownSeconds}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="panic-status system-only-between" wx:if="{{false}}">
+                    <view class="fav-box">
+                        <view class="panic-price">
+              ¥<text>2700</text>.00
+            </view>
+                        <view class="fav-tips system-item-center">
+                            <view class="fav-btn">
+                                <text>限时特惠</text>
+                            </view>
+                            <view class="fav-old-rpice">¥3099</view>
+                        </view>
+                    </view>
+                    <view class="panic-time">
+                        <view class="title">距开始还有</view>
+                        <view class="time">
+              1天<view>00</view>:<view>00</view>:<view>00</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="panic-status scare-status system-only-between" wx:if="{{buttonShowMode=='8'&&showRushBuyPriceArea}}">
+                    <view class="fav-box">
+                        <view class="panic-price">
+                            <text wx:if="{{skuRushBuyInfo.rushPrice!='暂无报价'}}">¥</text>
+                            <text class="big-font">{{skuRushBuyInfo.rushPrice}}</text>
+                            <text>{{skuRushBuyInfo.rushPrice2}}</text>
+                        </view>
+                        <view class="fav-tips system-item-center">
+                            <text>{{skuRushBuyInfo.rushTips}}</text>
+                        </view>
+                    </view>
+                    <view class="panic-time {{skuRushBuyInfo.rushState=='1'?'':'panic-having'}}">
+                        <view class="title" wx:if="{{skuRushBuyInfo.rushState=='1'}}">距开始还有</view>
+                        <view class="time" wx:if="{{skuRushBuyInfo.rushState=='1'}}">{{skuRushBuyInfo.rushDay}}天<view>{{skuRushBuyInfo.rushHour}}</view>:<view>{{skuRushBuyInfo.rushMinute}}</view>:<view>{{skuRushBuyInfo.rushSecond}}</view>
+                        </view>
+                        <text wx:elif="{{skuRushBuyInfo.rushState=='2'}}">进行中</text>
+                        <text wx:elif="{{skuRushBuyInfo.rushState=='3'}}">已结束</text>
+                    </view>
+                </view>
+                <view class="bg_white good-meta-area">
+                    <view class="good-shadow-bg" wx:if="{{buttonShowMode=='1'}}"></view>
+                    <view class="good-meta-cont good-meta-base">
+                        <view class="good-meta-box display-flex justify-content-between">
+                            <view class="good-meta-box-left flex-shrink-1">
+                                <view class="good-meta-price display-flex" wx:if="{{buttonShowMode=='1'||buttonShowMode=='10'}}">
+                                    <view class="g-rushbuy" style="display:inline-block;" wx:if="{{showSalePrice}}">
+                                        <image src="imgs/icon_rushbuy.png"></image>
+                                    </view>
+                                    <view class="g-price red old" wx:if="{{showPrice&&showPrice!='null'&&unitPrice&&isSurePrice!='0'}}">
+                                        <text>¥</text>
+                                        <text class="main-price">{{unitPrice}}</text>
+                                    </view>
+                                    <view class="g-price del gray" wx:if="{{showSalePrice&&orderPrice&&isSurePrice!='0'}}">¥{{orderPrice}}</view>
+                                    <view class="g-price display-flex red big-font" wx:if="{{!showPrice&&showPrice!='null'||isSurePrice=='0'}}">暂无报价</view>
+                                    <view class="g-deposit display-flex red" wx:if="{{showDepositArea&&depositPrice}}">
+                                        <view>订金:<text>¥{{depositPrice}}</text>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="good-meta-name display-flex">
+                                    <view class="g-name">{{name}}</view>
+                                </view>
+                            </view>
+                            <view class="good-meta-box-right {{buttonShowMode=='1'?'position-no-price':'shrink-0'}}">
+                                <view class="good-icon display-flex">
+                                    <view class="good-share">
+                                        <view bindtap="openShareModle" class="share-button"></view>
+                                    </view>
+                                    <view bindtap="openGetCoupon" class="good-coupons-btn" data-status="1" wx:if="{{conponBtn}}">
+                                        <image src="imgs/icon_good_coupons.png"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="good-meta-promotion display-flex" id="promParent" wx:if="{{showPromWord}}">
+                            <view class="g-promotion {{!openIcon?'textBeyond':''}}" id="prom-box">
+                                <view id="prom-content">
+                                    <text bindtap="goPromWordLink" class="g-promotion-cont red {{timerPromLink4Wechat?'underline':''}}" wx:if="{{hasTimerPromWord&&timerPromWord}}">{{timerPromWord}}</text>
+                                    <text class="g-promotion-cont" wx:if="{{hasTimerPromWord&&timerPromWord&&sbomPromWord}}"> {{sbomPromWord}}</text>
+                                    <text class="g-promotion-cont" wx:if="{{!hasTimerPromWord&&sbomPromWord}}">{{sbomPromWord}}</text>
+                                </view>
+                            </view>
+                            <view bindtap="openText" class="icon-arrow-more {{openIcon?'icon-more-top':'icon-more-bottom'}}" wx:if="{{showPromArrow}}">
+                                <image src="../../imgs/icon_arrow_more.png"></image>
+                            </view>
+                        </view>
+                        <view class="goods-deposit-process" wx:if="{{showDepositRules}}">
+                            <view class="process">
+                                <text>购买流程：1.支付订金</text>
+                                <text>2.支付尾款</text>
+                                <text>3.等待发货</text>
+                            </view>
+                            <view>
+                                <text>支付订金：提前锁定购买资格</text>
+                            </view>
+                            <view>
+                                <text>支付尾款：{{balanceStartTime}} ~ {{balanceEndTime}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="openSupport" class="good-meta-match  ui-border-t" data-status="1" wx:if="{{showGifts}}">
+                        <view class="good-match-area display-flex">
+                            <text class="align-self good-meta-leftTitle">赠品</text>
+                            <view class="good-match-list display-flex" data-status="1">
+                                <view class="good-match-img" wx:for="{{giftList}}" wx:key="key">
+                                    <image src="{{cdnPath}}{{item.photoPath}}428_428_{{item.photoName}}" wx:if="{{item.selected}}" wx:for="{{item}}" wx:key="key"></image>
+                                </view>
+                            </view>
+                            <view class="mp-icon-spot flex-shrink-0">
+                                <image src="../../imgs/icon_spot.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="handlePromList" class="goods-promotion display-flex goods-promotion-outside" wx:if="{{promoRuleList.length>0}}">
+                        <view class="promotion-title flex-shrink-0">
+                            <text>促销</text>
+                        </view>
+                        <view class="promotion-main flex-shrink-1">
+                            <view class="promotion-list display-flex" wx:for="{{promoRuleListA}}" wx:for-item="promoRuleItemA" wx:key="index">
+                                <view class="promotion-label flex-shrink-0">
+                                    <text>{{promoRuleItemA.promoLabel}}</text>
+                                </view>
+                                <view class="promotion-tips ellipsis-pub-one flex-shrink-1">
+                                    <text>{{promoRuleItemA.ruleDescription}}</text>
+                                </view>
+                            </view>
+                            <view class="promotion-list display-flex align-items-center" wx:if="{{promoRuleListB.length>0}}">
+                                <view class="promotion-label flex-shrink-0" wx:for="{{promoRuleListB}}" wx:for-item="promoRuleItemB" wx:key="index">
+                                    <text>{{promoRuleItemB.promoLabel}}</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="mp-icon-spot flex-shrink-0">
+                            <image src="../../imgs/icon_spot.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="panic-rules good-meta-area bg_white" wx:if="{{!(detailRules.length==0&&mpWapDetailRuleUrl==''&&teamBuyFlowUrl=='')}}">
+                    <view class="good-meta-header display-flex align-items-center">
+                        <text class="good-meta-title">拼团玩法</text>
+                        <view bindtap="toTeamBuyRule" class="btn-next" wx:if="{{detailRules.length!=0||mpWapDetailRuleUrl}}">
+                            <text>详细规则</text>
+                            <view class="icon-more-right">
+                                <image src="../../imgs/icon_arrow_more.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="panic-rules-main display-flex" wx:if="{{teamBuyFlowUrl}}">
+                        <image src="{{teamBuyFlowUrl}}"></image>
+                    </view>
+                </view>
+                <view class="good-meta-area bg_white">
+                    <view class="good-meta-sku">
+                        <view class="good-sku-area display-flex" wx:for="{{deal_skuAttrValueList}}" wx:key="key">
+                            <text class="good-meta-skuTitle">{{item.classifyName}}</text>
+                            <view class="good-sku-list display-flex">
+                                <view bindtap="selectGood" class="checkbox-text {{subItem.status==2?'checkbox-text-checked':subItem.status==0?'checkbox-text-disabled':''}}" data-attrname="{{subItem.attrname}}" data-indexnum="{{item.indexnum}}" data-skuIdList="{{subItem.skuIdList}}" data-status="{{subItem.status}}" wx:for="{{item.attrList}}" wx:for-item="subItem" wx:key="key">
+                                    <text>{{subItem.attrname}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="good-meta-sku">
+                        <view class="good-sku-area display-flex good-sku-numbox">
+                            <text class="good-meta-skuTitle">数量</text>
+                            <view class="good-sku-list display-flex">
+                                <view class="good-sku-num display-flex">
+                                    <view bindtap="reduceNum" class="sku-minu {{numDelClass}}" data-skuLimitQty="{{skuLimitQty}}">
+                                        <image src="imgs/icon_minus.png"></image>
+                                    </view>
+                                    <input class="sku-editNum" disabled="disabled" placeholder="" type="text" value="{{amount}}"></input>
+                                    <view bindtap="addNum" class="sku-add  {{numAddClass}}" data-skuLimitQty="{{skuLimitQty}}">
+                                        <image src="imgs/icon_add.png"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="panic-actor good-meta-area bg_white" wx:if="{{showOpenTeamInfo&&buttonShowMode!='21'}}">
+                    <view class="good-meta-header">
+                        <text class="good-meta-title">小伙伴正在拼团，可直接参与</text>
+                        <text class="red" wx:if="{{isNewPeopleTeam}}">（仅限新用户参团）</text>
+                    </view>
+                    <view class="panic-actor-main">
+                        <swiper autoplay="true" bindchange="onChangeOption" circular="true" current="0" interval="3000" style="height:{{openIsOnly?100:203}}rpx" vertical="true">
+                            <swiper-item wx:for="{{openIsOnly?openTeamBuyArrOnly:openTeamBuyArr}}" wx:key="key">
+                                <view>
+                                    <view class="panic-actor-list system-only-between">
+                                        <view class="left">
+                                            <image src="{{item[0].headUrl}}"></image>
+                                        </view>
+                                        <view class="center system-only-between system-flex-l">
+                                            <view>
+                                                <text>{{item[0].displayName}}的团</text>
+                                            </view>
+                                            <view class="time">
+                                                <view>还差<text class="red">{{item[0].surplusTeamBuyNumber}}人</text>成团</view>
+                                                <view class="small">剩余{{item[0].day}}天{{item[0].hour}}:{{item[0].minute}}:{{item[0].seconds}}</view>
+                                            </view>
+                                        </view>
+                                        <button bindgetuserinfo="onAuthSelect" bindtap="gotoJoinTeam" data-teamCode="{{item[0].teamCode}}" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                                            <view class="right">
+                                                <text>去参团</text>
+                                            </view>
+                                        </button>
+                                    </view>
+                                </view>
+                                <view wx:if="{{!openIsOnly}}">
+                                    <view class="panic-actor-list system-only-between actor-list-border">
+                                        <view class="left">
+                                            <image src="{{item[1].headUrl}}"></image>
+                                        </view>
+                                        <view class="center system-only-between system-flex-l">
+                                            <view>
+                                                <text>{{item[1].displayName}}的团</text>
+                                            </view>
+                                            <view class="time">
+                                                <view>还差<text class="red">{{item[1].surplusTeamBuyNumber}}人</text>成团</view>
+                                                <view class="small">剩余{{item[1].day}}天{{item[1].hour}}:{{item[1].minute}}:{{item[1].seconds}}</view>
+                                            </view>
+                                        </view>
+                                        <button bindgetuserinfo="onAuthSelect" bindtap="gotoJoinTeam" data-teamCode="{{item[1].teamCode}}" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                                            <view class="right">
+                                                <text>去参团</text>
+                                            </view>
+                                        </button>
+                                    </view>
+                                </view>
+                            </swiper-item>
+                        </swiper>
+                    </view>
+                </view>
+                <view class="good-meta-area bg_white" wx:if="{{topCommentObj&&topCommentObj.hasProp}}">
+                    <view class="good-meta-header display-flex align-items-center">
+                        <text class="good-meta-title">用户评价<text>({{count}}条)</text>
+                        </text>
+                        <view bindtap="loadMoreEvaluate" class="btn-next">
+                            <text>查看全部评价</text>
+                            <view class="icon-more-right">
+                                <image src="../../imgs/icon_arrow_more.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="good-meta-review">
+                        <view class="review-area">
+                            <view class="review-keyword">
+                                <view class="keyword-label" wx:for="{{hotTags}}" wx:key="index">
+                                    <text>{{item.tagName}}</text>
+                                    <text>（{{item.count}}）</text>
+                                </view>
+                            </view>
+                            <view class="review-content">
+                                <view class="review-cont-area">
+                                    <view bindtap="loadMoreEvaluate" class="info">
+                                        <view class="user-face">
+                                            <image src="{{topCommentObj.headImage}}"></image>
+                                        </view>
+                                        <view class="user-info">
+                                            <text class="user-name">{{topCommentObj.userName}}</text>
+                                            <text class="time">{{topCommentObj.creationTime}}</text>
+                                        </view>
+                                    </view>
+                                    <view bindtap="loadMoreEvaluate" class="word">{{topCommentObj.content}}</view>
+                                    <scroll-view class="review-img review-img-swiper" scrollX="true" style="width: {{windowWidth}}px;" wx:if="{{topCommentObj.images.length>0}}">
+                                        <view class="review-img-box">
+                                            <view class="review-img-item" wx:for="{{topCommentObj.images}}" wx:for-item="itemName" wx:key="index">
+                                                <image bindtap="previewLargeImg" class="slide-image" data-bigimages="{{topCommentObj.images}}" data-large="{{itemName.large}}" src="{{itemName.small}}"></image>
+                                            </view>
+                                        </view>
+                                    </scroll-view>
+                                    <view bindtap="loadMoreEvaluate" class="reply" wx:if="{{replies.length>0}}">
+                                        <view class="reply-cont" wx:for="{{topCommentObj.replies}}" wx:key="index">
+                                            <text class="red">{{item.replyerName}}：</text>{{item.replyContent}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="pro-meta-area bg_white related-area" wx:if="{{relatedProductList.length>0}}">
+                    <view class="good-meta-header system-item-center">
+                        <text class="good-meta-title">关联商品</text>
+                    </view>
+                    <view class="related-area-content">
+                        <navigator class="related-area-item" hoverClass="navigator-hover" url="../goodsDetail/goodsDetail?prdId={{item.productID}}" wx:for="{{relatedProductList}}" wx:key="key">
+                            <view class="g-img">
+                                <image src="{{cdnPath}}{{item.defaultImgPath}}"></image>
+                            </view>
+                            <view class="g-name system-item-center">
+                                <text>{{item.productName}}</text>
+                            </view>
+                        </navigator>
+                    </view>
+                </view>
+                <view class="hr-65"></view>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item>
+            <scroll-view class="good-tab-box" scrollTop="{{scrollTop}}" scrollY="true" style="height: {{windowHeight}}px; width: {{windowWidth}}px;">
+                <view class="good-meta-area picDetail">
+                    <template is="wxParse" data="{{wxParseData:detail.nodes}}"></template>
+                </view>
+                <view class="good-meta-area bg_white specification">
+                    <view bindtap="loadMoreParam" class="good-meta-header display-flex align-items-center">
+                        <text class="good-meta-title">主要参数</text>
+                        <view class="btn-next">
+                            <text>查看全部参数与包装售后</text>
+                            <view class="icon-more-right">
+                                <image src="../../imgs/icon_arrow_more.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="specify-cont">
+                        <view class="specify">
+                            <view class="WxParse-cont" wx:for="{{majorSpecificationList}}" wx:key="key">
+                                <view class="WxParse-p">
+                                    <text class="WxParse-title">{{item.attrName}}</text>
+                                    <text>{{item.attrValue}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="tips">
+                    <view class="tips-title">特别提醒：</view>
+                    <view class="tips-cont">
+                        <view>※本网站尽可能地提供准确的信息。本网站内所涉及的产品图片与实物可能有细微区别，效果演示图和示意图仅供参考（图片为合成图、模拟演示图），有关产品的外观（包括但不限于颜色）请以实物为准。</view>
+                        <view>※限于篇幅，本网站中所包含的信息（包括但不限于产品规格、功能说明等）可能不完整，请以有关产品使用说明书的具体信息为准。</view>
+                    </view>
+                </view>
+                <view class="hr-65"></view>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item>
+            <scroll-view class="good-tab-box" scrollTop="{{scrollTop}}" scrollY="true" style="height: {{windowHeight}}px; width: {{windowWidth}}px;">
+                <view class="specify-cont bg_white">
+                    <view class="specify">
+                        <view class="WxParse-header">主要参数</view>
+                        <view class="WxParse-cont WxParse-flex">
+                            <view class="WxParse-p" wx:for="{{majorSpecificationList}}" wx:key="key">
+                                <text class="WxParse-title">{{item.attrName}}</text>
+                                <text>{{item.attrValue}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="specify">
+                        <view class="WxParse-header">{{specifications[0].name}}</view>
+                        <view class="WxParse-cont WxParse-flex">
+                            <template is="wxParse" data="{{wxParseData:pack.nodes}}"></template>
+                        </view>
+                    </view>
+                    <view class="specify">
+                        <view class="WxParse-header">{{specifications[1].name}}</view>
+                        <view class="WxParse-cont WxParse-flex" wx:for="{{specifications[1].content}}" wx:key="key">
+                            <view class="WxParse-h3">{{item.name}}</view>
+                            <view class="WxParse-p" wx:for="{{item.content}}" wx:key="key">
+                                <text class="WxParse-title">{{item.name}}</text>
+                                <text>{{item.value}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="specify">
+                        <view class="WxParse-header">{{specifications[2].name}}</view>
+                        <view class="WxParse-cont">
+                            <template is="wxParse" data="{{wxParseData:service.nodes}}"></template>
+                        </view>
+                    </view>
+                </view>
+                <view class="tips">
+                    <view class="tips-title">特别提醒：</view>
+                    <view class="tips-cont">
+                        <view>※本网站尽可能地提供准确的信息。本网站内所涉及的产品图片与实物可能有细微区别，效果演示图和示意图仅供参考（图片为合成图、模拟演示图），有关产品的外观（包括但不限于颜色）请以实物为准。</view>
+                        <view>※限于篇幅，本网站中所包含的信息（包括但不限于产品规格、功能说明等）可能不完整，请以有关产品使用说明书的具体信息为准。</view>
+                    </view>
+                </view>
+                <view class="hr-65"></view>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item>
+            <scroll-view bindscrolltolower="loadCommentMore" class="good-tab-box " lowerThreshold="10" scrollTop="{{scrollTop}}" scrollY="true" style="height: {{windowHeight}}px; width: {{windowWidth}}px;">
+                <view class="good-meta-area review-rate" wx:if="{{commentsShowFlag==1}}">
+                    <view class="review-rate-praise">
+                        <text class="g-title">好评度</text>
+                        <text class="g-rate">{{goodRate}}%</text>
+                    </view>
+                    <view class="review-keyword review-rate-keyword">
+                        <view class="keyword-label" wx:for="{{hotTags}}" wx:key="key">
+                            <text>{{item.tagName}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="review-content bg_white">
+                    <view class="review-cont-area ui-border-t" wx:for="{{comments}}" wx:key="key">
+                        <view class="info">
+                            <view class="user-face">
+                                <image src="{{item.headImage}}"></image>
+                            </view>
+                            <view class="user-info">
+                                <text class="user-name">{{item.userName}}</text>
+                            </view>
+                            <view class="star-area" wx:if="{{commentsShowFlag==1}}">
+                                <view class="star-gray"></view>
+                                <view class="star-red" style="width: {{item.scorePercent}}%;"></view>
+                            </view>
+                        </view>
+                        <view class="word">{{item.content}}</view>
+                        <view class="review-img" wx:if="{{item.images.length!=0}}">
+                            <view class="review-img-item" wx:for="{{item.images}}" wx:for-item="itemName" wx:key="key">
+                                <image bindtap="previewLargeImg" class="slide-image" data-bigimages="{{item.images}}" data-large="{{itemName.large}}" src="{{itemName.small}}"></image>
+                            </view>
+                        </view>
+                        <view class="time-laud">
+                            <text class="time">{{item.creationTime}}</text>
+                        </view>
+                        <view class="reply" wx:if="{{item.replies.length!=0}}">
+                            <view class="reply-cont" wx:for="{{item.replies}}" wx:key="key">
+                                <text class="red">{{item.replyerName}}:</text>
+                                <text>{{item.replyContent}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view wx:if="{{loadMore}}">
+                        <view class="loading">
+                            <image src="../../imgs/icon_pull.png"></image>
+                            <text class="more-loading">上拉加载更多评价</text>
+                        </view>
+                        <view class="loading" wx:if="{{loading}}">
+                            <image src="../../imgs/loading.gif"></image>
+                        </view>
+                    </view>
+                    <view class="buttonMore loading" wx:if="{{totalList}}">
+                        <text class="loading-end">已加载全部记录</text>
+                    </view>
+                </view>
+                <view class="system-empty" wx:if="{{commentsShowFlag==2}}">
+                    <view class="system-empty-cont">
+                        <view class="system-empty-icon">
+                            <image src="../../imgs/empty-list.png"></image>
+                        </view>
+                        <view class="system-empty-tip">
+                            <text>该商品暂无评价</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="hr-65"></view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+    <view class="mp-mask-tips" wx:if="{{buttonShowMode=='16'&&teamBuyInfo.state=='3'?true:false}}">拼团活动结束，您还可以单独购买哦</view>
+    <view class="mp-limit-tips system-item-center" wx:if="{{buttonShowMode=='8'&&showRushBuySelectFloat}}">
+        <view class="label flex-shrink-0">
+            <text>已选</text>
+        </view>
+        <view class="name flex-shrink-1">
+            <text>{{currentSkuSelectName}}</text>
+        </view>
+        <view class="num flex-shrink-0">
+            <text>x{{amount}}</text>
+        </view>
+    </view>
+    <button bindgetuserinfo="onAuthSelect" bindtap="gotoAddressManage" class="mp-limit-tips system-item-center" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}" wx:if="{{buttonShowMode=='8'&&showRushBuyAddressFloat}}">
+        <view class="name flex-shrink-1">
+            <text>提前选好型号并设置默认收货地址，购买更顺利</text>
+        </view>
+        <view class="navigator flex-shrink-0">
+            <text>设置地址</text>
+            <image src="../../imgs/icon_arrow_more.png"></image>
+        </view>
+    </button>
+    <view class="mp-limit-tips snap-up-tips" wx:if="{{showFixedTimer}}">
+        <view class="name">{{fixedMonth}}月{{fixedDay}}日{{fixedHour}}:{{fixedMinute}}开售 倒计时：<text class="red">{{fixedTimeInfo.fixDay}}</text> 天 <text class="red">{{fixedTimeInfo.fixHour}}</text> 时 <text class="red">{{fixedTimeInfo.fixMinute}}</text> 分 <text class="red">{{fixedTimeInfo.fixSecond}}</text> 秒</view>
+    </view>
+    <view class="good-property-action bg_white {{buttonAreaClass}}">
+        <view class="good-property-action-menu">
+            <navigator class="good-property-menu" openType="switchTab" url="../index/index">
+                <image src="../../imgs/index_goods.png"></image>
+                <text>首页</text>
+            </navigator>
+        </view>
+        <form bindsubmit="toBuy" data-button="{{buttonText}}" reportSubmit="true" style="width: 100%;" wx:if="{{buttonShowMode=='1'||buttonShowMode=='8'||buttonShowMode=='10'}}">
+            <button bindgetuserinfo="onAuthSelect" class="good-property-action-btn" formType="submit" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                <view class="button-style-{{buttonClass}}">
+                    <view>
+                        <text>{{buttonText}}</text>
+                    </view>
+                </view>
+            </button>
+        </form>
+        <form bindsubmit="toOpenTeam" data-button="{{buttonText}}" reportSubmit="true" style="width: 100%;" wx:if="{{buttonShowMode=='21'}}">
+            <button bindgetuserinfo="onAuthSelect" class="good-property-action-btn" formType="submit" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                <view class="button-style-{{buttonClass}}">
+                    <view>
+                        <text>{{buttonText}}</text>
+                    </view>
+                </view>
+            </button>
+        </form>
+        <view class="good-property-action-btn good-property-spell-btn" wx:if="{{buttonShowMode=='16'}}">
+            <form bindsubmit="toBuy" class="button-style-buy" data-button="立即购买" reportSubmit="true">
+                <button bindgetuserinfo="onAuthSelect" formType="submit" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                    <text class="price" wx:if="{{orderPrice}}">¥{{orderPrice}}</text>
+                    <text class="price" wx:else>暂无报价</text>
+                    <text class="tip">单独购买</text>
+                </button>
+            </form>
+            <form bindsubmit="toOpenTeam" class="button-style-{{buttonClass}}" data-button="{{buttonText}}" id="openTeamBtn" reportSubmit="true">
+                <button bindgetuserinfo="onAuthSelect" formType="submit" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                    <text class="price">¥{{teamBuyInfo.teamBuyPrice}}</text>
+                    <text class="tip">{{buttonText}}</text>
+                </button>
+            </form>
+        </view>
+    </view>
+    <view bindtap="openGetCoupon" class="ecWap-mask" data-status="0" wx:if="{{showGetCoupon}}"></view>
+    <view animation="{{animationData}}" class="ecWap-box ecWap-box-lower" wx:if="{{showGetCoupon}}">
+        <view class="ecWap-box-header">
+            <text class="ecWap-box-title">领券</text>
+            <view class="ecWap-box-close box-close">
+                <image bindtap="openGetCoupon" data-status="0" src="../../imgs/icon_ecWap_close.png"></image>
+            </view>
+        </view>
+        <view class="ecWap-box-content">
+            <view class="coupons-cont">
+                <view wx:for="{{couponCodeList}}" wx:for-index="idx" wx:key="{{key}}">
+                    <view wx:if="{{item.deliveryFree!=1&&item.amount&&item.amount!=0?true:false}}">
+                        <view class="coupons-item" wx:if="{{item.state==1}}">
+                            <view class="coupons-box">
+                                <view class="p-name">
+                                    <text class="sign_span">¥</text>
+                                    <text class="p-span">{{item.amount}}</text>优惠券</view>
+                                <view class="p-desc">
+                                    <text>{{item.batchName}}</text>
+                                </view>
+                                <view class="p-date">
+                                    <text>有效期：{{item.beginDate}} - {{item.endDate}}</text>
+                                </view>
+                                <button bindgetuserinfo="onAuthSelect" bindtap="beforeReceive" class="p-button button-vip-get" data-activityCode="{{item.activityCode}}" data-batchCode="{{item.batchCode}}" data-idx="{{idx}}" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                                    <image src="../../imgs/btn_Coupon.jpg"></image>
+                                    <text class="p-button-four">立即领取</text>
+                                </button>
+                                <view class="p-line">
+                                    <image src="../../imgs/bg_v1.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="coupons-item" wx:if="{{item.state==2}}">
+                            <view class="coupons-box">
+                                <view class="p-name">
+                                    <text class="sign_span">¥</text>
+                                    <text class="p-span">{{item.amount}}</text>优惠券</view>
+                                <view class="p-desc">
+                                    <text>{{item.batchName}}</text>
+                                </view>
+                                <view class="p-date">
+                                    <text>有效期：{{item.beginDate}} - {{item.endDate}}</text>
+                                </view>
+                                <view class="p-button button-vip-had">
+                                    <text class="p-button-three">已领取</text>
+                                </view>
+                                <view class="p-line">
+                                    <image src="../../imgs/bg_v1.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="coupons-item" wx:if="{{item.state==3}}">
+                            <view class="coupons-box">
+                                <view class="p-name">
+                                    <text class="sign_span">¥</text>
+                                    <text class="p-span">{{item.amount}}</text>优惠券</view>
+                                <view class="p-desc">
+                                    <text>{{item.batchName}}</text>
+                                </view>
+                                <view class="p-date">
+                                    <text>有效期：{{item.beginDate}} - {{item.endDate}}</text>
+                                </view>
+                                <view class="p-button button-vip-begin">
+                                    <text class="p-button-four">即将开始</text>
+                                </view>
+                                <view class="p-line">
+                                    <image src="../../imgs/bg_v1.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="coupons-item" wx:if="{{item.state==-1}}">
+                            <view class="coupons-box">
+                                <view class="p-name">
+                                    <text class="sign_span">¥</text>
+                                    <text class="p-span">{{item.amount}}</text>优惠券</view>
+                                <view class="p-desc">
+                                    <text>{{item.batchName}}</text>
+                                </view>
+                                <view class="p-date">
+                                    <text>有效期：{{item.beginDate}} - {{item.endDate}}</text>
+                                </view>
+                                <view class="p-button button-vip-disabled">
+                                    <text class="p-button-three">已结束</text>
+                                </view>
+                                <view class="p-line">
+                                    <image src="../../imgs/bg_v1.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view wx:if="{{item.deliveryFree!=1&&item.discount?true:false}}">
+                        <view class="coupons-item coupons-discount" wx:if="{{item.state==1}}">
+                            <view class="coupons-box">
+                                <view class="p-name">
+                                    <text class="p-span">{{item.discount*10}}</text>
+                                    <text class="sign_span">折</text>优惠券</view>
+                                <view class="p-desc">
+                                    <text>{{item.batchName}}</text>
+                                </view>
+                                <view class="p-date">
+                                    <text>有效期：{{item.beginDate}} - {{item.endDate}}</text>
+                                </view>
+                                <button bindgetuserinfo="onAuthSelect" bindtap="beforeReceive" class="p-button button-vip-get" data-activityCode="{{item.activityCode}}" data-batchCode="{{item.batchCode}}" data-idx="{{idx}}" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                                    <image src="../../imgs/btn_Discount.jpg"></image>
+                                    <text class="p-button-four">立即领取</text>
+                                </button>
+                                <view class="p-line">
+                                    <image src="../../imgs/bg_v1.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="coupons-item coupons-discount" wx:if="{{item.state==2}}">
+                            <view class="coupons-box">
+                                <view class="p-name">
+                                    <text class="p-span">{{item.discount*10}}</text>
+                                    <text class="sign_span">折</text>优惠券</view>
+                                <view class="p-desc">
+                                    <text>{{item.batchName}}</text>
+                                </view>
+                                <view class="p-date">
+                                    <text>有效期：{{item.beginDate}} - {{item.endDate}}</text>
+                                </view>
+                                <view class="p-button button-vip-had">
+                                    <text class="p-button-three">已领取</text>
+                                </view>
+                                <view class="p-line">
+                                    <image src="../../imgs/bg_v1.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="coupons-item coupons-discount" wx:if="{{item.state==3}}">
+                            <view class="coupons-box">
+                                <view class="p-name">
+                                    <text class="p-span">{{item.discount*10}}</text>
+                                    <text class="sign_span">折</text>优惠券</view>
+                                <view class="p-desc">
+                                    <text>{{item.batchName}}</text>
+                                </view>
+                                <view class="p-date">
+                                    <text>有效期：{{item.beginDate}} - {{item.endDate}}</text>
+                                </view>
+                                <view class="p-button button-vip-begin">
+                                    <text class="p-button-four">即将开始</text>
+                                </view>
+                                <view class="p-line">
+                                    <image src="../../imgs/bg_v1.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="coupons-item coupons-discount" wx:if="{{item.state==-1}}">
+                            <view class="coupons-box">
+                                <view class="p-name">
+                                    <text class="p-span">{{item.discount*10}}</text>
+                                    <text class="sign_span">折</text>优惠券</view>
+                                <view class="p-desc">
+                                    <text>{{item.batchName}}</text>
+                                </view>
+                                <view class="p-date">
+                                    <text>有效期：{{item.beginDate}} - {{item.endDate}}</text>
+                                </view>
+                                <view class="p-button button-vip-disabled">
+                                    <text class="p-button-three">已结束</text>
+                                </view>
+                                <view class="p-line">
+                                    <image src="../../imgs/bg_v1.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view wx:if="{{item.deliveryFree==1?true:false}}">
+                        <view class="coupons-item coupons-noPostage" wx:if="{{item.state==1}}">
+                            <view class="coupons-box">
+                                <view class="p-name">免邮券</view>
+                                <view class="p-desc">
+                                    <text>{{item.batchName}}</text>
+                                </view>
+                                <view class="p-date">
+                                    <text>有效期：{{item.beginDate}} - {{item.endDate}}</text>
+                                </view>
+                                <button bindgetuserinfo="onAuthSelect" bindtap="beforeReceive" class="p-button button-vip-get" data-activityCode="{{item.activityCode}}" data-batchCode="{{item.batchCode}}" data-idx="{{idx}}" hoverClass="none" openType="{{isNeedOpenType?'getUserInfo':''}}">
+                                    <image src="../../imgs/btn_noPostage.jpg"></image>
+                                    <text class="p-button-four">立即领取</text>
+                                </button>
+                                <view class="p-line">
+                                    <image src="../../imgs/bg_v1.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="coupons-item coupons-noPostage" wx:if="{{item.state==2}}">
+                            <view class="coupons-box">
+                                <view class="p-name">免邮券</view>
+                                <view class="p-desc">
+                                    <text>{{item.batchName}}</text>
+                                </view>
+                                <view class="p-date">
+                                    <text>有效期：{{item.beginDate}} - {{item.endDate}}</text>
+                                </view>
+                                <view class="p-button button-vip-had">
+                                    <text class="p-button-three">已领取</text>
+                                </view>
+                                <view class="p-line">
+                                    <image src="../../imgs/bg_v1.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="coupons-item coupons-noPostage" wx:if="{{item.state==3}}">
+                            <view class="coupons-box">
+                                <view class="p-name">免邮券</view>
+                                <view class="p-desc">
+                                    <text>{{item.batchName}}</text>
+                                </view>
+                                <view class="p-date">
+                                    <text>有效期：{{item.beginDate}} - {{item.endDate}}</text>
+                                </view>
+                                <view class="p-button button-vip-begin">
+                                    <text class="p-button-four">即将开始</text>
+                                </view>
+                                <view class="p-line">
+                                    <image src="../../imgs/bg_v1.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="coupons-item coupons-noPostage" wx:if="{{item.state==-1}}">
+                            <view class="coupons-box">
+                                <view class="p-name">免邮券</view>
+                                <view class="p-desc">
+                                    <text>{{item.batchName}}</text>
+                                </view>
+                                <view class="p-date">
+                                    <text>有效期：{{item.beginDate}} - {{item.endDate}}</text>
+                                </view>
+                                <view class="p-button button-vip-disabled">
+                                    <text class="p-button-three">已结束</text>
+                                </view>
+                                <view class="p-line">
+                                    <image src="../../imgs/bg_v1.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <view bindtap="openGetCoupon" class="ecWap-box-ok box-ok" data-status="0">完成</view>
+        </view>
+    </view>
+    <view bindtap="openSupport" class="ecWap-mask" data-status="0" wx:if="{{showsupport}}"></view>
+    <view animation="{{animationData}}" class="ecWap-box ecWap-box-lower" style="position: fixed; left: 0px; width: 100%; z-index: 991; top: auto; height: 384px;" wx:if="{{showsupport}}">
+        <view class="ecWap-box-header">
+            <text class="ecWap-box-title">选择</text>
+            <view class="ecWap-box-close box-close">
+                <image bindtap="openSupport" data-status="0" src="../../imgs/icon_ecWap_close.png"></image>
+            </view>
+        </view>
+        <view class="ecWap-box-content">
+            <view class="choice-product">
+                <view class="choice-box clearfix" wx:for="{{giftList}}" wx:for-index="idx" wx:key="key">
+                    <view class="p-img" wx:if="{{item.selected}}" wx:for="{{item}}" wx:key="key">
+                        <image src="{{cdnPath}}{{item.photoPath}}428_428_{{item.photoName}}"></image>
+                    </view>
+                    <view class="p-name" wx:if="{{item.selected}}" wx:for="{{item}}" wx:key="key">
+                        <text>{{item.sbomName}}</text>
+                    </view>
+                    <view class="p-model">
+                        <view wx:for="{{item}}" wx:key="{{index}}">
+                            <view bindtap="selectGift" class="checkbox-text {{item.selected?'checkbox-text-checked':''}}" data-colorIdx="{{index}}" data-listIdx="{{idx}}">
+                                <text wx:if="{{item.giftColor.attrValue}}">{{item.giftColor.attrValue}}</text>
+                                <text wx:if="{{!item.giftColor.attrValue}}">默认</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <view bindtap="openSupport" class="ecWap-box-ok box-ok" data-status="0">完成</view>
+        </view>
+    </view>
+    <view class="toast {{toastState?'show':''}}" id="toast">
+        <view class="toast_cont">{{toastCont}}</view>
+    </view>
+</view>
+<view class="system-empty" wx:if="{{showProDown}}">
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="../../imgs/system-error.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>对不起，找不到商品</text>
+        </view>
+        <view class="system-empty-btn">
+            <navigator class="button-style-3" openType="switchTab" url="../index/index">
+                <text>返回首页</text>
+            </navigator>
+        </view>
+    </view>
+</view>
+<view bindtap="closeShareModle" class="ecWap-mask" hidden="{{!isShowShareModel}}"></view>
+<view class="mp-share-area" hidden="{{!isShowShareModel}}">
+    <view class="share-header">分享</view>
+    <view class="display-flex">
+        <view class="share-list flex">
+            <button class="list-box" openType="share">
+                <image src="imgs/wechat_logo.png"></image>
+                <text>微信好友</text>
+            </button>
+        </view>
+        <view class="share-list flex">
+            <view bindtap="sharePoster" class="list-box">
+                <image src="imgs/friends_logo.png"></image>
+                <text>海报图</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view catchtouchmove="preventD" class="ecWap-mask" hidden="{{isHiddenPoster}}" wx:if="{{isShowPoster}}"></view>
+<view catchtouchmove="preventD" class="ecWap-box-middle post-pop-middle" hidden="{{isHiddenPoster}}" wx:if="{{isShowPoster}}">
+    <view class="post-pop">
+        <view bindtap="closePoster" class="post-close" hidden="{{isHiddenAll}}">
+            <image src="../../imgs/post_close.png"></image>
+        </view>
+        <SharePoster bind:cannotUseCtx="cannotUse" bind:closePoster="closeSuccessPoster" bind:hiddenAll="hiddenAll" bind:showAllPoster="showAllPoster" bind:showButton="showButton" comeFrom="goodsDetail" id="SharePoster" skuPriceInfo="{{allSkuInfo}}"></SharePoster>
+        <view class="post-bottom" hidden="{{isHiddenAll}}">
+            <view class="post-btn">
+                <view bindtap="saveCanvas" class="wxButton-style-6-big">
+                    <text>保存图片</text>
+                </view>
+            </view>
+            <view class="post-tips">保存后可到相册选取图片分享</view>
+        </view>
+    </view>
+</view>
+<view class="ecWap-mask" wx:if="{{showRules}}"></view>
+<view class="ecWap-box-middle ecWap-radius-middle" wx:if="{{showRules}}">
+    <view class="ecWap-box-radius">
+        <view class="ecWap-radius-header">拼团玩法</view>
+        <view class="ecWap-radius-content panic-radius-content">
+            <view class="panic-rules-pop" wx:for="{{detailRules}}" wx:key="index">{{item}}</view>
+        </view>
+        <view bindtap="closeRules" class="ecWap-radius-footer display-flex">
+            <view class="red">确定</view>
+        </view>
+    </view>
+</view>
+<view bindtap="handlePromList" class="ecWap-mask" wx:if="{{showPromRule}}"></view>
+<view class="ecWap-box ecWap-box-lower prom-list-animation" hidden="{{!showPromRule}}" style="  transform: translateY({{promListHeight}})">
+    <view class="ecWap-box-header">
+        <text class="ecWap-box-title">促销</text>
+        <view class="ecWap-box-close box-close">
+            <image bindtap="handlePromList" data-status="0" src="../../imgs/icon_ecWap_close.png"></image>
+        </view>
+    </view>
+    <view class="ecWap-box-content goods-promotion-content">
+        <scroll-view class="goods-promotion goods-promotion-pop" scrollTop="{{promListTop}}" scrollY="{{true}}">
+            <view class="promotion-list display-flex" wx:for="{{promoRuleList}}" wx:for-item="promoRuleItem" wx:key="index">
+                <view class="promotion-label flex-shrink-0">
+                    <text>{{promoRuleItem.promoLabel}}</text>
+                </view>
+                <view class="promotion-tips flex-shrink-1">
+                    <text>{{promoRuleItem.ruleDescription}}</text>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="ecWap-box-footer">
+        <view bindtap="handlePromList" class="ecWap-box-ok box-ok" data-status="0">确定</view>
+    </view>
+</view>

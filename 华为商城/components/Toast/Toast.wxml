@@ -1,0 +1,4 @@
+<view class="toast {{isShow?'show':''}}" style="animation-duration: {{newOptions.duration}}ms!important;">
+    <text class="toast_cont">{{newOptions.title}}</text>
+    <view class="ecWap-mask" wx:if="{{isShow&&newOptions.mask}}"></view>
+</view>

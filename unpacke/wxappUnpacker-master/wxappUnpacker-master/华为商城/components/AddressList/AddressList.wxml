@@ -1,0 +1,31 @@
+<view class="address-list {{theme=='new'?'address-pop-box':'bg_white'}}">
+    <radio-group name="radio-group">
+        <view bindtap="selectAddress" class="address-item" data-idx="{{idx}}" wx:for="{{addressList}}" wx:for-index="idx" wx:for-item="address" wx:key="id">
+            <view class="address-default" wx:if="{{theme=='old'&&address.defaultFlag==1}}">
+                <image src="../../imgs/icon-default.png"></image>
+            </view>
+            <label>
+                <view class="radiobox">
+                    <radio class="selectbox {{selectedIndex==idx?'checked':''}}" value="{{address.id}}"></radio>
+                    <view class="state" wx:if="{{theme=='old'||selectedIndex==idx}}"></view>
+                </view>
+                <view class="address-cont">
+                    <view class="addr-user">
+                        <view class="addr-user-name">{{address.consignee}}</view>
+                        <view class="addr-user-phone">{{address.mobile}}</view>
+                        <view class="addr-user-defalut" wx:if="{{theme=='new'&&address.defaultFlag==1}}">
+                            <text>默认</text>
+                        </view>
+                    </view>
+                    <view class="addr-info {{theme=='new'?'ellipsis-pub-tow':''}}">
+                        <text>{{address.provinceName==null?'':address.provinceName}} {{address.cityName==null?'':address.cityName}} {{address.districtName==null?'':address.districtName}} {{address.streetName==null?'':address.streetName}} {{address.address}}</text>
+                    </view>
+                </view>
+                <view catch:tap="toModify" class="address-btn" data-address="{{address}}">
+                    <image src="./imgs/icon-addr-edit.png"></image>
+                </view>
+            </label>
+        </view>
+    </radio-group>
+</view>
+<Toast options="{{toastOptions}}"></Toast>

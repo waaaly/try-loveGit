@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "switch-promo": "../../pages/cart/components/switch-promotions/index"
+    }
+}

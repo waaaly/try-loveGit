@@ -1,0 +1,120 @@
+page {
+    background: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.coup-nav {
+    padding: 0 33rpx;
+    box-sizing: border-box;
+    white-space: nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #fff;
+}
+
+.coup-nav .coup-nav-item {
+    display: inline-block;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: 4rpx solid transparent;
+    font-size: 27rpx;
+    color: #888;
+    margin-left: 63rpx;
+}
+
+.coup-nav .coup-nav-item view {
+    max-width: 187rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.coup-nav .coup-nav-item:first-child {
+    margin-left: 0;
+}
+
+.coup-nav .coup-nav-item.current {
+    border-bottom: 4rpx solid #ca141d;
+    color: #ca141d;
+}
+
+.coup-cont {
+    width: 100%;
+    padding: 60rpx 0 94rpx;
+    box-sizing: border-box;
+}
+
+.coup-cont .coup-tab {
+    margin: 0 33rpx;
+}
+
+.coup-cont .coup-tab:first-child {
+    margin-top: 24rpx;
+}
+
+.coup-cont .coup-tab:nth-last-child(1) {
+    padding-bottom: 17rpx;
+}
+
+.coup-cont .coup-tab-top {
+    text-align: center;
+}
+
+.coup-cont .coup-tab-title {
+    position: relative;
+    display: inline-block;
+    font-size: 27rpx;
+    color: #333;
+    padding: 10rpx 0;
+    font-weight: bold;
+}
+
+.coup-cont .coup-tab-title::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -1rpx;
+    left: -52rpx;
+    width: 32rpx;
+    height: 2rpx;
+    background: #888;
+}
+
+.coup-cont .coup-tab-title:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -1rpx;
+    right: -52rpx;
+    width: 32rpx;
+    height: 2rpx;
+    background: #888;
+}
+
+.coup-cont .coup-tab-title text {
+    display: inline-block;
+    max-width: 240rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.coup-cont .coupons-cont {
+    padding-bottom: 0;
+}
+
+.coup-btn .button-area-2 {
+    z-index: 121;
+}
+
+.coup-btn button {
+    font-size: 31rpx;
+}

@@ -1,0 +1,19 @@
+<view class="order-logistics bg_white">
+    <view class="order-number">物流编号：<text>{{deliveryNumber}}</text>
+    </view>
+    <view class="order-company">物流公司：<text>{{deliveryName}}</text>
+    </view>
+</view>
+<view class="logistics-area bg_white">
+    <view class="logistics-list">
+        <view class="logistics-item" wx:for="{{orderLogisticsLogList}}" wx:key="key">
+            <view class="logistics-icon">
+                <image src="{{item.isSign=='1'?'imgs/ic_ing.png':'imgs/ic_pass.png'}}"></image>
+            </view>
+            <view class="logistics-cont ui-border-b">
+                <view class="logistics-info">{{item.isSign=='1'?'您的订单已签收':item.logDescription}}</view>
+                <view class="logistics-time">{{item.time}}</view>
+            </view>
+        </view>
+    </view>
+</view>

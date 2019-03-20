@@ -1,0 +1,30 @@
+/**index.wxss**/
+.top-navigation-bar{
+  height: 88rpx;
+  width: 100%;
+  padding: 0 30rpx;
+  background: #a35c5c;
+  display: flex;
+  align-items: center;
+}
+.search-text{
+  height: 42rpx;
+  line-height: 42rpx;
+  color: rgb(10, 41, 216);
+  padding-left: 10rpx;
+  font-size: 30rpx;
+}
+.search-icon{
+  background:#30883c ;
+  background-size: 100%;
+  width: 28rpx;
+  height: 28rpx;
+}
+.index-swiper{
+  width: 750rpx;
+  height: 350rpx;
+}
+.swiper-pics{
+  width: 750rpx;
+  height: 350rpx;
+}

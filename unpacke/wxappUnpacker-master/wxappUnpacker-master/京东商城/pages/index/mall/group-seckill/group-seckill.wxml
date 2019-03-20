@@ -1,0 +1,30 @@
+<view class="seckill" hidden="{{hideSeckill&&hideEntries}}">
+    <view bindtap="tapSeckill" class="seckill__item seckill__item-large" data-ptag="{{titlePtag}}" hidden="{{hideSeckill}}">
+        <view class="seckill-title">京东秒杀</view>
+        <view class="seckill-countdown" wx:if="{{seckillBeginTime}}">
+            <view class="seckill-countdown__title">{{seckillBeginTime}}点场</view>
+            <view class="seckill-countdown__time">
+                <text hidden="{{!countdownHour}}">{{countdownHour}}:</text>
+                <text hidden="{{!countdownMinute}}">{{countdownMinute}}:</text>
+                <text hidden="{{!countdownSecond}}">{{countdownSecond}}</text>
+            </view>
+        </view>
+        <view class="seckill-images">
+            <view catchtap="tapSeckill" class="seckill-images__item {{seckillGoods.length>2?'seckill-images__item--3':''}}" data-pps="{{item.pps}}" data-ptag="{{item.ptag}}" data-sku="{{item.skuId}}" wx:for="{{seckillGoods}}" wx:key="skuId">
+                <view class="seckill-images__cover bg_stamp">
+                    <image hidden="{{!item.image}}" src="{{item.image}}"></image>
+                </view>
+                <view class="seckill-images__price">¥{{filter.priceCeil(item.price)}}</view>
+                <view class="seckill-images__oldprice">¥{{filter.priceCeil(item.oldPrice)}}</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="gotoUrl" class="seckill__item" data-url="{{item.url}}" hidden="{{hideEntries}}" wx:for="{{entries}}" wx:key="title">
+        <view class="seckill-title">{{item.title}}</view>
+        <view class="seckill-image bg_stamp">
+            <image hidden="{{!item.image}}" src="{{item.image}}"></image>
+        </view>
+        <view class="seckill-des">{{item.des}}</view>
+    </view>
+</view>
+<wxs module="filter" src="../filter.wxs" />

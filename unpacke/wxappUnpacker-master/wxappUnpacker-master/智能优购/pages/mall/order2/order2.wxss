@@ -1,0 +1,288 @@
+.address {
+    background-color: white;
+    padding: 20rpx;
+}
+
+.address .left {
+    float: left;
+    width: 100rpx;
+    font-weight: bold;
+}
+
+.address .right {
+    float: left;
+    width: 560rpx;
+}
+
+.address .right .name {
+    font-size: 14px;
+    height: 50rpx;
+}
+
+.address .right .addr {
+    font-size: 12px;
+}
+
+.address .arrow {
+    float: left;
+    width: 40rpx;
+}
+
+.address .arrow image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.brand {
+    height: 370rpx;
+    background-color: white;
+    padding: 20rpx;
+    margin-top: 10px;
+}
+
+.brand .left {
+    width: 230rpx;
+    float: left;
+}
+
+.brand .left image {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 10rpx;
+}
+
+.brand .right {
+    width: 480rpx;
+    float: left;
+}
+
+.brand .right .title {
+    font-size: 16px;
+}
+
+.brand .right .sucnums {
+    font-size: 14px;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.brand .right .cost2 {
+    position: relative;
+    font-size: 18px;
+    color: #F4241A;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.brand .right .jia {
+    position: absolute;
+    right: 0;
+    border-radius: 15rpx;
+    bottom: 0rpx;
+    border: 1px solid #f1f1f1;
+}
+
+.brand .right .jia view {
+    float: left;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    width: 70rpx;
+    color: #444444;
+}
+
+.brand .right .jia .bt1 {
+    font-size: 18px;
+    border-right: 1px solid #f1f1f1;
+}
+
+.brand .right .jia .bt2 {
+    font-size: 14px;
+}
+
+.brand .right .jia .bt3 {
+    font-size: 18px;
+    border-left: 1px solid #f1f1f1;
+}
+
+.liuyan {
+    margin-top: 10rpx;
+    height: 150rpx;
+    line-height: 150rpx;
+}
+
+.liuyan .f1 {
+    float: left;
+    width: 100rpx;
+}
+
+.liuyan .f2 {
+    float: left;
+    width: 400rpx;
+}
+
+.liuyan input {
+    width: 580rpx;
+    height: 55rpx;
+    border: 1px solid #f1f1f1;
+    margin-top: 40rpx;
+    padding: 10rpx;
+    border-radius: 5rpx;
+}
+
+.feiyong {
+    padding-top: 25rpx;
+    text-align: right;
+    border-top: 1px solid #f1f1f1;
+}
+
+.feiyong span {
+    color: #F4241A;
+}
+
+.pay {
+    margin-top: 10px;
+    background-color: white;
+    height: 800rpx;
+    padding: 20rpx;
+}
+
+.pay .title {
+    font-size: 16px;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.pay .weixin {
+    height: 100rpx;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.pay .weixin image {
+    height: 50rpx;
+    width: 50rpx;
+    padding-top: 20rpx;
+}
+
+.pay .weixin .w1 {
+    width: 70rpx;
+    float: left;
+}
+
+.pay .weixin .w2 {
+    width: 580rpx;
+    float: left;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.pay .weixin .w3 {
+    width: 60rpx;
+    float: left;
+}
+
+.pay .caption {
+    text-align: center;
+    color: #F4241A;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.pay .button {
+    height: 90rpx;
+    line-height: 90rpx;
+    color: white;
+    background-color: #F4241A;
+    margin: 30rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    font-size: 15px;
+}
+
+.gray {
+    background-color: #cccccc;
+}
+
+.captionshare {
+    text-align: center;
+    padding-top: 20rpx;
+    color: #75AFFF;
+}
+
+.mask {
+    background-color: #000000;
+    opacity: 0.6;
+}
+
+.identification {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20rpx;
+    background-color: white;
+}
+
+.identification .rule {
+    background-color: #f2f7fd;
+    font-size: 14px;
+    padding: 20rpx;
+    line-height: 40rpx;
+    border: 1px dashed #D5E4F9;
+}
+
+.item {
+    font-size: 14px;
+}
+
+.item .caption {
+    height: 70rpx;
+    line-height: 70rpx;
+    background-color: #f1f1f1;
+    font-size: 14px;
+    padding-left: 20rpx;
+}
+
+.item .input {
+    background-color: white;
+    height: 90rpx;
+    padding-left: 20rpx;
+}
+
+.databox {
+    border: 1px solid #f1f1f1;
+    margin-top: 20rpx;
+}
+
+.button1 {
+    margin-left: 40rpx;
+    float: left;
+    width: 300rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    background-color: #A84F25;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.button2 {
+    margin-left: 20rpx;
+    float: left;
+    width: 300rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    background-color: #666666;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.button {
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}

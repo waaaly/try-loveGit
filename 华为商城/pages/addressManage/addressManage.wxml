@@ -1,0 +1,69 @@
+<view class="address-manage" wx:if="{{pageStatus==1}}">
+    <view class="address-manage-box" data-idx="{{idx}}" wx:for="{{addressList}}" wx:for-index="idx" wx:for-item="address" wx:key="id">
+        <view class="user-info">
+            <text>{{address.consignee}}</text>
+            <text class="tel">{{address.mobile}}</text>
+        </view>
+        <view class="address-info">
+      {{address.provinceName==null?'':address.provinceName}} {{address.cityName==null?'':address.cityName}} {{address.districtName==null?'':address.districtName}} {{address.streetName==null?'':address.streetName}} {{address.address}}
+    </view>
+        <view class="address-btn system-only-between">
+            <view catchtap="toSetDefault" class="address-checkbox system-item-center" data-idx="{{idx}}">
+                <view class="checkbox-box">
+                    <label class="checkbox">
+                        <checkbox checked="true" class="{{address.defaultFlag==0?'':'checked'}}"></checkbox>
+                        <view class="state"></view>
+                    </label>
+                </view>
+                <view>{{address.defaultFlag==0?'设为默认':'默认地址'}}</view>
+            </view>
+            <view class="update-delate system-only-between">
+                <view catch:tap="toModify" class="btn-all update-btn" data-address="{{address}}" data-idx="{{idx}}">
+                    <text>编辑</text>
+                </view>
+                <view catch:tap="toDel" class="btn-all delate-btn" data-id="{{address.id}}" data-idx="{{idx}}">
+                    <text>删除</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="system-empty" wx:if="{{pageStatus==2}}">
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="../addressList/imgs/empty-address.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>收货地址为空</text>
+        </view>
+    </view>
+</view>
+<view class="hr-60" wx:if="{{pageStatus==1||pageStatus==2}}"></view>
+<view class="button-area-3" wx:if="{{pageStatus==1||pageStatus==2}}">
+    <view bindtap="toWxAddress" class="button-flex">
+        <text>选择微信地址</text>
+    </view>
+    <view bindtap="toAdd" class="button-flex">
+        <view>
+            <icon></icon>
+            <text>新增收货地址</text>
+        </view>
+    </view>
+</view>
+<view class="system-empty" wx:if="{{pageStatus==3}}">
+    <view class="system-empty-cont">
+        <view class="system-empty-icon">
+            <image src="../../../imgs/system-error.png"></image>
+        </view>
+        <view class="system-empty-tip">
+            <text>抱歉，服务器开小差了</text>
+        </view>
+        <view class="system-empty-btn">
+            <view bindtap="toReload" class="button-style-3">
+                <text>重新加载</text>
+            </view>
+        </view>
+    </view>
+</view>
+<WxAddressChooser id="WxAddressChooser"></WxAddressChooser>
+<Toast options="{{toastOptions}}"></Toast>

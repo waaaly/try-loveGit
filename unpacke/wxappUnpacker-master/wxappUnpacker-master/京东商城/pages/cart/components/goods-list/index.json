@@ -1,0 +1,14 @@
+{
+    "component": true,
+    "usingComponents": {
+        "recommend": "/components/recommend/index",
+        "popup-coupons": "/pages/cart/components/popup-coupons/index",
+        "switch-price": "/pages/cart/components/switch-price/index",
+        "popup-promotion": "/pages/cart/components/switch-promotions/index",
+        "sku-layer": "/components/sku-layer/index",
+        "cart-gift": "/pages/cart/components/cart-gift/index",
+        "slider-view": "/pages/cart/components/slider-view/index",
+        "margin-bar": "/pages/cart/components/margin-bar/index",
+        "option-promotions": "/pages/cart/components/option-promotions/index"
+    }
+}

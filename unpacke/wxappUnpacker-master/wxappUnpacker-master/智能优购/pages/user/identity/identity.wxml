@@ -1,0 +1,34 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<form bindsubmit="formSubmit">
+    <view class="iden">
+        <view class="iden-box">
+            <view class="iden-form">
+                <view class="iden-item row ali-center ">
+                    <text class="iden-item-tit" decode="{{true}} " style="letter-spacing:20rpx;">姓&nbsp;名</text>
+                    <input bindinput="getName" class="iden-item-input" disabled="{{identity==1&&!canChange}}" name="name" placeholder="请输入您的真实姓名(必填)" placeholderClass="phcolor" type="text" value="{{name}}"></input>
+                </view>
+                <view class="iden-item row ali-center ">
+                    <text class="iden-item-tit">身份证号</text>
+                    <input bindinput="top_phone_inputs" class="iden-item-input" disabled="{{identity==1&&!canChange}}" name="idNumber" placeholder="请输入您的身份证号(必填)" placeholderClass="phcolor" type="text" value="{{kongge_phones}}"></input>
+                </view>
+                <view class="iden-item row ali-center ">
+                    <text class="iden-item-tit">手机号码</text>
+                    <input bindinput="top_phone_input" class="iden-item-input" disabled="{{identity==1&&!canChange}}" name="phone" placeholder="请输入您的手机号码(必填)" placeholderClass="phcolor" type="text" value="{{kongge_phone}}"></input>
+                </view>
+                <view class="iden-item row ali-center " style="border:none;" wx:if="{{identity==2||canChange}}">
+                    <text class="iden-item-tit" decode="{{true}} " style="letter-spacing:13rpx;">验证码</text>
+                    <input bindinput="getCode" class="iden-item-input" maxlength="6" name="code" placeholder="请输入短信验证码" placeholderClass="phcolor" style="width:285rpx; border-right: 1rpx solid #ddd;" type="text" value="{{code}}"></input>
+                    <view bindtap="sendCode" class="iden-code-btn" wx:if="{{!isShow}}">获取验证码</view>
+                    <view class="iden-code-btn" wx:if="{{isShow}}">{{sec}}s后重新发送</view>
+                </view>
+            </view>
+            <button class="iden-btn" formType="submit" wx:if="{{identity==2||canChange}}">保存</button>
+            <button bindtap="goChangePhone" class="iden-btn" wx:if="{{identity==1&&!canChange}}">修改信息</button>
+        </view>
+    </view>
+</form>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>
+<wxs module="filter" src="../../../numberToFix.wxs" />

@@ -1,0 +1,331 @@
+<view class="tips-style">
+    <view>如果商品由第三方卖家销售，发票由卖家开具并寄出。电子普通发票方便快捷、易于保管，但电子普通发票不可换开其他种类的发票，请在付款前选择需要的发票种类。</view>
+</view>
+<view class="invoice-type bg_white">
+    <view class="invoice-header ui-border-b">
+        <text>发票类型：</text>
+    </view>
+    <view class="invoice-type-list display-flex">
+        <view bindtap="chooseInvoiceType" class="checkbox-text checkbox-text-{{invoiceType.className}}" data-index="{{idx}}" data-type="{{invoiceType.type}}" wx:for="{{invoiceTypes}}" wx:for-index="idx" wx:for-item="invoiceType" wx:key="id">
+            <text>{{invoiceType.invoiceName}}</text>
+        </view>
+    </view>
+</view>
+<view wx:for="{{invoiceTypes}}" wx:for-index="idx" wx:for-item="invoiceType" wx:key="id">
+    <view class="invoice-tab bg_white {{invoiceType.contentClass}}" wx:if="{{invoiceType.type==1}}">
+        <view class="invoice-header ui-border-b">
+            <text>发票抬头</text>
+        </view>
+        <view class="invoice-form-area">
+            <radio-group bindchange="chooseTitleType" name="radio-group">
+                <label class="system-l-l-r ui-border-b invoice-list">
+                    <view class="system-l radiobox">
+                        <radio checked="{{invoiceType.checked}}" class="selectbox {{invoiceType.checked?'checked':''}} {{invoiceType.className=='disabled'||invoiceType.className=='disabledandchecked'?'disabled':''}}" disabled="{{invoiceType.className=='disabled'||invoiceType.className=='disabledandchecked'?true:false}}" value="sigle-{{invoiceType.type}}"></radio>
+                        <view class="state"></view>
+                    </view>
+                    <view class="system-between-l system-l-l-r invoice-cont">
+                        <view class="system-l">
+                            <text>个人</text>
+                        </view>
+                        <view class="system-between-l"></view>
+                    </view>
+                </label>
+                <label class="system-l-l-r invoice-list">
+                    <view class="system-l radiobox">
+                        <radio checked="{{!invoiceType.checked}}" class="selectbox {{invoiceType.checked?'':'checked'}} {{invoiceType.className=='disabled'||invoiceType.className=='disabledandchecked'?'disabled':''}}" disabled="{{invoiceType.className=='disabled'||invoiceType.className=='disabledandchecked'?true:false}}" value="company-{{invoiceType.type}}"></radio>
+                        <view class="state"></view>
+                    </view>
+                    <view class="system-between-l system-l-l-r invoice-cont">
+                        <view class="system-l">
+                            <text class="invoice-title">单位</text>
+                        </view>
+                        <view class="system-between-l">
+                            <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{invoiceType.className=='disabled'||invoiceType.className=='disabledandchecked'?true:false}}" id="company-1" maxlength="100" placeholder="请输入单位名称" type="text" value="{{invoiceType.company}}"></input>
+                        </view>
+                        <view bindtap="clearInputValue" class="system-r form-edit-clear {{clearIcons['company-1']}}" data-contentid="company-1">
+                            <image src="../../imgs/icon-textbox-clear.png"></image>
+                        </view>
+                    </view>
+                </label>
+                <label class="system-l-l-r invoice-list invoice-identify {{invoiceType.checked?'hide':''}}">
+                    <view class="system-between-l system-l-l-r invoice-cont">
+                        <view class="system-l">
+                            <text class="invoice-title">纳税人识别号</text>
+                        </view>
+                        <view class="system-between-l">
+                            <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{invoiceType.className=='disabled'||invoiceType.className=='disabledandchecked'?true:false}}" id="taxpayerId-1" maxlength="20" placeholder="请按税务登记证填写" type="text" value="{{invoiceType.taxpayerId}}"></input>
+                        </view>
+                        <view bindtap="clearInputValue" class="system-r form-edit-clear {{clearIcons['taxpayerId-1']}}" data-contentid="taxpayerId-1">
+                            <image src="../../imgs/icon-textbox-clear.png"></image>
+                        </view>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+    </view>
+    <view class="invoice-tab bg_white {{invoiceType.contentClass}}" wx:if="{{invoiceType.type==50}}">
+        <view class="invoice-header ui-border-b">
+            <text>发票抬头</text>
+        </view>
+        <view class="invoice-form-area">
+            <radio-group bindchange="chooseTitleType" name="radio-group">
+                <label class="system-l-l-r ui-border-b invoice-list">
+                    <view class="system-l radiobox">
+                        <radio checked="{{invoiceType.checked}}" class="selectbox {{invoiceType.checked?'checked':''}} {{invoiceType.className=='disabled'||invoiceType.className=='disabledandchecked'?'disabled':''}}" disabled="{{invoiceType.className=='disabled'||invoiceType.className=='disabledandchecked'?true:false}}" value="sigle-{{invoiceType.type}}"></radio>
+                        <view class="state"></view>
+                    </view>
+                    <view class="system-between-l system-l-l-r invoice-cont">
+                        <view class="system-l">
+                            <text>个人</text>
+                        </view>
+                        <view class="system-between-l"></view>
+                    </view>
+                </label>
+                <label class="system-l-l-r invoice-list">
+                    <view class="system-l radiobox">
+                        <radio checked="{{!invoiceType.checked}}" class="selectbox {{invoiceType.checked?'':'checked'}} {{invoiceType.className=='disabled'||invoiceType.className=='disabledandchecked'?'disabled':''}}" disabled="{{invoiceType.className=='disabled'||invoiceType.className=='disabledandchecked'?true:false}}" value="company-{{invoiceType.type}}"></radio>
+                        <view class="state"></view>
+                    </view>
+                    <view class="system-between-l system-l-l-r invoice-cont">
+                        <view class="system-l">
+                            <text class="invoice-title">单位</text>
+                        </view>
+                        <view class="system-between-l">
+                            <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{invoiceType.className=='disabled'||invoiceType.className=='disabledandchecked'?true:false}}" id="company-50" maxlength="100" placeholder="请输入单位名称" type="text" value="{{invoiceType.company}}"></input>
+                        </view>
+                        <view bindtap="clearInputValue" class="system-r form-edit-clear {{clearIcons['company-50']}}" data-contentid="company-50">
+                            <image src="../../imgs/icon-textbox-clear.png"></image>
+                        </view>
+                    </view>
+                </label>
+                <label class="system-l-l-r invoice-list invoice-identify {{invoiceType.checked?'hide':''}}">
+                    <view class="system-between-l system-l-l-r invoice-cont">
+                        <view class="system-l">
+                            <text class="invoice-title">
+                                <text class="red">*</text>纳税人识别号</text>
+                        </view>
+                        <view class="system-between-l">
+                            <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{invoiceType.className=='disabled'||invoiceType.className=='disabledandchecked'?true:false}}" id="taxpayerId-50" maxlength="20" placeholder="请按税务登记证填写" type="text" value="{{invoiceType.taxpayerId}}"></input>
+                        </view>
+                        <view bindtap="clearInputValue" class="system-r form-edit-clear {{clearIcons['taxpayerId-50']}}" data-contentid="taxpayerId-50">
+                            <image src="../../imgs/icon-textbox-clear.png"></image>
+                        </view>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+        <view class="tips">
+            <view>电子普通发票为真实有效的合法发票，与传统纸质普通发票具有同等法律效力。用户确认收货，订单完成后开具，开票后不可更换为纸质普通发票，可在订单详情下载您的电子普通发票。</view>
+        </view>
+    </view>
+    <view class="invoice-tab {{invoiceType.contentClass}} " wx:if="{{invoiceType.type==3&&!showSpecialNotice}}">
+        <view class="invoice-header bg_white ui-border-b">
+            <text>1.填写公司信息</text>
+        </view>
+        <view class="invoice-form-area bg_white">
+            <label class="system-item-center ui-border-b invoice-list">
+                <view class="system-l-l-r invoice-cont">
+                    <view class="system-l">
+                        <text class="invoice-title">
+                            <text class="red">*</text>单位名称</text>
+                    </view>
+                    <view class="system-between-l">
+                        <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{invoiceType.className=='disabled'?true:false}}" id="company" maxlength="100" placeholder="请根据营业执照填写" type="text" value="{{invoiceType.company}}"></input>
+                    </view>
+                    <view bindtap="clearInputValue" class="system-r form-edit-clear {{clearIcons['company']}}" data-contentid="company">
+                        <image src="../../imgs/icon-textbox-clear.png"></image>
+                    </view>
+                </view>
+            </label>
+            <label class="system-item-center ui-border-b invoice-list">
+                <view class="system-l-l-r invoice-cont">
+                    <view class="system-l">
+                        <text class="invoice-title">
+                            <text class="red">*</text>纳税人识别号</text>
+                    </view>
+                    <view class="system-between-l">
+                        <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{invoiceType.className=='disabled'?true:false}}" id="taxpayerId" maxlength="20" placeholder="请按照税务登记证填写" type="text" value="{{invoiceType.taxpayerId}}"></input>
+                    </view>
+                    <view bindtap="clearInputValue" class="system-r form-edit-clear {{clearIcons['taxpayerId']}}" data-contentid="taxpayerId">
+                        <image src="../../imgs/icon-textbox-clear.png"></image>
+                    </view>
+                </view>
+            </label>
+            <label class="system-item-center ui-border-b invoice-list">
+                <view class="system-l-l-r  invoice-cont">
+                    <view class="system-l">
+                        <text class="invoice-title">
+                            <text class="red">*</text>注册地址</text>
+                    </view>
+                    <view class="system-between-l">
+                        <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{invoiceType.className=='disabled'?true:false}}" id="regAddress" maxlength="80" placeholder="请根据营业执照填写" type="text" value="{{invoiceType.regAddress}}"></input>
+                    </view>
+                    <view bindtap="clearInputValue" class="system-r form-edit-clear {{clearIcons['regAddress']}}" data-contentid="regAddress">
+                        <image src="../../imgs/icon-textbox-clear.png"></image>
+                    </view>
+                </view>
+            </label>
+            <label class="system-item-center ui-border-b invoice-list">
+                <view class="system-l-l-r invoice-cont">
+                    <view class="system-l">
+                        <text class="invoice-title">
+                            <text class="red">*</text>注册电话</text>
+                    </view>
+                    <view class="system-between-l">
+                        <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{invoiceType.className=='disabled'?true:false}}" id="regTelephone" maxlength="20" placeholder="请根据营业执照填写" type="text" value="{{invoiceType.regTelephone}}"></input>
+                    </view>
+                    <view bindtap="clearInputValue" class="system-r form-edit-clear {{clearIcons['regTelephone']}}" data-contentid="regTelephone">
+                        <image src="../../imgs/icon-textbox-clear.png"></image>
+                    </view>
+                </view>
+            </label>
+            <label class="system-item-center ui-border-b invoice-list">
+                <view class="system-l-l-r invoice-cont">
+                    <view class="system-l">
+                        <text class="invoice-title">
+                            <text class="red">*</text>开户银行</text>
+                    </view>
+                    <view class="system-between-l">
+                        <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{invoiceType.className=='disabled'?true:false}}" id="bank" maxlength="100" placeholder="请根据开户许可证填写" type="text" value="{{invoiceType.bank}}"></input>
+                    </view>
+                    <view bindtap="clearInputValue" class="system-r form-edit-clear {{clearIcons['bank']}}" data-contentid="bank">
+                        <image src="../../imgs/icon-textbox-clear.png"></image>
+                    </view>
+                </view>
+            </label>
+            <label class="system-item-center invoice-list">
+                <view class="system-l-l-r invoice-cont">
+                    <view class="system-l">
+                        <text class="invoice-title">
+                            <text class="red">*</text>银行账户</text>
+                    </view>
+                    <view class="system-between-l">
+                        <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{invoiceType.className=='disabled'?true:false}}" id="bankAccount" maxlength="50" placeholder="请根据开户许可证填写" type="text" value="{{invoiceType.bankAccount}}"></input>
+                    </view>
+                    <view bindtap="clearInputValue" class="system-r form-edit-clear {{clearIcons['bankAccount']}}" data-contentid="bankAccount">
+                        <image src="../../imgs/icon-textbox-clear.png"></image>
+                    </view>
+                </view>
+            </label>
+        </view>
+        <view class="invoice-header ui-border-b bg_white" style="margin-top: 13rpx;">
+            <text>2.填写收票人信息</text>
+        </view>
+        <view class="invoice-form-area bg_white">
+            <label class="system-item-center ui-border-b invoice-list">
+                <view class="system-l-l-r invoice-cont">
+                    <view class="system-l">
+                        <text class="invoice-title">
+                            <text class="red">*</text>姓名</text>
+                    </view>
+                    <view class="system-between-l">
+                        <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{invoiceType.className=='disabled'?true:false}}" id="checkTaker" maxlength="20" placeholder="请输入2-20个字符" type="text" value="{{invoiceType.checkTaker}}"></input>
+                    </view>
+                    <view bindtap="clearInputValue" class="system-r form-edit-clear {{clearIcons['checkTaker']}}" data-contentid="checkTaker">
+                        <image src="../../imgs/icon-textbox-clear.png"></image>
+                    </view>
+                </view>
+            </label>
+            <label class="system-item-center ui-border-b invoice-list">
+                <view class="system-l-l-r invoice-cont">
+                    <view class="system-l">
+                        <text class="invoice-title">
+                            <text class="red">*</text>手机</text>
+                    </view>
+                    <view class="system-between-l">
+                        <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{invoiceType.className=='disabled'?true:false}}" id="takerMobile" maxlength="11" placeholder="请输入11位手机号码" type="text" value="{{invoiceType.takerMobile}}"></input>
+                    </view>
+                    <view bindtap="clearInputValue" class="system-r form-edit-clear {{clearIcons['takerMobile']}}" data-contentid="takerMobile">
+                        <image src="../../imgs/icon-textbox-clear.png"></image>
+                    </view>
+                </view>
+            </label>
+            <label class="system-item-center ui-border-b invoice-list">
+                <view class="system-l-l-r invoice-cont">
+                    <view class="system-l">
+                        <text class="invoice-title">
+                            <text class="red">*</text>选择地区</text>
+                    </view>
+                    <view class="system-between-l">
+                        <input bindtap="toOpenAddress" disabled="true" id="addressSelect" placeholder="请选择省-市-区-街道" type="text" value="{{region.provinceName=='请选择'?'':region.provinceName}}{{region.cityName=='请选择'?'':region.cityName}}{{region.districtName=='请选择'?'':region.districtName}}{{region.streetName=='请选择'?'':region.streetName}}"></input>
+                    </view>
+                </view>
+            </label>
+            <label class="system-item-center invoice-list">
+                <view class="system-l-l-r  invoice-cont">
+                    <view class="system-l">
+                        <text class="invoice-title">
+                            <text class="red">*</text>详细地址</text>
+                    </view>
+                    <view class="system-between-l">
+                        <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{invoiceType.className=='disabled'?true:false}}" id="takerAddress" maxlength="100" placeholder="如选择不到地区,请在此处详细描述" type="text" value="{{invoiceType.takerAddress}}"></input>
+                    </view>
+                    <view bindtap="clearInputValue" class="system-r form-edit-clear {{clearIcons['takerAddress']}}" data-contentid="takerAddress">
+                        <image src="../../imgs/icon-textbox-clear.png"></image>
+                    </view>
+                </view>
+            </label>
+        </view>
+        <view class="tips">
+            <view>请确认专用发票信息正确无误，商品出库后不允许修改，发票开出后不允许更改，发票会在用户签收商品7天后寄出。</view>
+        </view>
+    </view>
+    <view class="{{invoiceType.contentClass}}" wx:if="{{invoiceType.type==3&&showSpecialNotice}}">
+        <view class="invoice-tab bg_white">
+            <view class="invioce-notes">
+                <view class="invioce-notes-title">{{specialContentTitle}}</view>
+                <view class="invioce-notes-content">
+                    <view wx:for="{{specialContentArr}}" wx:for-item="specialContentItem" wx:key="id">{{specialContentItem}}</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="specialAgree" class="button-area" id="agree">
+            <view class="button-style-1-big">
+                <text>同意并继续</text>
+            </view>
+        </view>
+    </view>
+    <view class="invoice-tab bg_white {{invoiceType.contentClass}}" wx:if="{{invoiceType.type==0}}">
+        <view class="invoice-form-area">
+            <radio-group name="radio-group">
+                <label class="system-l-l-r ui-border-b invoice-list">
+                    <view class="system-l radiobox">
+                        <radio checked="checked" class="checked" value="radio1"></radio>
+                        <view class="state"></view>
+                    </view>
+                    <view class="system-between-l system-l-l-r invoice-cont">
+                        <view class="system-l">
+                            <text>不开发票</text>
+                        </view>
+                        <view class="system-between-l"></view>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+    </view>
+</view>
+<view bindtap="updateInvoice" class="button-area" wx:if="{{showOKButton}}">
+    <view class="button-style-1-big">
+        <text>确定</text>
+    </view>
+</view>
+<RegionPicker bindchange="toChangeRegion" isShow="{{showRegionPicker}}" region="{{region}}"></RegionPicker>
+<view class="ecWap-mask" wx:if="{{showTip}}"></view>
+<view class="ecWap-box-middle" wx:if="{{showTip}}">
+    <view class="ecWap-box ecWap-box-center ecWap-box-normal ecWap-box-change">
+        <view class="ecWap-box-content">
+            <view class="ecWap-dialog-header">提示</view>
+            <view class="ecWap-dialog-content" style="text-align: left">
+                <text>{{templateContent}}</text>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <button bindtap="getInvoiceInfo" class="ecWap-box-cancle" plain="true">
+                <text>继续提交</text>
+            </button>
+            <button bindtap="changeInvoice" class="ecWap-box-ok" id="getInvoice" plain="true">
+                <text>切换专用发票</text>
+            </button>
+        </view>
+    </view>
+</view>

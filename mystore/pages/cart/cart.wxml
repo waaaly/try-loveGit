@@ -1,0 +1,11 @@
+<!--index.wxml-->
+  <navigator class='top-navigation-bar' url='/pages/logs/logs'>
+    <view class="search-icon"></view>
+    <text class='search-input'>输入关键字搜索</text>
+  </navigator>
+
+<swiper class='index-swiper' indicator-dots='true' interval='3000' autoplay='true' duration='1000'>
+  <swiper-item wx:for='{{indexSwiperPics}}'>
+    <image class='swiper-pics' src='{{item}}'></image>
+  </swiper-item>
+</swiper>

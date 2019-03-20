@@ -1,0 +1,11 @@
+<view wx:if="{{!entries.length}}"></view>
+<view class="banner" wx:else>
+    <swiper autoplay="{{true}}" bindchange="handleSlideChange" circular="{{true}}" class="banner__swiper" indicatorDots="{{false}}" interval="{{6000}}">
+        <swiper-item bindtap="handleItemClick" class="banner__swiper-item" data-url="{{item.url}}" wx:for="{{entries}}" wx:key="{{item.banner}}">
+            <image class="banner__swiper-item-image" src="{{item.image}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="banner__dots" wx:if="{{entries.length>1}}">
+        <view class="{{'banner__dot banner__dot--'+(index==swiperIdx?'cur':'')}}" wx:for="{{entries}}" wx:key="{{item.banner}}"></view>
+    </view>
+</view>

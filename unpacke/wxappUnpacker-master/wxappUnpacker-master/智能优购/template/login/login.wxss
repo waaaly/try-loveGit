@@ -1,0 +1,38 @@
+.login {
+    background-color: #fff;
+    padding-top: 300rpx;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.login .prompt {
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    line-height: 150rpx;
+}
+
+.login .button {
+    width: 200rpx;
+    line-height: 80rpx;
+    font-size: 14px;
+    height: 80rpx;
+    background-color: #F4241A;
+    border-radius: 8rpx;
+    text-align: center;
+    margin-left: 275rpx;
+    color: white;
+    position: relative;
+}
+
+.vip_up_gold {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 750rpx;
+    transform: translate(-50%,-50%);
+}

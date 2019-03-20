@@ -1,0 +1,292 @@
+<view wx:if="{{!showError&&hasPrdInfo}}">
+    <view class="rma-change-top bg_white">
+        <view class="rma-change-title">{{shopCodeInfo}}</view>
+        <view class="ram-change-btn">
+            <view bindtap="changeApplyType" class="{{applyType=='1'&&rmaStatus=='2'?'style-2':'style-1'}}" data-index="1" wx:if="{{rmaStatus=='2'}}">
+                <text>退货</text>
+            </view>
+            <view bindtap="changeApplyType" class="{{applyType==2&&(rmaStatus=='2'||rmaStatus=='1')?'style-2':'style-1'}}" data-index="2" wx:if="{{rmaStatus=='2'||rmaStatus=='1'}}">
+                <text>换货</text>
+            </view>
+        </view>
+    </view>
+    <view class="rma-change-goods bg_white">
+        <view class="change-good-title">{{showReasonTitle}}</view>
+        <view class="list myRMAOrderList" wx:if="{{products&&products.length>0}}">
+            <view class="rma-good-area" wx:for="{{products}}" wx:key="{{index}}">
+                <view class="sys-good-item rma-good-item" wx:if="{{item.quantity>0}}">
+                    <view class="good-panels">
+                        <checkbox-group bindchange="checkitem" data-index="{{index}}" data-type="prd">
+                            <label>
+                                <view wx:if="{{isChooseReason}}">
+                                    <view class="system-l checkbox">
+                                        <checkbox checked="{{item.isChecked}}" class="selectbox {{item.isChecked?'checked':''}}" wx:if="{{repairType=='1'}}"></checkbox>
+                                        <checkbox checked="{{item.checked}}" class="selectbox checked disabled" wx:else></checkbox>
+                                        <view class="state"></view>
+                                    </view>
+                                </view>
+                                <view wx:else>
+                                    <view class="system-l checkbox">
+                                        <checkbox class="selectbox {{item.isChecked?'checked':''}}"></checkbox>
+                                        <view class="state"></view>
+                                    </view>
+                                </view>
+                            </label>
+                        </checkbox-group>
+                        <view class="good-img">
+                            <image src="{{cdnPath}}{{item.productPhoto.photoPath}}428_428_{{item.productPhoto.photoName}}"></image>
+                        </view>
+                        <view class="good-info">
+                            <view class="good-name">
+                                <text>{{item.productName}}</text>
+                            </view>
+                            <view class="display-flex justify-content-between">
+                                <view class="good-num-tips">
+                                    <view>数量：<text>{{item.max}}</text>
+                                    </view>
+                                </view>
+                                <view class="good-price-num p-subtotal">
+                                    <view class="p-amount-rma {{item.isChecked?'':'rma-opacity'}}">
+                                        <view bindtap="minusAmt" class="total Subtract {{item.isChecked&&item.chooseQuantity==1||isReturnExchangeAll?'disabled':''}}" data-checked="{{item.isChecked}}" data-index="{{index}}" data-type="prd"></view>
+                                        <view class="total total-input" wx:if="{{!isChooseReason}}">{{item.chooseQuantity}}</view>
+                                        <view class="total total-input" wx:else>{{item.quantity}}</view>
+                                        <view bindtap="addAmt" class="total plus {{item.isChecked&&item.chooseQuantity==item.max?'disabled':''}}" data-checked="{{item.isChecked}}" data-index="{{index}}" data-max="{{item.max}}" data-type="prd"></view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="sys-good-item rma-good-item {{applyType=='1'?'':'rma-good-border'}}" wx:for="{{item.subProductList}}" wx:for-index="index2" wx:for-item="item2" wx:key="{{index2}}">
+                    <view class="good-panels" wx:if="{{item2.quantity>0}}">
+                        <checkbox-group bindchange="checkitem" data-index="{{index2}}" data-prdidx="{{index}}">
+                            <label>
+                                <view class="system-l checkbox" wx:if="{{applyType!='1'}}">
+                                    <checkbox checked="{{item2.isChecked}}" class="selectbox {{item2.isChecked?'checked':''}}" wx:if="{{repairType=='1'&&applyType=='2'}}"></checkbox>
+                                    <checkbox checked="{{item2.checked}}" class="selectbox checked disabled" wx:elif="{{isChooseReason}}"></checkbox>
+                                    <checkbox class="selectbox {{item2.isChecked?'checked':''}}" wx:else></checkbox>
+                                    <view class="state"></view>
+                                </view>
+                            </label>
+                        </checkbox-group>
+                        <view class="good-img">
+                            <image src="{{cdnPath}}{{item2.productPhoto.photoPath}}428_428_{{item2.productPhoto.photoName}}"></image>
+                        </view>
+                        <view class="good-info">
+                            <view class="good-name">
+                                <view class="good-label">
+                                    <text>配</text>
+                                </view>
+                                <text>{{item2.productName}}</text>
+                            </view>
+                            <view class="display-flex justify-content-between">
+                                <view class="good-num-tips">
+                                    <view>数量：<text>{{item2.max}}</text>
+                                    </view>
+                                    <view class="red" wx:if="{{applyType=='1'&&item.isChecked}}">该商品需随主商品一起退货</view>
+                                </view>
+                                <view class="good-price-num p-subtotal" wx:if="{{applyType=='2'}}">
+                                    <view class="p-amount-rma {{item2.isChecked?'':'rma-opacity'}}">
+                                        <view bindtap="minusAmt" class="total Subtract {{item2.isChecked&&item2.chooseQuantity==1||isReturnExchangeAll?'disabled':''}}" data-checked="{{item2.isChecked}}" data-index="{{index2}}" data-prdidx="{{index}}" data-type="gift"></view>
+                                        <view class="total total-input" wx:if="{{!isChooseReason}}">{{item2.chooseQuantity}}</view>
+                                        <view class="total total-input" wx:else>{{item2.quantity}}</view>
+                                        <view bindtap="addAmt" class="total plus {{item2.isChecked&&item2.chooseQuantity==item2.max?'disabled':''}}" data-checked="{{item2.isChecked}}" data-index="{{index2}}" data-max="{{item2.max}}" data-prdidx="{{index}}" data-rate="{{item2.rate}}" data-type="gift"></view>
+                                    </view>
+                                </view>
+                                <view class="good-price-num good-price-only" wx:if="{{applyType=='1'&&isChooseReason&&(repairType=='1'||repairType=='0')}}">
+                                    <view class="good-num {{!item2.isChecked?'':'good-price-dark'}}">{{item2.quantity}}</view>
+                                </view>
+                                <view class="good-price-num good-price-only" wx:elif="{{applyType=='1'}}">
+                                    <view class="good-num {{!item2.isChecked?'':'good-price-dark'}}">{{item2.chooseQuantity}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="goods-num-total">共选中<text>{{totalChooseCount}}</text>件商品</view>
+        </view>
+        <view class="change-good-error" wx:else>
+            <view>抱歉，您的订单部分商品仍在办理换货中</view>
+            <view>暂时无法申请退货</view>
+        </view>
+    </view>
+    <view class="rma-form rmaSubmit-form">
+        <view class="bg_white form-reason">
+            <view class="rmaSubmit-form-title">请选择{{reasonTitle}}</view>
+            <view class="rma-submit-form-reason">
+                <view class="list">
+                    <view class="list-l">
+                        <view class="state">包裹状态</view>
+                    </view>
+                    <view class="lsit-r">
+                        <view class="select">
+                            <picker bindchange="bindStatePickerChange" range="{{repairReasonList}}" rangeKey="packageStatusDesc" value="{{stateIdx}}">
+                                <view class="option">
+                  {{repairReasonList[stateIdx].packageStatusDesc}}
+                </view>
+                                <view class="icon-arrows-more"></view>
+                            </picker>
+                        </view>
+                    </view>
+                </view>
+                <view class="list">
+                    <view class="list-l">
+                        <view class="state">{{reasonTitle}}</view>
+                    </view>
+                    <view class="lsit-r">
+                        <view catchtap="pickerChose" class="select">
+                            <picker bindchange="bindReasonPickerChange" disabled="{{!isSelectState}}" range="{{reasonArray}}" value="{{reasonIdx}}">
+                                <view class="option">{{reasonArray[reasonIdx]}}</view>
+                                <view class="icon-arrows-more"></view>
+                            </picker>
+                        </view>
+                    </view>
+                </view>
+                <view class="uploadproblem list">
+                    <view class="lsit-r">
+                        <textarea bindblur="bindProblemDescription" bindinput="bindProblemDescription" class="{{isIOS?'textareaIOS':''}}" cursor="0" disabled="{{!isShowModal?false:true}}" maxlength="500" placeholder="{{placeholder}}" placeholderStyle="color:#cccccc" value="{{problemDescription}}" wx:if="{{!isShowModal}}"></textarea>
+                        <view class="textarea-modal {{isIOS?'textareaIOS':''}}" wx:else>
+                            <text space="{{true}}" style="{{problemDescription?'':'color:#cccccc;'}}">{{problemDescription||'请输入问题描述（不少于5个字）'}}</text>
+                        </view>
+                        <view class="upload-limit">
+                            <text class="{{hasWord?'current':''}}">{{wordCount}}</text>/500</view>
+                    </view>
+                </view>
+                <view class="uploadImg hide" wx:if="{{0}}">
+                    <view class="up-title">上传凭证照片</view>
+                    <view class="clearfix">
+                        <view class="up-list">
+                            <view class="up-image">
+                                <image src="{{logo}}"></image>
+                            </view>
+                            <view class="icon-img-del"></view>
+                        </view>
+                        <view class="up-list">
+                            <view class="up-image"></view>
+                            <view class="icon-img-del"></view>
+                        </view>
+                        <view class="up-list">
+                            <view class="icon-add"></view>
+                            <view class="up-p">添加图片</view>
+                            <input accept="image/*" catchtap="chooseImageTap" type="file"></input>
+                        </view>
+                    </view>
+                    <view class="up-tips">最多10张，每张不超过5M，仅支持png、jpg、jepg格式</view>
+                </view>
+            </view>
+        </view>
+        <view class="rma-submit-form-address bg_white {{applyType=='2'?'':'return-noborder'}}">
+            <view class="rmaSubmit-form-title">联系信息</view>
+            <view class="list">
+                <view class="list-l">
+                    <view class="state">联系人</view>
+                </view>
+                <view class="lsit-r">
+                    <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{applyType=='1'?'disabled':''}}" id="consignee" placeholder="请输入2-10个字符" placeholderStyle="color:#cccccc" value="{{newAddress.consignee}}"></input>
+                    <view bindtap="clearInputValue" class="icon-textbox-clear {{clearIcons['consignee']}}" data-contentid="consignee"></view>
+                </view>
+            </view>
+            <view class="list">
+                <view class="list-l">
+                    <view class="state">联系电话</view>
+                </view>
+                <view class="lsit-r">
+                    <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" disabled="{{applyType=='1'?'disabled':''}}" id="mobile" maxlength="11" placeholder="请输入手机号码" placeholderStyle="color:#cccccc" type="number" value="{{newAddress.mobile}}"></input>
+                    <view bindtap="clearInputValue" class="icon-textbox-clear {{clearIcons['mobile']}}" data-contentid="mobile"></view>
+                </view>
+            </view>
+            <view class="list" wx:if="{{applyType=='2'}}">
+                <view class="list-l">
+                    <view class="state">选择地区</view>
+                </view>
+                <view bindtap="toOpenAddress" class="lsit-r">
+                    <view class="textbox form-msg">
+                        <input class="address-Select" disabled="true" id="addressSelect" placeholder="请选择省-市-区-街道" placeholderStyle="color:#cccccc" value="{{region.provinceName=='请选择'?'':region.provinceName}}{{region.cityName=='请选择'?'':region.cityName}}{{region.districtName=='请选择'?'':region.districtName}}{{region.streetName=='请选择'?'':region.streetName}}"></input>
+                        <view class="icon-arrows-down"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="list" wx:if="{{applyType=='2'}}">
+                <view class="list-l">
+                    <view class="state">详细地址</view>
+                </view>
+                <view class="lsit-r">
+                    <input bindblur="clearIcon" bindfocus="checkValue" bindinput="checkValue" class="ellipsis-one" id="address" placeholder="请输入2-50个字符" placeholderStyle="color:#cccccc" value="{{newAddress.address}}"></input>
+                    <view bindtap="clearInputValue" class="icon-textbox-clear {{clearIcons['address']}}" data-contentid="address"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="rma-tips">
+        <view class="tips">
+            <view class="h">
+                <view class="tips-title">温馨提示：</view>
+            </view>
+            <view class="b">
+                <view class="explain">
+                    <view>
+                        <text class="strong">1.退换货有效期：</text>按照国家三包政策，华为商城针对所销售商品提供7天退货、15天换货服务，有效期从签收次日0点算起。部分特殊商品不支持7天无理由退货。</view>
+                    <view>
+                        <text class="strong">2.寄回运费：</text>商城原因退货，建议您寄回时选择顺丰到付；个人原因退货建议您自费寄回。</view>
+                    <view>
+                        <text class="strong">3.质量问题换货：</text>可直接寄回商城，或者到华为授权售后网点进行检测并咨询是否可当面更换。</view>
+                    <view>
+                        <text class="strong">4.物流损、错发漏发问题退换货：</text>请您当场验货拒收并拍照存证，同时将照片上传附件；如您没有拒收，则请您提供物流公司证明凭据，并拍照上传；若您未拒收，也无法提供凭证，商城有权不接受以物流损、错发漏发为理由的退换货。</view>
+                    <view>
+                        <text class="strong">5.礼品购退换货处理：</text>商城原因退货礼品包装盒可以不寄回，不扣礼品包装盒费用；个人原因退货礼品包装盒可以不寄回，扣除包装盒服务费用。</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="button-area ram">
+        <view catchtap="addReturnExchangeOrder" class="button-style-1-big" wx:if="{{products&&products.length>0}}">
+      提交
+      <block wx:if="{{isCanClick}}">
+                <picker bindchange="bindStatePickerChange" class="btn-picker" range="{{repairReasonList}}" rangeKey="packageStatusDesc" value="{{stateIdx}}" wx:if="{{!isChooseStatus}}">
+                    <view class="choose-status"></view>
+                    <view class="icon-arrows-more"></view>
+                </picker>
+                <picker bindchange="bindReasonPickerChange" class="btn-picker" disabled="{{!isSelectState}}" range="{{reasonArray}}" value="{{reasonIdx}}" wx:if="{{!isChooseReason}}">
+                    <view class="choose-reason"></view>
+                    <view class="icon-arrows-more"></view>
+                </picker>
+            </block>
+        </view>
+        <view class="button-style-1-big-disabled" wx:else>提交</view>
+    </view>
+</view>
+<RegionPicker bindchange="toChangeRegion" isShow="{{showRegionPicker}}" region="{{region}}"></RegionPicker>
+<view catchtouchmove="preventD" class="rma-empty" wx:if="{{showError}}">
+    <view class="rma-empty-cont">
+        <view class="rma-empty-icon">
+            <image src="imgs/empty-order.png"></image>
+        </view>
+        <view class="rma-empty-title">
+            <text>{{errorinfo}}</text>
+        </view>
+    </view>
+</view>
+<view catchtouchmove="preventD" class="ecWap-mask" style="{{isShowModal?'visibility:visible':'visibility:hidden'}}"></view>
+<view catchtouchmove="preventD" class="ecWap-box-middle" style="{{isShowModal?'visibility:visible':'visibility:hidden'}}">
+    <view class="ecWap-box ecWap-box-center ecWap-box-normal ecWap-box-change">
+        <view class="ecWap-box-content">
+            <view class="ecWap-dialog-header">温馨提示</view>
+            <view class="ecWap-dialog-content" style="text-align: center">
+                <text>{{modelInfo}}</text>
+            </view>
+        </view>
+        <view class="ecWap-box-footer">
+            <button bindtap="cancel" class="ecWap-box-cancle" plain="true">
+                <picker bindchange="bindStatePickerChange" range="{{repairReasonList}}" rangeKey="packageStatusDesc" value="{{0}}">
+                    <view class="choose-status"></view>
+                    <view class="icon-arrows-more"></view>
+                </picker>
+                <text>取消</text>
+            </button>
+            <button bindtap="confirm" class="ecWap-box-ok" plain="true">
+                <text>选择全部</text>
+            </button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,40 @@
+<div class="container">
+    <view class="header w100 row spa ali-center">
+        <picker bindchange="bindDateChange" data-key="1" end="{{now_date}}" mode="date" value="{{start_time}}">
+            <view class="col">
+                <text class="px24 color80">开始日期</text>
+                <text class="px30 color4D val">{{start_time}}</text>
+            </view>
+        </picker>
+        <picker bindchange="bindDateChange" data-key="2" end="{{now_date}}" mode="date" start="{{start_time}}" value="{{end_time}}">
+            <view class="col">
+                <text class="px24 color80">结束日期</text>
+                <text class="px30 color4D val">{{end_time}}</text>
+            </view>
+        </picker>
+        <image catchtap="search" class="serach-btn" src="/images/shousuo_time.png"></image>
+    </view>
+    <view class="prompat" wx:if="{{!loadlayer&&!dataset.length}}">没有搜索到记录~~</view>
+    <view class="list w100 col">
+        <view class="row spa list-item" wx:for="{{dataset}}" wx:key="key">
+            <view class="col">
+                <view class="row ali-center">
+                    <text class="px46 color4D bold">{{item.convertScore}}</text>
+                    <text class="px26 color80">兑换数贝</text>
+                </view>
+                <text class="date px22">{{item.happenAt}}</text>
+                <text class="date px22">{{item.successtime}}</text>
+            </view>
+            <view class="col">
+                <view class="row ali-center">
+                    <text class="px46 color4D bold">{{item.remainScore}}</text>
+                    <text class="px26 color80">剩余数贝</text>
+                </view>
+            </view>
+            <text class="golden px24 exchange-txt">{{item.statename}}</text>
+        </view>
+    </view>
+    <view class="loadlayer" wx:if="{{loadlayer}}">
+        <image src="/images/loadding.gif"></image>
+    </view>
+</div>

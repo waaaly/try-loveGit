@@ -1,0 +1,6 @@
+<view class="header" style="{{bg}}">
+    <view class="header__title" style="color: {{color}};">
+        <image class="header__icon" src="{{icon}}"></image>{{title}}
+    </view>
+    <view class="header__desc" style="{{color?'opacity: 0.2;':''}}">{{desc}}</view>
+</view>

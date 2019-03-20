@@ -1,0 +1,14 @@
+<view class="activity-wrap">
+    <my-activity-msg id="myActivityMsg"></my-activity-msg>
+    <view class="tools_container {{wrapHeight>195?'transition':''}}" style="height:{{wrapHeight+'px'}}">
+        <view bindtap="navToTools" class="tools_item" data-idx="{{idx}}" wx:for="{{activityList}}" wx:for-index="idx" wx:key="idx">
+            <view class="tools_icon" style="background:{{'url('+item.actImg+') no-repeat 0 0 / 100% 100%'}}"></view>
+            <text class="tools_item_key">{{item.actName}}</text>
+            <view class="act_red_point" wx:if="{{isActRed&&item.actName=='我的预约'}}">开抢</view>
+        </view>
+        <view bindtap="showAllActivity" class="get-more_wrap" wx:if="{{wrapHeight<=235&&wrapHeight>195}}">
+            <text class="get-more_text">查看更多</text>
+            <text class="get-more_arrow"></text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+<view class="xmodal" wx:if="{{bindWindow.show&&userInfo.isbind&&userInfo.definePin!=0}}">
+    <view class="xmodal_mask bac">
+        <view class="content">
+            <view bindtap="bindClick" data-bindactiveid="{{bindWindow.bindactiveid}}" data-bindlevel="{{bindWindow.bindlevel}}" data-rurl="{{bindWindow.rurl}}" data-type="1">
+                <image class="skin_img" mode="widthFix" src="{{xmodalImg}}" wx:if="{{xmodalImg}}"></image>
+            </view>
+            <image bindtap="hideXModal" class="close_icon" src="https://img11.360buyimg.com/jdphoto/s64x64_jfs/t21190/48/701699741/598/d2eab396/5b163ef5N61945409.png"></image>
+        </view>
+    </view>
+</view>

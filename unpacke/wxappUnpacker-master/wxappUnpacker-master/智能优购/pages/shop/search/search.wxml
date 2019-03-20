@@ -1,0 +1,41 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<view catchtap="gotoSearchPage" class="search">
+    <view class="input row ali-center">
+        <image class="search-icon" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/search_icon.png"></image>
+        <text class="px24 color666">请输入商品名称</text>
+    </view>
+</view>
+<view class="container">
+    <view class="menu">
+        <scroll-view bindscrolltolower="bindScrollTolowerTap" class="scroll-view_H" enableBackToTop="{{true}}" scrollY="true" style="height:{{cheight}}rpx;">
+            <view bindtap="bindSwitchClassTap" class="bigcate {{item.class}}" data-index="{{index}}" wx:for="{{dataset}}" wx:key="unique">
+        {{item.name}}
+      </view>
+        </scroll-view>
+    </view>
+    <view class="list">
+        <scroll-view class="scroll-view_H" enableBackToTop="{{true}}" scrollIntoView="{{toview}}" scrollWithAnimation="{{true}}" scrollY="true" style="height:{{cheight}}rpx;">
+            <view class="item" id="view{{index}}" wx:for="{{dataset}}" wx:key="unique">
+                <view class="row item-title spa ali-center">
+                    <text class="item-name">{{item.name}}</text>
+                </view>
+                <view bindtap="bindSmallClassTap" class="subitem" data-bid="{{items.sysId}}" data-sid="{{items.id}}" wx:for="{{item.sonItem}}" wx:for-item="items" wx:key="unique">
+                    <view wx:if="{{items.pic!=''}}">
+                        <view class="imgbox col ju-center ali-center">
+                            <image class="img" src="{{items.pic}}"></image>
+                        </view>
+                        <view class="name">{{items.name}}</view>
+                    </view>
+                    <view wx:if="{{items.pic==''}}">
+                        <view class="name2">{{items.name}}</view>
+                    </view>
+                </view>
+                <view class="clear"></view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

@@ -1,0 +1,25 @@
+function getClsPrice(memberPriceType) {
+    return (({
+        '15': 'sams',
+        '18': 'exclusive',
+        '23': 'fans',
+        '25': 'newer',
+        '201': 'plus',
+        '101': 'plus',
+    })[((nt_0 = (memberPriceType + ''), null == nt_0 ? undefined : 'number' === typeof nt_0 ? nt_0 : "" + nt_0))] || '')
+};
+
+function getMemPriceDesc(memberPriceType) {
+    return (({
+        '15': '山姆价',
+        '18': '专属价',
+        '23': '粉丝价',
+        '25': '新人价',
+        '201': '会员价',
+        '101': '会员价',
+    })[((nt_1 = (memberPriceType + ''), null == nt_1 ? undefined : 'number' === typeof nt_1 ? nt_1 : "" + nt_1))] || '')
+};
+module.exports = ({
+    getClsPrice: getClsPrice,
+    getMemPriceDesc: getMemPriceDesc,
+});

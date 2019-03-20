@@ -1,0 +1,166 @@
+<import src="/template/login/login.wxml"></import>
+<template is="login" data wx:if="{{isLogin}}"></template>
+<view class="container" wx:if="{{dataset.userid!=0}}">
+    <view class="head col  white">
+        <view class="row spa ali-center">
+            <view class="row" style="height:180rpx;">
+                <view class="col  spa">
+                    <image class="header-pic" src="{{dataset.pic}}"></image>
+                    <text class="user-name px26 " style="line-height:32rpx;height:32rpx;">ID:{{dataset.userid}}</text>
+                </view>
+                <view class="col spa">
+                    <view class="row ali-center label" style="padding-top:10rpx;">
+                        <text class="user-name px34 ovr">{{dataset.nickname}}</text>
+                        <view class="leave-btn px16">LV.{{dataset.usertypeName}}</view>
+                        <image class="certified" src="/images/certified.png" wx:if="{{isidentity==1}}"></image>
+                        <image class="certified" src="/images/uncertified.png" wx:if="{{isidentity==2}}"></image>
+                    </view>
+                    <view class="user-name px26 label row ali-center " style="max-width:480rpx;">
+                        <text class="ovr" style="max-width:350rpx;">我的推荐人:{{dataset.inviteMe||'无'}}</text>
+                    </view>
+                    <view class="row ali-center label" style="line-height:32rpx;height:32rpx;">
+                        <text class="user-name px26">邀请码:{{dataset.inviteCode}}</text>
+                        <text catchtap="setCopy" class="copy px26" data-codyId="{{dataset.inviteCode}}">复制</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="card col spa bods">
+        <view class="row spa ali-center">
+            <view class="col">
+                <view class="row ali-center jfwz">
+                    <image class="person-center-success" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/person_center_success.png"></image>
+                    <text class="px28 golden">可用数贝</text>
+                </view>
+                <text class="px56 golden">{{dataset.cashScore}}</text>
+            </view>
+            <view class="row spa ali-center integrl-card " style="width:350rpx;">
+                <view class="col text-center">
+                    <text class="px24 golden">即将到账</text>
+                    <text class="px28 bold golden">{{dataset.frozenScore}}</text>
+                </view>
+                <text class="line"></text>
+                <view class="col text-center">
+                    <text class="px24 golden">累计总数贝</text>
+                    <text class="px28 bold golden">{{dataset.totalScore}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="card-item col" style="margin:20rpx auto 20rpx">
+        <view bindtap="bindOrderTap" class="title row spa ali-center" data-tab="0">
+            <text class="px28 bold black">我的订单</text>
+            <view class="row ali-center ju-center">
+                <text class="px24 color80">全部订单</text>
+                <image class="next-icon1" src="/images/next_icon.png"></image>
+            </view>
+        </view>
+        <view class="row ali-center spa" style="padding:0 20rpx;">
+            <view class="row spa ali-center card-item-item">
+                <view bindtap="bindOrderTap" class="col ju-center card-box" data-tab="1">
+                    <image class="list-icon" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/list-icon1.png"></image>
+                    <text class="text-center px22">待付款</text>
+                </view>
+            </view>
+            <view bindtap="bindOrderTap" class="row spa ali-center card-item-item" data-tab="2">
+                <view class="col ju-center card-box">
+                    <image class="list-icon" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/list-icon2.png"></image>
+                    <text class="text-center px22 ">待发货</text>
+                </view>
+            </view>
+            <view bindtap="bindOrderTap" class="row spa ali-center card-item-item" data-tab="3">
+                <view class="col ju-center card-box">
+                    <image class="list-icon" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/list-icon3.png"></image>
+                    <text class="text-center px22 ">已发货</text>
+                </view>
+            </view>
+            <view bindtap="bindOrderTap" class="row spa ali-center card-item-item" data-tab="4">
+                <view class="col ju-center card-box">
+                    <image class="list-icon" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/list-icon4.png"></image>
+                    <text class="text-center px22 ">已完成</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="card-item col">
+        <view bindtap="goIdentity" class="title row spa ali-center">
+            <view class="row ali-center ju-center">
+                <image class="list-icon2" src="/images/identityIcon.png"></image>
+                <text class="px28 black">身份认证</text>
+            </view>
+            <view class="row ali-center ju-center">
+                <image class="next-icon" src="/images/center_fff.png"></image>
+            </view>
+        </view>
+        <view bindtap="gotoColList" class="title row spa ali-center">
+            <view class="row ali-center ju-center">
+                <image class="list-icon2" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/list_tab_ads_col.png"></image>
+                <text class="px28 black">我的收藏</text>
+            </view>
+            <view class="row ali-center ju-center">
+                <image class="next-icon" src="/images/center_fff.png"></image>
+            </view>
+        </view>
+        <view bindtap="gotoAdsList" class="title row spa ali-center">
+            <view class="row ali-center ju-center">
+                <image class="list-icon2" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/list_tab_ads.png"></image>
+                <text class="px28 black">收货地址</text>
+            </view>
+            <view class="row ali-center ju-center">
+                <image class="next-icon" src="/images/center_fff.png"></image>
+            </view>
+        </view>
+        <view bindtap="bindFootTab" class="title row spa ali-center">
+            <view class="row ali-center ju-center">
+                <image class="list-icon2" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/list_tab4.png"></image>
+                <text class="px28 black">我的足迹</text>
+            </view>
+            <view class="row ali-center ju-center">
+                <image class="next-icon" src="/images/center_fff.png"></image>
+            </view>
+        </view>
+        <view bindtap="rank" class="title row spa ali-center">
+            <view class="row ali-center ju-center">
+                <image class="list-icon2" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/my_rank.png"></image>
+                <text class="px28 black">服务市场销售排行榜</text>
+            </view>
+            <view class="row ali-center ju-center">
+                <image class="next-icon" src="/images/center_fff.png"></image>
+            </view>
+        </view>
+    </view>
+    <view bindtap="goWbv" class="card-item col">
+        <view class="title row spa ali-center" style="position: relative;">
+            <view class="row ali-center ju-center">
+                <image class="list-icon2" src="https://grtimg.oss-cn-beijing.aliyuncs.com/temp/list_tab5.png"></image>
+                <text class="px28 black">我的客服</text>
+            </view>
+            <view class="row ali-center ju-center">
+                <image class="next-icon" src="/images/center_fff.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>
+<view catchtouchmove="myCatchTouch" class="cover_box" wx:if="{{coverStatus}}">
+    <view class="cover_content">
+        <view class="cover_in">
+            <image bindtap="closeCover" class="cover_close" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_close.png"></image>
+            <image class="cover_bg" mode="widthFix" src=" https://grtimg.oss-cn-beijing.aliyuncs.com/temp/vip_tipBg.png"></image>
+            <view class="cover_top col ali-center">
+                <view class="cover_top_txt cover_top_txt1  row ali-center ju-center ">
+                    <text class="cover_top_line1"></text>
+                    <text style="padding:0rpx 10rpx;">去认证</text>
+                    <text class="cover_top_line2"></text>
+                </view>
+            </view>
+            <view class="cover_tip_txt">数贝兑换前请先进行身份认证呦~</view>
+            <view class="cover_btn_box row jcsa ali-center">
+                <view bindtap="goIdentity" class="cover_in_btn1">确定</view>
+            </view>
+        </view>
+    </view>
+</view>

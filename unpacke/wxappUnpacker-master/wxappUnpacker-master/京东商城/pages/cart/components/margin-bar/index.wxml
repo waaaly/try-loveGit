@@ -1,0 +1,6 @@
+<view bind:tap="onTapBar" class="margin-bar {{floating?'fixed':''}}" hidden="{{hide||!showBar||barClosed}}">
+    <text catch:tap="closeBar" class="margin-bar_icon"></text>
+    <text class="margin-bar_text" wx:if="{{!floating}}">购物车中有{{count}}件降价商品，点击查看商品</text>
+    <text class="margin-bar_text" wx:elif="{{floating&&index<count}}">继续点击，查看下一个降价商品({{index}}/{{count}})</text>
+    <text class="margin-bar_text" wx:elif="{{floating&&index==count}}">已为您定位到最后一个降价商品</text>
+</view>

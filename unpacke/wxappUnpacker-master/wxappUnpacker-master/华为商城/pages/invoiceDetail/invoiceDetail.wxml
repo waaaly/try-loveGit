@@ -1,0 +1,65 @@
+<view class="invoice-details bg_white">
+    <view class="invoice-type">
+        <view>发票类型：专用发票</view>
+    </view>
+    <view class="invoice-form-area">
+        <view class="invoice-form-row">
+            <view class="o-subject">
+                <text>1.公司信息</text>
+            </view>
+            <view class="o-subhead">
+                <text>单位名称：{{companyName}}</text>
+            </view>
+            <view class="o-subhead">
+                <text>纳税人识别码：{{taxpayerIdentityNum}}</text>
+            </view>
+            <view class="o-subhead">
+                <text>注册地址：{{registeredAddress}}</text>
+            </view>
+            <view class="o-subhead">
+                <text>注册电话：<text>{{registeredTelephone}}</text>
+                </text>
+            </view>
+            <view class="o-subhead">
+                <text>开户银行：{{depositBank}}</text>
+            </view>
+            <view class="o-subhead">
+                <text>银行账户：{{bankAccount}}</text>
+            </view>
+        </view>
+        <view class="invoice-form-row">
+            <view class="o-subject">
+                <text>2.收票人信息</text>
+            </view>
+            <view class="o-subhead">
+                <text>姓名：{{consignee}}</text>
+            </view>
+            <view class="o-subhead">
+                <text>手机：<text>{{mobile}}</text>
+                </text>
+            </view>
+            <view class="o-subhead">
+                <text>地址：{{province}}{{city}}{{district}}{{street}}{{address}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="invoice-form-area">
+        <view class="invoice-form-row">
+            <view class="o-subject">
+                <text>3.物流详情   {{deliveryName}}   {{deliveryNumber}}</text>
+            </view>
+            <view class="invoice-track">
+                <view class="track-item system-follow-l" wx:for="{{orderLogisticsLogList}}" wx:key="key">
+                    <view class="track-process system-fixed-l">
+                        <text>{{timea}}</text>
+                        <view>{{timeb}}</view>
+                    </view>
+                    <view class="track-process-cont system-flex-r">
+                        <text class="invoice-track-tip"></text>
+                        <view>{{item.logDescription}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

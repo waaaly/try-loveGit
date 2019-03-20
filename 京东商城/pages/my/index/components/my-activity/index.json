@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "my-activity-msg": "../my-activity-msg/index"
+    }
+}

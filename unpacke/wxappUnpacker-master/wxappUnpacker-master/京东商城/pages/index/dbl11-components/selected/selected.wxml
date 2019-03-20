@@ -1,0 +1,28 @@
+<view class="selected" hidden="{{hideModule}}" style="{{config.bg}}">
+    <view bindtap="gotoUrl" class="selected-banner" data-url="{{config.newUserHref}}" wx:if="{{isnew}}">
+        <image class="selected-banner__image" src="{{config.newUserBg}}"></image>
+        <view catchtap="gotoUrl" class="selected-banner__btn" data-url="{{config.leftEnter}}" hidden="{{!config.leftText}}"></view>
+    </view>
+    <view class="selected-header" wx:else>
+        <view class="selected-header__title" style="{{config.centerColor}}">{{config.centerText}}</view>
+        <view bindtap="gotoUrl" class="selected-header__btn selected-header__btn-left" data-url="{{config.leftEnter}}" hidden="{{!config.leftText}}" style="{{config.leftColor}}">{{config.leftText}}</view>
+        <view bindtap="gotoUrl" class="selected-header__btn selected-header__btn-right" data-url="{{config.rightEnter}}" hidden="{{!config.rightText}}" style="{{config.rightColor}}">{{config.rightText}}</view>
+    </view>
+    <swiper autoplay="{{autoplay}}" bindchange="onSwiperChange" circular="{{true}}" class="selected-swiper" indicatorDots="{{false}}" interval="3000">
+        <swiper-item class="selected-swiper__item" wx:for="{{entries}}">
+            <view class="selected-list">
+                <view bindtap="gotoUrl" class="selected-list__item" data-url="{{listItem.url}}" wx:for="{{item}}" wx:for-index="listIndex" wx:for-item="listItem" wx:key="{{ listItem.title }}">
+                    <image class="selected-list__image" src="{{listItem.image}}"></image>
+                    <view class="selected-list__info" style="{{config.itemBg}}">
+                        <view class="selected-list__title" style="{{config.itemColor}}">{{listItem.title}}</view>
+                        <view class="selected-list__des" hidden="{{!listItem.des}}" style="{{config.itemBg}}">{{listItem.des}}</view>
+                    </view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="selected-dot" wx:if="{{entries.length>1}}">
+        <view class="selected-dot__item selected-dot__item--{{index==swiperIdx?'cur':''}}" wx:for="{{entries}}"></view>
+    </view>
+    <view bindtap="gotoUrl" class="selected-btn" data-url="{{config.mainEventHref}}" style="{{config.mainColor}}">{{config.mainText}}</view>
+</view>

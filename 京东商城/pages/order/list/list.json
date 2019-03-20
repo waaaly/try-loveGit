@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "我的订单",
+    "usingComponents": {
+        "the-tabs": "./components/theTabs/theTabs",
+        "search-bar": "./components/searchBar/searchBar",
+        "order-list": "./components/orderList/orderList",
+        "switch-account": "./components/switchAccount/switchAccount",
+        "return-top": "./components/returnTop/index",
+        "quick-nav": "../../../components/quick-nav-wqvue/index",
+        "wq-dialog": "../oCommon/components/wqDialog/wqDialog",
+        "pay-box": "../oCommon/components/payBox/pay-box",
+        "out-sale-dialog": "../oCommon/components/outSaleDialog/outSaleDialog"
+    }
+}

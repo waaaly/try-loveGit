@@ -1,0 +1,20 @@
+<search-bar bind:showToast="onShowToast" loadOthers="{{loadOthers}}" refreshTime="{{refreshTime}}" scrollTop="{{scrollTop}}" shakePayload="{{shakePayload}}"></search-bar>
+<carousel advConfig="{{carouselAdcConfig}}" bind:componentLoad="onComponentLoad" birthConfig="{{birthConfig}}" refreshTime="{{refreshTime}}" saleConfig="{{walletSaleConfig}}"></carousel>
+<sale-official-promote bind:componentLoad="onComponentLoad" refreshTime="{{refreshTime}}" saleConfig="{{saleConfig}}" showIndex="1"></sale-official-promote>
+<sale-climax-promote bind:componentLoad="onComponentLoad" refreshTime="{{refreshTime}}" saleConfig="{{saleConfig}}" showIndex="1"></sale-climax-promote>
+<sale-official-timeline bind:componentLoad="onComponentLoad" indexName="wallet" refreshTime="{{refreshTime}}" saleConfig="{{saleConfig}}" walletSaleConfig="{{walletSaleConfig}}"></sale-official-timeline>
+<c-channel bind:componentLoad="onComponentLoad" birthConfig="{{birthConfig}}" channelConfig="{{channelConfig}}" refreshTime="{{refreshTime}}"></c-channel>
+<banner bannerConfig="{{bannerConfig}}"></banner>
+<task freshmenData="{{freshmenData}}" loadOthers="{{loadOthers}}" refreshTime="{{refreshTime}}" saleConfig="{{walletSaleConfig}}" showTime="{{showTime}}"></task>
+<column columnConfig="{{columnConfig}}" freshmenData="{{freshmenData}}" refreshTime="{{refreshTime}}" saleConfig="{{walletSaleConfig}}"></column>
+<sale-wallet-climax-selected bind:componentLoad="onComponentLoad" refreshTime="{{refreshTime}}" saleConfig="{{saleConfig}}"></sale-wallet-climax-selected>
+<grid-selected bg="{{gridSelectedBg}}" bind:componentLoad="onComponentLoad" gridSelectedConfig="{{gridSelectedConfig}}" refreshTime="{{refreshTime}}"></grid-selected>
+<sale-wallet-official-selected bind:componentLoad="onComponentLoad" refreshTime="{{refreshTime}}" saleConfig="{{saleConfig}}" walletSaleConfig="{{walletSaleConfig}}"></sale-wallet-official-selected>
+<curtain advConfig="{{curtainAdvConfig}}" bind:curtainFinish="onCurtainFinish" curtainConfig="{{curtainConfig}}" freshmenData="{{freshmenData}}" saleCurtainConfig="{{saleCurtainConfig}}" showTime="{{showTime}}"></curtain>
+<view hidden="{{hideFloating}}">
+    <floating floatingConfig="{{floatingConfig}}"></floating>
+</view>
+<tab-selected bind:idleTimeArrived="onIdle" config="{{itemConfig}}" reachBottom="{{reachBottom}}" refreshTime="{{refreshTime}}" saleConfig="{{walletSaleConfig}}" scrollTop="{{scrollTop}}" wx:if="{{loadOthers}}"></tab-selected>
+<bottom-tips showTime="{{showTime}}"></bottom-tips>
+<view bindtap="back2top" class="back2top" wx:if="{{scrollTop>1000}}"></view>
+<shake bind:shakeAnimLoaded="onShakeAnimLoaded" config="{{yaoYiYaoConfig}}" curtainFinish="{{curtainFinish}}"></shake>

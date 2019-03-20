@@ -1,0 +1,43 @@
+<template name="tplFreigth">
+    <view bindtap="msgbox:close" class="close" wx:if="{{closable}}"></view>
+    <view class="title" wx:if="{{title}}">{{title}}</view>
+    <view class="content">
+        <view class="row">{{content}}</view>
+        <block wx:if="{{list.length}}">
+            <view class="row area">不同配送区域运费不同，{{area}}当前运费标准为：</view>
+            <view class="row list">
+                <view class="list_item" wx:for="{{list}}" wx:key="rangeSt">
+                    <view class="threshold">满{{item.rangeSt}}元</view>
+                    <view class="freeshipping">{{item.fWeight}}kg以内免运费</view>
+                </view>
+            </view>
+        </block>
+        <view class="row">
+             注：收取运费以实际结算时为准，<view bind:tap="msgbox:gotoViewRule" class="rule">点击查此运费详细规则</view>
+        </view>
+    </view>
+    <view class="contents" wx:if="{{!content.length}}">
+        <view class="content" wx:for="{{content}}" wx:key="*this">{{item}}</view>
+    </view>
+</template>
+<template name="tplInfo">
+    <view class="title" wx:if="{{title}}">{{title}}</view>
+    <text class="small" selectable="true" wx:if="{{content}}">{{content}}</text>
+</template>
+<template name="tplShow">
+    <view bindtap="msgbox:close" class="close" wx:if="{{closable}}"></view>
+    <view class="icon {{icon}}" wx:if="{{icon}}"></view>
+    <view class="title" wx:if="{{title}}">{{title}}</view>
+    <text class="small" wx:if="{{content}}">{{content}}</text>
+</template>
+<template name="tplMessageBox">
+    <view class="mod_msgbox" wx:if="{{msgbox.show}}">
+        <view bind:tap="{{msgbox.modal?'msgbox:emptyFn':'msgbox:close'}}" bind:touchmove="msgbox:noscroll" class="mod_msgbox_mask"></view>
+        <view class="mod_msgbox_wrap {{msgbox.wrapCls}}">
+            <template is="{{msgbox.tpl}}" data="{{...msgbox}}"></template>
+            <view class="btns">
+                <view bindtap="{{item.name}}" class="btn {{item.cls}}" style="{{item.style}}" wx:for="{{msgbox.buttons}}" wx:key="*this">{{item.text}}</view>
+            </view>
+        </view>
+    </view>
+</template>

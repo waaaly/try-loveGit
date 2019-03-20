@@ -1,0 +1,120 @@
+page {
+    border-top: 0;
+}
+
+.spell-nav .rma-nav-tab view text {
+    width: 117rpx;
+    font-size: 29rpx;
+}
+
+.spell-tab-box .rma-mate-list {
+    padding: 0;
+}
+
+.spell-tab-box .rma-mate-list .rma-mate-header {
+    padding-left: 34rpx;
+}
+
+.spell-tab-box .rma-mate-list .rma-mate-header .order-number {
+    font-size: 23rpx;
+}
+
+.spell-tab-box .rma-mate-list .rma-mate-header .order-status {
+    font-size: 23rpx;
+    padding-right: 34rpx;
+}
+
+.spell-tab-box .rma-mate-list .rma-good-item {
+    margin-left: 34rpx;
+    padding-right: 34rpx;
+}
+
+.spell-tab-box .rma-good-item .good-panels .good-name {
+    font-size: 31rpx;
+    height: 82rpx;
+    line-height: 1.5;
+    margin-top: 8rpx;
+}
+
+.spell-tab-box .rma-good-item .good-panels .good-img {
+    padding: 19rpx 13rpx 23rpx 0;
+}
+
+.spell-tab-box .rma-good-item .spell-name view {
+    display: inline-block;
+}
+
+.spell-tab-box .rma-good-item .spell-name .good-spell {
+    display: inline-block;
+    padding: 0 5rpx;
+    margin-right: 20rpx;
+    min-width: 94rpx;
+    height: 34rpx;
+    line-height: 1.4;
+    text-align: center;
+    font-size: 23rpx;
+    vertical-align: middle;
+    border-radius: 6rpx;
+}
+
+.spell-tab-box .rma-good-item .spell-name .good-price {
+    font-size: 29rpx;
+    vertical-align: middle;
+}
+
+.rma-mate-footer {
+    padding: 0 34rpx;
+    justify-content: flex-end;
+}
+
+.rma-mate-footer .rma-mate-cont .price {
+    font-size: 25rpx;
+}
+
+.rma-mate-footer .rma-mate-cont .price .price-text {
+    margin-left: 0;
+}
+
+.system-empty .system-empty-tip {
+    font-size: 29rpx;
+}
+
+.system-empty .system-empty-btn.system-empty-new {
+    padding-top: 19rpx;
+}
+
+.system-empty .system-empty-btn.system-empty-new .wxButton-style-3 {
+    background: transparent;
+}
+
+.system-empty .system-empty-btn .wxButton-style-3 {
+    height: 62rpx;
+    padding: 0 33rpx;
+    border: 3rpx solid #999;
+    color: #666;
+    font-size: 27rpx;
+}
+
+.spell-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    background: #fff;
+    text-align: center;
+    font-size: 31rpx;
+    color: #666;
+    z-index: 99;
+}
+
+.spell-fixed text {
+    vertical-align: middle;
+}
+
+.spell-fixed image {
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: middle;
+}

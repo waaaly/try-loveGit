@@ -1,0 +1,32 @@
+<import src="/template/wetoast/wetoast.wxml"></import>
+<template is="wetoast" data="{{...__wetoast__}}"></template>
+<form bindsubmit="bindSubmitTap">
+    <view class="identification">
+        <view class="rule">为了您的资金安全,银行卡信息提交后不可修改.如需修改请联系工作人员</view>
+        <view class="databox">
+            <view class="item">
+                <view class="caption">开户姓名</view>
+                <input class="input" disabled="disabled" name="realname" placeholder="开户姓名" value="{{dataset.realname}}" wx:if="{{dataset.realname!=''}}"></input>
+                <input class="input" name="realname" placeholder="开户姓名" value="{{dataset.realname}}" wx:if="{{dataset.realname==''}}"></input>
+            </view>
+            <view class="item">
+                <view class="caption">银行卡号</view>
+                <input class="input" disabled="disabled" name="cardnumber" placeholder="银行卡号" type="number" value="{{dataset.cardnumber}}" wx:if="{{dataset.cardnumber!=''}}"></input>
+                <input class="input" name="cardnumber" placeholder="银行卡号" type="number" value="{{dataset.cardnumber}}" wx:if="{{dataset.cardnumber==''}}"></input>
+            </view>
+            <view class="item">
+                <view class="caption">开户行</view>
+                <input class="input" disabled="disabled" name="cardbank" placeholder="开户行" value="{{dataset.cardbank}}" wx:if="{{dataset.cardbank!=''}}"></input>
+                <input class="input" name="cardbank" placeholder="开户行" value="{{dataset.cardbank}}" wx:if="{{dataset.cardbank==''}}"></input>
+            </view>
+        </view>
+        <view class="button">
+            <button class="button1" formType="submit"> {{submitText}} </button>
+            <view bindtap="bindInToTap" class="button2">返回</view>
+            <view class="clear"></view>
+        </view>
+    </view>
+</form>
+<view class="loadlayer" wx:if="{{loadlayer}}">
+    <image src="/images/loadding.gif"></image>
+</view>

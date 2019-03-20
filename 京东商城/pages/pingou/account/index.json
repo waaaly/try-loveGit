@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "我的",
+    "usingComponents": {
+        "user-info": "./components/userInfo/index",
+        "order-info": "./components/orderInfo/index",
+        "property-tab": "./components/propertyTab/index",
+        "record-tab": "./components/recordTab/index",
+        "activity-tab": "./components/activityTab/index",
+        "bottom-rec-area": "./components/bottom-rec-area/index",
+        "PingBottom": "../components/ping_bottom/ping_bottom",
+        "guidance": "./components/guidance/index"
+    }
+}

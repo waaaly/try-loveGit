@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "京东拼购",
+    "usingComponents": {
+        "gift": "./components/gift/index",
+        "rule": "./components/rule/index",
+        "floor": "./components/floor/index",
+        "error": "./components/error/index",
+        "myprize": "./components/myprize/index",
+        "pop": "./components/pop/index"
+    }
+}

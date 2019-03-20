@@ -1,0 +1,116 @@
+<template name="tagsList">
+    <view class="list__item-tags-list">
+        <view bindtap="gotoH5" class="list__item-tag" data-url="{{tag.url}}" wx:for="{{item}}" wx:for-item="tag">
+            {{tag.tagName}}
+        </view>
+    </view>
+</template>
+<view class="tab-view" id="tab">
+    <view class="tab tab--{{tabModifier}}">
+        <view class="tab__wrap tab__wrap--{{tabModifier}}">
+            <view bindtap="switchTab" class="tab__item {{index==curIdx?'tab__item--cur':''}}" data-index="{{index}}" data-rd="{{item.tabRd}}" wx:for="{{entries}}" wx:key="tabId">
+                <view class="tab__en">{{item.name.en}}</view>
+                <view class="tab__ch">{{item.name.ch}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="desc" wx:if="{{titles[curIdx].tabDesc}}">“ {{titles[curIdx].tabDesc}} ”</view>
+    <view class="list" hidden="{{topIndex!=curIdx}}" wx:for="{{entries}}" wx:for-index="topIndex" wx:for-item="topItem" wx:key="tabId">
+        <block wx:if="{{topItem.tabId=='BRAND'}}" wx:for="{{topItem.list}}" wx:key="uid">
+            <view class="list__item" wx:if="{{item.name}}">
+                <image class="saleIcon" hidden="{{!item.hasSaleIcon}}" src="{{saleIcon}}"></image>
+                <view bindtap="gotoItem" class="up" data-index="{{index}}" data-rd="137889.21.2">
+                    <view class="up__main">
+                        <view class="up__content line2">
+                            <view class="flag" wx:if="{{item.ziying}}">自营</view>{{item.name}}</view>
+                        <view class="up__info">
+                            <view class="up__count" wx:if="{{item.ispingou==1&&item.needcount>0}}">{{item.needcount}}人拼</view>
+                            <view class="up__price">
+                                <text class="up__price-s">￥</text>{{price(item.price).int}}<text class="up__price-s">.{{price(item.price).decimal}}</text>
+                            </view>
+                            <view class="tag" wx:if="{{day(item.day)}}">{{day(item.day)}}</view>
+                            <view class="tag" wx:if="{{item.priceOff}}">直降{{item.priceOff}}元</view>
+                            <block wx:if="{{coupons[item.sku]}}">
+                                <view class="tag" wx:for="{{coupons[item.sku]}}">券{{item.quota}}-{{item.discount}}</view>
+                            </block>
+                            <view class="tag" wx:if="{{item.promotion}}">{{item.promotion}}</view>
+                        </view>
+                        <view class="up__refprice" wx:if="{{item.ispingou==1&&item.refprice}}">单买价：￥{{item.refprice}}</view>
+                    </view>
+                    <image class="up__image" lazyLoad="true" mode="aspectFit" src="{{item.image}}"></image>
+                </view>
+                <view bindtap="gotoH5" class="down" data-url="https://wqshop.jd.com/mshop/gethomepage?venderId={{item.venderId}}&ptag=137889.21.16" wx:if="{{shopInfo[item.venderId].logo}}">
+                    <image class="down__brand-logo" lazyLoad="true" mode="aspectFit" src="{{shopInfo[item.venderId].logo}}"></image>
+                    <view class="down__content line1">{{shopInfo[item.venderId].name}}</view>
+                </view>
+            </view>
+            <template is="tagsList" data="{{item:item}}" wx:elif="{{item.length}}"></template>
+        </block>
+        <block wx:if="{{topItem.tabId=='QUALITY'}}" wx:for="{{topItem.list}}" wx:key="uid">
+            <view class="list__item" wx:if="{{item.name}}">
+                <image class="saleIcon" hidden="{{!item.hasSaleIcon}}" src="{{saleIcon}}"></image>
+                <view bindtap="gotoItem" class="up" data-index="{{index}}" data-rd="137889.22.2">
+                    <view class="up__main">
+                        <view class="up__content line2">
+                            <view class="flag" wx:if="{{item.ziying}}">自营</view>{{item.name}}</view>
+                        <view class="up__info">
+                            <view class="up__count" wx:if="{{item.ispingou==1&&item.needcount>0}}">{{item.needcount}}人拼</view>
+                            <view class="up__price">
+                                <text class="up__price-s">￥</text>{{price(item.price).int}}<text class="up__price-s">.{{price(item.price).decimal}}</text>
+                            </view>
+                            <view class="tag" wx:if="{{feedList[item.sku]&&feedList[item.sku].followers!=0}}">{{feedList[item.sku].followers}}人已跟随购买</view>
+                            <view class="tag" wx:if="{{reviewRate[item.sku]}}">{{reviewRate[item.sku]}}%好评</view>
+                        </view>
+                        <view class="up__refprice" wx:if="{{item.ispingou==1&&item.refprice}}">单买价：￥{{item.refprice}}</view>
+                    </view>
+                    <image class="up__image" lazyLoad="true" mode="aspectFit" src="{{item.image}}"></image>
+                </view>
+                <view bindtap="gotoH5" class="down" data-url="https://wqs.jd.com/xcxgwq/detail.html?shareid={{feedList[item.sku].shareId}}&ptag=137889.22.16" wx:if="{{feedList[item.sku]}}">
+                    <view class="down__portrait">
+                        <image class="down__image" lazyLoad="true" mode="aspectFill" src="{{feedList[item.sku].portrait}}"></image>
+                    </view>
+                    <view class="down__content line2">
+                        <text class="down__nickname">{{feedList[item.sku].nickname}}：</text>{{feedList[item.sku].content}}
+                        </view>
+                </view>
+            </view>
+            <template is="tagsList" data="{{item:item}}" wx:elif="{{item.length}}"></template>
+        </block>
+        <block wx:if="{{topItem.tabId=='HOT'}}" wx:for="{{topItem.list}}" wx:key="uid">
+            <view class="list__item" wx:if="{{item.name}}">
+                <image class="saleIcon" hidden="{{!item.hasSaleIcon}}" src="{{saleIcon}}"></image>
+                <view bindtap="gotoItem" class="up" data-index="{{index}}" data-rd="137889.23.2">
+                    <view class="up__main">
+                        <view class="up__content line2">
+                            <view class="flag" wx:if="{{item.ziying}}">自营</view>{{item.name}}</view>
+                        <view class="up__info">
+                            <view class="up__count" wx:if="{{item.ispingou==1&&item.needcount>0}}">{{item.needcount}}人拼</view>
+                            <view class="up__price">
+                                <text class="up__price-s">￥</text>{{price(item.price).int}}<text class="up__price-s">.{{price(item.price).decimal}}</text>
+                            </view>
+                            <view class="tag" wx:if="{{item.priceOff}}">直降{{item.priceOff}}元</view>
+                            <block wx:if="{{coupons[item.sku]}}">
+                                <view class="tag" wx:for="{{coupons[item.sku]}}">券{{item.quota}}-{{item.discount}}</view>
+                            </block>
+                            <view class="tag" wx:if="{{item.promotion}}">{{item.promotion}}</view>
+                        </view>
+                        <view class="up__refprice" wx:if="{{item.ispingou==1&&item.refprice}}">单买价：￥{{item.refprice}}</view>
+                    </view>
+                    <image class="up__image" lazyLoad="true" mode="aspectFit" src="{{item.image}}"></image>
+                </view>
+            </view>
+            <template is="tagsList" data="{{item:item}}" wx:elif="{{item.length}}"></template>
+        </block>
+        <view bindtap="loadData" class="error_retry" wx:if="{{errorMsg}}">
+            <text>{{errorMsg}}</text>
+            <button>刷新</button>
+        </view>
+        <view class="xloading" wx:elif="{{entries[curIdx].hasMore}}"></view>
+    </view>
+</view>
+<wxs module="price" src="../../../../common/wxs/price.wxs" />
+<wxs module="day">
+module.exports = (function(day) {
+    return (day == '0' ? '' : ('近' + day + '天最低价'))
+});
+</wxs>

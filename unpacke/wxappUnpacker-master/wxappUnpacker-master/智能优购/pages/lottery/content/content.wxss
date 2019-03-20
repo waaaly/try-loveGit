@@ -1,0 +1,552 @@
+.top {
+    background-color: white;
+}
+
+.topimg {
+    position: relative;
+}
+
+.headimg {
+    width: 750rpx;
+    height: 750rpx;
+}
+
+.headimg2 {
+    position: absolute;
+    left: 0rpx;
+    top: 0rpx;
+    z-index: 3;
+    width: 750rpx;
+    height: 750rpx;
+}
+
+.headpar {
+    background-color: white;
+    padding: 20rpx;
+    position: relative;
+}
+
+.headpar .cost {
+    font-size: 30px;
+    color: #F4241A;
+}
+
+.headpar .cost .choujiang {
+    position: absolute;
+    top: 30rpx;
+    margin-left: 10rpx;
+    background-color: #F4241A;
+    border-radius: 13rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    padding: 0rpx 20rpx 0rpx 20rpx;
+}
+
+.headpar .cost span {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #444444;
+    padding-left: 20rpx;
+}
+
+.headpar .num {
+    color: #444444;
+    font-size: 14px;
+}
+
+.headpar .title {
+    font-size: 16px;
+    padding-top: 20rpx;
+}
+
+.headpar .share {
+    right: 20rpx;
+    width: 70rpx;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    top: 25rpx;
+}
+
+.headpar .sharebox {
+    position: relative;
+}
+
+.headpar .sharebutton {
+    position: absolute;
+    z-index: 9;
+    top: 0rpx;
+    left: 0rpx;
+    opacity: 0;
+}
+
+.headpar .share image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.headpar .share .sharetitle {
+    font-size: 12px;
+    height: 20rpx;
+    line-height: 20rpx;
+    color: #444444;
+}
+
+.rule {
+    border-top: 1px solid #f1f1f1;
+    padding: 20rpx;
+    line-height: 50rpx;
+    font-size: 14px;
+}
+
+.rule .title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.rule .caption {
+    font-size: 14px;
+    color: #F4241A;
+}
+
+.open {
+    margin-top: 10px;
+    background-color: white;
+    padding: 20rpx 20rpx 0rpx 20rpx;
+}
+
+.open .title {
+    font-size: 14px;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 20rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.open .title .more {
+    float: right;
+    font-size: 13px;
+}
+
+.open .item {
+    padding-top: 13rpx;
+    height: 115rpx;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.open .item .it1 {
+    float: left;
+    width: 120rpx;
+}
+
+.open .item .userimg {
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 50%;
+}
+
+.open .item .it2 {
+    float: left;
+    width: 230rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 15px;
+    overflow: hidden;
+}
+
+.open .item .it3 {
+    float: left;
+    width: 230rpx;
+}
+
+.open .item .it3 span {
+    color: #F4241A;
+}
+
+.open .item .it3 view {
+    padding-top: 5rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 14px;
+}
+
+.open .item .it3 .time {
+    font-size: 12px;
+    line-height: 20rpx;
+}
+
+.open .item .it4 {
+    position: relative;
+    float: left;
+    width: 90rpx;
+}
+
+.open .item .it4 view {
+    margin-top: 15rpx;
+    font-size: 14px;
+    text-align: center;
+    height: 60rpx;
+    line-height: 60rpx;
+    width: 120rpx;
+    background-color: #F4241A;
+    color: white;
+    border-radius: 10rpx;
+}
+
+.intro {
+    margin-top: 10px;
+    background-color: white;
+    padding: 20rpx;
+}
+
+.intro .title {
+    font-size: 16px;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 20rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.intro .text {
+    font-size: 14px;
+    line-height: 50rpx;
+    padding-top: 20rpx;
+}
+
+.shop {
+    background-color: white;
+    margin-top: 10px;
+    padding: 30rpx;
+    height: 150rpx;
+}
+
+.shop .s1 {
+    float: left;
+    width: 120rpx;
+}
+
+.shop .s2 {
+    float: left;
+    width: 340rpx;
+    padding-top: 5rpx;
+}
+
+.shop .s2 .shopname {
+    font-size: 15px;
+}
+
+.shop .s2 .sellnums {
+    font-size: 12px;
+}
+
+.shop .s2 .sellnums span {
+    color: #F4241A;
+    padding: 5rpx;
+}
+
+.shop .s3 {
+    margin-top: 7rpx;
+    float: left;
+    background-color: white;
+    border: 1px solid #f1f1f1;
+    padding: 15rpx;
+    border-radius: 10rpx;
+    width: 220rpx;
+    text-align: center;
+}
+
+.shop image {
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 50%;
+}
+
+.content {
+    margin-top: 10px;
+    background-color: white;
+    padding: 20rpx;
+}
+
+.content .title {
+    font-size: 16px;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 20rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.intro text {
+    font-size: 14px;
+    line-height: 40rpx;
+}
+
+.recommend {
+    margin-top: 10px;
+    background-color: white;
+}
+
+.recommend .title {
+    font-size: 16px;
+    margin-right: 20rpx;
+    padding-top: 20rpx;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 10rpx;
+    margin-left: 20rpx;
+}
+
+.recommend .item {
+    float: left;
+    width: 240rpx;
+    padding: 20rpx 0rpx 10rpx 20rpx;
+}
+
+.recommend .subtitle {
+    font-size: 12px;
+    height: 70rpx;
+    line-height: 35rpx;
+    overflow: hidden;
+}
+
+.recommend image {
+    width: 225rpx;
+    height: 225rpx;
+    border-radius: 10rpx;
+}
+
+.recommend .cost {
+    font-size: 14px;
+    color: #F4241A;
+}
+
+.recommend .cost span {
+    font-size: 12px;
+    padding-right: 10rpx;
+    color: #444444;
+    float: right;
+    text-decoration: line-through;
+}
+
+.zhanwei {
+    height: 100rpx;
+}
+
+.bottom {
+    position: fixed;
+    z-index: 10;
+    bottom: 0rpx;
+    width: 100%;
+    height: 100rpx;
+    background-color: white;
+    text-align: center;
+}
+
+.bottom .bword {
+    line-height: 9px;
+    font-size: 11px;
+}
+
+.bottom .word1 {
+    line-height: 30px;
+    font-size: 14px;
+    height: 30rpx;
+}
+
+.bottom .word2 {
+    line-height: 35px;
+    font-size: 14px;
+    height: 35rpx;
+}
+
+.bottom .b1 {
+    width: 15%;
+    float: left;
+    font-size: 12px;
+    color: #444444;
+    text-align: center;
+    border-right: 1px solid #f1f1f1;
+    height: 100rpx;
+    border-top: 1px solid #f1f1f1;
+}
+
+.bottom .b1 image {
+    width: 50rpx;
+    height: 50rpx;
+    padding-top: 5rpx;
+}
+
+.bottom .b2 {
+    position: relative;
+    width: 15%;
+    float: left;
+    font-size: 12px;
+    color: #444444;
+    text-align: center;
+    border-right: 1px solid #f1f1f1;
+    height: 100rpx;
+    border-top: 1px solid #f1f1f1;
+}
+
+.bottom .b2 .contact {
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+    z-index: 10;
+    opacity: 0;
+}
+
+.bottom .b2 image {
+    width: 50rpx;
+    height: 50rpx;
+    padding-top: 5rpx;
+}
+
+.bottom .b3 {
+    position: relative;
+    width: 30%;
+    float: left;
+    background-color: #EC828A;
+    text-align: center;
+    color: white;
+    height: 100rpx;
+}
+
+.bottom .b4 {
+    position: relative;
+    width: 40%;
+    float: left;
+    background-color: #F4241A;
+    text-align: center;
+    color: white;
+    height: 100rpx;
+}
+
+.bottom .buyfalse {
+    background-color: #cccccc;
+}
+
+.help {
+    opacity: 0.7;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    z-index: 300;
+}
+
+.help .title {
+    margin-bottom: 30px;
+    margin-top: 130px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.help .cap {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+.listtitle {
+    padding: 0px 10px 0px 10px;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom: 3rpx solid #e8e8e8;
+    font-size: 16px;
+}
+
+.listtitle .listbox {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.listtitle .right {
+    float: right;
+    font-size: 12px;
+}
+
+.listbox .close {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    height: 90rpx;
+    width: 100%;
+    line-height: 90rpx;
+    border-top: 3rpx solid #e8e8e8;
+    background-color: white;
+}
+
+.scroll-view_H {
+    height: 620rpx;
+    width: 100%;
+}
+
+.listbox .fontgreen1 {
+    color: #4A7C37;
+}
+
+.listbox .item {
+    line-height: 80rpx;
+    height: 80rpx;
+    border-bottom: 2rpx solid #F1F1F1;
+    font-size: 14px;
+}
+
+.listbox .item .name {
+    float: left;
+    width: 630rpx;
+    padding-left: 20rpx;
+    overflow: hidden;
+    font-size: 14px;
+    height: 40px;
+}
+
+.listbox .item .time {
+    float: left;
+    width: 100rpx;
+    padding-left: 40rpx;
+    font-size: 12px;
+    color: #848484;
+}
+
+.listbox .item .tryhear {
+    font-size: 12px;
+    color: limegreen;
+    padding-left: 5px;
+}
+
+.listbox .frozen .icon {
+    float: left;
+    width: 80rpx;
+}
+
+.listbox .frozen .icon image {
+    vertical-align: middle;
+    margin-left: 10px;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40px;
+}
+
+.listbox .frozen .name {
+    color: #d8d8d8;
+}
+
+.listbox .frozen .time {
+    color: #d8d8d8;
+}
+
+.ended {
+    height: 150rpx;
+    width: 100%;
+    line-height: 150rpx;
+    text-align: center;
+    color: #848484;
+}
