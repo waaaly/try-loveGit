@@ -1,0 +1,32 @@
+<template name="rating-block">
+    <view class="rate-item grid" wx:for="{{ratingList}}">
+        <image class="rate-avatar" src="{{imageHash['default_avatar']}}"></image>
+        <view class="rate-item-right cell cell-fill">
+            <view class="rate-meta grid grid-between">
+                <text class="rate-username"> {{item.username}}</text>
+                <text class="rate-time rate-color-secondary"> {{item.rated_at}}</text>
+            </view>
+            <view class="grid">
+                <template is="rating-star" data="{{imageHash:imageHash,rating:item.rating}}"></template>
+                <view class="rate-time-human rate-color-secondary">
+          {{item.time_spent_desc}}
+        </view>
+            </view>
+            <view class="rate-content">
+        {{item.rating_text}}
+      </view>
+            <view class="rate-reply" wx:if="{{item.reply.content}}">
+        商家回复：{{item.reply.content}}
+      </view>
+            <view class="rate-image-list">
+                <image class="rate-image" src="{{itm.image_url}}" wx:if="{{itm.image_url}}" wx:for="{{item.order_images}}" wx:for-item="itm" wx:key="order_id"></image>
+            </view>
+            <view class="rate-food-list grid">
+                <view class="rate-food text-ellipsis" wx:for="{{item.food_ratings}}" wx:for-item="itm" wx:key="order_id">
+          {{itm.rate_name}}
+        </view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="../rating-star/index.wxml"></import>

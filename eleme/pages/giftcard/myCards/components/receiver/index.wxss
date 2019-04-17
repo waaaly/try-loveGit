@@ -1,0 +1,144 @@
+.card-receive .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50rpx;
+    font-size: 44rpx;
+    color: #333;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.card-receive .title {
+    display: flex;
+    align-items: center;
+    padding: 70rpx 0 24rpx 0;
+    font-weight: bold;
+}
+
+.card-receive .title .username {
+    margin-right: 10rpx;
+    max-width: 240rpx;
+}
+
+.card-receive .card-navigator {
+    display: flex;
+    padding-bottom: 24rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.card-receive .card-navigator navigator {
+    padding-right: 28rpx;
+    color: #2396ff;
+    background: url(//fuss10.elemecdn.com/3/54/91eb80b4743b012b61576c37d4363png.png) no-repeat;
+    background-size: 24rpx 24rpx;
+    background-position: center right;
+}
+
+.card-receive .card-face {
+    width: 622rpx;
+    height: 373rpx;
+    border-radius: 8rpx;
+    box-shadow: 0 0 24px 0 rgba(0,0,0,0.2);
+}
+
+.card-receive .card-description {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50rpx;
+    font-size: 26rpx;
+    text-align: center;
+    color: #999;
+}
+
+.card-receive .card-timeout {
+    margin-top: 50rpx;
+    padding-left: 38rpx;
+    font-size: 26rpx;
+    color: #666;
+    background: url(//fuss10.elemecdn.com/c/c5/91cc5c894080db397162e75f0103cpng.png) no-repeat;
+    background-size: 28rpx 28rpx;
+    background-position: center left;
+}
+
+.card-receive .card-information {
+    display: flex;
+    padding: 50rpx 58rpx 300rpx;
+}
+
+.card-receive .card-information>image {
+    flex: 0 0 64rpx;
+    width: 64rpx;
+    height: 64rpx;
+    border-radius: 4rpx;
+}
+
+.card-receive .card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-left: 30rpx;
+}
+
+.card-receive .card-content text.card-username {
+    margin-bottom: 20rpx;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.card-receive .card-content text {
+    font-size: 30rpx;
+    color: #666;
+}
+
+.card-receive .fixed-wrapper {
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+    bottom: 30rpx;
+}
+
+.card-receive .btn-wrapper {
+    background-color: #fff;
+    box-shadow: 0 -3px 6px 0 rgba(153,153,153,0.15);
+}
+
+.card-receive .receive-btn {
+    width: 690rpx;
+    height: 88rpx;
+    margin: 30rpx 30rpx 0;
+    border-radius: 4rpx;
+    background-color: #2396ff;
+    text-align: center;
+    line-height: 88rpx;
+    font-size: 32rpx;
+    border: none;
+    color: #fff;
+}
+
+.card-receive .receive-btn.receive-btn-primary {
+    border: 1rpx solid #2396ff;
+    color: #2396ff;
+    background-color: #ffffff;
+}
+
+.card-receive .receive-btn.disabled {
+    background: #ddd;
+}
+
+.card-receive .receive-btn .receive-btn-disabled {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-receive .receive-btn .username {
+    max-width: 300rpx;
+}
+
+.overflow-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

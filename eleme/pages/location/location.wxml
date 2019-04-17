@@ -1,0 +1,56 @@
+<import src="/pages/address/templates/location-address-item-content/index.wxml"></import>
+<view class="location-address">
+    <form bindsubmit="searchAddress">
+        <view class="search">
+            <view bindtap="choseCity" class="search-city">
+        {{cityName||'选择城市'}}
+      </view>
+            <image class="icon-pulldown" src="{{imageHash['pulldown']}}"></image>
+            <input bindinput="bindKeyInput" class="search-input" placeholder="小区/写字楼/学校等" placeholderClass="search-input-placeholder"></input>
+        </view>
+    </form>
+    <view class="address">
+        <view class="current-address">
+            <view class="title">当前地址</view>
+            <view class="content">
+                <text class="location-position" wx:if="{{locating===true}}">正在定位中</text>
+                <text class="location-position" wx:if="{{locatedFail===true}}">没能获取到您的定位</text>
+                <text catchtap="useLocatedPlace" class="location-position" wx:if="{{locatedFail===false&&poi!==null}}">{{poi.name}}</text>
+                <view bindtap="reLocate" class="relocate-position">
+                    <image class="button" src="{{imageHash['address_map_button']}}"></image>
+                    <text id="reLocate">重新定位</text>
+                </view>
+            </view>
+        </view>
+        <view class="shipping-address" wx:if="{{locations.length>0}}">
+            <view class="title">搜索地址</view>
+            <view bindtap="selectAddress" class="content" data-address="{{item.address}}" data-geohash="{{item.geohash}}" data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}" data-name="{{item.name}}" wx:for="{{locations}}" wx:key="{{item.id}}">
+                <view class="content-info">
+                    <text>{{item.name}}</text>
+                </view>
+                <view class="content-address">
+                    <view>{{item.address}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="user-address address-list" wx:if="{{showUserAddresses&&userAddresses.length}}">
+            <view class="title">收货地址</view>
+            <block wx:for="{{userAddresses}}" wx:for-item="addr" wx:key="id">
+                <view class="divider" wx:if="{{index}}"></view>
+                <view bindtap="selectUserAddress" class="address-item" data-address="{{addr.address+addr.address_detail}}" data-geohash="{{addr.st_geohash}}" data-latitude="{{addr.latitude}}" data-longitude="{{addr.longitude}}" data-name="{{addr.address}}">
+                    <template is="location-address-item-content" data="{{addr:addr}}"></template>
+                </view>
+            </block>
+        </view>
+        <view class="nearby-address" wx:if="{{locatedFail===false&&nearbyAddress.length>0&&locations.length===0}}">
+            <view class="title">附近地址</view>
+            <view class="items">
+                <view bindtap="selectAddress" class="item" data-address="{{item.address}}" data-geohash="{{item.geohash}}" data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}" data-name="{{item.name}}" wx:for="{{nearbyAddress}}" wx:key="id">{{item.name}}</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="showAddAddress" class="add" wx:if="{{showAdd}}">
+        <image class="button" src="{{imageHash['add']}}"></image>
+        <text>新增地址</text>
+    </view>
+</view>

@@ -1,0 +1,5 @@
+<template name="shop-footer">
+    <view class="shop-footer grid grid-center grid-middle">
+    商家正在休息，暂不接单
+  </view>
+</template>

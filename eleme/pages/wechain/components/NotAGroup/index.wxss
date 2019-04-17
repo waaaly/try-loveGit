@@ -1,0 +1,56 @@
+.container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.content {
+    position: relative;
+    width: 686rpx;
+    height: 450rpx;
+    background: url(https://fuss10.elemecdn.com/4/c8/af0486873abe03ce2b5eb1b9c12c8svg.svg) 0 0 no-repeat;
+    background-size: 100% auto;
+    text-align: center;
+    color: #fff;
+    padding-top: 100rpx;
+}
+
+.title1 {
+    font-size: 56rpx;
+    font-weight: 300;
+    margin-bottom: 10rpx;
+    color: #ffefcb;
+}
+
+.title2 {
+    font-size: 46rpx;
+    margin-bottom: 60rpx;
+    color: #ffefcb;
+}
+
+.close {
+    position: absolute;
+    width: 24rpx;
+    height: 24rpx;
+    right: 32rpx;
+    top: 32rpx;
+}
+
+.button {
+    width: 400rpx;
+    line-height: 84rpx;
+    border-radius: 42rpx;
+    background-color: #fde0a9;
+    font-size: 32rpx;
+    color: #5d4a1d;
+}
+
+.button::after {
+    border: none;
+}

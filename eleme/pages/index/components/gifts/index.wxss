@@ -1,0 +1,158 @@
+.gifts {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 101;
+    width: 640rpx;
+}
+
+.gifts .newUser {
+    width: 640rpx;
+    height: 680rpx;
+}
+
+.top .text {
+    font-size: 36rpx;
+    color: #ffe976;
+    display: block;
+    text-align: center;
+}
+
+.bottom {
+    z-index: 1000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 640rpx;
+    height: 258rpx;
+}
+
+.top {
+    position: relative;
+    text-align: center;
+    height: 740rpx;
+}
+
+.shape {
+    position: relative;
+    z-index: 1;
+    height: 366rpx;
+    border-radius: 100% 100% 0 0;
+    background-color: #ef144a;
+}
+
+.gifts .container {
+    margin-top: -183rpx;
+    position: relative;
+    height: 560rpx;
+    z-index: 2;
+    background-color: #ef144a;
+    border-radius: 20rpx;
+    background-image: linear-gradient(to bottom,transparent 180rpx,#ef144a 180rpx,#dd0533);
+}
+
+.shape .title {
+    margin-top: 90rpx;
+    margin-bottom: 30rpx;
+    width: 462rpx;
+    height: 70rpx;
+}
+
+.hongbao {
+    margin: 20rpx auto;
+    width: 560rpx;
+    height: 135rpx;
+    display: flex;
+    background: url(https://fuss10.elemecdn.com/e/cb/6d1832686fa0eb9278d507d002cbepng.png) 0 0 no-repeat;
+    background-size: cover;
+}
+
+.hongbaoLeft {
+    margin: 23rpx 0;
+    width: 155rpx;
+    line-height: 1;
+    text-align: center;
+    border-right: 1rpx dashed #ddd;
+}
+
+.hongbaoLeft .amount {
+    display: block;
+    color: #ff0034;
+    font-size: 56rpx;
+}
+
+.hongbaoLeft .amountMin {
+    font-size: 24rpx;
+}
+
+.hongbaoLeft .fengniao {
+    border: none;
+    padding: 2rpx 10rpx;
+    font-size: 20rpx;
+    border-radius: 4rpx;
+    color: #fff;
+    background-color: #2395ff;
+}
+
+.hongbaoLeft .description {
+    display: block;
+    color: #666;
+    font-size: 20rpx;
+}
+
+.hongbaoRight {
+    margin-left: 30rpx;
+    text-align: left;
+    flex: 1;
+    line-height: 1;
+}
+
+.hongbaoRight .name {
+    margin-top: 34rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    margin-bottom: 25rpx;
+    display: block;
+}
+
+.hongbaoRight .description {
+    display: block;
+    font-size: 20rpx;
+    color: #666;
+}
+
+.layer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.8);
+    z-index: 100;
+}
+
+.useButton {
+    position: absolute;
+    left: 40rpx;
+    bottom: 40rpx;
+    width: 560rpx;
+    line-height: 88rpx;
+    font-size: 32rpx;
+    color: #c41a33;
+    border-radius: 8rpx;
+    background-image: linear-gradient(to bottom,#fdef69,#f2b737);
+    z-index: 1001;
+    text-align: center;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0rpx;
+    right: 0;
+    transform: translateY(-110%);
+    margin-left: -32rpx;
+    width: 64rpx;
+    height: 64rpx;
+}

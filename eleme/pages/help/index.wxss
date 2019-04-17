@@ -1,0 +1,68 @@
+.service {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #eee;
+    font-family: Helvetica Neue,Tahoma,Arial,PingFangSC-Regular,Hiragino Sans GB,Microsoft Yahei,sans-serif;
+}
+
+.service-header {
+    display: flex;
+    background: #fff;
+    text-align: center;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.service-online {
+    flex: 1;
+    color: #666;
+    font-size: 26rpx;
+    padding: 80rpx 0 40rpx 0;
+}
+
+.service-online:first-child {
+    border-right: 1rpx solid #ddd;
+}
+
+.service-problem {
+    font-size: 26rpx;
+    padding: 20rpx 0 8rpx 10rpx;
+    border-bottom: 1rpx solid #ddd;
+    background-color: #eee;
+    opacity: 0.5;
+}
+
+.service-list {
+    font-size: 26rpx;
+    background-color: #fff;
+}
+
+.service-question {
+    margin: 0;
+    font-size: 26rpx;
+    line-height: 26rpx;
+    vertical-align: middle;
+    position: relative;
+    padding: 28rpx 0 20rpx 20rpx;
+    border-bottom: 1rpx solid #ddd;
+    opacity: 0.7;
+}
+
+.service-nav {
+    position: absolute;
+    right: 0;
+    bottom: 16rpx;
+    border-color: #fff;
+}
+
+.arrow {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.4em;
+    height: 0.4em;
+    border-right: 0.2em solid #eee;
+    border-top: 0.2em solid #eee;
+    transform: rotate(45deg);
+    padding: 0;
+    margin: 14rpx 26rpx 14rpx 14rpx;
+}

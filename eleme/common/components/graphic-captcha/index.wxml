@@ -1,0 +1,13 @@
+<view class="graphic-captcha">
+    <view class="captcha-dialog">
+        <view class="header">请填写图形验证码</view>
+        <view class="dialog">
+            <input bindinput="bindGraphicCaptchaInput" maxlength="4"></input>
+            <image bindtap="change" mode="aspectFit" src="{{imageUrl}}"></image>
+        </view>
+        <view class="actions">
+            <button bindtap="cancel" hoverClass="none" type="default">取消</button>
+            <button bindtap="confirm" hoverClass="none" type="default">确认</button>
+        </view>
+    </view>
+</view>

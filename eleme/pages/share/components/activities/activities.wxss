@@ -1,0 +1,46 @@
+.activities {
+    position: relative;
+    margin: 0 30rpx;
+    font-size: 22rpx;
+}
+
+.more {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.more>image {
+    margin-top: 10rpx;
+    margin-left: 7rpx;
+    width: 13rpx;
+    height: 8rpx;
+    vertical-align: top;
+}
+
+.more.showAll>image {
+    transform: rotate(180deg);
+}
+
+.activity {
+    margin-top: 12rpx;
+    width: 500rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.activity+.activity {
+    width: 600rpx;
+}
+
+.icon {
+    display: inline-block;
+    font-weight: bold;
+    color: #fff;
+    font-size: 20rpx;
+    padding: 6rpx 4rpx 4rpx;
+    line-height: 20rpx;
+    margin-right: 12rpx;
+    border-radius: 4rpx;
+}

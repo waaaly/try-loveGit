@@ -1,0 +1,20 @@
+<template name="restaurant-filter-header">
+    <view class="restaurant-filter-header">
+        <view class="header">
+            <view catchtap="toggleSort" class="header-column {{sortData.isBold?'black-bold':''}} {{showSort?'header-column-active':''}}">{{sortData.sortName}}</view>
+            <view catchtap="searchBySort" class="{{query[item.key]&&query[item.key]===item.value?'black-bold':''}}" data-key="{{item.key}}" data-name="{{item.name}}" data-value="{{item.value}}" wx:for="{{outside.outside_sort_filter}}" wx:key="{{ item.value }}">
+        {{item.name}}
+      </view>
+            <view catchtap="toggleFilter" class="{{showFilterBarBold?'black-bold':''}} {{showFilter?'header-column-active':''}}">
+                <text>筛选</text>
+                <image src="{{imageHash['icon_filter_blue']}}" wx:if="{{showFilter}}"></image>
+                <image src="{{imageHash['icon_filter']}}" wx:else></image>
+            </view>
+        </view>
+        <view catchtap="searchBySort" class="spring-festival, {{query[outside.outside_buttons[0].key]&&'black-bold'}}" data-key="{{outside.outside_buttons[0].key}}" data-value="{{outside.outside_buttons[0].value}}" wx:if="{{outside.outside_buttons&&outside.outside_buttons.length}}">
+            <text>筛选</text>
+            <image class="spring-img" src="/common/components/restaurant-filter-header/spring.png"></image>
+            <text>商家</text>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,12 @@
+.sweet-icon {
+    margin-right: 10rpx;
+}
+
+.sweet-icon-default {
+    background: #fff;
+    color: #0097ff;
+}
+
+.sweet-icon:last-child {
+    margin-right: 0;
+}

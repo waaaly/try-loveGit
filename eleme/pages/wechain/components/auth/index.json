@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "ad": "/pages/wechain/components/ad/index",
+        "auth": "/common/components/auth/index"
+    }
+}

@@ -1,0 +1,27 @@
+.modal {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.content {
+    padding: 0 32rpx 90rpx;
+    width: 600rpx;
+    border-radius: 8rpx;
+    background-color: #fff;
+    font-size: 26rpx;
+}
+
+.content .title {
+    margin: 48rpx 0 32rpx;
+    font-size: 36rpx;
+    font-weight: bold;
+    text-align: center;
+}

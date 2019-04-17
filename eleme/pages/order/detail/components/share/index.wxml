@@ -1,0 +1,20 @@
+<template name="share-menu">
+    <view>
+        <view class="share-menu">
+            <view bindtap="hideShareMenu">
+                <image class="close-icon" src="/pages/order/assets/close.png"></image>
+            </view>
+            <view class="share-menu-title">
+                <image class="share-image" src="{{hongbaoShare.icon}}"></image>
+                <text class="share-text">{{hongbaoShare.title}}</text>
+            </view>
+            <view class="share-list">
+                <button bindtap="openPopShare" class="share-btn" openType="share">
+                    <image class="wechat-icon" src="/pages/order/assets/icon_wechat.svg"></image>
+                    <text>微信</text>
+                </button>
+            </view>
+        </view>
+        <view class="share-backdrop"></view>
+    </view>
+</template>

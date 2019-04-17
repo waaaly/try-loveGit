@@ -1,0 +1,15 @@
+<template name="cartButton">
+    <view class="cell cell-fill grid grid-right grid-middle" wx:if="{{item.stock>=item.min_purchase}}">
+        <image catchtap="rmFromCart" class="item-ctrl item-ctrl-rm" data-entity="{{item}}" data-is-in-menu="{{true}}" src="../components/shop-icon/sp_shop_delete.png" wx:if="{{foodsAddedToCart[item.item_id].quantity>0}}"></image>
+        <view class="item-quantity" wx:if="{{foodsAddedToCart[item.item_id].quantity>0}}">
+      {{foodsAddedToCart[item.item_id].quantity}}
+    </view>
+        <view catchtap="showSpecModal" class="item-spec-btn {{!isShopAvaiable?'item-ctrl-disabled':''}}" data-entity="{{item}}" data-type="item-ctrl" wx:if="{{item.specifications.length||item.attrs.length}}">
+      {{isInFoodModal&&!foodsAddedToCart[item.item_id].quantity?'加入购物车':'选规格'}}
+    </view>
+        <image catchtap="addToCart" class="item-ctrl item-ctrl-add" data-entity="{{item}}" src="{{isShopAvaiable?'../components/shop-icon/sp_shop_add.png':'../components/shop-icon/sp_shop_add_disable.png'}}" wx:elif="{{!isInFoodModal||foodsAddedToCart[item.item_id].quantity}}"></image>
+        <view catchtap="addToCart" class="item-spec-btn {{!isShopAvaiable?'item-ctrl-disabled':''}}" data-entity="{{item}}" data-type="item-ctrl" wx:else>加入购物车
+    </view>
+    </view>
+    <view class="cell cell-fill grid grid-right grid-middle stock-null" wx:else>已售完</view>
+</template>

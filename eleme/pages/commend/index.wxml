@@ -1,0 +1,71 @@
+<import src="/common/components/loading-component/component.wxml"></import>
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<view class="commend" wx:if="{{loaded}}">
+    <view class="header">
+        <image class="header-image" src="{{images['header']}}"></image>
+        <navigator hoverClass="none" url="/pages/commend/rules/index">规则 ></navigator>
+    </view>
+    <view class="invite-block">
+        <rich-text nodes="{{inviteMsg}}"></rich-text>
+        <view class="hongbao-block">
+            <view class="block-item" style="left:{{item[2]-10}}%" wx:for="{{bonusRules}}" wx:key="item.meet_count">
+                <view class="hongbao {{activityReferCount>=item[0]?'gotten-hongbao-background':'small-hongbao-background'}}">
+                    <view class="price">
+                        <text>{{item[1]}}</text>
+                        <text>元</text>
+                    </view>
+                    <view class="has-gotten" wx:if="{{activityReferCount>=item[0]}}">已领</view>
+                </view>
+                <view class="item-bottom {{activityReferCount>=item[0]?'red':''}}">{{item[0]}}人</view>
+                <view class="item-circle">
+                    <view class="circle-red"></view>
+                </view>
+                <view class="circle-yellow" wx:if="{{activityReferCount>=item[0]}}"></view>
+            </view>
+            <view class="progross-line">
+                <view class="inner-line"></view>
+                <view class="red-line" style="width: {{redBarWidth}}"></view>
+            </view>
+        </view>
+        <button class="invite-button" openType="share">立即邀请</button>
+    </view>
+    <view class="my-bonus">
+        <view class="bonus-title">我的收益</view>
+        <view class="my-bonus-content">
+            <view class="my-bonus-item" wx:for="{{myBonusData}}" wx:key="item.meet_count">
+                <rich-text nodes="{{item.title}}"></rich-text>
+                <view class="subtitle">{{item.subtitle}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="bonus-detail">
+        <view class="bonus-title">收益明细</view>
+        <view class="detail-list" wx:if="{{records.length}}">
+            <view class="detail-item" wx:for="{{records}}">
+                <block wx:if="{{item.meet_count}}">
+                    <image src="{{images.bonus_hongbao}}"></image>
+                    <view class="detail-content">推荐满{{item.meet_count}}人奖励</view>
+                    <rich-text class="small-gray" nodes="{{item.highlightMsg}}"></rich-text>
+                </block>
+                <block wx:else>
+                    <image src="{{item.avatar?item.avatar:images.default_avatar}}"></image>
+                    <view class="detail-content">
+                        <view class="person-info">
+                            <text wx:if="{{item.username}}">{{item.username}}</text>
+                            <text>{{item.phone}}</text>
+                        </view>
+                        <view class="small-gray">{{item.status_text}}</view>
+                    </view>
+                    <rich-text class="small-gray" nodes="{{item.highlightMsg}}"></rich-text>
+                </block>
+            </view>
+            <template is="loading-component" data="{{loadedAll:loadedAll}}"></template>
+        </view>
+        <view class="no-bonus" wx:else>
+            <image src="{{images.no_bonus}}"></image>
+            <view>没有奖励</view>
+            <view>你还没有邀请过好友哦</view>
+        </view>
+    </view>
+</view>
+<template is="fate-loading" data wx:else></template>

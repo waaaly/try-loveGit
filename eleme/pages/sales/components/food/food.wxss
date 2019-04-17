@@ -1,0 +1,144 @@
+.food-box {
+    background-color: #fff;
+    padding: 30rpx;
+    box-sizing: border-box;
+    margin: 10rpx 0;
+}
+
+.shop-image {
+    width: 22rpx;
+    height: 22rpx;
+    margin-right: 8rpx;
+}
+
+.food-top {
+    height: 54rpx;
+    flex-direction: row;
+    border-bottom: 1rpx dashed #ddd;
+    font-size: 22rpx;
+    color: #666;
+}
+
+.item-split {
+    color: #dddddd;
+}
+
+.food-bottom {
+    padding-top: 20rpx;
+    display: flex;
+}
+
+.food-image-box {
+    margin-right: 20rpx;
+    border-radius: 4rpx;
+    overflow: hidden;
+    width: 180rpx;
+    height: 180rpx;
+    position: relative;
+}
+
+.food-image {
+    width: 180rpx;
+    height: 180rpx;
+}
+
+.food-image-saleout {
+    position: absolute;
+    width: 180rpx;
+    height: 180rpx;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+}
+
+.food-detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.food-detail-name {
+    margin-top: 5rpx;
+    font-size: 32rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+    text-align: left;
+    padding-top: 5rpx;
+    padding-right: 40rpx;
+    overflow: hidden;
+    font-weight: 500;
+    line-height: 1.06;
+}
+
+.food-status-finish .food-detail-name {
+    color: #9b9b9b;
+}
+
+.food-detail-price {
+    flex: 1;
+    display: flex;
+}
+
+.food-progress-text {
+    font-size: 22rpx;
+    color: #ff3618;
+    margin-bottom: 8rpx;
+}
+
+.food-status-finish .food-progress-text {
+    color: #9b9b9b;
+}
+
+.food-price-small {
+    font-size: 24rpx;
+}
+
+.food-price-big {
+    font-size: 46rpx;
+}
+
+.food-price-new {
+    color: #ff3618;
+}
+
+.food-status-finish .food-price-new {
+    color: #9b9b9b;
+}
+
+.food-price-old {
+    font-size: 24rpx;
+    color: #999;
+    margin-left: 16rpx;
+    text-decoration: line-through;
+}
+
+.food-button {
+    height: 70rpx;
+    width: 160rpx;
+    border-width: 0;
+    font-size: 28rpx;
+    color: #fff;
+    padding: 0;
+    border-radius: 4rpx;
+    text-align: center;
+    line-height: 70rpx;
+}
+
+.food-status-inrest .food-button {
+    background-color: #bdbdbd;
+}
+
+.food-status-finish .food-button {
+    color: #f94843;
+    background-color: #fff;
+    border: 1px solid #f94843;
+}
+
+.food-status-enable .food-button {
+    background-image: linear-gradient(135deg,#ff5339,#ff3618);
+}

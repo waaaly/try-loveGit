@@ -1,0 +1,146 @@
+@import "templates/address-item-content/index.wxss";
+
+@import "templates/add-or-edit-address-panel/index.wxss";
+
+.address-list {
+    padding-bottom: 160rpx;
+}
+
+.address-list .address-item {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10rpx 30rpx;
+    padding-right: 0;
+    box-sizing: border-box;
+}
+
+.address-list .address-item image {
+    max-width: 40rpx;
+    max-height: 40rpx;
+    display: inline-block;
+}
+
+.address-list .address-item .edit {
+    padding: 30rpx;
+}
+
+.address-list .remark {
+    font-size: 28rpx;
+    margin: 10rpx 30rpx;
+    margin-top: 20rpx;
+}
+
+.address-list .add {
+    background: #fff;
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.address-list .add text {
+    color: #0097ff;
+    font-size: 32rpx;
+    font-weight: bolder;
+}
+
+.address-list .add .button {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+.divider {
+    height: 1rpx;
+    width: 30rpx;
+    background: #fff;
+    margin-top: 1rpx;
+}
+
+.no-address-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin-top: -40px;
+    background: #f5f5f5;
+}
+
+.checkout-address-form {
+    height: 100%;
+    background: #f5f5f5;
+    padding-top: 30rpx;
+    box-sizing: border-box;
+}
+
+.checkout-address-form text {
+    font-size: 30rpx;
+}
+
+.checkout-address-form .divider {
+    height: 1rpx;
+    width: 100%;
+    background: #eee;
+    margin-top: 0;
+}
+
+.checkout-address-form image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.operate .button {
+    flex: 1;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    border-radius: 4rpx;
+    color: #fff;
+    font-size: 32rpx;
+    margin: 0 10rpx;
+}
+
+.operate .button.remove {
+    background: rgb(217,100,76);
+}
+
+.operate .button.confirm {
+    background: rgb(76,217,100);
+}
+
+.select-address-page .address-item .status {
+    margin-right: 20rpx;
+}
+
+.select-address-page .address-item .edit {
+    padding: 30rpx;
+}
+
+.section-hint {
+    margin-left: 30rpx;
+    padding: 10rpx 0;
+}
+
+.section-hint text {
+    color: #666;
+    font-size: 28rpx;
+}
+
+.select-address-page .address-item.unavailable {
+    background: rgb(253,253,253);
+}
+
+.select-address-page .address-item.unavailable .main text {
+    color: #999;
+}
+
+.select-address-page .address-item.unavailable .main .address-tag {
+    color: #fff;
+}

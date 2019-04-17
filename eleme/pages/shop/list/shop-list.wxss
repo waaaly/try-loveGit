@@ -1,0 +1,29 @@
+@import "../../../common/components/restaurant-row/component.wxss";
+
+@import "../../../common/components/restaurant-filter-bars/component.wxss";
+
+view {
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100%;
+    background-color: rgb(245,245,245);
+    color: #666;
+}
+
+.header,.body,.footer {
+    background-color: #fff;
+}
+
+.body {
+    height: calc(100% - 80rpx);
+    background-color: rgb(245,245,245);
+}
+
+.bsd {
+    white-space: nowrap;
+    box-sizing: border-box;
+    height: 200rpx;
+    padding: 10rpx;
+}

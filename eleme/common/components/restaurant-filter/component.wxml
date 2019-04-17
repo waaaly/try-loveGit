@@ -1,0 +1,42 @@
+<template name="restaurant-filter">
+    <view class="filter">
+        <view class="filter-body">
+            <view class="filter-block" wx:if="{{deliveryMode.length}}">
+                <view class="filter-block-title gray">配送方式</view>
+                <view class="filter-block-wrapper">
+                    <view catchtap="chooseFilter" class="filter-block-item {{item.selected?'filter-block-item-active':''}}" data-index="{{index}}" data-tag="deliveryMode" wx:for="{{deliveryMode}}" wx:key="id">{{item.text}}</view>
+                </view>
+            </view>
+            <view class="filter-block" wx:if="{{averageCosts.length}}">
+                <view class="filter-block-title gray">人均消费</view>
+                <view class="filter-block-wrapper">
+                    <view catchtap="chooseFilter" class="filter-block-item {{item.selected?'filter-block-item-active':''}}" data-index="{{index}}" data-tag="averageCosts" wx:for="{{averageCosts}}" wx:key="id">{{item.description}}</view>
+                </view>
+            </view>
+            <view class="filter-block" wx:if="{{activityTypes.length}}">
+                <view class="filter-block-title gray">优惠活动</view>
+                <view class="filter-block-wrapper">
+                    <view catchtap="chooseFilter" class="filter-block-item {{item.selected?'filter-block-item-active':''}}" data-index="{{index}}" data-tag="activityTypes" wx:for="{{activityTypes}}" wx:key="id">
+                        <view class="filter-icon filter-icon-sp" hidden="{{item.selected}}" style="background-color: #{{item.icon_color}}">{{item.icon_name}}</view>{{item.name}}</view>
+                </view>
+            </view>
+            <view class="filter-block" wx:if="{{activityAttribute.length}}">
+                <view class="filter-block-title gray">商家属性(可多选)</view>
+                <view class="filter-block-wrapper">
+                    <view catchtap="chooseFilter" class="filter-block-item {{item.selected?'filter-block-item-active':''}}" data-index="{{index}}" data-tag="activityAttribute" wx:for="{{activityAttribute}}" wx:key="id">
+                        <view class="filter-icon" hidden="{{item.selected}}" style="color: #{{item.icon_color}}">{{item.icon_name}}</view>{{item.name}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="filter-footer">
+            <view catchtap="clearFilter" class="clear">清空</view>
+            <view catchtap="searchByFilter" class="confirm">
+                <view class="filter-circle" wx:if="{{fetching&&!isNewRetail}}">
+                    <text wx:for="{{[1,2,3]}}" wx:key="{{ item }}"></text>
+                </view>
+                <text class="{{shopAmount?'':'filter-disable'}}" wx:elif="{{!isNewRetail}}">查看{{shopAmount}}个商家</text>
+                <text wx:else>确认</text>
+            </view>
+        </view>
+    </view>
+</template>

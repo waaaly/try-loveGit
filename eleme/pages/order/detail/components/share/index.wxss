@@ -1,0 +1,70 @@
+.share-backdrop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    background: #000;
+    z-index: 2000;
+}
+
+.share-menu {
+    position: fixed;
+    background: #F5F5F5;
+    box-shadow: 0 -1px 5px 0 rgba(0,0,0,0.40);
+    text-align: center;
+    padding: 60rpx 0 70rpx;
+    box-sizing: border-box;
+    height: 340rpx;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2001;
+}
+
+.share-menu .close-icon {
+    height: 48rpx;
+    width: 48rpx;
+    position: absolute;
+    right: 16rpx;
+    top: 16rpx;
+}
+
+.share-menu-title .share-image {
+    width: 20rpx;
+    height: 22rpx;
+    vertical-align: middle;
+}
+
+.share-menu-title .share-text {
+    font-size: 14px;
+    color: #999999;
+    margin-left: 12rpx;
+    position: relative;
+    top: 2rpx;
+}
+
+.share-list {
+    margin: 32rpx 194rpx;
+    display: flex;
+    align-items: center;
+}
+
+.share-list .share-btn {
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 11px;
+    color: #666666;
+}
+
+.share-list .share-btn::after {
+    display: none;
+}
+
+.wechat-icon {
+    width: 100rpx;
+    height: 100rpx;
+    display: block;
+}

@@ -1,0 +1,23 @@
+.card-detail {
+    padding: 48rpx 40rpx 0 40rpx;
+}
+
+.row {
+    display: flex;
+    font-size: 32rpx;
+    align-items: flex-start;
+    margin-bottom: 22rpx;
+}
+
+.row .title {
+    color: #999;
+    margin-right: 40rpx;
+}
+
+.row .detail {
+    flex: 1;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}

@@ -1,0 +1,7 @@
+<template name="fate-loading">
+    <view class="loadingWrap {{block?'':'loadingFixed'}}">
+        <view class="loadingMain">
+            <view class="loadingIcon"></view>
+        </view>
+    </view>
+</template>

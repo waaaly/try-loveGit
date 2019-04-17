@@ -1,0 +1,24 @@
+.image-previewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1024;
+    background-color: #0097ff;
+}
+
+.image-previewer-title {
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    color: #fff;
+}
+
+.image-previewer-body {
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #000;
+    background-position: 50%;
+}

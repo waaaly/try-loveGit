@@ -1,0 +1,176 @@
+.basket-list-content {
+    padding-left: 30rpx;
+}
+
+.basket-list .restaurant-banner {
+    padding: 0 30rpx;
+    height: 82rpx;
+    border-bottom: 1rpx solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.restaurant-banner .icon {
+    margin-right: 12rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.basket-list .restaurant-banner .restaurant-name {
+    font-size: 28rpx;
+}
+
+.basket-list-content .foods {
+    padding: 10rpx 0;
+}
+
+.basket-list-content .list-item {
+    width: 100%;
+    min-height: 60rpx;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30rpx;
+    padding-left: 0;
+    font-size: 26rpx;
+    color: #666;
+    box-sizing: border-box;
+}
+
+.basket-list-content .list-item .list-item-head {
+    display: flex;
+    max-width: 500rpx;
+    align-items: center;
+}
+
+.basket-list-content text {
+    color: #666;
+}
+
+.basket-list-content .list-item.big {
+    height: 88rpx;
+}
+
+.basket-list-content .flex {
+    flex: 1;
+}
+
+.basket-list-content .list-item .icon {
+    margin-right: 12rpx;
+    display: inline-block;
+    border-radius: 4rpx;
+    width: 26rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    font-size: 20rpx;
+    text-align: center;
+    color: #fff;
+}
+
+.basket-list-content .list-item .quantity {
+    color: #ccc;
+    position: absolute;
+    right: 120rpx;
+}
+
+.basket-list-content .list-item .quantity::before {
+    color: #ccc;
+    font-size: 26rpx;
+    line-height: 26rpx;
+    content: '× ';
+}
+
+.basket-list-content .food {
+    margin-top: 24rpx;
+}
+
+.basket-list-content .food:first-child {
+    margin-top: 0;
+}
+
+.basket-list-content .list-item .food-name {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.basket-list-content .list-item .attrs-row {
+    font-size: 22rpx;
+    color: #999;
+}
+
+.basket-list-content .list-item .price {
+    color: #666;
+}
+
+.basket-list-content .list-item .disable-info {
+    color: #999;
+}
+
+.basket-list-content {
+}
+
+.basket-list-content .delivery-fee,.basket-list-content .hongbao,.basket-list-content .restaurant-coupon,.basket-list-content .activities,.basket-list-content .calc {
+    border-top: 1rpx solid #eee;
+}
+
+.basket-list-content .activities {
+    min-height: 88rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.basket-list-content .delivery-fee {
+    padding: 30rpx;
+    padding-left: 0;
+}
+
+.basket-list-content .delivery-fee .description {
+    color: #999;
+    font-size: 22rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+}
+
+.basket-list-content .delivery-fee .promotion {
+    color: #0097ff;
+    font-size: 22rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+}
+
+.basket-list-content .activities .discount {
+    color: rgb(256,96,0);
+}
+
+.basket-list-content .hongbao .price {
+    color: rgb(256,96,0);
+}
+
+.basket-list-content .hongbao .status-text {
+    color: #666;
+}
+
+.basket-list-content .restaurant-coupon .price {
+    color: rgb(256,96,0);
+}
+
+.basket-list-content .calc {
+    justify-content: flex-end;
+}
+
+.basket-list-content .calc .total {
+    margin-right: 20rpx;
+    color: #666;
+}
+
+.basket-list-content .calc .discount {
+    margin-right: 20rpx;
+    color: #666;
+}
+
+.basket-list-content .calc .remain {
+    font-weight: bolder;
+}

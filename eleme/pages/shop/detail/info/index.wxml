@@ -1,0 +1,66 @@
+<template name="shop-info">
+    <view class="shop-info-part shop-attr-list" wx:if="{{activities.length||supports.length}}">
+        <view class="title"> 活动与属性 </view>
+        <view class="shop-attr grid" wx:for="{{activities}}" wx:key="id">
+            <template is="badge" data="{{imageHash:imageHash,...item}}"></template>
+        </view>
+        <view class="shop-attr grid" wx:for="{{supports}}" wx:key="id">
+            <template is="badge" data="{{imageHash:imageHash,...item}}"></template>
+        </view>
+    </view>
+    <view class="shop-info-part" wx:if="{{albums&&albums.length&&!isNewRetail}}">
+        <view class="title"> 商家实景 </view>
+        <view class="shop-real-sight-list">
+            <image class="shop-real-sight-img" src="{{item.cover_image_hash}}" wx:for="{{albums}}"></image>
+        </view>
+    </view>
+    <view class="shop-info-part shop-identification" wx:if="{{identification}}">
+        <view class="title grid grid-middle">
+            <text class="shop-identification-notice"> 食品安全监督公示 </text>
+            <view class="cell cell-fill grid grid-right grid-middle"></view>
+        </view>
+        <view class="shop-identification-info grid grid-middle">
+            <image class="shop-identification-icon" src="{{results[identification.identificate_result-1].icon}}"></image>
+            <view>
+                <view class="shop-identification-result grid">
+                    <view> 检查结果：</view>
+                    <view style="color: {{results[identification.identificate_result-1].color}}">
+            {{results[identification.identificate_result-1].text}}
+          </view>
+                </view>
+                <view class="grid">
+                    <view> 检查日期：</view>
+                    <view class="shop-identification-date">
+            {{identification.identificate_date}}
+          </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="shop-info-part shop-identification">
+        <view class="title"> 商家信息 </view>
+        <view class="shop-basic-info">
+            <view class="shop-basic-info-item" wx:if="{{description}}">
+        {{description}}
+      </view>
+            <view class="shop-basic-info-item" wx:if="{{flavorText}}">
+        品类：{{flavorText}}
+      </view>
+            <view class="shop-basic-info-item">
+                <view> 地址：</view>
+                <view class="cell cell-fill"> {{address}} </view>
+            </view>
+            <view class="shop-basic-info-item"> 营业时间：{{opening_hours}}</view>
+            <view catchtap="doPreviewImage" class="shop-basic-info-item" id="businessLicense" wx:if="{{license.business_license_image}}">
+                <text>营业执照</text>
+                <text class="more"></text>
+            </view>
+            <view catchtap="doPreviewImage" class="shop-basic-info-item" id="serviceLicense" wx:if="{{license.catering_service_license_image}}">
+                <text>餐饮服务许可证</text>
+                <text class="more"></text>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="../../components/badge/index.wxml"></import>
+<import src="../shop-safe/index.wxml"></import>

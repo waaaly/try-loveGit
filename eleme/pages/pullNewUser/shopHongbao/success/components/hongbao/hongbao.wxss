@@ -1,0 +1,81 @@
+.hongbao-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 602rpx;
+    margin: auto;
+    padding: 24rpx 0;
+    border-left: 2rpx solid #e9d1a6;
+    border-right: 2rpx solid #e9d1a6;
+    border-bottom: 4rpx solid #d85940;
+    border-radius: 0 0 2rpx 2rpx;
+    background-color: #fff;
+}
+
+.hongbao-wave {
+    position: absolute;
+    top: -4rpx;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 12rpx;
+    z-index: 10;
+}
+
+.hongbao-money {
+    box-sizing: border-box;
+    width: 146rpx;
+    padding-left: 14rpx;
+    color: #d85940;
+    text-align: center;
+}
+
+.hongbao-logo {
+    margin-left: 14rpx;
+    width: 96rpx;
+    height: 28rpx;
+}
+
+.hongbao-unit {
+    font-size: 24rpx;
+}
+
+.hongbao-amount {
+    font-size: 56rpx;
+    font-weight: 600;
+}
+
+.hongbao-right {
+    box-sizing: border-box;
+    padding-top: 2rpx;
+    padding-left: 36rpx;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #8d592d;
+    font-size: 20rpx;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.hongbao-title {
+    font-size: 24rpx;
+}
+
+.hongbao-list-item {
+    position: relative;
+    padding-left: 5rpx;
+    opacity: .7;
+}
+
+.hongbao-list-item::before {
+    content: '';
+    position: absolute;
+    left: -10rpx;
+    top: 15rpx;
+    width: 5rpx;
+    height: 5rpx;
+    background-color: currentColor;
+    border-radius: 5rpx;
+}

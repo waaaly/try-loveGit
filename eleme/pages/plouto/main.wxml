@@ -1,0 +1,2 @@
+<import src="../../components/plouto$2d3af29e"></import>
+<template is="plouto$2d3af29e" data="{{...$root['0'],$root:$root}}"></template>

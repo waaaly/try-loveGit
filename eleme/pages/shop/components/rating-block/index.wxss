@@ -1,0 +1,94 @@
+.text-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.rate-item {
+    border-top: 1rpx solid rgb(238,238,238);
+    padding: 30rpx 0;
+    margin-left: 30rpx;
+}
+
+.rate-item-right {
+    padding-right: 30rpx;
+}
+
+.rate-avatar {
+    width: 56rpx;
+    height: 56rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.rate-meta {
+    line-height: 1.5;
+}
+
+.rate-username {
+    color: rgb(102,102,102);
+    font-size: 22rpx;
+}
+
+.rate-time {
+    float: right;
+    font-size: 20rpx;
+}
+
+.rate-time-human {
+    font-size: 22rpx;
+    margin-left: 10rpx;
+}
+
+.rate-content {
+    font-size: 28rpx;
+    line-height: 32rpx;
+    color: rgb(30,30,30);
+    margin: 14rpx 0;
+}
+
+.rate-reply {
+    margin: 10rpx 0;
+    padding: 10rpx 14rpx;
+    color: rgb(51,51,51);
+    background: rgb(243,243,243);
+    position: relative;
+    font-size: 24rpx;
+    line-height: 28rpx;
+    overflow-wrap: break-word;
+}
+
+.rate-reply::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 40rpx;
+    border-left: 5rpx solid transparent;
+    border-right: 5rpx solid transparent;
+    border-bottom: 5rpx solid rgb(243,243,243);
+}
+
+.rate-image-list {
+    margin-bottom: 10rpx;
+}
+
+.rate-image {
+    height: 180rpx;
+    width: 180rpx;
+    margin-left: 10rpx;
+}
+
+.rate-image:first-child {
+    margin-left: 0rpx;
+}
+
+.rate-food {
+    font-size: 22rpx;
+    max-width: 128rpx;
+    margin-right: 14rpx;
+    margin-bottom: 10rpx;
+    padding: 6rpx 18rpx;
+    border: 1rpx solid rgb(221,221,221);
+    border-radius: 6rpx;
+    color: rgb(153,153,153);
+}

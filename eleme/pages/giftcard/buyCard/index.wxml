@@ -1,0 +1,44 @@
+<view class="buy-card" style="padding-bottom: {{total.amount?'235rpx':'168rpx'}}">
+    <view class="head-card">
+        <image src="{{selectedCard.url}}"></image>
+    </view>
+    <view class="card-style">
+        <view class="title">选择卡面</view>
+        <scroll-view scrollX scrollIntoView="card-{{toView}}">
+            <image bindtap="chooseCard" data-index="{{index}}" id="card-{{index}}" src="{{item.url}}" wx:for="{{pictures}}"></image>
+        </scroll-view>
+    </view>
+    <view class="card-value">
+        <view class="title">
+            <text>选择面值</text>
+            <text class="coupon" wx:if="{{couponTitle}}">{{couponTitle}}</text>
+        </view>
+        <view class="list">
+            <view class="card-item {{item.amount?'actived':''}}" wx:for="{{skus}}">
+                <view class="item-left">
+                    <view>
+                        <text>{{item.face_value/100}}元</text>饿了么心意卡<image bindtap="goToCardDetail" data-id="{{item.id}}" src="../asserts/icon.svg"></image>
+                    </view>
+                    <view>{{item.description}}</view>
+                </view>
+                <view class="item-right">
+                    <view bindtap="plus" class="hot-area" data-index="{{index}}">
+                        <image src="../asserts/plus.svg"></image>
+                    </view>
+                    <block wx:if="{{item.amount}}">
+                        <text>{{item.amount}}</text>
+                        <view bindtap="minus" class="hot-area" data-index="{{index}}">
+                            <image src="../asserts/minus.svg"></image>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="purchase-box">
+        <view class="purchase-info" wx:if="{{total.amount}}">共{{total.amount}}份<text>￥</text>
+            <text class="total">{{total.price/100}}</text>
+        </view>
+        <view bindtap="buyCard" class="purchase-button {{total.amount?'white':''}}">购买</view>
+    </view>
+</view>

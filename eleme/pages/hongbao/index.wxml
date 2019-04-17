@@ -1,0 +1,7 @@
+<web-view src="{{hongbaoUrl}}" wx:if="{{canIUse}}"></web-view>
+<view class="center">
+    <view>
+        <view>对不起，当前微信版本不支持</view>
+        <view>升级到微信最新版本就能领红包啦~</view>
+    </view>
+</view>

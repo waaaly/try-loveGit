@@ -1,0 +1,119 @@
+@import "../../common/components/captcha/captcha.wxss";
+
+.auth {
+    text-align: center;
+}
+
+.logo {
+    width: 163rpx;
+    height: 166rpx;
+    margin: 110rpx 0 83rpx 0;
+}
+
+.auth-title {
+    font-size: 44rpx;
+    color: #333;
+    font-weight: 500;
+}
+
+.auth-subtitle {
+    font-size: 28rpx;
+    color: #666;
+    margin: 22rpx 0 65rpx 0;
+}
+
+.auth-btn {
+    width: 690rpx;
+    height: 88rpx;
+    background: #2396ff;
+    color: #fff;
+    font-size: 32rpx;
+}
+
+.btn-login {
+    margin: 0;
+    font-size: 32rpx;
+    color: #fff!important;
+}
+
+.btn-login::after {
+    border: 0;
+}
+
+.login-container {
+    height: 100%;
+    padding: 30rpx 0 0;
+    background-color: #f4f4f4;
+}
+
+.input-group {
+    padding-left: 30rpx;
+    height: 178rpx;
+    background-color: #fff;
+}
+
+.input-line {
+    display: flex;
+    padding: 15rpx 30rpx 15rpx 0;
+    height: 59rpx;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-line:first-child {
+    border-bottom: 1rpx solid #eee;
+}
+
+input {
+    width: 70%;
+    font-size: 32rpx;
+}
+
+.btn-inline {
+    height: 59rpx;
+    line-height: 59rpx;
+    font-size: 28rpx;
+    padding-left: 22rpx;
+    padding-right: 22rpx;
+}
+
+.btn-idle {
+    background-color: #0097FF;
+}
+
+.btn-sent {
+    background-color: #ccc;
+}
+
+.btn-retrieve {
+    background-color: #0097ff;
+}
+
+.tip {
+    margin: 15rpx 30rpx;
+    font-size: 22rpx;
+    color: #999;
+    line-height: 1.5;
+}
+
+.center {
+    text-align: center;
+}
+
+.btn-submit {
+    margin: 20rpx 30rpx;
+    background-color: #4CD964;
+}
+
+.disabled {
+    background-color: #ccc;
+}
+
+.navigator {
+    display: inline-block;
+    color: #0097FF;
+}
+
+.navigator-hover {
+    color: #0097FF;
+}

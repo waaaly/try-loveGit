@@ -1,0 +1,8 @@
+<template name="not-my-fault">
+    <view class="not-my-fault">
+        <image class="not-my-fault-img" mode="widthFix" src="{{img}}" wx:if="{{img}}"></image>
+        <view class="not-my-fault-msg">
+      {{msg}}
+    </view>
+    </view>
+</template>

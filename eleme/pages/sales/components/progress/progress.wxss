@@ -1,0 +1,17 @@
+.food-progress-bg {
+    width: 240rpx;
+    height: 12rpx;
+    border-radius: 12rpx;
+    background-color: #dddddd;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20rpx;
+}
+
+.food-progress-fg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-image: linear-gradient(98deg,#ff8355,#ff5757);
+}

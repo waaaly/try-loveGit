@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "graphic-captcha": "/common/components/graphic-captcha/index"
+    }
+}

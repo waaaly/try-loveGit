@@ -1,0 +1,38 @@
+.item-ctrl {
+    width: 44rpx;
+    height: 44rpx;
+    padding: 10rpx;
+}
+
+.item-spec-btn {
+    color: #fff;
+    background: #0097FF;
+    padding: 0 18rpx;
+    border-radius: 30rpx;
+    margin: 10rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    box-sizing: border-box;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+.item-ctrl-disabled {
+    background: rgb(221,221,221);
+    border-color: rgb(221,221,221);
+    color: #fff;
+}
+
+.item-quantity {
+    font-size: 24rpx;
+    color: rgb(51,51,51);
+    min-width: 30rpx;
+    text-align: center;
+}
+
+.stock-null {
+    color: #666;
+    font-size: 26rpx;
+}

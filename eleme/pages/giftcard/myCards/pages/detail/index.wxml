@@ -1,0 +1,33 @@
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<template is="fate-loading" data wx:if="{{loading}}"></template>
+<view class="card-detail" wx:else>
+    <view class="header">
+        <view class="card-face">
+            <image src="{{picture}}"></image>
+            <view class="mask" wx:if="{{statusMap[status||'2'].detailUrl}}">
+                <image src="{{statusMap[status||'2'].detailUrl}}"></image>
+            </view>
+        </view>
+        <view class="card-description">
+            <view class="card-denomination">
+                <text class="notice" wx:for="{{sku.hongbaos}}" wx:key="{{ item.id }}">{{item.title}} × {{item.quantity}}张</text>
+            </view>
+            <view bind:tap="useGiftCard" class="use-btn" wx:if="{{status==='2'}}">
+        去使用
+      </view>
+            <view class="card-status-text" wx:if="{{status==='3'}}">
+                <image src="{{bgMap.waiting}}"></image>
+        赠送中，24小时未领取即将退回至「我的礼品卡」
+      </view>
+            <view class="card-status-text" wx:if="{{status==='4'}}">
+                <image src="{{detail_json.receive_info.avatar_url}}"></image>
+        {{detail_json.receive_info.nick_name}} 领取了你的心意卡
+      </view>
+        </view>
+    </view>
+    <view class="card-link">
+        <navigator bindtap="sendUbt" class="link-item" data-ubt="{{item.ubt}}" url="{{item.url}}" wx:for="{{linkLists}}" wx:key="title">
+        {{item.title}}
+      </navigator>
+    </view>
+</view>

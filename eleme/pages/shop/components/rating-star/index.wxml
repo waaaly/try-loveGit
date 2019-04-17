@@ -1,0 +1,5 @@
+<template name="rating-star">
+    <view class="rating-star-container">
+        <view class="rating-star" style="width: {{rating/5*100}}%"> ★★★★★ </view>
+    </view>
+</template>

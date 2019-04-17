@@ -1,0 +1,143 @@
+.shop-header {
+    padding: 0 0 22rpx 0;
+    color: #fff;
+    font-size: 24rpx;
+    position: relative;
+    background: #0097ff;
+}
+
+.shop-header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #0097ff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.shop-header-bg::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(119,103,137,.43);
+}
+
+.shop-header-main {
+    padding: 0 30rpx;
+}
+
+.shop-logo-box {
+    height: 160rpx;
+    width: 160rpx;
+    background: #fff;
+    border-radius: 5rpx;
+}
+
+.shop-logo {
+    height: 160rpx;
+    width: 160rpx;
+    border-radius: 4rpx;
+}
+
+.shop-content {
+    padding: 18rpx 32rpx;
+    padding-right: 0;
+    position: relative;
+    font-size: 22rpx;
+}
+
+.shop-name {
+    margin: 0;
+    font-size: 34rpx;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-top: -10rpx;
+    justify-content: center;
+}
+
+.shop-nav image {
+    position: relative;
+    top: 26rpx;
+}
+
+.shop-meta {
+    height: 30rpx;
+    margin-top: 8rpx;
+}
+
+.shop-notice {
+    line-height: 29rpx;
+    position: absolute;
+    bottom: 6rpx;
+    width: calc(100% - 34rpx);
+}
+
+.shop-activity {
+    font-size: 22rpx;
+    line-height: 22rpx;
+    margin: 32rpx 20rpx 0 32rpx;
+    position: relative;
+}
+
+.shop-activity-item {
+    padding: 4rpx;
+    flex-wrap: nowrap;
+    line-height: 24rpx;
+}
+
+.shop-activity-item:first-child {
+    margin-top: 0;
+}
+
+.shop-activity-icon {
+    border-radius: 4rpx;
+    margin-right: 10rpx;
+    font-size: 22rpx;
+    box-sizing: border-box;
+    padding: 1rpx 3rpx;
+    line-height: 28rpx;
+    text-align: center;
+    border: 1rpx solid;
+}
+
+.shop-activity-count {
+    padding-top: 1rpx;
+    line-height: 34rpx;
+}
+
+.dropdown {
+    transition: all .2s;
+    margin-left: 8rpx;
+    margin-top: -7rpx;
+}
+
+.dropdown-unfolded {
+    transform: rotateZ(180deg);
+}
+
+.shop-header-tag {
+    margin-right: 10rpx;
+    height: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.y-swiper-wrapper {
+    height: 34rpx;
+    overflow: hidden;
+}
+
+.y-swiper {
+    transition: all .3s linear;
+}
+
+.shop-no-activity {
+    height: 36rpx;
+}

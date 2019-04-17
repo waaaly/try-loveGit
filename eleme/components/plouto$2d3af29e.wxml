@@ -1,0 +1,50 @@
+<template name="plouto$2d3af29e">
+    <view class="_view data-v-3ef030dc page">
+        <view class="_view data-v-3ef030dc {{showSurprise&&'modal'}}">
+            <view class="_view data-v-3ef030dc page-top" wx:if="{{!fromShare}}">
+                <image class="_img data-v-3ef030dc banner" src="https://fuss10.elemecdn.com/5/49/75aa790bd5519839c05d80055ca13png.png"></image>
+                <view bindtap="handleProxy" class="_view data-v-3ef030dc rule" data-comkey="{{$k}}" data-eventid="{{'0'}}">规则</view>
+            </view>
+            <view class="_view data-v-3ef030dc page-top" wx:else>
+                <image class="_img data-v-3ef030dc banner" src="https://fuss10.elemecdn.com/2/15/643c5e90b256a012d7f59f7c03d8epng.png"></image>
+                <view bindtap="handleProxy" class="_view data-v-3ef030dc rule" data-comkey="{{$k}}" data-eventid="{{'1'}}">规则</view>
+                <view class="_view data-v-3ef030dc top-content">
+                    <image class="_img data-v-3ef030dc top-avatar" src="{{ownerAvatar||defaultAvatar}}"></image>
+                    <view class="_view data-v-3ef030dc top-container" wx:if="{{isGroupFull}}">
+                        <view class="_view data-v-3ef030dc top-msg">{{ownerName}}的团人气太火爆啦</view>
+                        <image class="_img data-v-3ef030dc top-text-invite" src="https://fuss10.elemecdn.com/7/1d/2aac3790982248d6baf80b73d31b6png.png"></image>
+                    </view>
+                    <view class="_view data-v-3ef030dc top-container" wx:else>
+                        <view class="_view data-v-3ef030dc top-msg">{{ownerName}}邀请你组团</view>
+                        <image class="_img data-v-3ef030dc top-text" src="https://fuss10.elemecdn.com/c/0f/bfcf7c673bf1e5bd608ae720a6e1bpng.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="_view data-v-3ef030dc" wx:if="{{lotteryAlready}}">
+                <template is="plouto$7c887298" data="{{...$root[$kk+'1'],$root:$root}}" wx:if="{{openLottery}}"></template>
+                <template is="plouto$56351fdc" data="{{...$root[$kk+'0'],$root:$root}}" wx:else></template>
+            </view>
+            <view class="_view data-v-3ef030dc" wx:else>
+                <template is="plouto$14f0d2b0" data="{{...$root[$kk+'2'],$root:$root}}" wx:if="{{lotteryTime&&!isGroupFull}}"></template>
+                <button bindtap="handleProxy" class="_button data-v-3ef030dc invite-btn" data-comkey="{{$k}}" data-eventid="{{'3'}}" wx:if="{{isGroupFull}}">我要发起组团
+          <image class="_img data-v-3ef030dc arrow-right" src="/copy-asset/pages/plouto/media/arrow-right.png"></image>
+                </button>
+                <template is="plouto$d5df669e" data="{{...$root[$kk+'3'],$root:$root}}" wx:if="{{supporters.length}}"></template>
+                <button class="_button data-v-3ef030dc invite-btn support-success" openType="share" wx:if="{{supportSuccess}}">邀请好友集福气值
+          <image class="_img data-v-3ef030dc arrow-right" src="/copy-asset/pages/plouto/media/arrow-right.png"></image>
+                </button>
+                <template is="plouto$2ee757f1" data="{{...$root[$kk+'4'],$root:$root}}" wx:if="{{showInvite}}"></template>
+                <template is="plouto$56351fdc" data="{{...$root[$kk+'5'],$root:$root}}" wx:if="{{showJoin}}"></template>
+                <template is="plouto$1dec212f" data="{{...$root[$kk+'6'],$root:$root}}"></template>
+                <template is="plouto$3b772891" data="{{...$root[$kk+'7'],$root:$root}}" wx:if="{{showSurprise&&supportItems.length}}"></template>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="plouto$7c887298"></import>
+<import src="plouto$56351fdc"></import>
+<import src="plouto$14f0d2b0"></import>
+<import src="plouto$d5df669e"></import>
+<import src="plouto$2ee757f1"></import>
+<import src="plouto$1dec212f"></import>
+<import src="plouto$3b772891"></import>

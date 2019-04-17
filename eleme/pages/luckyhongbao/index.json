@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "拼手气红包",
+    "usingComponents": {
+        "login": "/common/components/login/index"
+    }
+}

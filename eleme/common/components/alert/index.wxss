@@ -1,0 +1,44 @@
+.layer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 100;
+}
+
+.container {
+    position: fixed;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    padding: 50rpx 20rpx 30rpx;
+    z-index: 101;
+    color: #333;
+    border-radius: 7rpx;
+}
+
+.title {
+    font-size: 30rpx;
+    margin-bottom: 20rpx;
+    text-align: center;
+    font-weight: bold;
+}
+
+.content {
+    margin: 28rpx 0;
+    font-size: 26rpx;
+    text-align: center;
+    color: #666;
+}
+
+.button {
+    line-height: 75rpx;
+    background-color: #3190e8;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+}

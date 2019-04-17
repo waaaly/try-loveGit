@@ -1,0 +1,39 @@
+<template name="spec-modal">
+    <view class="modal" hidden="{{isModalHide}}">
+        <view class="modal-main">
+            <view class="modal-header">
+                <view catchtap="hideSpecModal" class="grid grid-right modal-close-btn">
+                    <image class="modal-close-img" src="{{imageHash['CLOSE']}}"></image>
+                </view>
+                <view class="goods-title"> {{name}} </view>
+            </view>
+            <scroll-view class="modal-body" scrollTop="{{specScrollTop}}" scrollY="true">
+                <view class="goods-spec-list" wx:for="{{specifications}}" wx:for-item="spec" wx:key="name">
+                    <view> {{spec.name}}： </view>
+                    <view catchtap="selectSpec" class="goods-spec {{activeSpec[spec.name]==item?'goods-spec-active':''}}" data-spec-name="{{spec.name}}" data-spec-value="{{item}}" wx:for="{{spec.values}}" wx:key="*this">{{item}}
+          </view>
+                </view>
+                <view class="goods-spec-list" wx:for="{{attrs}}" wx:for-item="attr" wx:key="name">
+                    <view> {{attr.name}}： </view>
+                    <view catchtap="selectAttr" class="goods-spec {{activeAttr[attr.name]==item?'goods-spec-active':''}}" data-attr-name="{{attr.name}}" data-attr-value="{{item}}" wx:for="{{attr.values}}" wx:key="*this">{{item}}
+          </view>
+                </view>
+            </scroll-view>
+            <view class="modal-footer grid grid-between grid-middle">
+                <view class="grid grid-baseline">
+                    <view class="final-price grid grid-baseline">
+                        <view>¥</view>
+                        <view class="final-price-value"> {{activeSpecFood.price||0}}</view>
+                    </view>
+                    <view class="original-price" wx:if="{{activeSpecFood.original_price}}">
+            ¥{{activeSpecFood.original_price}}
+          </view>
+                </view>
+                <view catchtap="addToCartFromSpecModal" class="add-to-cart-btn grid grid-center grid-middle {{activeSpecFood.stock<activeSpecFood.min_purchase?'btn-disabled':''}}">
+          {{activeSpecFood.stock>=activeSpecFood.min_purchase?'选好了':'已售完'}}
+        </view>
+            </view>
+        </view>
+        <view catchtap="hideSpecModal" class="modal-mask"></view>
+    </view>
+</template>

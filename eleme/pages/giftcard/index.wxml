@@ -1,0 +1,24 @@
+<view class="gift-card">
+    <swiper autoplay="true" indicatorActiveColor="{{indicatorActiveColor}}" indicatorColor="{{indicatorColor}}" indicatorDots="{{indicatorDots}}">
+        <swiper-item wx:for="{{banners}}">
+            <navigator hoverClass="none" url="/pages/giftcard/buyCard/index?id={{item.id}}">
+                <image class="slide-image" src="{{item.imageUrl}}"></image>
+            </navigator>
+        </swiper-item>
+    </swiper>
+    <view class="card-lists">
+        <view class="list-item" wx:for="{{menus}}">
+            <view class="list-title">{{item.title}}</view>
+            <view class="cards">
+                <navigator bindtap="goToTheme" class="card-item" data-id="{{card.id}}" hoverClass="none" url="/pages/giftcard/buyCard/index?id={{card.id}}" wx:for="{{item.themes}}" wx:for-item="card">
+                    <image src="{{card.imageUrl}}"></image>
+                    <view>{{card.title}}</view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>
+<navigator bindtap="goToCards" class="card-pack" hoverClass="none" url="/pages/giftcard/myCards/index">
+    <image src="./asserts/card.svg"></image>
+    <text>卡包</text>
+</navigator>

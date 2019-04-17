@@ -1,0 +1,98 @@
+.remark-wrapper {
+    height: 100%;
+    background: #f5f5f5;
+    padding-top: 30rpx;
+}
+
+.section {
+    padding: 30rpx;
+    margin-bottom: 30rpx;
+    background: #fff;
+    border: 1rpx solid #eee;
+    border-left: none;
+    border-right: none;
+}
+
+.title {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.remarks {
+    margin-top: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.remarks .flattenRemark {
+    border: 1rpx solid #0097ff;
+    border-radius: 8rpx;
+    color: #0097ff;
+    min-width: 130rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    margin-bottom: 20rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 24rpx;
+    color: #666;
+    text-align: center;
+}
+
+.remarks .flattenRemark.single {
+    margin-right: 20rpx;
+}
+
+.remarks .flattenRemark.left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+}
+
+.remarks .flattenRemark.middle {
+    border-radius: 0;
+    border-right: none;
+}
+
+.remarks .flattenRemark.right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-right: 20rpx;
+}
+
+.remarks .flattenRemark.selected {
+    color: #fff;
+    background: #0097ff;
+}
+
+.remarks textarea {
+    border: 1rpx solid #ccc;
+    border-radius: 4rpx;
+    background: #f5f5f5;
+    font-size: 26rpx;
+    width: 100%;
+    padding: 10rpx;
+}
+
+.remarks .placeholder {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.actions {
+    margin: 30rpx;
+}
+
+.actions .confirm {
+    width: 100%;
+    background: rgb(86,209,118);
+    border-radius: 8rpx;
+    color: #fff;
+    text-align: center;
+    font-size: 34rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+}

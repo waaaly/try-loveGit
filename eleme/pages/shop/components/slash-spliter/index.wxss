@@ -1,0 +1,13 @@
+.slash-spliter-item {
+    display: inline-block;
+    margin-right: 6rpx;
+}
+
+.slash-spliter-item::after {
+    content: ' | ';
+    opacity: .5;
+}
+
+.slash-spliter-item:last-child::after {
+    content: '';
+}

@@ -1,0 +1,11 @@
+<template name="footer">
+    <view class="footer">
+        <view class="amount">
+            <text class="to-pay">{{'待支付¥'+(total>0?total:'0.01')}}</text>
+            <text class="count-off" wx:if="{{discount}}">{{'已优惠¥'+-discount}}</text>
+        </view>
+        <view bindtap="makeOrder" class="footer-checkout">
+      提交订单
+    </view>
+    </view>
+</template>

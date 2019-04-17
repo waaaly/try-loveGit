@@ -1,0 +1,207 @@
+.lucky {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.8);
+    z-index: 100;
+}
+
+.lucky-hongbao {
+    position: relative;
+}
+
+.lucky-hongbao-header {
+    width: 640rpx;
+    height: 220rpx;
+}
+
+.lucky-hongbao-header image {
+    width: 640rpx;
+    height: 220rpx;
+}
+
+.lucky-hongbao-icon {
+    width: 100rpx;
+    height: 100rpx;
+    left: 32rpx;
+    top: 32rpx;
+    position: absolute;
+}
+
+.lucky-hongbao-list {
+    background: #E5193E;
+    display: flex;
+    justify-content: center;
+    padding: 24rpx 0 12rpx 0;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-left-radius: 16rpx;
+    border-bottom-right-radius: 16rpx;
+}
+
+.lucky-hongbao-item {
+    background: #fff;
+    width: 592rpx;
+    height: 164rpx;
+    position: relative;
+    margin-bottom: 16rpx;
+}
+
+.lucky-hongbao-middle {
+    position: absolute;
+    left: 156rpx;
+    top: 0;
+    height: 100%;
+    padding: 32rpx 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lucky-hongbao-name {
+    font-size: 28rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.lucky-hongbao-rule {
+    font-size: 20rpx;
+    color: #999;
+    margin-top: 4rpx;
+}
+
+.lucky-hongbao-time {
+    margin-top: 4rpx;
+    font-size: 20rpx;
+    color: #999;
+}
+
+.lucky-hongbao-right {
+    position: absolute;
+    right: 16rpx;
+    bottom: 30rpx;
+    width: 116rpx;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.lucky-hongbao-money {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.lucky-hongbao-rmb {
+    color: #FF5339;
+    font-size: 24rpx;
+    font-weight: bold;
+    margin-top: 12rpx;
+}
+
+.lucky-hongbao-amount {
+    color: #FF5339;
+    font-size: 54rpx;
+    font-weight: bold;
+}
+
+.lucky-hongbao-footer {
+    width: 640rpx;
+    height: 120rpx;
+    margin-top: -100rpx;
+}
+
+.lucky-hongbao-msg {
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #FFE9B2;
+    text-align: center;
+    background: #E5193E;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+}
+
+.lucky-hongbao-close {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    bottom: -90rpx;
+    left: 290rpx;
+}
+
+.lucky-hongbao-use {
+    width: 116rpx;
+    height: 44rpx;
+    border-radius: 22rpx;
+    font-size: 20rpx;
+    line-height: 44rpx;
+    color: #fff;
+    background: #FF4B33;
+    text-align: center;
+}
+
+.close-btn {
+    width: 60rpx;
+    height: 60rpx;
+    background: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.close-btn image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.lucky-hongbao-get {
+    width: 116rpx;
+    height: 44rpx;
+    border-radius: 22rpx;
+    font-size: 20rpx;
+    line-height: 44rpx;
+    color: #40210A;
+    background: #e5e5e5;
+    text-align: center;
+}
+
+.lucky-hongbao-share {
+    width: 116rpx;
+    height: 44rpx;
+    border-radius: 22rpx;
+    font-size: 20rpx;
+    line-height: 44rpx;
+    color: #583834;
+    border: 2rpx solid #F63C28;
+    text-align: center;
+    padding: 0;
+}
+
+.share-btn {
+    width: 524rpx;
+    height: 112rpx;
+    padding: 0;
+    margin: 0;
+    background: #E5193E;
+}
+
+.share-btn image {
+    width: 524rpx;
+    height: 112rpx;
+}
+
+.share-btn::after {
+    border: none;
+}
+
+.has-share {
+    background-color: #FF4B33;
+    color: #fff;
+}

@@ -1,0 +1,95 @@
+.invoice-wrapper {
+    height: 100%;
+    background: #f5f5f5;
+}
+
+.invoice-section {
+    padding-top: 30rpx;
+}
+
+.invoice-item {
+    background: #fff;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 1rpx solid #f5f5f5;
+}
+
+.info {
+    font-size: 30rpx;
+    color: #333;
+    line-height: 42rpx;
+    font-weight: bold;
+    margin: 0 32rpx 0 30rpx;
+}
+
+.invoice-type {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #666;
+    border: 1px solid #ddd;
+    border-radius: 8rpx;
+    padding: 8rpx 40rpx;
+    margin-right: 20rpx;
+}
+
+.active {
+    color: #0b8aff;
+    border-color: #0b8aff;
+}
+
+.invoice-item input {
+    font-size: 30rpx;
+    color: #666;
+    outline: none;
+    border: none;
+    width: 480rpx;
+}
+
+.clear-input {
+    width: 28rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    border-radius: 14rpx;
+    color: #fff;
+    background: #ccc;
+    font-size: 20rpx;
+    margin-left: 74rpx;
+    text-align: center;
+}
+
+.invoice-item .placeholder {
+    font-size: 30rpx;
+    color: #ccc;
+}
+
+.info-tip {
+    font-size: 24rpx;
+    color: #999;
+    margin: 20rpx 0 0 30rpx;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.actions view {
+    margin-top: 40rpx;
+    width: 330rpx;
+    height: 96rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+    line-height: 96rpx;
+    border-radius: 8rpx;
+}
+
+.remove {
+    background: #d9644c;
+    margin-right: 30rpx;
+}
+
+.confirm {
+    background: #4cd964;
+}

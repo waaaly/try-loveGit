@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow_down </title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-12-搜索-店铺维度搜索-页面上滑" transform="translate(-241.000000, -248.000000)">
+            <g id="cell04-copy" transform="translate(0.000000, 232.000000)">
+                <g id="展开更多商品" transform="translate(212.000000, 14.000000)">
+                    <g id="arrow_down-" transform="translate(29.000000, 2.000000)">
+                        <rect id="Rectangle-3" x="0" y="0" width="10" height="10" rx="0.5"></rect>
+                        <path d="M5.04733598,6.1565458 L0.690915981,2.09411843 C0.542502138,1.95572028 0.299460822,1.963114 0.155465019,2.1175306 C0.0156804694,2.26743117 0.0177354526,2.51182397 0.16946105,2.65331038 L4.72978534,6.90588157 C4.87390073,7.04027135 5.10724165,7.03719198 5.25248027,6.89551638 C5.35058828,6.87836906 5.44420896,6.83492525 5.51514761,6.76750517 L9.80724438,2.68829721 C9.97673162,2.52721658 9.99318525,2.26693952 9.82898933,2.09086095 L9.87781207,2.14321694 C9.72033424,1.97434264 9.45861667,1.96482716 9.29416458,2.12109399 L5.04733598,6.1565458 Z" id="Combined-Shape" fill="#A7A7A7" transform="translate(4.998361, 4.500000) scale(1, -1) translate(-4.998361, -4.500000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

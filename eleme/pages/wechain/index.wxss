@@ -1,0 +1,27 @@
+.loc-fail {
+    padding-top: 240rpx;
+}
+
+.loc-fail-img {
+    width: 400rpx;
+    height: 400rpx;
+    display: block;
+    margin: 0 auto 32rpx;
+}
+
+.loc-tip {
+    width: 400rpx;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 26rpx;
+    color: rgba(0,0,0,0.54);
+}
+
+.loc-btn-guide {
+    font-size: 26rpx;
+    color: #2395ff;
+    display: block;
+    width: 200rpx;
+    text-align: center;
+    margin: 48rpx auto 0;
+}

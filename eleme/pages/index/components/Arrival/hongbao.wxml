@@ -1,0 +1,18 @@
+<template name="hongbao">
+    <view class="hongbaoItem">
+        <view class="amount">
+            <text class="sum">
+                <text class="unit">¥</text>
+                <text class="money">{{amount[0]}}</text>
+                <text class="decimal" wx:if="{{amount[1]}}">.{{amount[1]}}</text>
+            </text>
+            <text class="condition">{{sum_condition_description}}</text>
+        </view>
+        <view class="description">
+            <text class="name">{{hongbao_name}}</text>
+            <view class="tagWrap">
+                <text class="tagItem" style="color: #{{tag.color}}; border-color: #{{tag.color}}" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag.name">{{tag.name}}</text>
+            </view>
+        </view>
+    </view>
+</template>

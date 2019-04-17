@@ -1,0 +1,66 @@
+<import src="/common/components/restaurant-row/component.wxml"></import>
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<import src="/common/components/loading-component/component.wxml"></import>
+<import src="/common/components/restaurant-filter-bars/component.wxml"></import>
+<import src="./components/shop-ahead/index.wxml"></import>
+<import src="./components/recommend/index.wxml"></import>
+<import src="./components/no-result/index.wxml"></import>
+<import src="./components/filter/index.wxml"></import>
+<import src="./components/food-item/index.wxml"></import>
+<import src="./components/outside/index.wxml"></import>
+<view class="search">
+    <view class="search-form e-bg-color">
+        <view class="search-input-wrapper">
+            <image class="search-icon" src="{{imageHash['search']}}"></image>
+            <input bindconfirm="btnPush" bindinput="keywordChanged" class="search-input" focus="true" placeholder="搜索商家、商品名称" placeholderClass="seach-input-placeholder" value="{{query.keyword}}"></input>
+        </view>
+    </view>
+    <view class="search-section">
+        <view hidden="{{pageRoute!=='index'}}">
+            <view hidden="{{searchHistory.length<=0}}">
+                <view class="search-section-head">
+                    <view class="section-title">历史搜索</view>
+                    <image catchtap="cleanTag" class="section-action" src="{{imageHash['cart_empty']}}"></image>
+                </view>
+                <view class="search-section-list">
+                    <view catchtap="chooseTag" class="history-item" data-text="{{item}}" wx:for="{{searchHistory}}" wx:key="item">{{item}}
+          </view>
+                </view>
+            </view>
+            <view hidden="{{hotWords.length<=0}}">
+                <view class="search-section-head">
+                    <view class="section-title">热门搜索</view>
+                </view>
+                <view class="search-section-list">
+                    <view catchtap="chooseTag" class="history-item {{index===0?'active':''}}" data-text="{{item.word}}" wx:for="{{hotWords}}" wx:key="item">{{item.word}}
+          </view>
+                </view>
+            </view>
+        </view>
+        <scroll-view hidden="{{pageRoute!=='typeahead'}}" scrollY="true" style="height: 100%;">
+            <template is="shop-ahead" data="{{...typeAhead,keyword:query.keyword,imageHash:imageHash}}"></template>
+        </scroll-view>
+        <view class="container" hidden="{{pageRoute!=='result'}}">
+            <view wx:if="{{restaurants.length!==0}}">
+                <template is="restaurant-filter-bars" data="{{imageHash:imageHash,sortData:sortData,filterData:filterData,showFilter:showFilter,showSort:showSort,query:query,showFilterBarBold:showFilterBarBold,shopAmount:shopAmount,fetching:fetching,fromSearch:true,outside:outside}}"></template>
+                <template is="filter" data="{{...filterRow,singleData:singleData,delivery_mode:delivery_mode}}" wx:if="{{filterRow.single||filterRow.multi}}"></template>
+            </view>
+            <scroll-view catchscrolltolower="loadMore" class="body" scrollY="true" wx:if="{{restaurants.length!==0}}">
+                <view data-id="{{item.id}}" data-index="{{index}}" wx:for="{{restaurants}}" wx:key="{{ item.id }}">
+                    <template is="{{searchType===0?'restaurant-row':'food-item'}}" data="{{imageHash:imageHash,...item,listIndex:index,fromSearch:true,id:item.id,restaurantIndex:index}}"></template>
+                </view>
+                <template is="loading-component" data="{{loadedAll:loadedAll}}"></template>
+            </scroll-view>
+            <view class="body" wx:if="{{loading}}">
+                <template is="fate-loading" data></template>
+            </view>
+            <view class="body" hidden="{{restaurants.length!==0||loading}}">
+                <template is="outside" data="{{...outsideData,keyword:query.keyword}}" wx:if="{{outsideData.count}}"></template>
+                <template is="no-result" data="{{imageHash:imageHash}}" wx:if="{{!outsideData.count}}"></template>
+                <view wx:if="{{recommendList.length}}">
+                    <template is="recommend" data="{{imageHash:imageHash,list:recommendList}}"></template>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,54 @@
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<view class="invoice-wrapper">
+    <view catchtap="noInvoice" class="invoice-section">
+        <view class="invoice-section-body">
+            <view class="invoice-item">
+                <view class="status">
+                    <image src="{{imageHash['selected']}}" wx:if="{{!invoice.id}}"></image>
+                </view>
+                <view class="no-invoice-content">
+                    <text class="no-invoice">不需要发票</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="invoice-section unavailable" wx:if="{{loaded&&!invoices.length}}">
+        <image class="icon" src="{{imageHash['no_invoice']}}"></image>
+        <text class="title">没有发票抬头</text>
+        <text class="hint">点击下方按钮新增</text>
+    </view>
+    <view class="invoice-section available" wx:if="{{invoices.length}}">
+        <view class="title">发票信息</view>
+        <scroll-view scrollY class="invoice-section-body invoices">
+            <view catchtap="selectInvoice" class="invoice-item" data-index="{{index}}" wx:for="{{invoices}}" wx:for-item="theInvoice" wx:key="theInvoice.id">
+                <view class="divider" wx:if="{{index}}"></view>
+                <view class="status">
+                    <image src="{{imageHash['selected']}}" wx:if="{{invoice.id===theInvoice.id}}"></image>
+                </view>
+                <view class="content">
+                    <view>
+                        <text class="invoice-type personal" wx:if="{{theInvoice.invoice_type===1}}">个人</text>
+                        <text class="invoice-type company" wx:if="{{theInvoice.invoice_type===2}}">单位</text>
+                        <text class="invoice-name">{{theInvoice.invoice_pay_to}}</text>
+                    </view>
+                    <view>
+                        <text class="invoice-number" wx:if="{{theInvoice.invoice_type===2&&theInvoice.tax_number}}">{{theInvoice.tax_number}}</text>
+                        <text class="invoice-number complete-invoice" wx:if="{{theInvoice.invoice_type===2&&!theInvoice.tax_number}}">单位类型发票，需完善「税号」信息</text>
+                    </view>
+                </view>
+                <view catchtap="editInvoice" class="edit" data-index="{{index}}">
+                    <image src="{{imageHash['edit_new']}}"></image>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view catchtap="goToAddInvoice" class="invoice-section add">
+        <view class="invoice-section-body">
+            <view class="invoice-item">
+                <image src="{{imageHash['add']}}"></image>
+                <text>新增发票信息</text>
+            </view>
+        </view>
+    </view>
+</view>
+<template is="fate-loading" data wx:if="{{!loaded}}"></template>

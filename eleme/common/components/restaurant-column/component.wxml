@@ -1,0 +1,14 @@
+<template name="restaurant-column">
+    <view class="bsd-item">
+        <view class="bsd-item-left">
+            <image class="bsd-item-image" src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1479801878&di=1ea73dba6c75fe7b0906409ac30989f2&src=http://www.mtrcity.com/uploadfile/2016/0224/StwC4G1128.jpeg"></image>
+        </view>
+        <view class="bsd-item-right">
+            <view class="bsd-item-info">
+                <view class="item-title bsd-item-title">近铁城市广场</view>
+                <view class="icon small-size blue">58家入驻商户</view>
+            </view>
+            <view class="bsd-item-distance small-size">162m</view>
+        </view>
+    </view>
+</template>

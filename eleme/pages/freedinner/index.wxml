@@ -1,0 +1,31 @@
+<import src="/pages/freedinner/components/modal/index.wxml"></import>
+<import src="/pages/freedinner/components/confirmModal/index.wxml"></import>
+<import src="/pages/freedinner/components/lotteryModal/index.wxml"></import>
+<import src="/pages/freedinner/components/carousel/index.wxml"></import>
+<import src="/pages/freedinner/components/result/index.wxml"></import>
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<view class="freedinner">
+    <view class="header, {{overview.length>0?'small':''}}">
+        <image src="{{imagesUrl.headerBg}}"></image>
+        <template is="carousel" data="{{carouseLists:carouseLists}}"></template>
+        <view catch:tap="openRules" class="rule">
+            <text>活动规则</text>
+            <image src="./asset/right.svg"></image>
+        </view>
+        <view class="form">
+            <view>剩余 <text class="left-time">{{keyNum}}</text>次 抽奖机会</view>
+            <text class="tips">每邀请1位好友，增加1次抽奖机会</text>
+            <view class="btn-wrapper {{keyNum===1&&!notFirstIn?'inital':''}}">
+                <button class="btn" openType="share">邀请好友</button>
+                <button bind:tap="drawLottery" class="btn {{keyNum===0?'disabled':''}}">{{lotterying?'抽奖中...':'立即抽奖'}}</button>
+            </view>
+        </view>
+        <image class="logo" src="./asset/eleme.svg"></image>
+    </view>
+    <template is="lotteryModal" data="{{hongbao:hongbao,description:description,amount:amount,keyNum:keyNum}}" wx:if="{{isLotteryModalShow}}"></template>
+    <template is="confirmModal" data wx:if="{{isConfirmModalShow}}"></template>
+    <template is="modal" data="{{defaultRules:defaultRules}}" wx:if="{{isModalShow}}"></template>
+    <template is="result" data="{{overview:overview,detail:detail,isDetailShow:isDetailShow,isAlidayCity:isAlidayCity,...imagesUrl}}" wx:if="{{overview.length>0}}"></template>
+    <template is="shareModal" data wx:if="{{isShowShare}}"></template>
+    <template is="fate-loading" data wx:if="{{loading}}"></template>
+</view>

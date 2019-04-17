@@ -1,0 +1,10 @@
+<template name="download">
+    <view class="layer"></view>
+    <view class="container">
+        <view class="content">{{content}}</view>
+        <view>
+            <image class="download-image" src="/pages/pullNewUser/shopHongbao/success/components/download/download.png"></image>
+        </view>
+        <view bindtap="alertConfirmAction" class="button">知道了</view>
+    </view>
+</template>

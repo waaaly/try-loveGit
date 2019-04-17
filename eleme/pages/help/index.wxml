@@ -1,0 +1,55 @@
+<view class="service">
+    <view>
+        <view class="service-problem">热门问题</view>
+        <view class="service-list">
+            <navigator url="../help/questions/questions?question=ontime">
+                <view class="service-question">
+                    <text> 准时达问题 </text>
+                    <text class="arrow service-nav"></text>
+                </view>
+            </navigator>
+            <navigator url="../help/questions/questions?question=payment">
+                <view class="service-question">
+                    <text> 支付问题 </text>
+                    <text class="arrow service-nav"></text>
+                </view>
+            </navigator>
+            <navigator url="../help/questions/questions?question=balance">
+                <view class="service-question">
+                    <text> 余额问题 </text>
+                    <text class="arrow service-nav"></text>
+                </view>
+            </navigator>
+            <navigator url="../help/questions/questions?question=hongbao">
+                <view class="service-question">
+                    <text> 红包问题 </text>
+                    <text class="arrow service-nav"></text>
+                </view>
+            </navigator>
+            <navigator url="../help/questions/questions?question=ecoin">
+                <view class="service-question">
+                    <text> 金币问题 </text>
+                    <text class="arrow service-nav"></text>
+                </view>
+            </navigator>
+            <navigator url="../help/questions/questions?question=member">
+                <view class="service-question">
+                    <text> 会员问题 </text>
+                    <text class="arrow service-nav"></text>
+                </view>
+            </navigator>
+            <navigator url="../help/questions/questions?question=activity">
+                <view class="service-question">
+                    <text> 活动问题 </text>
+                    <text class="arrow service-nav"></text>
+                </view>
+            </navigator>
+            <navigator url="../help/questions/questions?question=other">
+                <view class="service-question">
+                    <text> 其他问题 </text>
+                    <text class="arrow service-nav"></text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

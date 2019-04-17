@@ -1,0 +1,26 @@
+<view>
+    <view class="container" wx:if="{{Store.status!==4}}">
+        <text>恭喜获得</text>
+        <text class="price">¥{{total}}</text>
+        <text>红包</text>
+    </view>
+    <view class="container" wx:else>
+        <text>订单已取消</text>
+    </view>
+    <view class="mobile">
+        <text>已放入账户：{{Store.mainData.hiddenPhone}} </text>
+        <text bindtap="changeMobile">修改 ></text>
+    </view>
+    <view wx:for="{{redpackList}}" wx:key="{{ index }}">
+        <ticket disabled="{{item.item_type!==2&&Store.status===4}}" ticket="{{item}}"></ticket>
+    </view>
+    <view bindtap="gotoCouponPage" class="couponLink" wx:if="{{Store.showCouponEntry}}">
+        <image src="https://fuss10.elemecdn.com/2/61/24def169aded1ac1abdef079511f6svg.svg"></image>
+    </view>
+    <view class="outtip" wx:if="{{Store.status===4}}">分享的好友退单了，饿了么红包已失效</view>
+    <view class="button-container">
+        <view class="button-tip">再送红包</view>
+        <view bindtap="order" class="button">去饿了么下单</view>
+    </view>
+    <image class="logo" src="https://fuss10.elemecdn.com/c/8a/8da5144e526848f3561e886f47837svg.svg"></image>
+</view>

@@ -1,0 +1,6 @@
+<template name="shopList">
+    <template is="restaurant-row" data="{{imageHash:imageHash,...item}}" wx:for="{{restaurants}}" wx:key="id"></template>
+    <template is="loading-component" data="{{loadedAll:loadedAll}}"></template>
+</template>
+<import src="/common/components/restaurant-row/component.wxml"></import>
+<import src="/common/components/loading-component/component.wxml"></import>

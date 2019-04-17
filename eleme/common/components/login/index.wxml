@@ -1,0 +1,15 @@
+<view>
+    <view class="login">
+        <view>
+            <input bindinput="bindPhoneInput" class="login-input" maxlength="11" placeholder="请输入手机账号" placeholderClass="ph-style" type="number"></input>
+        </view>
+        <view>
+            <input bindinput="bindCaptchaInput" class="login-input" focus="{{focus}}" maxlength="6" placeholder="请输入验证码" placeholderClass="ph-style" type="number"></input>
+            <button bindtap="getCaptcha" class="login-countdown" disabled="{{counting}}" hoverClass="none" style="background-color: #f8f5f0;">{{btnText}}</button>
+        </view>
+        <view>
+            <button withCredentials bindgetuserinfo="auth" class="login-button" hoverClass="none" openType="getUserInfo">立即登录</button>
+        </view>
+    </view>
+    <graphic-captcha bind:cancel="cancel" bind:change="getGraphicCaptcha" bind:confirm="getCaptcha" imageUrl="{{imageUrl}}" wx:if="{{showGraphicCaptcha}}"></graphic-captcha>
+</view>

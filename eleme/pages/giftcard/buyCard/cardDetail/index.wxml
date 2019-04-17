@@ -1,0 +1,12 @@
+<view class="card-detail">
+    <view class="row" wx:if="{{cardDetail.validTime}}">
+        <view class="title">有效日期</view>
+        <view class="detail">{{cardDetail.validTime}}</view>
+    </view>
+    <view class="row">
+        <view class="title">使用须知</view>
+        <view class="detail">
+            <view wx:for="{{cardDetail.notices}}">{{index+1+'.'+item}}</view>
+        </view>
+    </view>
+</view>

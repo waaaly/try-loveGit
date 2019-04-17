@@ -1,0 +1,37 @@
+<import src="/pages/promotion/hongbao/templates/hongbao-ticket/index.wxml"></import>
+<import src="/pages/promotion/hongbao/templates/coupon-ticket/index.wxml"></import>
+<import src="/common/components/result-null/component.wxml"></import>
+<import src="/common/components/not-my-fault/index.wxml"></import>
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<view class="background"></view>
+<view class="container" wx:if="{{loaded}}">
+    <view class="hongbao-tabs">
+        <view bindtap="changeTab" class="{{page==='hongbao'?'active':''}}" data-page="hongbao">
+            <text>红包 {{hongbaos.length}} 个</text>
+        </view>
+        <view bindtap="changeTab" class="{{page==='coupon'?'active':''}}" data-page="coupon">
+            <text>商家红包 {{coupons.length}} 张</text>
+        </view>
+    </view>
+    <view hidden="{{page!=='hongbao'}}" wx:if="{{hongbaos.length>0}}" wx:for="{{hongbaos}}" wx:for-item="hongbao" wx:key="hongbao.sn">
+        <template is="hongbao-ticket" data="{{imageHash:imageHash,hongbao:hongbao}}"></template>
+    </view>
+    <view hidden="{{page!=='hongbao'}}" style="position:absolute;height:calc(100% - 60rpx);width:100%;" wx:if="{{!hongbaos.length}}">
+        <template is="not-my-fault" data="{{msg:'您现在还没有红包'}}"></template>
+    </view>
+    <view hidden="{{page!=='coupon'}}" wx:if="{{coupons.length>0}}" wx:for="{{coupons}}" wx:for-item="coupon" wx:key="coupon.id">
+        <template is="coupon-ticket" data="{{imageHash:imageHash,coupon:coupon}}"></template>
+    </view>
+    <view hidden="{{page!=='coupon'}}" style="position:absolute;height:calc(100% - 60rpx);width:100%;" wx:if="{{!coupons.length}}">
+        <template is="not-my-fault" data="{{msg:'您现在还没有商家红包'}}"></template>
+    </view>
+    <view class="hongbao-hint">
+        <navigator url="/pages/help/questions/questions?question=hongbao" wx:if="{{page==='hongbao'&&hongbaos.length>0}}">
+      红包说明
+    </navigator>
+        <navigator url="/pages/help/questions/questions?question=coupon" wx:if="{{page==='coupon'&&coupons.length>0}}">
+      店铺红包说明
+    </navigator>
+    </view>
+</view>
+<template is="fate-loading" data wx:if="{{!loaded}}"></template>

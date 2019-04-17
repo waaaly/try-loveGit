@@ -1,0 +1,9 @@
+.center {
+    color: #666;
+    font-size: 28rpx;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

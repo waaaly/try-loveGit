@@ -1,0 +1,10 @@
+<template name="rating-stars">
+    <view class="rating-stars">
+        <view class="rating-stars-gray">
+            <image src="/common/components/rating-stars/gray.png" style="width: {{height}}; height: {{height}};" wx:for="{{[1,2,3,4,5]}}" wx:key="*this"></image>
+        </view>
+        <view class="rating-stars-gold" style="width: {{rating/5*100}}%">
+            <image src="/common/components/rating-stars/gold.png" style="width: {{height}}; height: {{height}};" wx:for="{{[1,2,3,4,5]}}" wx:key="*this"></image>
+        </view>
+    </view>
+</template>

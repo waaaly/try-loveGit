@@ -1,0 +1,50 @@
+<view class="wrapper" wx:if="{{loaded&&currentUser&&newRefer}}">
+    <view class="openRule">
+        <view bindtap="showRoueContent">规则 ></view>
+    </view>
+    <view class="swiper-warp">
+        <swiper autoplay="{{autoplay}}" circular="{{circular}}" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}" nextMargin="{{nextMargin}}px" previousMargin="{{previousMargin}}px" vertical="{{vertical}}">
+            <swiper-item wx:for="{{swipeData}}" wx:key="*this">
+                <text class="swiper-text">{{item}}</text>
+            </swiper-item>
+        </swiper>
+        <button bindtap="goShare" class="invite" openType="share">立即赚现金</button>
+        <view bindtap="goStrategy" class="strategy" data-gourl="strategy">
+            <image class="icon" src="https://cube.elemecdn.com/5/47/533e45c5fac2d8f30d5a5bdee59b2png.png"></image>
+      查看赚钱攻略 >
+    </view>
+        <view class="info">
+            <view class="header">
+                <text class="text">奖励进度</text>
+                <text bindtap="goStrategy" class="link" data-gourl="progress/0">进度明细 ></text>
+            </view>
+            <view class="list">
+                <view bindtap="goStrategy" class="item" data-gourl="progress/{{index}}" wx:for="{{progressMenu}}" wx:key="*this">
+                    <text class="amount" data-gourl="progress/{{index}}">{{item.amount}}<text class="text" data-gourl="progress/{{index}}">{{item.unit}}</text>
+                    </text>
+                    <view class="title" data-gourl="progress/{{index}}">{{item.title}}</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="goStrategy" class="withdraw" data-gourl="withdraw">
+            <text data-gourl="withdraw">可提现金额：</text>
+            <text class="weizi total" data-gourl="withdraw">{{balance}}</text>
+            <text class="weizi" data-gourl="withdraw">元</text>
+            <text class="gowithdraw" data-gourl="withdraw">></text>
+        </view>
+    </view>
+</view>
+<view class="notify" wx:if="{{loaded&&newRefer&&!currentUser}}">
+    <view class="login-image">
+        <image src="https://cube.elemecdn.com/b/0d/adf3e7a3a9b048cc77c7a804f692ajpeg.jpeg"></image>
+    </view>
+    <view class="login-content">推荐有奖</view>
+    <view bindtap="goLogin" class="btn-primary">立即登录</view>
+</view>
+<view class="notify" wx:if="{{!newRefer}}">
+    <view class="on-image">
+        <image src="https://cube.elemecdn.com/f/b8/a89de2795709a6152005d30c30d9apng.png"></image>
+    </view>
+    <view class="on-content">当前页面异常，请联系客服处理</view>
+    <view class="on-primary">联系电话 10105757</view>
+</view>

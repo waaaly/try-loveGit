@@ -1,0 +1,67 @@
+.shop-header {
+    padding: 30rpx;
+    font-size: 22rpx;
+    background: #fff;
+    color: rgb(102,102,102);
+}
+
+.shop-logo {
+    height: 130rpx;
+    width: 130rpx;
+    border: 1rpx solid rgb(230,230,230);
+}
+
+.shop-meta {
+    padding-left: 20rpx;
+}
+
+.shop-name {
+    font-size: 32rpx;
+    line-height: 36rpx;
+    color: rgb(51,51,51);
+    font-weight: bold;
+}
+
+.shop-rating {
+    color: rgb(255,170,12);
+    align-items: center;
+    margin-right: 20rpx;
+}
+
+.header-icon {
+    font-size: 20rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    border-radius: 4rpx;
+    padding: 4rpx;
+    border: 1px solid #0097ff;
+    text-align: center;
+}
+
+.header-icon-ontime {
+    color: #0097ff;
+}
+
+.header-icon-delivery {
+    color: #fff;
+    background: #0097ff;
+    margin-left: 10rpx;
+}
+
+.header-bottom {
+    margin-top: 20rpx;
+    background: #f4f4f4;
+}
+
+.delivery-cost,.shop-notice {
+    padding: 22rpx 0;
+    margin: 0 22rpx;
+}
+
+.shop-notice-value {
+    line-height: 30rpx;
+}
+
+.delivery-cost {
+    border-bottom: 1rpx solid rgb(230,230,230);
+}

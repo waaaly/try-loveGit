@@ -1,0 +1,9 @@
+<template name="pay-method">
+    <view catchtap="toggleShowPayMethods" class="pay-method section">
+        <text class="name">支付方式</text>
+        <view>
+            <text class="current">{{payMethod.name}}</text>
+            <divi class="more"></divi>
+        </view>
+    </view>
+</template>

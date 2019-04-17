@@ -1,0 +1,52 @@
+<template name="rating-view">
+    <scroll-view bindscrolltolower="loadMoreRatings" class="rate-container" scrollY="true" wx:if="{{ratingList.list&&ratingList.list.length}}">
+        <view class="rate-header grid grid-center grid-middle">
+            <view class="rate-header-left">
+                <view class="overall-rate"> {{score.overall_score}} </view>
+                <view class="overall-rate-text"> 综合评分 </view>
+                <view class="rate-compare">
+          高于周边商家 {{score.compare_rating}} % 
+        </view>
+            </view>
+            <view class="rate-spliter"></view>
+            <view class="rate-header-right">
+                <view class="grid">
+                    <view class="rating-label"> 服务态度 </view>
+                    <template is="rating-star" data="{{rating:score.service_score}}"></template>
+                    <view class="rating-value"> {{score.service_score}} </view>
+                </view>
+                <view class="grid">
+                    <view class="rating-label"> 菜品味道 </view>
+                    <template is="rating-star" data="{{rating:score.food_score}}"></template>
+                    <view class="rating-value"> {{score.food_score}} </view>
+                </view>
+                <view class="grid">
+                    <view class="rating-label"> 配送时间 </view>
+                    <view class="rate-color-secondary">
+            平均 {{score.deliver_time}} 分钟
+          </view>
+                </view>
+            </view>
+        </view>
+        <view catchtap="selectRatingTag" class="rate-tag-list-container" wx:if="{{tags&&tags.length}}">
+            <view class="rate-tag-list">
+                <template is="rating-tag" data="{{item:item,isActive:item.name===ratingList.query.tag_name}}" wx:for="{{tags}}" wx:key="name"></template>
+            </view>
+            <view catchtap="filterRatings" class="grid grid-middle rate-filter" wx:if="{{ratingList.list&&ratingList.list.length>0}}">
+                <image class="rate-content-filter" src="{{ratingList.query.has_content?imageHash.selected:imageHash.not_selected}}"></image>
+                <text> 只看有内容的评价 </text>
+            </view>
+        </view>
+        <view class="rate-main">
+            <template is="rating-block" data="{{imageHash:imageHash,ratingList:ratingList.list}}"></template>
+            <template is="loading-component" data="{{...ratingList}}"></template>
+        </view>
+    </scroll-view>
+    <view class="grid grid-middle grid-center rate-list-empty" wx:if="{{ratingList.list&&ratingList.list.length<=0}}">
+    还没有人评价过这家店儿
+  </view>
+</template>
+<import src="../rating-block/index.wxml"></import>
+<import src="../rating-star/index.wxml"></import>
+<import src="../rating-tag/index.wxml"></import>
+<import src="/common/components/loading-component/component.wxml"></import>

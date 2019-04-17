@@ -1,0 +1,32 @@
+<template name="cardItem">
+    <view catch:tap="navigateToDetail" class="card-item" data-card_number="{{card_number}}">
+        <view class="left">
+            <image src="{{picture}}"></image>
+            <view class="mask" wx:if="{{statusMap[status].bgUrl}}">
+                <image src="{{statusMap[status].bgUrl}}"></image>
+            </view>
+        </view>
+        <view class="right {{statusMap[status].className}}">
+            <view class="description">
+                <text>面值{{sku.face_value/100}}元饿了么心意卡</text>
+                <view class="balance">
+          余额: <text>￥{{sku.face_value/100}}</text>
+                </view>
+            </view>
+            <view catch:tap class="btn-wrapper" wx:if="{{status==='2'}}">
+                <navigator bind:tap="giveGiftCard" class="redirect" data-card_number="{{card_number}}" url="{{'./pages/share/index?cardNum='+card_number}}">
+          赠送好友
+        </navigator>
+                <view catch:tap="useGiftCard" class="redirect redirect-owner" data-card_number="{{card_number}}" url="/pages/index/index">
+          自己使用
+        </view>
+            </view>
+            <view class="card-tip" wx:if="{{status==='3'}}">
+        24小时内未领取将退回至「我的礼品卡」
+      </view>
+            <view class="card-tip" wx:if="{{status==='4'}}">
+        已送给了{{detail_json.receive_info.nick_name}}
+      </view>
+        </view>
+    </view>
+</template>

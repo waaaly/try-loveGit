@@ -1,0 +1,10 @@
+<template name="badge">
+    <view class="badge-container">
+        <view class="badge-body">
+            <view class="badge-icon" style="background: {{'#'+icon_color}}; border-color: {{'#'+icon_color}}; {{style}}" wx:if="icon_name"> {{icon_name}} </view>
+            <view class="badge-description">
+        {{description}}
+      </view>
+        </view>
+    </view>
+</template>

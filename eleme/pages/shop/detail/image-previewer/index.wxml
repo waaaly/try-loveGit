@@ -1,0 +1,5 @@
+<template name="image-previewer">
+    <view catchtap="onPreviewTap" class="image-previewer">
+        <view alt="{{title}}" class="image-previewer-body" style="background-image: url({{src}})"></view>
+    </view>
+</template>

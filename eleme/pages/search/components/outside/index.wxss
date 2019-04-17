@@ -1,0 +1,24 @@
+.outside-root {
+    display: flex;
+    height: 102rpx;
+    align-items: center;
+    padding: 0 32rpx;
+    font-size: 28rpx;
+    background-color: #fff;
+}
+
+.outside-logo {
+    height: 50rpx;
+    width: 50rpx;
+    margin-right: 30rpx;
+}
+
+.outside-name {
+    color: #118dff;
+    font-weight: bold;
+    margin: 0 6rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 340rpx;
+    white-space: nowrap;
+}

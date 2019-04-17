@@ -1,0 +1,6 @@
+<template name="loading-component">
+    <view class="loading-wrapper">
+        <view class="all-loaded" wx:if="{{loadedAll}}">没有更多</view>
+        <image class="loading-image" src="/common/icons/spinner.svg" wx:else></image>
+    </view>
+</template>

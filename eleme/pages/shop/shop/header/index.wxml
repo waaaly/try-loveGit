@@ -1,0 +1,51 @@
+<template name="shop-header">
+    <navigator class="shop-header" hoverClass="none" url="/pages/shop/detail/index?id={{id}}&ele_id={{ele_id}}&isNewRetail={{isNewRetail?1:0}}">
+        <view class="shop-header-main grid">
+            <view class="shop-logo-box">
+                <image class="shop-logo" src="{{image_path}}"></image>
+            </view>
+            <view class="shop-content cell cell-fill">
+                <view class="shop-name grid grid-middle" url="/pages/shop/detail/index?id={{id}}&isNewRetail={{isNewRetail?1:0}}">
+                    <view class="shop-header-tag" wx:if="{{is_premium}}">
+                        <image class="icon-pinpai" src="{{imageHash['icon_brand']}}"></image>
+                    </view>
+                    <view class="text-ellipsis cell cell-fill"> {{name}} </view>
+                    <view class="shop-nav">
+                        <image class="icon-right-arrow" src="{{imageHash['icon_shop_info_arrow']}}"></image>
+                    </view>
+                </view>
+                <view class="shop-meta grid grid-middle cell-11of12 text-ellipsis">
+                    <view class="shop-header-tag" wx:if="{{delivery_mode.text&&delivery_mode.text==='蜂鸟专送'}}">
+                        <image class="icon-fengniao" src="{{imageHash['icon_fengniao']}}"></image>
+                    </view>
+                    <template is="slash-spliter" data="{{value:delivery_mode?delivery_mode.text:'商家配送'}}" wx:if="{{delivery_mode.text&&(delivery_mode.text===''||delivery_mode.text==='商家配送')}}"></template>
+                    <template is="slash-spliter" data="{{value:order_lead_time+'分钟送达'}}"></template>
+                    <template is="slash-spliter" data="{{value:piecewise_agent_fee.tips}}"></template>
+                </view>
+                <view class="shop-notice text-ellipsis">
+          公告：{{promotion_info||'欢迎光临，用餐高峰期请提前下单，谢谢。'}}
+        </view>
+            </view>
+        </view>
+        <view catchtap="toggleActivity" class="shop-activity grid grid-between grid-middle" wx:if="{{activities.length>0}}">
+            <view class="cell cell-10of12 y-swiper-wrapper">
+                <view class="y-swiper" style="transform: translateY({{activityOffset}})">
+                    <view class="shop-activity-item grid grid-middle" wx:for="{{activities}}" wx:for-item="act" wx:key="id">
+                        <view class="shop-activity-icon" style="background: {{'#'+act.icon_color}}; border-color: {{'#'+act.icon_color}}">
+              {{act.icon_name}}
+            </view>
+                        <text class="text-ellipsis"> {{act.description}} </text>
+                    </view>
+                </view>
+            </view>
+            <view class="shop-activity-count grid grid-middle">
+        {{activities.length}}个活动
+      </view>
+        </view>
+        <view class="shop-activity grid grid-between grid-top shop-no-activity" wx:else>
+      本店暂无活动
+    </view>
+    </navigator>
+</template>
+<import src="../../components/slash-spliter/index.wxml"></import>
+<import src="../../components/sweet-icon/index.wxml"></import>

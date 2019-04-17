@@ -1,0 +1,30 @@
+<template name="address">
+    <view bindtap="goToSelectAddress" class="section address brief">
+        <div class="brief-main" wx:if="{{address}}">
+            <image class="icon" src="{{imageHash['location_fill']}}"></image>
+            <div class="detail">
+                <div class="top">
+                    <text class="name">{{address.name}}</text>
+                    <text class="sex" wx:if="{{address.sex===1}}">先生</text>
+                    <text class="sex" wx:if="{{address.sex===2}}">女士</text>
+                    <text class="phone">{{address.phone}}</text>
+                </div>
+                <div class="bottom">
+                    <text class="address-tag" style="background: #ff6020;" wx:if="{{address.tag==='家'||address.tag_type===1}}">家</text>
+                    <text class="address-tag" style="background: #5dcf7b;" wx:if="{{address.tag==='学校'||address.tag_type===2}}">学校</text>
+                    <text class="address-tag" style="background: #0097ff;" wx:if="{{address.tag==='公司'||address.tag_type===3}}">公司</text>
+                    <view class="text">{{address.address+address.address_detail}}</view>
+                </div>
+            </div>
+            <image class="border" src="{{imageHash['address-border']}}"></image>
+        </div>
+        <div class="brief-main null" wx:if="{{!address}}">
+            <image class="icon" src="{{imageHash['location_fill']}}"></image>
+            <div class="detail">
+                <text>请选择一个收货地址</text>
+            </div>
+            <image class="border" src="{{imageHash['address-border']}}"></image>
+        </div>
+        <div class="more"></div>
+    </view>
+</template>

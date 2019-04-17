@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="199" height="200" viewBox="0 0 199 200">
+    <defs>
+        <radialGradient id="a" cx="0%" cy="-14.226%" r="149.437%" fx="0%" fy="-14.226%" gradientTransform="scale(1 .99967) rotate(47.996 0 -.142)">
+            <stop offset="0%" stop-color="#49C7FF"/>
+            <stop offset="41.156%" stop-color="#39B2FC"/>
+            <stop offset="100%" stop-color="#2395FF"/>
+        </radialGradient>
+        <radialGradient id="b" cx="0%" cy="-14.226%" r="149.437%" fx="0%" fy="-14.226%" gradientTransform="scale(1 .99967) rotate(47.996 0 -.142)">
+            <stop offset="0%" stop-color="#49C7FF"/>
+            <stop offset="41.156%" stop-color="#39B2FC"/>
+            <stop offset="100%" stop-color="#2395FF"/>
+        </radialGradient>
+        <filter id="c" width="150.2%" height="150.2%" x="-25.1%" y="-25.1%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="12"/>
+        </filter>
+        <radialGradient id="d" cx="0%" cy="-14.226%" r="149.437%" fx="0%" fy="-14.226%" gradientTransform="scale(1 .99967) rotate(47.996 0 -.142)">
+            <stop offset="0%" stop-color="#49C7FF"/>
+            <stop offset="29.656%" stop-color="#31AFFD"/>
+            <stop offset="100%" stop-color="#2395FF"/>
+        </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(18 5)">
+        <ellipse cx="81.5" cy="81.527" fill="url(#a)" rx="81.5" ry="81.527"/>
+        <ellipse cx="81.5" cy="94.296" fill="url(#b)" fill-opacity=".4" filter="url(#c)" rx="71.681" ry="71.704"/>
+        <ellipse cx="81.5" cy="81.527" fill="url(#d)" rx="81.5" ry="81.527"/>
+        <path fill="#FFF" d="M36.122 110.413C20.046 85.847 27.083 53 51.835 37.048c24.751-15.953 57.848-8.971 73.923 15.593a52.66 52.66 0 0 1 2.508 4.26l.062.118a2.914 2.914 0 0 1-1.037 3.75L77.333 92.964a2.963 2.963 0 0 1-4.077-.86l-2.596-3.968c-2.321-3.547-1.306-8.288 2.268-10.591l31.826-20.513a2.912 2.912 0 0 0 .302-4.682C92.596 42.2 74.475 40.707 60.234 49.884 42.625 61.233 37.621 84.6 49.056 102.075c11.426 17.461 34.94 22.432 52.544 11.12l.043-.032c.015-.01.03-.016.045-.025 3.568-2.266 8.315-1.253 10.625 2.278l2.467 3.77c.001.002.002.005.005.006 0 .003.002.004.003.007a2.912 2.912 0 0 1-.627 3.866 53.539 53.539 0 0 1-4.116 2.94c-24.753 15.953-57.85 8.972-73.923-15.592zm80.14-23.14l10.258-6.27c1.4-.855 3.271-.48 4.18.837l3.33 4.827c2.75 3.982 1.547 9.307-2.686 11.894l-5.13 3.135c-1.399.854-3.27.479-4.179-.838l-6.661-9.652c-.91-1.318-.512-3.078.887-3.933z"/>
+    </g>
+</svg>

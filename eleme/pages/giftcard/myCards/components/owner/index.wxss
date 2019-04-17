@@ -1,0 +1,113 @@
+.card-share {
+    background-color: #f5f5f5;
+}
+
+.card-share .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70rpx;
+    background: #fff;
+}
+
+.card-share .header>image {
+    width: 622rpx;
+    height: 373rpx;
+    border-radius: 8rpx;
+    box-shadow: 0 0 24px 0 rgba(0,0,0,0.2);
+}
+
+.card-share .share-title {
+    padding-bottom: 24rpx;
+    font-size: 44rpx;
+    color: #333;
+}
+
+.card-share .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20rpx 0;
+    background: #fff;
+    font-size: 40rpx;
+}
+
+.card-share .description text {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.card-share .description .denomination {
+    margin-top: 20rpx;
+}
+
+.card-share .description .denomination-large {
+    margin: 50rpx 0 10rpx;
+    font-size: 40rpx;
+    color: #333;
+}
+
+.card-share .description .notice {
+    margin-top: 20rpx;
+    color: #999;
+}
+
+.card-share .main {
+    margin-top: 16rpx;
+    padding: 40rpx;
+    font-size: 30rpx;
+    background: #fff;
+}
+
+.card-share .main textarea {
+    width: 100%;
+}
+
+.card-share .user-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.card-share .user-wrapper>image {
+    margin-right: 12rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.card-share .greetings {
+    font-size: 30rpx;
+}
+
+.card-share .greetings-placeholder {
+    color: #999;
+}
+
+.card-share .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 148rpx;
+    background-color: #fff;
+    box-shadow: 0 -3px 6px 0 rgba(153,153,153,0.15);
+}
+
+.ginving-btn {
+    width: 690rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    color: #fff;
+    border: none;
+    border-radius: 2rpx;
+    background-color: #2396ff;
+}
+
+.ginving-btn::after {
+    display: none;
+}

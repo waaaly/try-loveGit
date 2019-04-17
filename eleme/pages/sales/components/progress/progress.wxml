@@ -1,0 +1,5 @@
+<template name="food-progress">
+    <view class="food-progress-bg">
+        <view class="food-progress-fg" style="width: {{percent}}%"></view>
+    </view>
+</template>

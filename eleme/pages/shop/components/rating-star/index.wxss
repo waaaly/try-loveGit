@@ -1,0 +1,18 @@
+.rating-star-container {
+    color: rgb(221,221,221);
+    position: relative;
+    margin-right: 8rpx;
+    font-size: 11px;
+}
+
+.rating-star-container::before {
+    content: '★★★★★';
+}
+
+.rating-star {
+    color: rgb(255,170,12);
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}

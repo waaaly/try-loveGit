@@ -1,0 +1,49 @@
+.records {
+    color: #333;
+    font-family: Helvetica Neue,Tahoma,Arial,PingFangSC-Regular,Hiragino Sans GB,Microsoft Yahei,sans-serif;
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+    padding: 40rpx 40rpx 30rpx;
+    line-height: 1;
+    font-weight: 500;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.status-title {
+    font-size: 44rpx;
+}
+
+.balance {
+    font-size: 39rpx;
+    color: #ff5339;
+}
+
+.balance-symbol {
+    font-size: 33rpx;
+}
+
+.record {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40rpx;
+    height: 108rpx;
+    line-height: 108rpx;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.record-time {
+    margin-right: 30rpx;
+    font-size: 30rpx;
+}
+
+.record-amount {
+    font-size: 26rpx;
+    font-weight: 500;
+}
+
+.amount-symbol {
+    font-size: 22rpx;
+}

@@ -1,0 +1,75 @@
+.ticket {
+    position: relative;
+    display: flex;
+    margin: 0 auto 20rpx;
+    align-items: center;
+    width: 622rpx;
+    height: 158rpx;
+    background: url(https://fuss10.elemecdn.com/8/60/abdadb2461dc413f4423417c3651csvg.svg) 0 0 no-repeat;
+    background-size: contain;
+}
+
+.ticket-left {
+    flex: 0 0 158rpx;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-amount {
+    color: #ff0034;
+    display: block;
+    font-size: 56rpx;
+    font-family: "CSD";
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 8rpx;
+}
+
+.ticket-amount::before {
+    content: "¥";
+    font-size: 24rpx;
+    vertical-align: super;
+}
+
+.ticket-arrow {
+    margin-left: 5rpx;
+    width: 24rpx;
+    height: 24rpx;
+}
+
+.ticket-limit {
+    color: #666;
+    font-size: 20rpx;
+}
+
+.ticket-right {
+    padding-left: 20rpx;
+}
+
+.ticket-name {
+    font-size: 32rpx;
+    margin-bottom: 25rpx;
+    color: #333;
+}
+
+.ticket-date {
+    color: #999;
+    font-size: 20rpx;
+}
+
+.disabled .ticket-amount {
+    color: #888;
+}
+
+.disabled .ticket-title {
+    color: #888;
+}
+
+.disabled-icon {
+    position: absolute;
+    width: 112rpx;
+    height: 112rpx;
+    right: 32rpx;
+    top: 22rpx;
+}

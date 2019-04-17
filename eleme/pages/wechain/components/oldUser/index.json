@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "ad": "/pages/wechain/components/ad/index",
+        "ticket": "/pages/wechain/components/ticket/index",
+        "cashPopup": "/pages/wechain/components/cashPopup/index"
+    }
+}

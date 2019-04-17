@@ -1,0 +1,50 @@
+.ad {
+    margin: 0 auto;
+    width: 428rpx;
+    height: 23px;
+    border-radius: 48rpx;
+    background-color: rgba(255,255,255,0.8);
+    border: solid 1rpx #eeeeee;
+    overflow: hidden;
+}
+
+.ad2 {
+    background-color: rgba(206,83,59,.3);
+    border: none;
+}
+
+.ad2 .ad-text {
+    color: #f9f9f9;
+    opacity: .5;
+}
+
+.ad-item {
+    padding-left: 30rpx;
+    height: 23px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    align-items: center;
+}
+
+.ad-avatar {
+    flex: 0 0 32rpx;
+    width: 32rpx;
+    height: 32rpx;
+    border-radius: 100%;
+}
+
+.ad-text {
+    color: #999;
+    font-size: 22rpx;
+    margin-left: 10rpx;
+    display: flex;
+    align-items: center;
+}
+
+.ad-username {
+    display: inline-block;
+    max-width: 80rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

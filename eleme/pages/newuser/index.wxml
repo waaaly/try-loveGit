@@ -1,0 +1,22 @@
+<import src="./components/ticket/index.wxml"></import>
+<import src="./components/shopList/index.wxml"></import>
+<import src="/common/components/not-my-fault/index.wxml"></import>
+<view class="prefecture" wx:if="{{!locateFailed}}">
+    <view class="header {{config[status].className}}" style="background-image: url({{config[status].backgroundImage}})">
+        <view class="header-text">
+            <text class="title">{{config[status].content}}</text>
+            <view catchtap="handleTab" class="header-bth" wx:if="{{config[status].text}}">{{config[status].text}}</view>
+            <view class="ticket-container" wx:if="{{status===3}}">
+                <template is="ticket" data="{{...item}}" wx:for="{{packets}}"></template>
+            </view>
+        </view>
+    </view>
+    <text class="h3">首单最高立减30</text>
+    <template is="shopList" data="{{imageHash:imageHash,restaurants:restaurants,loadedAll:loadedAll}}"></template>
+</view>
+<view bindtap="goLocation" class="no-address" wx:else>
+    <template is="not-my-fault" data="{{ msg:'未定位',img:imageHash['NO_ADDRESS'] }}"></template>
+    <view style="text-align: center;">
+        <view class="btn btn-primary">去定位</view>
+    </view>
+</view>

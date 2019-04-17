@@ -1,0 +1,20 @@
+<template name="foods">
+    <view class="foods" wx:if="foods.length">
+        <view class="title">
+            <image class="title-bar" src="assets/bar.png"></image>
+            <text>热销商品</text>
+            <image class="title-bar" src="assets/bar.png"></image>
+        </view>
+        <view bindtap="goShop" class="food" wx:for="{{foods}}" wx:for-item="food" wx:key="*this">
+            <image src="{{food.image}}"></image>
+            <view class="body">
+                <view class="name">{{food.name}}</view>
+                <view class="amount">月售{{food.month_sales}}份</view>
+                <view class="price">
+                    <text class="yen">￥</text>
+                    <text>{{food.price}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,17 @@
+<template name="plouto$fe13ba84">
+    <view class="_view data-v-a783e080 {{['hongbao',isLotteryHongbao&&'lotteryHongbao']}}">
+        <view class="_view data-v-a783e080 {{['left',isLucky&&'lucky']}}">
+            <text class="_text data-v-a783e080 symbol">{{isLucky?'+':'¥'}}</text>
+            <text class="_text data-v-a783e080 amount">{{benefit[0]}}</text>
+            <text class="_text data-v-a783e080 digit" wx:if="{{benefit[1]}}">.{{benefit[1]}}</text>
+        </view>
+        <view class="_view data-v-a783e080 right">
+            <view class="_view data-v-a783e080 title">{{hongbao.title}}</view>
+            <view class="_view data-v-a783e080 subtitle" wx:if="{{hongbao.description_map.sum_condition}}">满{{hongbao.description_map.sum_condition}}可用</view>
+            <view class="_view data-v-a783e080 subtitle" wx:if="{{hongbao.description_map.text}}">{{hongbao.description_map.text}}</view>
+            <view class="_view data-v-a783e080 subtitle" wx:if="{{hongbao.description_map.end_date}}">{{hongbao.description_map.end_date}}到期</view>
+        </view>
+        <image class="_img data-v-a783e080 get" src="/copy-asset/pages/plouto/media/get.png" wx:if="{{isLotteryHongbao}}"></image>
+        <view class="_view data-v-a783e080 line"></view>
+    </view>
+</template>

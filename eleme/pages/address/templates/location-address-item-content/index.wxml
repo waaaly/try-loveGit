@@ -1,0 +1,14 @@
+<template name="location-address-item-content">
+    <view class="main">
+        <view class="top">
+            <text class="address-tag home" wx:if="{{addr.tag==='家'}}">{{addr.tag}}</text>
+            <text class="address-tag company" wx:if="{{addr.tag==='公司'}}">{{addr.tag}}</text>
+            <text class="address-tag school" wx:if="{{addr.tag==='学校'}}">{{addr.tag}}</text>
+            <text class="address-text">{{addr.address+addr.address_detail}}</text>
+        </view>
+        <view class="bottom">
+            <text class="name">{{addr.name+( ['','(先生)','(女士)'][addr.sex]||'' )}}</text>
+            <text class="phone">{{addr.phone}}</text>
+        </view>
+    </view>
+</template>

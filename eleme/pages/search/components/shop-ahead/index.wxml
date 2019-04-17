@@ -1,0 +1,25 @@
+<template name="shop-ahead">
+    <view class="wordItem" hidden="{{restaurants.length||words.length}}">
+        <image class="wordItem-icon" src="{{imageHash['search']}}"></image>
+        <text class="wordItem-body">查找“{{keyword}}”</text>
+    </view>
+    <view catchtap="goToShop" class="shop-ahead-root" data-restaurant_id="{{item.id}}" wx:for="{{restaurants}}" wx:key="{{ item.id }}">
+        <image class="shop-ahead-logo" src="{{item.image_url}}"></image>
+        <view class="shop-ahead-body">
+            <view>
+                <view class="shop-ahead-nameRow">
+                    <text class="shop-ahead-name">{{item.name}}</text>
+                    <text class="shop-ahead-tag" style="background: #{{item.name_color}}" wx:for="{{item.tags||[]}}" wx:key="{{ index }}">{{item.name}}</text>
+                </view>
+                <view class="shop-ahead-nextTime" wx:if="{{item.next_business_time}}">
+          接受预定，{{shop.next_business_time}}开始配送
+        </view>
+            </view>
+            <text class="shop-ahead-rating">评价{{item.rating}}</text>
+        </view>
+    </view>
+    <view catchtap="openSearch" class="wordItem" data-keyword="{{item}}" wx:for="{{words}}" wx:key="{{ index }}">
+        <image class="wordItem-icon" src="{{imageHash['search']}}"></image>
+        <text class="wordItem-body">{{item}}</text>
+    </view>
+</template>

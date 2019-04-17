@@ -1,0 +1,15 @@
+.content {
+    padding-left: 20rpx;
+}
+
+.title {
+    font-size: 30rpx;
+    color: #333;
+    font-weight: bold;
+    padding: 50rpx 0 15rpx;
+}
+
+.detail-item {
+    font-size: 26rpx;
+    color: #666;
+}

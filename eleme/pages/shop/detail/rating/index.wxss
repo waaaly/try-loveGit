@@ -1,0 +1,41 @@
+.shop-rating-container {
+    background: #fff;
+    margin-top: 20rpx;
+    color: rgb(153,153,153);
+}
+
+.shop-rating-header,.rating-tag-list {
+    padding: 26rpx 30rpx;
+}
+
+.shop-rating-header {
+    border-bottom: 1rpx solid rgb(238,238,238);
+    padding: 26rpx 30rpx;
+    font-size: 26rpx;
+}
+
+.shop-rating-value {
+    font-size: 30rpx;
+    line-height: 30rpx;
+    color: rgb(255,96,0);
+    padding-right: 6rpx;
+    font-weight: bold;
+}
+
+.rating-compare {
+    color: rgb(51,51,51);
+}
+
+.rating-count {
+    text-align: right;
+    color: rgb(153,153,153);
+}
+
+.rating-list {
+    font-size: 26rpx;
+}
+
+.shop-rating-footer {
+    height: 88rpx;
+    font-size: 26rpx;
+}

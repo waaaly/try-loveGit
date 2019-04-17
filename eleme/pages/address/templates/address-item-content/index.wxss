@@ -1,0 +1,58 @@
+.address-list .address-item .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 26rpx;
+    flex: 1;
+}
+
+.address-list .address-item .main .top,.address-list .address-item .main .bottom {
+    width: 100%;
+    padding: 5rpx 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.address-list .address-item .main .top text {
+    margin-right: 20rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.address-list .address-item .main .name {
+    font-size: 30rpx;
+    font-weight: bolder;
+    max-width: 280rpx;
+}
+
+.address-list .address-item .main .address-tag {
+    display: inline-block;
+    color: #fff;
+    width: 60rpx;
+    height: 28rpx;
+    line-height: 30rpx;
+    font-size: 26rpx;
+    border-radius: 4rpx;
+    margin-right: 10rpx;
+    text-align: center;
+}
+
+.address-list .address-item .main .address-text {
+    color: #999;
+    max-width: calc(100% - 100rpx);
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.address-list .address-item .main .top text {
+    margin-right: 20rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

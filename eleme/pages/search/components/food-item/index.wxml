@@ -1,0 +1,50 @@
+<template name="food-item">
+    <view class="fooditem-root">
+        <view bindtap="goToShop" class="fooditem-shop" data-index="{{listIndex}}" data-restaurant_id="{{id}}">
+            <image class="fooditem-logo" src="{{image_url}}"></image>
+            <view class="fooditem-shopBody">
+                <view class="fooditem-nameRow">
+                    <view class="{{is_premium?'fooditem-premium':''}} fooditem-nameBody">
+                        <text class="fooditem-name">{{name}}</text>
+                        <text class="fooditem-tag busy" wx:if="{{status===2}}">商家繁忙</text>
+                        <text class="fooditem-tag next" wx:if="{{status===5}}">{{next_business_time}}后配送</text>
+                    </view>
+                    <text class="fooditem-deliveryTip" wx:if="{{delivery_mode&&delivery_mode.id!==2}}">{{delivery_mode.text}}</text>
+                </view>
+                <view class="fooditem-salesRow">
+                    <view>
+                        <text>评价{{rating}}</text>
+                        <text class="fooditem-divider">起送费¥{{float_minimum_order_amount}}</text>
+                        <text class="fooditem-divider">配送费¥{{float_delivery_fee}}</text>
+                    </view>
+                    <view>
+                        <text>{{distance}}</text>
+                        <text class="fooditem-divider">{{order_lead_time}}分钟</text>
+                    </view>
+                </view>
+                <view class="festival" wx:if="{{act_tag===1}}">春季外卖节</view>
+            </view>
+        </view>
+        <view class="fooditem-foods">
+            <view bindtap="goToFood" class="fooditem-fooditem" data-food-id="{{item.id}}" data-restaurant-id="{{item.restaurant_id}}" hidden="{{!folded?false:index>attachedFoodAmount-1}}" wx:for="{{foods}}" wx:key="{{ item.id }}">
+                <image class="fooditem-foodlogo" src="{{item.imageUrl}}"></image>
+                <view class="fooditem-foodBody">
+                    <text class="fooditem-foodname" wx:if="{{!item.highlightName}}">{{item.name}}</text>
+                    <text class="fooditem-foodname" wx:if="{{item.highlightName}}">
+                        <text style="{{item.color?'color: '+item.color+';':''}}" wx:for="{{item.highlightName}}" wx:key="{{ index }}">{{item.text}}</text>
+                    </text>
+                    <text class="fooditem-sales">月售{{item.month_sales}}份  好评率{{item.satisfy_rate}}%</text>
+                    <view>
+                        <text class="fooditem-price">{{item.price}}</text>
+                        <text class="fooditem-originalPrice" wx:if="{{item.original_price}}">¥{{item.original_price}}</text>
+                        <text class="fooditem-activityTag" style="{{item.activity_tag_style}}" wx:if="{{item.activities[0]}}">{{item.activities[0].description}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view catchtap="toggleFold" class="fooditem-foodMore" data-index="{{listIndex}}" wx:if="{{foods.length>attachedFoodAmount}}">
+      {{folded?'展开更多商品'+foods.length-attachedFoodAmount+'个':'收起'}}
+      <image src="./assets/arrow_{{folded?'down':'up'}}.svg"></image>
+        </view>
+    </view>
+</template>

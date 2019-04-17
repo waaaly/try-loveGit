@@ -1,0 +1,9 @@
+<template name="no-result">
+    <view class="no-result-root">
+        <image class="no-result-logo" src="{{imageHash['NO_SEARCH_RESULT']}}"></image>
+        <view>
+            <view class="no-result-title">附近没有搜索结果</view>
+            <view class="no-result-subTitle">换个关键词试试吧</view>
+        </view>
+    </view>
+</template>

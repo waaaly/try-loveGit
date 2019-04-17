@@ -1,0 +1,38 @@
+<template name="result">
+    <view class="result">
+        <view class="wrapper">
+            <text class="title">参与好友</text>
+            <view class="list-wrapper">
+                <view class="user-wrapper" wx:for="{{overview}}">
+                    <image src="{{item.avatar}}"></image>
+                    <text>{{item.user_name}}</text>
+                </view>
+                <view catch:tap="openDetail" class="user-wrapper {{isDetailShow?'arrow-down':'arrow-up'}}" wx:if="{{detail.length>0}}">
+                    <image src="{{closeBg}}"></image>
+                    <text>{{isDetailShow?'收起':'展开'}}</text>
+                </view>
+            </view>
+            <view class="list-wrapper" wx:if="{{isDetailShow}}">
+                <view class="user-wrapper" wx:for="{{detail}}">
+                    <image src="{{item.avatar}}"></image>
+                    <text>{{item.user_name}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="wrapper" wx:if="{{isAlidayCity}}">
+            <text class="title">更有「外卖节限时优惠」等你抢</text>
+            <view catch:tap="startShare" class="festival">
+                <view class="left">
+                    <text>2亿红包疯抢中</text>
+                    <view class="progress">
+                        <view>
+                            <text></text>
+                        </view>
+                        <text>已抢80%</text>
+                    </view>
+                </view>
+                <text class="right">抢</text>
+            </view>
+        </view>
+    </view>
+</template>

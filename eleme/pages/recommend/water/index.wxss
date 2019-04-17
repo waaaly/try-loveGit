@@ -1,0 +1,377 @@
+.container {
+    width: 100%;
+    min-height: 100%;
+    padding-bottom: 20rpx;
+    background-color: #fffdf1;
+}
+
+.header {
+    width: 100%;
+    height: 209rpx;
+    background: url(//cube.elemecdn.com/3/28/8547e5ced2c4fdafd84ef4bdf780dpng.png) no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 42rpx;
+    font-weight: 300;
+    color: #feebb8;
+}
+
+.account {
+    margin-top: 62rpx;
+    font-size: 26rpx;
+    line-height: 37rpx;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.commend {
+    padding-left: 25rpx;
+    padding-right: 33rpx;
+    margin: 32rpx auto 0;
+    width: 655rpx;
+    height: 150rpx;
+    background: url('https://cube.elemecdn.com/c/d0/c4b3a5396780b1b5d5cde5a262df4png.png') no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+}
+
+.commend text {
+    font-size: 24rpx;
+    padding: 15rpx 30rpx;
+    border-radius: 40rpx;
+    background-image: linear-gradient(to left,#ffde7e,#f9df94);
+    color: #7d490f;
+}
+
+.commendAmount {
+    font-size: 80rpx;
+    color: #ea3349;
+    font-weight: 500;
+}
+
+.commendAmount:before {
+    content: "¥";
+    margin: 0 0.28rem 0 0;
+    font-family: Arial,sans-serif;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.commendButton {
+    flex: 1;
+    text-align: right;
+}
+
+.card {
+    position: relative;
+    margin: 32rpx auto 0;
+    width: 654rpx;
+    height: 184rpx;
+    padding: 0 32rpx;
+    border-radius: 4rpx;
+    box-shadow: 0 2rpx 8rpx 0 rgba(209,162,81,.3);
+    background-color: #ffffff;
+    border: solid 1rpx rgba(230,230,230,.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card.new {
+    height: 222rpx;
+    flex-direction: column;
+}
+
+.top {
+    width: 100%;
+    padding-bottom: 15rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    margin-right: 24rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.logo.border {
+    border-radius: 4rpx;
+    border: 1rpx solid rgba(151,151,151,.5);
+}
+
+.content {
+    flex: 1;
+}
+
+.name {
+    margin-bottom: 4rpx;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    font-weight: 600;
+    color: #333;
+}
+
+.limit,.expire {
+    margin-top: 8rpx;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    color: #999;
+}
+
+.main {
+    width: 120rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.count {
+    margin-left: -12rpx;
+    width: 100%;
+    color: #ff5339;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.currency {
+    font-size: 24rpx;
+    line-height: 1.17;
+}
+
+.amount {
+    font-size: 54rpx;
+    font-weight: 500;
+    line-height: .87;
+    font-family: "CSD";
+}
+
+.use {
+    margin-top: 16rpx;
+    width: 100rpx;
+    height: 42rpx;
+    border-radius: 4rpx;
+    background-color: #ff5339;
+    font-size: 20rpx;
+    color: #ffffff;
+    line-height: 42rpx;
+    text-align: center;
+}
+
+.new .use {
+    margin-top: 0;
+}
+
+.bottom {
+    width: 100%;
+    padding-top: 15rpx;
+    border-top: 1rpx dotted #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.restrict {
+    font-size: 20rpx;
+    color: #ff5339;
+}
+
+.footer {
+    margin-top: 72rpx;
+}
+
+.rules {
+    margin: 0 36rpx;
+}
+
+.title {
+    display: flex;
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #333;
+    justify-content: center;
+    align-items: center;
+}
+
+.ruleList {
+    margin-top: 24rpx;
+    margin-left: 42rpx;
+    list-style: decimal;
+}
+
+.rule {
+    font-size: 24rpx;
+    line-height: 2;
+    color: #999;
+}
+
+.left {
+    margin-right: 16rpx;
+    width: 80rpx;
+    height: 12rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #e0e0e0;
+}
+
+.left::before {
+    content: '';
+    width: 70rpx;
+    height: 2rpx;
+    background-image: linear-gradient(to right,rgba(224,224,224,0),currentColor);
+}
+
+.left::after {
+    content: '';
+    width: 6rpx;
+    height: 6rpx;
+    background-color: currentColor;
+    border-radius: 50%;
+}
+
+.right {
+    margin-left: 16rpx;
+    width: 80rpx;
+    height: 12rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #e0e0e0;
+}
+
+.right::before {
+    content: '';
+    width: 6rpx;
+    height: 6rpx;
+    background-color: currentColor;
+    border-radius: 50%;
+}
+
+.right::after {
+    content: '';
+    width: 70rpx;
+    height: 2rpx;
+    background-image: linear-gradient(to right,currentColor,rgba(224,224,224,0));
+}
+
+.component-emptyStatusTip {
+    width: 100vw;
+    height: 100vh;
+    background: #fffdf1 url('https://cube.elemecdn.com/0/62/b5305de35bf656ac54341a381f71dpng.png') no-repeat 0 0;
+    background-size: 100% auto;
+}
+
+.tip-text {
+    font-size: 38rpx;
+    font-weight: 500;
+    text-align: center;
+    color: #fff4be;
+    padding-top: 70rpx;
+}
+
+.award-money {
+    position: absolute;
+    top: 517rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 226rpx;
+    height: 218rpx;
+}
+
+.invite-btn {
+    position: absolute;
+    top: 842rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 380rpx;
+    height: 100rpx;
+}
+
+.updata {
+    margin-left: 20rpx;
+}
+
+.notify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin-top: -20px;
+}
+
+.notify navigator {
+    margin-top: 32rpx;
+}
+
+.login-image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 300rpx;
+    height: 170rpx;
+}
+
+.login-image image {
+    width: 150rpx;
+    height: 138rpx;
+}
+
+.login-content {
+    height: 26rpx;
+    margin-top: 27rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #56d176;
+    border-radius: 4rpx;
+    width: 188rpx;
+    height: 60rpx;
+    color: #fff;
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}
+
+.on-image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 400rpx;
+    height: 400rpx;
+}
+
+.on-image image {
+    width: 400rpx;
+    height: 400rpx;
+}
+
+.on-content {
+    font-size: 40rpx;
+    color: #777;
+    font-weight: bold;
+}
+
+.on-primary {
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    color: #888;
+}

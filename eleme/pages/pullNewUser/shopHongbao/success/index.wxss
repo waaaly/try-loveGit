@@ -1,0 +1,200 @@
+@import "components/hongbao/hongbao.wxss";
+
+@import "components/download/index.wxss";
+
+page {
+    background-color: #fff6e7;
+    color: #8d592d;
+    font-size: 28rpx;
+    box-sizing: border-box;
+}
+
+.relogin {
+    text-decoration: underline;
+    color: #d85940;
+}
+
+.success-header {
+    position: relative;
+    display: flex;
+    height: 270rpx;
+    padding: 0 214rpx;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exceed {
+    text-align: center;
+    margin-top: 40px;
+    color: #d85940;
+}
+
+.success-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 750rpx;
+    height: 270rpx;
+}
+
+.success-eleme-logo,.success-shop-logo {
+    width: 123.6rpx;
+    height: 123.6rpx;
+    border-radius: 12rpx;
+}
+
+.success-flower {
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.success-title-container {
+    color: #d85940;
+    text-align: center;
+}
+
+.exist-title {
+    padding-top: 40rpx;
+    padding-bottom: 20rpx;
+}
+
+.success-title {
+    padding-top: 40rpx;
+    font-size: 40rpx;
+    font-weight: 600;
+}
+
+.success-amount {
+    font-size: 48rpx;
+    margin: 0 10rpx;
+}
+
+.success-subtitle {
+    padding-top: 8rpx;
+    font-size: 32rpx;
+    font-weight: 600;
+}
+
+.hongbao {
+    margin-top: 20rpx;
+}
+
+.success-explain {
+    padding-top: 44rpx;
+    text-align: center;
+    font-size: 28rpx;
+    line-height: 1.5;
+}
+
+.success-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600rpx;
+    height: 88rpx;
+    margin: 32rpx auto 0 auto;
+    color: #fff089;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom,#e65a3f,#cd533e);
+    border-radius: 50rpx;
+}
+
+.viewShop {
+    background: transparent;
+    border: 1rpx solid #e65a3f;
+    color: #e65a3f;
+    font-weight: bold;
+}
+
+.success-button-icon {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 12rpx;
+}
+
+.success-activity {
+    margin-top: 32rpx;
+    text-align: center;
+    font-size: 28rpx;
+}
+
+.success-activity-emphasize {
+    color: #d85940;
+}
+
+.hongbaolist {
+    padding: 48rpx 40rpx 20rpx 40rpx;
+}
+
+.success-rules {
+    padding: 48rpx 40rpx 20rpx 40rpx;
+    line-height: 1.6;
+}
+
+.success-rules-title {
+    position: relative;
+    padding: 16rpx 0;
+    margin-bottom: 32rpx;
+    text-align: center;
+}
+
+.success-rules-title text {
+    background-color: #fff6e7;
+    padding: 0 20rpx;
+}
+
+.success-rules-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: rgba(139,87,42,0.5);
+}
+
+.hongbaolist-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hongbaolist-item:not(:last-child) {
+    margin-bottom: 48rpx;
+}
+
+.hongbaolist-avatar {
+    width: 108rpx;
+    height: 108rpx;
+    margin-right: 32rpx;
+}
+
+.hongbaolist-content {
+    flex: 1;
+}
+
+.hongbaolist-tips {
+    margin-top: 8rpx;
+    display: block;
+}
+
+.hongbaolist-username {
+    font-size: 32rpx;
+    margin-right: 18rpx;
+}
+
+.hongbaolist-time {
+    color: #d69e6e;
+}
+
+.hongbaolist-yen {
+    font-weight: normal;
+    font-size: 28rpx;
+}
+
+.hongbaolist-amount {
+    color: #d85940;
+    font-size: 44rpx;
+    font-weight: bold;
+}

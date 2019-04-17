@@ -1,0 +1,8 @@
+<template name="alert">
+    <view class="layer"></view>
+    <view class="container">
+        <view class="title">{{title}}</view>
+        <view class="content">{{content}}</view>
+        <view bindtap="alertConfirmAction" class="button">{{confirmText}}</view>
+    </view>
+</template>

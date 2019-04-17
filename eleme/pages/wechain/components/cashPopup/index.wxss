@@ -1,0 +1,132 @@
+.container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.close {
+    position: absolute;
+    width: 24rpx;
+    height: 24rpx;
+    right: 32rpx;
+    top: 75rpx;
+}
+
+.content {
+    position: relative;
+    width: 686rpx;
+    height: 634rpx;
+    background: url(https://fuss10.elemecdn.com/1/19/51f31f7ce5fae225043fd7d6d885fsvg.svg) 0 0 no-repeat;
+    background-size: 100% auto;
+    text-align: center;
+}
+
+.center.overflow {
+    flex-direction: column;
+    margin-top: 90rpx;
+    margin-bottom: 120rpx;
+}
+
+.container2 .content {
+    padding-top: 50rpx;
+    margin: 0 auto;
+    height: 540rpx;
+    background: url(https://fuss10.elemecdn.com/9/80/b9101f9638d214ffac6177379d133svg.svg) 0 0 no-repeat;
+}
+
+.container2 .center {
+    margin-bottom: 110rpx;
+}
+
+.container2 .withdraw {
+    position: relative;
+    top: 5rpx;
+    font-size: 26rpx;
+    color: #0097ff;
+}
+
+.container2 .amount {
+    margin: 0 7rpx 0 14rpx;
+}
+
+.top {
+    font-size: 40rpx;
+    color: #fde0a9;
+    margin-top: 48rpx;
+}
+
+.center {
+    margin-top: 120rpx;
+    margin-bottom: 140rpx;
+    font-size: 40rpx;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.amount {
+    color: #e65d42;
+    font-size: 52rpx;
+    font-family: "CSD";
+    margin-right: 12rpx;
+    font-weight: bold;
+}
+
+.bottom-tip {
+    font-size: 22rpx;
+    color: #fde0a9;
+    margin-bottom: 20rpx;
+}
+
+.bottom-button {
+    margin: 0 auto;
+    width: 520rpx;
+    height: 84rpx;
+    line-height: 84rpx;
+    border-radius: 42rpx;
+    background-color: #fde0a9;
+    font-size: 32rpx;
+    color: #5d4a1d;
+}
+
+.bottom-amount {
+    font-size: 36rpx;
+    color: #e65d42;
+    margin: 0 8rpx;
+}
+
+.bottom-arrow {
+    width: 24rpx;
+    height: 24rpx;
+    margin-left: 7rpx;
+}
+
+.overflow-title {
+    color: #999;
+    font-size: 32rpx;
+}
+
+.overflow-des {
+    font-size: 48rpx;
+    font-weight: 300;
+    margin-top: 10rpx;
+}
+
+.overflow-des text {
+    font-family: "CSD";
+    color: #ff3618;
+}

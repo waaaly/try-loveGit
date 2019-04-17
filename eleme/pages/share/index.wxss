@@ -1,0 +1,47 @@
+@import "components/card/card.wxss";
+
+@import "components/dialogue/dialogue.wxss";
+
+@import "../../common/components/download-app/index.wxss";
+
+page {
+    color: #333;
+}
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100rpx;
+    background-color: #fff;
+    padding: 0 30rpx;
+}
+
+.footer>.button {
+    width: 336rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    font-size: 28rpx;
+    text-align: center;
+    border-radius: 4rpx;
+}
+
+.footer>.left {
+    color: #fff;
+    background-color: #2395ff;
+}
+
+.footer>.right {
+    border: 1rpx solid #DDD;
+}

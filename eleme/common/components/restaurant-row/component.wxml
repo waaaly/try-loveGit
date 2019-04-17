@@ -1,0 +1,119 @@
+<template name="restaurant-row">
+    <view class="item  {{searched?'item-sp':''}}">
+        <view class="item-restaurant">
+            <view class="item-new small-size" wx:if="{{is_new}}">新店</view>
+            <view bindtap="goToShop" class="item-box {{foods&&foods.length>0?'border-bottom':''}}" data-index="{{listIndex}}" data-is_transfer="{{is_transfer}}" data-restaurant_id="{{is_transfer?wid:ele_id||id}}">
+                <view class="item-left">
+                    <view class="item-image-wrapper">
+                        <image class="item-image" src="{{image_url}}"></image>
+                        <view class="item-status" hidden="{{status===1}}">{{statusText}}</view>
+                    </view>
+                </view>
+                <view class="item-right">
+                    <view class="item-base">
+                        <view class="item-row">
+                            <view class="item-column-left {{supports.length===0?'restaurant-notag':'restaurant-name-width'}}">
+                                <view class="item-brand" hidden="{{!is_premium}}">
+                                    <image class="icon-pinpai" src="{{imageHash['icon_brand']}}"></image>
+                                </view>
+                                <view class="item-title {{!is_premium?'restaurant-nopremium':''}}">
+                                    <text wx:if="{{!highlightName}}">{{name}}</text>
+                                    <text wx:if="{{highlightName}}">
+                                        <text style="{{item.color?'color: '+item.color+';':''}}" wx:for="{{highlightName}}" wx:key="{{ index }}">{{item.text}}</text>
+                                    </text>
+                                </view>
+                            </view>
+                            <view class="item-service small-size">
+                                <view class="icon" hidden="{{!support_safe}}">保</view>
+                                <view class="icon" hidden="{{!support_ticket}}">票</view>
+                                <view class="icon" hidden="{{!support_pei}}">赔</view>
+                            </view>
+                        </view>
+                        <view class="item-row">
+                            <view class="item-column-left">
+                                <view class="item-grade-info">
+                                    <view class="item-stars-hover">
+                                        <image src="{{imageHash['star_gray']}}"></image>
+                                    </view>
+                                    <view class="item-stars" style="width: {{rating/5*100}}%">
+                                        <image src="{{imageHash['star_regular']}}"></image>
+                                    </view>
+                                </view>
+                                <view class="item-score">{{rating}}</view>
+                                <view class="item-sales">月售{{recent_order_num}}单</view>
+                            </view>
+                            <view class="item-service small-size">
+                                <view wx:if="{{support_ontime}}">
+                                    <image class="icon-ontime" src="{{imageHash['icon_ontime']}}"></image>
+                                </view>
+                                <view style="margin-left: 8rpx" wx:if="{{fengniao||support_ontime}}">
+                                    <image class="icon-fengniao" src="{{imageHash['icon_fengniao']}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="item-row">
+                            <view class="item-column-left">
+                                <view class="item-delivery-text flex">
+                                    <view class="text">
+                    {{miniumFeeText}}
+                  </view>
+                                    <text class="item-split"> | </text>
+                                    <view class="text">
+                    {{deliveryFeeText}}
+                  </view>
+                                    <text class="item-split" wx:if="{{average_cost}}"> | </text>
+                                    <view class="text">
+                    {{average_cost}}
+                  </view>
+                                </view>
+                            </view>
+                            <view class="item-service">
+                                <view class="small-size item-delivery-text">
+                                    <text>{{distance}}</text>
+                                    <block wx:if="{{order_lead_time>0}}">
+                                        <text class="item-split"> | </text>
+                                        <text class="blue">{{order_lead_time}}分钟</text>
+                                    </block>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="festival" wx:if="{{act_tag===1}}">迎春季</view>
+                    </view>
+                </view>
+            </view>
+            <view class="activities {{fromSearch?'right':''}}" wx:if="{{activities&&activities.length>0}}">
+                <view class="item-activity">
+                    <view class="item-row-sp middle-size" hidden="{{index>1&&isActivityFolded}}" wx:for="{{activities}}" wx:key="{{ id }}">
+                        <view class="item-activity-icon" style="background-color: #{{item.icon_color}}">{{item.icon_name}}</view>
+                        <view class="item-activity-desc">{{item.description}}</view>
+                    </view>
+                </view>
+                <view catchtap="toggleActivity" class="middle-size activity-toggle" data-restaurant-index="{{restaurantIndex}}" wx:if="{{activities.length>2}}">
+                    <span>{{activities.length}} 个活动</span>
+                    <span class="dropdown {{isActivityFolded?'':'unfolded'}}"></span>
+                </view>
+            </view>
+        </view>
+        <view class="item-food" wx:if="{{fromHome&&foods&&foods.length===3}}">
+            <view bindtap="goToFood" class="item-food-item border-bottom" data-food-id="{{item.id}}" data-restaurant-id="{{item.restaurant_id}}" data-restaurant-index="{{restaurantIndex}}" wx:for="{{foods}}" wx:key="id">
+                <image src="{{item.imageUrl}}"></image>
+                <view class="item-food-name">{{item.name}}</view>
+                <view class="item-food-price">
+                    <text class="item-food-price-currency">¥</text>
+                    <text class="food-price">{{item.price}}</text>
+                    <text class="food-original-price" wx:if="{{item.original_price}}">{{item.original_price}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="item-food border-bottom" wx:if="{{fromSearch&&foods&&foods.length>0}}">
+            <view class="foodRow">
+                <view bindtap="goToFood" class="foodRow-foodItem" data-food-id="{{item.id}}" data-restaurant-id="{{item.restaurant_id}}" hidden="{{index>2}}" wx:for="{{foods}}" wx:key="{{ index }}">
+                    <image class="foodRow-logo" src="{{item.imageUrl}}"></image>
+                    <text class="foodRow-name">{{item.name}}</text>
+                    <view class="foodRow-price">
+                        <text class="foodRow-symbol">¥</text>{{item.price}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

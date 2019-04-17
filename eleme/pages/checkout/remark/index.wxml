@@ -1,0 +1,19 @@
+<view class="remark-wrapper">
+    <view class="section quick-remark" wx:if="{{flattenRemarks.length}}">
+        <text class="title">快速备注</text>
+        <view class="remarks">
+            <view bindtap="toggleFlattenRemark" class="flattenRemark {{flattenRemark.class}} {{flattenRemark.selected?'selected':''}}" data-index="{{index}}" wx:for="{{flattenRemarks}}" wx:for-item="flattenRemark" wx:key="flattenRemark.text">{{flattenRemark.text}}</view>
+        </view>
+    </view>
+    <view class="section detail-remark">
+        <text class="title">其他备注</text>
+        <view class="remarks">
+            <textarea bindinput="remarkChanged" maxlength="80" placeholder="请输入备注内容(可不填)" placeholderClass="placeholder" value="{{remark||''}}"></textarea>
+        </view>
+    </view>
+    <view class="actions">
+        <view bindtap="confirm" class="confirm">
+      确定
+    </view>
+    </view>
+</view>

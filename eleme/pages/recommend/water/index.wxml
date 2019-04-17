@@ -1,0 +1,67 @@
+<view class="container" wx:if="{{loaded&&currentUser&&newRefer}}">
+    <view wx:if="{{nohb}}">
+        <view class="header">
+            <text wx:if="{{ishas}}">恭喜获得<text class="amount">¥{{sumAmount}}</text>
+                <text>{{hongbaoType}}</text>
+            </text>
+            <text wx:if="{{!ishas}}">{{hongbaoType}}</text>
+        </view>
+        <view class="account" wx:if="{{phone}}">
+            <text>已放入账户:</text>
+            <text>{{phone}}</text>
+        </view>
+        <view class="commend">
+            <view class="commendAmount">10</view>
+            <view bindtap="goRecommend" class="commendButton">
+                <text class="commendbutton">赚现金</text>
+            </view>
+        </view>
+        <view class="card" wx:for="{{promotionItems}}" wx:key="{{index}}">
+            <image alt="" class="logo" src="{{tools.HashToUrld(item)}}"></image>
+            <view class="content">
+                <view class="name">{{tools.formatName(item.name)}}</view>
+                <view class="limit">{{tools.limit(item.sum_condition)}}</view>
+                <view class="expire">{{tools.expired(item)}}</view>
+            </view>
+            <view bindtap="goSomewhere" class="main" data-shopid="{{item.restaurant_id}}">
+                <view class="count" data-shopid="{{item.restaurant_id}}">
+                    <text class="currency" data-shopid="{{item.restaurant_id}}">¥</text>
+                    <text class="amount" data-shopid="{{item.restaurant_id}}">{{item.amount}}</text>
+                </view>
+                <text class="use" data-shopid="{{item.restaurant_id}}">去使用</text>
+            </view>
+        </view>
+        <view class="footer">
+            <view class="rules">
+                <view class="title">
+                    <text class="left"></text>
+          活动规则
+          <text class="right"></text>
+                </view>
+                <view class="ruleList">
+                    <view class="rule" wx:for="{{rules}}" wx:key="index">{{index+1}}.{{item}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="component-emptyStatusTip" wx:if="{{nohb===false}}">
+        <view class="tip-text">{{tips}}</view>
+        <image class="award-money" src="https://cube.elemecdn.com/4/3e/a7c9303f4c5058beef5886834217fpng.png"></image>
+        <image bindtap="goRecommend" class="invite-btn" src="https://cube.elemecdn.com/b/03/0840835cc27aabda7966c7e89ea46png.png"></image>
+    </view>
+</view>
+<view class="notify" wx:if="{{loaded&&!currentUser&&newRefer}}">
+    <view class="login-image">
+        <image src="https://cube.elemecdn.com/b/0d/adf3e7a3a9b048cc77c7a804f692ajpeg.jpeg"></image>
+    </view>
+    <view class="login-content">推荐有奖</view>
+    <view bindtap="goLogin" class="btn-primary">立即登录</view>
+</view>
+<view class="notify" wx:if="{{!newRefer}}">
+    <view class="on-image">
+        <image src="https://cube.elemecdn.com/f/b8/a89de2795709a6152005d30c30d9apng.png"></image>
+    </view>
+    <view class="on-content">你来到一片红包的沙漠</view>
+    <view class="on-primary">没有找到可以领取的红包</view>
+</view>
+<wxs module="tools" src="tools.wxs" />

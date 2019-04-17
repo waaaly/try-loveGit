@@ -1,0 +1,175 @@
+.buy-card {
+    padding-bottom: 235rpx;
+}
+
+.head-card {
+    padding-top: 50rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.head-card image {
+    width: 622rpx;
+    height: 373rpx;
+    border-radius: 20rpx;
+    box-shadow: 0 8rpx 8rpx 0 rgba(0,0,0,0.1);
+}
+
+.card-style {
+    margin-top: 50rpx;
+    padding-left: 64rpx;
+}
+
+.title {
+    font-size: 32rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.coupon {
+    font-size: 24rpx;
+    color: #999;
+    margin-left: 20rpx;
+}
+
+.card-value {
+    padding: 0 64rpx;
+    margin-top: 50rpx;
+}
+
+.card-style scroll-view {
+    height: 114rpx;
+    margin-top: 20rpx;
+    white-space: nowrap;
+}
+
+.card-style image {
+    width: 190rpx;
+    height: 114rpx;
+    border-radius: 6rpx;
+    margin-right: 26rpx;
+}
+
+.list {
+    margin-top: 30rpx;
+}
+
+.card-item {
+    margin-bottom: 20rpx;
+    border: 1rpx solid #ddd;
+    border-radius: 8rpx;
+    display: flex;
+    padding-left: 24rpx;
+}
+
+.card-item.actived {
+    border-color: #2396ff;
+}
+
+.card-item.actived .item-right {
+    background-color: #eff7ff;
+}
+
+.card-item .item-left {
+    flex: 1;
+    flex-direction: column;
+    font-size: 24rpx;
+    color: #333;
+    padding: 23rpx 24rpx 23rpx 0;
+}
+
+.card-item .item-left view:first-child {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8rpx;
+}
+
+.card-item .item-left view:last-child {
+    color: #999;
+    line-height: 1.4;
+}
+
+.card-item .item-left text {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333;
+    margin-right: 8rpx;
+}
+
+.card-item .item-left image {
+    width: 24rpx;
+    height: 24rpx;
+    margin-left: 8rpx;
+}
+
+.card-item .item-right {
+    padding: 23rpx 0;
+    flex-basis: 139rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    border-radius: 8rpx;
+}
+
+.card-item .item-right .hot-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80rpx;
+    height: 100%;
+}
+
+.card-item .item-right text {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #2396ff;
+    margin: 0 26rpx;
+}
+
+.card-item .item-right image {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.purchase-box {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 30rpx 0;
+    background: #fff;
+    box-shadow: 0 -3px 6px 0 rgba(153,153,153,0.15);
+}
+
+.purchase-box .purchase-info {
+    text-align: center;
+    font-size: 26rpx;
+    color: #666;
+    margin-bottom: 22rpx;
+}
+
+.purchase-box .purchase-info text {
+    font-weight: bold;
+    color: #ff5339;
+}
+
+.purchase-box .purchase-info .total {
+    font-size: 36rpx;
+}
+
+.purchase-box .purchase-button {
+    height: 88rpx;
+    width: 690rpx;
+    font-size: 32rpx;
+    color: rgba(255,255,255,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin: 0 auto;
+    background: #2396ff;
+}
+
+.purchase-box .white {
+    color: #fff;
+}

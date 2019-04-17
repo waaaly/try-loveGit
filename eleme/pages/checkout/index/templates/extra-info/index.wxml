@@ -1,0 +1,35 @@
+<template name="extra-info">
+    <view class="section extra-info">
+        <view class="info-row" wx:if="{{isCountPersonAvailable}}">
+            <text class="name">用餐人数</text>
+            <view>
+                <picker bindchange="setCountPerson" mode="selector" range="{{countPersonRange}}" value="{{index}}">
+                    <text class="detail" wx:if="{{countPerson}}">{{countPerson}}</text>
+                    <text class="detail" wx:if="{{!countPerson}}">便于商家带够餐具</text>
+                    <divi class="more"></divi>
+                </picker>
+            </view>
+        </view>
+        <view bindtap="goToRemark" class="info-row">
+            <text class="name">订单备注</text>
+            <view>
+                <text class="detail">{{remarksDescription||'口味，偏好等'}}</text>
+                <divi class="more"></divi>
+            </view>
+        </view>
+        <view bindtap="goToInvoice" class="info-row no-border {{invoice&&invoice.invoice_type===2?'invoice-row':''}}">
+            <text class="name">发票信息</text>
+            <view class="detail-wrapper" wx:if="{{isInvoiceAvailable}}">
+                <view class="invoice-content">
+                    <text class="detail">{{invoice&&invoice.invoice_pay_to||'不需要发票'}}</text>
+                    <text class="invoice-number" wx:if="{{invoice&&invoice.invoice_type===2}}">{{invoice.tax_number}}</text>
+                </view>
+                <divi class="more"></divi>
+            </view>
+            <view class="detail-wrapper disabled" wx:if="{{!isInvoiceAvailable}}">
+                <text class="detail">{{invoiceStatusText}}</text>
+                <divi class="more"></divi>
+            </view>
+        </view>
+    </view>
+</template>

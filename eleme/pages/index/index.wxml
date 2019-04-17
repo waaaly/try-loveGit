@@ -1,0 +1,74 @@
+<import src="/common/components/restaurant-row/component.wxml"></import>
+<import src="/common/components/restaurant-filter-bars/component.wxml"></import>
+<import src="/common/components/not-my-fault/index.wxml"></import>
+<import src="/pages/index/components/gifts/index.wxml"></import>
+<import src="/pages/index/components/Arrival/index.wxml"></import>
+<import src="/pages/index/components/Guide/index.wxml"></import>
+<import src="/pages/index/components/Lucky/index.wxml"></import>
+<view class="container {{showSort||showFilter||showArrival||showGuide||showLucky?'show-modal':''}}">
+    <view class="header e-bg-color">
+        <view class="diy">
+            <view class="location">
+                <view bindtap="toLocation" class="location-detail">
+                    <image class="icon-location" src="{{imageHash['location']}}"></image>
+                    <view class="location-text">{{place.name}}</view>
+                    <image class="icon-pulldown" src="{{imageHash['pulldown']}}"></image>
+                </view>
+            </view>
+            <view class="weather" wx:if="{{weather}}">
+                <view class="weather-temperature">
+          {{weather.temperature}}°
+        </view>
+                <view class="weather-type">
+          {{weather.description}}
+        </view>
+                <image class="weather-image" src="{{imageHash[weather.code]}}"></image>
+            </view>
+        </view>
+        <view bindtap="search" class="search">
+            <view class="search-input" type="text">
+                <image class="icon-search" src="{{imageHash['search']}}"></image>搜索商家、商品名称</view>
+        </view>
+    </view>
+    <swiper autoplay="true" circular="true" class="top-banners dots" indicatorDots="{{topBanners.length>1}}" wx:if="{{topBanners.length&&!isNewUser}}">
+        <swiper-item wx:for="{{topBanners}}" wx:key="item.id">
+            <view bindtap="goBanner" class="top-banner-item" data-id="{{item.id}}" data-name="{{item.name}}" data-url="{{item.url}}">
+                <image class="top-banner-image" src="{{item.image_url}}"></image>
+            </view>
+        </swiper-item>
+    </swiper>
+    <swiper class="entries dots" indicatorDots="true" wx:if="{{pageData.length>0}}">
+        <swiper-item wx:for="{{pageData}}" wx:key="index">
+            <view bindtap="clickCategory" class="entry-item" data-id="{{item.id}}" data-sort_index="{{item.index}}" data-title="{{item.name}}" data-url="{{item.link}}" wx:for="{{item}}" wx:key="item.id">
+                <image class="entry-image" src="{{item.image_url}}"></image>
+                <view class="entry-title">{{item.name}}</view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="top-container" wx:if="{{isNewUser}}">
+        <view bindtap="goToNewUserPage">
+            <image class="top-image" src="{{images.topUrl}}"></image>
+        </view>
+        <template is="gifts" data="{{...images,geohash:geohash}}" wx:if="{{isModalShow}}"></template>
+    </view>
+    <view class="banners" wx:if="{{banners.length&&!isNewUser}}">
+        <swiper autoplay="true" circular="true" class="dots" indicatorDots="{{banners.length>1}}">
+            <swiper-item wx:for="{{banners}}" wx:key="item.id">
+                <view bindtap="goBanner" class="banner-item" data-id="{{item.id}}" data-url="{{item.url}}">
+                    <image class="banner-image" src="{{item.image_url}}"></image>
+                </view>
+            </swiper-item>
+        </swiper>
+        <navigator class="license" url="/pages/container/index?q=https%3A%2F%2Flemon.ele.me%2Fprod%2F5c0e3e25b10084028588774c.html%23%2F&title=license">资质证照</navigator>
+    </view>
+    <template is="lucky" data="{{luckyData:luckyData,showShare:showShare}}" wx:if="{{showLucky}}"></template>
+    <template is="restaurant-filter-bars" data="{{imageHash:imageHash,sortData:sortData,filterData:filterData,showFilter:showFilter,showSort:showSort,query:query,showFilterBarBold:showFilterBarBold,fromIndex:fromIndex,shopAmount:shopAmount,fetching:fetching,outside:outside}}"></template>
+    <view class="recommendations">
+        <template is="restaurant-row" data="{{imageHash:imageHash,...item,fromHome:true,restaurantIndex:index}}" wx:for="{{restaurants}}" wx:key="id + index"></template>
+    </view>
+    <view class="loading-wrapper">
+        <view catchtap="redirectSearch" class="all-loaded" wx:if="{{loadedAll}}">没有更多啦，试试<view class="strong-navigator">搜索</view>吧</view>
+        <image class="loading-image" src="/common/icons/spinner.svg" wx:else></image>
+    </view>
+    <template is="guide" data wx:if="{{showGuide}}"></template>
+</view>

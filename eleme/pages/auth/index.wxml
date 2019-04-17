@@ -1,0 +1,39 @@
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<import src="/common/components/captcha/captcha.wxml"></import>
+<view class="auth" wx:if="{{showAuth&&pageInited}}">
+    <image class="logo" src="./assets/logo.svg"></image>
+    <view class="auth-title">饿了么外卖</view>
+    <view class="auth-subtitle">申请获取你的公开信息（昵称、头像等）</view>
+    <button withCredentials bindgetuserinfo="auth" class="auth-btn" openType="getUserInfo">微信授权</button>
+</view>
+<view wx:if="{{!showAuth&&pageInited}}">
+    <view class="login-container">
+        <form bindsubmit="formSubmit" wx:if="pageInited">
+            <view class="input-group">
+                <view class="input-line">
+                    <text wx:if="{{editPhone===false}}">{{phone}}</text>
+                    <input bindinput="bindPhoneInput" name="tel" placeholder="手机号" type="text" wx:if="{{editPhone===true}}"></input>
+                    <button bindtap="sendSMS" class="btn-login btn-inline btn-idle" wx:if="{{vertificationStatus==='idle'}}">发送验证码</button>
+                    <button class="btn-login btn-inline btn-sent" wx:elif="{{vertificationStatus==='sent'}}">已发送<text>({{remainSeconds}}s)</text>
+                    </button>
+                    <button bindtap="sendCode" class="btn-block btn-inline btn-retrieve text-white" wx:else>重新获取</button>
+                </view>
+                <view class="input-line">
+                    <input bindinput="bindSMSInput" name="code" placeholder="验证码" type="text"></input>
+                </view>
+            </view>
+            <view class="tip">
+        温馨提示：未注册饿了么帐号的手机号，登录时将自动注册，且代表您已同意<text bindtap="goToAgreement" class="navigator" hoverClass="navigator-hover">《用户注册协议》</text>
+            </view>
+            <view class="tip" wx:if="{{isVoice}}">
+        此次是语音验证，电话拨打中，请您留意来自 10105757 或者 021-315754xx 的电话
+      </view>
+            <button class="btn-login btn-submit" formType="submit" wx:if="{{authing===false}}">登录</button>
+            <button class="btn-login btn-submit disabled" formType="submit" wx:if="{{authing===true}}">登录</button>
+        </form>
+    </view>
+    <view class="captcha" wx:if="{{showingCaptchaModal}}">
+        <template is="captcha" data="{{captchaFocus:captchaFocus,captchaUrl:captchaUrl}}"></template>
+    </view>
+</view>
+<template is="fate-loading" data wx:if="{{!pageInited}}"></template>

@@ -1,0 +1,83 @@
+@import "../activities/activities.wxss";
+
+@import "../foods/foods.wxss";
+
+@import "../../../../common/components/rating-stars/index.wxss";
+
+.card {
+    position: relative;
+    margin: 80rpx auto;
+    width: 710rpx;
+    background-color: #fff;
+    border-radius: 8rpx;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo-image {
+    margin-top: -71rpx;
+    width: 142rpx;
+    height: 142rpx;
+    border: 1px solid #eee;
+    border-radius: 50%;
+}
+
+.tags {
+    position: absolute;
+    top: 12rpx;
+    right: 16rpx;
+}
+
+.tags>text {
+    display: inline-block;
+    font-size: 18rpx;
+    font-weight: bold;
+    border-radius: 4rpx;
+    padding: 0rpx 6rpx;
+}
+
+.fengniao {
+    border: 1px solid #0097ff;
+    color: #fff;
+    background-color: #0097ff;
+    margin-left: 7rpx;
+}
+
+.meta {
+    padding: 30rpx 0 50rpx;
+    text-align: center;
+}
+
+.name {
+    font-size: 36rpx;
+    font-weight: bold;
+}
+
+.overview {
+    padding: 20rpx 0;
+    font-size: 22rpx;
+    color: #666;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating {
+    color: #ff6000;
+    font-weight: bold;
+    padding: 0 18rpx 0 12rpx;
+}
+
+.delivery {
+    font-size: 22rpx;
+    color: #666;
+}
+
+.delivery>text:not(:first-child)::before {
+    content: '/';
+    padding: 0 10rpx;
+    color: #ddd;
+}

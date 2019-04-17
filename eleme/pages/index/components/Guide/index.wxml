@@ -1,0 +1,11 @@
+<template name="guide">
+    <view class="guide">
+        <image class="guide-arrow" src="/pages/index/components/Guide/media/arrow.png"></image>
+        <view class="guide-content">
+            <view>一、点击<image class="guide-ellipsis" src="/pages/index/components/Guide/media/ellipsis.png"></image>「添加到我的小程序」</view>
+            <view>二、下拉微信首页进入「饿了么」</view>
+            <image class="guide-panel" src="/pages/index/components/Guide/media/panel.png"></image>
+            <view bindtap="guidGet" class="guide-get">知道了</view>
+        </view>
+    </view>
+</template>

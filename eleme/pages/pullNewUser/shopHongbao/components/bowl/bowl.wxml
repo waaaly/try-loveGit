@@ -1,0 +1,9 @@
+<template name="bowl">
+    <view class="bowl-container">
+        <image class="bowl-background" src="/pages/pullNewUser/shopHongbao/assets/bowl.png"></image>
+        <image class="bowl-eleme-logo" src="/pages/pullNewUser/shopHongbao/assets/eleme.png"></image>
+        <image class="bowl-shop-logo" src="{{shop.image_path}}"></image>
+        <view class="bowl-text">{{shop.name}}联合饿了么</view>
+        <image class="bowl-mask" src="/pages/pullNewUser/shopHongbao/assets/bowl_mask.svg"></image>
+    </view>
+</template>

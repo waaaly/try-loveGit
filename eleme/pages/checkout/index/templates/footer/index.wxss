@@ -1,0 +1,47 @@
+.footer {
+    position: fixed;
+    z-index: 4;
+    bottom: 0;
+    background: rgb(61,61,63);
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 96rpx;
+    padding: 0 30rpx;
+    padding-right: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.footer text {
+    color: #fff;
+}
+
+.footer .amount {
+    flex: 1;
+}
+
+.footer .to-pay {
+    font-size: 36rpx;
+    line-height: 96rpx;
+}
+
+.footer text.count-off {
+    font-size: 26rpx;
+    line-height: 96rpx;
+    color: #666;
+    border-left: 1rpx solid #666;
+    margin: 0 6rpx;
+    padding: 0 6rpx;
+}
+
+.footer .footer-checkout {
+    background: rgb(56,202,115);
+    color: #fff;
+    line-height: 96rpx;
+    text-align: center;
+    padding: 0 40rpx;
+    white-space: nowrap;
+}

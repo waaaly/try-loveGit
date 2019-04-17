@@ -1,0 +1,6 @@
+<view class="content" wx:for="{{rule}}">
+    <view class="title">{{item.title}}</view>
+    <view wx:for="{{item.content}}" wx:for-item="detailItem">
+        <view class="detail-item">{{detailItem}}</view>
+    </view>
+</view>

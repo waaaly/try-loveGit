@@ -1,0 +1,8 @@
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<import src="../../components/owner/index.wxml"></import>
+<import src="../../components/receiver/index.wxml"></import>
+<template is="fate-loading" data wx:if="{{loading}}"></template>
+<block wx:else>
+    <template is="owner" data="{{...detail,statusMap:statusMap}}" wx:if="{{isSelf}}"></template>
+    <template is="receiver" data="{{...detail,statusMap:statusMap,isDisabled:isDisabled}}" wx:else></template>
+</block>

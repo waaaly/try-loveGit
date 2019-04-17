@@ -1,0 +1,96 @@
+.card-item {
+    display: flex;
+    margin-left: 30px;
+    padding: 30rpx 0;
+    border-bottom: 1rpx solid #eee;
+}
+
+.card-item .left {
+    position: relative;
+    flex: 0 0 190rpx;
+    height: 114rpx;
+    border-radius: 6rpx;
+}
+
+.card-item .left>image {
+    width: 100%;
+    height: 100%;
+}
+
+.card-item .mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5.8px;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.card-item .mask>image {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12rpx;
+    width: 90rpx;
+    height: 90rpx;
+}
+
+.card-item .right {
+    flex: 1;
+    padding: 4rpx 0 0 30rpx;
+}
+
+.card-item .right.disabled {
+    opacity: 0.3;
+}
+
+.description>text {
+    font-weight: bold;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.description .balance {
+    margin-top: 16rpx;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.description .balance>text {
+    font-size: 26rpx;
+    color: #ff5339;
+}
+
+.right.disabled .balance>text {
+    color: #333;
+}
+
+.card-item .btn-wrapper {
+    margin-top: 20rpx;
+}
+
+.card-item .btn-wrapper .redirect {
+    display: inline-block;
+    width: 144rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    border-radius: 4rpx;
+    font-size: 26rpx;
+    text-align: center;
+    color: #fff;
+    background: #2396ff;
+}
+
+.btn-wrapper>.redirect.redirect-owner {
+    margin-left: 20rpx;
+    border: 1rpx solid #ddd;
+    background: #fff;
+    color: #333;
+}
+
+.card-item .card-tip {
+    margin-top: 14rpx;
+    font-size: 22rpx;
+    color: #999;
+}

@@ -1,0 +1,35 @@
+<template name="city$5ced6da8">
+    <view class="_view data-v-2754feea page">
+        <view class="_view data-v-2754feea inputArea">
+            <view class="_view data-v-2754feea searchIcon searchIconBG"></view>
+            <input bindinput="handleProxy" class="_input data-v-2754feea" data-comkey="{{$k}}" data-eventid="{{'0'}}" placeholder="输入城市名进行搜索" placeholderClass="placeholder" type="text" value="{{keywords}}"></input>
+        </view>
+        <view class="_view data-v-2754feea resultContainer" wx:if="{{keywords}}">
+            <view class="_view data-v-2754feea" wx:if="{{searchResult.length}}">
+                <view class="_view data-v-2754feea cityCell column" key="{{city.id}}" wx:for="{{searchResult}}" wx:for-item="city" wx:key="city.id">
+                    <text bindtap="handleProxy" class="_text data-v-2754feea" data-comkey="{{$k}}" data-eventid="{{'1-'+index}}">{{city.name}}</text>
+                </view>
+            </view>
+            <view class="_view data-v-2754feea noResult" wx:else>无结果</view>
+        </view>
+        <scroll-view class="_scroll-view data-v-2754feea content" scrollIntoView="{{toView}}" scrollY="true" wx:else>
+            <view class="_view data-v-2754feea currentCity" id="currentCity" wx:if="{{cityName}}">
+                <text class="_text data-v-2754feea letter">当前定位城市</text>
+                <view class="_view data-v-2754feea cityCell">{{cityName}}</view>
+            </view>
+            <view class="_view data-v-2754feea cityList" wx:if="{{cityData&&cityData.cityList}}">
+                <view class="_view data-v-2754feea column" key="{{item.idx}}" wx:for="{{cityData.cityList}}" wx:for-index="i" wx:key="item.idx">
+                    <view class="_view data-v-2754feea letter" id="{{item.idx}}">{{item.idx}}</view>
+                    <view class="_view data-v-2754feea cityCell" key="{{city.id}}" wx:for="{{item.cities}}" wx:for-item="city" wx:key="city.id">
+                        <text bindtap="handleProxy" class="_text data-v-2754feea" data-comkey="{{$k}}" data-eventid="{{'2-'+i+'-'+index}}">{{city.name}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="_view data-v-2754feea alphabet" wx:if="{{cityData&&cityData.alphabet&&!keywords}}">
+            <view class="_view data-v-2754feea alphabetContainer">
+                <text bindtap="handleProxy" class="_text data-v-2754feea" data-comkey="{{$k}}" data-eventid="{{'3-'+index}}" key="{{item}}" wx:for="{{cityData.alphabet}}" wx:key="item">{{item}}</text>
+            </view>
+        </view>
+    </view>
+</template>

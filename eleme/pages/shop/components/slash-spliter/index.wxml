@@ -1,0 +1,5 @@
+<template name="slash-spliter">
+    <view class="slash-spliter-item" wx:if="{{value}}">
+    {{value}}
+  </view>
+</template>

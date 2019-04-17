@@ -1,0 +1,65 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70rpx 0 100rpx;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.header .title {
+    display: flex;
+    align-items: center;
+    font-size: 44rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-receive .title .username {
+    margin-right: 10rpx;
+    max-width: 240rpx;
+}
+
+.header>image {
+    margin-top: 50rpx;
+    width: 622rpx;
+    height: 373rpx;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 50rpx;
+}
+
+.main .left {
+    flex: 0 0 64rpx;
+    padding-right: 30rpx;
+    height: 64rpx;
+    border-radius: 4rpx;
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.right>.username {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.right>.description {
+    margin-top: 20rpx;
+    font-size: 30rpx;
+    color: #666;
+}
+
+.overflow-wrapper {
+    display: inline-block;
+    margin-right: 10rpx;
+    max-width: 240rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

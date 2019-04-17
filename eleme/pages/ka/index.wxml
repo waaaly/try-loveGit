@@ -1,0 +1,22 @@
+<import src="/common/components/restaurant-row/component.wxml"></import>
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<template is="fate-loading" data wx:if="{{!loaded}}"></template>
+<view class="noData" wx:if="{{noData}}">
+    <view>抱歉，您附近什么都没有。</view>
+</view>
+<view wx:else>
+    <view class="title">
+        <view class="line"></view>
+        <text>该商家超出配送范围</text>
+        <view class="line"></view>
+    </view>
+    <view class="list">
+        <template is="restaurant-row" data="{{imageHash:imageHash,...item}}" wx:if="{{open||index<2}}" wx:for="{{restaurants}}" wx:key="id + index"></template>
+    </view>
+    <view bindtap="openMore" class="openMore" wx:if="{{!open&&restaurants.length>2}}">
+        <text>展开超出配送范围的商家</text>
+    </view>
+</view>
+<view class="buttonContainer">
+    <view bindtap="returnHome" class="button">看看附近可配送的商家</view>
+</view>

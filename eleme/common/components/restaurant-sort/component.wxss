@@ -1,0 +1,38 @@
+.sortby {
+    background-color: #fff;
+}
+
+.sortby-item {
+    display: flex;
+    align-items: center;
+    height: 100rpx;
+}
+
+.sortby-item-img {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.sortby-item-wrapper {
+    flex: 1 1 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 40rpx 0 28rpx;
+}
+
+.sortby-item-name {
+    flex: 1 1 0;
+}
+
+.sortby-item:last-child .sortby-item-wrapper {
+    border-bottom: none;
+}
+
+.sortby-icon {
+    width: 15rpx;
+    height: 28rpx;
+    border-bottom: 4rpx solid #0097ff;
+    border-right: 4rpx solid #0097ff;
+    transform: rotateZ(45deg);
+}

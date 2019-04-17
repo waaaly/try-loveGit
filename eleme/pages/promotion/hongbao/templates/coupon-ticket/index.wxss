@@ -1,0 +1,145 @@
+.coupon-ticket {
+    position: relative;
+    margin: 30rpx 20rpx;
+    margin-top: 0;
+    border: 1rpx solid #ddd;
+    border-radius: 6rpx;
+    border-top: none;
+    background: #fff;
+}
+
+.coupon-ticket-top-border {
+    width: 100%;
+    height: 8rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.description-list {
+    font-size: 20rpx;
+    -webkit-text-size-adjust: none;
+    padding-left: 14rpx;
+    position: relative;
+}
+
+.description-list:before {
+    content: '\2E';
+    position: absolute;
+    left: 0;
+    top: -10rpx;
+    font-size: 30rpx;
+}
+
+.coupon-ticket-header {
+    padding: 20rpx 30rpx;
+    box-sizing: border-box;
+    display: flex;
+    min-height: 200rpx;
+    position: relative;
+    align-items: center;
+}
+
+.coupon-ticket-amount {
+    width: 160rpx;
+    color: #ff5340;
+    font-size: 70rpx;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.coupon-ticket-header .status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.invalid .coupon-ticket-amount,.invalid .coupon-ticket-description {
+    color: #ddd;
+}
+
+.coupon-ticket-amount-rmb {
+    display: inline-block;
+    text-align: right;
+}
+
+.coupon-ticket-amount-rmb::before {
+    content: "\00a5";
+    font-size: 36rpx;
+    font-weight: bold;
+    position: relative;
+    left: -8rpx;
+    bottom: 2rpx;
+}
+
+.coupon-ticket-amount-small {
+    font-size: 50rpx;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.coupon-ticket-description {
+    width: 360rpx;
+    padding: 0 10rpx;
+    color: #666;
+    overflow: hidden;
+}
+
+.coupon-ticket-action {
+    width: 140rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coupon-ticket-action .operation {
+    width: 102rpx;
+    font-size: 20rpx;
+    color: #ff0025;
+    border: 1rpx solid #ff0025;
+    border-radius: 20rpx;
+    text-align: center;
+}
+
+.coupon-title {
+    font-size: 32rpx;
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 10rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.coupon-ticket-header::before,.coupon-ticket-header::after {
+    content: "";
+    position: absolute;
+    bottom: -10rpx;
+    height: 20rpx;
+    width: 20rpx;
+    background-color: #f5f5f5;
+    z-index: 1;
+    border-radius: 10rpx;
+    border-top: 1rpx solid #ddd;
+}
+
+.coupon-ticket-header::before {
+    border-right: 1rpx solid #ddd;
+    transform: rotate(45deg);
+    left: -10rpx;
+}
+
+.coupon-ticket-header::after {
+    border-left: 1rpx solid #ddd;
+    transform: rotate(-45deg);
+    right: -10rpx;
+}
+
+.coupon-ticket-dummy-variety {
+    z-index: 2;
+    background: #f5f5f5;
+    position: absolute;
+    width: 100%;
+    bottom: -22rpx;
+    height: 20rpx;
+}

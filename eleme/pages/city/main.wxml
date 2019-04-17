@@ -1,0 +1,2 @@
+<import src="../../components/city$5ced6da8"></import>
+<template is="city$5ced6da8" data="{{...$root['0'],$root:$root}}"></template>

@@ -1,0 +1,5 @@
+<template name="sweet-icon">
+    <view class="sweet-icon {{default?'sweet-icon-default':''}}" style="background: {{bgColor}}; border-color: {{bgColor}}; {{style}}">
+        <view class="sweet-icon-name"> {{name}} </view>
+    </view>
+</template>

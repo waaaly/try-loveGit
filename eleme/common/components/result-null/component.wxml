@@ -1,0 +1,7 @@
+<template name="result-null">
+    <view class="result-null">
+        <view class="result-null-message">
+      _(:3 」∠)_ 没有结果……
+    </view>
+    </view>
+</template>

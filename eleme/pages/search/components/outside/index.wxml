@@ -1,0 +1,6 @@
+<template name="outside">
+    <view class="outside-root">
+        <image class="outside-logo" src="{{restaurants[0].image_url}}"></image>
+    有{{count}}家<text class="outside-name">{{keyword}}</text>超出配送范围
+  </view>
+</template>

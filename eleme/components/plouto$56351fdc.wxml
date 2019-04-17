@@ -1,0 +1,23 @@
+<template name="plouto$56351fdc">
+    <view class="_view data-v-ecfb1b60 join">
+        <view class="_view data-v-ecfb1b60 join-area">
+            <view class="_view data-v-ecfb1b60 not-join" wx:if="{{isSurpise&&!isJoinGruop}}">
+                <view class="_view data-v-ecfb1b60 not-join-msg">活动结束啦，敬请期待下次活动！</view>
+                <image class="_img data-v-ecfb1b60 not-join-img" src="https://fuss10.elemecdn.com/2/35/9e03c96aad3dfcf8e018ac0c836d4png.png"></image>
+            </view>
+            <view class="_view data-v-ecfb1b60 join-hongbao" wx:else>
+                <image class="_img data-v-ecfb1b60 hongbao-img" src="/copy-asset/pages/plouto/media/hongbao.png"></image>
+                <view class="_view data-v-ecfb1b60 join-msg">
+                    <view class="_view data-v-ecfb1b60 join-msg-title">抽最高888元团队无门槛红包</view>
+                    <view class="_view data-v-ecfb1b60">福气值100以上即可抽取</view>
+                </view>
+            </view>
+            <button bindtap="handleProxy" class="_button data-v-ecfb1b60 join-btn" data-comkey="{{$k}}" data-eventid="{{'0'}}">{{btnText}}
+        <image class="_img data-v-ecfb1b60 arrow-right" src="/copy-asset/pages/plouto/media/arrow-right.png"></image>
+            </button>
+            <button bindtap="handleProxy" class="_button data-v-ecfb1b60 join-group-btn" data-comkey="{{$k}}" data-eventid="{{'1'}}" wx:if="{{!isSurpise}}">我要发起组团
+        <image class="_img data-v-ecfb1b60 arrow-right" src="/copy-asset/pages/plouto/media/red-arrow-right.png"></image>
+            </button>
+        </view>
+    </view>
+</template>

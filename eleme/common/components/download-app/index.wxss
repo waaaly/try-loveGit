@@ -1,0 +1,44 @@
+.download-app {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    z-index: 1000;
+}
+
+.download-app-dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 60rpx 0 40rpx 0;
+    width: 640rpx;
+    background-color: #fff;
+    border-radius: 16rpx;
+}
+
+.dowload-app-title {
+    font-size: 36rpx;
+    color: #333;
+}
+
+.download-app-image {
+    width: 640rpx;
+    height: 380rpx;
+}
+
+.download-app-button {
+    width: 520rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 36rpx;
+    text-align: center;
+    color: #fff;
+    background-color: #0097ff;
+    border-radius: 4rpx;
+}

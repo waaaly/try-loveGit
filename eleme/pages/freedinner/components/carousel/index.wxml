@@ -1,0 +1,12 @@
+<template name="carousel">
+    <view class="carousel">
+        <swiper catch:tap catch:touchmove autoplay="{{true}}" circular="{{true}}" indicatorDots="{{false}}" interval="{{3000}}" vertical="{{true}}">
+            <swiper-item wx:for="{{carouseLists}}">
+                <view class="carouselItem">
+                    <image src="{{item.avatar}}"></image>
+                    <text>{{item.user_name}}获得{{item.prize}}</text>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</template>

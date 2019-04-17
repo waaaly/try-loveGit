@@ -1,0 +1,19 @@
+<import src="./components/food/food.wxml"></import>
+<import src="./components/scenes-bar/scenes-bar.wxml"></import>
+<view wx:if="{{!error.show&&menus.length}}">
+    <template is="scenes-bar" data="{{scenes:scenes,activatedTab:activatedTab}}"></template>
+    <view class="sales-list-container">
+        <view class="sales-list-full" style="width: {{menus.length}}00vw; transform: translateX(-{{100/menus.length*(activatedTab||0)}}%)">
+            <scroll-view scrollY bindscrolltolower="scrollMore" class="sales-list" data-index="{{index}}" data-type="{{menu.type}}" wx:for="{{menus}}" wx:for-item="menu" wx:key="type">
+                <template is="food-row" data="{{food:item,imageHash:imageHash,idx:index,activatedTab:activatedTab}}" wx:if="{{item.is_valid}}" wx:for="{{menu.foods}}" wx:key="id"></template>
+                <view class="sales-menus-load">{{menu.load.text}}</view>
+            </scroll-view>
+        </view>
+    </view>
+</view>
+<import src="/common/components/not-my-fault/index.wxml"></import>
+<template is="not-my-fault" data="{{ msg:error.content,img:imageHash['EMPTY_LIST'] }}" wx:if="{{error.show}}"></template>
+<view class="sales-popbar" wx:if="{{populationNum}}">
+    <image class="sales-popbar-icon" src="{{imageHash['SALES_HOT']}}"></image>
+    <text class="sales-popbar-num">{{populationNum}}</text>人正在抢
+</view>

@@ -1,0 +1,13 @@
+{
+    "usingComponents": {
+        "captcha": "/pages/wechain/components/captcha/index",
+        "newuser": "/pages/wechain/components/newUser/index",
+        "olduser": "/pages/wechain/components/oldUser/index",
+        "changeMobile": "/pages/wechain/components/auth/changeMobile/index",
+        "cashPopup": "/pages/wechain/components/cashPopup/index",
+        "NotAGroup": "/pages/wechain/components/NotAGroup/index"
+    },
+    "navigationBarTitleText": "饿了么红包分享",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff"
+}

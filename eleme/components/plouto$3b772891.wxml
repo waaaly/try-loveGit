@@ -1,0 +1,15 @@
+<template name="plouto$3b772891">
+    <view class="_view data-v-792cdbcf surprise">
+        <view class="_view data-v-792cdbcf content">
+            <view class="_view data-v-792cdbcf header">
+                <image class="_img data-v-792cdbcf header-img" src="https://fuss10.elemecdn.com/2/ab/e57c1974d807e9ca929a47ccdc48cpng.png"></image>
+            </view>
+            <view class="_view data-v-792cdbcf list">
+                <view class="_view data-v-792cdbcf list-title">恭喜组团成功，已获得</view>
+                <template is="plouto$fe13ba84" data="{{...$root[$kk+'0-'+index],$root:$root}}" wx:for="{{supportItems}}" wx:key="item"></template>
+                <view bindtap="handleProxy" class="_view data-v-792cdbcf get" data-comkey="{{$k}}" data-eventid="{{'0'}}">我知道了</view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="plouto$fe13ba84"></import>

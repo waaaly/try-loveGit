@@ -1,0 +1,51 @@
+<view class="invite-hongbao">
+    <view class="content">
+        <image src="{{images[errStatus?'blue_image_disable':'blue_image']}}"></image>
+        <view class="err-tips" wx:if="{{errStatus}}">
+            <view>{{statusInfo[status].title}}</view>
+            <view>{{statusInfo[status].content}}</view>
+        </view>
+        <view class="hongbao {{status===2?'hongbao-open':''}}" wx:else>
+            <block wx:if="{{status===0}}">
+                <view class="hongbao-msg">送你最高<text>15元</text>新人红包</view>
+                <view class="hongbao-form">
+                    <view class="form">
+                        <input bindinput="getPhoneNumber" maxlength="11" placeholder="请输入手机号" placeholderClass="form-placeholder" type="number" value="{{phone}}"></input>
+                        <text bindtap="fetchVerifyCode" class="verify-code" style="{{phone?'opacity: 1':''}}">{{verifyText}}</text>
+                        <input bindinput="getVerifyCode" maxlength="6" placeholder="请输入验证码" placeholderClass="form-placeholder" type="number" value="{{verifyCode}}"></input>
+                        <button bindtap="getHongbao">领取红包</button>
+                    </view>
+                    <view class="wrong-phone" wx:if="{{statusInfo[status][subStatus]}}">{{statusInfo[status][subStatus]}}</view>
+                </view>
+            </block>
+            <block wx:elif="{{status===2}}">
+                <view class="success-msg">
+                    <view>{{statusInfo[status]}}</view>
+                    <view>已放入账户{{phone}}</view>
+                </view>
+                <view class="ticket">
+                    <view class="ticket-left">
+                        <view>￥<text>15</text>
+                        </view>
+                        <view>满15元可用</view>
+                    </view>
+                    <view class="ticket-right">首单专享红包</view>
+                </view>
+                <button bindtap="useHongbao">立即使用</button>
+            </block>
+            <block wx:elif="{{status===3}}">
+                <view class="old-user-msg">
+                    <view>{{statusInfo[status]}}</view>
+                    <view>礼包仅限新用户领取，老用户邀请好友<text>5元</text>现金拿不停</view>
+                </view>
+                <button bindtap="goToInvite">去邀请</button>
+            </block>
+        </view>
+    </view>
+    <view class="rules {{errStatus?'err-rules':'normal-rules'}}">
+        <view class="rule-title">- {{rule['title']}} -</view>
+        <view class="rule-content">
+            <view wx:for="{{rule['content']}}">{{item}}</view>
+        </view>
+    </view>
+</view>

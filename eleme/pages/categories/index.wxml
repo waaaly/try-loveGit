@@ -1,0 +1,19 @@
+<scroll-view scrollY class="container">
+    <view class="header">
+        <view bindtap="search" class="search">
+            <navigator url="../search/search">
+                <view class="search-input" type="text">
+                    <image class="icon-search" src="{{imageHash['search']}}"></image>搜索商家、商品名称</view>
+            </navigator>
+        </view>
+    </view>
+    <navigator class="banner" url="/pages/giftcard/index" wx:if="{{showGiftCard}}">
+        <image bindtap="goToBanner" src="{{imagesUrl.banner}}"></image>
+    </navigator>
+    <view class="categories">
+        <navigator bindtap="clickCategory" class="category" data-id="{{item.id}}" data-sort_index="{{item.index}}" data-title="{{item.name}}" hoverClass="none" url="{{item.link}}" wx:for="{{categories}}" wx:key="id">
+            <view class="category-title">{{item.name}}</view>
+            <image class="category-image" src="{{item.imageUrl}}"></image>
+        </navigator>
+    </view>
+</scroll-view>

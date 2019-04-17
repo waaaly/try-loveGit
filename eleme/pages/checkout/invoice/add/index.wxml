@@ -1,0 +1,27 @@
+<view class="invoice-wrapper">
+    <view class="invoice-section">
+        <view class="invoice-section-body">
+            <view bindtap="toggleType" class="invoice-item">
+                <text class="info">类型</text>
+                <text class="invoice-type {{invoice.invoice_type===2?'active':''}}" data-type="2">单位</text>
+                <text class="invoice-type {{invoice.invoice_type===1?'active':''}}" data-type="1">个人</text>
+            </view>
+            <view class="invoice-item">
+                <text class="info">抬头</text>
+                <input bindinput="onInvoiceNameInput" maxlength="50" placeholder="请填写准确的抬头名称" placeholderClass="placeholder" type="text" value="{{invoice.invoice_pay_to}}"></input>
+                <view catchtap="clear" class="clear-input" data-content="invoice_pay_to" wx:if="{{invoice.invoice_pay_to}}">✕</view>
+            </view>
+            <view wx:if="{{invoice.invoice_type===2}}">
+                <view class="invoice-item">
+                    <text class="info">税号</text>
+                    <input bindinput="onInvoiceTaxNumberInput" maxlength="20" placeholder="请填写「税号」或「社会信用代码」" placeholderClass="placeholder" type="text" value="{{invoice.tax_number}}"></input>
+                    <view catchtap="clear" class="clear-input" data-content="tax_number" wx:if="{{invoice.tax_number}}">✕</view>
+                </view>
+                <view class="info-tip">可咨询公司财务部门获得「税号」或「社会信用代码」信息</view>
+            </view>
+        </view>
+    </view>
+    <view class="actions">
+        <view bindtap="addInvoice" class="confirm">保存</view>
+    </view>
+</view>

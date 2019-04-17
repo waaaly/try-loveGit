@@ -1,0 +1,25 @@
+page {
+    background: #eee;
+    min-height: 100vh;
+}
+
+.withCash {
+    background: linear-gradient(to bottom,#f7f7f7,#fff);
+}
+
+.noRedPack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 120rpx;
+    font-size: 26rpx;
+    color: #999;
+    height: 100vh;
+    text-align: center;
+}
+
+.noRedPack-image {
+    width: 480rpx;
+    height: 352rpx;
+}

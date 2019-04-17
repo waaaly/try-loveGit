@@ -1,0 +1,89 @@
+.shop-ahead-root {
+    padding: 0 32rpx;
+    display: flex;
+    height: 112rpx;
+    align-items: center;
+}
+
+.shop-ahead-logo {
+    flex: none;
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 32rpx;
+    border-radius: 1rpx;
+}
+
+.shop-ahead-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    height: 112rpx;
+    border-bottom: 1rpx solid #e3e3e3;
+}
+
+.shop-ahead-rating {
+    color: #999;
+    font-size: 24rpx;
+}
+
+.shop-ahead-nameRow {
+    display: flex;
+    align-items: center;
+}
+
+.shop-ahead-name {
+    display: inline-block;
+    max-width: 420rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 28rpx;
+    color: #333;
+    margin-right: 6rpx;
+}
+
+.shop-ahead-nextTime {
+    margin-top: 8rpx;
+    color: #00e066;
+    border: 1rpx solid #00e066;
+    font-size: 18rpx;
+    padding: 0 12rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    border-radius: 100rpx;
+    text-align: center;
+}
+
+.shop-ahead-tag {
+    color: #fff;
+    border-radius: 4rpx;
+    font-size: 20rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    text-align: center;
+    display: inline-block;
+    padding: 0 6rpx;
+    margin-left: 6rpx;
+}
+
+.wordItem {
+    display: flex;
+    height: 88rpx;
+    align-items: center;
+    padding: 0 30rpx;
+    font-size: 28rpx;
+}
+
+.wordItem-icon {
+    height: 26rpx;
+    width: 26rpx;
+    margin-right: 24rpx;
+}
+
+.wordItem-body {
+    flex: 1;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-bottom: 1rpx solid #e3e3e3;
+}

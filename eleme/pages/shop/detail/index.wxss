@@ -1,0 +1,43 @@
+@import "../components/rating-star/index.wxss";
+
+@import "../components/slash-spliter/index.wxss";
+
+@import "../components/badge/index.wxss";
+
+@import "../components/rating-tag/index.wxss";
+
+@import "../components/rating-block/index.wxss";
+
+@import "../components/sweet-icon/index.wxss";
+
+@import "header/index.wxss";
+
+@import "rating/index.wxss";
+
+@import "info/index.wxss";
+
+@import "image-previewer/index.wxss";
+
+page {
+    background: #f4f4f4;
+}
+
+.more {
+    display: inline-block;
+    width: 14rpx;
+    height: 14rpx;
+    color: #bbb;
+    border-right: 4rpx solid #bbb;
+    border-top: 4rpx solid #bbb;
+    border-radius: 2rpx;
+    transform: rotate(45deg);
+}
+
+.right {
+    position: absolute;
+    right: 30rpx;
+}
+
+.rate-item {
+    border-bottom: 1px solid rgb(238,238,238);
+}

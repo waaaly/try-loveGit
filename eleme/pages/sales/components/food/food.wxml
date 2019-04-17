@@ -1,0 +1,39 @@
+<template name="food-row">
+    <view catchtap="clickBtn" class="food-box food-status-{{food.status}}" data-activated-tab="{{activatedTab}}" data-food="{{food}}" data-index="{{idx}}">
+        <view class="grid grid-between food-top">
+            <view>
+                <image class="shop-image" src="{{imageHash['SALES_SHOP']}}"></image>
+                <text>{{food.restaurant_name}}</text>
+            </view>
+            <view>
+                <text>评价{{food.restaurant_rating}}分</text>
+                <text class="item-split"> | </text>
+                <text>配送费约¥{{food.float_delivery_fee}}</text>
+            </view>
+        </view>
+        <view class="food-bottom cell">
+            <view class="food-image-box cell">
+                <image class="food-image" src="{{food.foodUrl}}"></image>
+                <image class="food-image-saleout" src="{{imageHash['SALES_SALEOUT']}}" wx:if="{{food.status==='finish'}}"></image>
+            </view>
+            <view class="food-detail">
+                <view class="food-detail-name">{{food.name}}</view>
+                <view class="food-detail-price grid-bottom grid-between">
+                    <view>
+                        <view class="food-progress-text">{{food.progress}}</view>
+                        <template is="food-progress" data="{{percent:food.percent}}"></template>
+                        <view>
+                            <text class="food-price-small food-price-new">¥</text>
+                            <text class="food-price-big food-price-new">{{food.price}}</text>
+                            <text class="food-price-old">¥{{food.fixedOriginPrice}}</text>
+                        </view>
+                    </view>
+                    <view class="cell">
+                        <view class="food-button">{{food.btnText}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="../progress/progress.wxml"></import>

@@ -1,0 +1,38 @@
+.filter-divider {
+    height: 40rpx;
+    border-right: 1rpx solid #f5f5f5;
+    position: relative;
+    margin-right: 16rpx;
+}
+
+.filter-categoryRow {
+    margin-top: -1rpx;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    height: 94rpx;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 32rpx;
+}
+
+.filter-categoryRow::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-categoryTag {
+    height: 66rpx;
+    line-height: 66rpx;
+    background-color: #f5f5f5;
+    border-radius: 3rpx;
+    color: #666;
+    font-size: 24rpx;
+    padding: 0 32rpx;
+    flex: none;
+    margin-right: 16rpx;
+}
+
+.filter-categoryTag.selected {
+    background-color: #eff5fa;
+    color: #118dff;
+}

@@ -1,0 +1,25 @@
+<import src="/common/components/restaurant-row/component.wxml"></import>
+<import src="/common/components/restaurant-filter-bars/component.wxml"></import>
+<import src="/common/components/result-null/component.wxml"></import>
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<import src="/common/components/not-my-fault/index.wxml"></import>
+<view class="container">
+    <template is="restaurant-filter-bars" data="{{imageHash:imageHash,sortData:sortData,filterData:filterData,showFilter:showFilter,showSort:showSort,query:query,showFilterBarBold:showFilterBarBold,shopAmount:shopAmount,fetching:fetching,isNewRetail:isNewRetail,outside:outside}}"></template>
+    <scroll-view bindscrolltolower="loadMore" class="body" scrollY="{{!showCategory&&!showFilter&&!showSort}}" wx:if="{{restaurants.length!==0&&!loading}}">
+        <view id="rest-{{idx}}" wx:for="{{restaurants}}" wx:for-index="idx" wx:key="id">
+            <view bindtap="clickRstList" data-index="{{idx}}" data-restaurant_id="{{item.is_transfer?item.wid:item.ele_id}}" data-title="{{categoryData.show_name}}">
+                <template is="restaurant-row" data="{{imageHash:imageHash,...item,restaurantIndex:idx,isNewRetail:isNewRetail}}"></template>
+            </view>
+        </view>
+        <view class="loading-wrapper">
+            <view catchtap="redirectSearch" class="all-loaded" wx:if="{{loadedAll}}">没有更多啦，试试<view class="strong-navigator">搜索</view>吧</view>
+            <image class="loading-image" src="/common/icons/spinner.svg" wx:else></image>
+        </view>
+    </scroll-view>
+    <view class="body" wx:if="{{loading}}">
+        <template is="fate-loading" data></template>
+    </view>
+    <view class="body" hidden="{{restaurants.length!==0||init||loading}}">
+        <template is="not-my-fault" data="{{msg:'没有找到对应的餐厅，您可以修改筛选条件或者切换地址'}}"></template>
+    </view>
+</view>

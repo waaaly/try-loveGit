@@ -1,0 +1,309 @@
+@import "../../common/components/restaurant-row/component.wxss";
+
+@import "../../common/components/restaurant-filter-bars/component.wxss";
+
+@import "components/gifts/index.wxss";
+
+@import "components/Arrival/index.wxss";
+
+@import "components/Guide/index.wxss";
+
+@import "components/Lucky/index.wxss";
+
+view {
+    box-sizing: border-box;
+}
+
+swiper {
+    height: 340rpx;
+}
+
+.wx-swiper-dot {
+    width: 30rpx!important;
+}
+
+.wx-swiper-dot::before {
+    color: #ddd;
+}
+
+.wx-swiper-dot.wx-swiper-dot-active::before {
+    color: #999;
+}
+
+.container {
+    color: #333;
+    height: 100%;
+    background-color: rgb(245,245,245);
+}
+
+.show-modal {
+    overflow: hidden;
+}
+
+.header {
+    padding: 10rpx 30rpx 0;
+}
+
+.diy {
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-bottom: 24rpx;
+}
+
+.location {
+    width: 70%;
+    height: 50rpx;
+    display: inline-block;
+}
+
+.location-detail {
+    display: flex;
+    align-items: center;
+    height: 36rpx;
+    font-weight: bolder;
+}
+
+.icon-location {
+    width: 25rpx;
+    height: 31rpx;
+    display: inline-block;
+    flex: none;
+}
+
+.icon-pulldown {
+    width: 16rpx;
+    height: 8rpx;
+    display: inline-block;
+    flex: none;
+}
+
+.location-text {
+    font-size: 36rpx;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 10rpx;
+}
+
+.weather {
+    width: 30%;
+    height: 50rpx;
+    display: inline-block;
+    text-align: right;
+    position: relative;
+}
+
+.weather-temperature {
+    font-size: 28rpx;
+    right: 68rpx;
+    top: 6rpx;
+    position: absolute;
+    margin: 6rpx 0;
+    font-weight: 500;
+}
+
+.weather-type {
+    font-size: 20rpx;
+    right: 68rpx;
+    bottom: -16rpx;
+    position: absolute;
+}
+
+.weather-image {
+    width: 64rpx;
+    height: 64rpx;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 5rpx;
+    z-index: 9;
+}
+
+.search {
+    padding-bottom: 20rpx;
+}
+
+.search-input {
+    box-sizing: border-box;
+    background-color: #fff;
+    height: 72rpx;
+    line-height: 72rpx;
+    width: 690rpx;
+    text-align: center;
+    border-radius: 100rpx;
+    font-size: 26rpx;
+    color: rgb(102,102,102);
+}
+
+.top-image {
+    width: 750rpx;
+    height: 210rpx;
+}
+
+.icon-search {
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 16rpx;
+    position: relative;
+    top: 6rpx;
+}
+
+.hotwords {
+    font-size: 22rpx;
+    overflow: hidden;
+    height: 66rpx;
+    line-height: 1.5;
+}
+
+.hotwords text {
+    display: inline-block;
+    padding: 0 10rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.top-container {
+    width: 100%;
+    height: 210rpx;
+    margin-bottom: 18rpx;
+}
+
+.challenge-image {
+    width: 100%;
+    height: 320rpx;
+}
+
+.entries {
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.entry-item {
+    display: inline-block;
+    width: 25%;
+    color: #666;
+    font-size: 24rpx;
+    text-align: center;
+}
+
+.entry-item navigator {
+    padding-top: 18rpx;
+}
+
+.entry-image {
+    width: 90rpx;
+    height: 90rpx;
+    vertical-align: top;
+}
+
+.entry-title {
+    font-size: 24rpx;
+    color: rgb(102,102,102);
+}
+
+.recommendations {
+    position: relative;
+    background: #fff;
+}
+
+.section-title {
+    box-sizing: border-box;
+    font-size: 26rpx;
+    border-bottom: 1rpx solid #eee;
+    color: #666;
+    padding: 24rpx 0 18rpx;
+    margin-left: 20rpx;
+    line-height: 1;
+}
+
+.recommendations-list {
+}
+
+.loading {
+    font-size: 26rpx;
+    color: #666;
+    height: 600rpx;
+    line-height: 60rpx;
+}
+
+.border-reset {
+    border-bottom: 0;
+}
+
+.all-loaded {
+    position: relative;
+    top: -1rpx;
+    z-index: 1;
+}
+
+.dots .wx-swiper-dot {
+    display: inline-flex;
+    width: 0;
+    height: 0;
+}
+
+.dots .wx-swiper-dot::before {
+    content: '';
+    width: 14rpx;
+    height: 14rpx;
+    background: #ddd;
+    border-radius: 50%;
+}
+
+.dots .wx-swiper-dot-active::before {
+    background: #aaa;
+}
+
+.banners {
+    height: 210rpx;
+    background: #fff;
+    margin-bottom: 20rpx;
+    position: relative;
+}
+
+.banners swiper {
+    height: 210rpx;
+    background: #fff;
+}
+
+.license {
+    z-index: 9;
+    position: absolute;
+    bottom: 4rpx;
+    right: 4rpx;
+    width: 110rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    font-size: 20rpx;
+    border-radius: 20rpx;
+    color: #eee;
+}
+
+.banner-item {
+    text-align: center;
+    background: #fff;
+}
+
+.banner-item image {
+    width: 100%;
+    height: 210rpx;
+}
+
+.top-banners {
+    height: 210rpx;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.top-banner-item {
+    text-align: center;
+    background: #fff;
+}
+
+.top-banner-item image {
+    width: 100%;
+    height: 210rpx;
+}

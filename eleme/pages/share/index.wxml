@@ -1,0 +1,13 @@
+<import src="components/dialogue/dialogue.wxml"></import>
+<import src="components/card/card.wxml"></import>
+<import src="/common/components/download-app/index.wxml"></import>
+<view class="share">
+    <image class="background" mode="scaleToFill" src="./assets/bg.jpg"></image>
+    <template is="dialogue" data="{{shop:shop}}" wx:if="{{shop}}"></template>
+    <template is="card" data="{{shop:shop,showAll:showAll,foods:foods}}" wx:if="{{shop}}"></template>
+    <view class="footer" wx:if="{{shop}}">
+        <view bindtap="showDownloadApp" class="left button">下载App享受更多优惠</view>
+        <view bindtap="goShop" class="right button" data-send-ubt="true">进店购买</view>
+    </view>
+    <template is="download-app" data wx:if="{{showingDownloadApp}}"></template>
+</view>

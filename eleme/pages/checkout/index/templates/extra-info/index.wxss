@@ -1,0 +1,71 @@
+.extra-info {
+    padding-left: 30rpx;
+}
+
+.extra-info .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    padding: 0 30rpx;
+    padding-left: 0;
+    border-bottom: 1rpx solid #eee;
+}
+
+.extra-info .invoice-row {
+    height: 116rpx;
+    line-height: 116rpx;
+}
+
+.invoice-row .detail {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.extra-info .info-row.no-border {
+    border: none;
+}
+
+.extra-info .info-row .invoice-content {
+    line-height: 36rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.extra-info .info-row .name {
+    font-size: 30rpx;
+    white-space: nowrap;
+}
+
+.extra-info .info-row .detail-wrapper {
+    width: 416rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.extra-info .info-row .detail {
+    font-size: 26rpx;
+    color: #999;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 380rpx;
+}
+
+.extra-info .info-row .invoice-number {
+    font-size: 26rpx;
+    color: #999;
+    max-width: 380rpx;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.extra-info .info-row .more {
+}
+
+.disabled text {
+    color: #ccc!important;
+}

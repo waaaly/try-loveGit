@@ -1,0 +1,14 @@
+<view bindtap="redirect" class="ticket {{disabled?'disabled':''}}" data-ticket="{{ticket}}">
+    <view class="ticket-left">
+        <text class="ticket-amount">{{ticket.amount}}</text>
+        <text class="ticket-limit">{{ticket.sum_condition?'满¥'+ticket.sum_condition+'可用':'任意金额可用'}}</text>
+    </view>
+    <view class="ticket-right">
+        <view class="ticket-title" data-ticket="{{ticket}}">
+            <text>{{ticket.name}}</text>
+            <image class="ticket-arrow" src="https://fuss10.elemecdn.com/2/62/7edda82018dc0e187e4a8821e4ca4svg.svg"></image>
+        </view>
+        <view class="ticket-date">{{ticket.validity_periods}}</view>
+    </view>
+    <image class="disabled-icon" src="https://fuss10.elemecdn.com/2/3c/61019cb356ac8134e61099b167e73svg.svg" wx:if="{{disabled}}"></image>
+</view>

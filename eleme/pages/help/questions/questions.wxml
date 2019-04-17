@@ -1,0 +1,11 @@
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<view class="questions" wx:if="{{loaded}}">
+    <view class="questions-own">
+        <block wx:for="{{questions}}" wx:for-item="question">
+            <view class="questions-gain-q">{{question.q}}</view>
+            <view class="questions-gain-a" wx:for="{{question.a}}" wx:for-item="answer">{{answer}}</view>
+        </block>
+    </view>
+    <template is="fate-loading" data wx:if="{{!loaded}}"></template>
+</view>
+<template is="fate-loading" data wx:if="{{!loaded}}"></template>

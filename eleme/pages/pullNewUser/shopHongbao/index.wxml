@@ -1,0 +1,27 @@
+<import src="components/bowl/bowl.wxml"></import>
+<import src="components/form/form.wxml"></import>
+<import src="/common/components/captcha/captcha.wxml"></import>
+<view class="{{showingKeyboard?'showingKeyboard':''}}">
+    <view class="bowl">
+        <template is="bowl" data="{{shop:shop}}"></template>
+    </view>
+    <view class="present-image">
+        <image class="present-hongbao" src="assets/present_hongbao.png"></image>
+    </view>
+    <view class="form">
+        <view class="form-title" wx:if="{{hongbao_statistic}}">{{shop.name}}累计已发出{{hongbao_statistic.count}}个红包</view>
+        <template is="form" data="{{hack:hack,countDown:countDown,phoneFocus:phoneFocus,verifyCodeFocus:verifyCodeFocus,exchangeCodeFocus:exchangeCodeFocus,showingKeyboard:showingKeyboard,isExchange:isExchange}}"></template>
+    </view>
+    <view class="rules" wx:if="{{isExchange}}">
+        <view class="rules-title">
+            <text>活动细则</text>
+        </view>
+        <view wx:for="{{rules}}">{{index+1}}.{{item}}</view>
+    </view>
+    <view class="footer">
+        <image class="icon-flower" src="assets/flower.svg"></image>
+    </view>
+    <view class="captcha" wx:if="{{showingCaptchaModal}}">
+        <template is="captcha" data="{{captchaFocus:captchaFocus,captchaUrl:captchaUrl}}"></template>
+    </view>
+</view>

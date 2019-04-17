@@ -1,0 +1,63 @@
+<template name="add-or-edit-address-panel">
+    <view class="section-wrapper">
+        <view class="section address-contact">
+            <view class="section-name">联系人</view>
+            <view class="section-content">
+                <view class="name row">
+                    <input bindinput="onNameInput" placeholder="姓名" placeholderClass="placeholder" type="text" value="{{address.name}}"></input>
+                </view>
+                <view class="divider"></view>
+                <view class="tag row">
+                    <view bindtap="setGenderMale">
+                        <text class="selected" wx:if="{{address.sex===1}}">先生</text>
+                        <text wx:if="{{address.sex!==1}}">先生</text>
+                    </view>
+                    <view bindtap="setGenderFemale">
+                        <text class="selected" wx:if="{{address.sex===2}}">女士</text>
+                        <text wx:if="{{address.sex!==2}}">女士</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="divider"></view>
+    </view>
+    <view class="section-wrapper">
+        <view class="section address-phone">
+            <view class="section-name">电话</view>
+            <view class="section-content">
+                <view class="phone row">
+                    <input bindinput="onPhoneInput" class="input-phone" maxlength="11" placeholder="手机号码" placeholderClass="placeholder" type="number" value="{{address.phone}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="divider"></view>
+    </view>
+    <view class="section-wrapper">
+        <view class="section address-location">
+            <view class="section-name">地址</view>
+            <view class="section-content">
+                <view catchtap="goToSelectAddress" class="title row address">
+                    <text wx:if="{{address.address}}">{{address.address}}</text>
+                    <text class="selectAddress" wx:if="{{!address.address}}">选择收货地址</text>
+                    <view class="more"></view>
+                </view>
+            </view>
+        </view>
+        <view class="divider"></view>
+        <view class="section address-location">
+            <view class="section-name">补充说明</view>
+            <view class="section-content">
+                <view class="detail row">
+                    <textarea bindinput="onAddressDetailChange" placeholder="详细地址（如门牌号等）" placeholderClass="placeholder" type="text" value="{{address.address_detail}}"></textarea>
+                </view>
+                <view class="divider"></view>
+                <view class="tag row">
+                    <view bindtap="selectTag" data-tag="{{index+1}}" wx:for="{{tags}}" wx:key="{{index + 1}}">
+                        <text class="selected" wx:if="{{address.tag===item||address.tag_type===index+1}}">{{item}}</text>
+                        <text wx:if="{{!(address.tag===item||address.tag_type===index+1)}}">{{item}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

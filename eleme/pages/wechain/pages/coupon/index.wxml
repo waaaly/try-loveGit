@@ -1,0 +1,48 @@
+<view>
+    <view class="header">
+        <ad couponPage="true"></ad>
+    </view>
+    <image class="introImage" src="https://fuss10.elemecdn.com/1/2d/85c8db850e16f6ffef929a3a0b2e2svg.svg"></image>
+    <view bindtap="openRulePage" class="ruleButton">
+        <text>查看详情</text>
+        <image class="ruleButtonClose" src="https://fuss10.elemecdn.com/2/62/7edda82018dc0e187e4a8821e4ca4svg.svg"></image>
+    </view>
+    <view class="coupon-list">
+        <view class="coupon-item" wx:for="{{coupons}}" wx:key="{{ index }}">
+            <view class="coupon-rst">
+                <image class="coupon-logo" src="{{item.restaurant.image_url}}"></image>
+                <view class="coupon-rstInfo">
+                    <view class="coupon-title">{{item.restaurant.name}}</view>
+                    <view class="coupon-descontainer">
+                        <text class="coupon-label">满减</text>
+                        <text class="coupon-desc">{{item.restaurant.activities[0].tips}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="coupon-intro {{item.coupon.status===1?'received':''}} {{item.coupon.today_only?'onlyToday':''}}">
+                <view class="coupon-price-container">
+                    <view class="coupon-price">{{item.coupon.reduce_amount}}</view>
+                </view>
+                <view class="coupon-limit">
+                    <view class="coupon-limit-title">无门槛</view>
+                    <view>店铺红包</view>
+                </view>
+                <view class="coupon-button">
+                    <view class="coupon-button-title">最高得<text>¥10</text>现金</view>
+                    <button bindtap="shareCoupon" class="coupon-btn" data-activity_id="{{item.coupon.activity_id}}" data-index="{{index}}" data-restaurant_id="{{item.restaurant.id}}" openType="share">分享就赚
+          </button>
+                </view>
+            </view>
+        </view>
+        <view class="coupon-loading" wx:if="{{!emptyNearby}}">
+            <view wx:if="{{loadNoMore}}">没有更多了</view>
+            <view bindtap="queryCoupons" wx:elif="{{loadError}}">加载失败，请重试</view>
+            <image class="loading-image" src="/common/icons/spinner.svg" wx:else></image>
+        </view>
+    </view>
+    <cashPopup bind:close="closeCashPopup" config="{{cashConfig}}" wx:if="{{showCashPopup}}"></cashPopup>
+    <view class="cashbar">
+        <view bindtap="withdraw" class="cashbar-1">现金提现</view>
+        <view bindtap="openInvite">奖励记录</view>
+    </view>
+</view>

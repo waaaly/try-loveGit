@@ -1,0 +1,10 @@
+<import src="header/index.wxml"></import>
+<import src="rating/index.wxml"></import>
+<import src="info/index.wxml"></import>
+<import src="image-previewer/index.wxml"></import>
+<view class="shop-detail" wx:if="{{shop&&ratings&&ratingList}}">
+    <template is="shop-header" data="{{imageHash:imageHash,...shop}}"></template>
+    <template is="shop-rating" data="{{imageHash:imageHash,shopId:shop.ele_id||shop.id,...ratings,ratingList:ratingList,isNewRetail:isNewRetail}}"></template>
+    <template is="shop-info" data="{{imageHash:imageHash,...shop,...safe,isNewRetail:isNewRetail}}"></template>
+    <template is="image-previewer" data="{{...currentImage}}" wx:if="{{currentImage}}"></template>
+</view>

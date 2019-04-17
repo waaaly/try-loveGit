@@ -1,0 +1,79 @@
+@import "../../../../common/components/captcha/captcha.wxss";
+
+page {
+    background: #eee;
+}
+
+.ad {
+    margin-top: 20rpx;
+}
+
+.login-root {
+    margin-top: 96rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 650rpx;
+    height: 870rpx;
+    padding-top: 310rpx;
+    background-color: #db5a40;
+    background: url(https://fuss10.elemecdn.com/b/42/111c1f6a5965cb16cfb98bd285449png.png) 0 0 no-repeat;
+    background-size: cover;
+}
+
+.login-btn-container {
+    margin-top: 40rpx;
+    text-align: center;
+    height: 140rpx;
+}
+
+.login-btn {
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.login-input {
+    flex: 1;
+    height: 88rpx;
+    color: #333;
+    font-size: 28rpx;
+}
+
+.login-input-wrapper {
+    display: flex;
+    background: #fff;
+    border-radius: 200rpx;
+    box-sizing: border-box;
+    padding: 0 32rpx;
+    width: 480rpx;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 32rpx;
+}
+
+.login-send-btn {
+    height: 88rpx;
+    line-height: 88rpx;
+    background: transparent;
+    color: #db292c;
+    font-size: 24rpx;
+    z-index: 2;
+    border: none;
+}
+
+.login-send-btn.disabled {
+    color: #999;
+}
+
+.logo {
+    display: block;
+    margin: 64rpx auto 0;
+    width: 156rpx;
+    height: 40rpx;
+}

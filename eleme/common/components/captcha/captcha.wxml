@@ -1,0 +1,17 @@
+<template name="captcha">
+    <view class="captcha-wrapper">
+        <view class="captcha-modal">
+            <view class="captcha-modal-title">
+                <text>请填写图形验证码</text>
+            </view>
+            <view class="captcha-modal-body">
+                <input bindinput="onCaptchaInput" class="captcha-modal-input" focus="{{captchaFocus}}" maxlength="4"></input>
+                <image bindtap="getCaptcha" class="captcha-modal-image" src="{{captchaUrl}}"></image>
+            </view>
+            <view class="captcha-modal-foot">
+                <button bindtap="closeCaptchaModal" class="captcha-modal-button dismiss">取消</button>
+                <button bindtap="sendCaptcha" class="captcha-modal-button primary">确定</button>
+            </view>
+        </view>
+    </view>
+</template>

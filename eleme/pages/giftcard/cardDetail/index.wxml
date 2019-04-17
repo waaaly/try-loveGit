@@ -1,0 +1,18 @@
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<view class="card-detail" wx:if="{{!loading}}">
+    <view class="header">
+        <view class="title">
+            <text class="overflow-wrapper username">{{detail_json.sender_info.nick_name}}</text>
+            <text>送你一张饿了么心意卡</text>
+        </view>
+        <image src="{{picture}}"></image>
+    </view>
+    <view class="main">
+        <image class="left" src="{{detail_json.sender_info.avatar_url}}"></image>
+        <view class="right">
+            <view class="username">{{detail_json.sender_info.nick_name}}</view>
+            <view class="description">{{detail_json.sender_remark||'大吉大利，今晚吃鸡'}}</view>
+        </view>
+    </view>
+</view>
+<template is="fate-loading" data wx:else></template>

@@ -1,0 +1,72 @@
+.form-container {
+    position: relative;
+}
+
+.form-hack {
+    position: fixed;
+    opacity: 0;
+}
+
+.form-part {
+    border-radius: 16rpx;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.form-part:first-child {
+    margin-bottom: 22rpx;
+}
+
+.form-input-container {
+    background-color: #fff;
+    box-sizing: border-box;
+    width: 540rpx;
+    margin: 0 30rpx;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.phone {
+    border-bottom: 1rpx solid #eee;
+}
+
+.form-input-container input {
+    height: 88rpx;
+    width: 540rpx;
+}
+
+.phone input {
+    width: 340rpx;
+}
+
+.form-verify {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    padding-right: 32rpx;
+    left: 400rpx;
+    width: 200rpx;
+    line-height: 88rpx;
+    height: 88rpx;
+    text-align: right;
+    font-size: 24rpx;
+    color: #8b572a;
+    z-index: 100;
+}
+
+.form-button {
+    margin-left: -10rpx;
+    margin-top: 42rpx;
+    width: 620rpx;
+    height: 110rpx;
+    background: no-repeat url('https://fuss10.elemecdn.com/2/2d/fd5e96a828a113e86cca0f3e8832epng.png');
+    background-size: 620rpx 110rpx;
+}
+
+.form-button::after {
+    border: none;
+}
+
+.showingKeyboard .form-button {
+    margin-top: 50rpx;
+}

@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "ad": "/pages/wechain/components/ad/index",
+        "cashPopup": "/pages/wechain/components/cashPopup/index"
+    },
+    "navigationBarTitleText": "饿了么红包分享",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#e65d42"
+}

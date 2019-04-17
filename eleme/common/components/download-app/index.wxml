@@ -1,0 +1,10 @@
+<template name="download-app">
+    <view class="download-app">
+        <view class="download-app-dialog">
+            <view class="download-app-title">请打开App Store或应用市场</view>
+            <view class="download-app-title">下载饿了么App</view>
+            <image class="download-app-image" src="/common/components/download-app/app.png"></image>
+            <view bindtap="hideDownloadApp" class="download-app-button">知道了</view>
+        </view>
+    </view>
+</template>

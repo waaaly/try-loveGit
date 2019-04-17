@@ -1,0 +1,10 @@
+<template name="restaurant-sort">
+    <view class="sortby">
+        <view catchtap="searchBySort" class="sortby-item" data-id="{{item.id}}" data-key="{{item.key}}" data-name="{{item.name}}" data-value="{{item.value}}" wx:for="{{outside.inside_sort_filter}}" wx:key="{{ item.value }}">
+            <view class="sortby-item-wrapper">
+                <view class="sortby-item-name big-size {{query[item.key]===item.value?'blue':''}}">{{item.name}}</view>
+                <view class="sortby-icon" hidden="{{item.value!==query[item.key]}}"></view>
+            </view>
+        </view>
+    </view>
+</template>

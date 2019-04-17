@@ -1,0 +1,13 @@
+<template name="location-tip">
+    <view class="loc-fail">
+        <image class="loc-fail-img" src="{{fuss.location_failure}}"></image>
+        <view class="loc-tip" wx:if="{{locStatus===1}}">
+            <view>没有开启定位</view>
+            <view>无法帮你搜索附近可用的红包</view>
+        </view>
+        <view class="loc-tip" wx:if="{{locStatus===2}}">
+      请在[设置]→[隐私]→[定位服务]中打开微信定位服务，便于为你搜索附近可用的红包
+    </view>
+        <view bindtap="openSetting" class="loc-btn-guide" wx:if="{{locStatus===1}}">去开启定位设置</view>
+    </view>
+</template>

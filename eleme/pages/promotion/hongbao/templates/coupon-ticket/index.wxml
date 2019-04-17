@@ -1,0 +1,22 @@
+<template name="coupon-ticket">
+    <view class="coupon-ticket {{coupon.isInvalid?'invalid':''}}">
+        <image class="coupon-ticket-top-border" src="{{imageHash['hongbao_border_valid']}}" wx:if="{{!coupon.isInvalid}}"></image>
+        <image class="coupon-ticket-top-border" src="{{imageHash['hongbao_border_invalid']}}" wx:if="{{coupon.isInvalid}}"></image>
+        <view class="coupon-ticket-header">
+            <view class="coupon-ticket-amount">
+                <view class="coupon-ticket-amount-rmb">{{coupon.amountBody}}</view>
+                <view class="coupon-ticket-amount-small" wx:if="{{coupon.amountTail!=='0'}}">.{{coupon.amountTail}}</view>
+            </view>
+            <view class="coupon-ticket-description">
+                <view class="coupon-title">{{coupon.name}}</view>
+                <view class="description-list" wx:for="{{coupon.details}}" wx:key="index">{{item}}</view>
+            </view>
+            <view class="coupon-ticket-action">
+                <view class="operation">
+                    <text bindtap="goToShop" data-coupon="{{coupon}}">去使用</text>
+                </view>
+            </view>
+        </view>
+        <view class="coupon-ticket-dummy-variety" wx:if="{{!coupon.limits.length}}"></view>
+    </view>
+</template>

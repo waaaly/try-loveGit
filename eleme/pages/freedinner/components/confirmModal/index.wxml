@@ -1,0 +1,12 @@
+<template name="confirmModal">
+    <view catch:touchmove class="modal">
+        <view class="confirm-content">
+            <view class="title">抽奖次数⽤光啦</view>
+            <view class="tip">每邀请1位好友，增加1次抽奖机会</view>
+            <view class="btn-wrapper">
+                <button catch:tap="closeModal" class="confirm-btn">暂不邀请</button>
+                <button catch:tap="closeModal" class="confirm-btn" openType="share">去邀请</button>
+            </view>
+        </view>
+    </view>
+</template>

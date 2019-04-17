@@ -1,0 +1,179 @@
+.invoice-wrapper {
+    height: calc(100% - 92rpx);
+    background: #f5f5f5;
+    padding-top: 20rpx;
+    position: relative;
+}
+
+.invoice-section {
+}
+
+.available {
+    height: calc(100% - 220rpx);
+}
+
+.invoices {
+    height: 100%;
+}
+
+.invoice-section .title {
+    font-size: 26rpx;
+    margin: 32rpx 0 16rpx 30rpx;
+    color: #666;
+}
+
+.invoice-item .no-invoice-content {
+    flex: 1;
+    padding: 28rpx 0;
+    max-width: 500rpx;
+}
+
+.invoice-section .no-invoice-content .no-invoice {
+    line-height: 44rpx;
+}
+
+.invoice-section-body {
+    background: #fff;
+    border: 1rpx solid #ddd;
+    border-left: none;
+    border-right: none;
+}
+
+.invoices {
+    height:;
+}
+
+.invoice-item {
+    display: flex;
+    align-items: center;
+    min-height: 88rpx;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 30rpx;
+}
+
+.invoice-item .divider {
+    display: flex;
+    height: 1rpx;
+    width: 100%;
+    background: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.invoice-section text {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.invoice-item .status {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 30rpx;
+}
+
+.invoice-item .status image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.invoice-item .content {
+    flex: 1;
+    padding: 32rpx 0;
+    max-width: 500rpx;
+}
+
+.invoice-item .content .invoice-type {
+    font-size: 24rpx;
+    line-height: 34rpx;
+    margin-right: 12rpx;
+    padding: 0 6rpx;
+    border-radius: 4rpx;
+}
+
+.invoice-item .content .personal {
+    border: 1rpx solid #4dc060;
+    color: #4dc060;
+}
+
+.invoice-item .content .company {
+    border: 1rpx solid #2395ff;
+    color: #2395ff;
+}
+
+.invoice-item .content .invoice-name {
+    font-size: 30rpx;
+    color: #333;
+    line-height: 42rpx;
+    font-weight: 600;
+}
+
+.invoice-item .content .invoice-number {
+    font-size: 26rpx;
+    color: #666;
+    line-height: 36rpx;
+    margin-top: 8rpx;
+}
+
+.invoice-item .content .complete-invoice {
+    color: #ff3b30;
+}
+
+.invoice-item .edit {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 60rpx;
+    padding: 42rpx 36rpx 42rpx 48rpx;
+}
+
+.invoice-item .edit image {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.invoice-section.unavailable {
+    display: flex;
+    flex-direction: column;
+    height: 800rpx;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.invoice-section.unavailable .icon {
+    width: 150rpx;
+    height: 156rpx;
+}
+
+.invoice-section.unavailable .title {
+    font-size: 34rpx;
+    color: #666;
+    margin: 32rpx 0 16rpx 30rpx;
+}
+
+.invoice-section.unavailable .hint {
+    font-size: 22rpx;
+    color: #666;
+}
+
+.invoice-section.add {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.invoice-section.add .invoice-item {
+    justify-content: center;
+}
+
+.invoice-section.add .invoice-section-body image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+}
+
+.invoice-section.add .invoice-section-body text {
+    color: #0097ff;
+    font-size: 32rpx;
+}

@@ -1,0 +1,31 @@
+<template name="plouto$7c887298">
+    <view class="_view data-v-ab2b2b94 lotterys">
+        <view class="_view data-v-ab2b2b94 invite-awards">
+            <view class="_view data-v-ab2b2b94 {{['award',item.business_map.high_light&&'active']}}" key="{{index}}" wx:for="{{rewardList}}" wx:key="index">
+                <view class="_view data-v-ab2b2b94 award-content">
+                    <view class="_view data-v-ab2b2b94 award-title">
+                        <text class="_text data-v-ab2b2b94 award-title-worth">{{item.reward_worth}}</text>
+                        <text class="_text data-v-ab2b2b94">团队红包</text>
+                    </view>
+                    <view class="_view data-v-ab2b2b94 award-subtitle">福气值
+            <text class="_text data-v-ab2b2b94">{{item.business_map.sum_condition_desc}}</text>
+                    </view>
+                </view>
+                <image class="_img data-v-ab2b2b94 award-arrow" src="/copy-asset/pages/plouto/media/arrow.png" wx:if="{{index!==2}}"></image>
+            </view>
+        </view>
+        <view class="_view data-v-ab2b2b94 invite-area">
+            <view class="_view data-v-ab2b2b94" wx:if="{{lotteryReward.length}}">
+                <view class="_view data-v-ab2b2b94 reward-msg" wx:if="{{isWinner}}">恭喜您,已成功瓜分
+          <text class="_text data-v-ab2b2b94">{{total}}元</text>红包</view>
+                <view class="_view data-v-ab2b2b94 reward-msg" wx:else>哎呀,未抽中,送你两张优惠券</view>
+                <template is="plouto$fe13ba84" data="{{...$root[$kk+'0-'+index],$root:$root}}" wx:for="{{lotteryReward}}" wx:key="item"></template>
+            </view>
+            <view class="_view data-v-ab2b2b94 reward-msg" wx:else>哎呀,未抽中,期待下次活动～</view>
+            <button bindtap="handleProxy" class="_button data-v-ab2b2b94 invite-btn" data-comkey="{{$k}}" data-eventid="{{'0'}}">立即下单
+        <image class="_img data-v-ab2b2b94 arrow-right" src="/copy-asset/pages/plouto/media/arrow-right.png"></image>
+            </button>
+        </view>
+    </view>
+</template>
+<import src="plouto$fe13ba84"></import>

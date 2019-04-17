@@ -1,0 +1,79 @@
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<view class="background main-color top"></view>
+<view class="container" wx:if="{{loaded&&!serverDown}}">
+    <view bindtap="goLogin" class="header header-menu" wx:if="{{!user}}">
+        <view class="user-info">
+            <view class="user-name">登录/注册</view>
+            <view class="user-phone">登录后可享受更多特权</view>
+        </view>
+    </view>
+    <view class="header" wx:if="{{user}}">
+        <image class="avatar" src="{{user.avatar?user.avatar_url:imageHash['default_avatar']}}"></image>
+        <view class="user-info">
+            <view class="user-name">{{user.username}}</view>
+            <view class="user-phone">
+                <image src="{{imageHash['icon_profile_tel']}}"></image>{{user.mobile}}</view>
+        </view>
+    </view>
+    <view class="body">
+        <view class="menu" wx:if="{{!user}}">
+            <view class="menu-item">
+                <image class="menu-icon" src="{{imageHash['profile_icon_6']}}"></image>
+                <view class="menu-label">我的余额</view>
+            </view>
+            <view class="menu-item">
+                <image class="menu-icon" src="{{imageHash['profile_icon_7']}}"></image>
+                <view class="menu-label">我的红包</view>
+            </view>
+            <view class="menu-item">
+                <image class="menu-icon" src="{{imageHash['profile_icon_8']}}"></image>
+                <view class="menu-label">我的金币</view>
+            </view>
+        </view>
+        <view class="menu" wx:if="{{user}}">
+            <view class="menu-item">
+                <view class="balance">
+                    <text>{{user.balance}}</text>
+                    <view class="small">元</view>
+                </view>
+                <view class="menu-label">余额</view>
+            </view>
+            <view class="menu-item navItem navigator">
+                <view bindtap="goHongbao" class="hongbao">
+                    <text>{{user.gift_amount}}</text>
+                    <view class="small">个</view>
+                </view>
+                <view class="menu-label">红包</view>
+            </view>
+            <view class="menu-item">
+                <view class="point">
+                    <text>{{user.point}}</text>
+                    <view class="small">个</view>
+                </view>
+                <view class="menu-label">金币</view>
+            </view>
+        </view>
+        <view class="list">
+            <view bindtap="goToItem" class="navigator" data-ubt="{{item.ubt||''}}" data-url="{{item.url}}" wx:if="{{item.needLogin&&user||!item.needLogin}}" wx:for="{{list}}" wx:key="{{ item.url }}">
+                <view class="list-item">
+                    <image class="list-item-icon" src="{{imageHash[item.icon]}}"></image>
+                    <view class="list-item-title border">{{item.title}}</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="logout" class="btn-logout" wx:if="{{user}}">
+      退出登录
+    </view>
+        <navigator class="link-privacy" url="/pages/container/index?q=https%3A%2F%2Fh5.ele.me%2Fservice%2Fagreement%2F%23HEAEDER_SHOW%3D1%26initTitle%3D%25E9%259A%2590%25E7%25A7%2581%25E6%2594%25BF%25E7%25AD%2596%26key%3DruleQue50">隐私政策</navigator>
+    </view>
+</view>
+<view class="container" wx:if="{{serverDown}}">
+    <view bindtap="refresh" class="stretch">
+        <view class="centered">
+            <view class="server-down-description">
+        点击重试
+      </view>
+        </view>
+    </view>
+</view>
+<template is="fate-loading" data wx:if="{{!loaded}}"></template>

@@ -1,0 +1,35 @@
+<view class="container">
+    <ad class="ad"></ad>
+    <view class="h1">恭喜你获得双重好礼</view>
+    <view class="cash {{status===4?'out':''}}" wx:if="{{!receivedCash}}">
+        <view class="cash-title">
+            <text>现金</text>
+            <text class="cash-amount">¥{{cash}}</text>
+        </view>
+        <view class="cash-description">分享到「群聊」后现金立即领取到账</view>
+        <button class="share-button" openType="share" wx:if="status !== 4"></button>
+        <button class="share-button" wx:else></button>
+    </view>
+    <cashPopup config="{{cashPopupConfig}}" contentStyle="2" wx:else></cashPopup>
+    <view class="redpack {{status===4?'out':''}}">
+        <view class="redpack-title">
+            <text>红包</text>
+            <text class="redpack-total">¥{{Store.totalRedpackAmount}}</text>
+        </view>
+        <view class="redpack-mobile">
+            <text>已放入账户：{{Store.mainData.hiddenPhone}} </text>
+            <view bindtap="changeMobile" class="change">
+                <text>修改</text>
+                <image src="https://fuss10.elemecdn.com/2/62/7edda82018dc0e187e4a8821e4ca4svg.svg"></image>
+            </view>
+        </view>
+        <view wx:for="{{Store.mainData.promotion_items}}" wx:key="{{ index }}">
+            <ticket disabled="{{status===4}}" ticket="{{item}}"></ticket>
+        </view>
+        <view bindtap="gotoCouponPage" class="couponLink" wx:if="{{Store.showCouponEntry}}">
+            <image src="https://fuss10.elemecdn.com/2/ab/dabfb800f479f22613b0c61a9127fpng.png"></image>
+        </view>
+        <view class="outtip" wx:if="{{status===4}}">分享的好友退单了，饿了么红包已失效</view>
+        <image class="logo" src="https://fuss10.elemecdn.com/c/8a/8da5144e526848f3561e886f47837svg.svg"></image>
+    </view>
+</view>

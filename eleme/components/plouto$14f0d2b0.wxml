@@ -1,0 +1,11 @@
+<template name="plouto$14f0d2b0">
+    <view class="_view data-v-e41cf19c countdown">距离抽奖仅剩
+    <text class="_text data-v-e41cf19c">{{time.day[0]}}</text>
+        <text class="_text data-v-e41cf19c">{{time.day[1]}}</text>天
+    <text class="_text data-v-e41cf19c">{{time.hour[0]}}</text>
+        <text class="_text data-v-e41cf19c">{{time.hour[1]}}</text>时
+    <text class="_text data-v-e41cf19c">{{time.minute[0]}}</text>
+        <text class="_text data-v-e41cf19c">{{time.minute[1]}}</text>分
+    <text class="_text data-v-e41cf19c">{{time.second[0]}}</text>
+        <text class="_text data-v-e41cf19c">{{time.second[1]}}</text>秒 </view>
+</template>

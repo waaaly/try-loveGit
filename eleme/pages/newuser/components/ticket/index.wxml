@@ -1,0 +1,18 @@
+<template name="ticket">
+    <view class="ticket">
+        <view class="ticket-left">
+            <view class="ticket-left-content">
+                <text class="ticket-left-unit" wx:if="{{!isDelivery}}">¥</text>
+                <text class="ticket-left-money">{{amount}}</text>
+                <text class="ticket-left-unit" wx:if="{{isDelivery}}">次</text>
+            </view>
+            <view class="{{isDelivery?'ticket-description-delivery':'ticket-description'}}">
+      {{use_condition}}
+    </view>
+        </view>
+        <view class="ticket-right">
+            <view class="ticket-right-title">{{name}}</view>
+            <view class="ticket-description">{{human_time}}</view>
+        </view>
+    </view>
+</template>

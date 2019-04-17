@@ -1,0 +1,11 @@
+<template name="filter">
+    <ul class="filter-categoryRow">
+        <li catchtap="select" class="filter-categoryTag {{delivery_mode[0]===item.values[0]?'selected':''}}" data-value="{{item.values[0]}}" wx:for="{{multi}}" wx:key="{{ index }}">
+      {{item.name}}
+    </li>
+        <li class="filter-divider"></li>
+        <li catchtap="selectSingle" class="filter-categoryTag {{singleData.name===item.name?'selected':''}}" data-key="{{item.key}}" data-name="{{item.name}}" data-values="{{item.values}}" wx:for="{{single}}" wx:key="{{ index }}">
+      {{item.name}}
+    </li>
+    </ul>
+</template>

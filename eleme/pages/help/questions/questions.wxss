@@ -1,0 +1,22 @@
+.questions {
+    font-family: Helvetica Neue,Tahoma,Arial,PingFangSC-Regular,Hiragino Sans GB,Microsoft Yahei,sans-serif;
+    height: 100%;
+    background-color: #fff;
+}
+
+.questions-own {
+    padding: 20rpx 30rpx;
+    opacity: 0.9;
+}
+
+.questions-gain-q {
+    padding: 15rpx 0 15rpx 0;
+    font-size: 35rpx;
+    font-weight: bold;
+}
+
+.questions-gain-a {
+    font-size: 26rpx;
+    opacity: 0.7;
+    padding: 15rpx 0 15rpx 0;
+}

@@ -1,0 +1,93 @@
+.address.brief {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    height: 135rpx;
+}
+
+.address .brief-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.address .brief-main.null .detail text {
+    font-size: 30rpx;
+    margin-left: 30rpx;
+    font-weight: bolder;
+}
+
+.address .brief-main .border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4rpx;
+}
+
+.address .icon {
+    width: 30rpx;
+    height: 34rpx;
+}
+
+.address .detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 96rpx;
+    padding-left: 30rpx;
+}
+
+.address .detail .top text {
+    margin-right: 20rpx;
+    font-size: 30rpx;
+}
+
+.address .detail .top {
+    display: flex;
+    align-items: center;
+}
+
+.address .detail .bottom {
+    display: flex;
+    align-items: center;
+}
+
+.address .detail .name {
+    display: inline-block;
+    max-width: 240rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: bolder;
+}
+
+.address .address-tag {
+    color: #fff;
+    width: 60rpx;
+    height: 28rpx;
+    line-height: 30rpx;
+    font-size: 26rpx;
+    border-radius: 4rpx;
+    margin-right: 20rpx;
+    text-align: center;
+}
+
+.address .text {
+    font-size: 26rpx;
+    color: #aaa;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 500rpx;
+}
+
+.address .more {
+    position: relative;
+    right: 8rpx;
+    top: 50%;
+    transform: rotate(45deg) translateY(-50%);
+}

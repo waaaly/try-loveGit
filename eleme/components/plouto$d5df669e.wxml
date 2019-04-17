@@ -1,0 +1,22 @@
+<template name="plouto$d5df669e">
+    <view class="_view data-v-5a740022 lucky-list">
+        <image class="_img data-v-5a740022 left-shadow" src="/copy-asset/pages/plouto/media/left-shadow.png"></image>
+        <image class="_img data-v-5a740022 right-shadow" src="/copy-asset/pages/plouto/media/right-shadow.png"></image>
+        <view class="_view data-v-5a740022 total">当前福气值:
+      <text class="_text data-v-5a740022">{{luckyAmount}}</text>
+        </view>
+        <scroll-view scrollX class="_scroll-view data-v-5a740022 list">
+            <view class="_view data-v-5a740022 item" key="{{item.user_id}}" wx:for="{{supporters}}" wx:key="item.user_id">
+                <view class="_view data-v-5a740022 crown-wrapper" wx:if="{{item.is_owner}}">
+                    <image class="_img data-v-5a740022 crown" src="/copy-asset/pages/plouto/media/crown.png"></image>
+                </view>
+                <image class="_img data-v-5a740022 avatar" src="{{item.sns_avatar||defaultAvatar}}"></image>
+                <view class="_view data-v-5a740022 name">{{item.sns_name}}</view>
+                <view class="_view data-v-5a740022 value" wx:if="{{item.is_owner}}">团长</view>
+                <view class="_view data-v-5a740022 value" wx:else>福气值
+          <text class="_text data-v-5a740022">+{{item.promo_item_list.length&&item.promo_item_list[0].benefit_content||0}}</text>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</template>

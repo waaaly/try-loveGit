@@ -1,0 +1,31 @@
+<template name="hongbao-ticket">
+    <view class="hongbao-ticket {{hongbao.isInvalid?'invalid':''}}">
+        <image class="hongbao-ticket-top-border" src="{{imageHash['hongbao_border_valid']}}" wx:if="{{!hongbao.isInvalid}}"></image>
+        <image class="hongbao-ticket-top-border" src="{{imageHash['hongbao_border_invalid']}}" wx:if="{{hongbao.isInvalid}}"></image>
+        <view class="hongbao-ticket-header">
+            <view class="hongbao-ticket-amount">
+                <view class="hongbao-ticket-amount-rmb">{{hongbao.amountBody}}</view>
+                <view class="hongbao-ticket-amount-small" wx:if="{{hongbao.amountTail!=='0'}}">.{{hongbao.amountTail}}</view>
+                <view class="hongbao-sum-condition" wx:if="{{hongbao.description_map.sum_condition}}">{{hongbao.description_map.sum_condition}}</view>
+            </view>
+            <view class="hongbao-ticket-description">
+                <view class="hongbao-title">{{hongbao.name}}</view>
+                <view class="description-list" wx:if="{{hongbao.description_map.validity_periods}}">{{hongbao.description_map.validity_periods}}</view>
+                <view class="description-list" wx:if="{{hongbao.description_map.phone}}">{{hongbao.description_map.phone}}</view>
+                <view class="description-list" wx:if="{{hongbao.description_map.date}}">{{hongbao.description_map.date}}</view>
+            </view>
+            <view class="status" wx:if="{{hongbao.selectable}}">
+                <image src="{{imageHash['not_selected']}}" wx:if="{{sn?sn!==hongbao.sn:merchant_coupon_id!==hongbao.id}}"></image>
+                <image src="{{imageHash['selected']}}" wx:if="{{sn?sn===hongbao.sn:merchant_coupon_id===hongbao.id}}"></image>
+            </view>
+        </view>
+        <view class="hongbao-reason" wx:if="{{hongbao.unavailable_reasons.length}}">
+            <view class="hongbao-reason-title">不可用原因</view>
+            <view wx:for="{{hongbao.unavailable_reasons}}" wx:key="index">{{item}}</view>
+        </view>
+        <view class="hongbao-ticket-dummy-variety" wx:if="{{!hongbao.limits.length}}"></view>
+        <view class="hongbao-ticket-variety" wx:if="{{hongbao.limits&&hongbao.limits.length}}">
+            <view class="description-list" wx:for="{{hongbao.limits}}" wx:key="*this">{{item}}</view>
+        </view>
+    </view>
+</template>

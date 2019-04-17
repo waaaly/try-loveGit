@@ -1,0 +1,16 @@
+<template name="address-item-content">
+    <view class="main">
+        <view class="top">
+            <text class="name">{{addr.name}}</text>
+            <text class="sex" wx:if="{{addr.sex===1}}">先生</text>
+            <text class="sex" wx:if="{{addr.sex===2}}">女士</text>
+            <text class="phone">{{addr.phone}}</text>
+        </view>
+        <view class="bottom">
+            <text class="address-tag" style="background: #ff6020;" wx:if="{{addr.tag==='家'}}">{{addr.tag}}</text>
+            <text class="address-tag" style="background: #0097ff;" wx:if="{{addr.tag==='公司'}}">{{addr.tag}}</text>
+            <text class="address-tag" style="background: #5dcf7b;" wx:if="{{addr.tag==='学校'}}">{{addr.tag}}</text>
+            <text class="address-text">{{addr.address+addr.address_detail}}</text>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,71 @@
+<template name="goods">
+    <view class="goods grid">
+        <scroll-view class="menu-nav" scrollTop="{{categoryScrollTop}}" scrollY="{{isCartFolded&&isModalHide}}">
+            <view bindtap="changeCategory" class="cell cell-12of12 menu-nav-item menu-nav-item{{'menu-'+index===activeMenuCategory.id?'-active':''}} line-clamp" data-id="{{item.id}}" data-index="{{index}}" data-type="{{item.type}}" data-value="menu-{{index}}" wx:for="{{menu}}" wx:key="name">
+                <image class="menu-nav-icon" src="{{item.icon_url}}" wx:if="{{item.icon_url}}"></image>
+                <text class="line-clamp"> {{item.name}} </text>
+                <text class="menu-nav-count" wx:if="{{foodsAddedToCart[item.id].quantity}}"> {{foodsAddedToCart[item.id].quantity}} </text>
+            </view>
+        </scroll-view>
+        <scroll-view bindscrolltolower="scrollToBottom" class="menu-view cell cell-fill" scrollTop="{{listScrollTop}}" scrollY="{{isCartFolded&&isModalHide}}">
+            <view class="menu-title">
+                <view class="menu-category-description">
+                    <text class="menu-category-name" wx:if="{{menuIndex.name}}">{{menuIndex.name}}</text>
+                    <block wx:if="{{menuIndex.description}}">{{menuIndex.description}}</block>
+                </view>
+                <view catchtap="onTouchDotted" class="visible-dotted">...</view>
+            </view>
+            <view class="menu-bubble" hidden="{{!visibleMore}}">
+                <text class="name">{{menuIndex.name}}: </text>
+                <text class="description">{{menuIndex.description}}</text>
+            </view>
+            <view class="arrow" wx:if="{{visibleMore===true}}"></view>
+            <view class="menu-loading" wx:if="{{!menuIndex.foods.length&&!menuError}}">
+                <template is="fate-loading" data="{{block:true}}"></template>
+            </view>
+            <view class="menu-empty" wx:if="{{menuError}}">
+                <text>此分类下暂无菜品</text>
+            </view>
+            <block wx:for="{{menuIndex.foods}}" wx:key="{{ index }}">
+                <import src="../../components/cartbutton/index.wxml"></import>
+                <view bindtap="showFoodModal" class="menu-item grid{{item.isActive&&' active-item'}}" data-entity="{{item}}">
+                    <image class="item-logo" src="{{item.image_path}}" wx:if="{{item.image_path}}"></image>
+                    <view class="cell cell-fill">
+                        <view class="item-header grid grid-between">
+                            <text class="item-name"> {{item.name}} </text>
+                            <view class="item-attr-list">
+                                <view class="item-attr" style="color: {{'#'+attr.icon_color}}" wx:for="{{item.attributes}}" wx:for-item="attr" wx:key="name">
+                {{attr.icon_name}}
+              </view>
+                            </view>
+                        </view>
+                        <view class="item-description line-clamp" wx:if="{{item.description}}">
+            {{item.description}}
+          </view>
+                        <view class="item-meta">
+                            <text class="item-sale"> 月售{{item.month_sales}}份 </text>
+                            <text class="item-rate"> 好评率{{item.satisfy_rate}}% </text>
+                        </view>
+                        <view class="grid grid-middle">
+                            <text class="item-activity" style="color: {{'#'+(item.activity.image_text_color||'ff7416')}}" wx:if="{{item.activity&&item.activity.image_text||item.dish_activity&&item.dish_activity.length>0&&item.dish_activity[0].text!==''}}">{{item.activity.image_text||item.dish_activity[0].text}}
+            </text>
+                            <text class="item-limitation" style="background: {{'#'+item.limitation.color}};border: 1rpx solid {{'#'+item.limitation.color}}" wx:if="{{item.limitation.text}}">{{item.limitation.text}}
+            </text>
+                        </view>
+                        <view class="grid grid-middle item-footer">
+                            <view class="item-price" wx:if="{{item.price!=null}}">
+              {{item.price}}
+            </view>
+                            <view class="item-price-origin" wx:if="{{item.original_price}}">
+              ¥{{item.original_price}}
+            </view>
+                            <view wx:if="{{item.specifications.length}}">起</view>
+                            <template is="cartButton" data="{{item:item,isShopAvaiable:isShopAvaiable,foodsAddedToCart:foodsAddedToCart}}"></template>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+</template>
+<import src="/dave/components/fate-loading/index.wxml"></import>

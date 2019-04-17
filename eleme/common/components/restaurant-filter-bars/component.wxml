@@ -1,0 +1,14 @@
+<template name="restaurant-filter-bars">
+    <view class="restaurant-filter-bars">
+        <template is="restaurant-filter-header" data="{{imageHash:imageHash,sortData:sortData,showFilterBarBold:showFilterBarBold,showFilter:showFilter,showSort:showSort,outside:outside,isNewRetail:isNewRetail,query:query}}" wx:if="{{!(showSort||showFilter)||!fromIndex}}"></template>
+        <view class="filter-wrapper {{fromIndex?'fixed-top':''}}" wx:if="{{showSort||showFilter}}">
+            <template is="restaurant-filter-header" data="{{imageHash:imageHash,sortData:sortData,showFilterBarBold:showFilterBarBold,showFilter:showFilter,showSort:showSort,isNewRetail:isNewRetail,outside:outside,query:query}}" wx:if="{{fromIndex}}"></template>
+            <template is="restaurant-sort" data="{{imageHash:imageHash,...sortData,isNewRetail:isNewRetail,outside:outside,query:query}}" wx:if="{{showSort}}"></template>
+            <template is="restaurant-filter" data="{{imageHash:imageHash,...filterData,shopAmount:shopAmount,fetching:fetching,isNewRetail:isNewRetail,query:query}}" wx:if="{{showFilter}}"></template>
+        </view>
+        <view catchtap="toggleMask" class="mask {{fromSearch?'search-mask':''}}" hidden="{{!showSort&&!showFilter}}"></view>
+    </view>
+</template>
+<import src="../restaurant-sort/component.wxml"></import>
+<import src="../restaurant-filter/component.wxml"></import>
+<import src="../restaurant-filter-header/component.wxml"></import>

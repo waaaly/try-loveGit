@@ -1,0 +1,33 @@
+<template name="owner">
+    <view class="card-share">
+        <view class="header">
+            <text class="share-title" wx:if="{{statusMap[status].shareTitle}}">{{statusMap[status].shareTitle}}</text>
+            <view class="card-navigator" wx:if="{{status==='-2'}}">
+                <text>超过24小时未领取，已放入</text>
+                <navigator>我的卡包</navigator>
+            </view>
+            <view class="user-wrapper" wx:if="{{status==='4'}}">
+                <image src="{{detail_json.receive_info.avatar_url}}"></image>
+                <text>{{detail_json.receive_info.nick_name}} 领取了你的心意卡</text>
+            </view>
+            <image src="{{picture}}"></image>
+        </view>
+        <view class="description">
+            <text class="denomination" wx:if="{{status==='2'}}">面值{{sku.face_value/100}}元饿了么心意卡</text>
+            <block wx:else>
+                <text class="denomination-large">面值{{sku.face_value/100}}元饿了么心意卡</text>
+                <text class="notice" wx:for="{{sku.hongbaos}}" wx:key="{{ item.id }}">{{item.title}} ×{{item.quantity}}张</text>
+            </block>
+        </view>
+        <view wx:if="{{status==='2'}}">
+            <view class="main">
+                <textarea bindinput="handleInput" class="card-greetings" maxlength="60" placeholder="大吉大利，今晚吃鸡！" placeholderClass="greetings-placeholder" type="text" value="{{content}}"></textarea>
+            </view>
+            <view class="footer">
+                <button bindtap="sendUbt" class="ginving-btn" data-ubt="102313" openType="share">赠送</button>
+            </view>
+        </view>
+        <template is="fate-loading" data wx:if="{{loading}}"></template>
+    </view>
+</template>
+<import src="/dave/components/fate-loading/index.wxml"></import>

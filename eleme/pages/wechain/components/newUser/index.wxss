@@ -1,0 +1,92 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 209rpx;
+    font-size: 55rpx;
+    color: #ffefcb;
+    font-weight: 300;
+    text-align: center;
+    background: url(https://fuss10.elemecdn.com/7/69/5edc30863ec048d84fc3d0bb33bf3svg.svg) 0 0 no-repeat;
+    background-size: 100%;
+    margin-bottom: 84rpx;
+}
+
+.price {
+    font-weight: lighter;
+    font-family: 'CSD';
+    font-size: 72rpx;
+}
+
+.button-container {
+    position: relative;
+}
+
+.button-tip {
+    position: absolute;
+    width: 126rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    border-radius: 8rpx;
+    top: -40rpx;
+    right: 246rpx;
+    background-color: #e65d42;
+    font-size: 20rpx;
+    color: #fde0a9;
+    text-align: center;
+}
+
+.button-tip::after {
+    content: "";
+    position: absolute;
+    border: 15rpx solid transparent;
+    border-top-color: #e65d42;
+    top: 35rpx;
+    right: 70rpx;
+    z-index: 1;
+}
+
+.button {
+    margin: 80rpx auto 0;
+    width: 520rpx;
+    height: 84rpx;
+    line-height: 84rpx;
+    border-radius: 42rpx;
+    background-color: #fde0a9;
+    font-size: 32rpx;
+    color: #5d4a1d;
+    text-align: center;
+}
+
+.mobile {
+    color: #999;
+    text-align: center;
+    font-size: 26rpx;
+    margin-bottom: 34rpx;
+}
+
+.couponLink {
+    width: 622rpx;
+    height: 180rpx;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.couponLink image {
+    width: 100%;
+    height: 100%;
+}
+
+.outtip {
+    color: #c3c3c3;
+    font-size: 22rpx;
+    text-align: center;
+    margin-top: 8rpx;
+}
+
+.logo {
+    display: block;
+    margin: 64rpx auto 0;
+    width: 156rpx;
+    height: 40rpx;
+}

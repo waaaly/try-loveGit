@@ -1,0 +1,15 @@
+<import src="/common/components/loading-component/component.wxml"></import>
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<import src="./components/cardItem/index.wxml"></import>
+<view class="card-owner" wx:if="{{!loading}}">
+    <view class="card-lists" wx:if="{{lists.length>0}}">
+        <template is="cardItem" data="{{...item,statusMap:statusMap,categories:categories}}" wx:for="{{lists}}" wx:key="card_number"></template>
+        <template is="loading-component" data="{{loadedAll:loadedAll}}" wx:if="{{limit<=lists.length}}"></template>
+    </view>
+    <view class="card-empty" wx:else>
+        <view class="title">暂无心意卡</view>
+        <view class="tip">购买的、朋友赠送的心意卡都会在这里</view>
+        <navigator switchTab class="btn" url="/pages/giftcard/index">购买心意卡</navigator>
+    </view>
+</view>
+<template is="fate-loading" data wx:else></template>

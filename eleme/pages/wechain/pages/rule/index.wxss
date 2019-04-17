@@ -1,0 +1,68 @@
+.wcrule-block {
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 32rpx;
+    margin: 0 auto 32rpx;
+    border-radius: 4rpx;
+}
+
+.wcrule-block-title {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 16rpx;
+}
+
+.wcrule-root {
+    padding: 32rpx;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.wcrule-indictor-list {
+    margin-top: 46rpx;
+    display: flex;
+}
+
+.wcrule-indictor-right {
+    margin-left: 80rpx;
+    width: 224rpx;
+    margin-right: auto;
+}
+
+.wcrule-indictor-0 {
+    width: 224rpx;
+    height: 400rpx;
+    margin-left: auto;
+}
+
+.wcrule-indictor-1 {
+    width: 224rpx;
+    height: 186rpx;
+    margin-bottom: 24rpx;
+}
+
+.wcrule-indictor-2 {
+    width: 224rpx;
+    height: 214rpx;
+}
+
+.wcrule-rule-title {
+    text-align: center;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #333;
+    margin-top: 8rpx;
+    margin-bottom: 16rpx;
+}
+
+.wcrule-rule-item {
+    color: #333;
+    font-size: 24rpx;
+    line-height: 1.67;
+}
+
+.wcrule-block-text {
+    color: #999;
+    font-size: 26rpx;
+}

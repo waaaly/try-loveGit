@@ -1,0 +1,54 @@
+.modal {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.confirm-content {
+    width: 540rpx;
+    background: #fff;
+    border-radius: 28rpx;
+}
+
+.confirm-content .title {
+    padding: 50rpx 0 20rpx;
+    text-align: center;
+    font-size: 36rpx;
+}
+
+.confirm-content .tip {
+    text-align: center;
+    font-size: 28rpx;
+}
+
+.confirm-content .btn-wrapper {
+    width: 540rpx;
+    border-top: 1rpx solid #ccc;
+    height: 88rpx;
+}
+
+.btn-wrapper button.confirm-btn {
+    width: 270rpx;
+    text-align: center;
+    line-height: 88rpx;
+    color: #007aff;
+    background: transparent;
+    border-radius: 0;
+    font-size: 28rpx;
+    border-right: 1rpx solid #ccc;
+}
+
+.btn-wrapper button+button.confirm-btn {
+    border-right: none;
+}
+
+.btn-wrapper button.confirm-btn::after {
+    display: none;
+}

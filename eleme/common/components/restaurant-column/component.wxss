@@ -1,0 +1,38 @@
+.bsd-item {
+    display: inline-flex;
+    margin-right: 10rpx;
+    padding: 20rpx;
+    width: 450rpx;
+    height: 100%;
+    background-color: #fff;
+}
+
+.bsd-item:last-child {
+    margin-right: 0;
+}
+
+.bsd-item-left {
+    flex: 1 1 30%;
+    height: 100%;
+    padding-right: 20rpx;
+}
+
+.bsd-item-right {
+    display: flex;
+    flex: 1 1 70%;
+    flex-flow: column wrap;
+}
+
+.bsd-item-info {
+    flex: 1 1 0;
+}
+
+.bsd-item-title {
+    margin-bottom: 10rpx;
+}
+
+.bsd-item-image {
+    width: 180rpx;
+    height: 140rpx;
+    border-radius: 4rpx;
+}

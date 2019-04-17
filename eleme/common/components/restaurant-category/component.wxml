@@ -1,0 +1,18 @@
+<template name="restaurant-category">
+    <view class="category">
+        <scroll-view class="category-parent" scrollY="true">
+            <view catchtap="chooseParentCategory" class="category-parent-item {{item.name===selectParent?'category-parent-item-active':''}}" data-id="{{item.ids}}" data-index="{{index}}" data-name="{{item.name}}" wx:for="{{parent}}" wx:key="name">
+                <image class="category-image" src="{{item.image_url}}"></image>
+                <view class="category-name middle-size gray">{{item.name}}</view>
+                <view class="small-size category-badge">{{item.count}}</view>
+                <view class="category-arrow" hidden="{{!(item.sub_categories&&item.sub_categories.length>0)}}"></view>
+            </view>
+        </scroll-view>
+        <scroll-view class="category-children" scrollY="true">
+            <view catchtap="chooseChildCategory" class="category-children-item {{item.id===selectChild?'category-children-item-active':''}}" data-id="{{item.id}}" data-name="{{item.name}}" wx:for="{{children}}" wx:key="name">
+                <view class="category-name middle-size">{{item.name}}</view>
+                <view class="highlight-gray small-size">{{item.count}}</view>
+            </view>
+        </scroll-view>
+    </view>
+</template>

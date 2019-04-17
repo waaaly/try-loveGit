@@ -1,0 +1,295 @@
+.commend {
+    display: flex;
+    flex-direction: column;
+}
+
+.commend .header-image {
+    width: 100%;
+    height: 560rpx;
+}
+
+.header {
+    position: relative;
+    height: 560rpx;
+}
+
+.header navigator {
+    position: absolute;
+    font-size: 24rpx;
+    color: #fff;
+    background-color: rgba(0,0,0,0.3);
+    top: 100rpx;
+    right: 0;
+    padding: 10rpx 10rpx 10rpx 20rpx;
+    border-top-left-radius: 22rpx;
+    border-bottom-left-radius: 22rpx;
+}
+
+.invite-block {
+    background: #fff3e4;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 32rpx;
+    color: #666;
+}
+
+.invite-block .invite-button {
+    display: flex;
+    width: 560rpx;
+    height: 100rpx;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(-180deg,#d83937 0%,#ac1411 100%);
+    border-radius: 100rpx;
+    color: #fcdd95;
+    font-size: 34rpx;
+    margin-bottom: 60rpx;
+}
+
+.invite-block .hongbao-block {
+    display: flex;
+    position: relative;
+    width: 540rpx;
+    margin: 60rpx 0 76rpx;
+    height: 250rpx;
+}
+
+.hongbao-block .block-item {
+    width: 120rpx;
+    position: absolute;
+}
+
+.hongbao-block .hongbao::after {
+    content: '';
+    position: absolute;
+    left: calc(50% - 8rpx);
+    top: 170rpx;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8rpx 8rpx 0 8rpx;
+    border-color: #a60000 transparent transparent transparent;
+}
+
+.hongbao {
+    position: relative;
+    width: 120rpx;
+    height: 160rpx;
+    color: #f3df88;
+    font-size: 20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: 120rpx 160rpx;
+}
+
+.hongbao .price {
+    margin-top: 30rpx;
+    display: flex;
+    align-items: baseline;
+}
+
+.hongbao .price text:first-child {
+    font-size: 44rpx;
+    font-weight: bold;
+}
+
+.small-hongbao-background {
+    background-image: url('http://fuss10.elemecdn.com/c/31/3561b7472c14d6fd1168e07a0d587png.png');
+}
+
+.gotten-hongbao-background {
+    background-image: url('http://fuss10.elemecdn.com/5/69/97d1c15c16404d425f897278c0215png.png');
+}
+
+.gotten-hongbao-background .price {
+    color: #ca1f20;
+    margin-top: 20rpx;
+}
+
+.has-gotten {
+    color: #da3034;
+    opacity: 0.5;
+    font-size: 24rpx;
+    margin-top: 30rpx;
+}
+
+.block-item .item-circle {
+    width: 28rpx;
+    height: 28rpx;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: calc(50% - 14rpx);
+    top: 184rpx;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-circle .circle-red {
+    width: 16rpx;
+    height: 16rpx;
+    border-radius: 50%;
+    background-color: #ca1f20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 4;
+}
+
+.circle-yellow {
+    width: 8rpx;
+    height: 8rpx;
+    border-radius: 50%;
+    background-color: #f8d754;
+    position: absolute;
+    z-index: 5;
+    left: calc(50% - 4rpx);
+    top: 194rpx;
+}
+
+.block-item .item-bottom {
+    text-align: center;
+    font-size: 28rpx;
+    color: #999;
+    margin-top: 50rpx;
+}
+
+.progross-line {
+    position: absolute;
+    top: 193rpx;
+    left: 0;
+    width: 100%;
+    height: 10rpx;
+    border-radius: 5rpx;
+    background-color: #fff;
+}
+
+.progross-line .red-line {
+    position: absolute;
+    height: 100%;
+    background-color: #ca1f20;
+    width: 20%;
+    border-radius: 5rpx;
+    top: 0;
+    z-index: 3;
+}
+
+.progross-line .inner-line {
+    position: absolute;
+    top: 3rpx;
+    width: 100%;
+    height: 4rpx;
+    background-color: #999;
+    opacity: 0.1;
+}
+
+.my-bonus {
+    margin-top: 36rpx;
+}
+
+.bonus-title {
+    font-size: 32rpx;
+    color: #666;
+    display: flex;
+    align-items: center;
+    margin-bottom: 26rpx;
+}
+
+.bonus-title::before {
+    content: "";
+    width: 8rpx;
+    height: 30rpx;
+    background-color: #ca1f20;
+    border-radius: 4rpx;
+    margin: 0 10rpx 0 48rpx;
+}
+
+.my-bonus .my-bonus-content {
+    display: flex;
+    padding: 30rpx 30rpx 0;
+}
+
+.my-bonus .my-bonus-content .my-bonus-item {
+    font-size: 32rpx;
+    color: #333;
+    flex: 1;
+    text-align: center;
+}
+
+.my-bonus-content .my-bonus-item .subtitle {
+    font-size: 22rpx;
+    color: #666;
+}
+
+.bonus-detail {
+    margin: 56rpx 0 30rpx;
+}
+
+.detail-list {
+    padding: 0 30rpx;
+}
+
+.detail-list .detail-item {
+    display: flex;
+    align-items: center;
+    padding: 30rpx 0;
+}
+
+.detail-list .detail-item image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.detail-list .detail-item .detail-content {
+    flex: 1;
+    color: #333;
+    font-size: 28rpx;
+}
+
+.detail-item .detail-content .person-info text:first-child {
+    margin-right: 40rpx;
+}
+
+.small-gray {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.no-bonus {
+    display: flex;
+    flex-direction: column;
+}
+
+.no-bonus image {
+    width: 400rpx;
+    height: 400rpx;
+    margin: 0 auto;
+}
+
+.no-bonus view {
+    font-size: 23rpx;
+    color: #999;
+    text-align: center;
+}
+
+.no-bonus view:first-of-type {
+    font-size: 34rpx;
+    color: #6a6a6a;
+    margin: 30rpx 0;
+}
+
+.detail-list .loading-wrapper {
+    background-color: #fff;
+}
+
+.block-item .red {
+    color: #ca1f20;
+}

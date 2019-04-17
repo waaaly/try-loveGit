@@ -1,0 +1,192 @@
+.fooditem-root {
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.fooditem-shop {
+    height: 128rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 1rpx solid rgba(227,227,227,.5);
+    padding: 0 32rpx;
+}
+
+.fooditem-name {
+    color: #333;
+    font-size: 28rpx;
+    font-weight: bold;
+    max-width: 310rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.fooditem-nameRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fooditem-nameBody {
+    display: flex;
+    align-items: center;
+}
+
+.fooditem-salesRow {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20rpx;
+    color: #666;
+}
+
+.fooditem-tag {
+    border-radius: 2rpx;
+    font-size: 20rpx;
+    color: #fff;
+    height: 26rpx;
+    line-height: 26rpx;
+    padding: 0 4rpx;
+    margin-left: 14rpx;
+}
+
+.fooditem-tag.busy {
+    background-image: linear-gradient(-90deg,#ff8b6b 0%,#ff5339 100%);
+}
+
+.fooditem-tag.next {
+    background-image: linear-gradient(-135deg,#7ae236 0%,#00c180 100%);
+}
+
+.fooditem-shopBody {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fooditem-logo {
+    width: 64rpx;
+    height: 64rpx;
+    margin-right: 12rpx;
+}
+
+.fooditem-foodlogo {
+    width: 128rpx;
+    height: 128rpx;
+    margin-right: 16rpx;
+}
+
+.fooditem-foods {
+    padding: 0 32rpx;
+}
+
+.fooditem-premium::before {
+    margin-right: 10rpx;
+    padding: 0 5rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    border-radius: 4rpx;
+    background-image: linear-gradient(-139deg,#fff100 0%,#ffe339 100%);
+    color: #6f3f15;
+    content: "品牌";
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 22rpx;
+    flex: none;
+}
+
+.fooditem-fooditem {
+    height: 176rpx;
+    padding: 24rpx 0;
+    border-bottom: 1rpx solid rgba(227,227,227,.5);
+    display: flex;
+}
+
+.fooditem-foodname {
+    font-size: 28rpx;
+    color: #110000;
+}
+
+.fooditem-sales {
+    color: #666;
+    font-size: 22rpx;
+}
+
+.fooditem-price {
+    font-size: 30rpx;
+    color: #ff5339;
+}
+
+.fooditem-price::before {
+    content: '\00A5';
+    display: inline;
+    font-size: 24rpx;
+    margin-right: 4rpx;
+}
+
+.fooditem-originalPrice {
+    font-size: 20rpx;
+    color: #666;
+    margin-left: 8rpx;
+    text-decoration: line-through;
+}
+
+.fooditem-foodBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fooditem-foodMore {
+    background-color: #fff;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22rpx;
+}
+
+.fooditem-foodMore image {
+    width: 18rpx;
+    margin-left: 12rpx;
+}
+
+.fooditem-deliveryTip {
+    border-radius: 2rpx;
+    background-image: linear-gradient(45deg,#0085ff 0%,#00aaff 100%);
+    color: #fff;
+    font-size: 20rpx;
+    height: 26rpx;
+    width: 94rpx;
+    text-align: center;
+    line-height: 26rpx;
+}
+
+.fooditem-activityTag {
+    font-size: 20rpx;
+    border-radius: 2rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    padding: 0 4rpx;
+    margin-left: 12rpx;
+    display: inline-block;
+}
+
+.fooditem-divider::before {
+    margin: 6rpx;
+    color: #ddd;
+    content: '|';
+}
+
+.festival {
+    height: 36rpx;
+    line-height: 36rpx;
+    margin-bottom: 6rpx;
+    font-size: 22rpx;
+    text-align: center;
+    background: linear-gradient(to right,rgba(251,33,27,1),rgba(237,0,74,1));
+    width: 130rpx;
+    color: #fff;
+    border-radius: 8rpx;
+}

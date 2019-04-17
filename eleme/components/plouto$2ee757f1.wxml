@@ -1,0 +1,33 @@
+<template name="plouto$2ee757f1">
+    <view class="_view data-v-304cc2af invite">
+        <view class="_view data-v-304cc2af invite-awards">
+            <view class="_view data-v-304cc2af {{['award',item.business_map.high_light&&'active']}}" wx:for="{{rewardList}}">
+                <view class="_view data-v-304cc2af award-content">
+                    <view class="_view data-v-304cc2af award-title">
+                        <text class="_text data-v-304cc2af award-title-worth">{{item.reward_worth}}</text>
+                        <text class="_text data-v-304cc2af">团队红包</text>
+                    </view>
+                    <view class="_view data-v-304cc2af award-subtitle">福气值
+            <text class="_text data-v-304cc2af">{{item.business_map.sum_condition_desc}}</text>
+                    </view>
+                </view>
+                <image class="_img data-v-304cc2af award-arrow" src="/copy-asset/pages/plouto/media/arrow.png" wx:if="{{index!==2}}"></image>
+            </view>
+        </view>
+        <view class="_view data-v-304cc2af invite-area">
+            <view class="_view data-v-304cc2af invite-hongbao">
+                <image class="_img data-v-304cc2af hongbao-img" src="/copy-asset/pages/plouto/media/hongbao.png"></image>
+                <view class="_view data-v-304cc2af invite-msg">
+                    <view class="_view data-v-304cc2af invite-msg-title">{{highLightItem.reward_worth}}元团队无门槛红包</view>
+                </view>
+            </view>
+            <view class="_view data-v-304cc2af invite-tip" wx:if="{{showInviteBtn}}">团队福气值越高，抽奖概率越大哦</view>
+            <button bindtap="handleProxy" class="_button data-v-304cc2af invite-btn" data-comkey="{{$k}}" data-eventid="{{'0'}}" wx:if="{{showInviteBtn&&!hasSn}}">组团集福气值
+        <image class="_img data-v-304cc2af arrow-right" src="/copy-asset/pages/plouto/media/arrow-right.png"></image>
+            </button>
+            <button class="_button data-v-304cc2af invite-btn" openType="share" wx:if="{{showInviteBtn&&hasSn}}">邀请好友集福气值
+        <image class="_img data-v-304cc2af arrow-right" src="/copy-asset/pages/plouto/media/arrow-right.png"></image>
+            </button>
+        </view>
+    </view>
+</template>

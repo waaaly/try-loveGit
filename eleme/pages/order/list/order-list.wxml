@@ -1,0 +1,58 @@
+<import src="/common/components/not-my-fault/index.wxml"></import>
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<import src="/common/components/loading-component/component.wxml"></import>
+<template is="fate-loading" data wx:if="{{!loaded}}"></template>
+<view class="orders-container" wx:if="{{currentUser&&loaded}}">
+    <template is="download-app" data wx:if="{{downloadTipsModalShow}}"></template>
+    <scroll-view bindscrolltolower="loadMore" class="orders-list" scrollY="true" wx:if="{{orders.length>0}}">
+        <view class="order-ordercard" wx:for="{{orders}}" wx:key="id">
+            <view class="ordercard-body">
+                <view bindtap="goShop" class="ordercard-avatar" data-restaurant_id="{{item.restaurant_id}}">
+                    <image class="ordercard-avatar-img" src="{{item.restaurant_image_url}}" wx:if="{{item.restaurant_image_url}}"></image>
+                    <image class="ordercard-avatar-img" src="{{imageHash['DEFAULT_SHOP_LOGO']}}" wx:if="{{!item.restaurant_image_url}}"></image>
+                </view>
+                <view class="ordercard-content">
+                    <view class="ordercard-head">
+                        <view class="title">
+                            <view bindtap="goShop" class="name" data-restaurant_id="{{item.restaurant_id}}">
+                                <view class="content">{{item.restaurant_name}}</view>
+                                <image class="more" src="{{imageHash['more']}}"></image>
+                            </view>
+                            <view bindtap="goDetail" class="status" data-unique_id="{{item.unique_id}}">
+                {{item.status_bar.title}}
+              </view>
+                        </view>
+                        <view class="datetime">
+              {{item.formatted_created_at}}
+            </view>
+                    </view>
+                    <view bindtap="goDetail" class="ordercard-detail" data-unique_id="{{item.unique_id}}">
+                        <view class="detail">
+              {{item.basket.group[0][0].name||item.basket.package_group[0].name}} {{item.total_quantity>1?'等'+item.total_quantity+'件商品':''}}
+            </view>
+                        <view class="price">
+              ¥{{item.total_amount}}
+            </view>
+                    </view>
+                </view>
+            </view>
+            <view class="ordercard-bottom" wx:if="{{item.operation_rebuy||item.operation_confirm||item.operation_pay||item.operation_rate}}">
+                <view catchtap="operationConfirm" class="cardbutton" data-uid="{{item.unique_id}}" wx:if="{{item.operation_confirm}}">确认送达</view>
+                <view :style="{color: order.status_bar.color, borderColor: order.status_bar.color}" catchtap="operationPay" class="cardbutton btn-alert" data-order="{{item}}" wx:if="{{item.operation_pay&&item.formattedRemainSecs}}">去支付(还剩{{item.formattedRemainSecs}})</view>
+                <view catchtap="operationRebuy" class="cardbutton" data-id="{{item.unique_id}}" data-shopid="{{item.restaurant_id}}" wx:if="{{item.operation_rebuy}}">再来一单</view>
+                <view catchtap="operationRate" class="cardbutton btn-alert" data-uid="{{item.unique_id}}" wx:if="{{item.operation_rate}}">
+          评价{{item.rated_point?'得'+item.rated_point+'金币':''}}
+        </view>
+            </view>
+        </view>
+        <template is="loading-component" data="{{loadedAll:loadedAll}}"></template>
+    </scroll-view>
+    <template is="not-my-fault" data="{{ msg:'您最近没有订单',img:imageHash['EMPTY_LIST'] }}" wx:else></template>
+</view>
+<view class="notify" wx:if="{{loaded&&!currentUser}}">
+    <view class="login-image">
+        <image src="{{imageHash['goto_login']}}"></image>
+    </view>
+    <view class="login-content">登录后查看外卖订单</view>
+    <view bindtap="goLogin" class="btn-primary">立即登录</view>
+</view>

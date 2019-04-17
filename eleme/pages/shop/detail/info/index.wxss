@@ -1,0 +1,88 @@
+.shop-info-part {
+    background: #fff;
+    margin-top: 20rpx;
+    font-size: 26rpx;
+    color: rgb(102,102,102);
+}
+
+.title {
+    padding: 24rpx 30rpx;
+    line-height: 30rpx;
+    font-size: 30rpx;
+    color: rgb(51,51,51);
+    border-bottom: 1rpx solid rgb(238,238,238);
+}
+
+.shop-attr {
+    padding: 17rpx 30rpx;
+}
+
+.shop-attr:first-child {
+    padding-top: 26rpx;
+}
+
+.shop-attr:last-child {
+    padding-bottom: 32rpx;
+}
+
+.shop-attr-first {
+    padding-top: 26rpx;
+}
+
+.shop-real-sight-list {
+    padding: 24rpx 30rpx 30rpx 30rpx;
+}
+
+.shop-real-sight-img {
+    width: 165rpx;
+    height: 165rpx;
+    padding-right: 10rpx;
+}
+
+.shop-real-sight-img:last-child {
+    padding-right: 0;
+}
+
+.shop-identification {
+    color: rgb(102,102,102);
+}
+
+.shop-identification-notice {
+    font-size: 30rpx;
+    line-height: 30rpx;
+    color: rgb(51,51,51);
+}
+
+.shop-identification-detail {
+    color: rgb(153,153,153);
+    font-size: 26rpx;
+}
+
+.shop-identification-info {
+    padding: 40rpx 30rpx;
+}
+
+.shop-identification-icon {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    background: rgb(255,197,36);
+    margin: 0 32rpx 0 10rpx;
+}
+
+.shop-identification-result {
+    padding-bottom: 20rpx;
+}
+
+.shop-basic-info {
+    padding-left: 30rpx;
+}
+
+.shop-basic-info-item {
+    padding: 32rpx 30rpx 32rpx 0;
+    border-bottom: 1rpx solid rgb(238,238,238);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}

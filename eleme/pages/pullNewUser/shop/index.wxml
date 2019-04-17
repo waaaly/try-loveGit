@@ -1,0 +1,12 @@
+<import src="../shopHongbao/components/bowl/bowl.wxml"></import>
+<view class="hongbao">
+    <template is="bowl" data="{{shop:shop}}"></template>
+    <image class="present-hongbao" src="/pages/pullNewUser/shopHongbao/assets/present_hongbao.png"></image>
+    <view class="icon">
+        <image class="icon-flower" src="/pages/pullNewUser/shopHongbao/assets/flower.svg"></image>
+    </view>
+</view>
+<view class="footer" wx:if="{{!loading}}">
+    <button class="form-button" openType="share">立即转发</button>
+    <text class="tips">转发给好友或微信群，打开就能领红包</text>
+</view>

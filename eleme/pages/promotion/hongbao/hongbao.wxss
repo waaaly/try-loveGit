@@ -1,0 +1,43 @@
+@import "templates/hongbao-ticket/index.wxss";
+
+@import "templates/coupon-ticket/index.wxss";
+
+.container {
+    box-sizing: border-box;
+    padding: 110rpx 0 30rpx;
+}
+
+.status image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.hongbao-tabs {
+    display: flex;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.hongbao-tabs view {
+    flex: 1;
+    padding: 20rpx 20rpx 24rpx;
+    color: #fff;
+    background: #0097ff;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+}
+
+.hongbao-tabs view.active text {
+    border-bottom: 2px solid #fff;
+    opacity: 1;
+}
+
+.hongbao-tabs view text {
+    padding-bottom: 4px;
+    font-size: 28rpx;
+    opacity: 0.7;
+}

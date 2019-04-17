@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="40" viewBox="0 0 48 40">
+    <defs>
+        <linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#494949"/>
+            <stop offset="100%" stop-color="#0D0D0D"/>
+        </linearGradient>
+        <linearGradient id="b" x1="50%" x2="50%" y1="0%" y2="99.099%">
+            <stop offset="0%" stop-color="#F0CB8D"/>
+            <stop offset="100%" stop-color="#FADCA9"/>
+        </linearGradient>
+        <linearGradient id="e" x1="59.858%" x2="50%" y1="19.747%" y2="100%">
+            <stop offset="0%" stop-color="#F4DFB3"/>
+            <stop offset="100%" stop-color="#FFE2B1"/>
+        </linearGradient>
+        <path id="d" d="M23.38 7.553l7.5 2.18-.57 5.641-8.52-2.163a1 1 0 0 1-.716-1.244l1.065-3.729a1 1 0 0 1 1.24-.685z"/>
+        <filter id="c" width="242.2%" height="278.1%" x="-71.1%" y="-63.6%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+        </filter>
+        <rect id="g" width="8" height="8" x="29" y="9" rx="2.6"/>
+        <filter id="f" width="275%" height="275%" x="-87.5%" y="-62.5%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="url(#a)" d="M2 0h44a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+        <path fill="#DEBC84" d="M30 0h6v40h-6z"/>
+        <path fill="#DEBC84" d="M48 10v6H0v-6z"/>
+        <path fill="url(#b)" d="M25 13h6v11l-3.013-2.444L25 24z" transform="rotate(45 28 18.5)"/>
+        <path fill="url(#b)" d="M34 13h6v11l-3.013-2.444L34 24z" transform="scale(-1 1) rotate(45 0 -70.826)"/>
+        <g>
+            <use fill="#000" filter="url(#c)" xlink:href="#d"/>
+            <use fill="url(#e)" xlink:href="#d"/>
+        </g>
+        <path fill="#FFE2B1" d="M42.292 7.553l-7.501 2.18.57 5.641 8.52-2.163a1 1 0 0 0 .716-1.244l-1.065-3.729a1 1 0 0 0-1.24-.685z"/>
+        <g>
+            <use fill="#000" filter="url(#f)" xlink:href="#g"/>
+            <use fill="#FFE2B1" xlink:href="#g"/>
+        </g>
+    </g>
+</svg>

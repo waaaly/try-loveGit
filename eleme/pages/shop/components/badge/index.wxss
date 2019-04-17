@@ -1,0 +1,25 @@
+.badge-container {
+    color: #fff;
+}
+
+.badge-body {
+    display: flex;
+    align-items: center;
+}
+
+.badge-icon {
+    font-size: 24rpx;
+    border-radius: 4rpx;
+    margin-right: 10rpx;
+    box-sizing: border-box;
+    width: 30rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    border: 1rpx solid;
+    text-align: center;
+}
+
+.badge-description {
+    color: #666;
+    font-size: 26rpx;
+}

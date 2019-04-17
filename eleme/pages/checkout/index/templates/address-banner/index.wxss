@@ -1,0 +1,16 @@
+.address-page .mini {
+    z-index: 4;
+    background: rgb(255,250,214);
+    height: 64rpx;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 96rpx;
+    width: 100%;
+}
+
+.address-page .mini .mini-text {
+    font-size: 26rpx;
+    line-height: 64rpx;
+    color: rgb(102,102,102);
+}

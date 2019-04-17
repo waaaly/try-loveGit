@@ -1,0 +1,243 @@
+.orders-container {
+    background-color: #f4f4f4;
+    height: 100%;
+}
+
+.orders-list {
+    height: 100%;
+}
+
+.order-ordercard {
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    padding-left: 30rpx;
+    padding-top: 30rpx;
+}
+
+.ordercard-body {
+    display: flex;
+}
+
+.ordercard-avatar {
+    padding-right: 20rpx;
+}
+
+.ordercard-avatar-img {
+    border-radius: 4rpx;
+    width: 64rpx;
+    height: 64rpx;
+}
+
+.ordercard-content {
+    flex: 1;
+}
+
+.ordercard-head {
+    border-bottom: 1rpx solid #eee;
+    height: 72rpx;
+    padding-bottom: 20rpx;
+    padding-right: 30rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ordercard-head .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.ordercard-head .name {
+    font-size: 32rpx;
+    color: #333;
+    max-width: 13em;
+    display: flex;
+    align-items: center;
+}
+
+.ordercard-head .name .content {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ordercard-head .status {
+    font-size: 26rpx;
+    text-align: right;
+    color: #333;
+    max-width: 10em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ordercard-head .datetime {
+    font-size: 22rpx;
+    color: #999;
+}
+
+.ordercard-detail {
+    display: flex;
+    justify-content: space-between;
+    height: 102rpx;
+    line-height: 102rpx;
+    padding-right: 30rpx;
+    overflow: hidden;
+}
+
+.ordercard-detail .detail {
+    font-size: 26rpx;
+    color: #666;
+}
+
+.ordercard-detail .price {
+    flex-basis: 120rpx;
+    text-align: right;
+    font-size: 26rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.ordercard-bottom {
+    border-top: 1rpx solid #eee;
+    padding-right: 30rpx;
+    height: 100rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cardbutton {
+    border: 1rpx solid #3190e8;
+    border-radius: 6rpx;
+    background-color: transparent;
+    outline: none;
+    font-size: 26rpx;
+    line-height: 56rpx;
+    height: 56rpx;
+    padding: 0 20rpx;
+    color: #3190e8;
+    margin-left: 20rpx;
+}
+
+.cardbutton::after {
+    display: none;
+}
+
+.btn-alert {
+    color: #ff6000;
+    border-color: #ff6000;
+}
+
+.more {
+    margin-left: 10rpx;
+    width: 12rpx;
+    height: 20rpx;
+}
+
+.vertical-middle {
+    margin-top: 40%;
+    transform: translateY(50%);
+}
+
+.tip {
+    margin: 10rpx 0;
+    text-align: center;
+}
+
+.notify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin-top: -20px;
+}
+
+.notify navigator {
+    margin-top: 32rpx;
+}
+
+.login-image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 300rpx;
+    height: 170rpx;
+}
+
+.login-image image {
+    width: 150rpx;
+    height: 138rpx;
+}
+
+.login-content {
+    height: 26rpx;
+    margin-top: 27rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #56d176;
+    border-radius: 4rpx;
+    width: 188rpx;
+    height: 60rpx;
+    color: #fff;
+    font-size: 24rpx;
+}
+
+.download-tips {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    background-color: #fff;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.download-tips .tips {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.download-tips .tips .img {
+    width: 17px;
+    height: 17px;
+    background-color: #fff;
+    padding: 8px;
+}
+
+.download-tips .tips .text {
+    text-align: left;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333;
+}
+
+.download-tips .link {
+    color: #0097ff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 28px;
+    font-size: 13px;
+    border: 1rpx solid #0097ff;
+    margin-right: 10px;
+    border-radius: 3px;
+}

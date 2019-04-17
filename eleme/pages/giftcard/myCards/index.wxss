@@ -1,0 +1,45 @@
+@import "components/cardItem/index.wxss";
+
+.card-owner {
+    height: 100%;
+}
+
+.card-lists>navigator {
+    padding-left: 40rpx;
+}
+
+.card-lists>.loading-wrapper {
+    background: #fff;
+}
+
+.card-empty {
+    padding-top: 330rpx;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-empty .title {
+    font-size: 48rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-empty .tip {
+    margin-top: 30rpx;
+    font-size: 26rpx;
+    color: #999;
+}
+
+.card-empty .btn {
+    margin-top: 64rpx;
+    width: 224rpx;
+    height: 85rpx;
+    line-height: 85rpx;
+    font-size: 32rpx;
+    color: #fff;
+    border: none;
+    border-radius: 4rpx;
+    background-color: #2396ff;
+}

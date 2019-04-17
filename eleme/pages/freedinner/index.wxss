@@ -1,0 +1,135 @@
+@import "components/modal/index.wxss";
+
+@import "components/confirmModal/index.wxss";
+
+@import "components/carousel/index.wxss";
+
+@import "components/result/index.wxss";
+
+@import "components/lotteryModal/index.wxss";
+
+.freedinner {
+    padding-bottom: 40rpx;
+    min-height: 100%;
+    background: #D5372C;
+    box-shadow: inset 10rpx 10rpx 10rpx 30rpx #C4332A;
+}
+
+.freedinner .header {
+    position: relative;
+    width: 100%;
+    height: 1206rpx;
+}
+
+.freedinner .header.small {
+    height: 1064rpx;
+    overflow-y: hidden;
+}
+
+.freedinner .header>image {
+    position: absolute;
+    width: 100%;
+    height: 1206rpx;
+    top: 0;
+    left: 0;
+}
+
+.header .form {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    top: 778rpx;
+    z-index: 1;
+    font-size: 38rpx;
+    color: #fbebc4;
+}
+
+.header .form .left-time {
+    color: #fff;
+}
+
+.header .form .tips {
+    margin-top: 30rpx;
+    font-size: 30rpx;
+}
+
+.header image.logo {
+    position: absolute;
+    width: 188rpx;
+    height: 48rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1088rpx;
+}
+
+.btn-wrapper {
+    display: flex;
+    margin-top: 35rpx;
+    width: 576rpx;
+    justify-content: space-between;
+}
+
+.btn-wrapper .btn {
+    display: flex;
+    width: 268rpx;
+    height: 100rpx;
+    justify-content: center;
+    align-items: center;
+    border-radius: 48px;
+    font-size: 36rpx;
+    color: #8b441b;
+    border: none;
+    background: url('//fuss10.elemecdn.com/e/00/be81d94b8cb69206604e134b8c133png.png') no-repeat;
+    background-size: cover;
+}
+
+.btn-wrapper .btn+.btn {
+    color: #b7281c;
+    background: url('//fuss10.elemecdn.com/3/fc/2cdc9ecad689496829a91fd34b561png.png') no-repeat;
+    background-size: cover;
+}
+
+.btn-wrapper.inital .btn {
+    display: none;
+}
+
+.btn-wrapper.inital .btn+.btn {
+    display: flex;
+    width: 576rpx;
+    font-weight: bold;
+    background: url('//fuss10.elemecdn.com/0/83/8343c6958afe2d183c23aa189ab9apng.png') no-repeat;
+    background-size: cover;
+}
+
+.btn-wrapper .btn.disabled {
+    color: #999;
+    background: url('//fuss10.elemecdn.com/4/9b/98e418dc7081d5128d89993dc07a4png.png') no-repeat;
+    background-size: cover;
+}
+
+.rule {
+    display: flex;
+    position: absolute;
+    top: 24rpx;
+    right: 0;
+    width: 158rpx;
+    height: 48rpx;
+    justify-content: center;
+    align-items: center;
+    line-height: 48rpx;
+    color: #fff;
+    font-size: 26rpx;
+    text-align: center;
+    border-top-left-radius: 100rpx;
+    border-bottom-left-radius: 100rpx;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.rule>image {
+    margin-left: 8rpx;
+    width: 10rpx;
+    height: 20rpx;
+}

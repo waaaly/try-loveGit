@@ -1,0 +1,145 @@
+.result {
+    margin: 0 auto;
+    width: 650rpx;
+    text-align: center;
+}
+
+.result .wrapper {
+    margin-top: 30rpx;
+    padding: 40rpx 0rpx 30rpx;
+    border-radius: 8rpx;
+    background: #fff;
+}
+
+.result .title {
+    position: relative;
+    width: 180px;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #7d490f;
+}
+
+.result .title::after,.result .title::before {
+    position: absolute;
+    content: '';
+    width: 30rpx;
+    height: 2rpx;
+    background: #7d490f;
+}
+
+.result .title::before {
+    transform: translateX(-20rpx);
+    right: 100%;
+    top: 50%;
+}
+
+.result .title::after {
+    transform: translateX(20rpx);
+    left: 100%;
+    top: 50%;
+}
+
+.list-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0 50rpx;
+}
+
+.list-wrapper .user-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 76rpx;
+    margin: 30rpx 0 0 40rpx;
+}
+
+.user-wrapper image {
+    transition: transform 300ms;
+    transition: transform 300ms,-webkit-transform 300ms;
+}
+
+.user-wrapper.arrow-up image {
+    transform: rotate(0deg);
+}
+
+.user-wrapper.arrow-down image {
+    transition: all 300ms;
+    transform: rotate(180deg);
+}
+
+.list-wrapper .user-wrapper:nth-of-type(5n+1) {
+    margin-left: 0rpx;
+}
+
+.user-wrapper image {
+    width: 76rpx;
+    height: 76rpx;
+    border-radius: 50%;
+}
+
+.user-wrapper text {
+    margin-top: 20rpx;
+    width: 76px;
+    font-size: 20rpx;
+    color: #7d490f;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.festival {
+    display: flex;
+    margin: 30rpx auto 0;
+    width: 600rpx;
+    height: 128rpx;
+    background: url('//fuss10.elemecdn.com/f/2a/694da5d5a54fc06412f6d417a5b1dpng.png') no-repeat;
+    background-size: contain;
+}
+
+.festival .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 0 0 438rpx;
+    padding-left: 30rpx;
+    font-size: 32rpx;
+    color: #fff;
+}
+
+.festival .progress {
+    display: flex;
+    align-items: center;
+    margin-top: 10rpx;
+    font-size: 24rpx;
+}
+
+.progress>view {
+    position: relative;
+    margin-right: 12rpx;
+    width: 300rpx;
+    height: 10rpx;
+    border-radius: 6rpx;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.progress>view text {
+    position: absolute;
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 6rpx;
+    background-image: linear-gradient(to left,#fff,#ffe1a6);
+}
+
+.festival .right {
+    display: flex;
+    font-size: 48rpx;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 132rpx;
+    color: #c00b0b;
+}

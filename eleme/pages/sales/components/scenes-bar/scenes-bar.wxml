@@ -1,0 +1,7 @@
+<template name="scenes-bar">
+    <scroll-view scrollX class="scenes-container" scrollIntoView="{{activatedTab>2?'scene-3':'scene-0'}}">
+        <view bindtap="switchScenes" class="scenes-item {{activatedTab===index&&'active scene-item-'+item.type}}" data-index="{{index}}" data-scene-title="{{item.text}}" id="scene-{{index}}" wx:for="{{scenes}}" wx:key="type">
+       {{item.text}}
+    </view>
+    </scroll-view>
+</template>

@@ -1,0 +1,30 @@
+<template name="shop-rating">
+    <view class="shop-rating-container">
+        <view class="shop-rating-header grid grid-middle" wx:if="{{score.order_rating_amount}}">
+            <view class="shop-rating-value">
+        {{score.overall_score}}分 
+      </view>
+            <view class="rating-compare">
+        高于周边商家{{score.compare_rating}}% 
+      </view>
+            <view class="rating-count cell cell-fill grid grid-right grid-middle" wx:if="{{score.order_rating_amount}}">
+                <navigator url="/pages/shop/rating/index?id={{shopId}}&isNewRetail={{isNewRetail}}">
+          {{score.order_rating_amount}}条评价
+        </navigator>
+                <view class="more"></view>
+            </view>
+        </view>
+        <view catchtap="onTagTap" class="rating-tag-list" wx:if="{{tags&&tags.length}}">
+            <template is="rating-tag" data="{{imageHash:imageHash,item:item}}" wx:for="{{tags}}"></template>
+        </view>
+        <view class="rating-list">
+            <template is="rating-block" data="{{imageHash:imageHash,ratingList:ratingList}}"></template>
+        </view>
+        <view class="shop-rating-footer grid grid-middle grid-center" wx:if="{{ratingList&&ratingList.length}}">
+            <navigator url="/pages/shop/rating/index?id={{shopId}}&isNewRetail={{isNewRetail}}"> 查看全部评价 </navigator>
+            <view class="more"></view>
+        </view>
+    </view>
+</template>
+<import src="../../components/rating-tag/index.wxml"></import>
+<import src="../../components/rating-block/index.wxml"></import>

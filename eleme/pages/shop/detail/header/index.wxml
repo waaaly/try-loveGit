@@ -1,0 +1,47 @@
+<template name="shop-header">
+    <view class="shop-header">
+        <view class="grid">
+            <image class="shop-logo" src="{{image_path}}"></image>
+            <view class="shop-meta cell cell-fill grid grid-middle">
+                <view class="shop-name cell cell-12of12 grid grid-middle">
+          {{name}}
+        </view>
+                <view class="cell cell-12of12 grid grid-middle">
+                    <view class="shop-rating grid">
+                        <template is="rating-star" data="{{imageHash:imageHash,rating:rating}}"></template>
+                        <view> {{rating}} </view>
+                    </view>
+                    <text class="shop-sales"> 月售{{recent_order_num}}单</text>
+                </view>
+                <view class="shop-delivery cell cell-12of12 grid grid-middle">
+                    <view>
+                        <template is="slash-spliter" data="{{imageHash:imageHash,value:float_minimum_order_amount+'元起送'}}"></template>
+                        <template is="slash-spliter" data="{{imageHash:imageHash,value:order_lead_time+'分钟'}}"></template>
+                        <template is="slash-spliter" data="{{imageHash:imageHash,value:distance+'m'}}"></template>
+                    </view>
+                    <view class="cell cell-fill grid grid-right grid-middle">
+                        <image class="icon-ontime" src="{{imageHash['icon_ontime']}}" wx:if="{{isSupportOnTime}}"></image>
+                        <image class="icon-fengniao" src="{{imageHash['icon_fengniao']}}" style="margin-left: 10rpx" wx:if="{{isSupportOnTime||delivery_mode.text==='蜂鸟专送'}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="header-bottom">
+            <view class="grid grid-top delivery-cost">
+                <view class="cell cell-2of12"> 配送费：</view>
+                <view class="cell cell-10of12">
+          {{piecewise_agent_fee.tips}}
+        </view>
+            </view>
+            <view class="grid grid-top shop-notice">
+                <view class="cell cell-2of12"> 公告：</view>
+                <view class="cell cell-10of12 shop-notice-value">
+          {{promotion_info||'欢迎光临，用餐高峰期请提前下单，谢谢。'}}
+        </view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="../../components/rating-star/index.wxml"></import>
+<import src="../../components/slash-spliter/index.wxml"></import>
+<import src="../../components/sweet-icon/index.wxml"></import>

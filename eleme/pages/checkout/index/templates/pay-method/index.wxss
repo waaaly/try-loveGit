@@ -1,0 +1,16 @@
+.pay-method {
+    height: 88rpx;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30rpx;
+    align-items: center;
+}
+
+.pay-method .name {
+    font-size: 30rpx;
+}
+
+.pay-method .current {
+    font-size: 26rpx;
+    color: #999;
+}

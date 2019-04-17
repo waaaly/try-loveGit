@@ -1,0 +1,36 @@
+function formatNamed(name) {
+    return (name.length > 11 ? name.substring(0, 10) + '···' : name)
+};
+
+function limitd(sum_condition) {
+    if (sum_condition) {
+        return ('满¥' + sum_condition + '可用')
+    };
+    return ('无门槛')
+};
+
+function expired(item) {
+    console.log(item);
+    if (item.expireText) {
+        return (item.expireText)
+    };
+    return (item.expire_date + '到期')
+};
+
+function hashToUrl(item) {
+    var icon = '//fuss10.elemecdn.com/1/85/160d95eba5935fc2027e13cbaf5fbpng.png';
+    if (item.item_type === 3 || item.item_type === 5 && !item.restaurant_image_hash) {
+        return ('//fuss10.elemecdn.com/6/21/dc1deb7685c50444b18a8cf20a1f6png.png')
+    } else if (!item.restaurant_image_hash) {
+        return (icon)
+    } else {
+        console.log(item.restaurant_image_hash);
+        return (item.restaurant_image_hash)
+    }
+};
+module.exports = ({
+    formatName: formatNamed,
+    limit: limitd,
+    expired: expired,
+    HashToUrld: hashToUrl,
+});

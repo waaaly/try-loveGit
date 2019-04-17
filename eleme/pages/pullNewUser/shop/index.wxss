@@ -1,0 +1,55 @@
+@import "../shopHongbao/components/bowl/bowl.wxss";
+
+page {
+    height: 100%;
+    background-color: #fff;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.hongbao {
+    border-radius: 20rpx;
+    width: 710rpx;
+    position: relative;
+    background-color: #cd533e;
+    overflow: hidden;
+}
+
+.present-hongbao {
+    margin-top: 72rpx;
+    margin-left: 34rpx;
+    width: 650rpx;
+    height: 234rpx;
+}
+
+.icon {
+    text-align: center;
+}
+
+.icon-flower {
+    margin: 180rpx 0 68rpx;
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.footer {
+    text-align: center;
+    width: 710rpx;
+    margin-top: 40rpx;
+}
+
+.form-button {
+    border-radius: 200rpx;
+    width: 710rpx;
+    height: 80rpx;
+    background: #47c370;
+    color: #fff;
+    font-size: 32rpx;
+}
+
+.tips {
+    display: block;
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    color: #666;
+}

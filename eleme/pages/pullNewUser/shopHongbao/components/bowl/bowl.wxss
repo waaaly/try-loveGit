@@ -1,0 +1,51 @@
+.bowl-container {
+    height: 284rpx;
+}
+
+.bowl-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250rpx;
+}
+
+.bowl-eleme-logo,.bowl-shop-logo {
+    width: 123.6rpx;
+    height: 123.6rpx;
+    border-radius: 12rpx;
+    box-shadow: 0 0 14rpx 0 #B1432E;
+}
+
+.bowl-shop-logo {
+    position: absolute;
+    top: 126.6rpx;
+    left: 255.6rpx;
+    transform: rotate(-9deg);
+}
+
+.bowl-eleme-logo {
+    position: absolute;
+    top: 132rpx;
+    left: 376rpx;
+    transform: rotate(6deg);
+}
+
+.bowl-text {
+    position: absolute;
+    top: 282rpx;
+    left: 0;
+    width: 100%;
+    size: 32rpx;
+    color: #ffcfa5;
+    text-align: center;
+    z-index: 10;
+}
+
+.bowl-mask {
+    position: absolute;
+    top: 214rpx;
+    left: 128rpx;
+    width: 496rpx;
+    height: 52rpx;
+}

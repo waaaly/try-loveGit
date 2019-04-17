@@ -1,0 +1,3 @@
+<import src="/common/components/not-my-fault/index.wxml"></import>
+<web-view src="{{url}}"></web-view>
+<template is="not-my-fault" data="{{msg:pageErrorMsg}}" wx:if="{{pageErrorMsg}}"></template>

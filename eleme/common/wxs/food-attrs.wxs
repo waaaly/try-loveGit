@@ -1,0 +1,6 @@
+module.exports.makeSpecText = (function(arr) {
+    if (!arr) return;;
+    return (arr.map((function(item) {
+        return (item.value)
+    })).join(' / '))
+});

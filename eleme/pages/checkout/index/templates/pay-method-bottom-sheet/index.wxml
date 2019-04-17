@@ -1,0 +1,19 @@
+<template name="pay-method-bottom-sheet">
+    <view catchtap="toggleShowPayMethods" class="pay-method-bottom-sheet-wrapper {{showPayMethods?'open':''}}">
+        <view class="pay-method-bottom-sheet">
+            <view class="header">支付方式</view>
+            <view class="content">
+                <view bindtap="selectPayMethod" class="method {{payMethod.select_state===-1?'disabled':''}}" data-index="{{index}}" wx:for="{{payMethods}}" wx:for-item="payMethod" wx:key="payMethod.id">
+                    <view class="content">
+                        <text>{{payMethod.name}}</text>
+                        <text class="description" wx:if="{{payMethod.select_state===-1}}">{{payMethod.description}}</text>
+                    </view>
+                    <view class="state">
+                        <image src="{{imageHash['selected']}}" wx:if="{{payMethod.select_state===1}}"></image>
+                        <image src="{{imageHash['not_selected']}}" wx:if="{{payMethod.select_state!==1}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

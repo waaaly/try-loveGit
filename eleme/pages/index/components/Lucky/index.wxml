@@ -1,0 +1,38 @@
+<template name="lucky">
+    <view class="lucky">
+        <view class="lucky-hongbao">
+            <view class="lucky-hongbao-header">
+                <image src="https://gw.alicdn.com/tfs/TB1LG8EOYvpK1RjSZFqXXcXUVXa-960-360.png"></image>
+            </view>
+            <view class="lucky-hongbao-list">
+                <view class="lucky-hongbao-item" wx:for="{{luckyData}}">
+                    <image class="lucky-hongbao-icon" src="/pages/index/components/Lucky/media/eleme.png"></image>
+                    <view class="lucky-hongbao-middle">
+                        <view class="lucky-hongbao-name">{{item.title}}</view>
+                        <view class="lucky-hongbao-rule" wx:if="{{item.thresholdText}}">{{item.thresholdText}}</view>
+                        <view class="lucky-hongbao-time" wx:if="{{item.endDate}}">{{item.endDate}}到期</view>
+                    </view>
+                    <view class="lucky-hongbao-right">
+                        <view class="lucky-hongbao-money">
+                            <view class="lucky-hongbao-rmb">¥</view>
+                            <view class="lucky-hongbao-amount">{{item.amount}}</view>
+                        </view>
+                        <view class="lucky-hongbao-share" wx:if="{{item.isShare&&showShare}}">分享可得</view>
+                        <form bindsubmit="getShareHongbao" data-channel="{{item.channel}}" reportSubmit="true" wx:elif="{{item.isShare&&!showShare}}">
+                            <button class="lucky-hongbao-share has-share" formType="submit">立即领取</button>
+                        </form>
+                        <view class="lucky-hongbao-get" wx:else>已领取</view>
+                    </view>
+                </view>
+                <button class="share-btn" openType="share" wx:if="{{showShare}}">
+                    <image src="/pages/index/components/Lucky/media/share-btn.png"></image>
+                </button>
+            </view>
+            <form bindsubmit="closeLucky" class="lucky-hongbao-close" reportSubmit="true">
+                <button class="close-btn" formType="submit">
+                    <image src="/pages/index/components/Lucky/media/close.png"></image>
+                </button>
+            </form>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,68 @@
+<template name="basket-list">
+    <view class="basket-list section">
+        <view bindtap="goToRestaurant" class="restaurant-banner">
+            <image class="icon" src="{{restaurantInfo.image_path}}"></image>
+            <text class="restaurant-name">{{restaurantInfo.name}}</text>
+        </view>
+        <view class="basket-list-content">
+            <view class="foods">
+                <view class="food list-item" wx:for="{{foods}}" wx:key="item.name">
+                    <view class="food-head">
+                        <view class="food-name">{{item.name}}</view>
+                        <view class="attrs-row">{{foodattrs.makeSpecText(item.attrs)}}</view>
+                        <view class="attrs-row">{{foodattrs.makeSpecText(item.new_specs)}}</view>
+                    </view>
+                    <view>
+                        <text class="quantity">{{item.quantity}}</text>
+                        <text class="price">{{'¥'+item.price}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="extra">
+                <view class="extra list-item" wx:for="{{extra}}" wx:key="item.name">
+                    <view>
+                        <text class="name">{{item.name}}</text>
+                    </view>
+                    <text class="price">{{'¥'+item.price}}</text>
+                </view>
+            </view>
+            <view class="delivery-fee list-item" wx:if="{{delivery&&delivery.price>=0}}">
+                <view>
+                    <view class="name">配送费</view>
+                    <view class="description" wx:if="{{delivery.description}}">{{delivery.description}}</view>
+                    <view class="promotion" wx:if="{{delivery.promotion}}">{{delivery.promotion}}</view>
+                </view>
+                <text class="price">{{'¥'+delivery.price}}</text>
+            </view>
+            <view class="activities" wx:if="{{activities.length}}">
+                <view class="activity list-item" wx:for="{{activities}}" wx:key="item.name">
+                    <view class="list-item-head">
+                        <view class="icon" style="background: #{{item.icon.color}}">{{item.icon.name}}</view>
+                        <text class="name">{{item.name}}</text>
+                    </view>
+                    <text class="price discount">{{'- ¥'+-item.price}}</text>
+                </view>
+            </view>
+            <view class="hongbao list-item big">
+                <text>红包</text>
+                <view bindtap="goToHongbao">
+                    <text class="price" wx:if="{{hongbao.hongbao}}">{{'- ¥'+-hongbao.hongbao.price}}</text>
+                    <text class="price" wx:if="{{hongbao.merchant_coupon}}">{{'- ¥'+-hongbao.merchant_coupon.price}}</text>
+                    <block wx:if="{{!hongbao.hongbao&&!hongbao.merchant_coupon}}">
+                        <text class="status-text" wx:if="{{hongbao.hongbaoStatus===1}}">{{hongbao.hongbaoStatusText||'选择红包'}}</text>
+                        <text class="status-text" wx:if="{{hongbao.hongbaoStatus===0}}">{{hongbao.hongbaoStatusText||'不使用红包'}}</text>
+                        <text class="status-text" wx:if="{{hongbao.hongbaoStatus===-1}}">{{hongbao.hongbaoStatusText||'餐到付款不能使用红包'}}</text>
+                        <text class="status-text" wx:if="{{hongbao.hongbaoStatus===-2}}">{{hongbao.hongbaoStatusText||'不支持使用红包'}}</text>
+                    </block>
+                    <divi class="more"></divi>
+                </view>
+            </view>
+            <view class="calc list-item big" wx:if="{{originalTotal&&total}}">
+                <text class="total">{{'订单¥'+originalTotal}}</text>
+                <text class="discount" wx:if="{{discount}}">{{'优惠¥'+-discount}}</text>
+                <text class="remain">{{'待支付¥'+(total>0?total:'0.01')}}</text>
+            </view>
+        </view>
+    </view>
+</template>
+<wxs module="foodattrs" src="../../../../../common/wxs/food-attrs.wxs" />

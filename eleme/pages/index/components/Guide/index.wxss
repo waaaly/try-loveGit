@@ -1,0 +1,54 @@
+.guide {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.7);
+    z-index: 100;
+}
+
+.guide-arrow {
+    width: 56rpx;
+    height: 212rpx;
+    position: absolute;
+    top: 10rpx;
+    right: 50rpx;
+}
+
+.guide-content {
+    font-size: 32rpx;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 220rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600rpx;
+    justify-content: center;
+    align-items: center;
+}
+
+.guide-content view {
+    margin-bottom: 32rpx;
+}
+
+.guide-ellipsis {
+    width: 72rpx;
+    height: 40rpx;
+}
+
+.guide-panel {
+    width: 500rpx;
+    height: 160rpx;
+}
+
+.guide-get {
+    width: 270rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    border: 1rpx solid #fff;
+    margin-top: 44rpx;
+}

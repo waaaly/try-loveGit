@@ -1,0 +1,154 @@
+.ad {
+    margin-top: 20rpx;
+}
+
+.container {
+    overflow: hidden;
+    background: url(https://fuss10.elemecdn.com/1/60/f8a5330a3e6f4e93724f7b06fd8ccsvg.svg) 40rpx 40rpx no-repeat;
+    background-size: 700rpx auto;
+}
+
+.share-button {
+    width: 140rpx;
+    height: 140rpx;
+    background: url(https://fuss10.elemecdn.com/8/3e/3986e8bf431bce2cfac4b98481996svg.svg) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+.share-button::after {
+    border: none;
+}
+
+.h1 {
+    font-size: 54rpx;
+    color: #db583f;
+    margin: 44rpx 40rpx 54rpx;
+    text-align: center;
+}
+
+.change {
+    margin-left: 20rpx;
+    display: inline-flex;
+    align-items: center;
+}
+
+.change image {
+    width: 24rpx;
+    height: 24rpx;
+}
+
+.cash {
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 686rpx;
+    height: 420rpx;
+    background: url(https://fuss10.elemecdn.com/c/57/e817878321e8fc95ce4b15b68358esvg.svg) 0 0 no-repeat;
+    background-size: 100% auto;
+    border-radius: 16rpx;
+    padding-top: 75rpx;
+    text-align: center;
+}
+
+.cash.out {
+    background-image: url(https://fuss10.elemecdn.com/c/dd/dbcb81e239b3dc930d5c918837d18svg.svg);
+    color: #ddd;
+}
+
+.cash.out .cash-title {
+    color: #ddd;
+}
+
+.cash.out .cash-description {
+    color: #ddd;
+}
+
+.cash.out .share-button {
+    background-image: url(https://fuss10.elemecdn.com/7/fc/cd74f97b09dab46697d1f24d784cbsvg.svg);
+}
+
+.redpack.out .redpack-title {
+    color: #9f9f9f;
+}
+
+.redpack.out .redpack-total {
+    color: #939393;
+}
+
+.outtip {
+    color: #c3c3c3;
+    font-size: 22rpx;
+    text-align: center;
+    margin-top: 8rpx;
+}
+
+.cash-title {
+    padding-right: 82rpx;
+    font-size: 61rpx;
+    font-weight: 300;
+    color: #ffefcb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cash-amount {
+    font-family: "CSD";
+    font-size: 67rpx;
+    font-weight: bold;
+}
+
+.cash-description {
+    margin: 18rpx auto 30rpx;
+    font-size: 26rpx;
+    opacity: .7;
+    color: #fff7cd;
+}
+
+.redpack {
+    margin: 20rpx auto 32rpx;
+    padding: 44rpx 0;
+    width: 686rpx;
+    border-radius: 16rpx;
+    background-image: linear-gradient(to bottom,#ebebeb,rgba(242,242,242,0.76) 30%,rgba(255,255,255,0));
+}
+
+.redpack-title {
+    margin-top: 15rpx;
+    font-size: 60rpx;
+    font-weight: 300;
+    text-align: center;
+}
+
+.redpack-total {
+    font-family: "CSD";
+    color: #e65d42;
+    font-weight: bold;
+    margin-left: 10rpx;
+    font-size: 68rpx;
+}
+
+.redpack-mobile {
+    margin: 16rpx 0 40rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #999;
+}
+
+.couponLink {
+    width: 622rpx;
+    height: 180rpx;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.couponLink image {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    display: block;
+    margin: 64rpx auto 0;
+    width: 156rpx;
+    height: 40rpx;
+}

@@ -1,0 +1,18 @@
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<view class="info" wx:if="{{loaded}}">
+    <view class="info-own">
+        <text class="info-title">有效日期</text>
+        <text class="info-content">{{validity_period[0]}} - {{validity_period[1]}}</text>
+    </view>
+    <view class="info-own">
+        <text class="info-title">卡片编号</text>
+        <text class="info-content">{{card_number}}</text>
+    </view>
+    <view class="info-own">
+        <text class="info-title">使用须知</text>
+        <text class="info-content">
+            <text wx:for="{{notices}}" wx:key="index">{{index+1}}.{{item}}</text>
+        </text>
+    </view>
+</view>
+<template is="fate-loading" data wx:if="{{!loaded}}"></template>

@@ -1,0 +1,122 @@
+.filter {
+    background-color: #f5f5f5;
+}
+
+.filter-body {
+    margin-bottom: 30rpx;
+}
+
+.filter-block {
+    padding-bottom: 10rpx;
+}
+
+.filter-block-wrapper {
+    background: #fff;
+}
+
+.filter-block-title {
+    font-size: 24rpx;
+    padding: 0 30rpx;
+    line-height: 3;
+}
+
+.filter-block-item {
+    display: inline-flex;
+    vertical-align: top;
+    align-items: center;
+    border-right: 1rpx solid #eee;
+    border-bottom: 1rpx solid #eee;
+    font-size: 24rpx;
+    width: 33.3%;
+    border-radius: 4rpx;
+    background-color: #fff;
+    padding-left: 30rpx;
+    height: 80rpx;
+}
+
+.filter-block-item-active {
+    color: #0097ff;
+    border: 1rpx solid #a2d2ff;
+    background-color: #edf5ff;
+}
+
+.filter-block-item-active:before {
+    content: '';
+    margin: 0 20rpx 0 10rpx;
+    width: 15rpx;
+    height: 28rpx;
+    border-bottom: 4rpx solid #0097ff;
+    border-right: 4rpx solid #0097ff;
+    transform-origin: 50% 50%;
+    transform: translateY(-5rpx) rotateZ(45deg);
+}
+
+.filter-footer {
+    background-color: #fafafa;
+    display: flex;
+}
+
+.filter-icon {
+    font-size: 20rpx;
+    padding: 0 4rpx;
+    border-radius: 4rpx;
+    text-align: center;
+    margin-right: 10rpx;
+    border: 1rpx solid currentColor;
+}
+
+.filter-icon-sp {
+    border: none;
+    color: #fff;
+}
+
+.filter-footer view {
+    flex: 1;
+    height: 80rpx;
+    font-size: 28rpx;
+    line-height: 80rpx;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+}
+
+.filter-footer .clear {
+    color: #999;
+    background-color: #fafafa;
+}
+
+.filter-footer .confirm {
+    display: flex;
+    color: #fff;
+    background-color: #4cd964;
+    justify-content: center;
+}
+
+.filter-footer .confirm .filter-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.filter-footer .confirm .filter-circle text {
+    display: flex;
+    width: 28rpx;
+    height: 28rpx;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 10rpx;
+    opacity: 0.7;
+}
+
+.filter-footer .confirm .filter-circle text:first-child {
+    opacity: 0.4;
+}
+
+.filter-footer .confirm .filter-circle text:last-child {
+    opacity: 1;
+}
+
+.filter-footer .confirm .filter-disable {
+    opacity: 0.5;
+}

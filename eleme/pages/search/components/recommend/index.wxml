@@ -1,0 +1,9 @@
+<template name="recommend">
+    <div class="recommend-root">
+        <div class="recommend-header">为你推荐</div>
+        <view catchtap="gotoShopFromSearch" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{list}}" wx:key="{{ item.id }}">
+            <template is="restaurant-row" data="{{imageHash:imageHash,...item}}"></template>
+        </view>
+    </div>
+</template>
+<import src="/common/components/restaurant-row/component.wxml"></import>

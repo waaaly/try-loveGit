@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "auth": "/common/components/auth/index"
+    }
+}

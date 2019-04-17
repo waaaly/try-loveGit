@@ -1,0 +1,22 @@
+<template name="delivery-time">
+    <div class="section delivery-time {{isOnTime||isFengniao?'double-floor':'single-floor'}}">
+        <image class="icon" src="{{imageHash['delivery-time']}}"></image>
+        <text class="name">送达时间</text>
+        <div class="details">
+            <div class="time">
+                <text wx:if="{{!deliveryTimesForPicker.length}}">{{deliveryTimeDescription}}</text>
+                <divi class="more" wx:if="{{!deliveryTimesForPicker.length}}"></divi>
+                <picker bindchange="selectDeliveryTime" range="{{deliveryTimesForPicker}}" value="{{index}}" wx:if="{{deliveryTimesForPicker.length}}">
+                    <text>{{deliveryTimeDescription}}</text>
+                    <divi class="more"></divi>
+                </picker>
+            </div>
+            <div class="divider" wx:if="{{isOnTime||isFengniao}}"></div>
+            <div class="on-time" wx:if="{{isOnTime||isFengniao}}">
+                <image class="icon-fengniao" src="{{imageHash['icon_fengniao']}}" wx:if="{{isFengniao}}"></image>
+                <image class="icon-ontime" src="{{imageHash['icon_ontime']}}" wx:if="{{isOnTime}}"></image>
+                <text wx:if="{{isOnTime}}"> 超时秒赔</text>
+            </div>
+        </div>
+    </div>
+</template>

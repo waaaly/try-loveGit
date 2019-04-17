@@ -1,0 +1,238 @@
+.invite-hongbao {
+    position: relative;
+}
+
+.content {
+    position: relative;
+    height: 1150rpx;
+}
+
+.content image {
+    height: 100%;
+    width: 100%;
+}
+
+page {
+    background-color: #0e5799;
+}
+
+.content .hongbao {
+    width: 560rpx;
+    height: 760rpx;
+    position: absolute;
+    top: 292rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-size: 560rpx 760rpx;
+    background-image: url('//fuss10.elemecdn.com/c/c6/c37059e4b2f55362dfb8a25f8f33epng.png');
+}
+
+.content .hongbao-open {
+    background-image: url('//fuss10.elemecdn.com/1/5f/714465d1c958e2804ddc37d374e76png.png');
+}
+
+.hongbao .hongbao-msg {
+    font-size: 40rpx;
+    color: #E3C957;
+    text-align: center;
+    margin-top: 240rpx;
+    font-weight: bold;
+}
+
+.hongbao .hongbao-msg text {
+    font-size: 52rpx;
+}
+
+.hongbao .hongbao-form {
+    position: relative;
+    margin-top: 40rpx;
+}
+
+.hongbao input,.hongbao button {
+    width: 480rpx;
+    height: 88rpx;
+    border-radius: 100rpx;
+    box-sizing: border-box;
+}
+
+.hongbao input {
+    background-color: #fff;
+    margin: 0 auto 24rpx;
+    padding: 0 32rpx;
+    font-size: 28rpx;
+}
+
+.hongbao input:first-child {
+    padding-right: 152rpx;
+}
+
+.hongbao .form {
+    position: relative;
+}
+
+.verify-code {
+    position: absolute;
+    font-size: 24rpx;
+    color: #db292c;
+    top: 28rpx;
+    right: 72rpx;
+    z-index: 10;
+    opacity: 0.5;
+}
+
+.hongbao button {
+    background-image: linear-gradient(-180deg,#ffeda1 0%,#e3c957 100%);
+    color: #d43018;
+    font-weight: bold;
+    margin-top: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: unset;
+}
+
+.form-placeholder {
+    font-size: 28rpx;
+    color: #666;
+    opacity: 0.6;
+}
+
+.hongbao .wrong-phone {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24rpx;
+    margin-top: 24rpx;
+}
+
+.hongbao .success-msg {
+    text-align: center;
+    font-size: 26rpx;
+    color: #fff;
+    margin-top: 240rpx;
+}
+
+.hongbao .success-msg view:first-child {
+    font-size: 40rpx;
+    color: #e3c957;
+    font-weight: bold;
+}
+
+.hongbao .ticket {
+    background-image: url('//fuss10.elemecdn.com/1/68/bef561bc8638074609f480798b52dpng.png');
+    background-size: 500rpx 135rpx;
+    width: 500rpx;
+    height: 135rpx;
+    margin: 50rpx auto 88rpx;
+    display: flex;
+    align-items: center;
+}
+
+.ticket .ticket-left {
+    width: 154rpx;
+    font-size: 20rpx;
+    color: #666;
+    text-align: center;
+}
+
+.ticket .ticket-left view:first-child {
+    color: #ff0034;
+    font-size: 24rpx;
+}
+
+.ticket .ticket-left view:first-child text {
+    font-size: 56rpx;
+    font-weight: bold;
+}
+
+.ticket .ticket-right {
+    flex: 1;
+    font-size: 30rpx;
+    color: #333;
+    font-weight: bold;
+    padding-left: 30rpx;
+}
+
+.hongbao .old-user-msg {
+    text-align: center;
+    font-size: 32rpx;
+    color: #fff;
+    margin: 288rpx 0 90rpx;
+}
+
+.hongbao .old-user-msg view:first-child {
+    font-size: 40rpx;
+    color: #e3c957;
+    font-weight: bold;
+    margin-bottom: 40rpx;
+}
+
+.hongbao .old-user-msg view:last-child {
+    padding: 0 62rpx;
+}
+
+.hongbao .old-user-msg text {
+    color: #e3c957;
+}
+
+.content .err-tips {
+    width: 600rpx;
+    height: 254rpx;
+    position: absolute;
+    top: 356rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.10);
+    font-size: 28rpx;
+    color: #fff;
+    text-align: center;
+    padding-top: 38rpx;
+}
+
+.content .err-tips view:first-child {
+    font-size: 40rpx;
+    font-weight: bold;
+    margin-bottom: 12rpx;
+    line-height: 56rpx;
+}
+
+.content .err-tips view:last-child {
+    padding: 0 80rpx;
+    line-height: 50rpx;
+}
+
+.invite-hongbao .rules {
+    font-size: 24rpx;
+    line-height: 40rpx;
+    color: #fff;
+    padding-bottom: 50rpx;
+}
+
+.invite-hongbao .rules view {
+    opacity: 0.7;
+}
+
+.rule-title {
+    font-size: 30rpx;
+    text-align: center;
+    margin-bottom: 16rpx;
+}
+
+.rule-content {
+    padding: 0 36rpx;
+}
+
+.rule-content view {
+    margin-bottom: 12rpx;
+}
+
+.invite-hongbao .normal-rules {
+    background-color: #0e5799;
+}
+
+.invite-hongbao .err-rules {
+    position: absolute;
+    top: 746rpx;
+}

@@ -1,0 +1,47 @@
+<template name="receiver">
+    <view class="card-receive">
+        <view class="header">
+            <view class="title">
+                <text class="overflow-wrapper username">{{detail_json.sender_info.nick_name}}</text>
+                <text>送你一张饿了么心意卡</text>
+            </view>
+            <view class="card-navigator" wx:if="{{status==='4'&&!isDisabled}}">
+                <text>已存入</text>
+                <navigator bindtap="sendUbt" data-ubt="102317" url="/pages/giftcard/myCards/index">我的卡包
+        </navigator>
+            </view>
+            <image class="card-face" src="{{picture}}"></image>
+            <view class="card-description">
+                <text class="notice" wx:for="{{sku.hongbaos}}" wx:key="{{ item.id }}">{{item.title}} ×{{item.quantity}}张</text>
+            </view>
+            <view class="card-timeout" wx:if="{{status==='-2'}}">
+        超过24小时未被领取，已退还给{{detail_json.sender_info.nick_name}}
+      </view>
+        </view>
+        <view class="card-information">
+            <image src="{{detail_json.sender_info.avatar_url}}"></image>
+            <view class="card-content">
+                <text class="card-username">{{detail_json.sender_info.nick_name}}</text>
+                <text>{{detail_json.remark}}</text>
+            </view>
+        </view>
+        <view bindtap="receiveCard" class="receive-btn fixed-wrapper" wx:if="{{status==='3'}}">领取
+    </view>
+        <view class="btn-wrapper fixed-wrapper" wx:if="{{status==='4'}}">
+            <block wx:if="{{!isDisabled}}">
+                <view catch:tap="useGiftCard" class="receive-btn">去使用</view>
+                <navigator bindtap="sendUbt" class="receive-btn receive-btn-primary" data-ubt="102318" url="/pages/giftcard/index">我也要送</navigator>
+            </block>
+            <view class="receive-btn disabled" wx:else>
+                <view class="receive-btn-disabled">
+                    <text>卡片已被</text>
+                    <text class="overflow-wrapper username">{{detail_json.receive_info.nick_name}}</text>
+                    <text>领取</text>
+                </view>
+            </view>
+        </view>
+        <template is="fate-loading" data wx:if="{{loading}}"></template>
+    </view>
+</template>
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<import src="/common/components/not-my-fault/index.wxml"></import>

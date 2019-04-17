@@ -1,0 +1,18 @@
+@import "../../components/receiver/index.wxss";
+
+@import "../../components/owner/index.wxss";
+
+.card-navigator {
+    display: flex;
+    padding-bottom: 30rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.card-navigator navigator {
+    padding-right: 28rpx;
+    color: #2396ff;
+    background: url(//fuss10.elemecdn.com/3/54/91eb80b4743b012b61576c37d4363png.png) no-repeat;
+    background-size: 24rpx 24rpx;
+    background-position: center right;
+}

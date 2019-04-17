@@ -1,0 +1,5 @@
+<template name="address-banner">
+    <view bindtap="goToSelectAddress" class="mini" wx:if="{{address&&showAddressBanner}}">
+        <text class="mini-text">送至：{{address.address+address.address_detail}}</text>
+    </view>
+</template>

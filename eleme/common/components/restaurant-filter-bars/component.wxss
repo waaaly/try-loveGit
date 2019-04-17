@@ -1,0 +1,39 @@
+@import "../restaurant-sort/component.wxss";
+
+@import "../restaurant-filter/component.wxss";
+
+@import "../restaurant-filter-header/component.wxss";
+
+.restaurant-filter-bars {
+    background-color: #fff;
+    position: relative;
+    z-index: 11;
+}
+
+.restaurant-filter-bars .filter-wrapper {
+    position: absolute;
+    top: 80rpx;
+    left: 0;
+    right: 0;
+    z-index: 11;
+}
+
+.restaurant-filter-bars .fixed-top {
+    position: fixed;
+    top: 0;
+}
+
+.restaurant-filter-bars .mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.3);
+    opacity: 1;
+    z-index: 10;
+}
+
+.restaurant-filter-bars .search-mask {
+    top: 100rpx;
+}

@@ -1,0 +1,9 @@
+<template name="dialogue">
+    <view class="dialogue">
+        <image class="avatar" src="assets/logo.png"></image>
+        <view class="content">
+            <view>你的好友为你推荐{{shop.name}}</view>
+            <view>咱们点这个吧，感觉棒棒哒~</view>
+        </view>
+    </view>
+</template>

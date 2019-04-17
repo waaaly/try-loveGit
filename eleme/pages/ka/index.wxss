@@ -1,0 +1,54 @@
+@import "../../common/components/restaurant-row/component.wxss";
+
+.noData {
+    text-align: center;
+    margin: 100rpx;
+}
+
+.list {
+    opacity: 0.5;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    margin: 25rpx 0;
+    font-size: 24rpx;
+    text-align: center;
+    color: #999;
+    padding: 0 20rpx;
+}
+
+.title text {
+    margin: 0 20rpx;
+}
+
+.openMore {
+    font-size: 24rpx;
+    text-align: center;
+    line-height: 33rpx;
+    margin: 40rpx 0 60rpx;
+    color: #999;
+}
+
+.line {
+    flex: 1;
+    height: 1rpx;
+    background-color: #e3e3e3;
+}
+
+.buttonContainer {
+    padding-bottom: 40rpx;
+}
+
+.button {
+    margin: 0 auto;
+    width: 80%;
+    line-height: 74rpx;
+    border-radius: 4rpx;
+    margin-top: 20rpx;
+    background-color: #3190e8;
+    font-size: 30rpx;
+    text-align: center;
+    color: #fff;
+}

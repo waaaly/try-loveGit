@@ -1,0 +1,85 @@
+@import "components/bowl/bowl.wxss";
+
+@import "components/form/form.wxss";
+
+@import "../../../common/components/captcha/captcha.wxss";
+
+page {
+    height: 100%;
+    background-color: #cd533e;
+    box-sizing: border-box;
+}
+
+.bowl {
+    position: relative;
+}
+
+.present-hongbao {
+    margin-top: 82rpx;
+    margin-left: 54rpx;
+    width: 650rpx;
+    height: 234rpx;
+}
+
+.form {
+    width: 600rpx;
+    margin: 0 auto;
+}
+
+.showingKeyboard .present-image {
+    display: none;
+}
+
+.showingKeyboard .form-title {
+    display: none;
+}
+
+.showingKeyboard .form {
+    margin-top: 120rpx;
+}
+
+.footer {
+    text-align: center;
+}
+
+.icon-flower {
+    margin-top: 120rpx;
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.form-title {
+    margin-bottom: 32rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #ffcfa5;
+}
+
+.rules {
+    color: #efa97f;
+    font-size: 24rpx;
+    padding: 0 75rpx;
+}
+
+.rules-title {
+    position: relative;
+    padding: 16rpx 0;
+    margin-bottom: 16rpx;
+    text-align: center;
+}
+
+.rules-title text {
+    background-color: #cd533e;
+    padding: 0 20rpx;
+}
+
+.rules-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: #efa97f;
+}

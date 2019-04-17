@@ -1,0 +1,25 @@
+<view class="wcrule-root">
+    <view class="wcrule-block">
+        <view class="wcrule-block-title">01 如何赚更多现金？</view>
+        <view class="wcrule-block-text" wx:for="{{q1}}" wx:key="{{ index }}">
+      {{index+1}}. {{item}}
+    </view>
+    </view>
+    <view class="wcrule-block">
+        <view class="wcrule-block-title">02 现金放到哪了？怎么提现？</view>
+        <view class="wcrule-block-text">{{q2}}</view>
+        <view class="wcrule-indictor-list">
+            <image class="wcrule-indictor-0" src="{{indictor[0]}}"></image>
+            <view class="wcrule-indictor-right">
+                <image class="wcrule-indictor-1" src="{{indictor[1]}}"></image>
+                <image class="wcrule-indictor-2" src="{{indictor[2]}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="wcrule-rule">
+        <view class="wcrule-rule-title">活动规则</view>
+        <view class="wcrule-rule-item" wx:for="{{rules}}" wx:key="{{ index }}">
+      {{index+1}}. {{item}}
+    </view>
+    </view>
+</view>

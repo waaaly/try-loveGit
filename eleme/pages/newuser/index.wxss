@@ -1,0 +1,85 @@
+@import "components/ticket/index.wxss";
+
+@import "../../common/components/restaurant-row/component.wxss";
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 560rpx;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.header.old-user .header-text {
+    width: 390rpx;
+}
+
+.header.old-user .header-text text {
+    font-size: 30rpx;
+    color: #99adbf;
+}
+
+.header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.header-text {
+    position: absolute;
+    top: 312rpx;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,0%);
+}
+
+.new-user-show .header-text {
+    top: 226rpx;
+}
+
+.header-text .title {
+    font-size: 26rpx;
+    color: #ffdfb0;
+}
+
+.header-bth {
+    width: 484rpx;
+    height: 124rpx;
+    line-height: 124rpx;
+    margin-top: 24rpx;
+    text-align: center;
+    color: #7c1004;
+    background: url('https://fuss10.elemecdn.com/d/39/b8d6dc4707be025e9e37ea7d75e52png.png') no-repeat;
+    background-size: contain;
+    font-size: 48rpx;
+    font-weight: bold;
+}
+
+.ticket-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 595rpx;
+    height: 328rpx;
+}
+
+.h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40rpx 0 16rpx 0;
+    font-size: 30rpx;
+    border-bottom: 1rpx solid #eee;
+    color: #666;
+}
+
+.h3::before,.h3::after {
+    content: '';
+    background-color: #333;
+    width: 16rpx;
+    height: 1rpx;
+    margin: 0 10rpx;
+}

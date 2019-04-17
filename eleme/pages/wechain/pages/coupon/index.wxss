@@ -1,0 +1,254 @@
+page {
+    height: auto;
+    background-color: #f9f9f9;
+    padding-bottom: 140rpx;
+}
+
+.header {
+    height: 330rpx;
+    padding-top: 4rpx;
+    background: url(https://fuss10.elemecdn.com/b/fb/7304f313415a63190456300253de7png.png) 0 0 no-repeat;
+    background-size: 100% auto;
+}
+
+.introImage {
+    width: 438rpx;
+    height: 310rpx;
+    margin: 0 auto;
+    display: block;
+}
+
+.ruleButton {
+    position: relative;
+    margin: 0 auto;
+    width: 252rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    border-radius: 4rpx;
+    background-color: #ffffff;
+    border: solid 1rpx #e6e6e6;
+    font-size: 26rpx;
+    color: #999;
+    text-align: center;
+    margin-bottom: 50rpx;
+}
+
+.ruleButtonClose {
+    width: 20rpx;
+    height: 20rpx;
+    position: absolute;
+    right: 50rpx;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.coupon-list {
+    padding: 0 24rpx;
+}
+
+.coupon-item {
+    background-color: #ffffff;
+    padding: 24rpx;
+    margin-bottom: 20rpx;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.04);
+}
+
+.coupon-rst {
+    display: flex;
+    align-items: center;
+}
+
+.coupon-logo {
+    width: 96rpx;
+    height: 96rpx;
+    margin-right: 28rpx;
+    border-radius: 4rpx;
+}
+
+.coupon-descontainer {
+    margin-top: 8rpx;
+    height: 26rpx;
+    display: flex;
+}
+
+.coupon-rstInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.coupon-title {
+    font-size: 28rpx;
+    font-weight: bold;
+}
+
+.coupon-label {
+    width: 48rpx;
+    line-height: 26rpx;
+    height: 26rpx;
+    border-radius: 2rpx;
+    background-color: rgba(255,83,57,0.07);
+    border: solid 1rpx rgba(212,99,95,0.26);
+    font-size: 20rpx;
+    color: #ce7b77;
+    margin-right: 15rpx;
+    vertical-align: middle;
+}
+
+.coupon-desc {
+    color: #666;
+    font-size: 22rpx;
+    vertical-align: middle;
+}
+
+.coupon-intro {
+    background-color: #fff1ec;
+    border-radius: 4rpx;
+    height: 120rpx;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin-top: 28rpx;
+}
+
+.coupon-intro.received {
+    background: #fff1ec url(https://fuss10.elemecdn.com/6/c5/7b596c5fe9fd3c6f091fc6e4ed8b1svg.svg) 0 0 no-repeat;
+    background-size: 74rpx 74rpx;
+}
+
+.coupon-intro.onlyToday {
+    background: #fff1ec url(https://fuss10.elemecdn.com/5/a6/79d3563bd4bf1f199da0f9d76426esvg.svg) 0 0 no-repeat;
+    background-size: 74rpx 74rpx;
+}
+
+.coupon-price-container {
+    flex: 0 0 176rpx;
+    font-size: 64rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ef5353;
+    font-weight: bold;
+    font-family: "CSD";
+}
+
+.coupon-price {
+    display: flex;
+}
+
+.coupon-price::before {
+    position: relative;
+    top: 10rpx;
+    vertical-align: super;
+    content: "¥";
+    font-size: 32rpx;
+}
+
+.coupon-limit {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+    font-size: 20rpx;
+    color: #9d6767;
+}
+
+.coupon-limit::after {
+    position: absolute;
+    content: "";
+    border-left: 2rpx dashed #ea3927;
+    right: 0;
+    top: 24rpx;
+    bottom: 24rpx;
+    opacity: .2;
+}
+
+.coupon-limit-title {
+    font-size: 28rpx;
+    font-weight: bold;
+    margin-bottom: 6rpx;
+}
+
+.coupon-button {
+    position: relative;
+    flex: 0 0 200rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.coupon-button::before,.coupon-button::after {
+    content: "";
+    position: absolute;
+    left: -12rpx;
+    top: -12rpx;
+    width: 24rpx;
+    height: 24rpx;
+    border-radius: 24rpx;
+    background-color: #fff;
+}
+
+.coupon-button::after {
+    top: auto;
+    bottom: -12rpx;
+}
+
+.coupon-button-title {
+    font-size: 22rpx;
+    margin-bottom: 10rpx;
+    color: #666;
+}
+
+.coupon-button-title text {
+    color: #ff522f;
+}
+
+.coupon-loading {
+    text-align: center;
+}
+
+.coupon-btn {
+    width: 140rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    border-radius: 32rpx;
+    background-color: #ef5353;
+    font-size: 28rpx;
+    text-align: center;
+    color: #fff;
+    padding: 0;
+}
+
+.coupon-btn::after {
+    border: none;
+}
+
+.cashbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2rpx 12rpx 0 rgba(139,139,139,0.5);
+    height: 120rpx;
+    line-height: 120rpx;
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+}
+
+.cashbar view {
+    flex: 1;
+    text-align: center;
+}
+
+.cashbar-1 {
+    border-right: 1rpx solid #e6e6e6;
+}
+
+.coupon-loading {
+    font-size: 22rpx;
+    color: #999;
+}

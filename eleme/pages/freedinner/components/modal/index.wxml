@@ -1,0 +1,10 @@
+<template name="modal">
+    <view catch:touchmove catch:tap="closeModal" class="modal">
+        <view catch:tap class="content">
+            <view class="title">活动规则</view>
+            <view wx:for="{{defaultRules}}">
+        {{item}}
+      </view>
+        </view>
+    </view>
+</template>

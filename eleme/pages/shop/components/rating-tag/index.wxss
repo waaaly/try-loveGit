@@ -1,0 +1,18 @@
+.rating-tag {
+    display: inline-block;
+    font-size: 24rpx;
+    margin: 0 20rpx 14rpx 0;
+    padding: 12rpx 20rpx;
+    color: rgb(109,120,133);
+    background: rgb(235,245,255);
+    border-radius: 8rpx;
+}
+
+.rating-unsatisfied {
+    background: rgb(238,238,238);
+}
+
+.rating-active {
+    background: #0097ff;
+    color: #fff;
+}

@@ -1,0 +1,28 @@
+<template name="card">
+    <view class="card">
+        <view class="logo">
+            <image class="logo-image" mode="aspectFill" src="{{shop.image}}"></image>
+        </view>
+        <view class="tags">
+            <text class="fengniao" wx:if="{{shop.delivery_mode&&shop.delivery_mode.id===1}}">{{shop.delivery_mode.text}}</text>
+        </view>
+        <view class="meta">
+            <text class="name">{{shop.name}}</text>
+            <view class="overview">
+                <template is="rating-stars" data="{{rating:shop.rating,height:'22rpx'}}"></template>
+                <text class="rating">{{shop.rating}}</text>
+                <text class="sales">月售{{shop.recent_order_num}}单</text>
+            </view>
+            <view class="delivery">
+                <text>￥{{shop.float_minimum_order_amount}}起送</text>
+                <text>配送费约￥{{shop.float_delivery_fee}}</text>
+                <text>{{shop.order_lead_time}}分钟送达</text>
+            </view>
+        </view>
+        <template is="activities" data="{{activities:shop.activities,showAll:showAll}}"></template>
+        <template is="foods" data="{{foods:foods}}"></template>
+    </view>
+</template>
+<import src="../activities/activities.wxml"></import>
+<import src="../foods/foods.wxml"></import>
+<import src="/common/components/rating-stars/index.wxml"></import>

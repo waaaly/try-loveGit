@@ -1,0 +1,30 @@
+<template name="lotteryModal">
+    <view catch:touchmove catch:tap="closeModal" class="lottery-modal">
+        <view class="lottery-header">
+            <text class="lottery-result">{{description.header}}</text>
+            <view class="hongbao" wx:if="{{hongbao.name}}">
+                <text class="amount">
+                    <text class="integer">{{amount[0]}}</text>
+                    <text class="decimal" wx:if="{{amount[1]}}">.{{amount[1]}}</text>
+                </text>
+                <text class="name">{{hongbao.name}}</text>
+            </view>
+            <view class="empty" wx:else>空空如也</view>
+        </view>
+        <view catch:tap class="lottery-content">
+            <view class="title" wx:if="{{!hongbao.is_join_prize}}">{{hongbao.name?'手气真好':'再加把劲!'}}</view>
+            <view class="description">{{description.text}}</view>
+            <view class="lottery-action">
+                <button catch:tap="useHongbao" class="lottery-btn" data-content="立即使用" wx:if="{{hongbao.name}}">
+          立即使用
+        </button>
+                <button catch:tap="handleTap" class="lottery-btn" data-content="{{description.btnText}}" openType="{{keyNum===0?'share':''}}" wx:if="{{!hongbao.is_free_order_prize}}">
+          {{description.btnText}}
+        </button>
+            </view>
+        </view>
+        <view catch:tap="closeModal" class="lottery-close">
+            <image src="./asset/close.svg"></image>
+        </view>
+    </view>
+</template>

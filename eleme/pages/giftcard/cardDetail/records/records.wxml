@@ -1,0 +1,16 @@
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<view class="records" wx:if="{{loaded}}">
+    <view class="status">
+        <text class="status-title">{{status_text}}</text>
+        <text class="balance" wx:if="{{status===5||status===2}}">
+            <text class="balance-symbol">¥ </text>{{balance/100}}
+    </text>
+    </view>
+    <view class="record" wx:for="{{records}}" wx:key="index">
+        <text class="record-time">{{item.datetime}}</text>
+        <text class="record-amount">
+            <text class="amount-symbol">{{item.symbol}}</text>{{item.amount/100}}
+    </text>
+    </view>
+</view>
+<template is="fate-loading" data wx:if="{{!loaded}}"></template>

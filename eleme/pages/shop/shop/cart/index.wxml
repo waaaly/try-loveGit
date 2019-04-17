@@ -1,0 +1,83 @@
+<template name="cart">
+    <view class="cart" hidden="{{!isShopAvaiable}}">
+        <view catchtap="goEssential" class="essential-tip" hidden="{{!showEssentailTip}}">去点必选品</view>
+        <view catchtouchstart="toggleCart" class="cart-mask {{isCartFolded?'cart-mask-hidden':''}}" wx:if="{{!fromSpell}}"></view>
+        <view class="cart-main {{isCartFolded?'cart-main-folded':''}}" wx:if="{{!fromSpell}}">
+            <view class="cart-header grid grid-middle grid-between">
+                <view class="cart-header-text"> 购物车 </view>
+                <view catchtap="emptyCart" class="cart-empty">
+                    <image class="cart-empty-icon" src="{{imageHash['cart_empty']}}"></image>
+                    <text>清空</text>
+                </view>
+            </view>
+            <view class="cart-body">
+                <view class="piecewise-agent-fee grid grid-middle" wx:if="{{piecewise_agent_fee&&piecewise_agent_fee.rules&&piecewise_agent_fee.rules.length>1}}">
+                    <view class="piecewise-agent-fee-label"> 阶梯配送费 </view>
+                    <view> {{piecewise_agent_fee.description}} </view>
+                </view>
+                <view class="cart-item grid grid-middle" wx:for="{{cart.groups[0].entities}}" wx:key="id">
+                    <view class="cart-item-name cell cell-6of12">
+                        <view class="text-ellipsis"> {{item.name}} </view>
+                        <view class="cart-item-spec">{{foodattrs.makeSpecText(item.fullAttrs)}}</view>
+                    </view>
+                    <view class="item-total-price cell cell-3of12 grid grid-right">
+                        <view class="item-total-price-label"></view>
+                        <view class="item-total-original-price-value" wx:if="{{item.view_discount_price!==item.view_original_price}}">
+              ¥{{item.view_original_price}}
+            </view>
+                        <view class="item-total-discount-price-value">¥{{item.view_discount_price}} </view>
+                    </view>
+                    <view class="cell cell-fill grid grid-right grid-middle">
+                        <image catchtap="rmFromCart" class="cart-item-ctrl" data-entity="{{item}}" data-from-cart="true" src="{{imageHash['food_minus']}}"></image>
+                        <text class="ctrl-item-count"> {{item.quantity}} </text>
+                        <image catchtap="addToCart" class="cart-item-ctrl" data-entity="{{item}}" data-from-cart="true" src="{{imageHash['food_add']}}"></image>
+                    </view>
+                </view>
+                <view class="cart-item grid grid-middle" wx:if="{{cart.packingFee>0}}">
+                    <view class="cart-item-name cell cell-7of12 text-ellipsis">餐盒</view>
+                    <view class="item-total-price cell cell-2of12 grid grid-right">
+                        <view class="item-total-discount-price-value">¥{{cart.packingFee}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="cart-footer">
+            <view class="kaTip" wx:if="{{fromKA}}">
+                <text>换一换口味？</text>
+                <navigator openType="switchTab" url="/pages/index/index">
+                    <text class="kaTipLink">逛逛其他店吧</text>
+                </navigator>
+                <image bindtap="closeKaTip" class="kaTipClose" src="{{imageHash['CLOSE_CIRCLE_BORDER']}}"></image>
+            </view>
+            <view catchtap="onFooterTap" class="cart-left">
+                <view wx:if="{{!fromSpell}}">
+                    <image class="cart-icon-bg" src="{{imageHash['icon_cart_bg']}}"></image>
+                    <view catchtap="toggleCart" class="cart-icon grid grid-middle grid-center {{cart.quantity===0?'empty-cart-icon':''}}"></view>
+                    <view class="cart-item-total-amount grid grid-middle" hidden="{{cart.quantity===0}}">
+                        <text>{{cart.quantity}}</text>
+                    </view>
+                </view>
+                <view class="cart-cost grid {{fromSpell?'left':''}}">
+                    <view class="cart-final-cost grid grid-middle">
+                        <view hidden="{{cart.quantity===0}}">
+                            <text>¥{{cart.discountTotal}}</text>
+                            <text class="cart-original-total" hidden="{{cart.originalTotal===cart.discountTotal}}">¥{{cart.originalTotal}}</text>
+                        </view>
+                        <text class="is-empty" wx:if="{{cart.quantity===0}}">未选购商品</text>
+                    </view>
+                    <view class="cart-delivery-text" wx:if="{{cart.deliveryInfo&&cart.quantity>0&&!fromShopSpell}}">
+            {{cart.deliveryInfo.deliveryText||piecewise_agent_fee.tips}}
+          </view>
+                </view>
+            </view>
+            <view catchtap="checkout" class="cart-submit-btn grid grid-center grid-middle {{cart.quantity!==0&&(fromShopSpell||!needEssential&&cart.agio<=0)?'btn-abled':''}}">
+                <text wx:if="{{weixinMiniumFee===0&&cart.quantity!==0}}">{{fromShopSpell?'选好了':'去结算'}}</text>
+                <text wx:elif="{{cart.quantity===0}}">¥{{weixinMiniumFee}}起送</text>
+                <text class="btn-sm-text" wx:elif="{{needEssential}}">下单前请点必选品</text>
+                <text wx:elif="{{cart.agio>0}}">还差¥{{cart.agio}}起送</text>
+                <text wx:else>去结算</text>
+            </view>
+        </view>
+    </view>
+</template>
+<wxs module="foodattrs" src="../../../../common/wxs/food-attrs.wxs" />

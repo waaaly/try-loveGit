@@ -1,0 +1,72 @@
+.delivery-time {
+    display: flex;
+    align-items: center;
+    border-left: 10rpx solid #0097ff;
+    box-sizing: border-box;
+}
+
+.delivery-time.double-floor {
+    height: 140rpx;
+}
+
+.delivery-time.single-floor {
+    height: 88rpx;
+}
+
+.delivery-time .icon {
+    width: 30rpx;
+    height: 30rpx;
+    margin: 15rpx;
+}
+
+.delivery-time .name {
+    font-weight: bolder;
+    font-size: 30rpx;
+    margin-right: 30rpx;
+}
+
+.delivery-time .details {
+    flex: 100;
+}
+
+.delivery-time .time {
+    padding: 0 30rpx;
+    padding-left: 0;
+    text-align: right;
+    font-size: 26rpx;
+    color: #0097ff;
+    line-height: 70rpx;
+    height: 70rpx;
+}
+
+.delivery-time .time text {
+    font-size: 26rpx;
+    color: #0097ff;
+    line-height: 70rpx;
+    height: 70rpx;
+}
+
+.delivery-time .divider {
+    width: 100%;
+    height: 1rpx;
+    background: #eee;
+}
+
+.delivery-time .on-time {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30rpx;
+    font-size: 22rpx;
+    color: #0097ff;
+    line-height: 70rpx;
+    height: 70rpx;
+}
+
+.on-time text {
+    color: #0097ff;
+}
+
+.on-time text,.on-time image {
+    margin-left: 10rpx;
+}

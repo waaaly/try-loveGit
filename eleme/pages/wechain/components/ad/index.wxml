@@ -1,0 +1,11 @@
+<view class="ad {{couponPage?'ad2':'ad1'}}">
+    <view animation="{{animationData}}" class="ad-swipe">
+        <view class="ad-item" wx:for="{{fakeAds}}" wx:key="name">
+            <image class="ad-avatar" src="{{item.avatar}}"></image>
+            <view class="ad-text">
+                <text class="ad-username">{{item.name}}</text>
+        已赚到{{item.money}}元现金+{{item.hongbao}}元红包
+      </view>
+        </view>
+    </view>
+</view>

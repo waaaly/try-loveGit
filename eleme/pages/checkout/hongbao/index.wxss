@@ -1,0 +1,25 @@
+@import "../../promotion/hongbao/hongbao.wxss";
+
+.container {
+    padding: 30rpx 0;
+}
+
+.banner {
+    background: #fff;
+    padding: 0 30rpx;
+    margin-bottom: 30rpx;
+    height: 88rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 32rpx;
+    color: #333;
+    border: 1rpx solid #eee;
+    border-left: none;
+    border-right: none;
+}
+
+.banner .status {
+    padding: 20rpx;
+    padding-right: 0;
+}

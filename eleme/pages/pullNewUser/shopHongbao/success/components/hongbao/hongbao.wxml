@@ -1,0 +1,16 @@
+<template name="hongbao">
+    <view class="hongbao-container">
+        <image class="hongbao-wave" src="../assets/wavy_line.png"></image>
+        <view class="hongbao-money">
+            <text class="hongbao-unit">￥</text>
+            <text class="hongbao-amount">{{hongbao.amount}}</text>
+            <image alt="饿了么 logo" class="hongbao-logo" src="../assets/eleme.svg"></image>
+        </view>
+        <view class="hongbao-right">
+            <text class="hongbao-title">{{hongbao.name}}</text>
+            <text class="hongbao-list-item">满{{hongbao.sum_condition}}元可用</text>
+            <text class="hongbao-list-item">{{hongbao.end_date}} 到期</text>
+            <text class="hongbao-list-item" wx:if="{{hongbao.varietyString}}">{{hongbao.varietyString}}</text>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,12 @@
+<template name="activities">
+    <view class="activities">
+        <view bindtap="toggleShowAll" class="more {{showAll&&'showAll'}}" wx:if="{{activities.length>2}}">
+            <text>{{activities.length}}个活动</text>
+            <image src="assets/arrow_down.png"></image>
+        </view>
+        <view class="activity" hidden="{{!showAll&&index>=2}}" wx:for="{{activities}}" wx:key="*this">
+            <text class="icon" style="background: #{{item.icon_color}}">{{item.icon_name}}</text>
+            <text>{{item.description}}</text>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,17 @@
+<template name="plouto$1dec212f">
+    <view class="_view data-v-5aedb926 hint">
+        <view class="_view data-v-5aedb926 hint-title">集福气值攻略</view>
+        <view class="_view data-v-5aedb926 hint-list">
+            <view class="_view data-v-5aedb926 hint-item">
+                <view class="_view data-v-5aedb926 hint-item-title">福气值最高+50</view>
+                <view class="_view data-v-5aedb926">每邀请1位饿了么新用户</view>
+                <image class="_img data-v-5aedb926 tip" src="/copy-asset/pages/plouto/media/tipone.png"></image>
+            </view>
+            <view class="_view data-v-5aedb926 hint-item">
+                <view class="_view data-v-5aedb926 hint-item-title">福气值最高+10</view>
+                <view class="_view data-v-5aedb926">每邀请1位饿了么老用户</view>
+                <image class="_img data-v-5aedb926 tip" src="/copy-asset/pages/plouto/media/tiptwo.png"></image>
+            </view>
+        </view>
+    </view>
+</template>

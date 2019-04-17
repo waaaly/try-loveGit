@@ -1,0 +1,66 @@
+.graphic-captcha {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.captcha-dialog {
+    width: 290px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.captcha-dialog .header {
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    padding: 22px 0;
+}
+
+.captcha-dialog .dialog {
+    width: 260px;
+    height: 48px;
+    margin: 10px auto;
+    position: relative;
+}
+
+.dialog>input {
+    width: 100%;
+    height: 100%;
+    border: 2rpx solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #333;
+    font-size: 14px;
+    padding-left: 40rpx;
+}
+
+.dialog>image {
+    width: 100px;
+    height: 34px;
+    position: absolute;
+    right: 2px;
+    top: 7px;
+    z-index: 10;
+}
+
+.captcha-dialog .actions {
+    display: flex;
+}
+
+.actions button {
+    flex: 1;
+    font-weight: bold;
+}
+
+.actions button:first-child {
+    border-right: none;
+}

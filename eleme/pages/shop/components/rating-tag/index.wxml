@@ -1,0 +1,5 @@
+<template name="rating-tag">
+    <view class="rating-tag {{item.unsatisfied?'rating-unsatisfied':''}} {{isActive?'rating-active':''}}" data-tag-name="{{item.name}}">
+    {{item.name}}({{item.count}})
+  </view>
+</template>

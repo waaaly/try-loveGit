@@ -1,0 +1,138 @@
+@import "../../common/components/restaurant-row/component.wxss";
+
+@import "../../common/components/restaurant-filter-bars/component.wxss";
+
+@import "components/shop-ahead/index.wxss";
+
+@import "components/recommend/index.wxss";
+
+@import "components/no-result/index.wxss";
+
+@import "components/filter/index.wxss";
+
+@import "components/food-item/index.wxss";
+
+@import "components/outside/index.wxss";
+
+view {
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+    background-color: rgb(245,245,245);
+    color: #666;
+}
+
+.header,.body,.footer {
+    background-color: #fff;
+}
+
+.body {
+    height: calc(100% - 80rpx);
+    background-color: rgb(245,245,245);
+}
+
+.bsd {
+    white-space: nowrap;
+    box-sizing: border-box;
+    height: 200rpx;
+    padding: 10rpx;
+}
+
+.search {
+    height: 100%;
+    background-color: #fff;
+}
+
+.search-form {
+    padding: 20rpx 30rpx;
+    color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-section {
+    height: calc(100% - 100.5rpx);
+}
+
+.search-icon {
+    width: 22rpx;
+    height: 22rpx;
+    margin-right: 12rpx;
+    flex: none;
+}
+
+.search-btn {
+    position: absolute;
+    right: 30rpx;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0097ff;
+    margin-left: 20rpx;
+    padding: 0 20rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 50rpx;
+    z-index: 10;
+}
+
+.search-input-wrapper {
+    flex: 1 1 100%;
+    background-color: #fff;
+    border-radius: 100rpx;
+    font-size: 26rpx;
+    padding: 5rpx 80rpx 5rpx 20rpx;
+    color: rgb(153,153,153);
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+}
+
+.seach-input-placeholder {
+    color: rgb(153,153,153);
+}
+
+.search-section-head {
+    padding: 20rpx 30rpx;
+    display: flex;
+    align-items: center;
+}
+
+.section-title {
+    flex: 1 1 0;
+    font-size: 26rpx;
+    color: rgb(102,102,102);
+    display: inline-block;
+}
+
+.section-action {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.search-section-list {
+    background: #fff;
+    padding: 26rpx 30rpx 6rpx 30rpx;
+}
+
+.history-item {
+    display: inline-block;
+    margin: 0 20rpx 20rpx 0;
+    padding: 14rpx 26rpx;
+    font-size: 26rpx;
+    color: rgb(102,102,102);
+    background-color: #fff;
+    border: 1rpx solid #ddd;
+    border-radius: 8rpx;
+}
+
+.active {
+    border: 1rpx solid rgb(49,144,232);
+    color: rgb(49,144,232);
+}

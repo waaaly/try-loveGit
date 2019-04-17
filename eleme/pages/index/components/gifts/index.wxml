@@ -1,0 +1,7 @@
+<template name="gifts">
+    <view catch:touchmove class="gifts">
+        <image catch:tap="jumpPage" class="newUser" src="{{newUser}}"></image>
+        <image catch:tap="closeGift" class="closeButton" src="{{close}}"></image>
+    </view>
+    <view catch:touchmove class="layer"></view>
+</template>

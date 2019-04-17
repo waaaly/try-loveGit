@@ -1,0 +1,13 @@
+.rating-stars {
+    display: inline-block;
+    position: relative;
+    line-height: 1;
+}
+
+.rating-stars-gold {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}

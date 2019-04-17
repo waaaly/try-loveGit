@@ -1,0 +1,237 @@
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: #fe2b04 url('https://cube.elemecdn.com/1/03/bbfe0b56b192baa46af534ea37031png.png') 0 -100rpx no-repeat;
+    background-size: 100% auto;
+}
+
+.openRule {
+    position: absolute;
+    top: 80rpx;
+    right: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 8rpx 0 16rpx;
+    height: 44rpx;
+    border-top-left-radius: 22rpx;
+    border-bottom-left-radius: 22rpx;
+    background: rgba(0,0,0,.1);
+    color: #fff;
+    font-size: 24rpx;
+}
+
+swiper {
+    height: 60rpx;
+    text-align: center;
+    margin: 15rpx 0;
+}
+
+.swiper-warp {
+    width: 100%;
+    height: 60rpx;
+    position: absolute;
+    top: 40%;
+    text-align: center;
+}
+
+.swiper-text {
+    color: #ffeca0;
+    font-size: 24rpx;
+}
+
+.invite {
+    width: 560rpx;
+    height: 100rpx;
+    border-radius: 50rpx;
+    background-image: linear-gradient(to bottom,#fcfac4,#f4d170 41%,#e4b043);
+    box-shadow: 0 4rpx 10rpx 0 rgba(163,0,0,0.5);
+    color: #561b04;
+    font-weight: 700;
+    font-size: 36rpx;
+}
+
+.strategy {
+    color: #ffeca0;
+    font-size: 32rpx;
+    margin: 30rpx 0;
+}
+
+.strategy .icon {
+    width: 30rpx;
+    height: 30rpx;
+    position: relative;
+    top: 4rpx;
+}
+
+.info {
+    overflow: hidden;
+    width: 650rpx;
+    border-radius: 8rpx;
+    background: #fff;
+    text-align: center;
+    margin: 10rpx 0 0 50rpx;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32rpx;
+    height: 72rpx;
+    background: #f9f9f9;
+    line-height: 72rpx;
+}
+
+.text {
+    color: #333;
+    font-weight: 700;
+    font-size: 30rpx;
+}
+
+.link {
+    height: 100%;
+    color: #999;
+    font-size: 24rpx;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    height: 132rpx;
+}
+
+.item {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1rpx solid #eee;
+}
+
+.item .amount {
+    margin-right: 3rpx;
+    font-size: 48rpx;
+    font-family: "CSD";
+    color: #ff5339;
+    font-weight: 700;
+}
+
+.item .text {
+    color: #ff5339;
+    font-weight: 700;
+    font-size: 26rpx;
+}
+
+.title {
+    margin-top: 2rpx;
+    color: #666;
+    font-size: 22rpx;
+}
+
+.withdraw {
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #333;
+    font-size: 30rpx;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 40rpx;
+    width: 610rpx;
+    overflow: hidden;
+    border-radius: 8rpx;
+    background: #fff;
+    margin: 20rpx 0 0 50rpx;
+}
+
+.total {
+    font-size: 48rpx;
+}
+
+.weizi {
+    color: #ff5339;
+    font-style: normal;
+    font-family: 'CSD';
+}
+
+.gowithdraw {
+    position: absolute;
+    right: 80rpx;
+    color: #999;
+}
+
+.notify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin-top: -20px;
+}
+
+.notify navigator {
+    margin-top: 32rpx;
+}
+
+.login-image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 300rpx;
+    height: 170rpx;
+}
+
+.login-image image {
+    width: 150rpx;
+    height: 138rpx;
+}
+
+.login-content {
+    height: 26rpx;
+    margin-top: 27rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #56d176;
+    border-radius: 4rpx;
+    width: 188rpx;
+    height: 60rpx;
+    color: #fff;
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}
+
+.on-image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 400rpx;
+    height: 400rpx;
+}
+
+.on-image image {
+    width: 400rpx;
+    height: 400rpx;
+}
+
+.on-content {
+    font-size: 40rpx;
+    color: #777;
+    font-weight: bold;
+}
+
+.on-primary {
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    color: #888;
+}

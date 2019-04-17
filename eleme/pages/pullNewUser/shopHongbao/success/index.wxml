@@ -1,0 +1,66 @@
+<import src="components/hongbao/hongbao.wxml"></import>
+<import src="components/download/index.wxml"></import>
+<image class="success-background" src="../assets/success_header_bg.svg"></image>
+<view class="success-header">
+    <image class="success-shop-logo" src="{{logoUrl}}"></image>
+    <image class="success-flower" src="../assets/flower_yellow.svg"></image>
+    <image class="success-eleme-logo" src="../assets/eleme.png"></image>
+</view>
+<view class="exceed" wx:if="{{exceed}}">您一天最多领3个红包哦，留点给其他人吧</view>
+<view wx:else>
+    <view class="success-title-container">
+        <view class="exist-title" wx:if="{{is_exist}}">您已经领过此红包啦，把机会留给其他人吧</view>
+        <view class="success-title" wx:else>恭喜你抢到<text class="success-amount">{{total}}</text>元红包</view>
+    </view>
+    <view class="hongbao" wx:for="{{hongbao}}" wx:for-item="hongbao" wx:key="{{ index }}">
+        <template is="hongbao" data="{{hongbao:hongbao}}"></template>
+    </view>
+    <view class="success-explain">
+        <view>
+            <text>红包已放至账户 {{mobile}} </text>
+            <text bindtap="relogin" class="relogin">切换账户></text>
+        </view>
+        <view>下载饿了么App即可使用</view>
+    </view>
+</view>
+<view bindtap="downloadAction" class="success-button" wx:if="{{isNewUser||isExchange}}">
+    <image class="success-button-icon" src="../assets/logo_yellow.svg"></image>
+    <text>下载饿了么App</text>
+</view>
+<view wx:else>
+    <button class="success-button" openType="share">分享给好友</button>
+</view>
+<template is="download" data="{{...sendMessageTip}}" wx:if="{{showDownloadTip}}"></template>
+<view bindtap="goHongbao" class="success-button viewShop">立即使用</view>
+<view class="success-activity" wx:if="{{user_statistic}}">
+    <view>附近有<text class="success-activity-emphasize">{{user_statistic.count}}</text>人通过饿了么在这家店下单</view>
+    <view>
+        <text>累计节省了</text>
+        <text class="success-activity-emphasize">{{user_statistic.amount}}元</text>
+        <text>，节省时间</text>
+        <text class="success-activity-emphasize">{{user_statistic.save_minutes}}分钟</text>
+    </view>
+</view>
+<view class="hongbaolist" wx:if="{{hongbaosForDisplay.length>0}}">
+    <view class="success-rules-title">
+        <text>看看朋友们手气如何</text>
+    </view>
+    <view class="hongbaolist-item" wx:for="{{hongbaosForDisplay}}" wx:key="item.created_at">
+        <image class="hongbaolist-avatar" src="{{item.avatar}}"></image>
+        <view class="hongbaolist-content">
+            <text class="hongbaolist-username">{{item.user_name}}</text>
+            <text class="hongbaolist-time">{{item.created_at}}</text>
+            <text class="hongbaolist-tips">{{item.tips}}</text>
+        </view>
+        <view class="hongbaolist-amount">
+            <text class="hongbaolist-yen">¥</text>
+            <text>{{item.amount}}</text>
+        </view>
+    </view>
+</view>
+<view class="success-rules">
+    <view class="success-rules-title">
+        <text>活动细则</text>
+    </view>
+    <view wx:for="{{rules}}">{{index+1}}.{{item}}</view>
+</view>

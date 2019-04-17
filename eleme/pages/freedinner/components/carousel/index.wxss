@@ -1,0 +1,37 @@
+.carousel {
+    position: absolute;
+    top: 24rpx;
+    left: 30rpx;
+    width: 332rpx;
+    height: 48rpx;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.carousel swiper {
+    width: 332rpx;
+    height: 48rpx;
+}
+
+.carouselItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 332rpx;
+    height: 48rpx;
+    border-radius: 24rpx;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+}
+
+.carouselItem image {
+    margin-right: 4rpx;
+    width: 32rpx;
+    height: 32rpx;
+    border-radius: 50%;
+}
+
+.carouselItem text {
+    font-size: 22rpx;
+    color: #fff;
+}

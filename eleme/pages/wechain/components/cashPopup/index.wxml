@@ -1,0 +1,41 @@
+<view class="{{contentStyle===2?'container2':'container'}}">
+    <view class="content">
+        <view class="top" wx:if="{{contentStyle!==2}}">{{config.title||'恭喜你'}}</view>
+        <view class="center" wx:if="{{contentStyle!==2&&!config.overflow}}">
+            <view class="center-content" wx:if="{{config.coupon>0}}">
+                <text class="amount">¥{{config.coupon}}</text>
+                <text>红包 + </text>
+                <text class="amount">¥{{config.cash}}</text>
+                <text>现金</text>
+            </view>
+            <view class="center-content" wx:else>
+                <text class="amount">¥{{config.cash}}</text>
+                <text>现金已到账</text>
+            </view>
+        </view>
+        <view class="center overflow" wx:elif="{{config.overflow}}">
+            <view class="overflow-title">邀请好友下单</view>
+            <view class="overflow-des">最高再得<text>¥6</text>现金</view>
+        </view>
+        <view class="center" wx:else>
+            <text>今日共赚</text>
+            <text class="amount">¥{{config.cash}}</text>
+            <text bindtap="withdraw" class="withdraw">[提现]</text>
+        </view>
+        <view class="bottom">
+            <view class="bottom-tip" wx:if="{{!config.bottomTip}}">附近店铺老板正在发钱</view>
+            <view class="bottom-tip">
+                <view wx:for="{{config.bottomTip}}" wx:key="{{ index }}">{{item}}</view>
+            </view>
+            <view bindtap="gotoCouponPage" class="bottom-button" wx:if="{{!config.bottomButton}}">
+                <text>再赚</text>
+                <text class="bottom-amount">¥0.1~10</text>
+                <text>现金</text>
+                <image class="bottom-arrow" src="https://fuss10.elemecdn.com/2/62/7edda82018dc0e187e4a8821e4ca4svg.svg"></image>
+            </view>
+            <button class="bottom-button" openType="share" wx:elif="{{config.overflow}}">{{config.bottomButton}}</button>
+            <view bindtap="close" class="bottom-button" wx:else>{{config.bottomButton}}</view>
+        </view>
+        <image bindtap="close" class="close" src="https://fuss10.elemecdn.com/8/e0/cd5f17678b52899db4d9f3c6d5bfesvg.svg" wx:if="{{contentStyle!==2}}"></image>
+    </view>
+</view>

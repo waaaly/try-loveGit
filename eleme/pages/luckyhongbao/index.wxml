@@ -1,0 +1,55 @@
+<import src="/dave/components/fate-loading/index.wxml"></import>
+<view class="luckyhongbao" wx:if="{{loaded}}">
+    <view class="header">
+        <image src="https://fuss10.elemecdn.com/1/39/fcd384da023d1a78f79d0922f6fa3png.png"></image>
+    </view>
+    <view class="lucky-login" wx:if="{{showLogin}}">
+        <login bind:logined="logined"></login>
+    </view>
+    <view wx:else>
+        <view class="fail" wx:if="{{failMsg}}">
+            <view class="text">{{failMsg}}</view>
+        </view>
+        <view class="lucky-hongbaos" wx:if="{{hongbaos.length}}">
+            <view class="lucky-hongbao-item" wx:for="{{hongbaos}}">
+                <image class="lucky-hongbao-icon" src="/pages/luckyhongbao/media/eleme.png"></image>
+                <view class="lucky-hongbao-middle">
+                    <view class="lucky-hongbao-name">{{item.name}}</view>
+                    <view class="lucky-hongbao-rule">满{{item.sum_condition}}元可用</view>
+                    <view class="lucky-hongbao-time">{{item.validity_periods}}</view>
+                </view>
+                <view class="lucky-hongbao-right">
+                    <view class="lucky-hongbao-money">
+                        <view class="lucky-hongbao-rmb">¥</view>
+                        <view class="lucky-hongbao-amount">{{item.integer}}</view>
+                        <view class="lucky-hongbao-decimal" wx:if="{{item.decimal}}">.{{item.decimal}}</view>
+                    </view>
+                    <button appParameter="wechat" binderror="launchError" bindlaunchapp="launchSuccess" class="lucky-hongbao-use" openType="launchApp">去使用</button>
+                </view>
+            </view>
+        </view>
+        <view class="records" wx:if="{{records.length}}">
+            <view class="records-title">看朋友们手气如何</view>
+            <view class="record" wx:for="{{records}}">
+                <image class="record-icon" src="{{item.sns_avatar?item.sns_avatar:'/pages/luckyhongbao/media/eleme.png'}}"></image>
+                <view class="record-middle">
+                    <view class="record-info">
+                        <text class="record-name">{{item.sns_username||'饿了么用户'}}</text>
+                        <text>{{item.formatedTime}}</text>
+                    </view>
+                    <view>此包只应天上有</view>
+                </view>
+                <view class="record-right">
+                    <view>¥{{item.amount}}</view>
+                    <image class="record-lucky" src="/pages/luckyhongbao/media/lucky.png" wx:if="{{item.is_lucky}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="rules">
+            <view class="rules-title">活动细则</view>
+            <view class="rule" wx:for="{{rules}}">{{item}}</view>
+        </view>
+        <button appParameter="wechat" binderror="launchError" bindlaunchapp="launchSuccess" class="use-btn" openType="launchApp">优惠点餐</button>
+    </view>
+</view>
+<template is="fate-loading" data wx:else></template>

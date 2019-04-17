@@ -1,0 +1,59 @@
+<import src="/common/components/not-my-fault/index.wxml"></import>
+<import src="/pages/address/templates/address-item-content/index.wxml"></import>
+<import src="templates/add-or-edit-address-panel/index.wxml"></import>
+<view class="background"></view>
+<view class="address-list {{(!addresses||addresses.length===0)&&(!availableAddresses||availableAddresses.length===0)&&(!unavailableAddresses||unavailableAddresses.length===0)?'no-address-list':''}} {{fromCheckout?'select-address-page':''}}" wx:if="{{viewMode==='list'}}">
+    <block wx:if="{{addresses.length&&!fromCheckout}}" wx:for="{{addresses}}" wx:for-item="addr" wx:key="addr.id">
+        <view class="divider" wx:if="{{index>0}}"></view>
+        <view class="address-item" data-index="{{index}}">
+            <template is="address-item-content" data="{{imageHash:imageHash,addr:addr}}"></template>
+            <view catchtap="showEditAddress" class="edit" data-index="{{index}}">
+                <image src="{{imageHash['edit']}}"></image>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{availableAddresses.length&&fromCheckout}}" wx:for="{{availableAddresses}}" wx:for-item="addr" wx:key="addr.id">
+        <view class="divider" wx:if="{{index>0}}"></view>
+        <view catchtap="selectAddress" class="address-item" data-index="{{index}}">
+            <image class="status" src="{{imageHash['selected']}}" wx:if="{{addr.id===address.id}}"></image>
+            <image class="status" src="{{imageHash['not_selected']}}" wx:if="{{addr.id!==address.id}}"></image>
+            <template is="address-item-content" data="{{imageHash:imageHash,addr:addr}}"></template>
+            <view catchtap="showEditAvailableAddress" class="edit" data-index="{{index}}">
+                <image src="{{imageHash['edit']}}"></image>
+            </view>
+        </view>
+    </block>
+    <view class="section-hint" wx:if="{{unavailableAddresses.length&&fromCheckout}}">
+        <text>以下地址超出配送范围</text>
+    </view>
+    <block wx:if="{{unavailableAddresses.length&&fromCheckout}}" wx:for="{{unavailableAddresses}}" wx:for-item="addr" wx:key="addr.id">
+        <view class="divider" wx:if="{{index>0}}"></view>
+        <view class="address-item unavailable">
+            <image class="status" src=""></image>
+            <template is="address-item-content" data="{{imageHash:imageHash,addr:addr}}"></template>
+            <view catchtap="showEditUnavailableAddress" class="edit" data-index="{{index}}">
+                <image src="{{imageHash['edit']}}"></image>
+            </view>
+        </view>
+    </block>
+    <view wx:if="{{loaded&&(!addresses||addresses.length===0)&&(!availableAddresses||availableAddresses.length===0)&&(!unavailableAddresses||unavailableAddresses.length===0)}}">
+        <template is="not-my-fault" data="{{ msg:'您还没有地址，可以点击底部按钮新建地址',img:imageHash['NO_ADDRESS'] }}"></template>
+    </view>
+    <view bindtap="showAddAddress" class="add">
+        <image class="button" src="{{imageHash['add']}}"></image>
+        <text>新增地址</text>
+    </view>
+</view>
+<view class="checkout-address-form" name="checkout-address-add" wx:if="{{viewMode==='add'}}">
+    <template is="add-or-edit-address-panel" data="{{imageHash:imageHash,address:address,tags:tags}}"></template>
+    <view class="operate">
+        <view bindtap="confirmAddAddress" class="button confirm">确定</view>
+    </view>
+</view>
+<view class="checkout-address-form" name="checkout-address-edit" wx:if="{{viewMode==='edit'}}">
+    <template is="add-or-edit-address-panel" data="{{imageHash:imageHash,address:address,tags:tags}}"></template>
+    <view class="operate">
+        <view bindtap="removeAddress" class="button remove">删除</view>
+        <view bindtap="confirmEditAddress" class="button confirm">确定</view>
+    </view>
+</view>

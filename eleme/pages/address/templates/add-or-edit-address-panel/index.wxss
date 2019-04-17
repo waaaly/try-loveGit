@@ -1,0 +1,130 @@
+.section-wrapper {
+    background: #fff;
+    padding-left: 30rpx;
+    box-sizing: border-box;
+}
+
+.section {
+    display: flex;
+}
+
+.section .section-name {
+    width: 160rpx;
+    font-size: 30rpx;
+    line-height: 88rpx;
+    box-sizing: border-box;
+    color: #333;
+    font-weight: bold;
+}
+
+.section .section-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.section .section-content .layout-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.section .section-content .row {
+    height: 88rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 30rpx;
+    box-sizing: border-box;
+}
+
+.section .section-content .placeholder {
+    font-size: 30rpx;
+    color: #ddd;
+}
+
+.section-content input {
+    flex: 1;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.section-content .tag.row {
+    display: flex;
+    align-items: center;
+}
+
+.section-content .tag.row text {
+    margin-right: 20rpx;
+    border: 1rpx solid #ddd;
+    font-size: 28rpx;
+    color: #666;
+    border-radius: 4rpx;
+    width: 136rpx;
+    height: 56rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-content .tag.row text.selected {
+    color: #2395ff;
+    border-color: rgba(35,149,255,.18);
+}
+
+.section-content .row.address {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-content .row.address text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 540rpx;
+    flex: 1;
+}
+
+.address-location .section-content .title {
+    flex: 1;
+    font-size: 30rpx;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 540rpx;
+}
+
+.address-location .row .selectAddress {
+    color: #ddd;
+}
+
+.address-location .row.detail {
+    height: 126rpx;
+    padding: 25rpx 30rpx 10rpx 0;
+    overflow: auto;
+}
+
+.address-location .detail textarea {
+    font-size: 30rpx;
+    line-height: 40rpx;
+    height: 100%;
+    width: 100%;
+}
+
+.more {
+    width: 16rpx;
+    height: 16rpx;
+    border: 4rpx solid #ccc;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+    margin-left: 16rpx;
+}
+
+.operate {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30rpx 20rpx;
+    display: flex;
+    justify-content: space-between;
+}

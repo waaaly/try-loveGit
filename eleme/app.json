@@ -1,0 +1,95 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/city/main",
+        "pages/plouto/main",
+        "pages/checkout/index/index",
+        "pages/address/address",
+        "pages/checkout/hongbao/index",
+        "pages/checkout/invoice/select/index",
+        "pages/checkout/invoice/add/index",
+        "pages/checkout/invoice/edit/index",
+        "pages/checkout/remark/index",
+        "pages/order/list/order-list",
+        "pages/order/detail/order-detail",
+        "pages/shop/list/shop-list",
+        "pages/shop/shop/index",
+        "pages/shop/detail/index",
+        "pages/shop/rating/index",
+        "pages/sales/index",
+        "pages/profile/index",
+        "pages/search/search",
+        "pages/location/location",
+        "pages/auth/index",
+        "pages/help/index",
+        "pages/help/questions/questions",
+        "pages/share/index",
+        "pages/promotion/hongbao/hongbao",
+        "pages/pullNewUser/shop/index",
+        "pages/pullNewUser/shopHongbao/index",
+        "pages/pullNewUser/shopHongbao/success/index",
+        "pages/ka/index",
+        "pages/newuser/index",
+        "pages/hongbao/index",
+        "pages/commend/index",
+        "pages/commend/rules/index",
+        "pages/invitehongbao/index",
+        "pages/freedinner/index",
+        "pages/container/index",
+        "pages/giftcard/index",
+        "pages/giftcard/buyCard/index",
+        "pages/giftcard/buyCard/cardDetail/index",
+        "pages/giftcard/cardDetail/records/records",
+        "pages/giftcard/cardDetail/info/info",
+        "pages/giftcard/myCards/index",
+        "pages/giftcard/myCards/pages/detail/index",
+        "pages/giftcard/myCards/pages/share/index",
+        "pages/giftcard/cardDetail/index",
+        "pages/wechain/index",
+        "pages/wechain/cashpage/index",
+        "pages/wechain/pages/redpack/index",
+        "pages/wechain/pages/coupon/index",
+        "pages/wechain/pages/rule/index",
+        "pages/pay/index",
+        "pages/luckyhongbao/index",
+        "pages/recommend/index",
+        "pages/recommend/strategy/index",
+        "pages/recommend/water/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#0097ff",
+        "navigationBarTitleText": "饿了么",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#666",
+        "selectedColor": "#0097ff",
+        "borderStyle": "black",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "外卖",
+                "iconPath": "common/icons/tab_shopping.png",
+                "selectedIconPath": "common/icons/tab_shopping_selected.png"
+            },
+            {
+                "pagePath": "pages/order/list/order-list",
+                "text": "订单",
+                "iconPath": "common/icons/tab_order.png",
+                "selectedIconPath": "common/icons/tab_order_selected.png"
+            },
+            {
+                "pagePath": "pages/profile/index",
+                "text": "我的",
+                "iconPath": "common/icons/tab_user.png",
+                "selectedIconPath": "common/icons/tab_user_selected.png"
+            }
+        ]
+    },
+    "navigateToMiniProgramAppIdList": [
+        "wx336dcaf6a1ecf632"
+    ],
+    "debug": true
+}

@@ -1,0 +1,35 @@
+<template name="food-modal">
+    <view class="modal" hidden="{{isFoodModalHide}}">
+        <view class="modal-main">
+            <view class="food-modal-body">
+                <image class="food-modal-image" src="{{foodModalData.image_url}}"></image>
+                <view class="food-model-desc">{{foodModalData.description}}</view>
+            </view>
+            <view class="food-modal-footer">
+                <view class="food-name">{{foodModalData.name}}</view>
+                <view class="food-activity grid grid-middle" wx:if="{{foodModalData.activity}}">
+                    <text class="item-activity" style="color: {{'#'+foodModalData.activity.image_text_color}}">{{foodModalData.activity.image_text}}
+          </text>
+                    <text class="item-limitation" style="background: {{'#'+foodModalData.limitation.color}};border: 1rpx solid {{'#'+foodModalData.limitation.color}}" wx:if="{{foodModalData.limitation.text}}">
+            {{item.limitation.text}}
+          </text>
+                </view>
+                <view class="food-price grid grid-middle grid-between cell">
+                    <view class="grid grid-middle item-footer">
+                        <view class="item-price" wx:if="{{foodModalData.price!=null}}">
+              {{foodModalData.price}}
+            </view>
+                        <view class="item-price-origin" wx:if="{{foodModalData.original_price}}">
+              ¥{{foodModalData.original_price}}
+            </view>
+                    </view>
+                    <view class="cart-btn">
+                        <template is="cartButton" data="{{item:foodModalData,isShopAvaiable:isShopAvaiable,foodsAddedToCart:foodsAddedToCart,isInFoodModal:true}}"></template>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view catchtap="hideFoodModal" class="modal-mask"></view>
+    </view>
+</template>
+<import src="../../components/cartbutton/index.wxml"></import>

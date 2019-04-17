@@ -1,0 +1,2 @@
+<import src="../components/rating-view/index.wxml"></import>
+<template is="rating-view" data="{{imageHash:imageHash,...rating}}"></template>

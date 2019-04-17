@@ -1,0 +1,54 @@
+.scenes-container {
+    padding: 0 15rpx;
+    height: 90rpx;
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+    z-index: 999;
+    box-shadow: 0 8rpx 8rpx 0 rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+.scenes-item {
+    margin: 10rpx 5rpx;
+    border-radius: 4rpx;
+    position: relative;
+    width: 180rpx;
+    height: 70rpx;
+    overflow: hidden;
+    display: inline-block;
+    line-height: 70rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #333;
+    background-color: #f5f5f5;
+    transition: color .2s ease-in-out;
+}
+
+.scenes-item.active {
+    color: #fff;
+}
+
+.scenes-item.scene-item-1 {
+    background-image: url('http://fuss10.elemecdn.com/4/ad/6c04c6babecde5e34ce1a94dfc2f9png.png');
+}
+
+.scenes-item.scene-item-2 {
+    background-image: url('http://fuss10.elemecdn.com/c/da/5d7bf423ccb3286ba9d4485e042efpng.png');
+}
+
+.scenes-item.scene-item-3 {
+    background-image: url('http://fuss10.elemecdn.com/d/e1/a2ab716a4c5158c29ad35fbc69ad0png.png');
+}
+
+.scenes-item.scene-item-4 {
+    background-image: url('http://fuss10.elemecdn.com/7/61/a69fb95a3f216970b3296bdf48938png.png');
+}
+
+.scenes-item.scene-item-5 {
+    background-image: url('http://fuss10.elemecdn.com/4/d8/fba2959b811861354bf3c84c996d4png.png');
+}
+
+.scenes-item.scene-item-6 {
+    background-image: url('http://fuss10.elemecdn.com/0/58/d75eda243218d9b74f25d0c94e159png.png');
+}

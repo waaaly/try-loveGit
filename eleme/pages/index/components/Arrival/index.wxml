@@ -1,0 +1,24 @@
+<template name="arrival">
+    <view class="arrival {{showArrival?'':'hide'}}">
+        <view class="lottery">
+            <view class="imageWrapper">
+                <text>红包助你吃到嗨！</text>
+                <image src="/pages/index/components/Arrival/media/hongbao-bg.png"></image>
+            </view>
+            <view class="content">
+                <view class="hongbaoWrapper">
+                    <template is="hongbao" data="{{...item}}" wx:for="{{arrivalData}}" wx:key="{{ index }}"></template>
+                </view>
+                <view class="btnWrapper">
+                    <view class="useWrapper" wx:if="{{obtained}}">
+                        <image src="/pages/index/components/Arrival/media/success.svg"></image>
+                        <text>领取成功，快去使用吧！</text>
+                    </view>
+                    <view catch:tap="obtain" class="accept btn">立即{{obtained?'使用':'领取'}}</view>
+                    <view catch:tap="closeArrivalModal" class="cancel btn" wx:if="{{!obtained}}">有钱任性，不需要</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/pages/index/components/Arrival/hongbao.wxml"></import>

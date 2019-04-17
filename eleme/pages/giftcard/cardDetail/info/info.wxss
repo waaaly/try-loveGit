@@ -1,0 +1,30 @@
+.info {
+    margin: 40rpx;
+    font-family: Helvetica Neue,Tahoma,Arial,PingFangSC-Regular,Hiragino Sans GB,Microsoft Yahei,sans-serif;
+}
+
+.info-own {
+    display: flex;
+    margin-bottom: 30rpx;
+    line-height: 32rpx;
+    font-size: 32rpx;
+}
+
+.info-title {
+    margin-right: 30rpx;
+    width: 128rpx;
+    color: #999;
+    flex: none;
+}
+
+.info-content {
+    padding-bottom: 6rpx;
+    color: #333;
+}
+
+.info-content text {
+    display: block;
+    margin-top: -6rpx;
+    padding-bottom: 6rpx;
+    line-height: 1.5;
+}

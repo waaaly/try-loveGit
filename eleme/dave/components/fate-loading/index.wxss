@@ -1,0 +1,53 @@
+.loadingFixed {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 8888;
+}
+
+.loadingWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loadingMain {
+    position: relative;
+    margin-top: 50rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.loadingIcon {
+    position: absolute;
+    width: 100rpx;
+    height: 100rpx;
+    z-index: 5;
+    background: url(https://fuss10.elemecdn.com/c/7f/f26d800336750924f6a4b37f52d74png.png);
+    background-size: auto 100%;
+    transform-origin: 0 0;
+    background-position-x: 0;
+    animation: Gump 1.5s normal infinite steps(43,end);
+}
+
+@-webkit-keyframes Gump {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 100%;
+    }
+}
+
+@keyframes Gump {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 100%;
+    }
+}

@@ -1,0 +1,19 @@
+.not-my-fault {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 28rpx;
+}
+
+.not-my-fault-img {
+    width: 300rpx;
+}
+
+.not-my-fault-msg {
+    padding: 40rpx;
+    text-align: center;
+}

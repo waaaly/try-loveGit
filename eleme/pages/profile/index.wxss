@@ -1,0 +1,238 @@
+view {
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: rgb(238,238,238);
+    height: 100%;
+    position: relative;
+}
+
+.header {
+    position: relative;
+    color: #fff;
+    background-color: #0097ff;
+    height: 200rpx;
+    padding: 40rpx;
+    box-sizing: border-box;
+}
+
+.header-menu::before {
+    position: absolute;
+    top: 86rpx;
+    right: 30rpx;
+    content: '';
+    width: 20rpx;
+    height: 20rpx;
+    border: 2rpx solid #fff;
+    border-width: 2rpx 2rpx 0 0;
+    transform: rotate(45deg);
+}
+
+.avatar {
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 20rpx;
+    vertical-align: top;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.user-info {
+    display: inline-block;
+    padding: 15rpx 30rpx;
+}
+
+.user-name {
+    font-size: 42rpx;
+}
+
+.user-phone {
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}
+
+.user-phone image {
+    width: 14rpx;
+    height: 22rpx;
+    margin-right: 7rpx;
+    position: relative;
+    top: 2rpx;
+}
+
+.header .login-title {
+    margin-bottom: 6rpx;
+    font-size: 40rpx;
+    top: 30rpx;
+}
+
+.header .login-intro {
+    font-size: 22rpx;
+}
+
+.body {
+    background-color: rgb(238,238,238);
+}
+
+.menu {
+    display: flex;
+    margin-bottom: 19rpx;
+    border-bottom: 1rpx solid rgb(221,221,221);
+    background-color: #fff;
+    height: 160rpx;
+}
+
+.menu .menu-item {
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    padding: 30rpx 0 27rpx 0;
+    color: rgb(102,102,102);
+    font-size: 24rpx;
+    text-align: center;
+    border-right: 1rpx solid rgb(238,238,238);
+}
+
+.menu .navigator {
+    height: 100%;
+    padding: 30rpx 0 27rpx 0;
+    box-sizing: border-box;
+}
+
+.menu .menu-item:last-child {
+    border-right: 0 none;
+}
+
+.menu .menu-item .menu-icon {
+    display: inline-block;
+    margin-bottom: 15rpx;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.menu-label {
+    margin-top: 15rpx;
+    font-size: 24rpx;
+    color: rgb(102,102,102);
+}
+
+.balance,.hongbao,.point {
+    font-size: 46rpx;
+    display: inline-block;
+    font-weight: bolder;
+}
+
+.balance {
+    color: rgb(253,153,0);
+}
+
+.hongbao {
+    color: rgb(255,95,62);
+}
+
+.point {
+    color: rgb(106,194,11);
+}
+
+.small {
+    font-size: 26rpx;
+    display: inline-block;
+}
+
+.list {
+    margin-bottom: 19rpx;
+    background-color: #fff;
+    border-width: 1rpx 0;
+    border-style: solid;
+    border-color: rgb(221,221,221);
+    font-size: 30rpx;
+    color: rgb(51,51,51);
+}
+
+.list .navigator {
+    position: relative;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-bottom: 0;
+}
+
+.list .list-item {
+    display: flex;
+    align-items: center;
+    height: 88rpx;
+    margin-left: 37rpx;
+}
+
+.border {
+    border-bottom: 1rpx solid rgb(238,238,238);
+}
+
+.list-item::before {
+    position: absolute;
+    top: 36rpx;
+    right: 30rpx;
+    content: '';
+    width: 16rpx;
+    height: 16rpx;
+    border: 2rpx solid #CACACA;
+    border-width: 2rpx 2rpx 0 0;
+    transform: rotate(45deg);
+}
+
+.list-item-title {
+    font-size: 32rpx;
+    height: 88rpx;
+    width: 100%;
+    line-height: 88rpx;
+    color: rgb(51,51,51);
+    display: inline-block;
+    margin-left: 25rpx;
+}
+
+.list .navigator:last-child .list-item .list-item-title {
+    border-bottom: 0;
+}
+
+.list-item-icon {
+    width: 40rpx;
+    height: 40rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn-logout {
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-top: 40rpx;
+    font-size: 32rpx;
+    color: #f23030;
+    text-align: center;
+    background-color: #fff;
+}
+
+.link-privacy {
+    margin: 46rpx auto 0;
+    padding-bottom: 46rpx;
+    font-size: 30rpx;
+    color: #4DA6F0;
+    text-align: center;
+}
+
+.stretch {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.centered {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.server-down-description {
+    font-size: 36rpx;
+    color: #999;
+}
